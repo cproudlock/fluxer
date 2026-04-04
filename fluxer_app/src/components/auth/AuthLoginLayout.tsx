@@ -25,6 +25,7 @@ import AuthLoginPasskeyActions, {AuthLoginDivider} from '@app/components/auth/au
 import {useDesktopHandoffFlow} from '@app/components/auth/auth_login_core/useDesktopHandoffFlow';
 import DesktopHandoffAccountSelector from '@app/components/auth/DesktopHandoffAccountSelector';
 import {HandoffCodeDisplay} from '@app/components/auth/HandoffCodeDisplay';
+import {InstanceSelector, type InstanceDiscoveryStatus} from '@app/components/auth/InstanceSelector';
 import IpAuthorizationScreen from '@app/components/auth/IpAuthorizationScreen';
 import styles from '@app/components/pages/LoginPage.module.css';
 import {Button} from '@app/components/uikit/button/Button';
@@ -90,6 +91,9 @@ export const AuthLoginLayout = observer(function AuthLoginLayout({
 	const [isSwitching, setIsSwitching] = useState(false);
 	const [switchError, setSwitchError] = useState<string | null>(null);
 	const [prefillEmail, setPrefillEmail] = useState<string | null>(() => initialEmail ?? null);
+	const [instanceUrl, setInstanceUrl] = useState('');
+	const [instanceDiscoveryStatus, setInstanceDiscoveryStatus] = useState<InstanceDiscoveryStatus>('idle');
+	const [showInstanceSelector, setShowInstanceSelector] = useState(false);
 
 	const showLoginFormForAccount = useCallback((account: Account, message?: string | null) => {
 		setShowAccountSelector(false);
@@ -289,6 +293,15 @@ export const AuthLoginLayout = observer(function AuthLoginLayout({
 				</div>
 			) : null}
 
+			{showInstanceSelector ? (
+				<InstanceSelector
+					value={instanceUrl}
+					onChange={setInstanceUrl}
+					onDiscoveryStatusChange={setInstanceDiscoveryStatus}
+					disabled={isLoading || Boolean(form.isSubmitting)}
+				/>
+			) : null}
+
 			<AuthLoginEmailPasswordForm
 				form={form}
 				isLoading={isLoading}
@@ -301,7 +314,7 @@ export const AuthLoginLayout = observer(function AuthLoginLayout({
 						<Trans>Forgot your password?</Trans>
 					</AuthRouterLink>
 				}
-				disableSubmit={isPasskeyLoading}
+				disableSubmit={isPasskeyLoading || instanceDiscoveryStatus === 'discovering'}
 			/>
 
 			<AuthLoginDivider
@@ -329,6 +342,28 @@ export const AuthLoginLayout = observer(function AuthLoginLayout({
 						<Trans>Need an account?</Trans>{' '}
 					</span>
 					{styledRegisterLink}
+				</div>
+				<div className={styles.footerLinks}>
+					<a href="https://status.echowire.org" target="_blank" rel="noopener noreferrer" className={styles.footerExternalLink}>
+						Status
+					</a>
+					<span className={styles.footerLinkSeparator}>&middot;</span>
+					<a href="/terms" target="_blank" rel="noopener noreferrer" className={styles.footerExternalLink}>
+						Terms
+					</a>
+					<span className={styles.footerLinkSeparator}>&middot;</span>
+					<a href="/privacy" target="_blank" rel="noopener noreferrer" className={styles.footerExternalLink}>
+						Privacy
+					</a>
+					<span className={styles.footerLinkSeparator}>&middot;</span>
+					<button
+						type="button"
+						className={styles.footerExternalLink}
+						onClick={() => setShowInstanceSelector((prev) => !prev)}
+						style={{background: 'none', border: 'none', padding: 0, fontSize: '0.75rem', fontFamily: 'inherit'}}
+					>
+						{showInstanceSelector ? <Trans>Hide instance selector</Trans> : <Trans>Use another instance</Trans>}
+					</button>
 				</div>
 			</div>
 		</>

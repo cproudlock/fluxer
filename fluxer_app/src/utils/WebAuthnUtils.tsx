@@ -29,6 +29,26 @@ import {
 	startRegistration,
 } from '@simplewebauthn/browser';
 
+interface NativePasskeyBridge {
+	passkeyIsSupported(): Promise<boolean>;
+	passkeyRegister(optionsJSON: string): Promise<string>;
+	passkeyAuthenticate(optionsJSON: string): Promise<string>;
+}
+
+function getNativePasskeyBridge(): NativePasskeyBridge | null {
+	const bridge = (window as unknown as Record<string, unknown>).EchowireNativePasskey as NativePasskeyBridge | undefined;
+	if (bridge && typeof bridge.passkeyIsSupported === 'function' && typeof bridge.passkeyRegister === 'function' && typeof bridge.passkeyAuthenticate === 'function') {
+		return bridge;
+	}
+	return null;
+}
+
+function isIOSNativeApp(): boolean {
+	if (typeof navigator === 'undefined') return false;
+	const ua = navigator.userAgent;
+	return /EchowireApp/.test(ua) && /iPhone|iPad|iPod/.test(ua);
+}
+
 export async function assertWebAuthnSupported(): Promise<void> {
 	if (Platform.isElectron) {
 		const electronApi = getElectronAPI();
@@ -42,6 +62,17 @@ export async function assertWebAuthnSupported(): Promise<void> {
 		throw new Error('WebAuthn is not supported in this environment.');
 	}
 
+	if (isIOSNativeApp()) {
+		const bridge = getNativePasskeyBridge();
+		if (bridge) {
+			const supported = await bridge.passkeyIsSupported();
+			if (supported) {
+				return;
+			}
+		}
+		throw new Error('Passkeys require iOS 16+.');
+	}
+
 	if (!browserSupportsWebAuthn()) {
 		throw new Error('WebAuthn is not supported in this environment.');
 	}
@@ -51,11 +82,20 @@ export async function performRegistration(
 	options: PublicKeyCredentialCreationOptionsJSON,
 ): Promise<RegistrationResponseJSON> {
 	await assertWebAuthnSupported();
+
 	if (Platform.isElectron) {
 		const electronApi = getElectronAPI();
 		const nativeSupported = electronApi && (await electronApi.passkeyIsSupported?.());
 		if (nativeSupported && electronApi.passkeyRegister) {
 			return electronApi.passkeyRegister(options);
+		}
+	}
+
+	if (isIOSNativeApp()) {
+		const bridge = getNativePasskeyBridge();
+		if (bridge) {
+			const resultJSON = await bridge.passkeyRegister(JSON.stringify(options));
+			return JSON.parse(resultJSON) as RegistrationResponseJSON;
 		}
 	}
 
@@ -66,11 +106,20 @@ export async function performAuthentication(
 	options: PublicKeyCredentialRequestOptionsJSON,
 ): Promise<AuthenticationResponseJSON> {
 	await assertWebAuthnSupported();
+
 	if (Platform.isElectron) {
 		const electronApi = getElectronAPI();
 		const nativeSupported = electronApi && (await electronApi.passkeyIsSupported?.());
 		if (nativeSupported && electronApi.passkeyAuthenticate) {
 			return electronApi.passkeyAuthenticate(options);
+		}
+	}
+
+	if (isIOSNativeApp()) {
+		const bridge = getNativePasskeyBridge();
+		if (bridge) {
+			const resultJSON = await bridge.passkeyAuthenticate(JSON.stringify(options));
+			return JSON.parse(resultJSON) as AuthenticationResponseJSON;
 		}
 	}
 

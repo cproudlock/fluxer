@@ -19,7 +19,6 @@
 
 import * as AuthenticationActionCreators from '@app/actions/AuthenticationActionCreators';
 import styles from '@app/components/auth/AuthPageStyles.module.css';
-import {DateOfBirthField} from '@app/components/auth/DateOfBirthField';
 import FormField from '@app/components/auth/FormField';
 import {type MissingField, SubmitTooltip, shouldDisableSubmit} from '@app/components/auth/SubmitTooltip';
 import {ExternalLink} from '@app/components/common/ExternalLink';
@@ -95,9 +94,7 @@ export function AuthRegisterFormCore({
 		formValues: {...initialDraft.formValues},
 	});
 
-	const [selectedMonth, setSelectedMonthState] = useState(initialDraft.selectedMonth);
-	const [selectedDay, setSelectedDayState] = useState(initialDraft.selectedDay);
-	const [selectedYear, setSelectedYearState] = useState(initialDraft.selectedYear);
+	const [ageConfirmed, setAgeConfirmedState] = useState(initialDraft.ageConfirmed ?? false);
 	const [consent, setConsentState] = useState(initialDraft.consent);
 	const [_usernameFocused, setUsernameFocused] = useState(false);
 
@@ -125,26 +122,10 @@ export function AuthRegisterFormCore({
 		[draftKey, setRegisterFormDraft],
 	);
 
-	const handleMonthChange = useCallback(
-		(month: string) => {
-			setSelectedMonthState(month);
-			persistDraft({selectedMonth: month});
-		},
-		[persistDraft],
-	);
-
-	const handleDayChange = useCallback(
-		(day: string) => {
-			setSelectedDayState(day);
-			persistDraft({selectedDay: day});
-		},
-		[persistDraft],
-	);
-
-	const handleYearChange = useCallback(
-		(year: string) => {
-			setSelectedYearState(year);
-			persistDraft({selectedYear: year});
+	const handleAgeConfirmedChange = useCallback(
+		(nextAgeConfirmed: boolean) => {
+			setAgeConfirmedState(nextAgeConfirmed);
+			persistDraft({ageConfirmed: nextAgeConfirmed});
 		},
 		[persistDraft],
 	);
@@ -158,22 +139,21 @@ export function AuthRegisterFormCore({
 	);
 
 	const handleRegisterSubmit = async (values: Record<string, string>) => {
+		if (showPassword && values.password && values.password.length < 8) {
+			form.setError('password', t`Password must be at least 8 characters`);
+			return;
+		}
 		if (showPasswordConfirmation && showPassword && values.password !== values.confirm_password) {
 			form.setError('confirm_password', t`Passwords do not match`);
 			return;
 		}
-
-		const dateOfBirth =
-			selectedYear && selectedMonth && selectedDay
-				? `${selectedYear}-${selectedMonth.padStart(2, '0')}-${selectedDay.padStart(2, '0')}`
-				: '';
 
 		const response = await AuthenticationActionCreators.register({
 			global_name: values.global_name || undefined,
 			username: values.username || undefined,
 			email: showEmail ? values.email : undefined,
 			password: showPassword ? values.password : undefined,
-			date_of_birth: dateOfBirth,
+			age_confirmed: ageConfirmed,
 			consent,
 			invite_code: inviteCode,
 		});
@@ -224,11 +204,11 @@ export function AuthRegisterFormCore({
 		if (showPassword && showPasswordConfirmation && !form.getValue('confirm_password')) {
 			missing.push({key: 'confirm_password', label: t`Confirm Password`});
 		}
-		if (!selectedMonth || !selectedDay || !selectedYear) {
-			missing.push({key: 'date_of_birth', label: t`Date of Birth`});
+		if (!ageConfirmed) {
+			missing.push({key: 'age_confirmed', label: t`Age Confirmation`});
 		}
 		return missing;
-	}, [form, selectedMonth, selectedDay, selectedYear, showEmail, showPassword, showPasswordConfirmation]);
+	}, [form, ageConfirmed, showEmail, showPassword, showPasswordConfirmation]);
 
 	type HelperTextState = {type: 'error'; message: string} | {type: 'suggestion'; username: string} | {type: 'hint'};
 
@@ -347,7 +327,8 @@ export function AuthRegisterFormCore({
 					type="password"
 					autoComplete="new-password"
 					required
-					label={t`Password`}
+					minLength={8}
+					label={t`Password (min. 8 characters)`}
 					value={form.getValue('password')}
 					onChange={(value) => setDraftedFormValue('password', value)}
 					error={form.getError('password') || fieldErrors?.password}
@@ -367,15 +348,16 @@ export function AuthRegisterFormCore({
 				/>
 			)}
 
-			<DateOfBirthField
-				selectedMonth={selectedMonth}
-				selectedDay={selectedDay}
-				selectedYear={selectedYear}
-				onMonthChange={handleMonthChange}
-				onDayChange={handleDayChange}
-				onYearChange={handleYearChange}
-				error={fieldErrors?.date_of_birth}
-			/>
+			<div className={styles.consentRow}>
+				<Checkbox checked={ageConfirmed} onChange={handleAgeConfirmedChange}>
+					<span className={styles.consentLabel}>
+						<Trans>I confirm I am 13 years of age or older</Trans>
+					</span>
+				</Checkbox>
+				{fieldErrors?.date_of_birth && (
+					<span className={styles.usernameError}>{fieldErrors.date_of_birth}</span>
+				)}
+			</div>
 
 			{extraContent}
 

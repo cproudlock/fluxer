@@ -52,7 +52,8 @@ interface RegisterData {
 	global_name?: string;
 	username?: string;
 	password?: string;
-	date_of_birth: string;
+	date_of_birth?: string;
+	age_confirmed?: boolean;
 	consent: boolean;
 	captchaToken?: string;
 	captchaType?: 'turnstile' | 'hcaptcha';

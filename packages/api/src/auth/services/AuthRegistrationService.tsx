@@ -206,11 +206,24 @@ export class AuthRegistrationService {
 		const geoipResult = await lookupGeoip(clientIp);
 		const countryCode = geoipResult.countryCode;
 
-		const minAge = (countryCode && MINIMUM_AGE_BY_COUNTRY[countryCode]) || DEFAULT_MINIMUM_AGE;
-		if (!this.validateAge({dateOfBirth: data.date_of_birth, minAge})) {
+		if (data.date_of_birth) {
+			const minAge = (countryCode && MINIMUM_AGE_BY_COUNTRY[countryCode]) || DEFAULT_MINIMUM_AGE;
+			if (!this.validateAge({dateOfBirth: data.date_of_birth, minAge})) {
+				throw InputValidationError.create(
+					'date_of_birth',
+					`You must be at least ${minAge} years old to create an account`,
+				);
+			}
+
+			// PII minimization: after age validation passes, strip month/day and keep only birth year.
+			data.date_of_birth = data.date_of_birth.slice(0, 4) + '-01-01';
+		} else if (data.age_confirmed) {
+			// Age confirmation checkbox: user confirmed they are 13+, use placeholder DOB.
+			data.date_of_birth = '2000-01-01';
+		} else {
 			throw InputValidationError.create(
 				'date_of_birth',
-				`You must be at least ${minAge} years old to create an account`,
+				'You must provide your date of birth or confirm your age',
 			);
 		}
 

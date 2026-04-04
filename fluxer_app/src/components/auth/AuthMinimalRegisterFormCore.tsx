@@ -19,7 +19,6 @@
 
 import * as AuthenticationActionCreators from '@app/actions/AuthenticationActionCreators';
 import styles from '@app/components/auth/AuthPageStyles.module.css';
-import {DateOfBirthField} from '@app/components/auth/DateOfBirthField';
 import FormField from '@app/components/auth/FormField';
 import {type MissingField, SubmitTooltip, shouldDisableSubmit} from '@app/components/auth/SubmitTooltip';
 import {ExternalLink} from '@app/components/common/ExternalLink';
@@ -72,9 +71,7 @@ export function AuthMinimalRegisterFormCore({
 		formValues: {...initialDraft.formValues},
 	});
 
-	const [selectedMonth, setSelectedMonthState] = useState(initialDraft.selectedMonth);
-	const [selectedDay, setSelectedDayState] = useState(initialDraft.selectedDay);
-	const [selectedYear, setSelectedYearState] = useState(initialDraft.selectedYear);
+	const [ageConfirmed, setAgeConfirmedState] = useState(initialDraft.ageConfirmed ?? false);
 	const [consent, setConsentState] = useState(initialDraft.consent);
 
 	const initialValues: Record<string, string> = {
@@ -95,26 +92,10 @@ export function AuthMinimalRegisterFormCore({
 		[draftKey, setRegisterFormDraft],
 	);
 
-	const handleMonthChange = useCallback(
-		(month: string) => {
-			setSelectedMonthState(month);
-			persistDraft({selectedMonth: month});
-		},
-		[persistDraft],
-	);
-
-	const handleDayChange = useCallback(
-		(day: string) => {
-			setSelectedDayState(day);
-			persistDraft({selectedDay: day});
-		},
-		[persistDraft],
-	);
-
-	const handleYearChange = useCallback(
-		(year: string) => {
-			setSelectedYearState(year);
-			persistDraft({selectedYear: year});
+	const handleAgeConfirmedChange = useCallback(
+		(nextAgeConfirmed: boolean) => {
+			setAgeConfirmedState(nextAgeConfirmed);
+			persistDraft({ageConfirmed: nextAgeConfirmed});
 		},
 		[persistDraft],
 	);
@@ -128,14 +109,9 @@ export function AuthMinimalRegisterFormCore({
 	);
 
 	const handleRegisterSubmit = async (values: Record<string, string>) => {
-		const dateOfBirth =
-			selectedYear && selectedMonth && selectedDay
-				? `${selectedYear}-${selectedMonth.padStart(2, '0')}-${selectedDay.padStart(2, '0')}`
-				: '';
-
 		const response = await AuthenticationActionCreators.register({
 			global_name: values.global_name || undefined,
-			date_of_birth: dateOfBirth,
+			age_confirmed: ageConfirmed,
 			consent,
 			invite_code: inviteCode,
 		});
@@ -171,11 +147,11 @@ export function AuthMinimalRegisterFormCore({
 	);
 	const missingFields = useMemo(() => {
 		const missing: Array<MissingField> = [];
-		if (!selectedMonth || !selectedDay || !selectedYear) {
-			missing.push({key: 'date_of_birth', label: t`Date of Birth`});
+		if (!ageConfirmed) {
+			missing.push({key: 'age_confirmed', label: t`Age Confirmation`});
 		}
 		return missing;
-	}, [selectedMonth, selectedDay, selectedYear]);
+	}, [ageConfirmed]);
 
 	const globalNameValue = form.getValue('global_name');
 
@@ -192,15 +168,16 @@ export function AuthMinimalRegisterFormCore({
 				error={form.getError('global_name') || fieldErrors?.global_name}
 			/>
 
-			<DateOfBirthField
-				selectedMonth={selectedMonth}
-				selectedDay={selectedDay}
-				selectedYear={selectedYear}
-				onMonthChange={handleMonthChange}
-				onDayChange={handleDayChange}
-				onYearChange={handleYearChange}
-				error={fieldErrors?.date_of_birth}
-			/>
+			<div className={styles.consentRow}>
+				<Checkbox checked={ageConfirmed} onChange={handleAgeConfirmedChange}>
+					<span className={styles.consentLabel}>
+						<Trans>I confirm I am 13 years of age or older</Trans>
+					</span>
+				</Checkbox>
+				{fieldErrors?.date_of_birth && (
+					<span className={styles.usernameError}>{fieldErrors.date_of_birth}</span>
+				)}
+			</div>
 
 			{extraContent}
 

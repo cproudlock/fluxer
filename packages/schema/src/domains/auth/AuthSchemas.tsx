@@ -43,7 +43,9 @@ export const RegisterRequest = z.object({
 	password: PasswordType.optional().describe('Password for the new account'),
 	date_of_birth: createStringType(10, 10)
 		.refine((value) => /^\d{4}-\d{2}-\d{2}$/.test(value), 'Invalid date format')
+		.optional()
 		.describe('Date of birth in YYYY-MM-DD format'),
+	age_confirmed: z.boolean().optional().describe('Whether user confirms they are 13 years of age or older'),
 	consent: z.boolean().describe('Whether user consents to terms of service'),
 	invite_code: createStringType(0, 256).nullish().describe('Guild invite code to join after registration'),
 });

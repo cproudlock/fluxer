@@ -24,6 +24,7 @@ export interface AuthRegisterFormDraft {
 	selectedMonth: string;
 	selectedDay: string;
 	selectedYear: string;
+	ageConfirmed: boolean;
 	consent: boolean;
 }
 
@@ -32,6 +33,7 @@ export const EMPTY_AUTH_REGISTER_FORM_DRAFT: AuthRegisterFormDraft = {
 	selectedMonth: '',
 	selectedDay: '',
 	selectedYear: '',
+	ageConfirmed: false,
 	consent: false,
 };
 
