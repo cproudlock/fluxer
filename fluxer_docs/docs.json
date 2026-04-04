@@ -71,12 +71,12 @@
 					{
 						"group": "Self-hosting",
 						"pages": [
-							"self-hosting/index",
-							"self-hosting/quickstart",
-							"self-hosting/configuration",
-							"self-hosting/architecture",
-							"self-hosting/voice",
-							"self-hosting/upgrading"
+							"self_hosting/overview",
+							"self_hosting/quickstart",
+							"self_hosting/configuration",
+							"self_hosting/architecture",
+							"self_hosting/voice",
+							"self_hosting/upgrading"
 						]
 					}
 				]
