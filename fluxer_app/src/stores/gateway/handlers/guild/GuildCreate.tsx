@@ -65,7 +65,13 @@ export function handleGuildCreate(data: GuildReadyData, _context: GatewayHandler
 	MemberSidebarStore.handleGuildCreate(data.id);
 
 	if (data.channels.length > 0 && !data.unavailable) {
-		ChannelStore.handleGuildCreate(data);
+		// Filter out archived threads from guild channel list - active threads
+		// are fetched separately via /threads/active endpoint below
+		const filtered = {
+			...data,
+			channels: data.channels.filter((c: any) => !c.thread_metadata?.archived),
+		};
+		ChannelStore.handleGuildCreate(filtered);
 	}
 
 	GuildMemberStore.handleGuildCreate(data);
