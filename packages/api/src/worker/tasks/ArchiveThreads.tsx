@@ -35,7 +35,10 @@ const archiveThreads: WorkerTaskHandler = async () => {
 	const {channelRepository, guildRepository, gatewayService} = getWorkerDependencies();
 	const now = Date.now();
 	let archivedCount = 0;
+	let checkedCount = 0;
 	let lastGuildId: GuildID | undefined;
+
+	Logger.info('ArchiveThreads: starting sweep');
 
 	while (true) {
 		const guilds = await guildRepository.listAllGuildsPaginated(GUILD_PAGE_SIZE, lastGuildId);
@@ -47,6 +50,7 @@ const archiveThreads: WorkerTaskHandler = async () => {
 			);
 
 			for (const threadRow of activeThreads) {
+				checkedCount++;
 				const thread = await channelRepository.channelData.findUnique(threadRow.thread_id);
 				if (!thread || !thread.isThread()) continue;
 				if (thread.threadArchived) continue;
@@ -56,6 +60,16 @@ const archiveThreads: WorkerTaskHandler = async () => {
 				if (duration === 0) continue; // 0 = never auto-archive
 				const durationMs = duration * 60 * 1000;
 				const expiresAt = archiveTimestamp + durationMs;
+
+				Logger.debug({
+					threadId: thread.id.toString(),
+					name: thread.name,
+					duration,
+					archiveTimestamp: new Date(archiveTimestamp).toISOString(),
+					expiresAt: new Date(expiresAt).toISOString(),
+					now: new Date(now).toISOString(),
+					expired: now >= expiresAt,
+				}, 'ArchiveThreads: checking thread');
 
 				if (now >= expiresAt) {
 					const updatedRow = thread.toRow();
@@ -99,9 +113,7 @@ const archiveThreads: WorkerTaskHandler = async () => {
 		if (guilds.length < GUILD_PAGE_SIZE) break;
 	}
 
-	if (archivedCount > 0) {
-		Logger.info({archivedCount}, 'ArchiveThreads: archived expired threads');
-	}
+	Logger.info({archivedCount, checkedCount}, 'ArchiveThreads: sweep complete');
 };
 
 export default archiveThreads;
