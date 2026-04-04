@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - echowire-refactor
+      - echowire
   pull_request:
     types: [opened, reopened, synchronize]
 

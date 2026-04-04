@@ -3,7 +3,7 @@ name: migrate scylladb
 on:
   push:
     branches:
-      - echowire-refactor
+      - echowire
     paths:
       - fluxer_devops/cassandra/migrations/**/*.cql
   workflow_dispatch:
