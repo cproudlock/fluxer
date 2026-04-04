@@ -68,7 +68,7 @@ export const UserProfileBadges: React.FC<UserProfileBadgesProps> = observer(
 					type: 'icon',
 					key: 'staff',
 					iconUrl: cdnUrl('badges/staff.svg'),
-					tooltip: t`Fluxer Staff`,
+					tooltip: t`Echowire Staff`,
 					url: Routes.careers(),
 				});
 			}

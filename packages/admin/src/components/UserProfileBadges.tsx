@@ -51,7 +51,7 @@ export function UserProfileBadges({config, user, size = 'sm', class: className}:
 		badges.push({
 			key: 'staff',
 			iconUrl: `${staticCdnEndpoint}/badges/staff.svg`,
-			tooltip: 'Fluxer Staff',
+			tooltip: 'Echowire Staff',
 		});
 	}
 

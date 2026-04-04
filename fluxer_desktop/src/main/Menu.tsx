@@ -23,7 +23,7 @@ import {app, Menu, type MenuItemConstructorOptions, shell} from 'electron';
 
 export function createApplicationMenu(): void {
 	const isCanary = BUILD_CHANNEL === 'canary';
-	const appName = isCanary ? 'Fluxer Canary' : 'Fluxer';
+	const appName = isCanary ? 'Echowire Canary' : 'Echowire';
 	const isMac = process.platform === 'darwin';
 
 	const template: Array<MenuItemConstructorOptions> = [];
@@ -183,20 +183,20 @@ export function createApplicationMenu(): void {
 			{
 				label: 'Website',
 				click: async () => {
-					await shell.openExternal('https://fluxer.app');
+					await shell.openExternal('https://echowire.org');
 				},
 			},
 			{
 				label: 'GitHub',
 				click: async () => {
-					await shell.openExternal('https://github.com/fluxerapp/fluxer');
+					await shell.openExternal('https://github.com/cproudlock/echowire');
 				},
 			},
 			{type: 'separator'},
 			{
 				label: 'Report Issue',
 				click: async () => {
-					await shell.openExternal('https://github.com/fluxerapp/fluxer/issues');
+					await shell.openExternal('https://github.com/cproudlock/echowire/issues');
 				},
 			},
 		],
