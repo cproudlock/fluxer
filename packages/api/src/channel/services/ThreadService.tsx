@@ -32,6 +32,7 @@ import {fetchOne} from '@fluxer/api/src/database/Cassandra';
 import {ChannelTypes, Permissions} from '@fluxer/constants/src/ChannelConstants';
 import {UnknownChannelError} from '@fluxer/errors/src/domains/channel/UnknownChannelError';
 import {MissingPermissionsError} from '@fluxer/errors/src/domains/core/MissingPermissionsError';
+import {requirePermission} from '@fluxer/api/src/utils/PermissionUtils';
 
 interface ThreadServiceDeps {
 	channelRepository: IChannelRepositoryAggregate;
@@ -406,6 +407,13 @@ export class ThreadService {
 	}
 
 	async listActiveThreads({userId, guildId, requestCache}: {userId: UserID; guildId: GuildID; requestCache: RequestCache}) {
+		// Verify guild membership via VIEW_CHANNEL permission check
+		await requirePermission(this.deps.gatewayService, {
+			guildId,
+			userId,
+			permission: Permissions.VIEW_CHANNEL,
+		});
+
 		const {channelRepository, userCacheService} = this.deps;
 		const threads = await channelRepository.channelData.listActiveThreads(guildId);
 

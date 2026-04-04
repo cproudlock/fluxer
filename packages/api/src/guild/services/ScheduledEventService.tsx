@@ -71,7 +71,11 @@ export class ScheduledEventService {
 	) {}
 
 	async listEvents(params: {userId: UserID; guildId: GuildID}): Promise<Array<GuildScheduledEventResponse>> {
-		// Any guild member can view events — membership is verified by the gateway
+		await requirePermission(this.gatewayService, {
+			guildId: params.guildId,
+			userId: params.userId,
+			permission: Permissions.VIEW_CHANNEL,
+		});
 		const rows = await this.repository.listByGuild(params.guildId);
 		const transitioned = rows.map(autoTransitionStatus);
 
@@ -240,8 +244,9 @@ export class ScheduledEventService {
 			created_at: new Date(),
 		});
 
-		const newCount = (existing.user_count ?? 0) + 1;
-		await this.repository.update(params.guildId, params.eventId, {user_count: newCount});
+		// Derive count from actual rows to avoid read-modify-write race
+		const users = await this.repository.listUsers(params.guildId, params.eventId);
+		await this.repository.update(params.guildId, params.eventId, {user_count: users.length});
 
 		await this.gatewayService.dispatchGuild({
 			guildId: params.guildId,
@@ -269,8 +274,9 @@ export class ScheduledEventService {
 
 		await this.repository.removeUser(params.guildId, params.eventId, params.userId);
 
-		const newCount = Math.max(0, (existing.user_count ?? 0) - 1);
-		await this.repository.update(params.guildId, params.eventId, {user_count: newCount});
+		// Derive count from actual rows to avoid read-modify-write race
+		const users = await this.repository.listUsers(params.guildId, params.eventId);
+		await this.repository.update(params.guildId, params.eventId, {user_count: users.length});
 
 		await this.gatewayService.dispatchGuild({
 			guildId: params.guildId,
@@ -288,6 +294,11 @@ export class ScheduledEventService {
 		guildId: GuildID;
 		eventId: ScheduledEventID;
 	}): Promise<Array<{user_id: string; event_id: string; guild_id: string}>> {
+		await requirePermission(this.gatewayService, {
+			guildId: params.guildId,
+			userId: params.userId,
+			permission: Permissions.VIEW_CHANNEL,
+		});
 		const users = await this.repository.listUsers(params.guildId, params.eventId);
 		return users.map((u) => ({
 			user_id: String(u.user_id),
