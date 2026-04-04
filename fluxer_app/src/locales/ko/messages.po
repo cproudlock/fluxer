@@ -1819,7 +1819,8 @@ msgstr "맞춤 배경 추가"
 msgid "Add a different account"
 msgstr "다른 계정 추가"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:244
+#: src/components/modals/CreateScheduledEventModal.tsx:277
+#: src/components/modals/EditScheduledEventModal.tsx:234
 msgid "Add a location, link, or something."
 msgstr ""
 
@@ -1999,6 +2000,10 @@ msgstr "스티커 양식 추가"
 #: src/components/voice/VoiceParticipantTile.tsx:1345
 msgid "Add Stream"
 msgstr "스트림 추가"
+
+#: src/components/modals/ScheduledEventDetailModal.tsx:301
+msgid "Add to Calendar"
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:101
 msgid "Add to Dictionary"
@@ -2285,7 +2290,7 @@ msgstr "모든 메시지"
 msgid "All messages you have sent across the platform"
 msgstr "플랫폼에서 보낸 모든 메시지"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:419
+#: src/components/modals/CreateScheduledEventModal.tsx:519
 msgid "All set. Now share your event!"
 msgstr ""
 
@@ -2830,7 +2835,7 @@ msgid "Are you sure you want to block {0}? They won't be able to message you or 
 msgstr "{0}님을 차단하시겠어요? 메시지나 친구 요청을 보낼 수 없게 됩니다."
 
 #. placeholder {0}: event.name
-#: src/components/layout/ScheduledEventsBanner.tsx:139
+#: src/components/layout/ScheduledEventsBanner.tsx:147
 msgid "Are you sure you want to cancel \"{0}\"?"
 msgstr ""
 
@@ -2869,13 +2874,13 @@ msgstr ""
 #: src/components/channel/MobileMemesPicker.tsx:545
 #: src/components/channel/pickers/memes/MemeGridItem.tsx:120
 #: src/components/channel/ThreadPanel.tsx:199
-#: src/components/modals/ScheduledEventDetailModal.tsx:115
+#: src/components/modals/ScheduledEventDetailModal.tsx:173
 #: src/components/uikit/context_menu/ThreadContextMenu.tsx:191
 msgid "Are you sure you want to delete \"{0}\"? This action cannot be undone."
 msgstr "\"{0}\"을(를) 삭제하시겠어요? 이 작업은 되돌릴 수 없습니다."
 
 #. placeholder {0}: event.name
-#: src/components/layout/ScheduledEventsBanner.tsx:165
+#: src/components/layout/ScheduledEventsBanner.tsx:173
 msgid "Are you sure you want to delete \"{0}\"? This cannot be undone."
 msgstr ""
 
@@ -3443,7 +3448,7 @@ msgstr "평균 핑:"
 
 #: src/components/auth/IpAuthorizationScreen.tsx:154
 #: src/components/modals/AddConnectionModal.tsx:312
-#: src/components/modals/CreateScheduledEventModal.tsx:377
+#: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
 #: src/components/modals/RequiredActionModal.tsx:655
 #: src/components/pages/OAuthAuthorizePage.tsx:651
@@ -4190,7 +4195,7 @@ msgstr "참여자가 {VOICE_CHANNEL_CAMERA_USER_LIMIT}명을 초과하면 카메
 #: src/components/modals/CreateFavoriteCategoryModal.tsx:75
 #: src/components/modals/CreateForumPostModal.tsx:142
 #: src/components/modals/CreatePackModal.tsx:106
-#: src/components/modals/CreateScheduledEventModal.tsx:381
+#: src/components/modals/CreateScheduledEventModal.tsx:480
 #: src/components/modals/CreateThreadModal.tsx:94
 #: src/components/modals/DeviceRevokeModal.tsx:79
 #: src/components/modals/DisablePiPConfirmModal.tsx:70
@@ -4200,6 +4205,7 @@ msgstr "참여자가 {VOICE_CHANNEL_CAMERA_USER_LIMIT}명을 초과하면 카메
 #: src/components/modals/EditFavoriteMemeModal.tsx:85
 #: src/components/modals/EditGuildStickerModal.tsx:113
 #: src/components/modals/EditPackModal.tsx:103
+#: src/components/modals/EditScheduledEventModal.tsx:362
 #: src/components/modals/EditThreadTagsModal.tsx:124
 #: src/components/modals/EmailChangeModal.tsx:202
 #: src/components/modals/EmailChangeModal.tsx:233
@@ -4245,9 +4251,9 @@ msgstr "참여자가 {VOICE_CHANNEL_CAMERA_USER_LIMIT}명을 초과하면 카메
 msgid "Cancel"
 msgstr "취소"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:138
-#: src/components/layout/ScheduledEventsBanner.tsx:140
-#: src/components/layout/ScheduledEventsBanner.tsx:153
+#: src/components/layout/ScheduledEventsBanner.tsx:146
+#: src/components/layout/ScheduledEventsBanner.tsx:148
+#: src/components/layout/ScheduledEventsBanner.tsx:161
 msgid "Cancel Event"
 msgstr ""
 
@@ -4307,7 +4313,7 @@ msgstr "선물을 사용할 수 없음"
 msgid "caps"
 msgstr "대문자"
 
-#: src/lib/CaptchaInterceptor.tsx:134
+#: src/lib/CaptchaInterceptor.tsx:194
 msgid "Captcha verification failed. Please try again."
 msgstr "캡차 인증에 실패했습니다. 다시 시도하세요."
 
@@ -5255,7 +5261,7 @@ msgstr "클라이언트 비밀키 재생성됨. 이전 비밀키 사용 중인 �
 #: src/components/modals/AddFavoriteChannelModal.tsx:200
 #: src/components/modals/BanDetailsModal.tsx:126
 #: src/components/modals/components/SettingsModalHeader.tsx:98
-#: src/components/modals/CreateScheduledEventModal.tsx:453
+#: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
 #: src/components/modals/MediaModal.tsx:349
@@ -5263,7 +5269,7 @@ msgstr "클라이언트 비밀키 재생성됨. 이전 비밀키 사용 중인 �
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
 #: src/components/modals/PackInviteModal.tsx:152
-#: src/components/modals/ScheduledEventDetailModal.tsx:243
+#: src/components/modals/ScheduledEventDetailModal.tsx:328
 #: src/components/uikit/sheet/Sheet.tsx:249
 #: src/components/voice/PiPOverlay.tsx:810
 #: src/components/voice/VoiceConnectionStatus.tsx:150
@@ -6093,7 +6099,7 @@ msgstr "URL이 클립보드에 복사됨"
 #: src/components/auth/HandoffCodeDisplay.tsx:106
 #: src/components/modals/AddConnectionModal.tsx:190
 #: src/components/modals/AddConnectionModal.tsx:191
-#: src/components/modals/CreateScheduledEventModal.tsx:446
+#: src/components/modals/CreateScheduledEventModal.tsx:546
 #: src/components/modals/shared/CopyLinkSection.tsx:52
 #: src/components/modals/ThemeAcceptModal.tsx:162
 #: src/lib/markdown/renderers/common/CodeElements.tsx:57
@@ -6102,7 +6108,7 @@ msgstr "복사됨!"
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:124
 #: src/components/modals/BackupCodesModal.tsx:86
-#: src/components/modals/CreateScheduledEventModal.tsx:446
+#: src/components/modals/CreateScheduledEventModal.tsx:546
 #: src/components/modals/shared/CopyLinkSection.tsx:52
 #: src/components/modals/tabs/applications_tab/application_detail/OAuthBuilderSection.tsx:150
 #: src/components/modals/tabs/GiftInventoryTab.tsx:145
@@ -6170,11 +6176,11 @@ msgstr "이모지 ID 복사"
 msgid "Copy endpoint"
 msgstr "엔드포인트 복사"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:192
+#: src/components/layout/ScheduledEventsBanner.tsx:200
 msgid "Copy Event ID"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:124
+#: src/components/layout/ScheduledEventsBanner.tsx:132
 msgid "Copy Event Link"
 msgstr ""
 
@@ -6271,7 +6277,7 @@ msgstr "스티커 ID 복사"
 msgid "Copy Text"
 msgstr "텍스트 복사"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:422
+#: src/components/modals/CreateScheduledEventModal.tsx:522
 msgid "Copy the event link below to invite people to your event."
 msgstr ""
 
@@ -6348,6 +6354,16 @@ msgstr "거주 국가"
 #: src/components/modals/utils/SettingsSearchIndex.tsx:57
 msgid "cover"
 msgstr "덮개"
+
+#: src/components/modals/CreateScheduledEventModal.tsx:361
+#: src/components/modals/EditScheduledEventModal.tsx:297
+msgid "Cover Image"
+msgstr ""
+
+#: src/components/modals/CreateScheduledEventModal.tsx:374
+#: src/components/modals/EditScheduledEventModal.tsx:310
+msgid "Cover preview"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:138
 msgid "cozy"
@@ -6492,8 +6508,8 @@ msgstr "이모지 및 스티커 만들기"
 msgid "Create Emoji Pack"
 msgstr "이모지 팩 만들기"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:245
-#: src/components/modals/CreateScheduledEventModal.tsx:395
+#: src/components/layout/ScheduledEventsBanner.tsx:253
+#: src/components/modals/CreateScheduledEventModal.tsx:494
 #: src/components/modals/guild_tabs/ScheduledEventsSettingsTab.tsx:133
 msgid "Create Event"
 msgstr ""
@@ -7262,7 +7278,7 @@ msgstr "삭제"
 #: src/components/modals/guild_tabs/ScheduledEventsSettingsTab.tsx:70
 #: src/components/modals/guild_tabs/SoundboardSettingsTab.tsx:138
 #: src/components/modals/guild_tabs/SoundboardSettingsTab.tsx:209
-#: src/components/modals/ScheduledEventDetailModal.tsx:239
+#: src/components/modals/ScheduledEventDetailModal.tsx:323
 #: src/components/modals/tabs/account_security_tab/SecurityTab.tsx:344
 #: src/components/modals/tabs/component_gallery_tab/ButtonsTab.tsx:157
 #: src/components/modals/tabs/component_gallery_tab/ButtonsTab.tsx:242
@@ -7368,12 +7384,12 @@ msgstr "이모지 삭제"
 msgid "Delete Emoji Failed"
 msgstr "이모지 삭제 실패"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:164
-#: src/components/layout/ScheduledEventsBanner.tsx:166
-#: src/components/layout/ScheduledEventsBanner.tsx:179
+#: src/components/layout/ScheduledEventsBanner.tsx:172
+#: src/components/layout/ScheduledEventsBanner.tsx:174
+#: src/components/layout/ScheduledEventsBanner.tsx:187
 #: src/components/modals/guild_tabs/ScheduledEventsSettingsTab.tsx:68
-#: src/components/modals/ScheduledEventDetailModal.tsx:114
-#: src/components/modals/ScheduledEventDetailModal.tsx:116
+#: src/components/modals/ScheduledEventDetailModal.tsx:172
+#: src/components/modals/ScheduledEventDetailModal.tsx:174
 msgid "Delete Event"
 msgstr ""
 
@@ -7555,10 +7571,11 @@ msgid "description"
 msgstr "설명"
 
 #: src/components/modals/CreatePackModal.tsx:95
-#: src/components/modals/CreateScheduledEventModal.tsx:314
+#: src/components/modals/CreateScheduledEventModal.tsx:350
 #: src/components/modals/EditPackModal.tsx:91
+#: src/components/modals/EditScheduledEventModal.tsx:286
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:292
-#: src/components/modals/ScheduledEventDetailModal.tsx:191
+#: src/components/modals/ScheduledEventDetailModal.tsx:262
 #: src/components/modals/sticker_form/StickerFormFields.tsx:111
 msgid "Description"
 msgstr "설명"
@@ -8404,6 +8421,7 @@ msgstr ""
 msgid "Echowire Staff"
 msgstr ""
 
+#: src/components/modals/ScheduledEventDetailModal.tsx:319
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:90
 #: src/components/modals/tabs/LinkedAccountsTab.tsx:186
 #: src/components/modals/tabs/LinkedAccountsTab.tsx:187
@@ -8460,6 +8478,10 @@ msgstr "연결 편집"
 #: src/components/modals/EditPackModal.tsx:56
 msgid "Edit Emoji Pack"
 msgstr "이모지 팩 편집"
+
+#: src/components/modals/EditScheduledEventModal.tsx:153
+msgid "Edit Event"
+msgstr ""
 
 #: src/utils/PermissionUtils.tsx:246
 msgid "Edit global settings like name, description, and icon."
@@ -8956,11 +8978,13 @@ msgstr "활성화된 기능: {0}."
 msgid "Enabled NSFW."
 msgstr "NSFW가 활성화되었습니다."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:296
+#: src/components/modals/CreateScheduledEventModal.tsx:330
+#: src/components/modals/EditScheduledEventModal.tsx:266
 msgid "End Date (Optional)"
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:304
+#: src/components/modals/CreateScheduledEventModal.tsx:338
+#: src/components/modals/EditScheduledEventModal.tsx:274
 msgid "End Time"
 msgstr ""
 
@@ -8990,7 +9014,8 @@ msgstr "형식 ABCD-1234로 코드를 입력하세요."
 msgid "Enter a gift code to redeem Plutonium for your account."
 msgstr "계정에 플루토늄을 받으려면 선물 코드를 입력하세요."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:241
+#: src/components/modals/CreateScheduledEventModal.tsx:274
+#: src/components/modals/EditScheduledEventModal.tsx:231
 msgid "Enter a location"
 msgstr ""
 
@@ -9202,34 +9227,39 @@ msgstr "EU 중앙"
 msgid "Evens out loud and quiet audio for more consistent voice levels"
 msgstr "Evens out loud and quiet audio for more consistent voice levels"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:145
+#: src/components/layout/ScheduledEventsBanner.tsx:153
 msgid "Event cancelled"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:171
+#: src/components/layout/ScheduledEventsBanner.tsx:179
 #: src/components/modals/guild_tabs/ScheduledEventsSettingsTab.tsx:75
-#: src/components/modals/ScheduledEventDetailModal.tsx:121
+#: src/components/modals/ScheduledEventDetailModal.tsx:179
 msgid "Event deleted"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:188
+#: src/components/layout/ScheduledEventsBanner.tsx:196
 msgid "Event ID copied"
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:156
+#: src/components/modals/CreateScheduledEventModal.tsx:189
 msgid "Event Info"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:120
+#: src/components/layout/ScheduledEventsBanner.tsx:128
 msgid "Event link copied"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:89
+#: src/components/layout/ScheduledEventsBanner.tsx:97
 msgid "Event started"
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:263
+#: src/components/modals/CreateScheduledEventModal.tsx:296
+#: src/components/modals/EditScheduledEventModal.tsx:157
 msgid "Event Topic"
+msgstr ""
+
+#: src/components/modals/EditScheduledEventModal.tsx:142
+msgid "Event updated"
 msgstr ""
 
 #: src/components/modals/utils/GuildSettingsConstants.tsx:140
@@ -9458,7 +9488,7 @@ msgstr "외부 링크"
 msgid "External links can be dangerous. Please be careful."
 msgstr "외부 링크는 위험할 수 있으니 조심하세요."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:354
+#: src/components/modals/CreateScheduledEventModal.tsx:453
 msgid "External Location"
 msgstr ""
 
@@ -9539,7 +9569,7 @@ msgstr "클립보드에 복사하지 못했습니다"
 msgid "Failed to copy URL"
 msgstr "URL을 복사하지 못했습니다"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:138
+#: src/components/modals/CreateScheduledEventModal.tsx:170
 msgid "Failed to create event"
 msgstr ""
 
@@ -9590,7 +9620,7 @@ msgstr "채널을 삭제하지 못했습니다"
 msgid "Failed to delete emoji. Please try again."
 msgstr "이모지 삭제에 실패했습니다. 다시 시도해 주세요."
 
-#: src/components/modals/ScheduledEventDetailModal.tsx:124
+#: src/components/modals/ScheduledEventDetailModal.tsx:182
 msgid "Failed to delete event"
 msgstr ""
 
@@ -9940,7 +9970,11 @@ msgstr "채널 권한 업데이트 실패"
 msgid "Failed to update emoji name. Reverted to the previous name."
 msgstr "이모지 이름을 업데이트하지 못했습니다. 이전 이름으로 되돌렸습니다."
 
-#: src/components/modals/ScheduledEventDetailModal.tsx:104
+#: src/components/modals/EditScheduledEventModal.tsx:145
+msgid "Failed to update event"
+msgstr ""
+
+#: src/components/modals/ScheduledEventDetailModal.tsx:156
 msgid "Failed to update interest"
 msgstr ""
 
@@ -10130,7 +10164,7 @@ msgstr "파일 이름:"
 msgid "Files will be sent immediately without preview."
 msgstr "파일은 미리 보기 없이 바로 전송됩니다."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:259
+#: src/components/modals/CreateScheduledEventModal.tsx:292
 msgid "Fill out the details of your event."
 msgstr ""
 
@@ -11299,7 +11333,7 @@ msgstr "핸들"
 msgid "Hang on while we check for scheduled messages."
 msgstr "예약된 메시지를 확인하는 동안 잠시만 기다려 주세요."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:191
+#: src/components/modals/CreateScheduledEventModal.tsx:224
 msgid "Hang out with voice, video, screenshare, and Go Live."
 msgstr ""
 
@@ -11407,7 +11441,7 @@ msgstr "도움말 센터"
 msgid "Help people organize their posts into subcategories and filter searches."
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:361
+#: src/components/modals/CreateScheduledEventModal.tsx:460
 msgid "Here's a preview of your event."
 msgstr ""
 
@@ -12241,13 +12275,13 @@ msgstr "상호작용"
 msgid "Interactive Checkbox"
 msgstr "인터랙티브 체크박스"
 
-#: src/components/modals/ScheduledEventDetailModal.tsx:157
+#: src/components/modals/ScheduledEventDetailModal.tsx:228
 msgid "interested"
 msgstr ""
 
-#: src/components/layout/ScheduledEventsBanner.tsx:113
-#: src/components/modals/ScheduledEventDetailModal.tsx:202
-#: src/components/modals/ScheduledEventDetailModal.tsx:252
+#: src/components/layout/ScheduledEventsBanner.tsx:121
+#: src/components/modals/ScheduledEventDetailModal.tsx:273
+#: src/components/modals/ScheduledEventDetailModal.tsx:337
 msgid "Interested"
 msgstr ""
 
@@ -12682,7 +12716,7 @@ msgstr "음성 채팅 참여"
 msgid "Join Voice Call"
 msgstr "음성 통화 참여"
 
-#: src/components/modals/ScheduledEventDetailModal.tsx:231
+#: src/components/modals/ScheduledEventDetailModal.tsx:310
 msgid "Join Voice Channel"
 msgstr ""
 
@@ -13377,8 +13411,12 @@ msgstr "현지화"
 msgid "Locally override instance limits"
 msgstr "인스턴스 제한 로컬 오버라이드"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:155
+#: src/components/modals/CreateScheduledEventModal.tsx:188
 msgid "Location"
+msgstr ""
+
+#: src/components/modals/EditScheduledEventModal.tsx:168
+msgid "Location Type"
 msgstr ""
 
 #: src/components/auth/AuthBottomLink.tsx:36
@@ -15082,8 +15120,8 @@ msgid "Newest First"
 msgstr "최신순 먼저"
 
 #: src/components/bottomsheets/ChannelSearchBottomSheet.tsx:394
-#: src/components/modals/CreateScheduledEventModal.tsx:385
-#: src/components/modals/CreateScheduledEventModal.tsx:390
+#: src/components/modals/CreateScheduledEventModal.tsx:484
+#: src/components/modals/CreateScheduledEventModal.tsx:489
 #: src/components/pages/OAuthAuthorizePage.tsx:900
 msgid "Next"
 msgstr "다음"
@@ -15582,6 +15620,8 @@ msgstr "소음 억제"
 msgid "Non-Animated Emoji ({0})"
 msgstr "비움직이는 이모지 ({0})"
 
+#: src/components/modals/CreateScheduledEventModal.tsx:340
+#: src/components/modals/EditScheduledEventModal.tsx:276
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:157
 #: src/components/modals/tabs/accessibility_tab/VisualTab.tsx:48
 #: src/components/modals/tabs/developer_options_tab/AccountPremiumTab.tsx:50
@@ -15613,8 +15653,8 @@ msgstr "회원이 충분하지 않습니다."
 msgid "Not granted"
 msgstr "부여되지 않음"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:113
-#: src/components/modals/ScheduledEventDetailModal.tsx:252
+#: src/components/layout/ScheduledEventsBanner.tsx:121
+#: src/components/modals/ScheduledEventDetailModal.tsx:337
 msgid "Not Interested"
 msgstr ""
 
@@ -18659,7 +18699,7 @@ msgstr ""
 msgid "Reverb Subscription"
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:157
+#: src/components/modals/CreateScheduledEventModal.tsx:190
 msgid "Review"
 msgstr ""
 
@@ -18938,6 +18978,7 @@ msgid "Save Banner"
 msgstr "배너 저장"
 
 #: src/components/modals/components/SettingsModalHeader.tsx:84
+#: src/components/modals/EditScheduledEventModal.tsx:365
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
@@ -19411,7 +19452,8 @@ msgstr "선택"
 msgid "Select a category"
 msgstr "카테고리를 선택하세요"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:224
+#: src/components/modals/CreateScheduledEventModal.tsx:257
+#: src/components/modals/EditScheduledEventModal.tsx:214
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/IdleSettingsSection.tsx:67
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/SystemWelcomeSection.tsx:63
 msgid "Select a channel"
@@ -19524,6 +19566,13 @@ msgstr ""
 #: src/components/auth/DesktopHandoffAccountSelector.tsx:109
 msgid "Select the account you want to sign in with on the desktop app."
 msgstr "데스크톱 앱에 로그인할 계정을 선택하세요."
+
+#: src/components/modals/CreateScheduledEventModal.tsx:322
+#: src/components/modals/CreateScheduledEventModal.tsx:343
+#: src/components/modals/EditScheduledEventModal.tsx:258
+#: src/components/modals/EditScheduledEventModal.tsx:279
+msgid "Select time"
+msgstr ""
 
 #: src/components/pages/report/ReportStepSelection.tsx:45
 msgid "Select what you want to report."
@@ -20637,7 +20686,7 @@ msgstr "SMS 이중 인증이 활성화되어 있습니다"
 msgid "Snaps to increments of 5."
 msgstr "5 단위로 맞춰집니다."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:168
+#: src/components/modals/CreateScheduledEventModal.tsx:201
 msgid "So no one gets lost on where to go."
 msgstr ""
 
@@ -20714,7 +20763,8 @@ msgstr "문제가 발생했어요."
 msgid "Something went wrong. Please try again later."
 msgstr "문제가 발생했습니다. 나중에 다시 시도해 주세요."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:212
+#: src/components/modals/CreateScheduledEventModal.tsx:245
+#: src/components/modals/EditScheduledEventModal.tsx:205
 msgid "Somewhere Else"
 msgstr ""
 
@@ -21014,7 +21064,8 @@ msgstr "카메라 테스트 시작 및 효과 설정"
 msgid "Start curating a custom emoji pack that you can share and install."
 msgstr "공유하고 설치할 수 있는 맞춤 이모지 팩을 제작해 보세요."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:275
+#: src/components/modals/CreateScheduledEventModal.tsx:308
+#: src/components/modals/EditScheduledEventModal.tsx:244
 msgid "Start Date"
 msgstr ""
 
@@ -21022,7 +21073,7 @@ msgstr ""
 msgid "Start editing the focused message"
 msgstr "포커스된 메시지 편집 시작하기"
 
-#: src/components/layout/ScheduledEventsBanner.tsx:94
+#: src/components/layout/ScheduledEventsBanner.tsx:102
 msgid "Start Event"
 msgstr ""
 
@@ -21044,7 +21095,8 @@ msgstr "결과를 좁히려면 <0><1>@</1></0> <2><3>#</3></2> <4><5>!</5></4> <
 msgid "Start Sharing"
 msgstr "공유 시작"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:284
+#: src/components/modals/CreateScheduledEventModal.tsx:317
+#: src/components/modals/EditScheduledEventModal.tsx:253
 msgid "Start Time"
 msgstr ""
 
@@ -21651,7 +21703,8 @@ msgstr "팀 알파"
 msgid "telephone"
 msgstr "전화"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:317
+#: src/components/modals/CreateScheduledEventModal.tsx:353
+#: src/components/modals/EditScheduledEventModal.tsx:289
 msgid "Tell people a little more about your event."
 msgstr ""
 
@@ -21710,7 +21763,7 @@ msgstr "텍스트 채널"
 msgid "Text Channel Names"
 msgstr "텍스트 채널 이름"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:215
+#: src/components/modals/CreateScheduledEventModal.tsx:248
 msgid "Text channel, external link, or in-person location."
 msgstr ""
 
@@ -22112,7 +22165,7 @@ msgstr "이 연결은 확인되지 않았습니다."
 msgid "This conversation has been erased"
 msgstr "이 대화는 삭제되었습니다"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:364
+#: src/components/modals/CreateScheduledEventModal.tsx:463
 msgid "This event will auto start when it's time."
 msgstr ""
 
@@ -23685,7 +23738,7 @@ msgstr "제가 바꿀 때까지"
 msgid "Until I turn it back on"
 msgstr "제가 다시 켤 때까지"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:343
+#: src/components/modals/CreateScheduledEventModal.tsx:442
 msgid "Untitled Event"
 msgstr ""
 
@@ -23869,6 +23922,11 @@ msgstr "배경 업로드"
 #: src/components/modals/guild_tabs/guild_overview_tab/fields/GuildBannerUploadField.tsx:110
 msgid "Upload Banner"
 msgstr "배너 업로드"
+
+#: src/components/modals/CreateScheduledEventModal.tsx:417
+#: src/components/modals/EditScheduledEventModal.tsx:353
+msgid "Upload Cover Image"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:601
 msgid "Upload custom background"
@@ -24867,8 +24925,9 @@ msgstr "음성 채널"
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:583
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:778
 #: src/components/channel/channel_header/useChannelHeaderData.tsx:100
-#: src/components/modals/CreateScheduledEventModal.tsx:188
-#: src/components/modals/CreateScheduledEventModal.tsx:349
+#: src/components/modals/CreateScheduledEventModal.tsx:221
+#: src/components/modals/CreateScheduledEventModal.tsx:448
+#: src/components/modals/EditScheduledEventModal.tsx:186
 #: src/components/uikit/context_menu/items/ChannelMenuItems.tsx:322
 msgid "Voice Channel"
 msgstr "음성 채널"
@@ -25314,11 +25373,12 @@ msgstr "무슨 일이 일어나고 있나요?"
 msgid "What's included in your export:"
 msgstr "내보내기에 포함된 항목:"
 
-#: src/components/modals/CreateScheduledEventModal.tsx:256
+#: src/components/modals/CreateScheduledEventModal.tsx:289
 msgid "What's your event about?"
 msgstr ""
 
-#: src/components/modals/CreateScheduledEventModal.tsx:266
+#: src/components/modals/CreateScheduledEventModal.tsx:299
+#: src/components/modals/EditScheduledEventModal.tsx:160
 msgid "What's your event?"
 msgstr ""
 
@@ -25418,7 +25478,7 @@ msgstr "Fluxer에 직접 업로드할 때"
 msgid "Whenever someone pins a message, it'll appear here."
 msgstr "누군가 메시지를 고정하면 여기 표시됩니다."
 
-#: src/components/modals/CreateScheduledEventModal.tsx:165
+#: src/components/modals/CreateScheduledEventModal.tsx:198
 msgid "Where is your event?"
 msgstr ""
 
