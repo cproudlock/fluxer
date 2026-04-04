@@ -18,8 +18,8 @@
  */
 
 :global(html:not(.auth-page)) :local(.appContainer) {
-	height: 100svh;
-	min-height: 100svh;
+	height: 100dvh;
+	min-height: 100dvh;
 	box-sizing: border-box;
 	background: var(--background-primary);
 	padding-top: 0;

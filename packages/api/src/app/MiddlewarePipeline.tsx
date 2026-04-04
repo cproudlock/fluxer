@@ -57,7 +57,10 @@ function attachTraceparentHeader(ctx: HonoContext<HonoEnv>): void {
 }
 
 export function configureMiddleware(routes: HonoApp, options: MiddlewarePipelineOptions): void {
-	const {logger, nodeEnv, corsOrigins, setSentryUser, isTelemetryActive} = options;
+	const {logger, nodeEnv, corsOrigins, setSentryUser} = options;
+
+	// Health check must be registered before any middleware so it's never blocked
+	routes.get('/_health', async (ctx) => ctx.text('OK'));
 
 	const requestTelemetry = createServiceTelemetry({
 		serviceName: 'fluxer-api',
@@ -135,15 +138,4 @@ export function configureMiddleware(routes: HonoApp, options: MiddlewarePipeline
 		});
 	}
 
-	routes.get('/_health', async (ctx) => ctx.text('OK'));
-
-	if (isTelemetryActive) {
-		routes.get('/internal/telemetry', async (ctx) => {
-			return ctx.json({
-				telemetry_enabled: isTelemetryActive(),
-				service: 'fluxer_api',
-				timestamp: new Date().toISOString(),
-			});
-		});
-	}
 }

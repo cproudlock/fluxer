@@ -44,9 +44,11 @@ function registerCronJobs(cron: CronScheduler): void {
 	cron.upsert('processPendingBulkMessageDeletions', 'processPendingBulkMessageDeletions', {}, '0 */10 * * * *');
 	cron.upsert('processInactivityDeletions', 'processInactivityDeletions', {}, '0 0 */6 * * *');
 	cron.upsert('expireAttachments', 'expireAttachments', {}, '0 0 */12 * * *');
+	cron.upsert('expireChannelMessages', 'expireChannelMessages', {}, '0 */15 * * * *');
 	// cron.upsert('cleanupCsamEvidence', 'cleanupCsamEvidence', {}, '0 0 3 * * *');
 	// cron.upsert('csamScanConsumer', 'csamScanConsumer', {}, '* * * * * *');
 	cron.upsert('syncDiscoveryIndex', 'syncDiscoveryIndex', {}, '0 */15 * * * *');
+	cron.upsert('archiveThreads', 'archiveThreads', {}, '0 */5 * * * *');
 
 	Logger.info('Cron jobs registered successfully');
 }

@@ -29,6 +29,12 @@ export function openFilePicker({multiple = false, accept}: PickerOptions = {}): 
 		input['multiple'] = multiple;
 		if (accept) input['accept'] = accept;
 
+		// iOS WKWebView requires the input to be in the DOM for the picker to open
+		input.style.position = 'fixed';
+		input.style.top = '-9999px';
+		input.style.opacity = '0';
+		document.body.appendChild(input);
+
 		input['onchange'] = () => {
 			const files = Array.from(input['files'] ?? []);
 			resolve(files);

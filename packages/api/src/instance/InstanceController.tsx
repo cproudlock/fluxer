@@ -31,6 +31,46 @@ import {WellKnownFluxerResponse} from '@fluxer/schema/src/domains/instance/Insta
 import type {Hono} from 'hono';
 
 export function InstanceController(app: Hono<HonoEnv>) {
+	// Digital Asset Links for Android WebAuthn/passkey support
+	app.get('/.well-known/assetlinks.json', (ctx) => {
+		return ctx.json([
+			{
+				relation: ['delegate_permission/common.handle_all_urls', 'delegate_permission/common.get_login_creds'],
+				target: {
+					namespace: 'android_app',
+					package_name: 'org.echowire.twa',
+					sha256_cert_fingerprints: ['2F:7A:6D:CA:0D:B4:B7:4D:6F:66:BA:AB:4A:D9:5C:8E:1D:05:C3:C2:BD:DF:BC:17:A6:38:CF:0B:49:BE:04:B1'],
+				},
+			},
+		]);
+	});
+
+	// Apple App Site Association for iOS passkey/webcredentials support
+	app.get('/.well-known/apple-app-site-association', (ctx) => {
+		return ctx.json({
+			webcredentials: {
+				apps: ['34589PFK6A.org.echowire.ios'],
+			},
+			applinks: {
+				apps: [],
+				details: [
+					{
+						appID: '34589PFK6A.org.echowire.ios',
+						paths: ['/channels/*', '/invite/*'],
+					},
+				],
+			},
+		});
+	});
+
+	app.options('/.well-known/fluxer', (ctx) => {
+		ctx.header('Access-Control-Allow-Origin', '*');
+		ctx.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+		ctx.header('Access-Control-Allow-Headers', 'Content-Type');
+		ctx.header('Access-Control-Max-Age', '86400');
+		return ctx.body(null, 204);
+	});
+
 	app.get(
 		'/.well-known/fluxer',
 		RateLimitMiddleware(RateLimitConfigs.INSTANCE_INFO),

@@ -523,6 +523,7 @@ export class AuthMfaService {
 				},
 			});
 		} catch (_error) {
+			Logger.error({error: _error, expectedOrigin, rpID, credentialId, context}, 'WebAuthn authentication verification failed');
 			getMetricsService().counter({
 				name: 'auth.login.failure',
 				dimensions: {reason: 'mfa_invalid'},

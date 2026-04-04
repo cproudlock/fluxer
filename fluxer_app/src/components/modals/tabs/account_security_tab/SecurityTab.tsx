@@ -37,6 +37,7 @@ import * as DateUtils from '@app/utils/DateUtils';
 import * as WebAuthnUtils from '@app/utils/WebAuthnUtils';
 import {Trans, useLingui} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
+import {useRef} from 'react';
 import type React from 'react';
 
 const logger = new Logger('SecurityTab');
@@ -86,7 +87,10 @@ export const SecurityTabContent: React.FC<SecurityTabProps> = observer(
 	}) => {
 		const {t, i18n} = useLingui();
 
+		const addingPasskeyRef = useRef(false);
 		const handleAddPasskey = async () => {
+			if (addingPasskeyRef.current) return;
+			addingPasskeyRef.current = true;
 			try {
 				const options = await UserActionCreators.getWebAuthnRegistrationOptions();
 				const credential = await WebAuthnUtils.performRegistration(options);
@@ -103,6 +107,8 @@ export const SecurityTabContent: React.FC<SecurityTabProps> = observer(
 				);
 			} catch (error) {
 				logger.error('Failed to add passkey', error);
+			} finally {
+				addingPasskeyRef.current = false;
 			}
 		};
 

@@ -121,7 +121,7 @@ const ALL_TABS_DESCRIPTORS: Array<SettingsTabDescriptor> = [
 	{
 		type: 'plutonium',
 		category: 'user_settings',
-		label: msg`Fluxer Plutonium`,
+		label: msg`Echowire Reverb`,
 		icon: CrownIcon,
 	},
 	{
@@ -250,9 +250,10 @@ export const getSettingsTabs = (i18n: I18n): Array<SettingsTab> => {
 	}));
 
 	const isSelfHosted = RuntimeConfigStore.isSelfHosted();
+	const isIOSNativeApp = typeof navigator !== 'undefined' && /EchowireApp/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
 
 	return allTabs.filter((tab) => {
-		if (isSelfHosted && (tab.type === 'plutonium' || tab.type === 'gift_inventory')) {
+		if ((isSelfHosted || isIOSNativeApp) && (tab.type === 'plutonium' || tab.type === 'gift_inventory')) {
 			return false;
 		}
 		return true;

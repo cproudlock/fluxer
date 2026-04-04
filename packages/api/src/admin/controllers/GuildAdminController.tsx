@@ -17,7 +17,7 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {createGuildID} from '@fluxer/api/src/BrandedTypes';
+import {createGuildID, createSoundID} from '@fluxer/api/src/BrandedTypes';
 import {requireAdminACL} from '@fluxer/api/src/middleware/AdminMiddleware';
 import {RateLimitMiddleware} from '@fluxer/api/src/middleware/RateLimitMiddleware';
 import {OpenAPI} from '@fluxer/api/src/middleware/ResponseTypeMiddleware';
@@ -50,7 +50,7 @@ import {
 	LookupGuildResponse,
 	SuccessResponse,
 } from '@fluxer/schema/src/domains/admin/AdminSchemas';
-import {GuildIdParam} from '@fluxer/schema/src/domains/common/CommonParamSchemas';
+import {GuildIdParam, GuildIdSoundIdParam} from '@fluxer/schema/src/domains/common/CommonParamSchemas';
 
 export function GuildAdminController(app: HonoApp) {
 	app.post(
@@ -136,6 +136,50 @@ export function GuildAdminController(app: HonoApp) {
 			const adminService = ctx.get('adminService');
 			const guildId = createGuildID(ctx.req.valid('param').guild_id);
 			return ctx.json(await adminService.listGuildStickers(guildId));
+		},
+	);
+
+	app.get(
+		'/admin/guilds/:guild_id/soundboard',
+		RateLimitMiddleware(AdminRateLimitConfigs.ADMIN_LOOKUP),
+		requireAdminACL(AdminACLs.ASSET_PURGE),
+		Validator('param', GuildIdParam),
+		OpenAPI({
+			operationId: 'admin_list_guild_soundboard',
+			summary: 'List guild soundboard sounds',
+			description: 'Lists all soundboard sounds in a guild. Requires ASSET_PURGE permission.',
+			responseSchema: null,
+			statusCode: 200,
+			security: 'adminApiKey',
+			tags: 'Admin',
+		}),
+		async (ctx) => {
+			const guildId = createGuildID(ctx.req.valid('param').guild_id);
+			const sounds = await ctx.get('soundboardService').listSoundsAdmin(guildId);
+			return ctx.json(sounds);
+		},
+	);
+
+	app.delete(
+		'/admin/guilds/:guild_id/soundboard/:sound_id',
+		RateLimitMiddleware(AdminRateLimitConfigs.ADMIN_LOOKUP),
+		requireAdminACL(AdminACLs.ASSET_PURGE),
+		Validator('param', GuildIdSoundIdParam),
+		OpenAPI({
+			operationId: 'admin_delete_guild_soundboard_sound',
+			summary: 'Delete a guild soundboard sound',
+			description: 'Deletes a soundboard sound from a guild. Requires ASSET_PURGE permission.',
+			responseSchema: null,
+			statusCode: 204,
+			security: 'adminApiKey',
+			tags: 'Admin',
+		}),
+		async (ctx) => {
+			const params = ctx.req.valid('param');
+			const guildId = createGuildID(params.guild_id);
+			const soundId = createSoundID(params.sound_id);
+			await ctx.get('soundboardService').deleteSoundAdmin(guildId, soundId);
+			return ctx.body(null, 204);
 		},
 	);
 

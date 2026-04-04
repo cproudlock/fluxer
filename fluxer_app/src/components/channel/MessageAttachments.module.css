@@ -32,6 +32,8 @@
 
 .forwardedContent {
 	flex: 1;
+	min-width: 0;
+	overflow: hidden;
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
 }

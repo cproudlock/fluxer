@@ -27,6 +27,8 @@ import GuildRolesTab from '@app/components/modals/guild_tabs/GuildRolesTab';
 import GuildStickersTab from '@app/components/modals/guild_tabs/GuildStickersTab';
 import GuildVanityURLTab from '@app/components/modals/guild_tabs/GuildVanityURLTab';
 import GuildWebhooksTab from '@app/components/modals/guild_tabs/GuildWebhooksTab';
+import ScheduledEventsSettingsTab from '@app/components/modals/guild_tabs/ScheduledEventsSettingsTab';
+import SoundboardSettingsTab from '@app/components/modals/guild_tabs/SoundboardSettingsTab';
 import GuildOverviewTab from '@app/components/modals/guild_tabs/guild_overview_tab';
 import {Permissions} from '@fluxer/constants/src/ChannelConstants';
 import {GuildFeatures} from '@fluxer/constants/src/GuildConstants';
@@ -40,6 +42,8 @@ import {
 	type Icon,
 	type IconWeight,
 	LinkIcon,
+	CalendarIcon,
+	WaveformIcon,
 	ProhibitIcon,
 	ShieldIcon,
 	SmileyIcon,
@@ -55,6 +59,8 @@ export type GuildSettingsTabType =
 	| 'roles'
 	| 'emoji'
 	| 'stickers'
+	| 'soundboard'
+	| 'scheduled_events'
 	| 'moderation'
 	| 'audit_log'
 	| 'webhooks'
@@ -119,6 +125,22 @@ const GUILD_SETTINGS_TABS_DESCRIPTORS: Array<GuildSettingsTabDescriptor> = [
 		icon: StickerIcon,
 		component: GuildStickersTab,
 		permission: [Permissions.CREATE_EXPRESSIONS, Permissions.MANAGE_EXPRESSIONS],
+	},
+	{
+		type: 'soundboard',
+		category: 'guild_settings',
+		label: msg`Soundboard`,
+		icon: WaveformIcon,
+		component: SoundboardSettingsTab,
+		permission: Permissions.MANAGE_GUILD,
+	},
+	{
+		type: 'scheduled_events',
+		category: 'guild_settings',
+		label: msg`Events`,
+		icon: CalendarIcon,
+		component: ScheduledEventsSettingsTab,
+		permission: Permissions.MANAGE_EVENTS,
 	},
 	{
 		type: 'moderation',

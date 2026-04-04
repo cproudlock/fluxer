@@ -67,6 +67,7 @@ export function serializeChannelForAudit(channel: Channel): Record<string, unkno
 		position: channel.position,
 		nsfw: channel.isNsfw,
 		rate_limit_per_user: channel.rateLimitPerUser,
+		message_retention_seconds: channel.messageRetentionSeconds,
 		user_limit: channel.userLimit,
 		bitrate: channel.bitrate,
 		rtc_region: channel.rtcRegion ?? null,

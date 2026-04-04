@@ -80,6 +80,13 @@ export const CaptchaMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 		return;
 	}
 
+	// Skip captcha for native mobile apps — Turnstile doesn't work in WebView
+	const userAgent = ctx.req.header('user-agent') ?? '';
+	if (userAgent.includes('EchowireApp') || userAgent.includes('EchowireTWA')) {
+		await next();
+		return;
+	}
+
 	initializeProviders();
 
 	const token = ctx.req.header('x-captcha-token');

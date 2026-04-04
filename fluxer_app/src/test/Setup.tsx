@@ -22,6 +22,11 @@ import type {ReactNode} from 'react';
 import {vi} from 'vitest';
 import 'urlpattern-polyfill';
 
+// Stub Web Audio API globals not available in Node.js (needed by @sapphi-red/web-noise-suppressor)
+if (typeof globalThis.AudioWorkletNode === 'undefined') {
+	(globalThis as any).AudioWorkletNode = class AudioWorkletNode {};
+}
+
 vi.mock('@app/lib/Platform', () => ({
 	Platform: {
 		OS: 'web',

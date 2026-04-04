@@ -305,6 +305,9 @@ const RootComponent = React.forwardRef<HTMLDivElement, ModalProps>(
 								document
 									.querySelectorAll('[data-rsbs-root], [data-rsbs-backdrop], [data-rsbs-overlay]')
 									.forEach((el) => inside.push(el));
+								document
+									.querySelectorAll('.react-modal-sheet-container, .react-modal-sheet-backdrop')
+									.forEach((el) => inside.push(el));
 								return inside;
 							}}
 						>

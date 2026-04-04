@@ -100,7 +100,9 @@ const RootComponent: React.FC<RootProps> = ({
 				/>
 			)}
 			<ModalSheet.Container className={clsx(styles.container, surfaceClassMap[surface])}>
-				<div className={clsx(styles.root, className)}>{children}</div>
+				<ModalSheet.Content>
+					<div className={clsx(styles.root, className)}>{children}</div>
+				</ModalSheet.Content>
 			</ModalSheet.Container>
 		</ModalSheet>
 	);

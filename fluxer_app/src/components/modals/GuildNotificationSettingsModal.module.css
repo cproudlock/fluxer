@@ -278,3 +278,15 @@
 .iconTertiary {
 	color: var(--text-tertiary);
 }
+
+.nativeSelect {
+	width: 100%;
+	padding: 0.625rem 0.75rem;
+	background-color: var(--form-surface-background);
+	border: 1px solid var(--form-border-color, transparent);
+	border-radius: 0.375rem;
+	color: var(--text-primary);
+	font-size: 0.875rem;
+	appearance: auto;
+	-webkit-appearance: menulist;
+}

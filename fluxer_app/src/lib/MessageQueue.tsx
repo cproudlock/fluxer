@@ -334,12 +334,30 @@ class MessageQueue extends Queue<MessageQueuePayload, HttpResponse<Message> | un
 		| {status: 'rateLimit'; error: HttpError}
 		| {status: 'failure'; error: HttpError}
 	> {
-		try {
-			const response = await this.sendMessageRequest(channelId, nonce, requestBody, files);
-			return {status: 'success', response};
-		} catch (error) {
-			return this.buildSendOutcome(error);
+		const MAX_RETRIES = 2;
+		let lastError: unknown;
+
+		for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+			try {
+				const response = await this.sendMessageRequest(channelId, nonce, requestBody, files);
+				return {status: 'success', response};
+			} catch (error) {
+				lastError = error;
+				const httpError = error as HttpError;
+
+				// Don't retry client errors (4xx) — only retry network/server errors
+				if (httpError?.status && httpError.status >= 400 && httpError.status < 500) {
+					return this.buildSendOutcome(error);
+				}
+
+				if (attempt < MAX_RETRIES) {
+					logger.debug(`Message send attempt ${attempt + 1} failed, retrying in ${(attempt + 1) * 500}ms`);
+					await new Promise((r) => setTimeout(r, (attempt + 1) * 500));
+				}
+			}
 		}
+
+		return this.buildSendOutcome(lastError);
 	}
 
 	private buildSendOutcome(

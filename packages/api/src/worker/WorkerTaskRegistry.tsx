@@ -18,13 +18,17 @@
  */
 
 import applicationProcessDeletion from '@fluxer/api/src/worker/tasks/ApplicationProcessDeletion';
+import archiveThreads from '@fluxer/api/src/worker/tasks/ArchiveThreads';
 import batchGuildAuditLogMessageDeletes from '@fluxer/api/src/worker/tasks/BatchGuildAuditLogMessageDeletes';
 import bulkDeleteUserMessages from '@fluxer/api/src/worker/tasks/BulkDeleteUserMessages';
 // import cleanupCsamEvidence from '@fluxer/api/src/worker/tasks/CleanupCsamEvidence';
 // import csamScanConsumer from '@fluxer/api/src/worker/tasks/CsamScanConsumerWorker';
 import deleteUserMessagesInGuildByTime from '@fluxer/api/src/worker/tasks/DeleteUserMessagesInGuildByTime';
 import expireAttachments from '@fluxer/api/src/worker/tasks/ExpireAttachments';
+import expireChannelMessages from '@fluxer/api/src/worker/tasks/ExpireChannelMessages';
 import extractEmbeds from '@fluxer/api/src/worker/tasks/ExtractEmbeds';
+import handleDMNotification from '@fluxer/api/src/worker/tasks/HandleDMNotification';
+import handleGuildMessagePush from '@fluxer/api/src/worker/tasks/HandleGuildMessagePush';
 import handleMentions from '@fluxer/api/src/worker/tasks/HandleMentions';
 import harvestGuildData from '@fluxer/api/src/worker/tasks/HarvestGuildData';
 import harvestUserData from '@fluxer/api/src/worker/tasks/HarvestUserData';
@@ -46,12 +50,16 @@ import type {WorkerTaskHandler} from '@fluxer/worker/src/contracts/WorkerTask';
 
 export const workerTasks: Record<string, WorkerTaskHandler> = {
 	applicationProcessDeletion,
+	archiveThreads,
 	batchGuildAuditLogMessageDeletes,
 	bulkDeleteUserMessages,
 	// csamScanConsumer,
 	deleteUserMessagesInGuildByTime,
 	expireAttachments,
+	expireChannelMessages,
 	extractEmbeds,
+	handleDMNotification,
+	handleGuildMessagePush,
 	handleMentions,
 	harvestGuildData,
 	harvestUserData,

@@ -35,6 +35,7 @@ import type {MessageRequestService} from '@fluxer/api/src/channel/services/messa
 import type {ScheduledMessageService} from '@fluxer/api/src/channel/services/ScheduledMessageService';
 import type {StreamPreviewService} from '@fluxer/api/src/channel/services/StreamPreviewService';
 import type {StreamService} from '@fluxer/api/src/channel/services/StreamService';
+import type {ThreadService} from '@fluxer/api/src/channel/services/ThreadService';
 import type {ConnectionRequestService} from '@fluxer/api/src/connection/ConnectionRequestService';
 import type {ConnectionService} from '@fluxer/api/src/connection/ConnectionService';
 import type {CsamEvidenceRetentionService} from '@fluxer/api/src/csam/CsamEvidenceRetentionService';
@@ -47,6 +48,8 @@ import type {FavoriteMemeService} from '@fluxer/api/src/favorite_meme/FavoriteMe
 import type {GatewayRequestService} from '@fluxer/api/src/gateway/GatewayRequestService';
 import type {IGuildDiscoveryService} from '@fluxer/api/src/guild/services/GuildDiscoveryService';
 import type {GuildService} from '@fluxer/api/src/guild/services/GuildService';
+import type {ScheduledEventService} from '@fluxer/api/src/guild/services/ScheduledEventService';
+import type {SoundboardService} from '@fluxer/api/src/guild/services/SoundboardService';
 import type {EmbedService} from '@fluxer/api/src/infrastructure/EmbedService';
 import type {EntityAssetService} from '@fluxer/api/src/infrastructure/EntityAssetService';
 import type {ErrorI18nService} from '@fluxer/api/src/infrastructure/ErrorI18nService';
@@ -153,6 +156,9 @@ export interface HonoEnv {
 		alertService: AlertService;
 		discoveryService: IGuildDiscoveryService;
 		guildService: GuildService;
+		soundboardService: SoundboardService;
+		scheduledEventService: ScheduledEventService;
+		threadService: ThreadService;
 		packService: PackService;
 		packRequestService: PackRequestService;
 		packRepository: PackRepository;

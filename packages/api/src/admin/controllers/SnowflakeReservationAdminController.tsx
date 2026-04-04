@@ -25,7 +25,7 @@ import {RateLimitConfigs} from '@fluxer/api/src/RateLimitConfig';
 import type {HonoApp} from '@fluxer/api/src/types/HonoEnv';
 import {Validator} from '@fluxer/api/src/Validator';
 import {AdminACLs} from '@fluxer/constants/src/AdminACLs';
-import {FeatureNotAvailableSelfHostedError} from '@fluxer/errors/src/domains/core/FeatureNotAvailableSelfHostedError';
+
 import {
 	AddSnowflakeReservationRequest,
 	DeleteSnowflakeReservationRequest,
@@ -50,7 +50,7 @@ export function SnowflakeReservationAdminController(app: HonoApp) {
 		}),
 		async (ctx) => {
 			if (Config.instance.selfHosted) {
-				throw new FeatureNotAvailableSelfHostedError();
+				return ctx.json({reservations: []});
 			}
 
 			const adminService = ctx.get('adminService');
@@ -79,7 +79,7 @@ export function SnowflakeReservationAdminController(app: HonoApp) {
 		}),
 		async (ctx) => {
 			if (Config.instance.selfHosted) {
-				throw new FeatureNotAvailableSelfHostedError();
+				return ctx.json({reservations: []});
 			}
 
 			const adminService = ctx.get('adminService');
@@ -109,7 +109,7 @@ export function SnowflakeReservationAdminController(app: HonoApp) {
 		}),
 		async (ctx) => {
 			if (Config.instance.selfHosted) {
-				throw new FeatureNotAvailableSelfHostedError();
+				return ctx.json({reservations: []});
 			}
 
 			const adminService = ctx.get('adminService');

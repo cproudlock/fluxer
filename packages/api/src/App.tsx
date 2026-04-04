@@ -61,6 +61,17 @@ export async function createAPIApp(options: CreateAPIAppOptions): Promise<APIApp
 	registerControllers(routes, config);
 
 	const app = new Hono<HonoEnv>({strict: true});
+
+	if (isTelemetryActive) {
+		app.get('/internal/telemetry', async (ctx) => {
+			return ctx.json({
+				telemetry_enabled: isTelemetryActive(),
+				service: 'fluxer_api',
+				timestamp: new Date().toISOString(),
+			});
+		});
+	}
+
 	app.route('/v1', routes);
 	app.route('/', routes);
 

@@ -371,6 +371,7 @@ export class UserChannelService {
 			recipient_ids: allRecipients,
 			nsfw: false,
 			rate_limit_per_user: 0,
+			message_retention_seconds: null,
 			bitrate: null,
 			user_limit: null,
 			rtc_region: null,

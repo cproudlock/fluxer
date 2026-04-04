@@ -31,6 +31,7 @@ import {GuildAdminController} from '@fluxer/api/src/admin/controllers/GuildAdmin
 import {InstanceConfigAdminController} from '@fluxer/api/src/admin/controllers/InstanceConfigAdminController';
 import {LimitConfigAdminController} from '@fluxer/api/src/admin/controllers/LimitConfigAdminController';
 import {MessageAdminController} from '@fluxer/api/src/admin/controllers/MessageAdminController';
+import {PendingVerificationAdminController} from '@fluxer/api/src/admin/controllers/PendingVerificationAdminController';
 import {ReportAdminController} from '@fluxer/api/src/admin/controllers/ReportAdminController';
 import {SearchAdminController} from '@fluxer/api/src/admin/controllers/SearchAdminController';
 import {SnowflakeReservationAdminController} from '@fluxer/api/src/admin/controllers/SnowflakeReservationAdminController';
@@ -62,4 +63,5 @@ export function registerAdminControllers(app: HonoApp) {
 	DiscoveryAdminController(app);
 	VisionarySlotAdminController(app);
 	SystemDmAdminController(app);
+	PendingVerificationAdminController(app);
 }

@@ -326,6 +326,7 @@ export class GuildOperationsService {
 						recipient_ids: null,
 						nsfw: false,
 						rate_limit_per_user: 0,
+						message_retention_seconds: null,
 						bitrate,
 						user_limit: bitrate !== null ? 0 : null,
 						rtc_region: null,

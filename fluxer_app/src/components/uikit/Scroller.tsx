@@ -182,6 +182,7 @@ export const Scroller = forwardRef<ScrollerHandle, ScrollerProps>(function Scrol
 	const scrollTimeoutRef = useRef<number>(0);
 	const thumbRefreshRafRef = useRef<number | null>(null);
 	const onResizeRef = useRef(onResize);
+	const nearBottomRef = useRef(false);
 	const [isHovered, setIsHovered] = useState(false);
 	const [isScrolling, setIsScrolling] = useState(false);
 	const [isWindowBlurred, setIsWindowBlurred] = useState(false);
@@ -332,6 +333,15 @@ export const Scroller = forwardRef<ScrollerHandle, ScrollerProps>(function Scrol
 
 		const containerObserver = new ResizeObserver((entries) => {
 			scheduleThumbRefresh();
+
+			// When the container resizes (e.g., iOS keyboard open/close) and the
+			// scroller was near the bottom, maintain bottom position
+			if (nearBottomRef.current && scrollRef.current) {
+				const node = scrollRef.current;
+				const maxScroll = Math.max(0, node.scrollHeight - node.offsetHeight);
+				node.scrollTop = maxScroll;
+			}
+
 			for (const entry of entries) {
 				onResizeRef.current?.(entry, 'container');
 			}
@@ -586,9 +596,18 @@ export const Scroller = forwardRef<ScrollerHandle, ScrollerProps>(function Scrol
 				}, 1000);
 			}
 			refreshThumbState();
+
+			// Track whether the scroller is near the bottom for container resize handling
+			// (e.g., iOS keyboard open/close changes container height)
+			const node = scrollRef.current;
+			if (node && orientation === 'vertical') {
+				const distanceFromBottom = node.scrollHeight - node.offsetHeight - node.scrollTop;
+				nearBottomRef.current = distanceFromBottom < 50;
+			}
+
 			onScroll?.(event);
 		},
-		[fade, onScroll, refreshThumbState],
+		[fade, onScroll, orientation, refreshThumbState],
 	);
 
 	const handleTrackWheel = useCallback(

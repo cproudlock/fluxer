@@ -194,6 +194,7 @@ export class UserChannelRepository implements IUserChannelRepository {
 			recipient_ids: new Set([user1Id, user2Id]),
 			nsfw: null,
 			rate_limit_per_user: null,
+			message_retention_seconds: null,
 			bitrate: null,
 			user_limit: null,
 			rtc_region: null,

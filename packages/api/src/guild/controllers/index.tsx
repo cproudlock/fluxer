@@ -25,6 +25,8 @@ import {GuildEmojiController} from '@fluxer/api/src/guild/controllers/GuildEmoji
 import {GuildMemberController} from '@fluxer/api/src/guild/controllers/GuildMemberController';
 import {GuildMemberSearchController} from '@fluxer/api/src/guild/controllers/GuildMemberSearchController';
 import {GuildRoleController} from '@fluxer/api/src/guild/controllers/GuildRoleController';
+import {GuildScheduledEventController} from '@fluxer/api/src/guild/controllers/GuildScheduledEventController';
+import {GuildSoundboardController} from '@fluxer/api/src/guild/controllers/GuildSoundboardController';
 import {GuildStickerController} from '@fluxer/api/src/guild/controllers/GuildStickerController';
 import type {HonoApp} from '@fluxer/api/src/types/HonoEnv';
 
@@ -36,6 +38,8 @@ export function registerGuildControllers(app: HonoApp) {
 	GuildChannelController(app);
 	GuildEmojiController(app);
 	GuildStickerController(app);
+	GuildSoundboardController(app);
+	GuildScheduledEventController(app);
 	GuildAuditLogController(app);
 	GuildDiscoveryController(app);
 }

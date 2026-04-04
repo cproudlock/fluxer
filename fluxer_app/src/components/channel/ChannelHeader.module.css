@@ -191,6 +191,8 @@
 	.headerContainer {
 		height: 4rem;
 		min-height: 4rem;
+		position: sticky;
+		top: 0;
 	}
 }
 

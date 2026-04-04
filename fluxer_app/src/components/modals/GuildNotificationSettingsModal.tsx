@@ -28,6 +28,7 @@ import {Checkbox} from '@app/components/uikit/checkbox/Checkbox';
 import {RadioGroup, type RadioOption} from '@app/components/uikit/radio_group/RadioGroup';
 import ChannelStore from '@app/stores/ChannelStore';
 import GuildStore from '@app/stores/GuildStore';
+import MobileLayoutStore from '@app/stores/MobileLayoutStore';
 import UserGuildSettingsStore from '@app/stores/UserGuildSettingsStore';
 import * as ChannelUtils from '@app/utils/ChannelUtils';
 import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
@@ -50,6 +51,7 @@ export const GuildNotificationSettingsModal = observer(({guildId}: {guildId: str
 	const {t} = useLingui();
 	const guild = GuildStore.getGuild(guildId);
 	const settings = UserGuildSettingsStore.getSettings(guildId);
+	const isMobile = MobileLayoutStore.isMobileLayout();
 
 	if (!guild || !settings) return null;
 
@@ -64,7 +66,7 @@ export const GuildNotificationSettingsModal = observer(({guildId}: {guildId: str
 			isCategory: true,
 		})),
 		...channels
-			.filter((c) => c.type !== ChannelTypes.GUILD_CATEGORY)
+			.filter((c) => c.type === ChannelTypes.GUILD_TEXT)
 			.map((ch) => {
 				const category = ch.parentId ? categories.find((c) => c.id === ch.parentId) : null;
 				return {
@@ -177,7 +179,7 @@ export const GuildNotificationSettingsModal = observer(({guildId}: {guildId: str
 						<h3 className={styles.sectionTitle}>{t`Community Notification Settings`}</h3>
 						<RadioGroup
 							options={notificationOptions}
-							value={settings.message_notifications}
+							value={UserGuildSettingsStore.getGuildMessageNotifications(guildId)}
 							onChange={(value) =>
 								UserGuildSettingsActionCreators.updateGuildSettings(guildId, {message_notifications: value})
 							}
@@ -212,12 +214,34 @@ export const GuildNotificationSettingsModal = observer(({guildId}: {guildId: str
 
 					<div className={styles.overridesSection}>
 						<h3 className={styles.sectionTitle}>{t`Notification Overrides`}</h3>
-						<Select<string | null>
-							value={null}
-							options={selectOptions}
-							onChange={handleAddOverride}
-							placeholder={t`Select a channel or category`}
-						/>
+						{isMobile ? (
+							<select
+								className={styles.nativeSelect}
+								value=""
+								onChange={(e) => {
+									if (e.target.value) {
+										handleAddOverride(e.target.value);
+										e.target.value = '';
+									}
+								}}
+							>
+								<option value="" disabled>
+									{t`Select a channel or category`}
+								</option>
+								{selectOptions.map((opt) => (
+									<option key={opt.value} value={opt.value}>
+										{opt.label}
+									</option>
+								))}
+							</select>
+						) : (
+							<Select<string | null>
+								value={null}
+								options={selectOptions}
+								onChange={handleAddOverride}
+								placeholder={t`Select a channel or category`}
+							/>
+						)}
 
 						{overrideChannels.length > 0 && (
 							<div className={styles.overridesSection}>

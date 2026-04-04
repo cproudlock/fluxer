@@ -165,7 +165,7 @@ footer.fluxer: Fluxer
 footer.fluxer_platform_ab_swedish_limited: '© Fluxer Platform AB (Swedish limited liability company: 559537-3993)'
 footer.help_support_an_independent_communication: Support an independent communication platform. Your donation funds the platform's infrastructure and development.
 footer.partners: Partners
-footer.plutonium_tier: Plutonium Tier
+footer.plutonium_tier: Reverb Tier
 footer.policies: Policies
 footer.press: Press
 footer.privacy_policy: Privacy Policy
@@ -275,8 +275,8 @@ partner_program.perks.direct_team_access.label: Direct team access
 partner_program.perks.discovery_visibility: Get increased visibility by being featured in community discovery.
 partner_program.perks.exclusive_merch.description: Get exclusive Fluxer Partner-only merchandise and swag.
 partner_program.perks.exclusive_merch.label: Exclusive merch
-partner_program.perks.free_plutonium.description: Get free Plutonium for your account to enjoy all premium features.
-partner_program.perks.free_plutonium.label: Free Plutonium
+partner_program.perks.free_plutonium.description: Get free Reverb for your account to enjoy all premium features.
+partner_program.perks.free_plutonium.label: Free Reverb
 partner_program.perks.increased_limits.description: Your community receives increased limits when you need them.
 partner_program.perks.increased_limits.label: Increased limits
 partner_program.perks.partner_badge.description: Display an exclusive Partner badge on your profile to stand out.
@@ -287,7 +287,7 @@ partner_program.requirements.audience_description: Brief description of your aud
 partner_program.requirements.links_to_content: Links to your content or community (YouTube, Twitch, Discord, etc.)
 partner_program.requirements.name_and_username: Your name and platform username
 partner_program.requirements.usage_plan: How you plan to use Fluxer with your community
-partner_program.who_its_for: 'Content creators and community owners: unlock exclusive perks including free Plutonium, a Partner badge, custom vanity URLs, and more.'
+partner_program.who_its_for: 'Content creators and community owners: unlock exclusive perks including free Reverb, a Partner badge, custom vanity URLs, and more.'
 partner_program.perks.heading: Partner perks
 partner_program.perks.see_perks: See perks
 partner_program.apply.instructions: Send us an email with the following information to apply for the Fluxer Partner Program.
@@ -366,11 +366,11 @@ pricing_and_tiers.billing.per_month: /mo
 pricing_and_tiers.billing.per_year_full: /year
 pricing_and_tiers.billing.per_year_short: /yr
 pricing_and_tiers.billing.save_percent: Save 17%
-pricing_and_tiers.free.comparison_label: Free vs Plutonium
+pricing_and_tiers.free.comparison_label: Free vs Reverb
 pricing_and_tiers.free.everything_in_free_plus: 'Everything in Free, plus:'
 pricing_and_tiers.free.full_access_to_all_features: Full access to all features
 pricing_and_tiers.free.label: Free
-pricing_and_tiers.plutonium.benefits_note_official_instance_only: 'Note: Plutonium and Visionary benefits only apply to the official Fluxer.app instance, not third-party or self-hosted instances.'
+pricing_and_tiers.plutonium.benefits_note_official_instance_only: 'Note: Reverb and Visionary benefits only apply to the official Echowire instance, not third-party or self-hosted instances.'
 pricing_and_tiers.plutonium.feature_highlights: 500 MB uploads, 4,000-character messages, 300 bookmarks, 50 emoji packs, and much more.
 pricing_and_tiers.plutonium.features.bio_character_limit: Bio character limit
 pricing_and_tiers.plutonium.features.choose_custom_4_digit_tag: 'Choose any available 4-digit tag from #0001 to #9999 to make your username truly unique.'
@@ -385,29 +385,29 @@ pricing_and_tiers.plutonium.features.message_scheduling: Message scheduling
 pricing_and_tiers.plutonium.features.per_community_profiles: Per-community profiles
 pricing_and_tiers.plutonium.features.saved_media: Saved media
 pricing_and_tiers.plutonium.features.webhooks_and_bot_support: Webhooks and bot support
-pricing_and_tiers.plutonium.get_more_with_plutonium: Get more with Fluxer Plutonium
-pricing_and_tiers.plutonium.get_plutonium: Get Plutonium
+pricing_and_tiers.plutonium.get_more_with_plutonium: Get more with Echowire Reverb
+pricing_and_tiers.plutonium.get_plutonium: Get Reverb
 pricing_and_tiers.plutonium.higher_limits_and_early_access: Higher limits, exclusive features, and early access to new updates
 pricing_and_tiers.plutonium.higher_limits_everywhere: Higher limits everywhere
-pricing_and_tiers.plutonium.show_off_status_badge: Show off your Plutonium status with an exclusive badge on your profile.
-pricing_and_tiers.plutonium.tier_name: Plutonium
-pricing_and_tiers.plutonium.upgrade_pitch: 'Upgrade to Plutonium for $4.99/mo: custom username tags, per-community profiles, message scheduling, 4K streaming, 500 MB uploads, and more exclusive features.'
+pricing_and_tiers.plutonium.show_off_status_badge: Show off your Reverb status with an exclusive badge on your profile.
+pricing_and_tiers.plutonium.tier_name: Reverb
+pricing_and_tiers.plutonium.upgrade_pitch: 'Upgrade to Reverb for $4.99/mo: custom username tags, per-community profiles, message scheduling, 4K streaming, 500 MB uploads, and more exclusive features.'
 pricing_and_tiers.visionary.badge.numbered_badge: Numbered badge showing your Visionary status
 pricing_and_tiers.visionary.badge.numbered_badge_with_range: Numbered badge (1–{0}) showing your Visionary status
-pricing_and_tiers.visionary.bundle_label: Lifetime Plutonium and Operator Pass with Visionary – limited slots
+pricing_and_tiers.visionary.bundle_label: Lifetime Reverb and Operator Pass with Visionary – limited slots
 pricing_and_tiers.visionary.communities_with_team_access: Visionary and Operators communities with team access
 pricing_and_tiers.visionary.get_visionary: Get Visionary
 pricing_and_tiers.visionary.label: Visionary
-pricing_and_tiers.visionary.lifetime_offer_copy: Get lifetime Plutonium on Fluxer.app plus an Operator Pass for self-hosting. Pay {0} one time. Available until October 1, 2026, or when all {1} slots are claimed.
+pricing_and_tiers.visionary.lifetime_offer_copy: Get lifetime Reverb on Echowire plus an Operator Pass for self-hosting. Pay {0} one time. Available until October 1, 2026, or when all {1} slots are claimed.
 pricing_and_tiers.visionary.lifetime_operator_pass: Lifetime Operator Pass
-pricing_and_tiers.visionary.lifetime_plutonium: Lifetime Plutonium
+pricing_and_tiers.visionary.lifetime_plutonium: Lifetime Reverb
 pricing_and_tiers.visionary.limited_offer_note: 'Limited offer: Visionary includes Operator Pass'
 pricing_and_tiers.visionary.limited_slots_label: Visionary – limited slots
 pricing_and_tiers.visionary.one_time_purchase.label: One-time purchase
 pricing_and_tiers.visionary.one_time_purchase.promise: One-time purchase, lifetime access
 pricing_and_tiers.visionary.purchase_flow: Purchase Visionary directly in the app after creating your account. Your purchase date and order number will be displayed on your profile (can be hidden in privacy settings).
 pricing_and_tiers.visionary.slots_left.generic: '{0} of {1} slots left'
-pricing_and_tiers.visionary.slots_left.visionary_bundle: Only {0} of {1} Visionary lifetime slots left – lifetime Plutonium and Operator Pass
+pricing_and_tiers.visionary.slots_left.visionary_bundle: Only {0} of {1} Visionary lifetime slots left – lifetime Reverb and Operator Pass
 pricing_and_tiers.visionary.slots_left.visionary_only: '{0} Visionary slots left'
 product_positioning.free_and_open_source: Fluxer is free and open source. Anyone can self-host for free.
 product_positioning.intro: Fluxer is a free and open source instant messaging and VoIP platform built for friends, groups, and communities.
@@ -427,10 +427,10 @@ product_positioning.self_hosting.run_backend_on_your_hardware: Run the Fluxer ba
 product_positioning.self_hosting.switch_between_instances: Switch between multiple instances
 security.found_security_issue: Found a security issue?
 security.report_vulnerabilities: Report vulnerabilities and help us keep the platform secure.
-security.responsible_disclosure_note: We appreciate responsible disclosure via our security bug bounty page. We offer Plutonium codes and Bug Hunter badges based on severity.
+security.responsible_disclosure_note: We appreciate responsible disclosure via our security bug bounty page. We offer Reverb codes and Bug Hunter badges based on severity.
 security.security_bug_bounty: Security bug bounty
 security.security_reports: Security reports
-security.testers_access_from_reports: Approved reports grant access to Fluxer Testers, where you can earn points for Plutonium codes and the Bug Hunter badge.
+security.testers_access_from_reports: Approved reports grant access to Echowire Testers, where you can earn points for Reverb codes and the Bug Hunter badge.
 social_and_feeds.bluesky.follow_us: Follow us on Bluesky
 social_and_feeds.bluesky.label: Bluesky
 social_and_feeds.bluesky.rss_feed: Bluesky RSS feed
