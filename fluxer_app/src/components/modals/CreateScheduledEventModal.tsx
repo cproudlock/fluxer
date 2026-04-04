@@ -176,7 +176,7 @@ export const CreateScheduledEventModal = observer(({guildId}: {guildId: string})
 	const stepIndex = step === 'location' ? 0 : step === 'info' ? 1 : 2;
 
 	return (
-		<Modal.Root size="small" centered>
+		<Modal.Root size="medium" centered>
 			<Modal.ScreenReaderLabel text="Create Event" />
 			<div style={{padding: '16px 16px 0'}}>
 				<div style={{display: 'flex', gap: 4, marginBottom: 8}}>

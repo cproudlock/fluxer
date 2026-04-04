@@ -149,7 +149,7 @@ export const EditScheduledEventModal = observer(({event}: EditScheduledEventModa
 	};
 
 	return (
-		<Modal.Root size="small" centered>
+		<Modal.Root size="medium" centered>
 			<Modal.Header title={t`Edit Event`} />
 			<Modal.Content>
 				<div>
