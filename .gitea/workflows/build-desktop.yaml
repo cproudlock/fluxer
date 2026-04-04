@@ -1,0 +1,206 @@
+name: build desktop
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Channel to build
+        required: false
+        type: choice
+        options:
+          - stable
+          - canary
+        default: stable
+      version:
+        description: Version override (e.g. 1.16.0). If empty, uses auto-generated version.
+        required: false
+        default: ''
+        type: string
+      skip_linux:
+        description: Skip Linux build
+        required: false
+        default: false
+        type: boolean
+      skip_windows:
+        description: Skip Windows build (via Wine)
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: desktop-${{ inputs.channel }}
+  cancel-in-progress: true
+
+env:
+  CHANNEL: ${{ inputs.channel || 'stable' }}
+  BUILD_CHANNEL: stable
+
+jobs:
+  build-linux:
+    name: Build Linux
+    if: ${{ !inputs.skip_linux }}
+    runs-on: self-hosted
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine version
+        id: version
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="0.0.${{ github.run_number }}"
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_ENV"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        working-directory: fluxer_desktop
+        run: pnpm install --frozen-lockfile
+
+      - name: Update version
+        working-directory: fluxer_desktop
+        run: pnpm version "${VERSION}" --no-git-tag-version --allow-same-version
+
+      - name: Set build channel
+        working-directory: fluxer_desktop
+        run: pnpm set-channel
+
+      - name: Build Electron main
+        working-directory: fluxer_desktop
+        run: pnpm build
+
+      - name: Build Linux packages
+        working-directory: fluxer_desktop
+        env:
+          USE_SYSTEM_FPM: "true"
+        run: pnpm exec electron-builder --config electron-builder.config.cjs --linux --x64 --config.npmRebuild=false
+
+      - name: Prepare artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p upload_staging/linux
+          DIST="fluxer_desktop/dist-electron"
+          cp -f "$DIST"/*.AppImage upload_staging/linux/ 2>/dev/null || true
+          cp -f "$DIST"/*.deb upload_staging/linux/ 2>/dev/null || true
+          cp -f "$DIST"/*.rpm upload_staging/linux/ 2>/dev/null || true
+          cp -f "$DIST"/*.tar.gz upload_staging/linux/ 2>/dev/null || true
+          cp -f "$DIST"/*.yml upload_staging/linux/ 2>/dev/null || true
+
+          cd upload_staging/linux
+          for file in *.AppImage *.deb *.rpm *.tar.gz; do
+            [ -f "$file" ] || continue
+            sha256sum "$file" | awk '{print $1}' > "${file}.sha256"
+          done
+          ls -la
+
+      - name: Generate manifest.json
+        run: |
+          set -euo pipefail
+          cd upload_staging/linux
+          DEB="$(ls -1 *.deb 2>/dev/null | head -1 || true)"
+          APPIMAGE="$(ls -1 *.AppImage 2>/dev/null | head -1 || true)"
+          RPM="$(ls -1 *.rpm 2>/dev/null | head -1 || true)"
+          TARGZ="$(ls -1 *.tar.gz 2>/dev/null | head -1 || true)"
+
+          python3 -c "
+          import json, os
+          files = {}
+          for key, fname in [('deb','${DEB}'),('appimage','${APPIMAGE}'),('rpm','${RPM}'),('tar_gz','${TARGZ}')]:
+              if fname:
+                  files[key] = fname
+          json.dump({'version':'${VERSION}','channel':'${CHANNEL}','platform':'linux','arch':'x64','files':files}, open('manifest.json','w'), indent=2)
+          "
+
+      - name: Upload to R2
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        run: |
+          rclone copy upload_staging/linux/ "R2:fluxer-downloads/desktop/${CHANNEL}/linux/x64/" \
+            --transfers 8 --fast-list -v
+
+  build-windows:
+    name: Build Windows (Wine)
+    if: ${{ !inputs.skip_windows }}
+    runs-on: self-hosted
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine version
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="0.0.${{ github.run_number }}"
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        working-directory: fluxer_desktop
+        run: pnpm install --frozen-lockfile
+
+      - name: Update version
+        working-directory: fluxer_desktop
+        run: pnpm version "${VERSION}" --no-git-tag-version --allow-same-version
+
+      - name: Set build channel
+        working-directory: fluxer_desktop
+        run: pnpm set-channel
+
+      - name: Build Electron main
+        working-directory: fluxer_desktop
+        run: pnpm build
+
+      - name: Build Windows installer (via Wine)
+        working-directory: fluxer_desktop
+        run: pnpm exec electron-builder --config electron-builder.config.cjs --win nsis --x64 --config.npmRebuild=false
+
+      - name: Prepare artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p upload_staging/win32
+          DIST="fluxer_desktop/dist-electron"
+          cp -f "$DIST"/*.exe upload_staging/win32/ 2>/dev/null || true
+          cp -f "$DIST"/*.exe.blockmap upload_staging/win32/ 2>/dev/null || true
+          cp -f "$DIST"/*.yml upload_staging/win32/ 2>/dev/null || true
+
+          cd upload_staging/win32
+          for file in *.exe; do
+            [ -f "$file" ] || continue
+            sha256sum "$file" | awk '{print $1}' > "${file}.sha256"
+          done
+          ls -la
+
+      - name: Generate manifest.json
+        run: |
+          set -euo pipefail
+          cd upload_staging/win32
+          SETUP="$(ls -1 *.exe 2>/dev/null | grep -iv blockmap | head -1 || true)"
+          python3 -c "
+          import json
+          files = {}
+          if '${SETUP}': files['setup'] = '${SETUP}'
+          json.dump({'version':'${VERSION}','channel':'${CHANNEL}','platform':'win32','arch':'x64','files':files}, open('manifest.json','w'), indent=2)
+          "
+
+      - name: Upload to R2
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        run: |
+          rclone copy upload_staging/win32/ "R2:fluxer-downloads/desktop/${CHANNEL}/win32/x64/" \
+            --transfers 8 --fast-list -v
+
+  # macOS build requires a macOS runner (not available yet)
+  # To add later: register a Mac Mini or macOS VM as macos-latest runner

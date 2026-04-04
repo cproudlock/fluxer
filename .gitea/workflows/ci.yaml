@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - echowire-refactor
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  typecheck:
+    runs-on: self-hosted
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: python3 scripts/ci/workflows/ci.py --step install_dependencies
+
+      - name: Run typecheck
+        run: python3 scripts/ci/workflows/ci.py --step typecheck
+
+  test:
+    runs-on: self-hosted
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: python3 scripts/ci/workflows/ci.py --step install_dependencies
+
+      - name: Run tests
+        continue-on-error: true
+        run: python3 scripts/ci/workflows/ci.py --step test
+        env:
+          FLUXER_CONFIG: config/config.test.json
+
+  gateway:
+    runs-on: self-hosted
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile
+        run: python3 scripts/ci/workflows/ci.py --step gateway_compile
+
+      - name: Run dialyzer
+        run: python3 scripts/ci/workflows/ci.py --step gateway_dialyzer
+
+      - name: Start NATS for eunit
+        run: |
+          docker rm -f nats-ci-${{ github.run_id }} 2>/dev/null || true
+          docker run -d --name nats-ci-${{ github.run_id }} -p 4222:4222 nats:2.11-alpine
+          sleep 2
+
+      - name: Run eunit tests
+        continue-on-error: true
+        run: python3 scripts/ci/workflows/ci.py --step gateway_eunit
+        env:
+          FLUXER_CONFIG: ../config/config.test.json
+
+      - name: Cleanup NATS
+        if: always()
+        run: docker rm -f nats-ci-${{ github.run_id }} 2>/dev/null || true
+
+  knip:
+    runs-on: self-hosted
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: python3 scripts/ci/workflows/ci.py --step install_dependencies
+
+      - name: Run knip
+        continue-on-error: true
+        run: python3 scripts/ci/workflows/ci.py --step knip

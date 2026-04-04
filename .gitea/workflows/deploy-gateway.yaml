@@ -1,0 +1,43 @@
+name: deploy gateway
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - echowire-refactor
+    paths:
+      - 'fluxer_gateway/**'
+
+concurrency:
+  group: deploy-gateway
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy gateway (hot-reload)
+    runs-on: self-hosted
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            fluxer_gateway
+            scripts/ci
+
+      - name: Compile
+        run: python3 scripts/ci/workflows/echowire_deploy_gateway.py --step compile
+
+      - name: Deploy to NC
+        env:
+          TARGET_HOST: 100.70.10.204
+          TARGET_NAME: NC
+          GATEWAY_ADMIN_SECRET: ${{ secrets.GATEWAY_ADMIN_SECRET }}
+        run: python3 scripts/ci/workflows/echowire_deploy_gateway.py --step deploy
+
+      - name: Deploy to MI
+        env:
+          TARGET_HOST: 100.70.49.120
+          TARGET_NAME: MI
+          GATEWAY_ADMIN_SECRET: ${{ secrets.GATEWAY_ADMIN_SECRET }}
+        run: python3 scripts/ci/workflows/echowire_deploy_gateway.py --step deploy

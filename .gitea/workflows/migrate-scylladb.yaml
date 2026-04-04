@@ -1,0 +1,73 @@
+name: migrate scylladb
+
+on:
+  push:
+    branches:
+      - echowire-refactor
+    paths:
+      - fluxer_devops/cassandra/migrations/**/*.cql
+  workflow_dispatch:
+
+concurrency:
+  group: migrate-scylladb
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    name: Run database migrations
+    runs-on: self-hosted
+    timeout-minutes: 25
+
+    env:
+      SCYLLADB_HOST: 100.70.10.204
+      SCYLLADB_PORT: "9042"
+      SCYLLADB_DC: datacenter1
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          cd fluxer_api
+          pnpm install --frozen-lockfile
+
+      - name: Validate migrations
+        run: |
+          cd fluxer_api
+          pnpm tsx scripts/CassandraMigrate.tsx check
+
+      - name: Test ScyllaDB connection
+        env:
+          CASSANDRA_PASSWORD: ${{ secrets.CASSANDRA_PASSWORD }}
+        run: |
+          cd fluxer_api
+          pnpm tsx scripts/CassandraMigrate.tsx \
+            --host ${{ env.SCYLLADB_HOST }} \
+            --port ${{ env.SCYLLADB_PORT }} \
+            --password "${CASSANDRA_PASSWORD}" \
+            --datacenter ${{ env.SCYLLADB_DC }} \
+            test
+
+      - name: Run migrations on NC
+        env:
+          CASSANDRA_PASSWORD: ${{ secrets.CASSANDRA_PASSWORD }}
+        run: |
+          cd fluxer_api
+          pnpm tsx scripts/CassandraMigrate.tsx \
+            --host ${{ env.SCYLLADB_HOST }} \
+            --port ${{ env.SCYLLADB_PORT }} \
+            --password "${CASSANDRA_PASSWORD}" \
+            --datacenter ${{ env.SCYLLADB_DC }} \
+            up
+
+      - name: Verify migration on MI
+        env:
+          CASSANDRA_PASSWORD: ${{ secrets.CASSANDRA_PASSWORD }}
+        run: |
+          cd fluxer_api
+          pnpm tsx scripts/CassandraMigrate.tsx \
+            --host 100.70.49.120 \
+            --port ${{ env.SCYLLADB_PORT }} \
+            --password "${CASSANDRA_PASSWORD}" \
+            --datacenter datacenter2 \
+            test

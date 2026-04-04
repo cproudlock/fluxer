@@ -1,0 +1,96 @@
+name: verify scylladb-backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+concurrency:
+  group: verify-scylladb-backup
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify latest ScyllaDB backup
+    runs-on: self-hosted
+    timeout-minutes: 45
+
+    env:
+      SCYLLA_IMAGE: scylladb/scylla:latest
+      SCYLLA_CONTAINER: scylla-verify-${{ github.run_id }}
+      UTIL_CONTAINER: scylla-util-${{ github.run_id }}
+      SCYLLA_VOLUME: scylla-data-${{ github.run_id }}
+      BACKUP_VOLUME: scylla-backup-${{ github.run_id }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set temp paths
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step set_temp_paths
+
+      - name: Pre-clean
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step pre_clean
+
+      - name: Install tools
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step install_tools
+
+      - name: Fetch and decrypt latest backup
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          AGE_PRIVATE_KEY: ${{ secrets.AGE_PRIVATE_KEY }}
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step fetch_backup
+
+      - name: Create data volume
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step create_data_volume
+
+      - name: Restore keyspaces
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step restore_keyspaces
+
+      - name: Start ScyllaDB
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step start_scylladb
+
+      - name: Verify data
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step verify_data
+
+      - name: Cleanup
+        if: always()
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step cleanup
+
+      - name: Send notification
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step notify
+
+      - name: Report status
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: >-
+          python3 scripts/ci/workflows/echowire_backup_verify.py
+          --step report_status
