@@ -351,7 +351,11 @@ export const RootComponent: React.FC<{children?: React.ReactNode}> = observer(({
 			location.pathname === Routes.YOU ||
 			(Routes.isGuildChannelRoute(location.pathname) && location.pathname.split('/').length === 3));
 
-	if (isAuthenticated && !canNavigateToProtectedRoutes && !shouldBypassGateway) {
+	// Show splash only on fresh login. For returning sessions (app switch, page reload),
+	// render the last UI immediately while the gateway reconnects in the background.
+	// This avoids the 8-10s splash on every Android app switch.
+	const hasSessionCache = isAuthenticated && LocationStore.getLastLocation() != null;
+	if (isAuthenticated && !canNavigateToProtectedRoutes && !shouldBypassGateway && !hasSessionCache) {
 		return <SplashScreen />;
 	}
 
