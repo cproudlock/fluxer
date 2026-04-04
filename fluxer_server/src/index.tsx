@@ -111,6 +111,7 @@ export async function createFluxerServer(options: FluxerServerOptions = {}): Pro
 			cronScheduler.upsert('expireAttachments', 'expireAttachments', {}, '0 0 */12 * * *');
 			cronScheduler.upsert('expireChannelMessages', 'expireChannelMessages', {}, '0 */15 * * * *');
 			cronScheduler.upsert('syncDiscoveryIndex', 'syncDiscoveryIndex', {}, '0 */15 * * * *');
+			cronScheduler.upsert('archiveThreads', 'archiveThreads', {}, '0 */5 * * * *');
 			cronScheduler.start();
 			workerLogger.info('Cron scheduler started');
 
