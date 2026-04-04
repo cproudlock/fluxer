@@ -31,7 +31,7 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 
 const logger = new Logger('CaptchaModal');
 
-export type CaptchaType = 'turnstile' | 'hcaptcha';
+export type CaptchaType = 'turnstile' | 'hcaptcha' | 'native-bypass';
 
 interface HCaptchaComponentProps {
 	sitekey: string;

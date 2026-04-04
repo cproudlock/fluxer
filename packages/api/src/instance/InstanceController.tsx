@@ -21,6 +21,7 @@ import {Config} from '@fluxer/api/src/Config';
 import {getKeyManager} from '@fluxer/api/src/federation/KeyManager';
 import type {InstanceConfigRepository} from '@fluxer/api/src/instance/InstanceConfigRepository';
 import type {LimitConfigService} from '@fluxer/api/src/limits/LimitConfigService';
+import {issueNativeBypassNonce} from '@fluxer/api/src/middleware/CaptchaMiddleware';
 import {RateLimitMiddleware} from '@fluxer/api/src/middleware/RateLimitMiddleware';
 import {OpenAPI} from '@fluxer/api/src/middleware/ResponseTypeMiddleware';
 import {RateLimitConfigs} from '@fluxer/api/src/RateLimitConfig';
@@ -61,6 +62,15 @@ export function InstanceController(app: Hono<HonoEnv>) {
 				],
 			},
 		});
+	});
+
+	// Native app captcha bypass: issue a nonce for HMAC challenge-response
+	app.get('/api/captcha/native-challenge', RateLimitMiddleware(RateLimitConfigs.INSTANCE_INFO), (ctx) => {
+		if (!Config.captcha.enabled || !Config.captcha.nativeBypassSecret) {
+			return ctx.json({error: 'Native bypass not configured'}, 404);
+		}
+		const nonce = issueNativeBypassNonce();
+		return ctx.json({nonce});
 	});
 
 	app.options('/.well-known/fluxer', (ctx) => {

@@ -60,6 +60,39 @@ class CaptchaState {
 	}
 }
 
+interface NativeBypassBridge {
+	computeCaptchaBypass(nonce: string): Promise<string> | string;
+}
+
+declare global {
+	interface Window {
+		EchowireNativeCaptcha?: NativeBypassBridge;
+	}
+}
+
+function hasNativeBypassBridge(): boolean {
+	return typeof window.EchowireNativeCaptcha?.computeCaptchaBypass === 'function';
+}
+
+async function getNativeBypassToken(): Promise<CaptchaResult | null> {
+	if (!hasNativeBypassBridge()) return null;
+
+	try {
+		const response = await fetch('/api/captcha/native-challenge');
+		if (!response.ok) return null;
+
+		const {nonce} = (await response.json()) as {nonce: string};
+		if (!nonce) return null;
+
+		const signature = await window.EchowireNativeCaptcha!.computeCaptchaBypass(nonce);
+		if (!signature) return null;
+
+		return {token: `${nonce}:${signature}`, type: 'native-bypass' as CaptchaType};
+	} catch {
+		return null;
+	}
+}
+
 class CaptchaInterceptorStore {
 	private state = new CaptchaState();
 	private pendingPromise: {resolve: (result: CaptchaResult) => void; reject: (error: Error) => void} | null = null;
@@ -129,34 +162,56 @@ class CaptchaInterceptorStore {
 		reject: (error: Error) => void,
 	): boolean | Promise<HttpResponse> | undefined {
 		if (response.status === 400 && this.isCaptchaError(response)) {
-			const i18n = this.i18n!;
-			const errorMessage =
-				getResponseMessage(response.body) || i18n._(msg`Captcha verification failed. Please try again.`);
+			// Try native app bypass first (no UI needed)
+			if (hasNativeBypassBridge()) {
+				const promise = getNativeBypassToken()
+					.then((result) => {
+						if (result) {
+							return retryWithHeaders({
+								'X-Captcha-Token': result.token,
+								'X-Captcha-Type': result.type,
+							});
+						}
+						// Native bypass failed, fall through to modal
+						return this.showCaptchaModalAndRetry(retryWithHeaders, reject);
+					})
+					.catch(() => this.showCaptchaModalAndRetry(retryWithHeaders, reject));
 
-			this.state.setError(errorMessage);
-			this.state.setIsVerifying(false);
+				return promise;
+			}
 
-			const promise = this.showCaptchaModal()
-				.then((captchaResult) => {
-					this.state.setError(null);
-					this.state.setIsVerifying(false);
-					ModalActionCreators.pop();
-					return retryWithHeaders({
-						'X-Captcha-Token': captchaResult.token,
-						'X-Captcha-Type': captchaResult.type,
-					});
-				})
-				.catch((error) => {
-					this.state.reset();
-					ModalActionCreators.pop();
-					reject(error);
-					throw error;
-				});
-
-			return promise;
+			return this.showCaptchaModalAndRetry(retryWithHeaders, reject);
 		}
 
 		return undefined;
+	}
+
+	private showCaptchaModalAndRetry(
+		retryWithHeaders: (headers: Record<string, string>) => Promise<HttpResponse>,
+		reject: (error: Error) => void,
+	): Promise<HttpResponse> {
+		const i18n = this.i18n!;
+		const errorMessage = i18n._(msg`Captcha verification failed. Please try again.`);
+
+		this.state.setError(errorMessage);
+		this.state.setIsVerifying(false);
+
+		return this.showCaptchaModal()
+			.then((captchaResult) => {
+				this.state.setError(null);
+				this.state.setIsVerifying(false);
+				ModalActionCreators.pop();
+				return retryWithHeaders({
+					'X-Captcha-Token': captchaResult.token,
+					'X-Captcha-Type': captchaResult.type,
+				});
+			})
+			.catch((error) => {
+				this.state.reset();
+				ModalActionCreators.pop();
+				reject(error);
+				throw error;
+			});
 	}
 }
 

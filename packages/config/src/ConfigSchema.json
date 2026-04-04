@@ -941,6 +941,11 @@
 					"description": "Cloudflare Turnstile settings.",
 					"$ref": "#/$defs/captcha_provider",
 					"default": {}
+				},
+				"native_bypass_secret": {
+					"type": "string",
+					"description": "HMAC secret for native app captcha bypass. Must be at least 32 characters. Native apps sign a server-issued nonce with this secret to prove they are legitimate.",
+					"default": ""
 				}
 			}
 		},

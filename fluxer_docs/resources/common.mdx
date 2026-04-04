@@ -93,6 +93,21 @@ Type: [ConnectionResponse](#connectionresponse)[]
 | type | enum&lt;`bsky`, `domain`&gt; | The type of connection to create |
 | visibility_flags? | [Int32Type](#int32type) |  |
 
+<a id="createthreadrequest"></a>
+
+## CreateThreadRequest
+
+**Related endpoints**
+
+- [`POST /channels/{channel_id}/threads`](/api-reference/threads/create-a-thread)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| applied_tags? | [SnowflakeType](#snowflaketype)[] | Tag IDs to apply to this forum post (max 5) |
+| auto_archive_duration? | enum&lt;`0`, `60`, `1440`, `4320`, `10080`&gt; | Duration in minutes to auto-archive after inactivity (0 = never, 60, 1440, 4320, 10080) |
+| name | string | The name of the thread (1-100 characters) |
+| type? | enum&lt;`11`, `12`&gt; | The type of thread to create (11 = public, 12 = private) |
+
 <a id="discoveryapplicationpatchrequest"></a>
 
 ## DiscoveryApplicationPatchRequest
@@ -225,6 +240,26 @@ Type: [DiscoveryCategoryResponse](#discoverycategoryresponse)[]
 ## EmailType
 
 Type: string (email)
+
+<a id="forumtagrequest"></a>
+
+## ForumTagRequest
+
+| Field | Type | Description |
+|-------|------|-------------|
+| emoji_name? | ?string | Emoji associated with the tag |
+| id? | [SnowflakeType](#snowflaketype) | The ID of an existing tag to update (omit for new tags) |
+| name | string | The name of the tag (1-20 characters) |
+
+<a id="forumtagresponse"></a>
+
+## ForumTagResponse
+
+| Field | Type | Description |
+|-------|------|-------------|
+| emoji_name | ?string | The emoji associated with this tag |
+| id | [SnowflakeType](#snowflaketype) | The unique identifier for this tag |
+| name | string | The name of the tag |
 
 <a id="int64stringtype"></a>
 
@@ -369,6 +404,24 @@ Type: string (int64)
 |-------|------|-------------|
 | sort_order? | [Int32Type](#int32type) |  |
 | visibility_flags? | [Int32Type](#int32type) |  |
+
+<a id="updatethreadrequest"></a>
+
+## UpdateThreadRequest
+
+**Related endpoints**
+
+- [`PATCH /channels/{channel_id}/thread`](/api-reference/threads/update-a-thread)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| applied_tags? | [SnowflakeType](#snowflaketype)[] | Tag IDs applied to this forum post (max 5) |
+| archived? | boolean | Whether the thread is archived |
+| auto_archive_duration? | enum&lt;`0`, `60`, `1440`, `4320`, `10080`&gt; | Duration in minutes to auto-archive after inactivity (0 = never) |
+| invitable? | boolean | Whether non-moderators can add users to a private thread |
+| locked? | boolean | Whether the thread is locked |
+| name? | string | The name of the thread (1-100 characters) |
+| rate_limit_per_user? | [Int32Type](#int32type) |  |
 
 <a id="validationerrorcodeschema"></a>
 

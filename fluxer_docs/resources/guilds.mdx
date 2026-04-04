@@ -82,7 +82,7 @@ The type of action that occurred
 
 - [`POST /guilds/{guild_id}/channels`](/api-reference/guilds/create-guild-channel)
 
-Type: [ChannelCreateTextRequest](#channelcreatetextrequest) \| [ChannelCreateVoiceRequest](#channelcreatevoicerequest) \| [ChannelCreateCategoryRequest](#channelcreatecategoryrequest) \| [ChannelCreateLinkRequest](#channelcreatelinkrequest)
+Type: [ChannelCreateTextRequest](#channelcreatetextrequest) \| [ChannelCreateVoiceRequest](#channelcreatevoicerequest) \| [ChannelCreateCategoryRequest](#channelcreatecategoryrequest) \| [ChannelCreateLinkRequest](#channelcreatelinkrequest) \| [ChannelCreateForumRequest](#channelcreateforumrequest)
 
 <a id="channelpositionupdaterequest"></a>
 
@@ -721,6 +721,138 @@ Type: [GuildRolePositionItem](#guildrolepositionitem)[]
 | name? | string | The name of the role (1-100 characters) |
 | permissions? | [UnsignedInt64Type](#unsignedint64type) |  |
 
+<a id="guildscheduledeventcreaterequest"></a>
+
+## GuildScheduledEventCreateRequest
+
+**Related endpoints**
+
+- [`POST /guilds/{guild_id}/scheduled-events`](/api-reference/guild-scheduled-events/create-a-scheduled-event)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| channel_id? | ?[SnowflakeType](#snowflaketype) | The voice channel ID (required for voice events) |
+| description? | ?string | The description of the event |
+| entity_type | enum&lt;`1`, `2`&gt; | The type of event (1 = voice, 2 = external) |
+| location? | ?string | The location (required for external events) |
+| name | string | The name of the event |
+| scheduled_end_time? | ?string | ISO 8601 timestamp for when the event ends |
+| scheduled_start_time | string | ISO 8601 timestamp for when the event starts |
+
+<a id="guildscheduledeventlistresponse"></a>
+
+## GuildScheduledEventListResponse
+
+**Related endpoints**
+
+- [`GET /guilds/{guild_id}/scheduled-events`](/api-reference/guild-scheduled-events/list-guild-scheduled-events)
+
+Type: [GuildScheduledEventResponse](#guildscheduledeventresponse)[]
+
+<a id="guildscheduledeventresponse"></a>
+
+## GuildScheduledEventResponse
+
+**Related endpoints**
+
+- [`GET /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/get-a-scheduled-event)
+- [`POST /guilds/{guild_id}/scheduled-events`](/api-reference/guild-scheduled-events/create-a-scheduled-event)
+- [`PATCH /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/update-a-scheduled-event)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| channel_id | ?[SnowflakeType](#snowflaketype) | The voice channel ID for voice events |
+| cover_image | ?string | The cover image hash |
+| created_at | string | ISO 8601 timestamp for when the event was created |
+| creator_id | [SnowflakeType](#snowflaketype) | The ID of the user who created the event |
+| description | ?string | The description of the event |
+| entity_type | number | The type of event (1 = voice, 2 = external) |
+| guild_id | [SnowflakeType](#snowflaketype) | The guild this event belongs to |
+| id | [SnowflakeType](#snowflaketype) | The unique identifier for this event |
+| location | ?string | The location for external events |
+| name | string | The name of the event |
+| scheduled_end_time | ?string | ISO 8601 timestamp for when the event ends |
+| scheduled_start_time | string | ISO 8601 timestamp for when the event starts |
+| status | number | The status of the event (1 = scheduled, 2 = active, 3 = completed, 4 = cancelled) |
+| user_count | number | The number of users interested in the event |
+
+<a id="guildscheduledeventupdaterequest"></a>
+
+## GuildScheduledEventUpdateRequest
+
+**Related endpoints**
+
+- [`PATCH /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/update-a-scheduled-event)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| channel_id? | ?[SnowflakeType](#snowflaketype) | The voice channel ID |
+| description? | ?string | The description of the event |
+| entity_type? | enum&lt;`1`, `2`&gt; | The type of event |
+| location? | ?string | The location |
+| name? | string | The name of the event |
+| scheduled_end_time? | ?string | ISO 8601 timestamp for when the event ends |
+| scheduled_start_time? | string | ISO 8601 timestamp for when the event starts |
+| status? | enum&lt;`1`, `2`, `3`, `4`&gt; | The status of the event |
+
+<a id="guildsoundboardplayrequest"></a>
+
+## GuildSoundboardPlayRequest
+
+**Related endpoints**
+
+- [`POST /guilds/{guild_id}/soundboard/play`](/api-reference/guilds/play-a-soundboard-sound-in-a-voice-channel)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| channel_id | [SnowflakeType](#snowflaketype) | The voice channel to play the sound in |
+| sound_id | [SnowflakeType](#snowflaketype) | The ID of the sound to play |
+
+<a id="guildsoundboardsoundlistresponse"></a>
+
+## GuildSoundboardSoundListResponse
+
+**Related endpoints**
+
+- [`GET /guilds/{guild_id}/soundboard`](/api-reference/guilds/list-guild-soundboard-sounds)
+
+Type: [GuildSoundboardSoundResponse](#guildsoundboardsoundresponse)[]
+
+<a id="guildsoundboardsoundresponse"></a>
+
+## GuildSoundboardSoundResponse
+
+**Related endpoints**
+
+- [`GET /guilds/{guild_id}/soundboard/{sound_id}/audio`](/api-reference/guilds/get-soundboard-sound-audio-file)
+- [`POST /guilds/{guild_id}/soundboard`](/api-reference/guilds/upload-a-soundboard-sound)
+- [`PATCH /guilds/{guild_id}/soundboard/{sound_id}`](/api-reference/guilds/update-a-soundboard-sound)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| created_at | string | When this sound was created |
+| duration_ms | number | The duration of the sound in milliseconds |
+| emoji | ?string | The emoji associated with this sound |
+| guild_id | [SnowflakeType](#snowflaketype) | The guild this sound belongs to |
+| id | [SnowflakeType](#snowflaketype) | The unique identifier for this sound |
+| name | string | The name of the sound |
+| uploaded_by | [SnowflakeType](#snowflaketype) | The user who uploaded this sound |
+| volume | number | The default playback volume (0.0 to 1.0) |
+
+<a id="guildsoundboardupdaterequest"></a>
+
+## GuildSoundboardUpdateRequest
+
+**Related endpoints**
+
+- [`PATCH /guilds/{guild_id}/soundboard/{sound_id}`](/api-reference/guilds/update-a-soundboard-sound)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| emoji? | ?string | The emoji associated with this sound |
+| name? | string | The name of the sound |
+| volume? | number | The default playback volume |
+
 <a id="guildstickerbulkcreaterequest"></a>
 
 ## GuildStickerBulkCreateRequest
@@ -987,6 +1119,7 @@ The NSFW level of the guild
 **Related endpoints**
 
 - [`GET /admin/guilds/{guild_id}/emojis`](/api-reference/admin/list-guild-emojis)
+- [`GET /admin/guilds/{guild_id}/soundboard`](/api-reference/admin/list-guild-soundboard-sounds)
 - [`GET /admin/guilds/{guild_id}/stickers`](/api-reference/admin/list-guild-stickers)
 - [`GET /admin/system-dm-jobs`](/api-reference/admin/list-system-dm-jobs)
 - [`GET /channels/{channel_id}`](/api-reference/channels/fetch-a-channel)
@@ -997,6 +1130,8 @@ The NSFW level of the guild
 - [`GET /channels/{channel_id}/messages/{message_id}/reactions/{emoji}`](/api-reference/channels/list-users-who-reacted-with-emoji)
 - [`GET /channels/{channel_id}/messages/pins`](/api-reference/channels/list-pinned-messages)
 - [`GET /channels/{channel_id}/rtc-regions`](/api-reference/channels/list-rtc-regions)
+- [`GET /channels/{channel_id}/thread-members`](/api-reference/threads/list-thread-members)
+- [`GET /channels/{channel_id}/threads/archived/public`](/api-reference/threads/list-archived-public-threads)
 - [`GET /channels/{channel_id}/webhooks`](/api-reference/webhooks/list-channel-webhooks)
 - [`GET /guilds/{guild_id}`](/api-reference/guilds/get-guild-information)
 - [`GET /guilds/{guild_id}/audit-logs`](/api-reference/guilds/list-guild-audit-logs)
@@ -1009,7 +1144,13 @@ The NSFW level of the guild
 - [`GET /guilds/{guild_id}/members/{user_id}`](/api-reference/guilds/get-guild-member-by-user-id)
 - [`GET /guilds/{guild_id}/members/@me`](/api-reference/guilds/get-current-user-guild-member)
 - [`GET /guilds/{guild_id}/roles`](/api-reference/guilds/list-guild-roles)
+- [`GET /guilds/{guild_id}/scheduled-events`](/api-reference/guild-scheduled-events/list-guild-scheduled-events)
+- [`GET /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/get-a-scheduled-event)
+- [`GET /guilds/{guild_id}/scheduled-events/{event_id}/users`](/api-reference/guild-scheduled-events/list-interested-users)
+- [`GET /guilds/{guild_id}/soundboard`](/api-reference/guilds/list-guild-soundboard-sounds)
+- [`GET /guilds/{guild_id}/soundboard/{sound_id}/audio`](/api-reference/guilds/get-soundboard-sound-audio-file)
 - [`GET /guilds/{guild_id}/stickers`](/api-reference/guilds/list-guild-stickers)
+- [`GET /guilds/{guild_id}/threads/active`](/api-reference/threads/list-active-threads)
 - [`GET /guilds/{guild_id}/vanity-url`](/api-reference/guilds/get-guild-vanity-url)
 - [`GET /guilds/{guild_id}/webhooks`](/api-reference/webhooks/list-guild-webhooks)
 - [`GET /packs/{pack_id}/invites`](/api-reference/invites/list-pack-invites)
@@ -1034,6 +1175,7 @@ The NSFW level of the guild
 - [`POST /channels/{channel_id}/messages/bulk-delete`](/api-reference/channels/bulk-delete-messages)
 - [`POST /channels/{channel_id}/messages/schedule`](/api-reference/channels/schedule-a-message-to-send-later)
 - [`POST /channels/{channel_id}/pins/ack`](/api-reference/channels/acknowledge-new-pin-notifications)
+- [`POST /channels/{channel_id}/threads`](/api-reference/threads/create-a-thread)
 - [`POST /channels/{channel_id}/typing`](/api-reference/channels/indicate-typing-activity)
 - [`POST /channels/{channel_id}/webhooks`](/api-reference/webhooks/create-webhook)
 - [`POST /discovery/guilds/{guild_id}/join`](/api-reference/discovery/join-a-discoverable-guild)
@@ -1044,6 +1186,9 @@ The NSFW level of the guild
 - [`POST /guilds/{guild_id}/emojis/bulk`](/api-reference/guilds/bulk-create-guild-emojis)
 - [`POST /guilds/{guild_id}/members-search`](/api-reference/guilds/search-guild-members)
 - [`POST /guilds/{guild_id}/roles`](/api-reference/guilds/create-guild-role)
+- [`POST /guilds/{guild_id}/scheduled-events`](/api-reference/guild-scheduled-events/create-a-scheduled-event)
+- [`POST /guilds/{guild_id}/soundboard`](/api-reference/guilds/upload-a-soundboard-sound)
+- [`POST /guilds/{guild_id}/soundboard/play`](/api-reference/guilds/play-a-soundboard-sound-in-a-voice-channel)
 - [`POST /guilds/{guild_id}/stickers`](/api-reference/guilds/create-guild-sticker)
 - [`POST /guilds/{guild_id}/stickers/bulk`](/api-reference/guilds/bulk-create-guild-stickers)
 - [`POST /guilds/{guild_id}/transfer-ownership`](/api-reference/guilds/transfer-guild-ownership)
@@ -1062,13 +1207,17 @@ The NSFW level of the guild
 - [`PUT /channels/{channel_id}/permissions/{overwrite_id}`](/api-reference/channels/set-permission-overwrite-for-channel)
 - [`PUT /channels/{channel_id}/pins/{message_id}`](/api-reference/channels/pin-a-message)
 - [`PUT /channels/{channel_id}/recipients/{user_id}`](/api-reference/channels/add-recipient-to-group-dm)
+- [`PUT /channels/{channel_id}/thread-members/{user_id}`](/api-reference/threads/add-a-member-to-a-thread)
+- [`PUT /channels/{channel_id}/thread-members/@me`](/api-reference/threads/join-a-thread)
 - [`PUT /guilds/{guild_id}/bans/{user_id}`](/api-reference/guilds/ban-guild-member)
 - [`PUT /guilds/{guild_id}/members/{user_id}/roles/{role_id}`](/api-reference/guilds/add-role-to-guild-member)
+- [`PUT /guilds/{guild_id}/scheduled-events/{event_id}/users/@me`](/api-reference/guild-scheduled-events/mark-interested)
 - [`PUT /users/@me/channels/{channel_id}/pin`](/api-reference/users/pin-direct-message-channel)
 - [`PUT /users/@me/relationships/{user_id}`](/api-reference/users/accept-or-update-friend-request)
 - [`PATCH /channels/{channel_id}`](/api-reference/channels/update-channel-settings)
 - [`PATCH /channels/{channel_id}/call`](/api-reference/channels/update-call-region)
 - [`PATCH /channels/{channel_id}/messages/{message_id}`](/api-reference/channels/edit-a-message)
+- [`PATCH /channels/{channel_id}/thread`](/api-reference/threads/update-a-thread)
 - [`PATCH /guilds/{guild_id}`](/api-reference/guilds/update-guild-settings)
 - [`PATCH /guilds/{guild_id}/channels`](/api-reference/guilds/update-channel-positions)
 - [`PATCH /guilds/{guild_id}/detached-banner`](/api-reference/guilds/toggle-detached-banner)
@@ -1079,6 +1228,8 @@ The NSFW level of the guild
 - [`PATCH /guilds/{guild_id}/roles`](/api-reference/guilds/update-role-positions)
 - [`PATCH /guilds/{guild_id}/roles/{role_id}`](/api-reference/guilds/update-guild-role)
 - [`PATCH /guilds/{guild_id}/roles/hoist-positions`](/api-reference/guilds/update-role-hoist-positions)
+- [`PATCH /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/update-a-scheduled-event)
+- [`PATCH /guilds/{guild_id}/soundboard/{sound_id}`](/api-reference/guilds/update-a-soundboard-sound)
 - [`PATCH /guilds/{guild_id}/stickers/{sticker_id}`](/api-reference/guilds/update-guild-sticker)
 - [`PATCH /guilds/{guild_id}/text-channel-flexible-names`](/api-reference/guilds/toggle-text-channel-flexible-names)
 - [`PATCH /guilds/{guild_id}/vanity-url`](/api-reference/guilds/update-guild-vanity-url)
@@ -1089,6 +1240,7 @@ The NSFW level of the guild
 - [`PATCH /users/@me/relationships/{user_id}`](/api-reference/users/update-relationship-nickname)
 - [`PATCH /webhooks/{webhook_id}`](/api-reference/webhooks/update-webhook)
 - [`PATCH /webhooks/{webhook_id}/{token}`](/api-reference/webhooks/update-webhook-with-token)
+- [`DELETE /admin/guilds/{guild_id}/soundboard/{sound_id}`](/api-reference/admin/delete-a-guild-soundboard-sound)
 - [`DELETE /channels/{channel_id}`](/api-reference/channels/delete-a-channel)
 - [`DELETE /channels/{channel_id}/messages/{message_id}`](/api-reference/channels/delete-a-message)
 - [`DELETE /channels/{channel_id}/messages/{message_id}/attachments/{attachment_id}`](/api-reference/channels/delete-a-message-attachment)
@@ -1100,6 +1252,9 @@ The NSFW level of the guild
 - [`DELETE /channels/{channel_id}/permissions/{overwrite_id}`](/api-reference/channels/delete-permission-overwrite)
 - [`DELETE /channels/{channel_id}/pins/{message_id}`](/api-reference/channels/unpin-a-message)
 - [`DELETE /channels/{channel_id}/recipients/{user_id}`](/api-reference/channels/remove-recipient-from-group-dm)
+- [`DELETE /channels/{channel_id}/thread`](/api-reference/threads/delete-a-thread)
+- [`DELETE /channels/{channel_id}/thread-members/{user_id}`](/api-reference/threads/remove-a-member-from-a-thread)
+- [`DELETE /channels/{channel_id}/thread-members/@me`](/api-reference/threads/leave-a-thread)
 - [`DELETE /guilds/{guild_id}/bans/{user_id}`](/api-reference/guilds/unban-guild-member)
 - [`DELETE /guilds/{guild_id}/discovery`](/api-reference/discovery/withdraw-discovery-application)
 - [`DELETE /guilds/{guild_id}/emojis/{emoji_id}`](/api-reference/guilds/delete-guild-emoji)
@@ -1107,6 +1262,9 @@ The NSFW level of the guild
 - [`DELETE /guilds/{guild_id}/members/{user_id}/roles/{role_id}`](/api-reference/guilds/remove-role-from-guild-member)
 - [`DELETE /guilds/{guild_id}/roles/{role_id}`](/api-reference/guilds/delete-guild-role)
 - [`DELETE /guilds/{guild_id}/roles/hoist-positions`](/api-reference/guilds/reset-role-hoist-positions)
+- [`DELETE /guilds/{guild_id}/scheduled-events/{event_id}`](/api-reference/guild-scheduled-events/delete-a-scheduled-event)
+- [`DELETE /guilds/{guild_id}/scheduled-events/{event_id}/users/@me`](/api-reference/guild-scheduled-events/remove-interest)
+- [`DELETE /guilds/{guild_id}/soundboard/{sound_id}`](/api-reference/guilds/delete-a-soundboard-sound)
 - [`DELETE /guilds/{guild_id}/stickers/{sticker_id}`](/api-reference/guilds/delete-guild-sticker)
 - [`DELETE /packs/{pack_id}`](/api-reference/packs/delete-pack)
 - [`DELETE /packs/{pack_id}/install`](/api-reference/packs/uninstall-pack)

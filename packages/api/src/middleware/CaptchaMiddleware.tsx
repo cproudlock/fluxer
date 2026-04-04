@@ -24,6 +24,7 @@ import type {ICaptchaProvider} from '@fluxer/captcha/src/ICaptchaProvider';
 import {CaptchaRequiredError, InvalidCaptchaError} from '@fluxer/errors/src/CaptchaErrors';
 import {extractClientIp} from '@fluxer/ip_utils/src/ClientIp';
 import {createMiddleware} from 'hono/factory';
+import {createHmac, randomBytes} from 'node:crypto';
 
 let providers: Map<string, ICaptchaProvider> | null = null;
 let defaultProvider: ICaptchaProvider | null = null;
@@ -74,27 +75,89 @@ function resolveProvider(requestedType: string | undefined): ICaptchaProvider {
 	throw new Error('No captcha provider available');
 }
 
+// Native app bypass: challenge-response with HMAC
+// Nonces are single-use and expire after 60 seconds
+const NONCE_TTL_MS = 60_000;
+const MAX_NONCE_CACHE = 10_000;
+const pendingNonces = new Map<string, number>();
+
+function cleanExpiredNonces() {
+	const now = Date.now();
+	for (const [nonce, created] of pendingNonces) {
+		if (now - created > NONCE_TTL_MS) {
+			pendingNonces.delete(nonce);
+		}
+	}
+}
+
+export function issueNativeBypassNonce(): string {
+	if (pendingNonces.size > MAX_NONCE_CACHE) {
+		cleanExpiredNonces();
+	}
+	const nonce = randomBytes(32).toString('hex');
+	pendingNonces.set(nonce, Date.now());
+	return nonce;
+}
+
+function verifyNativeBypass(token: string): boolean {
+	const secret = Config.captcha.nativeBypassSecret;
+	if (!secret || secret.length < 32) return false;
+
+	const parts = token.split(':');
+	if (parts.length !== 2) return false;
+
+	const [nonce, signature] = parts;
+	if (!nonce || !signature) return false;
+
+	// Check nonce exists and hasn't expired
+	const created = pendingNonces.get(nonce);
+	if (created == null) return false;
+
+	if (Date.now() - created > NONCE_TTL_MS) {
+		pendingNonces.delete(nonce);
+		return false;
+	}
+
+	// Consume nonce (single-use)
+	pendingNonces.delete(nonce);
+
+	// Verify HMAC
+	const expected = createHmac('sha256', secret).update(nonce).digest('hex');
+	if (expected.length !== signature.length) return false;
+
+	// Constant-time comparison
+	let mismatch = 0;
+	for (let i = 0; i < expected.length; i++) {
+		mismatch |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+	}
+	return mismatch === 0;
+}
+
 export const CaptchaMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => {
 	if (!Config.captcha.enabled) {
 		await next();
 		return;
 	}
 
-	// Skip captcha for native mobile apps — Turnstile doesn't work in WebView
-	const userAgent = ctx.req.header('user-agent') ?? '';
-	if (userAgent.includes('EchowireApp') || userAgent.includes('EchowireTWA')) {
+	const captchaType = ctx.req.header('x-captcha-type');
+	const token = ctx.req.header('x-captcha-token');
+
+	// Native app bypass via HMAC challenge-response
+	if (captchaType === 'native-bypass') {
+		if (!token || !verifyNativeBypass(token)) {
+			throw new InvalidCaptchaError();
+		}
 		await next();
 		return;
 	}
 
 	initializeProviders();
 
-	const token = ctx.req.header('x-captcha-token');
 	if (!token) {
 		throw new CaptchaRequiredError();
 	}
 
-	const provider = resolveProvider(ctx.req.header('x-captcha-type'));
+	const provider = resolveProvider(captchaType);
 
 	const isValid = await provider.verify({
 		token,

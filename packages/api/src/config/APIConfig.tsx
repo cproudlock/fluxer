@@ -137,6 +137,7 @@ export interface APIConfig {
 			siteKey: string;
 			secretKey: string;
 		};
+		nativeBypassSecret: string;
 	};
 
 	voice: {

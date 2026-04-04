@@ -69,6 +69,23 @@ description: 'Channels object schemas from the Fluxer API.'
 | url? | ?string | External URL for link channels |
 | user_limit? | ?integer (int32) | Maximum users allowed in voice channel (0-99, 0 means unlimited) |
 
+<a id="channelcreateforumrequest"></a>
+
+## ChannelCreateForumRequest
+
+| Field | Type | Description |
+|-------|------|-------------|
+| available_tags? | [ForumTagRequest](#forumtagrequest)[] | Tags available in this forum (max 20) |
+| bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
+| name | string | The name of the forum channel |
+| nsfw? | boolean | Whether the channel is marked as NSFW |
+| parent_id? | ?[SnowflakeType](#snowflaketype) | ID of the parent category for this channel |
+| permission_overwrites? | [ChannelOverwriteRequest](#channeloverwriterequest)[] | Permission overwrites for roles and members |
+| topic? | ?string | The channel topic (1-1024 characters) |
+| type | [ChannelUpdateForumRequestType](#channelupdateforumrequesttype) |  |
+| url? | ?string | External URL for link channels |
+| user_limit? | ?integer (int32) | Maximum users allowed in voice channel (0-99, 0 means unlimited) |
+
 <a id="channelcreatelinkrequest"></a>
 
 ## ChannelCreateLinkRequest
@@ -227,18 +244,25 @@ The pinned message
 - [`GET /channels/{channel_id}`](/api-reference/channels/fetch-a-channel)
 - [`GET /guilds/{guild_id}/channels`](/api-reference/guilds/list-guild-channels)
 - [`GET /users/@me/channels`](/api-reference/users/list-private-channels)
+- [`POST /channels/{channel_id}/threads`](/api-reference/threads/create-a-thread)
 - [`POST /guilds/{guild_id}/channels`](/api-reference/guilds/create-guild-channel)
 - [`POST /users/@me/channels`](/api-reference/users/create-private-channel)
 - [`PATCH /channels/{channel_id}`](/api-reference/channels/update-channel-settings)
+- [`PATCH /channels/{channel_id}/thread`](/api-reference/threads/update-a-thread)
 
 | Field | Type | Description |
 |-------|------|-------------|
+| applied_tags? | [SnowflakeType](#snowflaketype)[] | Tag IDs applied to a forum thread (max 5) |
+| available_tags? | [ForumTagResponse](#forumtagresponse)[] | Available tags for forum channels (max 20) |
 | bitrate? | ?[Int32Type](#int32type) | The bitrate of the voice channel in bits per second |
 | guild_id? | [SnowflakeType](#snowflaketype) |  |
 | icon? | ?string | The icon hash of the channel (for group DMs) |
 | id | [SnowflakeType](#snowflaketype) | The unique identifier (snowflake) for this channel |
 | last_message_id? | ?[SnowflakeType](#snowflaketype) | The ID of the last message sent in this channel |
 | last_pin_timestamp? | ?string (date-time) | The ISO 8601 timestamp of when the last pinned message was pinned |
+| member_count? | [Int32Type](#int32type) |  |
+| message_count? | [Int32Type](#int32type) |  |
+| message_retention_seconds? | [Int32Type](#int32type) |  |
 | name? | string | The name of the channel |
 | nicks? | map&lt;string, string&gt; | Custom nicknames for users in this channel (for group DMs) |
 | nsfw? | boolean | Whether the channel is marked as NSFW |
@@ -249,6 +273,7 @@ The pinned message
 | rate_limit_per_user? | [Int32Type](#int32type) |  |
 | recipients? | [UserPartialResponse](#userpartialresponse)[] | The recipients of the DM channel |
 | rtc_region? | ?[SnowflakeType](#snowflaketype) | The voice region ID for the voice channel |
+| thread_metadata? | [ChannelResponseThreadMetadata](#channelresponsethreadmetadata) | Thread-specific metadata |
 | topic? | ?string | The topic of the channel |
 | type | integer (int32) | The type of the channel |
 | url? | ?string (uri) | The URL associated with the channel |
@@ -262,6 +287,7 @@ The pinned message
 |-------|------|-------------|
 | bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
 | icon? | ?[Base64ImageType](#base64imagetype) | Base64-encoded icon image for group DM channels |
+| message_retention_seconds? | ?integer (int32) | Message retention period in seconds (0-2592000, 0 means forever) |
 | name? | ?string | The name of the category |
 | nicks? | [ChannelNicknameOverrides](#channelnicknameoverrides) |  |
 | nsfw? | ?boolean | Whether the channel is marked as NSFW |
@@ -272,6 +298,29 @@ The pinned message
 | rtc_region? | ?[SnowflakeType](#snowflaketype) | Voice region ID for the voice channel (1-64 characters) |
 | topic? | ?string | The channel topic (1-1024 characters) |
 | type | [ChannelUpdateCategoryRequestType](#channelupdatecategoryrequesttype) |  |
+| url? | ?string | External URL for link channels |
+| user_limit? | ?integer (int32) | Maximum users allowed in voice channel (0-99, 0 means unlimited) |
+
+<a id="channelupdateforumrequest"></a>
+
+## ChannelUpdateForumRequest
+
+| Field | Type | Description |
+|-------|------|-------------|
+| available_tags? | [ForumTagRequest](#forumtagrequest)[] | Tags available in this forum (max 20) |
+| bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
+| icon? | ?[Base64ImageType](#base64imagetype) | Base64-encoded icon image for group DM channels |
+| message_retention_seconds? | ?integer (int32) | Message retention period in seconds (0-2592000, 0 means forever) |
+| name? | ?string | The name of the forum channel |
+| nicks? | [ChannelNicknameOverrides](#channelnicknameoverrides) |  |
+| nsfw? | ?boolean | Whether the channel is marked as NSFW |
+| owner_id? | ?[SnowflakeType](#snowflaketype) | ID of the new owner for group DM channels |
+| parent_id? | ?[SnowflakeType](#snowflaketype) | ID of the parent category for this channel |
+| permission_overwrites? | [ChannelOverwriteRequest](#channeloverwriterequest)[] | Permission overwrites for roles and members |
+| rate_limit_per_user? | ?integer (int32) | Slowmode delay in seconds (0-21600) |
+| rtc_region? | ?[SnowflakeType](#snowflaketype) | Voice region ID for the voice channel (1-64 characters) |
+| topic? | ?string | The channel topic (1-1024 characters) |
+| type | [ChannelUpdateForumRequestType](#channelupdateforumrequesttype) |  |
 | url? | ?string | External URL for link channels |
 | user_limit? | ?integer (int32) | Maximum users allowed in voice channel (0-99, 0 means unlimited) |
 
@@ -295,6 +344,7 @@ The pinned message
 |-------|------|-------------|
 | bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
 | icon? | ?[Base64ImageType](#base64imagetype) | Base64-encoded icon image for group DM channels |
+| message_retention_seconds? | ?integer (int32) | Message retention period in seconds (0-2592000, 0 means forever) |
 | name? | ?string | The name of the channel |
 | nicks? | [ChannelNicknameOverrides](#channelnicknameoverrides) |  |
 | nsfw? | ?boolean | Whether the channel is marked as NSFW |
@@ -316,7 +366,7 @@ The pinned message
 
 - [`PATCH /channels/{channel_id}`](/api-reference/channels/update-channel-settings)
 
-Type: [ChannelUpdateTextRequest](#channelupdatetextrequest) \| [ChannelUpdateVoiceRequest](#channelupdatevoicerequest) \| [ChannelUpdateCategoryRequest](#channelupdatecategoryrequest) \| [ChannelUpdateLinkRequest](#channelupdatelinkrequest) \| [ChannelUpdateGroupDmRequest](#channelupdategroupdmrequest)
+Type: [ChannelUpdateTextRequest](#channelupdatetextrequest) \| [ChannelUpdateVoiceRequest](#channelupdatevoicerequest) \| [ChannelUpdateCategoryRequest](#channelupdatecategoryrequest) \| [ChannelUpdateLinkRequest](#channelupdatelinkrequest) \| [ChannelUpdateGroupDmRequest](#channelupdategroupdmrequest) \| [ChannelUpdateForumRequest](#channelupdateforumrequest)
 
 <a id="channelupdatetextrequest"></a>
 
@@ -326,6 +376,7 @@ Type: [ChannelUpdateTextRequest](#channelupdatetextrequest) \| [ChannelUpdateVoi
 |-------|------|-------------|
 | bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
 | icon? | ?[Base64ImageType](#base64imagetype) | Base64-encoded icon image for group DM channels |
+| message_retention_seconds? | ?integer (int32) | Message retention period in seconds (0-2592000, 0 means forever) |
 | name? | ?string | The name of the channel |
 | nicks? | [ChannelNicknameOverrides](#channelnicknameoverrides) |  |
 | nsfw? | ?boolean | Whether the channel is marked as NSFW |
@@ -347,6 +398,7 @@ Type: [ChannelUpdateTextRequest](#channelupdatetextrequest) \| [ChannelUpdateVoi
 |-------|------|-------------|
 | bitrate? | ?integer (int32) | Voice channel bitrate in bits per second (8000-320000) |
 | icon? | ?[Base64ImageType](#base64imagetype) | Base64-encoded icon image for group DM channels |
+| message_retention_seconds? | ?integer (int32) | Message retention period in seconds (0-2592000, 0 means forever) |
 | name? | ?string | The name of the channel |
 | nicks? | [ChannelNicknameOverrides](#channelnicknameoverrides) |  |
 | nsfw? | ?boolean | Whether the channel is marked as NSFW |
@@ -1065,6 +1117,14 @@ The type of overwrite (0 = role, 1 = member)
 |-------|-------------|
 | `3` | Channel type (group DM) |
 
+<a id="channelupdateforumrequesttype"></a>
+
+## ChannelUpdateForumRequestType
+
+| Value | Description |
+|-------|-------------|
+| `15` | Channel type (forum channel) |
+
 <a id="messageresponseschematype"></a>
 
 ## MessageResponseSchemaType
@@ -1082,6 +1142,20 @@ The type of message
 | `6` | A system message indicating a message was pinned |
 | `7` | A system message indicating a user joined |
 | `19` | A reply message |
+
+<a id="channelresponsethreadmetadata"></a>
+
+## ChannelResponseThreadMetadata
+
+Thread-specific metadata
+
+| Field | Type | Description |
+|-------|------|-------------|
+| archive_timestamp | ?string (date-time) | ISO 8601 timestamp when the thread was archived |
+| archived | boolean | Whether the thread is archived |
+| auto_archive_duration | integer (int32) | Duration in minutes to auto-archive after inactivity |
+| invitable? | boolean | Whether non-moderators can add other users to a private thread |
+| locked | boolean | Whether the thread is locked |
 
 <a id="messagereactionresponseemoji"></a>
 

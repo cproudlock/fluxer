@@ -7394,6 +7394,287 @@
         ]
       }
     },
+    "/admin/guilds/{guild_id}/soundboard": {
+      "get": {
+        "operationId": "admin_list_guild_soundboard",
+        "summary": "List guild soundboard sounds",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List guild soundboard sounds"
+          }
+        },
+        "description": "Lists all soundboard sounds in a guild. Requires ASSET_PURGE permission.",
+        "security": [
+          {
+            "adminApiKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ]
+      }
+    },
+    "/admin/guilds/{guild_id}/soundboard/{sound_id}": {
+      "delete": {
+        "operationId": "admin_delete_guild_soundboard_sound",
+        "summary": "Delete a guild soundboard sound",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Delete a guild soundboard sound"
+          }
+        },
+        "description": "Deletes a soundboard sound from a guild. Requires ASSET_PURGE permission.",
+        "security": [
+          {
+            "adminApiKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "sound_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The sound id"
+          }
+        ]
+      }
+    },
     "/admin/guilds/{guild_id}/stickers": {
       "get": {
         "operationId": "list_guild_stickers",
@@ -26716,6 +26997,1352 @@
         ]
       }
     },
+    "/channels/{channel_id}/thread": {
+      "patch": {
+        "operationId": "update_thread",
+        "summary": "Update a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Update a thread"
+          }
+        },
+        "description": "Modifies settings of a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateThreadRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete_thread",
+        "summary": "Delete a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Delete a thread"
+          }
+        },
+        "description": "Permanently deletes a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ]
+      }
+    },
+    "/channels/{channel_id}/thread-members": {
+      "get": {
+        "operationId": "list_thread_members",
+        "summary": "List thread members",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "join_timestamp": {
+                        "type": "string"
+                      },
+                      "flags": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "user_id",
+                      "join_timestamp",
+                      "flags"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List thread members"
+          }
+        },
+        "description": "Returns all members of a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ]
+      }
+    },
+    "/channels/{channel_id}/thread-members/@me": {
+      "put": {
+        "operationId": "join_thread",
+        "summary": "Join a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Join a thread"
+          }
+        },
+        "description": "Adds the current user to a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "leave_thread",
+        "summary": "Leave a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Leave a thread"
+          }
+        },
+        "description": "Removes the current user from a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ]
+      }
+    },
+    "/channels/{channel_id}/thread-members/{user_id}": {
+      "put": {
+        "operationId": "add_thread_member",
+        "summary": "Add a member to a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Add a member to a thread"
+          }
+        },
+        "description": "Adds another user to a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the user"
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "remove_thread_member",
+        "summary": "Remove a member from a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Remove a member from a thread"
+          }
+        },
+        "description": "Removes a user from a thread.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the user"
+          }
+        ]
+      }
+    },
+    "/channels/{channel_id}/threads": {
+      "post": {
+        "operationId": "create_thread",
+        "summary": "Create a thread",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChannelResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Create a thread"
+          }
+        },
+        "description": "Creates a new thread in the specified channel.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateThreadRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/channels/{channel_id}/threads/archived/public": {
+      "get": {
+        "operationId": "list_archived_public_threads",
+        "summary": "List archived public threads",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "threads": {
+                      "type": "string"
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "threads",
+                    "has_more"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List archived public threads"
+          }
+        },
+        "description": "Returns all archived public threads in a channel.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "channel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the channel"
+          }
+        ]
+      }
+    },
     "/channels/{channel_id}/typing": {
       "post": {
         "operationId": "indicate_typing",
@@ -34133,6 +35760,2143 @@
         ]
       }
     },
+    "/guilds/{guild_id}/scheduled-events": {
+      "get": {
+        "operationId": "list_guild_scheduled_events",
+        "summary": "List guild scheduled events",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildScheduledEventListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List guild scheduled events"
+          }
+        },
+        "description": "Returns all scheduled events for a guild.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ]
+      },
+      "post": {
+        "operationId": "create_guild_scheduled_event",
+        "summary": "Create a scheduled event",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildScheduledEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Create a scheduled event"
+          }
+        },
+        "description": "Creates a new scheduled event. Requires MANAGE_EVENTS permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuildScheduledEventCreateRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guilds/{guild_id}/scheduled-events/{event_id}": {
+      "get": {
+        "operationId": "get_guild_scheduled_event",
+        "summary": "Get a scheduled event",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildScheduledEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Get a scheduled event"
+          }
+        },
+        "description": "Returns a single scheduled event.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "update_guild_scheduled_event",
+        "summary": "Update a scheduled event",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildScheduledEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Update a scheduled event"
+          }
+        },
+        "description": "Updates a scheduled event. Requires MANAGE_EVENTS permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuildScheduledEventUpdateRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete_guild_scheduled_event",
+        "summary": "Delete a scheduled event",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Delete a scheduled event"
+          }
+        },
+        "description": "Deletes a scheduled event. Requires MANAGE_EVENTS permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ]
+      }
+    },
+    "/guilds/{guild_id}/scheduled-events/{event_id}/users": {
+      "get": {
+        "operationId": "list_guild_scheduled_event_users",
+        "summary": "List interested users",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "user_id": {
+                        "type": "string"
+                      },
+                      "event_id": {
+                        "type": "string"
+                      },
+                      "guild_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "user_id",
+                      "event_id",
+                      "guild_id"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List interested users"
+          }
+        },
+        "description": "Returns users interested in a scheduled event.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ]
+      }
+    },
+    "/guilds/{guild_id}/scheduled-events/{event_id}/users/@me": {
+      "put": {
+        "operationId": "add_guild_scheduled_event_user",
+        "summary": "Mark interested",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Mark interested"
+          }
+        },
+        "description": "Marks the current user as interested in an event.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ]
+      },
+      "delete": {
+        "operationId": "remove_guild_scheduled_event_user",
+        "summary": "Remove interest",
+        "tags": [
+          "Guild Scheduled Events"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Remove interest"
+          }
+        },
+        "description": "Removes the current user from the interested list.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The event id"
+          }
+        ]
+      }
+    },
+    "/guilds/{guild_id}/soundboard": {
+      "get": {
+        "operationId": "list_guild_soundboard_sounds",
+        "summary": "List guild soundboard sounds",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildSoundboardSoundListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List guild soundboard sounds"
+          }
+        },
+        "description": "List all soundboard sounds for a guild. Requires SPEAK permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ]
+      },
+      "post": {
+        "operationId": "create_guild_soundboard_sound",
+        "summary": "Upload a soundboard sound",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildSoundboardSoundResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Upload a soundboard sound"
+          }
+        },
+        "description": "Upload a new soundboard sound. Requires MANAGE_GUILD permission. Max 8 sounds per guild, 1MB per file.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ]
+      }
+    },
+    "/guilds/{guild_id}/soundboard/play": {
+      "post": {
+        "operationId": "play_guild_soundboard_sound",
+        "summary": "Play a soundboard sound in a voice channel",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Play a soundboard sound in a voice channel"
+          }
+        },
+        "description": "Triggers playback of a soundboard sound for all voice participants. Requires SPEAK permission. Rate limited to 1 per 3 seconds.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuildSoundboardPlayRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guilds/{guild_id}/soundboard/{sound_id}": {
+      "patch": {
+        "operationId": "update_guild_soundboard_sound",
+        "summary": "Update a soundboard sound",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildSoundboardSoundResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Update a soundboard sound"
+          }
+        },
+        "description": "Update an existing soundboard sound. Requires MANAGE_GUILD permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "sound_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The sound id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuildSoundboardUpdateRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete_guild_soundboard_sound",
+        "summary": "Delete a soundboard sound",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Delete a soundboard sound"
+          }
+        },
+        "description": "Delete a soundboard sound and its audio file. Requires MANAGE_GUILD permission.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "sound_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The sound id"
+          }
+        ]
+      }
+    },
+    "/guilds/{guild_id}/soundboard/{sound_id}/audio": {
+      "get": {
+        "operationId": "get_guild_soundboard_sound_audio",
+        "summary": "Get soundboard sound audio file",
+        "tags": [
+          "Guilds"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuildSoundboardSoundResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "Get soundboard sound audio file"
+          }
+        },
+        "description": "Stream the audio file for a soundboard sound. Proxied from storage with proper CORS headers.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          },
+          {
+            "name": "sound_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The sound id"
+          }
+        ]
+      }
+    },
     "/guilds/{guild_id}/stickers": {
       "post": {
         "operationId": "create_guild_sticker",
@@ -35063,6 +38827,160 @@
             }
           }
         }
+      }
+    },
+    "/guilds/{guild_id}/threads/active": {
+      "get": {
+        "operationId": "list_active_threads",
+        "summary": "List active threads",
+        "tags": [
+          "Threads"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "threads": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "threads"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was malformed or contained invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication is required or the token is invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have permission to perform this action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - You are being rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "enum": [
+                        "RATE_LIMITED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "retry_after": {
+                      "type": "number",
+                      "description": "Seconds to wait before retrying"
+                    },
+                    "global": {
+                      "type": "boolean",
+                      "description": "Whether this is a global rate limit"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message",
+                    "retry_after"
+                  ]
+                }
+              }
+            },
+            "headers": {
+              "Retry-After": {
+                "description": "Number of seconds to wait before retrying (only on 429)",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Limit": {
+                "description": "The number of requests that can be made in the current window",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Remaining": {
+                "description": "The number of remaining requests that can be made",
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-RateLimit-Reset": {
+                "description": "Unix timestamp when the rate limit resets",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - An unexpected error occurred",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-mint": {
+          "metadata": {
+            "title": "List active threads"
+          }
+        },
+        "description": "Returns all active threads in a guild.",
+        "security": [
+          {
+            "botToken": []
+          },
+          {
+            "sessionToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "guild_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "description": "The ID of the guild"
+          }
+        ]
       }
     },
     "/guilds/{guild_id}/transfer-ownership": {
@@ -69736,6 +73654,10 @@
             "type": "string",
             "description": "Date of birth in YYYY-MM-DD format"
           },
+          "age_confirmed": {
+            "type": "boolean",
+            "description": "Whether user confirms they are 13 years of age or older"
+          },
           "consent": {
             "type": "boolean",
             "description": "Whether user consents to terms of service"
@@ -69753,7 +73675,6 @@
           }
         },
         "required": [
-          "date_of_birth",
           "consent"
         ]
       },
@@ -70254,12 +74175,80 @@
           "rate_limit_per_user": {
             "$ref": "#/components/schemas/Int32Type"
           },
+          "message_retention_seconds": {
+            "$ref": "#/components/schemas/Int32Type"
+          },
           "nicks": {
             "type": "object",
             "additionalProperties": {
               "type": "string"
             },
             "description": "Custom nicknames for users in this channel (for group DMs)"
+          },
+          "message_count": {
+            "$ref": "#/components/schemas/Int32Type"
+          },
+          "member_count": {
+            "$ref": "#/components/schemas/Int32Type"
+          },
+          "thread_metadata": {
+            "type": "object",
+            "properties": {
+              "archived": {
+                "type": "boolean",
+                "description": "Whether the thread is archived"
+              },
+              "auto_archive_duration": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647,
+                "format": "int32",
+                "description": "Duration in minutes to auto-archive after inactivity"
+              },
+              "archive_timestamp": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "ISO 8601 timestamp when the thread was archived"
+              },
+              "locked": {
+                "type": "boolean",
+                "description": "Whether the thread is locked"
+              },
+              "invitable": {
+                "type": "boolean",
+                "description": "Whether non-moderators can add other users to a private thread"
+              }
+            },
+            "required": [
+              "archived",
+              "auto_archive_duration",
+              "archive_timestamp",
+              "locked"
+            ],
+            "description": "Thread-specific metadata"
+          },
+          "available_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ForumTagResponse"
+            },
+            "maxItems": 20,
+            "description": "Available tags for forum channels (max 20)"
+          },
+          "applied_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "maxItems": 5,
+            "description": "Tag IDs applied to a forum thread (max 5)"
           }
         },
         "required": [
@@ -70303,6 +74292,36 @@
           "deny"
         ]
       },
+      "ForumTagResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The unique identifier for this tag"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tag"
+          },
+          "emoji_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The emoji associated with this tag"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "emoji_name"
+        ]
+      },
       "ChannelUpdateRequest": {
         "oneOf": [
           {
@@ -70319,6 +74338,9 @@
           },
           {
             "$ref": "#/components/schemas/ChannelUpdateGroupDmRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ChannelUpdateForumRequest"
           }
         ]
       },
@@ -70417,6 +74439,20 @@
               }
             ],
             "description": "Slowmode delay in seconds (0-21600)"
+          },
+          "message_retention_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2592000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Message retention period in seconds (0-2592000, 0 means forever)"
           },
           "icon": {
             "anyOf": [
@@ -70637,6 +74673,20 @@
             ],
             "description": "Slowmode delay in seconds (0-21600)"
           },
+          "message_retention_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2592000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Message retention period in seconds (0-2592000, 0 means forever)"
+          },
           "icon": {
             "anyOf": [
               {
@@ -70796,6 +74846,20 @@
               }
             ],
             "description": "Slowmode delay in seconds (0-21600)"
+          },
+          "message_retention_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2592000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Message retention period in seconds (0-2592000, 0 means forever)"
           },
           "icon": {
             "anyOf": [
@@ -70957,6 +75021,20 @@
             ],
             "description": "Slowmode delay in seconds (0-21600)"
           },
+          "message_retention_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2592000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Message retention period in seconds (0-2592000, 0 means forever)"
+          },
           "icon": {
             "anyOf": [
               {
@@ -71083,6 +75161,215 @@
         },
         "required": [
           "type"
+        ]
+      },
+      "ChannelUpdateForumRequest": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The channel topic (1-1024 characters)"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "External URL for link channels"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ID of the parent category for this channel"
+          },
+          "bitrate": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 8000,
+                "maximum": 320000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Voice channel bitrate in bits per second (8000-320000)"
+          },
+          "user_limit": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Maximum users allowed in voice channel (0-99, 0 means unlimited)"
+          },
+          "permission_overwrites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChannelOverwriteRequest"
+            },
+            "description": "Permission overwrites for roles and members"
+          },
+          "nsfw": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the channel is marked as NSFW"
+          },
+          "rate_limit_per_user": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 21600,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Slowmode delay in seconds (0-21600)"
+          },
+          "message_retention_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2592000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Message retention period in seconds (0-2592000, 0 means forever)"
+          },
+          "icon": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Base64ImageType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Base64-encoded icon image for group DM channels"
+          },
+          "owner_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ID of the new owner for group DM channels"
+          },
+          "nicks": {
+            "$ref": "#/components/schemas/ChannelNicknameOverrides"
+          },
+          "rtc_region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Voice region ID for the voice channel (1-64 characters)"
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              15
+            ],
+            "x-enumNames": [
+              "GUILD_FORUM"
+            ],
+            "x-enumDescriptions": [
+              "Channel type (forum channel)"
+            ]
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The name of the forum channel"
+          },
+          "available_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ForumTagRequest"
+            },
+            "maxItems": 20,
+            "description": "Tags available in this forum (max 20)"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "ForumTagRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of an existing tag to update (omit for new tags)"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the tag (1-20 characters)"
+          },
+          "emoji_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Emoji associated with the tag"
+          }
+        },
+        "required": [
+          "name"
         ]
       },
       "CallEligibilityResponse": {
@@ -74156,6 +78443,88 @@
           "ping_endpoint"
         ]
       },
+      "UpdateThreadRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the thread (1-100 characters)"
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "Whether the thread is archived"
+          },
+          "auto_archive_duration": {
+            "type": "integer",
+            "enum": [
+              0,
+              60,
+              1440,
+              4320,
+              10080
+            ],
+            "description": "Duration in minutes to auto-archive after inactivity (0 = never)"
+          },
+          "locked": {
+            "type": "boolean",
+            "description": "Whether the thread is locked"
+          },
+          "invitable": {
+            "type": "boolean",
+            "description": "Whether non-moderators can add users to a private thread"
+          },
+          "rate_limit_per_user": {
+            "$ref": "#/components/schemas/Int32Type"
+          },
+          "applied_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "maxItems": 5,
+            "description": "Tag IDs applied to this forum post (max 5)"
+          }
+        }
+      },
+      "CreateThreadRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the thread (1-100 characters)"
+          },
+          "auto_archive_duration": {
+            "type": "integer",
+            "enum": [
+              0,
+              60,
+              1440,
+              4320,
+              10080
+            ],
+            "description": "Duration in minutes to auto-archive after inactivity (0 = never, 60, 1440, 4320, 10080)"
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              11,
+              12
+            ],
+            "description": "The type of thread to create (11 = public, 12 = private)"
+          },
+          "applied_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SnowflakeType"
+            },
+            "maxItems": 5,
+            "description": "Tag IDs to apply to this forum post (max 5)"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
       "WebhookResponse": {
         "type": "object",
         "properties": {
@@ -75507,6 +79876,9 @@
           },
           {
             "$ref": "#/components/schemas/ChannelCreateLinkRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ChannelCreateForumRequest"
           }
         ]
       },
@@ -75891,6 +80263,111 @@
           "name": {
             "type": "string",
             "description": "The name of the channel"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ]
+      },
+      "ChannelCreateForumRequest": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The channel topic (1-1024 characters)"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "External URL for link channels"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ID of the parent category for this channel"
+          },
+          "bitrate": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 8000,
+                "maximum": 320000,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Voice channel bitrate in bits per second (8000-320000)"
+          },
+          "user_limit": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 99,
+                "format": "int32"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Maximum users allowed in voice channel (0-99, 0 means unlimited)"
+          },
+          "permission_overwrites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChannelOverwriteRequest"
+            },
+            "description": "Permission overwrites for roles and members"
+          },
+          "nsfw": {
+            "type": "boolean",
+            "description": "Whether the channel is marked as NSFW"
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              15
+            ],
+            "x-enumNames": [
+              "GUILD_FORUM"
+            ],
+            "x-enumDescriptions": [
+              "Channel type (forum channel)"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the forum channel"
+          },
+          "available_tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ForumTagRequest"
+            },
+            "maxItems": 20,
+            "description": "Tags available in this forum (max 20)"
           }
         },
         "required": [
@@ -76940,6 +81417,384 @@
           "mentionable": {
             "type": "boolean",
             "description": "Whether the role can be mentioned by anyone"
+          }
+        }
+      },
+      "GuildScheduledEventListResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GuildScheduledEventResponse"
+        },
+        "maxItems": 100
+      },
+      "GuildScheduledEventResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The unique identifier for this event"
+          },
+          "guild_id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The guild this event belongs to"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the event"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The description of the event"
+          },
+          "scheduled_start_time": {
+            "type": "string",
+            "description": "ISO 8601 timestamp for when the event starts"
+          },
+          "scheduled_end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ISO 8601 timestamp for when the event ends"
+          },
+          "entity_type": {
+            "type": "number",
+            "description": "The type of event (1 = voice, 2 = external)"
+          },
+          "status": {
+            "type": "number",
+            "description": "The status of the event (1 = scheduled, 2 = active, 3 = completed, 4 = cancelled)"
+          },
+          "channel_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The voice channel ID for voice events"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The location for external events"
+          },
+          "cover_image": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The cover image hash"
+          },
+          "creator_id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The ID of the user who created the event"
+          },
+          "user_count": {
+            "type": "number",
+            "description": "The number of users interested in the event"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "ISO 8601 timestamp for when the event was created"
+          }
+        },
+        "required": [
+          "id",
+          "guild_id",
+          "name",
+          "description",
+          "scheduled_start_time",
+          "scheduled_end_time",
+          "entity_type",
+          "status",
+          "channel_id",
+          "location",
+          "cover_image",
+          "creator_id",
+          "user_count",
+          "created_at"
+        ]
+      },
+      "GuildScheduledEventCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the event"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The description of the event"
+          },
+          "scheduled_start_time": {
+            "type": "string",
+            "description": "ISO 8601 timestamp for when the event starts"
+          },
+          "scheduled_end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ISO 8601 timestamp for when the event ends"
+          },
+          "entity_type": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ],
+            "description": "The type of event (1 = voice, 2 = external)"
+          },
+          "channel_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The voice channel ID (required for voice events)"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The location (required for external events)"
+          }
+        },
+        "required": [
+          "name",
+          "scheduled_start_time",
+          "entity_type"
+        ]
+      },
+      "GuildScheduledEventUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the event"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The description of the event"
+          },
+          "scheduled_start_time": {
+            "type": "string",
+            "description": "ISO 8601 timestamp for when the event starts"
+          },
+          "scheduled_end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "ISO 8601 timestamp for when the event ends"
+          },
+          "entity_type": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ],
+            "description": "The type of event"
+          },
+          "channel_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The voice channel ID"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The location"
+          },
+          "status": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "description": "The status of the event"
+          }
+        }
+      },
+      "GuildSoundboardSoundListResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GuildSoundboardSoundResponse"
+        }
+      },
+      "GuildSoundboardSoundResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The unique identifier for this sound"
+          },
+          "guild_id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The guild this sound belongs to"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the sound"
+          },
+          "emoji": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The emoji associated with this sound"
+          },
+          "volume": {
+            "type": "number",
+            "description": "The default playback volume (0.0 to 1.0)"
+          },
+          "duration_ms": {
+            "type": "number",
+            "description": "The duration of the sound in milliseconds"
+          },
+          "uploaded_by": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The user who uploaded this sound"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "When this sound was created"
+          }
+        },
+        "required": [
+          "id",
+          "guild_id",
+          "name",
+          "emoji",
+          "volume",
+          "duration_ms",
+          "uploaded_by",
+          "created_at"
+        ]
+      },
+      "GuildSoundboardPlayRequest": {
+        "type": "object",
+        "properties": {
+          "sound_id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The ID of the sound to play"
+          },
+          "channel_id": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "description": "The voice channel to play the sound in"
+          }
+        },
+        "required": [
+          "sound_id",
+          "channel_id"
+        ]
+      },
+      "GuildSoundboardUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32,
+            "description": "The name of the sound"
+          },
+          "emoji": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 64
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The emoji associated with this sound"
+          },
+          "volume": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "The default playback volume"
           }
         }
       },
@@ -85749,10 +90604,16 @@
       "name": "Messages"
     },
     {
+      "name": "Threads"
+    },
+    {
       "name": "Donations"
     },
     {
       "name": "Discovery"
+    },
+    {
+      "name": "Guild Scheduled Events"
     },
     {
       "name": "Tenor"

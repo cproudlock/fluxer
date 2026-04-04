@@ -327,6 +327,7 @@ Cassandra connection details.
 
 | Property | Type | Description |
 |----------|------|-------------|
+| consistency? | enum&lt;`local_one`, `local_quorum`, `quorum`, `one`, `all`&gt; | Default read/write consistency level. Default: `local_one` |
 | hosts | array&lt;string&gt; | Array of Cassandra contact points (hostnames or IPs). |
 | keyspace | string | Cassandra keyspace name. |
 | local_dc | string | Local Data Center name for topology awareness. |
@@ -340,7 +341,8 @@ Cassandra connection details.
   "keyspace": "your_keyspace",
   "local_dc": "your_local_dc",
   "password": "your_password",
-  "username": "your_username"
+  "username": "your_username",
+  "consistency": "local_one"
 }
 ```
 </Expandable>
@@ -565,6 +567,7 @@ Collection of all external service integrations.
 | clamav? | [clamav_integration](#clamav-integration) | Default: `{}` |
 | cloudflare? | [cloudflare](#cloudflare) | Default: `{}` |
 | email? | [email_integration](#email-integration) | Default: `{}` |
+| fcm? | [fcm_integration](#fcm-integration) | Default: `{}` |
 | gif? | [gif](#gif) | Default: `{}` |
 | klipy? | [klipy](#klipy) | Default: `{}` |
 | ncmec? | [ncmec_integration](#ncmec-integration) | Default: `{}` |
@@ -671,6 +674,7 @@ CAPTCHA service integration.
 |----------|------|-------------|
 | enabled? | boolean | Enable CAPTCHA verification. Default: `false` |
 | hcaptcha? | [captcha_provider](#captcha-provider) | hCaptcha settings. Default: `{}` |
+| native_bypass_secret? | string | HMAC secret for native app captcha bypass. Must be at least 32 characters. Native apps sign a server-issued nonce with this secret to prove they are legitimate. Default: `""` |
 | provider? | enum&lt;`hcaptcha`, `turnstile`, `none`&gt; | Selected CAPTCHA provider. Default: `none` |
 | turnstile? | [captcha_provider](#captcha-provider) | Cloudflare Turnstile settings. Default: `{}` |
 
@@ -678,6 +682,7 @@ CAPTCHA service integration.
 ```json
 {
   "enabled": false,
+  "native_bypass_secret": "",
   "provider": "none"
 }
 ```
@@ -719,6 +724,7 @@ When `enabled` = `true` and `default_region` is present, the following propertie
 | api_secret? | string | LiveKit API Secret used for config-driven default_region bootstrap. Optional when voice topology is managed in the admin panel. |
 | default_region? | object | Default voice region to create on startup if none exist. When provided, automatically creates this region and a server pointing to the configured LiveKit URL. |
 | enabled? | boolean | Enable voice/video features. Default: `false` |
+| reconciliation_enabled? | boolean | Enable the voice reconciliation worker that cleans up orphaned LiveKit participants. Disable on standby nodes that share LiveKit servers but have separate Valkey instances. Default: `true` |
 | url? | string | LiveKit Server URL (client signal endpoint for WebSocket connections). Default: `""` |
 | webhook_url? | string | URL for LiveKit webhooks. Default: `""` |
 
@@ -728,6 +734,7 @@ When `enabled` = `true` and `default_region` is present, the following propertie
   "api_key": "",
   "api_secret": "",
   "enabled": false,
+  "reconciliation_enabled": true,
   "url": "",
   "webhook_url": ""
 }
@@ -1011,6 +1018,26 @@ Cloudflare integration.
 ```
 </Expandable>
 
+### fcm_integration
+
+JSON path: `integrations.fcm`
+
+FCM push notification integration for Android devices.
+
+| Property | Type | Description |
+|----------|------|-------------|
+| enabled? | boolean | Enable FCM push notifications for Android devices. Default: `false` |
+| service_account_key_path? | string | Path to Google service account JSON key file for FCM. |
+
+<Expandable title="Example JSON">
+```json
+{
+  "enabled": false,
+  "service_account_key_path": ""
+}
+```
+</Expandable>
+
 ---
 
 ## internal
@@ -1029,6 +1056,7 @@ Direct internal endpoints for backend services. In monolith mode these are serve
 | kv_mode? | enum&lt;`standalone`, `cluster`&gt; | Valkey/Redis connection mode. Use 'standalone' for a single node or 'cluster' for a Valkey/Redis cluster. Default: `standalone` |
 | media_proxy? | string | Internal URL for the Media Proxy service. Default: `http://localhost:8088/media` |
 | queue? | string | Internal URL for the Queue service. Default: `http://localhost:8088/queue` |
+| voice_kv? | string | Shared Valkey/Redis URL for voice connection state. When set, voice state is stored here instead of the local kv, enabling cross-node reconciliation. |
 
 <Expandable title="Example JSON">
 ```json
@@ -1038,7 +1066,8 @@ Direct internal endpoints for backend services. In monolith mode these are serve
   "kv_cluster_nodes": [],
   "kv_mode": "standalone",
   "media_proxy": "http://localhost:8088/media",
-  "queue": "http://localhost:8088/queue"
+  "queue": "http://localhost:8088/queue",
+  "voice_kv": ""
 }
 ```
 </Expandable>
@@ -1404,6 +1433,7 @@ Configuration for the Gateway service (WebSocket).
 | Property | Type | Description |
 |----------|------|-------------|
 | admin_reload_secret | string | Secret used to trigger code hot-swapping/reloads. |
+| enabled? | boolean | Whether to start the embedded gateway process. Set to false when using a dedicated gateway container. Default: `true` |
 | gateway_metrics_enabled? | boolean | Enable collection of gateway metrics. Default: `false` |
 | gateway_metrics_report_interval_ms? | number | Interval in milliseconds to report gateway metrics. Default: `30000` |
 | guild_shards? | number | Number of shards for guild handling. Default: `1` |
@@ -1427,6 +1457,7 @@ Configuration for the Gateway service (WebSocket).
 {
   "admin_reload_secret": "your_admin_reload_secret",
   "media_proxy_endpoint": "your_media_proxy_endpoint",
+  "enabled": true,
   "gateway_metrics_enabled": false,
   "gateway_metrics_report_interval_ms": 30000,
   "guild_shards": 1,

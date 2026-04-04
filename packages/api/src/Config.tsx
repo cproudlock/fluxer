@@ -239,6 +239,7 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 						secretKey: master.integrations.captcha.turnstile.secret_key,
 					}
 				: undefined,
+			nativeBypassSecret: master.integrations.captcha.native_bypass_secret || '',
 		},
 		voice: {
 			enabled: master.integrations.voice.enabled,
