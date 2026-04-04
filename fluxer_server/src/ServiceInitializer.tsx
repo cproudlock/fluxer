@@ -168,9 +168,9 @@ async function createMediaProxyInitializer(
 	const globalS3Config = requireValue(config.s3, 's3');
 	const bucketCdn = requireValue(globalS3Config.buckets?.cdn, 's3.buckets.cdn');
 	const bucketUploads = requireValue(globalS3Config.buckets?.uploads, 's3.buckets.uploads');
-	const s3Host = requireValue(config.services.s3?.host, 'services.s3.host');
-	const s3Port = requireValue(config.services.s3?.port, 'services.s3.port');
-	const s3Endpoint = globalS3Config.endpoint ?? `http://${s3Host}:${s3Port}`;
+	const s3Host = config.services.s3?.host;
+	const s3Port = config.services.s3?.port;
+	const s3Endpoint = globalS3Config.endpoint ?? `http://${requireValue(s3Host, 'services.s3.host')}:${requireValue(s3Port, 'services.s3.port')}`;
 
 	const mediaProxySecretKey = requireValue(config.services.media_proxy?.secret_key, 'services.media_proxy.secret_key');
 
@@ -277,6 +277,18 @@ function createAppServerInitializer(context: ServiceInitializationContext): Serv
 
 	const publicUrlHost = new URL(requireValue(config.endpoints.app, 'endpoints.app')).origin;
 	const mediaUrlHost = new URL(requireValue(config.endpoints.media, 'endpoints.media')).origin;
+	const staticCdnHost = config.endpoints.static_cdn ? new URL(config.endpoints.static_cdn).origin : null;
+
+	const imgSrc = ["'self'", 'data:', 'blob:', publicUrlHost, mediaUrlHost, 'https://fluxerstatic.com'];
+	const fontSrc: Array<string> = ["'self'", 'https://fluxerstatic.com'];
+	const styleSrc: Array<string> = ["'self'", "'unsafe-inline'", 'https://fluxerstatic.com'];
+	const publicUrlHostname = new URL(publicUrlHost).hostname;
+	const connectSrc = ["'self'", 'https:', 'wss:', 'ws:', publicUrlHost, `https://*.${publicUrlHostname}`, 'https://fluxerstatic.com'];
+	if (staticCdnHost) {
+		imgSrc.push(staticCdnHost);
+		fontSrc.push(staticCdnHost);
+		connectSrc.push(staticCdnHost);
+	}
 
 	const appServer = createAppServer({
 		staticDir,
@@ -288,13 +300,13 @@ function createAppServerInitializer(context: ServiceInitializationContext): Serv
 		},
 		cspDirectives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: ["'self'", "'unsafe-inline'"],
-			styleSrc: ["'self'", "'unsafe-inline'"],
-			imgSrc: ["'self'", 'data:', 'blob:', publicUrlHost, mediaUrlHost],
-			connectSrc: ["'self'", 'wss:', 'ws:', publicUrlHost],
-			fontSrc: ["'self'"],
+			scriptSrc: ["'self'", "'unsafe-inline'", 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
+			styleSrc,
+			imgSrc,
+			connectSrc: [...connectSrc, 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
+			fontSrc,
 			mediaSrc: ["'self'", 'blob:', mediaUrlHost],
-			frameSrc: ["'none'"],
+			frameSrc: ["'self'", 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
 		},
 	});
 
@@ -360,14 +372,18 @@ export async function initializeAllServices(context: ServiceInitializationContex
 		services.kv = kvProvider;
 		setInjectedKVProvider(kvProvider);
 
-		rootLogger.info('Initializing S3 service');
-		const s3Init = createS3Initializer(context);
-		initializers.push(s3Init);
-		services.s3 = s3Init.service as S3AppResult;
+		if (!context.config.s3?.endpoint) {
+			rootLogger.info('Initializing local S3 service');
+			const s3Init = createS3Initializer(context);
+			initializers.push(s3Init);
+			services.s3 = s3Init.service as S3AppResult;
 
-		if (services.s3) {
-			rootLogger.info('Wiring DirectS3StorageService for in-process communication');
-			setInjectedS3Service(services.s3.getS3Service());
+			if (services.s3) {
+				rootLogger.info('Wiring DirectS3StorageService for in-process communication');
+				setInjectedS3Service(services.s3.getS3Service());
+			}
+		} else {
+			rootLogger.info({endpoint: context.config.s3.endpoint}, 'Using remote S3 storage, local S3 service disabled');
 		}
 
 		rootLogger.info('Initializing JetStream worker queue');

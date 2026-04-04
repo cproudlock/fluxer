@@ -131,6 +131,7 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 			localDc: cassandraSource?.local_dc ?? '',
 			username: cassandraSource?.username ?? '',
 			password: cassandraSource?.password ?? '',
+			consistency: cassandraSource?.consistency ?? 'local_one',
 		},
 
 		database: {
@@ -147,6 +148,8 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 				(master.internal as {kv_cluster_nat_map?: Record<string, {host: string; port: number}>}).kv_cluster_nat_map ??
 				{},
 		},
+
+		voiceKv: (master.internal as {voice_kv?: string}).voice_kv ?? null,
 
 		nats: {
 			coreUrl: master.services.nats?.core_url ?? 'nats://127.0.0.1:4222',
@@ -239,6 +242,7 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 		},
 		voice: {
 			enabled: master.integrations.voice.enabled,
+			reconciliation_enabled: master.integrations.voice.reconciliation_enabled ?? true,
 			apiKey: master.integrations.voice.api_key,
 			apiSecret: master.integrations.voice.api_secret,
 			webhookUrl: master.integrations.voice.webhook_url,
@@ -396,6 +400,11 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 
 		push: {
 			publicVapidKey: master.auth.vapid.public_key,
+		},
+
+		fcm: {
+			enabled: master.integrations.fcm.enabled,
+			serviceAccountKeyPath: master.integrations.fcm.service_account_key_path,
 		},
 
 		queue: {

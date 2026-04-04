@@ -450,6 +450,18 @@
 				"password": {
 					"type": "string",
 					"description": "Cassandra authentication password."
+				},
+				"consistency": {
+					"type": "string",
+					"description": "Default read/write consistency level.",
+					"enum": [
+						"local_one",
+						"local_quorum",
+						"quorum",
+						"one",
+						"all"
+					],
+					"default": "local_one"
 				}
 			}
 		},
@@ -678,6 +690,10 @@
 					"type": "string",
 					"description": "Internal Valkey/Redis URL for key-value operations.",
 					"default": "redis://localhost:6379/0"
+				},
+				"voice_kv": {
+					"type": "string",
+					"description": "Shared Valkey/Redis URL for voice connection state. When set, voice state is stored here instead of the local kv, enabling cross-node reconciliation."
 				},
 				"kv_mode": {
 					"type": "string",
@@ -1157,6 +1173,21 @@
 				]
 			}
 		},
+		"fcm_integration": {
+			"type": "object",
+			"description": "FCM push notification integration for Android devices.",
+			"properties": {
+				"enabled": {
+					"type": "boolean",
+					"description": "Enable FCM push notifications for Android devices.",
+					"default": false
+				},
+				"service_account_key_path": {
+					"type": "string",
+					"description": "Path to Google service account JSON key file for FCM."
+				}
+			}
+		},
 		"gif": {
 			"type": "object",
 			"description": "GIF provider selection for the client-facing GIF picker.",
@@ -1230,6 +1261,10 @@
 				},
 				"cloudflare": {
 					"$ref": "#/$defs/cloudflare",
+					"default": {}
+				},
+				"fcm": {
+					"$ref": "#/$defs/fcm_integration",
 					"default": {}
 				}
 			}
@@ -1516,6 +1551,11 @@
 					"description": "Enable voice/video features.",
 					"default": false
 				},
+				"reconciliation_enabled": {
+					"type": "boolean",
+					"description": "Enable the voice reconciliation worker that cleans up orphaned LiveKit participants. Disable on standby nodes that share LiveKit servers but have separate Valkey instances.",
+					"default": true
+				},
 				"api_key": {
 					"type": "string",
 					"description": "LiveKit API Key used for config-driven default_region bootstrap. Optional when voice topology is managed in the admin panel."
@@ -1685,6 +1725,11 @@
 				"media_proxy_endpoint"
 			],
 			"properties": {
+				"enabled": {
+					"type": "boolean",
+					"description": "Whether to start the embedded gateway process. Set to false when using a dedicated gateway container.",
+					"default": true
+				},
 				"port": {
 					"type": "number",
 					"description": "Port to listen on.",

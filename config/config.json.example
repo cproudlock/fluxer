@@ -1,0 +1,142 @@
+{
+  "$schema": "./config.schema.json",
+  "env": "production",
+  "domain": {
+    "base_domain": "echowire.org",
+    "public_scheme": "https",
+    "public_port": 443
+  },
+  "endpoint_overrides": {
+    "static_cdn": "https://your-domain.example.com"
+  },
+  "database": {
+    "backend": "cassandra",
+    "cassandra": {
+      "hosts": [
+        "cassandra"
+      ],
+      "keyspace": "fluxer",
+      "local_dc": "datacenter1",
+      "username": "cassandra",
+      "password": "cassandra"
+    }
+  },
+  "internal": {
+    "kv": "redis://valkey:6379/0"
+  },
+  "s3": {
+    "endpoint": "https://your-domain.example.com",
+    "presigned_url_base": "https://your-domain.example.com",
+    "region": "auto",
+    "access_key_id": "your-secret-here",
+    "secret_access_key": "your-secret-here",
+    "buckets": {
+      "cdn": "fluxer",
+      "uploads": "fluxer-uploads",
+      "downloads": "fluxer-downloads",
+      "reports": "fluxer-reports",
+      "harvests": "fluxer-harvests",
+      "static": "fluxer-static"
+    }
+  },
+  "services": {
+    "server": {
+      "port": 8080,
+      "host": "your-host-ip"
+    },
+    "media_proxy": {
+      "secret_key": "your-secret-here"
+    },
+    "admin": {
+      "secret_key_base": "your-secret-here",
+      "oauth_client_secret": "your-secret-here"
+    },
+    "marketing": {
+      "enabled": false
+    },
+    "gateway": {
+      "port": 8082,
+      "admin_reload_secret": "your-secret-here",
+      "media_proxy_endpoint": "http://127.0.0.1:8080/media",
+      "push_enabled": false
+    },
+    "nats": {
+      "core_url": "nats://127.0.0.1:4222",
+      "jetstream_url": "nats://127.0.0.1:4222",
+      "auth_token": ""
+    }
+  },
+  "auth": {
+    "sudo_mode_secret": "your-secret-here",
+    "connection_initiation_secret": "your-secret-here",
+    "passkeys": {
+      "rp_name": "Echowire",
+      "rp_id": "your-secret-here",
+      "additional_allowed_origins": [
+        "your-secret-here"
+      ]
+    },
+    "vapid": {
+      "public_key": "your-secret-here",
+      "private_key": "your-secret-here",
+      "email": "your-email@example.com"
+    }
+  },
+  "cookie": {
+    "domain": "echowire.org",
+    "secure": true
+  },
+  "integrations": {
+    "email": {
+      "enabled": true,
+      "provider": "smtp",
+      "from_email": "your-email@example.com",
+      "from_name": "Echowire",
+      "smtp": {
+        "host": "mail.smtp2go.com",
+        "port": 2525,
+        "username": "your-email@example.com",
+        "password": "your-secret-here",
+        "secure": false
+      }
+    },
+    "search": {
+      "url": "https://your-domain.example.com",
+      "api_key": "your-secret-here"
+    },
+    "stripe": {
+      "enabled": true,
+      "secret_key": "your-secret-here",
+      "webhook_secret": "your-secret-here",
+      "prices": {
+        "monthly_usd": "price_1T2LiWI1V0HqFgbRnI8fbm85",
+        "yearly_usd": "price_1T2LiaI1V0HqFgbRsgfRQyQT",
+        "visionary_usd": "price_1T2LifI1V0HqFgbR27iMwvxr",
+        "gift_visionary_usd": "price_1T2LisI1V0HqFgbRe47z7QHF",
+        "gift_1_month_usd": "price_1T2LijI1V0HqFgbRE8uBFc54",
+        "gift_1_year_usd": "price_1T2LinI1V0HqFgbRlcAf1ilv"
+      }
+    },
+    "voice": {
+      "enabled": true,
+      "api_key": "your-secret-here",
+      "api_secret": "your-secret-here",
+      "webhook_url": "https://your-domain.example.com"
+    },
+    "gif": {
+      "provider": "klipy"
+    },
+    "klipy": {
+      "api_key": "your-secret-here"
+    }
+  },
+  "instance": {
+    "self_hosted": true
+  },
+  "discovery": {
+    "min_member_count": 1
+  },
+  "proxy": {
+    "trust_cf_connecting_ip": true
+  }
+}

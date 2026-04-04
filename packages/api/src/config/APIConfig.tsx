@@ -27,6 +27,7 @@ export interface APIConfig {
 		localDc: string;
 		username: string;
 		password: string;
+		consistency: string;
 	};
 
 	database: {
@@ -40,6 +41,8 @@ export interface APIConfig {
 		clusterNodes: Array<{host: string; port: number}>;
 		clusterNatMap: Record<string, {host: string; port: number}>;
 	};
+
+	voiceKv: string | null;
 
 	nats: {
 		coreUrl: string;
@@ -138,6 +141,7 @@ export interface APIConfig {
 
 	voice: {
 		enabled: boolean;
+		reconciliation_enabled: boolean;
 		apiKey?: string;
 		apiSecret?: string;
 		webhookUrl?: string;
@@ -269,6 +273,11 @@ export interface APIConfig {
 
 	push: {
 		publicVapidKey?: string;
+	};
+
+	fcm: {
+		enabled: boolean;
+		serviceAccountKeyPath?: string;
 	};
 
 	queue: {

@@ -61,6 +61,8 @@ export const CSP_HOSTS = {
 	],
 	FONT: ['https://*.fluxer.app', 'https://fluxerstatic.com'],
 	CONNECT: [
+		'https:',
+		'wss:',
 		'https://*.fluxer.app',
 		'wss://*.fluxer.app',
 		'https://*.fluxer.media',

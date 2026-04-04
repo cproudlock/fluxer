@@ -45,6 +45,16 @@ export function createSpaIndexRoute<E extends Env>(app: Hono<E>, options: SpaInd
 				if (result.error) {
 					return c.text(result.error, 500);
 				}
+				// If a JS/CSS asset is missing (stale bundle hash after deploy),
+				// serve the SPA index so the app reloads with new assets
+				if (requestPath.endsWith('.js') || requestPath.endsWith('.css')) {
+					logger.debug({path: requestPath}, 'Stale asset requested, serving SPA fallback');
+					const fallback = serveSpaFallback({resolvedStaticDir: staticDir, cspDirectives, logger});
+					if (fallback.success) {
+						applySpaHeaders(c, fallback.csp);
+						return c.body(fallback.content);
+					}
+				}
 				return c.notFound();
 			}
 			return new Response(result.content, {

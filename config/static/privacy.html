@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Echowire</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pub-01ca5f8f442643b18e2a4a79fb29f911.r2.dev/web/favicon-32x32.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a2e;
+            color: #c0c0d8;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        .header {
+            border-bottom: 1px solid #2a2a4a;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .header a {
+            color: #5865f2;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .header a:hover { text-decoration: underline; }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        .updated {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #e0e0f0;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #2a2a4a;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d0d0e0;
+            margin-top: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #d0d0e0;
+            margin-top: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        li { margin-bottom: 0.4rem; }
+        a { color: #5865f2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        strong { color: #e0e0f0; }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+        }
+        .summary-box {
+            background: #1e1e38;
+            border: 1px solid #2a2a4a;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .summary-box p:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/">&larr; Back to Echowire</a>
+        <div class="nav-links">
+            <a href="/terms">Terms of Service</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: March 17, 2026</p>
+
+        <div class="summary-box">
+            <p><strong>Summary</strong></p>
+            <p>We take your privacy seriously and are committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and the choices you have. In short:</p>
+            <ul>
+                <li>We do not sell, rent, or trade your personal data to third parties.</li>
+                <li>We do not train AI models on your messages, files, or any other content you create or share on Echowire.</li>
+                <li>The service is not end-to-end encrypted, but we use strong encryption for data in transit (TLS) and at rest.</li>
+                <li>We aim to collect only the minimum data necessary to provide, secure, and improve the service.</li>
+                <li>You can export, manage, and delete your data through your account settings and privacy dashboard.</li>
+                <li>We handle personal data in line with applicable privacy laws, including GDPR and CCPA/CPRA, based on your location.</li>
+                <li>We log limited feature usage and operational events to keep the service reliable and secure. We do not use this data for behavioral advertising or cross-site tracking.</li>
+            </ul>
+            <p>This summary is provided for convenience. Please read the full policy below.</p>
+        </div>
+
+        <h2>1. Who We Are</h2>
+        <p>Echowire is a self-hosted instance of the Fluxer chat platform, independently operated at <strong>echowire.org</strong>. We are not affiliated with Fluxer Platform AB. When this policy refers to "Echowire", "we", "us", or "our", it refers to the operator of this Echowire instance.</p>
+        <p>As the operator of this instance, we act as the data controller for your personal data when you use Echowire, meaning we determine how and why your personal data is processed.</p>
+        <p>We comply with applicable data protection laws, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA).</p>
+        <p>You can find our contact details in <a href="#16-contact-us">Section 16</a>.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect information in three main ways: (1) information you provide to us, (2) information we collect automatically, and (3) information we receive from other sources.</p>
+
+        <h3>2.1 Information You Provide to Us</h3>
+        <ul>
+            <li><strong>Account information:</strong> Email address, username, password (stored using Argon2id, a modern secure password hashing algorithm), and birth year. During registration, we collect your full date of birth to verify you meet the minimum age requirement for your region (COPPA/regional compliance). After verification, we retain only your birth year - the month and day are discarded and never stored. Optionally, your phone number for two-factor authentication (2FA) where available.</li>
+            <li><strong>Content and communications:</strong> Messages, files, images, voice communications (where supported), community information, reactions, and profile data (such as avatar, bio, and other information you choose to display). This also includes information about communities you create or administer.</li>
+            <li><strong>Support and correspondence:</strong> Information you provide when you contact us for support, including the content of messages and any additional details you choose to provide.</li>
+            <li><strong>Payment information:</strong> If you purchase premium features, payment processing is handled securely by Stripe. We do not store your full payment card details. Stripe provides us with limited information necessary to manage your purchases (for example, billing country, partial card details, payment status, and timestamps).</li>
+        </ul>
+        <p>We do not require you to provide special categories of personal data (such as information about your health, religion, or political beliefs). If you choose to share such information in your messages or profile, you do so at your own discretion.</p>
+
+        <h3>2.2 Information We Collect Automatically</h3>
+        <p>When you use Echowire, we automatically collect certain technical and usage information, including:</p>
+        <ul>
+            <li><strong>Device and technical information:</strong> IP address, browser type and version, operating system, device type, device identifiers, language settings, and similar technical data.</li>
+            <li><strong>Usage information:</strong> Information about how you interact with Echowire, such as pages and screens visited, features used, timestamps and duration of sessions, approximate counts of events (for example, messages sent, communities joined) without reading message content, and crash reports and performance metrics.</li>
+            <li><strong>Security and operational logs:</strong> Login attempts and authentication events, changes to account settings, rate limits, API errors, and IP-based signals related to spam, abuse, or unusual behavior.</li>
+            <li><strong>Push notification tokens:</strong> Device tokens for delivering mobile push notifications via Firebase Cloud Messaging (FCM). These tokens identify your device for notification delivery only.</li>
+        </ul>
+        <p>We use this information to secure the service, detect and prevent abuse, improve performance, and understand which features are being used. We do not use this information for behavioral advertising or cross-site tracking.</p>
+
+        <h3>2.3 Information From Other Sources</h3>
+        <p>We may also receive information about you from:</p>
+        <ul>
+            <li><strong>Other users:</strong> When other users mention you, add you to communities, send you messages, or otherwise interact with your account.</li>
+            <li><strong>Service providers:</strong> Limited operational information from our service providers, such as payment confirmations from Stripe, or transactional email delivery records from smtp2go.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your information for the following purposes:</p>
+        <ul>
+            <li>To provide, operate, and maintain the Echowire platform and services.</li>
+            <li>To create and manage your account.</li>
+            <li>To deliver your messages, media, and other content to intended recipients.</li>
+            <li>To secure your account and prevent unauthorized access.</li>
+            <li>To detect, investigate, and prevent abuse, fraud, spam, and violations of our terms.</li>
+            <li>To send important service updates, security alerts, and administrative messages.</li>
+            <li>To process payments, manage subscriptions, and handle financial transactions.</li>
+            <li>To understand which features are used and how the service performs, so we can fix issues and plan improvements.</li>
+            <li>To comply with legal obligations and respond to lawful requests.</li>
+        </ul>
+        <p>We do not use your messages, files, or any other content you create or share on Echowire for targeted advertising or for training AI models.</p>
+
+        <h3>3.1 Lawful Bases for Processing (GDPR)</h3>
+        <p>If you are in the EEA, UK, or another jurisdiction with similar requirements, our legal bases for processing your personal data include:</p>
+        <ul>
+            <li><strong>Contract necessity:</strong> We process data that is necessary to provide the services you have requested, such as delivering messages, operating communities, maintaining your account, and providing support.</li>
+            <li><strong>Legitimate interests:</strong> We process data based on our legitimate interests, such as securing the platform and preventing abuse, maintaining service reliability, understanding how features are used at an aggregate level, and communicating with you about changes to our services. We balance our interests against your rights and expectations.</li>
+            <li><strong>Legal obligations:</strong> We process data when necessary to comply with legal obligations, such as child protection, responding to lawful requests from authorities, and complying with applicable data protection laws.</li>
+            <li><strong>Consent:</strong> In limited cases, we may rely on your consent. Where we do, you can withdraw it at any time. Withdrawing consent does not affect the lawfulness of processing that took place before the withdrawal.</li>
+        </ul>
+
+        <h3>3.2 IP Address Geolocation</h3>
+        <p>We may geolocate your IP address at a coarse level (city, region, country) for the following purposes:</p>
+        <ul>
+            <li>Providing security alerts when logins occur from new or unusual locations.</li>
+            <li>Showing you where your account is currently logged in for security monitoring.</li>
+            <li>Preventing fraud, detecting abuse, and protecting platform integrity.</li>
+            <li>Determining regional age requirements and access eligibility based on local laws.</li>
+        </ul>
+        <p>IP geolocation is performed using databases that run locally on our servers and via Cloudflare, which provides geolocation data based on your IP address as part of its CDN and security services.</p>
+
+        <h2>4. Who We Share Information With</h2>
+        <p>We do not sell your personal data. We share information only in the following limited circumstances:</p>
+
+        <h3>4.1 When You Direct Us to Share</h3>
+        <p>We share your information when you intentionally interact with others on Echowire, for example when you send messages, join or participate in communities, share content, or when your profile information is visible to others according to your settings.</p>
+
+        <h3>4.2 With Service Providers</h3>
+        <p>We work with trusted third-party service providers who help us operate Echowire. Here is an honest accounting of every third-party service your data may touch:</p>
+
+        <h4>Infrastructure and Content Delivery</h4>
+        <ul>
+            <li><strong>Cloudflare</strong> &mdash; Content delivery network (CDN), web application firewall (WAF), and DDoS protection. Cloudflare sits in front of our servers, so your requests pass through their network. Cloudflare also provides Turnstile CAPTCHA for bot prevention. Cloudflare R2 is used for file storage (attachments, avatars, media).</li>
+        </ul>
+
+        <h4>Voice and Real-Time Communication</h4>
+        <ul>
+            <li><strong>LiveKit</strong> &mdash; Voice server software running on our own dedicated servers across 5 US regions. LiveKit handles voice channel audio. The servers are ours; LiveKit is the open-source software running on them. Your voice data flows through these servers but is not stored or recorded.</li>
+        </ul>
+
+        <h4>Payments</h4>
+        <ul>
+            <li><strong>Stripe</strong> &mdash; Payment processing for premium subscriptions. We do not store your full payment card details. Stripe processes and stores payment information under their own privacy policy and PCI compliance.</li>
+        </ul>
+
+        <h4>Email</h4>
+        <ul>
+            <li><strong>smtp2go</strong> &mdash; Transactional email delivery (account verification, password resets, security alerts). smtp2go sees the recipient email address and email content for the messages we send.</li>
+        </ul>
+
+        <h4>Push Notifications</h4>
+        <ul>
+            <li><strong>Firebase Cloud Messaging (FCM)</strong> &mdash; Push notification delivery for Android and iOS apps. FCM receives a device token and notification payload (which may include the sender name and a preview of the message) to deliver notifications to your device. FCM is operated by Google.</li>
+        </ul>
+
+        <h4>Third-Party Content</h4>
+        <ul>
+            <li><strong>Klipy</strong> &mdash; GIF search. All Klipy traffic is routed through our servers, so Klipy does not see your IP address or device identifiers.</li>
+            <li><strong>YouTube</strong> &mdash; Video embeds. We fetch metadata server-side. YouTube only receives information from your device if you choose to play an embedded video.</li>
+        </ul>
+
+        <h4>Safety</h4>
+        <ul>
+            <li><strong>Arachnid Shield API</strong> &mdash; CSAM scanning for user-uploaded media, operated by the Canadian Centre for Child Protection (C3P). See <a href="#5-content-scanning-for-safety">Section 5</a> for details.</li>
+        </ul>
+
+        <p>Where required by law, we have data processing agreements in place with providers that process personal data on our behalf, and we take steps to minimize the amount of data shared with all providers.</p>
+
+        <h3>4.3 When Required by Law</h3>
+        <p>We may disclose your information if we reasonably believe it is necessary to comply with a valid legal obligation, enforce our terms of service, or protect the safety, rights, or property of our users, the public, or Echowire.</p>
+        <p>Where legally permitted, we will attempt to notify you before disclosing your information in response to legal requests.</p>
+
+        <h2 id="5-content-scanning-for-safety">5. Content Scanning for Safety</h2>
+        <p>We use the Arachnid Shield API, operated by the Canadian Centre for Child Protection (C3P), to help identify and block child sexual abuse material (CSAM) in user-uploaded media.</p>
+        <ul>
+            <li><strong>How it works:</strong> When media is uploaded, the file is sent to the Arachnid Shield API over HTTPS for analysis. The API checks the file against C3P's database of known CSAM. This is hash-based matching only &mdash; it does not use AI or content analysis, and cannot detect content that has not been previously identified.</li>
+            <li><strong>What is scanned:</strong> All user-uploaded media (avatars, emojis, stickers, file attachments).</li>
+            <li><strong>What is not scanned:</strong> Text messages are not scanned by this tool.</li>
+            <li><strong>When a match is detected:</strong> The upload is immediately rejected. We take appropriate action, which may include account suspension and reporting to the National Center for Missing &amp; Exploited Children (NCMEC) as legally required.</li>
+        </ul>
+        <p>We may also use automated systems to detect spam, malware, phishing, and other abusive content or behavior. These systems primarily rely on metadata and patterns, not the content of your private messages.</p>
+
+        <h2>6. Data Storage and Security</h2>
+
+        <h3>6.1 Where Your Data Is Stored</h3>
+        <p>Echowire is a self-hosted platform. Your data is stored on <strong>private infrastructure</strong> that we own and operate &mdash; not on shared cloud hosting platforms. Specifically:</p>
+        <ul>
+            <li><strong>Primary servers:</strong> Private dedicated servers located in the United States, running on hardware we control.</li>
+            <li><strong>Database:</strong> ScyllaDB (Cassandra-compatible), replicated across multiple nodes on our private infrastructure for redundancy.</li>
+            <li><strong>File storage:</strong> Cloudflare R2 for user-uploaded files and media.</li>
+            <li><strong>Encrypted backups:</strong> Backups are encrypted using age encryption and stored on both Cloudflare R2 and private network-attached storage.</li>
+        </ul>
+        <p>Because we control our own infrastructure, we have direct oversight of physical and logical access to your data. There is no multi-tenant cloud provider sitting between us and your data.</p>
+
+        <h3>6.2 Security Measures</h3>
+        <p>We implement the following measures to protect your data:</p>
+        <ul>
+            <li>Encryption for data in transit (TLS) on all connections.</li>
+            <li>Encryption for data at rest on our servers and backups (age encryption for backups).</li>
+            <li>Firewall rules and network segmentation between services.</li>
+            <li>Mesh VPN (NetBird) for secure inter-node communication &mdash; services do not communicate over the public internet.</li>
+            <li>Regular security updates and infrastructure hardening.</li>
+            <li>Rate limiting and abuse detection.</li>
+            <li>Strict access controls with a minimal number of administrators.</li>
+        </ul>
+        <p>No online service can guarantee perfect security. We work continuously to improve our security posture and reduce risks.</p>
+
+        <h3>6.3 Data Breaches</h3>
+        <p>If we become aware of a data breach that has a material impact on your personal data, we will investigate and take appropriate remedial steps, notify you without undue delay when legally required, and notify relevant supervisory authorities when required by law.</p>
+
+        <h2>7. Data Retention</h2>
+
+        <h3>7.1 Active Accounts</h3>
+        <p>For active accounts, we keep your personal data for as long as you use Echowire. This includes your messages, communities, and other content while your account remains active, unless you delete specific content yourself.</p>
+
+        <h3>7.2 Deleted Content</h3>
+        <p>When you delete messages or other content:</p>
+        <ul>
+            <li>We remove them from our active systems within a reasonable period of time.</li>
+            <li>Deleted data may remain in backup systems for a limited period before being permanently removed.</li>
+        </ul>
+
+        <h3>7.3 Inactive Accounts</h3>
+        <p>We may delete accounts that are inactive for an extended period. Where feasible, we will provide advance notice to the registered email address before deletion due to inactivity.</p>
+
+        <h3>7.4 Payment and Transaction Data</h3>
+        <p>We retain transaction records for the period required by accounting, tax, and other legal obligations. We do not store full payment card numbers.</p>
+
+        <h3>7.5 Logs and Security Data</h3>
+        <p>Security logs, audit logs, and usage logs are retained only for as long as necessary for security, fraud prevention, and troubleshooting, and are then deleted or anonymized.</p>
+
+        <h2>8. Your Privacy Controls</h2>
+
+        <h3>8.1 In-App Controls</h3>
+        <p>Through your privacy dashboard and account settings, you can:</p>
+        <ul>
+            <li><strong>Request a data export:</strong> Export your account data including messages.</li>
+            <li><strong>Delete messages:</strong> Delete individual messages or bulk-delete all messages.</li>
+            <li><strong>Delete your account:</strong> Schedule deletion of your account, which completes after a grace period unless you cancel.</li>
+        </ul>
+
+        <h3>8.2 Requests by Email</h3>
+        <p>If you need specific data removed or modified:</p>
+        <ul>
+            <li>Email <strong>support@echowire.org</strong> from the email address associated with your account.</li>
+            <li>Clearly describe what you want us to do.</li>
+            <li>We may ask for additional information to verify your identity.</li>
+        </ul>
+
+        <h2>9. Your Privacy Rights</h2>
+        <p>Depending on where you live, you may have certain rights regarding your personal data:</p>
+        <ul>
+            <li><strong>Right of access:</strong> Request confirmation of whether we process your personal data and, if so, receive a copy.</li>
+            <li><strong>Right to rectification:</strong> Request correction of inaccurate or incomplete personal data.</li>
+            <li><strong>Right to deletion ("right to be forgotten"):</strong> Request deletion of your personal data in certain circumstances.</li>
+            <li><strong>Right to restriction:</strong> Request that we restrict processing of your personal data in certain circumstances.</li>
+            <li><strong>Right to object:</strong> Object to certain processing of your personal data, including processing based on legitimate interests.</li>
+            <li><strong>Right to data portability:</strong> Request a copy of your personal data in a structured, machine-readable format.</li>
+            <li><strong>Right to withdraw consent:</strong> Where processing is based on your consent, you can withdraw it at any time.</li>
+        </ul>
+
+        <h3>9.1 CCPA/CPRA Rights (California Residents)</h3>
+        <ul>
+            <li>Right to know what personal information we collect, use, disclose, and share.</li>
+            <li>Right to delete personal information in certain circumstances.</li>
+            <li>Right to correct inaccurate personal information.</li>
+            <li>Right to opt out of the sale or sharing of personal information. We do not sell or share personal information for cross-context behavioral advertising.</li>
+            <li>Right to be free from discrimination for exercising your rights.</li>
+        </ul>
+
+        <h3>9.2 Exercising Your Rights</h3>
+        <p>You can exercise many of your rights directly through your privacy dashboard and account settings. You can also contact us at <strong>support@echowire.org</strong> to exercise your rights. We will respond as required by applicable law (typically within 30 days).</p>
+
+        <h3>9.3 Complaints</h3>
+        <p>If you are in the EEA, UK, or another jurisdiction with a data protection authority, you have the right to lodge a complaint with your local supervisory authority if you believe your privacy rights have been violated. We encourage you to contact us first so we can try to resolve your concerns directly.</p>
+
+        <h2>10. Children's Privacy</h2>
+        <p>Users must meet the minimum age requirement in their region to create an Echowire account. In most jurisdictions, this is 13 years old, but it may be higher in some regions.</p>
+        <p>During registration, we collect your full date of birth to accurately verify age eligibility against your region's requirements. After this verification, we retain <strong>only your birth year</strong> - the month and day are immediately discarded and never stored. This ensures we keep the minimum information needed for ongoing age-based access controls (such as restricting age-sensitive content).</p>
+        <p>We do not knowingly collect personal information from children under the minimum age in their region. If we become aware that we have inadvertently collected personal information from a child who does not meet the age requirement, we will take steps to delete that information and the account.</p>
+        <p>If you are a parent or legal guardian and believe that your child has used Echowire without your consent or does not meet the minimum age requirement, contact us at <strong>support@echowire.org</strong> to request deletion of their account.</p>
+
+        <h2>11. Cookies and Similar Technologies</h2>
+        <p>We do not use third-party advertising or tracking cookies. Any cookies we set are strictly necessary for the operation and security of the service (for example, session authentication). We do not run advertising trackers or analytics SDKs.</p>
+        <p>When you interact with embedded third-party content (for example, a YouTube video or a Cloudflare Turnstile challenge), those third parties may set their own cookies under their own privacy policies.</p>
+        <p>You can control cookie usage through your browser settings. Some functionality may be affected if you disable cookies entirely.</p>
+
+        <h2>12. Third-Party Services and Links</h2>
+        <p>Echowire may contain links to third-party websites or content. When you use features involving third parties:</p>
+        <ul>
+            <li>We route requests through our servers where possible to reduce data sent directly from your device to third parties.</li>
+            <li>For GIF search through Klipy, both search queries and GIF embedding are routed through our servers, so Klipy does not see your IP address.</li>
+            <li>For YouTube links, we fetch metadata server-side. YouTube only receives information from your device if you choose to play the video.</li>
+        </ul>
+        <p>Third-party services have their own privacy policies. We are not responsible for their practices.</p>
+
+        <h2>13. Law Enforcement and Legal Requests</h2>
+        <p>We take user privacy seriously and carefully consider all legal requests for data.</p>
+        <ul>
+            <li>We respond to valid legal processes that comply with applicable law.</li>
+            <li>We may refuse or narrow requests that are overly broad or not legally valid.</li>
+            <li>Where legally permitted, we will attempt to notify affected users before disclosing their data.</li>
+        </ul>
+        <p>We may disclose data without notice where we reasonably believe it is necessary to prevent harm or protect safety, in accordance with applicable law.</p>
+
+        <h2>14. Automated Decision-Making</h2>
+        <p>We use automated systems in certain limited ways that may affect your use of Echowire, such as:</p>
+        <ul>
+            <li>Determining whether your approximate location is in a region where access is permitted, based on IP geolocation.</li>
+            <li>Detecting potential fraud, spam, or abusive behavior.</li>
+        </ul>
+        <p>Where applicable law (such as GDPR) grants you rights related to automated decision-making, you can contact us at <strong>support@echowire.org</strong> to request human review.</p>
+
+        <h2>15. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. If we make significant changes, we will provide at least 30 days' advance notice where reasonably practicable, via email or in-app notifications.</p>
+        <p>Your continued use of Echowire after the updated policy takes effect constitutes your acceptance of the changes. If you do not agree, you should stop using Echowire and, if you wish, delete your account.</p>
+
+        <h2 id="16-contact-us">16. Contact Us</h2>
+        <p>For privacy questions, data requests, or any concerns about how your data is handled:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@echowire.org">support@echowire.org</a></li>
+            <li><strong>Website:</strong> <a href="https://echowire.org">https://echowire.org</a></li>
+        </ul>
+        <p>For account-related and privacy-related requests, please contact us from the email address associated with your Echowire account wherever possible. This helps us verify your identity and protect your account.</p>
+    </div>
+</body>
+</html>

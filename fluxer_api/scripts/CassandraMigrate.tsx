@@ -172,6 +172,7 @@ async function createSession(
 	port: number,
 	username: string,
 	password: string,
+	localDataCenter: string = 'dc1',
 ): Promise<cassandra.Client> {
 	const maxRetries = 5;
 	const retryDelay = 10000;
@@ -186,7 +187,7 @@ async function createSession(
 		try {
 			const client = new cassandra.Client({
 				contactPoints: [`${host}:${port}`],
-				localDataCenter: 'dc1',
+				localDataCenter,
 				credentials: {username, password},
 				socketOptions: {connectTimeout: 60000},
 			});
@@ -313,11 +314,11 @@ function checkMigrations(): void {
 	console.log(`\n\u2713 All ${validCount} migration(s) are valid!`);
 }
 
-async function runMigrations(host: string, port: number, username: string, password: string): Promise<void> {
+async function runMigrations(host: string, port: number, username: string, password: string, datacenter: string): Promise<void> {
 	console.log('Starting Cassandra migration process...');
 	console.log(`Host: ${host}, Port: ${port}`);
 
-	const session = await createSession(host, port, username, password);
+	const session = await createSession(host, port, username, password, datacenter);
 
 	try {
 		const migrations = getMigrationFiles();
@@ -377,8 +378,8 @@ async function runMigrations(host: string, port: number, username: string, passw
 	}
 }
 
-async function showStatus(host: string, port: number, username: string, password: string): Promise<void> {
-	const session = await createSession(host, port, username, password);
+async function showStatus(host: string, port: number, username: string, password: string, datacenter: string): Promise<void> {
+	const session = await createSession(host, port, username, password, datacenter);
 
 	try {
 		const migrations = getMigrationFiles();
@@ -408,9 +409,10 @@ async function acknowledgeMigration(
 	port: number,
 	username: string,
 	password: string,
+	datacenter: string,
 	filename: string,
 ): Promise<void> {
-	const session = await createSession(host, port, username, password);
+	const session = await createSession(host, port, username, password, datacenter);
 
 	try {
 		const applied = await getAppliedMigrations(session);
@@ -432,10 +434,10 @@ async function acknowledgeMigration(
 	}
 }
 
-async function testConnection(host: string, port: number, username: string, password: string): Promise<void> {
+async function testConnection(host: string, port: number, username: string, password: string, datacenter: string): Promise<void> {
 	console.log(`Testing Cassandra connection to ${host}:${port}...`);
 
-	const session = await createSession(host, port, username, password);
+	const session = await createSession(host, port, username, password, datacenter);
 
 	try {
 		const result = await session.execute('SELECT release_version FROM system.local');
@@ -451,7 +453,7 @@ async function testConnection(host: string, port: number, username: string, pass
 	}
 }
 
-async function debugConnection(host: string, port: number, username: string, password: string): Promise<void> {
+async function debugConnection(host: string, port: number, username: string, password: string, datacenter: string): Promise<void> {
 	console.log('=== Cassandra Connection Debug ===');
 	console.log(`Host: ${host}:${port}`);
 	console.log(`Username: ${username}`);
@@ -489,7 +491,7 @@ async function debugConnection(host: string, port: number, username: string, pas
 
 	let session: cassandra.Client;
 	try {
-		session = await createSession(host, port, username, password);
+		session = await createSession(host, port, username, password, datacenter);
 		console.log(`  \u2713 Session created (${((performance.now() - sessionStart) / 1000).toFixed(2)}s)`);
 	} catch (e) {
 		console.log(`  \u2717 Session creation failed: ${e instanceof Error ? e.message : String(e)}`);
@@ -537,6 +539,7 @@ OPTIONS:
   --port <port>         Cassandra port (default: 9042)
   --username <user>     Cassandra username (default: CASSANDRA_USERNAME env or cassandra)
   --password <pass>     Cassandra password (default: CASSANDRA_PASSWORD env or cassandra)
+  --datacenter <dc>     Local datacenter name (default: CASSANDRA_DATACENTER env or dc1)
   --help                Show this help message
 `);
 }
@@ -549,6 +552,7 @@ async function main(): Promise<void> {
 			port: {type: 'string', default: '9042'},
 			username: {type: 'string', default: process.env['CASSANDRA_USERNAME'] ?? 'cassandra'},
 			password: {type: 'string', default: process.env['CASSANDRA_PASSWORD'] ?? 'cassandra'},
+			datacenter: {type: 'string', default: process.env['CASSANDRA_DATACENTER'] ?? 'dc1'},
 			help: {type: 'boolean', default: false},
 		},
 	});
@@ -563,6 +567,7 @@ async function main(): Promise<void> {
 	const port = parseInt(values.port, 10);
 	const username = values.username;
 	const password = values.password;
+	const datacenter = values.datacenter;
 
 	try {
 		switch (command) {
@@ -579,7 +584,7 @@ async function main(): Promise<void> {
 				checkMigrations();
 				break;
 			case 'up':
-				await runMigrations(host, port, username, password);
+				await runMigrations(host, port, username, password, datacenter);
 				break;
 			case 'ack': {
 				const filename = positionals[1];
@@ -587,17 +592,17 @@ async function main(): Promise<void> {
 					console.error('Error: Migration filename is required');
 					process.exit(1);
 				}
-				await acknowledgeMigration(host, port, username, password, filename);
+				await acknowledgeMigration(host, port, username, password, datacenter, filename);
 				break;
 			}
 			case 'status':
-				await showStatus(host, port, username, password);
+				await showStatus(host, port, username, password, datacenter);
 				break;
 			case 'test':
-				await testConnection(host, port, username, password);
+				await testConnection(host, port, username, password, datacenter);
 				break;
 			case 'debug':
-				await debugConnection(host, port, username, password);
+				await debugConnection(host, port, username, password, datacenter);
 				break;
 			default:
 				console.error(`Unknown command: ${command}`);

@@ -9,6 +9,11 @@
 				"description": "Enable voice/video features.",
 				"default": false
 			},
+			"reconciliation_enabled": {
+				"type": "boolean",
+				"description": "Enable the voice reconciliation worker that cleans up orphaned LiveKit participants. Disable on standby nodes that share LiveKit servers but have separate Valkey instances.",
+				"default": true
+			},
 			"api_key": {
 				"type": "string",
 				"description": "LiveKit API Key used for config-driven default_region bootstrap. Optional when voice topology is managed in the admin panel."

@@ -77,7 +77,9 @@ export async function createFluxerServer(options: FluxerServerOptions = {}): Pro
 		await mounted.start();
 
 		const shouldStartGatewayProcess =
-			config.services.gateway && (config.env === 'production' || config.dev.test_mode_enabled);
+			config.services.gateway &&
+			config.services.gateway.enabled !== false &&
+			(config.env === 'production' || config.dev.test_mode_enabled);
 		if (shouldStartGatewayProcess) {
 			Logger.info('Initializing Gateway Process Manager');
 			gatewayManager = createGatewayProcessManager();
@@ -107,6 +109,7 @@ export async function createFluxerServer(options: FluxerServerOptions = {}): Pro
 			);
 			cronScheduler.upsert('processInactivityDeletions', 'processInactivityDeletions', {}, '0 0 */6 * * *');
 			cronScheduler.upsert('expireAttachments', 'expireAttachments', {}, '0 0 */12 * * *');
+			cronScheduler.upsert('expireChannelMessages', 'expireChannelMessages', {}, '0 */15 * * * *');
 			cronScheduler.upsert('syncDiscoveryIndex', 'syncDiscoveryIndex', {}, '0 */15 * * * *');
 			cronScheduler.start();
 			workerLogger.info('Cron scheduler started');

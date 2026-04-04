@@ -105,6 +105,10 @@
 				"description": "Internal Valkey/Redis URL for key-value operations.",
 				"default": "redis://localhost:6379/0"
 			},
+			"voice_kv": {
+				"type": "string",
+				"description": "Shared Valkey/Redis URL for voice connection state. When set, voice state is stored here instead of the local kv, enabling cross-node reconciliation."
+			},
 			"kv_mode": {
 				"type": "string",
 				"description": "Valkey/Redis connection mode. Use 'standalone' for a single node or 'cluster' for a Valkey/Redis cluster.",

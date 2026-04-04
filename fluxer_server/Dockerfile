@@ -25,43 +25,60 @@ COPY patches/ ./patches/
 
 COPY packages/admin/package.json ./packages/admin/
 COPY packages/api/package.json ./packages/api/
-COPY packages/app/package.json ./packages/app/
+COPY packages/app_proxy/package.json ./packages/app_proxy/
 COPY packages/cache/package.json ./packages/cache/
 COPY packages/captcha/package.json ./packages/captcha/
 COPY packages/cassandra/package.json ./packages/cassandra/
 COPY packages/config/package.json ./packages/config/
 COPY packages/constants/package.json ./packages/constants/
+COPY packages/date_utils/package.json ./packages/date_utils/
+COPY packages/elasticsearch_search/package.json ./packages/elasticsearch_search/
 COPY packages/email/package.json ./packages/email/
 COPY packages/errors/package.json ./packages/errors/
+COPY packages/geoip/package.json ./packages/geoip/
+COPY packages/geo_utils/package.json ./packages/geo_utils/
 COPY packages/hono/package.json ./packages/hono/
 COPY packages/hono_types/package.json ./packages/hono_types/
+COPY packages/http_client/package.json ./packages/http_client/
+COPY packages/i18n/package.json ./packages/i18n/
 COPY packages/initialization/package.json ./packages/initialization/
 COPY packages/ip_utils/package.json ./packages/ip_utils/
+COPY packages/kv_client/package.json ./packages/kv_client/
+COPY packages/limits/package.json ./packages/limits/
+COPY packages/list_utils/package.json ./packages/list_utils/
+COPY packages/locale/package.json ./packages/locale/
 COPY packages/logger/package.json ./packages/logger/
+COPY packages/markdown_parser/package.json ./packages/markdown_parser/
 COPY packages/marketing/package.json ./packages/marketing/
 COPY packages/media_proxy/package.json ./packages/media_proxy/
+COPY packages/media_proxy_utils/package.json ./packages/media_proxy_utils/
+COPY packages/meilisearch_search/package.json ./packages/meilisearch_search/
+COPY packages/mime_utils/package.json ./packages/mime_utils/
+COPY packages/nats/package.json ./packages/nats/
+COPY packages/number_utils/package.json ./packages/number_utils/
 COPY packages/oauth2/package.json ./packages/oauth2/
+COPY packages/openapi/package.json ./packages/openapi/
 COPY packages/queue/package.json ./packages/queue/
 COPY packages/rate_limit/package.json ./packages/rate_limit/
 COPY packages/s3/package.json ./packages/s3/
+COPY packages/schema/package.json ./packages/schema/
 COPY packages/sentry/package.json ./packages/sentry/
 COPY packages/sms/package.json ./packages/sms/
 COPY packages/snowflake/package.json ./packages/snowflake/
 COPY packages/telemetry/package.json ./packages/telemetry/
+COPY packages/time/package.json ./packages/time/
 COPY packages/ui/package.json ./packages/ui/
 COPY packages/validation/package.json ./packages/validation/
 COPY packages/virus_scan/package.json ./packages/virus_scan/
 COPY packages/worker/package.json ./packages/worker/
-COPY packages/http_client/package.json ./packages/http_client/
-COPY packages/schema/package.json ./packages/schema/
 COPY fluxer_server/package.json ./fluxer_server/
 COPY fluxer_app/package.json ./fluxer_app/
 
-RUN pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
+	pnpm install --frozen-lockfile
 
-RUN pnpm approve-builds msgpackr-extract@3.0.3 @parcel/watcher@2.5.6
-
-RUN pnpm rebuild msgpackr-extract @parcel/watcher
+RUN pnpm approve-builds msgpackr-extract@3.0.3 @parcel/watcher@2.5.6 && \
+	pnpm rebuild msgpackr-extract @parcel/watcher
 
 FROM deps AS build
 
@@ -72,6 +89,7 @@ RUN pnpm --filter @fluxer/config generate
 COPY fluxer_server/ ./fluxer_server/
 
 RUN pnpm --filter @fluxer/marketing build:css
+RUN pnpm --filter @fluxer/admin build:css
 
 COPY fluxer_media_proxy/data/model.onnx ./fluxer_media_proxy/data/model.onnx
 
@@ -98,21 +116,58 @@ RUN curl -fsSL https://github.com/erlang/rebar3/releases/download/3.24.0/rebar3 
 	chmod +x /usr/local/bin/rebar3
 
 COPY fluxer_gateway/rebar.config fluxer_gateway/rebar.lock* ./
-RUN rebar3 compile --deps_only
+RUN --mount=type=cache,id=rebar3-gateway-main,target=/root/.cache/rebar3 \
+	rebar3 compile --deps_only
 
 COPY fluxer_gateway/. ./fluxer_gateway
-RUN LOGGER_LEVEL=${LOGGER_LEVEL} envsubst '${LOGGER_LEVEL}' < fluxer_gateway/config/vm.args.template > fluxer_gateway/config/vm.args && \
+RUN --mount=type=cache,id=rebar3-gateway-main,target=/root/.cache/rebar3 \
+	LOGGER_LEVEL=${LOGGER_LEVEL} envsubst '${LOGGER_LEVEL}' < fluxer_gateway/config/vm.args.template > fluxer_gateway/config/vm.args && \
 	LOGGER_LEVEL=${LOGGER_LEVEL} envsubst '${LOGGER_LEVEL}' < fluxer_gateway/config/sys.config.template > fluxer_gateway/config/sys.config && \
 	(cd fluxer_gateway && rebar3 as prod release)
 
 FROM deps AS app-build
 
+ARG BUILD_SHA
+ARG BUILD_NUMBER
+ARG BUILD_TIMESTAMP
+ARG RELEASE_CHANNEL=nightly
+
+ENV BUILD_SHA=${BUILD_SHA}
+ENV BUILD_NUMBER=${BUILD_NUMBER}
+ENV BUILD_TIMESTAMP=${BUILD_TIMESTAMP}
+ENV RELEASE_CHANNEL=${RELEASE_CHANNEL}
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	ca-certificates \
+	pkg-config \
+	libssl-dev \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN --mount=type=cache,id=rustup,target=/root/.rustup \
+	--mount=type=cache,id=cargo,target=/root/.cargo/registry \
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable --target wasm32-unknown-unknown && \
+	. /root/.cargo/env && \
+	cargo install wasm-pack
+
+ENV PATH="/root/.cargo/bin:${PATH}"
+
 COPY tsconfigs /usr/src/app/tsconfigs
 
 COPY packages/ ./packages/
 COPY fluxer_app/ ./fluxer_app/
+COPY config/config.json ./config/config.json
 
-RUN cd fluxer_app && pnpm build
+ENV FLUXER_CONFIG=/usr/src/app/config/config.json
+
+RUN cd fluxer_app && pnpm lingui:compile && pnpm build && \
+	node -e "\
+		const fs = require('fs');\
+		const sha = process.env.BUILD_SHA || 'dev';\
+		const buildNumber = Number(process.env.BUILD_NUMBER || 0);\
+		const timestamp = Number(process.env.BUILD_TIMESTAMP || Math.floor(Date.now() / 1000));\
+		const env = process.env.RELEASE_CHANNEL || 'nightly';\
+		fs.writeFileSync('dist/version.json', JSON.stringify({ sha, buildNumber, timestamp, env }, null, 2));\
+	"
 
 FROM node:24-trixie-slim AS production
 
@@ -149,6 +204,9 @@ COPY --from=build /usr/src/app/pnpm-workspace.yaml ./
 COPY --from=build /usr/src/app/package.json ./
 COPY --from=gateway-build /usr/src/app/gateway/fluxer_gateway/_build/prod/rel/fluxer_gateway /opt/fluxer_gateway
 COPY --from=app-build /usr/src/app/fluxer_app/dist /usr/src/app/assets
+
+RUN mkdir -p /usr/src/app/assets/.well-known && \
+	echo '[{"relation":["delegate_permission/common.handle_all_urls","delegate_permission/common.get_login_creds"],"target":{"namespace":"android_app","package_name":"org.echowire.twa","sha256_cert_fingerprints":["2F:7A:6D:CA:0D:B4:B7:4D:6F:66:BA:AB:4A:D9:5C:8E:1D:05:C3:C2:BD:DF:BC:17:A6:38:CF:0B:49:BE:04:B1"]}}]' > /usr/src/app/assets/.well-known/assetlinks.json
 
 RUN mkdir -p /usr/src/app/data/storage && \
 	mkdir -p /usr/src/app/data/db && \
@@ -195,5 +253,7 @@ ENV RELEASE_CHANNEL=${RELEASE_CHANNEL}
 
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
 	CMD curl -f http://localhost:8080/_health || exit 1
+
+WORKDIR /usr/src/app/fluxer_server
 
 ENTRYPOINT ["pnpm", "start"]

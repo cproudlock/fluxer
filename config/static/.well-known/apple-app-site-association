@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "34589PFK6A.org.echowire.ios",
+        "paths": [
+          "/channels/*",
+          "/invite/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "34589PFK6A.org.echowire.ios"
+    ]
+  }
+}

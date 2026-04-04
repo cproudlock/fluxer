@@ -16,10 +16,12 @@ RUN curl -fsSL https://github.com/erlang/rebar3/releases/download/3.24.0/rebar3 
 	chmod +x /usr/local/bin/rebar3
 
 COPY rebar.config rebar.lock* ./
-RUN rebar3 compile --deps_only
+RUN --mount=type=cache,id=rebar3-relay,target=/root/.cache/rebar3 \
+	rebar3 compile --deps_only
 
 COPY . .
-RUN rebar3 as prod release
+RUN --mount=type=cache,id=rebar3-relay,target=/root/.cache/rebar3 \
+	rebar3 as prod release
 
 FROM erlang:28-slim
 

@@ -155,6 +155,16 @@ export async function mountRoutes(options: MountRoutesOptions): Promise<MountedR
 		app.get('/_live', livenessHandler);
 		logger.info('Liveness check endpoint mounted at /_live');
 
+		app.get('/.well-known/apple-app-site-association', (ctx) => {
+			return ctx.json({
+				applinks: {
+					apps: [],
+					details: [{appID: '34589PFK6A.org.echowire.ios', paths: ['/channels/*', '/invite/*']}],
+				},
+				webcredentials: {apps: ['34589PFK6A.org.echowire.ios']},
+			});
+		});
+
 		if (services.appServer !== undefined) {
 			app.route('/', services.appServer.app);
 			logger.info('SPA App server mounted at /');
