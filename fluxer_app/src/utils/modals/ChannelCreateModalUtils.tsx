@@ -50,6 +50,11 @@ export const channelTypeOptions: Array<ChannelTypeOption> = [
 		name: 'Link Channel',
 		desc: 'Quick access to an external website or resource',
 	},
+	{
+		value: ChannelTypes.GUILD_FORUM,
+		name: 'Forum Channel',
+		desc: 'Organized posts for discussions, questions, and topics',
+	},
 ];
 
 export async function createChannel(guildId: string, data: FormInputs, parentId?: string): Promise<void> {
@@ -63,7 +68,7 @@ export async function createChannel(guildId: string, data: FormInputs, parentId?
 		user_limit: channelType === ChannelTypes.GUILD_VOICE ? 0 : null,
 	});
 
-	if (channel.type === ChannelTypes.GUILD_TEXT || channel.type === ChannelTypes.GUILD_VOICE) {
+	if (channel.type === ChannelTypes.GUILD_TEXT || channel.type === ChannelTypes.GUILD_VOICE || channel.type === ChannelTypes.GUILD_FORUM) {
 		setTimeout(() => {
 			selectChannel(guildId, channel.id);
 		}, 50);

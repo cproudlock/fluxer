@@ -23,6 +23,7 @@ import {MessageController} from '@fluxer/api/src/channel/controllers/MessageCont
 import {MessageInteractionController} from '@fluxer/api/src/channel/controllers/MessageInteractionController';
 import {ScheduledMessageController} from '@fluxer/api/src/channel/controllers/ScheduledMessageController';
 import {StreamController} from '@fluxer/api/src/channel/controllers/StreamController';
+import {ThreadController} from '@fluxer/api/src/channel/controllers/ThreadController';
 import type {HonoApp} from '@fluxer/api/src/types/HonoEnv';
 
 export function registerChannelControllers(app: HonoApp) {
@@ -32,4 +33,5 @@ export function registerChannelControllers(app: HonoApp) {
 	ScheduledMessageController(app);
 	CallController(app);
 	StreamController(app);
+	ThreadController(app);
 }

@@ -17,6 +17,8 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import * as ScheduledEventActionCreators from '@app/actions/ScheduledEventActionCreators';
+import * as ThreadActionCreators from '@app/actions/ThreadActionCreators';
 import * as UserGuildSettingsActionCreators from '@app/actions/UserGuildSettingsActionCreators';
 import accountStorage from '@app/lib/AccountStorage';
 import {Logger} from '@app/lib/Logger';
@@ -181,4 +183,17 @@ export function handleReady(data: ReadyPayload, context: GatewayHandlerContext):
 
 	context.setReady();
 	MessageStore.handleConnectionOpen();
+
+	// Fetch threads and events for all guilds (not included in READY payload)
+	for (const guild of guilds) {
+		if (guild.unavailable) continue;
+		void ThreadActionCreators.fetchActiveThreads(guild.id).then((result: any) => {
+			if (result?.threads && Array.isArray(result.threads)) {
+				for (const thread of result.threads) {
+					ChannelStore.handleChannelCreate({channel: thread});
+				}
+			}
+		}).catch(() => {});
+		void ScheduledEventActionCreators.fetchEvents(guild.id).catch(() => {});
+	}
 }

@@ -30,6 +30,7 @@ import {
 	useMessagePermissions,
 } from '@app/components/channel/MessageActionUtils';
 import {MessageDebugModal} from '@app/components/debug/MessageDebugModal';
+import {CreateThreadModal} from '@app/components/modals/CreateThreadModal';
 import type {IARContext} from '@app/components/modals/IARModal';
 import {IARModal} from '@app/components/modals/IARModal';
 import {
@@ -38,6 +39,7 @@ import {
 	CopyIdIcon,
 	CopyLinkIcon,
 	CopyMessageTextIcon,
+	CreateThreadIcon,
 	DebugMessageIcon,
 	DeleteIcon,
 	EditMessageIcon,
@@ -79,6 +81,7 @@ interface MessageActionMenuOptions {
 
 export const messageActionMenuItemIds = {
 	reply: 'reply',
+	createThread: 'create_thread',
 	edit: 'edit',
 	deleteMessage: 'delete_message',
 	copyMessage: 'copy_message',
@@ -215,6 +218,21 @@ export const useMessageActionMenuData = (
 					label: t`Reply`,
 					onClick: handlers.handleReply,
 					shortcut: <KeybindHint action="reply_message" />,
+				});
+			}
+
+			if (message.isUserMessage() && supportsInteractiveActions && !permissions?.isDM && channel?.isGuildText() &&
+				PermissionStore.can(Permissions.CREATE_PUBLIC_THREADS, {channelId: message.channelId})) {
+				interactionActions.push({
+					id: messageActionMenuItemIds.createThread,
+					icon: <CreateThreadIcon size={20} />,
+					label: t`Create Thread`,
+					onClick: () => {
+						onClose?.();
+						ModalActionCreators.push(
+							modal(() => <CreateThreadModal channelId={message.channelId} />),
+						);
+					},
 				});
 			}
 

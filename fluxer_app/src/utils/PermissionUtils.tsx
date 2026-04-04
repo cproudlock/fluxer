@@ -357,6 +357,31 @@ function generateGuildTextPermissionSpec(i18n: I18n): PermissionSpec {
 				description: i18n._(msg`Ignore per-channel message rate limits.`),
 				flag: Permissions.BYPASS_SLOWMODE,
 			},
+			{
+				title: i18n._(msg`Create Public Threads`),
+				description: i18n._(msg`Create threads that anyone with access to the channel can view.`),
+				flag: Permissions.CREATE_PUBLIC_THREADS,
+			},
+			{
+				title: i18n._(msg`Create Private Threads`),
+				description: i18n._(msg`Create threads that are only visible to invited members.`),
+				flag: Permissions.CREATE_PRIVATE_THREADS,
+			},
+			{
+				title: i18n._(msg`Send Messages in Threads`),
+				description: i18n._(msg`Send messages in thread conversations.`),
+				flag: Permissions.SEND_MESSAGES_IN_THREADS,
+			},
+			{
+				title: i18n._(msg`Manage Threads`),
+				description: i18n._(msg`Archive, delete, and edit threads.`),
+				flag: Permissions.MANAGE_THREADS,
+			},
+			{
+				title: i18n._(msg`Manage Events`),
+				description: i18n._(msg`Create, edit, and delete scheduled events.`),
+				flag: Permissions.MANAGE_EVENTS,
+			},
 		],
 	};
 }

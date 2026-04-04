@@ -20,6 +20,8 @@
 import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
 import {
 	AVATAR_MAX_SIZE,
+	CHANNEL_MESSAGE_RETENTION_MAX,
+	CHANNEL_MESSAGE_RETENTION_MIN,
 	CHANNEL_RATE_LIMIT_PER_USER_MAX,
 	CHANNEL_RATE_LIMIT_PER_USER_MIN,
 	CHANNEL_TOPIC_MAX_LENGTH,
@@ -101,6 +103,13 @@ const ChannelUpdateCommon = ChannelCommonBase.extend({
 		.max(CHANNEL_RATE_LIMIT_PER_USER_MAX)
 		.nullish()
 		.describe(`Slowmode delay in seconds (${CHANNEL_RATE_LIMIT_PER_USER_MIN}-${CHANNEL_RATE_LIMIT_PER_USER_MAX})`),
+	message_retention_seconds: z
+		.number()
+		.int()
+		.min(CHANNEL_MESSAGE_RETENTION_MIN)
+		.max(CHANNEL_MESSAGE_RETENTION_MAX)
+		.nullish()
+		.describe(`Message retention period in seconds (${CHANNEL_MESSAGE_RETENTION_MIN}-${CHANNEL_MESSAGE_RETENTION_MAX}, 0 means forever)`),
 	icon: createBase64StringType(1, Math.ceil(AVATAR_MAX_SIZE * (4 / 3)))
 		.nullish()
 		.describe('Base64-encoded icon image for group DM channels'),
@@ -141,11 +150,28 @@ export const ChannelCreateLinkRequest = ChannelCreateCommon.extend({
 
 export type ChannelCreateLinkRequest = z.infer<typeof ChannelCreateLinkRequest>;
 
+export const ForumTagRequest = z.object({
+	id: z.string().optional().describe('The ID of an existing tag to update (omit for new tags)'),
+	name: createStringType(1, 20).describe('The name of the tag (1-20 characters)'),
+	emoji_name: createStringType(1, 32).nullish().describe('Emoji associated with the tag'),
+});
+
+export type ForumTagRequest = z.infer<typeof ForumTagRequest>;
+
+export const ChannelCreateForumRequest = ChannelCreateCommon.extend({
+	type: createNamedLiteral(ChannelTypes.GUILD_FORUM, 'GUILD_FORUM', 'Channel type (forum channel)'),
+	name: GeneralChannelNameType.describe('The name of the forum channel'),
+	available_tags: z.array(ForumTagRequest).max(20).optional().describe('Tags available in this forum (max 20)'),
+});
+
+export type ChannelCreateForumRequest = z.infer<typeof ChannelCreateForumRequest>;
+
 export const ChannelCreateRequest = z.discriminatedUnion('type', [
 	ChannelCreateTextRequest,
 	ChannelCreateVoiceRequest,
 	ChannelCreateCategoryRequest,
 	ChannelCreateLinkRequest,
+	ChannelCreateForumRequest,
 ]);
 
 export type ChannelCreateRequest = z.infer<typeof ChannelCreateRequest>;
@@ -190,12 +216,21 @@ export const ChannelUpdateGroupDmRequest = z.object({
 
 export type ChannelUpdateGroupDmRequest = z.infer<typeof ChannelUpdateGroupDmRequest>;
 
+export const ChannelUpdateForumRequest = ChannelUpdateCommon.extend({
+	type: createNamedLiteral(ChannelTypes.GUILD_FORUM, 'GUILD_FORUM', 'Channel type (forum channel)'),
+	name: GeneralChannelNameType.nullish().describe('The name of the forum channel'),
+	available_tags: z.array(ForumTagRequest).max(20).optional().describe('Tags available in this forum (max 20)'),
+});
+
+export type ChannelUpdateForumRequest = z.infer<typeof ChannelUpdateForumRequest>;
+
 export const ChannelUpdateRequest = z.discriminatedUnion('type', [
 	ChannelUpdateTextRequest,
 	ChannelUpdateVoiceRequest,
 	ChannelUpdateCategoryRequest,
 	ChannelUpdateLinkRequest,
 	ChannelUpdateGroupDmRequest,
+	ChannelUpdateForumRequest,
 ]);
 
 export type ChannelUpdateRequest = z.infer<typeof ChannelUpdateRequest>;

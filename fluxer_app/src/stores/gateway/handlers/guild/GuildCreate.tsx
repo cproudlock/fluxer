@@ -17,6 +17,8 @@
  * along with Fluxer. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import * as ScheduledEventActionCreators from '@app/actions/ScheduledEventActionCreators';
+import * as ThreadActionCreators from '@app/actions/ThreadActionCreators';
 import ChannelStore from '@app/stores/ChannelStore';
 import EmojiStore from '@app/stores/EmojiStore';
 import GuildAvailabilityStore from '@app/stores/GuildAvailabilityStore';
@@ -92,6 +94,23 @@ export function handleGuildCreate(data: GuildReadyData, _context: GatewayHandler
 	MemberSearchStore.handleGuildCreate(data.id);
 
 	QuickSwitcherStore.recomputeIfOpen();
+
+	// Fetch active threads for this guild (threads aren't included in GUILD_CREATE)
+	void ThreadActionCreators.fetchActiveThreads(data.id).then((result: any) => {
+		if (result?.threads && Array.isArray(result.threads)) {
+			for (const thread of result.threads) {
+				ChannelStore.handleChannelCreate({channel: thread});
+			}
+		}
+	}).catch(() => {});
+
+	// Fetch scheduled events for this guild
+	console.log('[ScheduledEvents] Fetching events for guild', data.id);
+	void ScheduledEventActionCreators.fetchEvents(data.id).then(() => {
+		console.log('[ScheduledEvents] Events fetched successfully for guild', data.id);
+	}).catch((err) => {
+		console.warn('[ScheduledEvents] Failed to fetch events for guild', data.id, err);
+	});
 
 	const isSync = (_context as {_isSync?: boolean})._isSync;
 	const selectedId = SelectedGuildStore.selectedGuildId;

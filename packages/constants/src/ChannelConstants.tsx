@@ -25,6 +25,9 @@ export const ChannelTypes = {
 	GUILD_VOICE: 2,
 	GROUP_DM: 3,
 	GUILD_CATEGORY: 4,
+	PUBLIC_THREAD: 11,
+	PRIVATE_THREAD: 12,
+	GUILD_FORUM: 15,
 	GUILD_LINK: 998,
 	DM_PERSONAL_NOTES: 999,
 } as const;
@@ -36,7 +39,11 @@ export const TEXT_BASED_CHANNEL_TYPES = new Set<number>([
 	ChannelTypes.DM,
 	ChannelTypes.DM_PERSONAL_NOTES,
 	ChannelTypes.GROUP_DM,
+	ChannelTypes.PUBLIC_THREAD,
+	ChannelTypes.PRIVATE_THREAD,
 ]);
+
+export const THREAD_CHANNEL_TYPES = new Set<number>([ChannelTypes.PUBLIC_THREAD, ChannelTypes.PRIVATE_THREAD]);
 
 export const ChannelOverwriteTypes = {
 	ROLE: 0,
@@ -218,12 +225,17 @@ export const Permissions = {
 	MANAGE_ROLES: 1n << 28n,
 	MANAGE_WEBHOOKS: 1n << 29n,
 	MANAGE_EXPRESSIONS: 1n << 30n,
+	MANAGE_EVENTS: 1n << 33n,
 	USE_EXTERNAL_STICKERS: 1n << 37n,
 	MODERATE_MEMBERS: 1n << 40n,
 	CREATE_EXPRESSIONS: 1n << 43n,
 	PIN_MESSAGES: 1n << 51n,
 	BYPASS_SLOWMODE: 1n << 52n,
 	UPDATE_RTC_REGION: 1n << 53n,
+	CREATE_PUBLIC_THREADS: 1n << 54n,
+	CREATE_PRIVATE_THREADS: 1n << 55n,
+	SEND_MESSAGES_IN_THREADS: 1n << 56n,
+	MANAGE_THREADS: 1n << 57n,
 } as const;
 
 export const PermissionsDescriptions: Record<keyof typeof Permissions, string> = {
@@ -257,12 +269,17 @@ export const PermissionsDescriptions: Record<keyof typeof Permissions, string> =
 	MANAGE_ROLES: 'Allows management and editing of roles',
 	MANAGE_WEBHOOKS: 'Allows management and editing of webhooks',
 	MANAGE_EXPRESSIONS: 'Allows management of guild expressions',
+	MANAGE_EVENTS: 'Allows management of guild scheduled events',
 	USE_EXTERNAL_STICKERS: 'Allows using stickers from other guilds',
 	MODERATE_MEMBERS: 'Allows timing out users',
 	CREATE_EXPRESSIONS: 'Allows creating guild expressions',
 	PIN_MESSAGES: 'Allows pinning messages',
 	BYPASS_SLOWMODE: 'Allows bypassing slowmode',
 	UPDATE_RTC_REGION: 'Allows updating the voice region',
+	CREATE_PUBLIC_THREADS: 'Allows creating public threads',
+	CREATE_PRIVATE_THREADS: 'Allows creating private threads',
+	SEND_MESSAGES_IN_THREADS: 'Allows sending messages in threads',
+	MANAGE_THREADS: 'Allows managing threads (archive, delete, edit)',
 };
 
 export const ALL_PERMISSIONS = Object.values(Permissions).reduce((acc, p) => acc | p, 0n);
@@ -282,7 +299,9 @@ export const DEFAULT_PERMISSIONS =
 	Permissions.USE_VAD |
 	Permissions.CHANGE_NICKNAME |
 	Permissions.USE_EXTERNAL_STICKERS |
-	Permissions.CREATE_EXPRESSIONS;
+	Permissions.CREATE_EXPRESSIONS |
+	Permissions.CREATE_PUBLIC_THREADS |
+	Permissions.SEND_MESSAGES_IN_THREADS;
 
 export const ElevatedPermissions =
 	Permissions.KICK_MEMBERS |
@@ -294,6 +313,7 @@ export const ElevatedPermissions =
 	Permissions.MANAGE_MESSAGES |
 	Permissions.MANAGE_WEBHOOKS |
 	Permissions.MANAGE_EXPRESSIONS |
-	Permissions.MODERATE_MEMBERS;
+	Permissions.MODERATE_MEMBERS |
+	Permissions.MANAGE_THREADS;
 
 export const CHANNEL_REINDEX_AFTER_TIMESTAMP = 1769813072;

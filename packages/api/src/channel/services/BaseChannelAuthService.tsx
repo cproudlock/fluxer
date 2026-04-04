@@ -173,8 +173,10 @@ export abstract class BaseChannelAuthService {
 			this.throwGuildAccessError();
 		}
 
+		const permissionChannelId = channel.isThread() && channel.parentId ? channel.parentId : channel.id;
+
 		const hasPermission = async (permission: bigint): Promise<boolean> => {
-			return await this.gatewayService.checkPermission({guildId, userId, permission, channelId: channel.id});
+			return await this.gatewayService.checkPermission({guildId, userId, permission, channelId: permissionChannelId});
 		};
 
 		const checkPermission = async (permission: bigint): Promise<void> => {

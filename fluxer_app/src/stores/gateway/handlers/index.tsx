@@ -42,6 +42,12 @@ import {handleGuildRoleCreate} from '@app/stores/gateway/handlers/guild/GuildRol
 import {handleGuildRoleDelete} from '@app/stores/gateway/handlers/guild/GuildRoleDelete';
 import {handleGuildRoleUpdate} from '@app/stores/gateway/handlers/guild/GuildRoleUpdate';
 import {handleGuildRoleUpdateBulk} from '@app/stores/gateway/handlers/guild/GuildRoleUpdateBulk';
+import {handleGuildScheduledEventCreate} from '@app/stores/gateway/handlers/guild/GuildScheduledEventCreate';
+import {handleGuildScheduledEventDelete} from '@app/stores/gateway/handlers/guild/GuildScheduledEventDelete';
+import {handleGuildScheduledEventUpdate} from '@app/stores/gateway/handlers/guild/GuildScheduledEventUpdate';
+import {handleGuildScheduledEventUserAdd} from '@app/stores/gateway/handlers/guild/GuildScheduledEventUserAdd';
+import {handleGuildScheduledEventUserRemove} from '@app/stores/gateway/handlers/guild/GuildScheduledEventUserRemove';
+import {handleGuildSoundboardSoundPlay} from '@app/stores/gateway/handlers/guild/GuildSoundboardSoundPlay';
 import {handleGuildStickersUpdate} from '@app/stores/gateway/handlers/guild/GuildStickersUpdate';
 import {handleGuildSync} from '@app/stores/gateway/handlers/guild/GuildSync';
 import {handleGuildUpdate} from '@app/stores/gateway/handlers/guild/GuildUpdate';
@@ -80,6 +86,12 @@ import {handleUserNoteUpdate} from '@app/stores/gateway/handlers/user/UserNoteUp
 import {handleUserPinnedDmsUpdate} from '@app/stores/gateway/handlers/user/UserPinnedDmsUpdate';
 import {handleUserSettingsUpdate} from '@app/stores/gateway/handlers/user/UserSettingsUpdate';
 import {handleUserUpdate} from '@app/stores/gateway/handlers/user/UserUpdate';
+import {handleThreadCreate} from '@app/stores/gateway/handlers/thread/ThreadCreate';
+import {handleThreadDelete} from '@app/stores/gateway/handlers/thread/ThreadDelete';
+import {handleThreadListSync} from '@app/stores/gateway/handlers/thread/ThreadListSync';
+import {handleThreadMemberUpdate} from '@app/stores/gateway/handlers/thread/ThreadMemberUpdate';
+import {handleThreadMembersUpdate} from '@app/stores/gateway/handlers/thread/ThreadMembersUpdate';
+import {handleThreadUpdate} from '@app/stores/gateway/handlers/thread/ThreadUpdate';
 import {handleVoiceServerUpdate} from '@app/stores/gateway/handlers/voice/VoiceServerUpdate';
 import {handleVoiceStateUpdate} from '@app/stores/gateway/handlers/voice/VoiceStateUpdate';
 
@@ -124,6 +136,14 @@ export function createHandlerRegistry(): GatewayHandlerRegistry {
 	registry.set('GUILD_ROLE_UPDATE', handleGuildRoleUpdate as GatewayEventHandler);
 	registry.set('GUILD_ROLE_DELETE', handleGuildRoleDelete as GatewayEventHandler);
 	registry.set('GUILD_ROLE_UPDATE_BULK', handleGuildRoleUpdateBulk as GatewayEventHandler);
+
+	registry.set('GUILD_SOUNDBOARD_SOUND_PLAY', handleGuildSoundboardSoundPlay as GatewayEventHandler);
+
+	registry.set('GUILD_SCHEDULED_EVENT_CREATE', handleGuildScheduledEventCreate as GatewayEventHandler);
+	registry.set('GUILD_SCHEDULED_EVENT_UPDATE', handleGuildScheduledEventUpdate as GatewayEventHandler);
+	registry.set('GUILD_SCHEDULED_EVENT_DELETE', handleGuildScheduledEventDelete as GatewayEventHandler);
+	registry.set('GUILD_SCHEDULED_EVENT_USER_ADD', handleGuildScheduledEventUserAdd as GatewayEventHandler);
+	registry.set('GUILD_SCHEDULED_EVENT_USER_REMOVE', handleGuildScheduledEventUserRemove as GatewayEventHandler);
 
 	registry.set('CHANNEL_CREATE', handleChannelCreate as GatewayEventHandler);
 	registry.set('CHANNEL_UPDATE', handleChannelUpdate as GatewayEventHandler);
@@ -171,6 +191,13 @@ export function createHandlerRegistry(): GatewayHandlerRegistry {
 	registry.set('FAVORITE_MEME_CREATE', handleFavoriteMemeCreate as GatewayEventHandler);
 	registry.set('FAVORITE_MEME_UPDATE', handleFavoriteMemeUpdate as GatewayEventHandler);
 	registry.set('FAVORITE_MEME_DELETE', handleFavoriteMemeDelete as GatewayEventHandler);
+
+	registry.set('THREAD_CREATE', handleThreadCreate as GatewayEventHandler);
+	registry.set('THREAD_UPDATE', handleThreadUpdate as GatewayEventHandler);
+	registry.set('THREAD_DELETE', handleThreadDelete as GatewayEventHandler);
+	registry.set('THREAD_LIST_SYNC', handleThreadListSync as GatewayEventHandler);
+	registry.set('THREAD_MEMBER_UPDATE', handleThreadMemberUpdate as GatewayEventHandler);
+	registry.set('THREAD_MEMBERS_UPDATE', handleThreadMembersUpdate as GatewayEventHandler);
 
 	registry.set('SESSIONS_REPLACE', () => {});
 

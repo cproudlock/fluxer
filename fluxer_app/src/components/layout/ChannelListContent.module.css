@@ -74,3 +74,38 @@
 .bottomSpacer {
 	height: 0.5rem;
 }
+
+.threadItem {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem 0.5rem 0.25rem 2rem;
+	margin: 1px 0.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	color: var(--channels-default);
+	font-size: 0.8125rem;
+	line-height: 1.25rem;
+}
+
+.threadItem:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--interactive-hover);
+}
+
+.threadBranch {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
+	border-left: 2px solid var(--channels-default);
+	border-bottom: 2px solid var(--channels-default);
+	border-radius: 0 0 0 4px;
+	flex-shrink: 0;
+	opacity: 0.5;
+}
+
+.threadName {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

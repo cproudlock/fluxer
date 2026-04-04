@@ -117,6 +117,24 @@ import {
 	type GuildStickerRow,
 } from '@fluxer/api/src/database/types/GuildTypes';
 import {
+	GUILD_SOUNDBOARD_SOUND_COLUMNS,
+	type GuildSoundboardSoundRow,
+} from '@fluxer/api/src/database/types/SoundboardTypes';
+import {
+	GUILD_SCHEDULED_EVENT_COLUMNS,
+	GUILD_SCHEDULED_EVENT_USER_COLUMNS,
+	type GuildScheduledEventRow,
+	type GuildScheduledEventUserRow,
+} from '@fluxer/api/src/database/types/ScheduledEventTypes';
+import {
+	ACTIVE_THREAD_BY_GUILD_COLUMNS,
+	type ActiveThreadByGuildRow,
+	THREAD_MEMBER_BY_USER_COLUMNS,
+	THREAD_MEMBER_COLUMNS,
+	type ThreadMemberByUserRow,
+	type ThreadMemberRow,
+} from '@fluxer/api/src/database/types/ThreadTypes';
+import {
 	INSTANCE_CONFIGURATION_COLUMNS,
 	type InstanceConfigurationRow,
 } from '@fluxer/api/src/database/types/InstanceConfigTypes';
@@ -188,6 +206,8 @@ import {
 	NOTE_COLUMNS,
 	type NoteRow,
 	type PackInstallationRow,
+	PUSH_DEVICE_COLUMNS,
+	type PushDeviceRow,
 	PUSH_SUBSCRIPTION_COLUMNS,
 	type PushSubscriptionRow,
 	RECENT_MENTION_COLUMNS,
@@ -591,6 +611,12 @@ export const PushSubscriptions = defineTable<PushSubscriptionRow, 'user_id' | 's
 	name: 'push_subscriptions',
 	columns: PUSH_SUBSCRIPTION_COLUMNS,
 	primaryKey: ['user_id', 'subscription_id'],
+});
+
+export const PushDevices = defineTable<PushDeviceRow, 'user_id' | 'device_id'>({
+	name: 'push_devices',
+	columns: PUSH_DEVICE_COLUMNS,
+	primaryKey: ['user_id', 'device_id'],
 });
 
 export const Payments = defineTable<PaymentRow, 'checkout_session_id'>({
@@ -1042,4 +1068,46 @@ export const NcmecSubmissions = defineTable<NcmecSubmissionRow, 'report_id'>({
 	name: 'ncmec_submissions',
 	columns: NCMEC_SUBMISSION_COLUMNS,
 	primaryKey: ['report_id'],
+});
+
+export const GuildSoundboardSounds = defineTable<GuildSoundboardSoundRow, 'guild_id' | 'sound_id'>({
+	name: 'guild_soundboard_sounds',
+	columns: GUILD_SOUNDBOARD_SOUND_COLUMNS,
+	primaryKey: ['guild_id', 'sound_id'],
+	partitionKey: ['guild_id'],
+});
+
+export const ThreadMembers = defineTable<ThreadMemberRow, 'thread_id' | 'user_id'>({
+	name: 'thread_members',
+	columns: THREAD_MEMBER_COLUMNS,
+	primaryKey: ['thread_id', 'user_id'],
+	partitionKey: ['thread_id'],
+});
+
+export const ThreadMembersByUser = defineTable<ThreadMemberByUserRow, 'user_id' | 'thread_id'>({
+	name: 'thread_members_by_user',
+	columns: THREAD_MEMBER_BY_USER_COLUMNS,
+	primaryKey: ['user_id', 'thread_id'],
+	partitionKey: ['user_id'],
+});
+
+export const ActiveThreadsByGuild = defineTable<ActiveThreadByGuildRow, 'guild_id' | 'thread_id'>({
+	name: 'active_threads_by_guild',
+	columns: ACTIVE_THREAD_BY_GUILD_COLUMNS,
+	primaryKey: ['guild_id', 'thread_id'],
+	partitionKey: ['guild_id'],
+});
+
+export const GuildScheduledEvents = defineTable<GuildScheduledEventRow, 'guild_id' | 'event_id'>({
+	name: 'guild_scheduled_events',
+	columns: GUILD_SCHEDULED_EVENT_COLUMNS,
+	primaryKey: ['guild_id', 'event_id'],
+	partitionKey: ['guild_id'],
+});
+
+export const GuildScheduledEventUsers = defineTable<GuildScheduledEventUserRow, 'guild_id' | 'event_id' | 'user_id'>({
+	name: 'guild_scheduled_event_users',
+	columns: GUILD_SCHEDULED_EVENT_USER_COLUMNS,
+	primaryKey: ['guild_id', 'event_id', 'user_id'],
+	partitionKey: ['guild_id', 'event_id'],
 });

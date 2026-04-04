@@ -102,6 +102,38 @@ export class MessageDispatchService {
 			event: 'MESSAGE_CREATE',
 			data: {...messageResponse, channel_type: channel.type},
 		});
+
+		if (channel.isThread()) {
+			await this.incrementThreadMessageCount(channel, message);
+		}
+	}
+
+	private async incrementThreadMessageCount(channel: Channel, message: Message): Promise<void> {
+		try {
+			const row = channel.toRow();
+			const newCount = (channel.threadMessageCount ?? 0) + 1;
+			row.thread_message_count = newCount;
+			row.thread_archive_timestamp = new Date();
+			await this.channelRepository.channelData.upsert(row);
+
+			if (channel.guildId) {
+				await this.gatewayService.dispatchGuild({
+					guildId: channel.guildId,
+					event: 'THREAD_UPDATE',
+					data: {
+						id: channel.id.toString(),
+						guild_id: channel.guildId.toString(),
+						parent_id: channel.parentId?.toString(),
+						type: channel.type,
+						name: channel.name,
+						message_count: newCount,
+						last_message_id: message.id.toString(),
+					},
+				});
+			}
+		} catch {
+			// Non-critical — don't fail the message send
+		}
 	}
 
 	async dispatchMessageUpdate({

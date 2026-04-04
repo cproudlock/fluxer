@@ -120,6 +120,10 @@ export const ForwardIcon: React.FC<IconProps> = observer(({size = 16}) => (
 	<ArrowBendUpRightIcon size={size} weight="fill" />
 ));
 
+export const CreateThreadIcon: React.FC<IconProps> = observer(({size = 16}) => (
+	<ChatCircleIcon size={size} weight="fill" />
+));
+
 export const EditIcon: React.FC<IconProps> = observer(({size = 16, weight = 'fill'}) => (
 	<PencilIcon size={size} weight={weight} />
 ));

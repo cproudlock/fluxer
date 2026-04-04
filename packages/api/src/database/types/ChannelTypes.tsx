@@ -50,6 +50,7 @@ export interface ChannelRow {
 	recipient_ids: Nullish<Set<UserID>>;
 	nsfw: Nullish<boolean>;
 	rate_limit_per_user: Nullish<number>;
+	message_retention_seconds: Nullish<number>;
 	bitrate: Nullish<number>;
 	user_limit: Nullish<number>;
 	rtc_region: Nullish<string>;
@@ -60,6 +61,16 @@ export interface ChannelRow {
 	soft_deleted: boolean;
 	indexed_at: Nullish<Date>;
 	version: number;
+	thread_archived?: Nullish<boolean>;
+	thread_auto_archive_duration?: Nullish<number>;
+	thread_archive_timestamp?: Nullish<Date>;
+	thread_locked?: Nullish<boolean>;
+	thread_invitable?: Nullish<boolean>;
+	thread_creator_id?: Nullish<UserID>;
+	thread_message_count?: Nullish<number>;
+	thread_member_count?: Nullish<number>;
+	available_tags?: Nullish<string>;
+	applied_tags?: Nullish<string>;
 }
 
 export interface InviteRow {
@@ -122,6 +133,7 @@ export const CHANNEL_COLUMNS = [
 	'recipient_ids',
 	'nsfw',
 	'rate_limit_per_user',
+	'message_retention_seconds',
 	'bitrate',
 	'user_limit',
 	'rtc_region',
@@ -132,6 +144,16 @@ export const CHANNEL_COLUMNS = [
 	'soft_deleted',
 	'indexed_at',
 	'version',
+	'thread_archived',
+	'thread_auto_archive_duration',
+	'thread_archive_timestamp',
+	'thread_locked',
+	'thread_invitable',
+	'thread_creator_id',
+	'thread_message_count',
+	'thread_member_count',
+	'available_tags',
+	'applied_tags',
 ] as const satisfies ReadonlyArray<keyof ChannelRow>;
 
 export interface ChannelsByGuildRow {

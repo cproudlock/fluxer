@@ -69,6 +69,7 @@ interface FormInputs {
 	topic?: string;
 	url?: string;
 	slowmode?: number;
+	message_retention?: number;
 	nsfw?: boolean;
 	bitrate?: number;
 	user_limit?: number;
@@ -94,11 +95,19 @@ interface RtcRegionOption extends SelectOption<string | null> {
 
 interface ExtendedOptionProps extends OptionProps<RtcRegionOption, boolean, GroupBase<RtcRegionOption>> {
 	getRegionDisplayName: (regionId: string, regionName: string) => string;
+	latencies: Map<string, number | null>;
 }
 
 interface ExtendedSingleValueProps extends SingleValueProps<RtcRegionOption, boolean, GroupBase<RtcRegionOption>> {
 	getRegionDisplayName: (regionId: string, regionName: string) => string;
+	latencies: Map<string, number | null>;
 }
+
+const LatencyBadge: React.FC<{latency: number | null | undefined}> = ({latency}) => {
+	if (latency == null) return null;
+	const color = latency < 80 ? 'var(--status-online)' : latency < 150 ? 'var(--status-idle)' : 'var(--status-dnd)';
+	return <span className={styles.latencyBadge} style={{color}}>{latency}ms</span>;
+};
 
 const RtcRegionOptionComponent = observer((props: ExtendedOptionProps) => {
 	const {region, label} = props.data;
@@ -111,11 +120,13 @@ const RtcRegionOptionComponent = observer((props: ExtendedOptionProps) => {
 	}
 
 	const displayName = props.getRegionDisplayName(region.id, region.name);
+	const latency = props.latencies.get(region.id);
 	return (
 		<components.Option {...props}>
 			<div className={styles.regionOption}>
 				<img src={EmojiUtils.getEmojiURL(region.emoji) ?? undefined} alt={displayName} className={styles.regionEmoji} />
 				<span>{displayName}</span>
+				<LatencyBadge latency={latency} />
 			</div>
 		</components.Option>
 	);
@@ -132,11 +143,13 @@ const RtcRegionSingleValue = observer((props: ExtendedSingleValueProps) => {
 	}
 
 	const displayName = props.getRegionDisplayName(region.id, region.name);
+	const latency = props.latencies.get(region.id);
 	return (
 		<components.SingleValue {...props}>
 			<div className={styles.regionOption}>
 				<img src={EmojiUtils.getEmojiURL(region.emoji) ?? undefined} alt={displayName} className={styles.regionEmoji} />
 				<span>{displayName}</span>
+				<LatencyBadge latency={latency} />
 			</div>
 		</components.SingleValue>
 	);
@@ -154,6 +167,7 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 	const isVoiceChannel = channel?.type === ChannelTypes.GUILD_VOICE;
 	const [rtcRegions, setRtcRegions] = useState<Array<ChannelRtcRegion>>([]);
 	const [isLoadingRegions, setIsLoadingRegions] = useState(false);
+	const [regionLatencies, setRegionLatencies] = useState<Map<string, number | null>>(new Map());
 
 	const slowmodeOptions = useMemo(
 		() => [
@@ -171,6 +185,18 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 			{value: 3600, label: t`1 hour`},
 			{value: 7200, label: t`2 hours`},
 			{value: 21600, label: t`6 hours`},
+		],
+		[t],
+	);
+
+	const retentionOptions = useMemo(
+		() => [
+			{value: 0, label: t`Forever`},
+			{value: 3600, label: t`1 hour`},
+			{value: 86400, label: t`24 hours`},
+			{value: 259200, label: t`3 days`},
+			{value: 604800, label: t`1 week`},
+			{value: 2592000, label: t`1 month`},
 		],
 		[t],
 	);
@@ -196,6 +222,7 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 			topic: '',
 			url: '',
 			slowmode: 0,
+			message_retention: 0,
 			nsfw: false,
 			bitrate: 64,
 			user_limit: 0,
@@ -233,12 +260,39 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 	}, [canUpdateRtcRegion, channelId, isVoiceChannel]);
 
 	useEffect(() => {
+		if (rtcRegions.length === 0) return;
+		let cancelled = false;
+
+		const measureLatency = async (region: ChannelRtcRegion): Promise<[string, number | null]> => {
+			if (!region.ping_endpoint) return [region.id, null];
+			try {
+				const start = performance.now();
+				await fetch(region.ping_endpoint, {mode: 'cors', cache: 'no-store'});
+				const latency = Math.round(performance.now() - start);
+				return [region.id, latency];
+			} catch {
+				return [region.id, null];
+			}
+		};
+
+		Promise.all(rtcRegions.map(measureLatency)).then((results) => {
+			if (cancelled) return;
+			setRegionLatencies(new Map(results));
+		});
+
+		return () => {
+			cancelled = true;
+		};
+	}, [rtcRegions]);
+
+	useEffect(() => {
 		if (!channel) return;
 		form.reset({
 			name: channel.name || '',
 			topic: channel.topic || '',
 			url: channel.url || '',
 			slowmode: channel.rateLimitPerUser || 0,
+			message_retention: channel.messageRetentionSeconds || 0,
 			nsfw: channel.nsfw || false,
 			bitrate: channel.bitrate ? getNearestBitrate(Math.round(channel.bitrate / 1000)) : 64,
 			user_limit: channel.userLimit ?? 0,
@@ -382,6 +436,7 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 			if (channel.type === ChannelTypes.GUILD_TEXT) {
 				updateData.topic = data.topic;
 				updateData.rate_limit_per_user = data.slowmode;
+				updateData.message_retention_seconds = data.message_retention;
 				updateData.nsfw = data.nsfw;
 			} else if (channel.type === ChannelTypes.GUILD_VOICE) {
 				updateData.bitrate = (data.bitrate ?? 64) * 1000;
@@ -399,6 +454,7 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 				topic: data.topic ?? '',
 				url: data.url ?? '',
 				slowmode: data.slowmode ?? currentValues.slowmode ?? 0,
+				message_retention: data.message_retention ?? currentValues.message_retention ?? 0,
 				nsfw: data.nsfw ?? currentValues.nsfw ?? false,
 				bitrate: data.bitrate ?? currentValues.bitrate ?? 64,
 				user_limit: data.user_limit ?? currentValues.user_limit ?? 0,
@@ -424,6 +480,7 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 			topic: channel.topic || '',
 			url: channel.url || '',
 			slowmode: channel.rateLimitPerUser || 0,
+			message_retention: channel.messageRetentionSeconds || 0,
 			nsfw: channel.nsfw || false,
 			bitrate: channel.bitrate ? getNearestBitrate(Math.round(channel.bitrate / 1000)) : 64,
 			user_limit: channel.userLimit ?? 0,
@@ -622,6 +679,20 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 							)}
 						/>
 
+						<Controller
+							name="message_retention"
+							control={form.control}
+							render={({field}) => (
+								<FormSelect<number>
+									label={t`Message Retention`}
+									description={t`Automatically delete messages older than this period.`}
+									value={field.value ?? 0}
+									options={retentionOptions}
+									onChange={(v) => field.onChange(v)}
+								/>
+							)}
+						/>
+
 						{!isGuildNsfw && (
 							<Switch
 								label={t`Age-restricted (NSFW)`}
@@ -705,11 +776,11 @@ const ChannelOverviewTab: React.FC<{channelId: string}> = observer(({channelId})
 								control={form.control}
 								render={({field}) => {
 									const RtcRegionOptionWrapper = observer((props: OptionProps<RtcRegionOption>) => {
-										const wrappedProps: ExtendedOptionProps = {...props, getRegionDisplayName};
+										const wrappedProps: ExtendedOptionProps = {...props, getRegionDisplayName, latencies: regionLatencies};
 										return React.createElement(RtcRegionOptionComponent, wrappedProps);
 									});
 									const RtcRegionSingleValueWrapper = observer((props: SingleValueProps<RtcRegionOption>) => {
-										const wrappedProps: ExtendedSingleValueProps = {...props, getRegionDisplayName};
+										const wrappedProps: ExtendedSingleValueProps = {...props, getRegionDisplayName, latencies: regionLatencies};
 										return React.createElement(RtcRegionSingleValue, wrappedProps);
 									});
 

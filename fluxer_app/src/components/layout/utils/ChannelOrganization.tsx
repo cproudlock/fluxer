@@ -22,11 +22,14 @@ import * as ChannelUtils from '@app/utils/ChannelUtils';
 import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
 
 export const isTextChannel = (ch: ChannelRecord) =>
-	ch.type === ChannelTypes.GUILD_TEXT || ch.type === ChannelTypes.GUILD_LINK;
+	ch.type === ChannelTypes.GUILD_TEXT || ch.type === ChannelTypes.GUILD_LINK || ch.type === ChannelTypes.GUILD_FORUM;
 
 const isVoiceChannel = (ch: ChannelRecord) => ch.type === ChannelTypes.GUILD_VOICE;
 
 export const isCategory = (ch: ChannelRecord) => ch.type === ChannelTypes.GUILD_CATEGORY;
+
+export const isThread = (ch: ChannelRecord) =>
+	ch.type === ChannelTypes.PUBLIC_THREAD || ch.type === ChannelTypes.PRIVATE_THREAD;
 
 interface ChannelGroup {
 	category?: ChannelRecord;
@@ -38,7 +41,7 @@ export const organizeChannels = (channels: ReadonlyArray<ChannelRecord>): Array<
 	const categories = channels.filter(isCategory).sort(ChannelUtils.compareChannels);
 	const channelsByParent = new Map<string | null, Array<ChannelRecord>>();
 
-	for (const channel of channels.filter((ch) => !isCategory(ch))) {
+	for (const channel of channels.filter((ch) => !isCategory(ch) && !isThread(ch))) {
 		const parentId = channel.parentId;
 		if (!channelsByParent.has(parentId)) channelsByParent.set(parentId, []);
 		channelsByParent.get(parentId)!.push(channel);

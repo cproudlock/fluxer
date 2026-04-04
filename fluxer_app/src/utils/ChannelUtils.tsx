@@ -29,6 +29,7 @@ import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
 import {msg} from '@lingui/core/macro';
 import {
 	CaretDownIcon,
+	ChatTeardropDotsIcon,
 	HashIcon,
 	type IconProps,
 	LinkIcon,
@@ -52,6 +53,8 @@ export function getIcon(channel: {type: number; nsfw?: boolean}, props: IconProp
 			return <CaretDownIcon weight="bold" {...props} />;
 		case ChannelTypes.GUILD_LINK:
 			return <LinkIcon weight="bold" {...props} />;
+		case ChannelTypes.GUILD_FORUM:
+			return <ChatTeardropDotsIcon weight="bold" {...props} />;
 		case ChannelTypes.DM_PERSONAL_NOTES:
 			return <NotePencilIcon weight="bold" {...props} />;
 		default:
@@ -70,6 +73,9 @@ export function getName(channel: ChannelRecord) {
 			break;
 		case ChannelTypes.GUILD_LINK:
 			baseName = i18n._(msg`Link`);
+			break;
+		case ChannelTypes.GUILD_FORUM:
+			baseName = i18n._(msg`Forum`);
 			break;
 		default:
 			baseName = i18n._(msg`Text`);

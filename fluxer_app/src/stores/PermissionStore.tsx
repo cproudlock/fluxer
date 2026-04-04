@@ -67,6 +67,16 @@ class PermissionStore {
 
 		if (isChannelLike(context)) {
 			permissions = this.channelPermissions.get(context.id as ChannelId) ?? PermissionUtils.NONE;
+			// For threads, fall back to parent channel permissions if thread has no computed permissions
+			if (permissions === PermissionUtils.NONE) {
+				const parentId = (context as any).parentId ?? (context as any).parent_id;
+				if (parentId) {
+					const parentPerms = this.channelPermissions.get(parentId as ChannelId);
+					if (parentPerms !== undefined) {
+						permissions = parentPerms;
+					}
+				}
+			}
 		} else if (isGuildLike(context)) {
 			permissions = this.guildPermissions.get(context.id as GuildId) ?? PermissionUtils.NONE;
 		} else if (context.channelId) {

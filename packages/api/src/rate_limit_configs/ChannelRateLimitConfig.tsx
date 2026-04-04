@@ -140,4 +140,29 @@ export const ChannelRateLimitConfigs = {
 		bucket: 'channel:stream:preview:post::stream_key',
 		config: {limit: 20, windowMs: ms('10 seconds')},
 	} as RouteRateLimitConfig,
+
+	THREAD_CREATE: {
+		bucket: 'thread:create::channel_id',
+		config: {limit: 10, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	THREAD_UPDATE: {
+		bucket: 'thread:update::channel_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	THREAD_DELETE: {
+		bucket: 'thread:delete::channel_id',
+		config: {limit: 10, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	THREAD_MEMBERS: {
+		bucket: 'thread:members::channel_id',
+		config: {limit: 30, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	THREAD_LIST: {
+		bucket: 'thread:list::channel_id',
+		config: {limit: 30, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
 } as const;

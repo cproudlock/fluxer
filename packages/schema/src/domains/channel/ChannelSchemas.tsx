@@ -37,6 +37,7 @@ export const RtcRegionResponse = z.object({
 	id: z.string().describe('The unique identifier for this RTC region'),
 	name: z.string().describe('The display name of the RTC region'),
 	emoji: z.string().describe('The emoji associated with this RTC region'),
+	ping_endpoint: z.string().nullable().describe('The URL to ping for latency measurement'),
 });
 
 export type RtcRegionResponse = z.infer<typeof RtcRegionResponse>;
@@ -47,6 +48,14 @@ export const CallEligibilityResponse = z.object({
 });
 
 export type CallEligibilityResponse = z.infer<typeof CallEligibilityResponse>;
+
+export const ForumTagResponse = z.object({
+	id: SnowflakeStringType.describe('The unique identifier for this tag'),
+	name: z.string().describe('The name of the tag'),
+	emoji_name: z.string().nullable().describe('The emoji associated with this tag'),
+});
+
+export type ForumTagResponse = z.infer<typeof ForumTagResponse>;
 
 export const ChannelResponse = z.object({
 	id: SnowflakeStringType.describe('The unique identifier (snowflake) for this channel'),
@@ -79,10 +88,33 @@ export const ChannelResponse = z.object({
 		.describe('The recipients of the DM channel'),
 	nsfw: z.boolean().optional().describe('Whether the channel is marked as NSFW'),
 	rate_limit_per_user: Int32Type.optional().describe('The slowmode rate limit in seconds'),
+	message_retention_seconds: Int32Type.optional().describe('Message retention period in seconds (0 means forever)'),
 	nicks: z
 		.record(z.string(), createStringType(1, 32))
 		.optional()
 		.describe('Custom nicknames for users in this channel (for group DMs)'),
+	message_count: Int32Type.optional().describe('Approximate count of messages in a thread'),
+	member_count: Int32Type.optional().describe('Approximate count of members in a thread'),
+	thread_metadata: z
+		.object({
+			archived: z.boolean().describe('Whether the thread is archived'),
+			auto_archive_duration: Int32Type.describe('Duration in minutes to auto-archive after inactivity'),
+			archive_timestamp: z.iso.datetime().nullable().describe('ISO 8601 timestamp when the thread was archived'),
+			locked: z.boolean().describe('Whether the thread is locked'),
+			invitable: z.boolean().optional().describe('Whether non-moderators can add other users to a private thread'),
+		})
+		.optional()
+		.describe('Thread-specific metadata'),
+	available_tags: z
+		.array(ForumTagResponse)
+		.max(20)
+		.optional()
+		.describe('Available tags for forum channels (max 20)'),
+	applied_tags: z
+		.array(SnowflakeStringType)
+		.max(5)
+		.optional()
+		.describe('Tag IDs applied to a forum thread (max 5)'),
 });
 
 export type ChannelResponse = z.infer<typeof ChannelResponse>;
@@ -151,10 +183,24 @@ export interface Channel {
 	readonly recipients?: ReadonlyArray<UserPartial>;
 	readonly nsfw?: boolean;
 	readonly rate_limit_per_user?: number;
+	readonly message_retention_seconds?: number;
 	readonly nicks?: Readonly<Record<string, string>>;
 	readonly flags?: number;
 	readonly member_count?: number;
 	readonly message_count?: number;
 	readonly total_message_sent?: number;
 	readonly default_reaction_emoji?: DefaultReactionEmoji | null;
+	readonly thread_metadata?: {
+		readonly archived: boolean;
+		readonly auto_archive_duration: number;
+		readonly archive_timestamp: string | null;
+		readonly locked: boolean;
+		readonly invitable?: boolean;
+	};
+	readonly available_tags?: ReadonlyArray<{
+		readonly id: string;
+		readonly name: string;
+		readonly emoji_name: string | null;
+	}>;
+	readonly applied_tags?: ReadonlyArray<string>;
 }

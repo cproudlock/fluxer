@@ -28,4 +28,6 @@ export abstract class IChannelDataRepository {
 	abstract delete(channelId: ChannelID, guildId?: GuildID): Promise<void>;
 	abstract listGuildChannels(guildId: GuildID): Promise<Array<Channel>>;
 	abstract countGuildChannels(guildId: GuildID): Promise<number>;
+	abstract listActiveThreads(guildId: GuildID): Promise<Array<Channel>>;
+	abstract listChannelThreads(parentChannelId: ChannelID, archived?: boolean): Promise<Array<Channel>>;
 }

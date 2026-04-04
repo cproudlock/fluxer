@@ -18,6 +18,7 @@
  */
 
 import * as ContextMenuActionCreators from '@app/actions/ContextMenuActionCreators';
+import {ThreadContextMenu} from '@app/components/uikit/context_menu/ThreadContextMenu';
 import * as DimensionActionCreators from '@app/actions/DimensionActionCreators';
 import * as GuildActionCreators from '@app/actions/GuildActionCreators';
 import * as ModalActionCreators from '@app/actions/ModalActionCreators';
@@ -33,6 +34,7 @@ import {
 import {GenericChannelItem} from '@app/components/layout/GenericChannelItem';
 import {GuildDetachedBanner} from '@app/components/layout/GuildDetachedBanner';
 import {NullSpaceDropIndicator} from '@app/components/layout/NullSpaceDropIndicator';
+import {ScheduledEventsBanner} from '@app/components/layout/ScheduledEventsBanner';
 import {ScrollIndicatorOverlay} from '@app/components/layout/ScrollIndicatorOverlay';
 import type {DragItem, DropResult} from '@app/components/layout/types/DndTypes';
 import {createChannelMoveOperation} from '@app/components/layout/utils/ChannelMoveOperation';
@@ -52,6 +54,7 @@ import DimensionStore from '@app/stores/DimensionStore';
 import MobileLayoutStore from '@app/stores/MobileLayoutStore';
 import PermissionStore from '@app/stores/PermissionStore';
 import ReadStateStore from '@app/stores/ReadStateStore';
+import ThreadStore from '@app/stores/ThreadStore';
 import UserGuildSettingsStore from '@app/stores/UserGuildSettingsStore';
 import MediaEngineStore from '@app/stores/voice/MediaEngineFacade';
 import {getApiErrorCode} from '@app/utils/ApiErrorUtils';
@@ -280,6 +283,7 @@ export const ChannelListContent = observer(({guild, scrollY}: {guild: GuildRecor
 							<div className={styles.membersSeparator} />
 						</>
 					)}
+					<ScheduledEventsBanner guildId={guild.id} />
 					<div className={styles.channelGroupsContainer}>
 						{channelGroups.map((group) => {
 							const isCollapsed = group.category ? collapsedCategories.has(group.category.id) : false;
@@ -392,17 +396,43 @@ export const ChannelListContent = observer(({guild, scrollY}: {guild: GuildRecor
 									)}
 
 									{showTextChannels &&
-										visibleTextChannels.map((ch) => (
-											<ChannelItem
-												key={ch.id}
-												guild={guild}
-												channel={ch}
-												isDraggingAnything={isDraggingAnything}
-												activeDragItem={activeDragItem}
-												onChannelDrop={handleChannelDrop}
-												onDragStateChange={setActiveDragItem}
-											/>
-										))}
+										visibleTextChannels.map((ch) => {
+											const threads = ch.isGuildForum() ? [] : channels.filter(
+												(t) => t.isThread() && t.parentId === ch.id && !t.threadMetadata?.archived &&
+													(ReadStateStore.hasUnread(t.id) || ThreadStore.activeThreadPanel === t.id),
+											);
+											return (
+												<div key={ch.id}>
+													<ChannelItem
+														guild={guild}
+														channel={ch}
+														isDraggingAnything={isDraggingAnything}
+														activeDragItem={activeDragItem}
+														onChannelDrop={handleChannelDrop}
+														onDragStateChange={setActiveDragItem}
+													/>
+													{threads.map((thread) => (
+														<div
+															key={thread.id}
+															className={styles.threadItem}
+															onClick={() => ThreadStore.openThreadPanel(thread.id)}
+															onContextMenu={(e) => {
+																e.preventDefault();
+																e.stopPropagation();
+																ContextMenuActionCreators.openFromEvent(e, ({onClose}) => (
+																	<ThreadContextMenu thread={thread} onClose={onClose} />
+																));
+															}}
+															role="button"
+															tabIndex={0}
+														>
+															<span className={styles.threadBranch} />
+															<span className={styles.threadName}>{thread.name}</span>
+														</div>
+													))}
+												</div>
+											);
+										})}
 
 									{showVoiceChannels &&
 										visibleVoiceChannels.map((ch) => {

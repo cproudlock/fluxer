@@ -156,7 +156,7 @@ export class MessageSendService {
 				throw new FeatureTemporarilyDisabledError();
 			}
 
-			await checkPermission(Permissions.SEND_MESSAGES);
+			await checkPermission(channel.isThread() ? Permissions.SEND_MESSAGES_IN_THREADS : Permissions.SEND_MESSAGES);
 
 			if (data.tts) {
 				const hasTtsPermission = await hasPermission(Permissions.SEND_TTS_MESSAGES);

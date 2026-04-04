@@ -129,7 +129,7 @@ export class ChannelOperationsService {
 		}
 
 		let channelName = params.data.name;
-		if (params.data.type === ChannelTypes.GUILD_TEXT) {
+		if (params.data.type === ChannelTypes.GUILD_TEXT || params.data.type === ChannelTypes.GUILD_FORUM) {
 			const guildData = await this.gatewayService.getGuildData({
 				guildId: params.guildId,
 				userId: params.userId,
@@ -156,6 +156,7 @@ export class ChannelOperationsService {
 			recipient_ids: null,
 			nsfw: false,
 			rate_limit_per_user: 0,
+			message_retention_seconds: null,
 			bitrate: params.data.type === ChannelTypes.GUILD_VOICE ? (params.data.bitrate ?? 64000) : null,
 			user_limit: params.data.type === ChannelTypes.GUILD_VOICE ? (params.data.user_limit ?? 0) : null,
 			rtc_region: null,
@@ -166,6 +167,13 @@ export class ChannelOperationsService {
 			soft_deleted: false,
 			indexed_at: null,
 			version: 1,
+			available_tags: params.data.type === ChannelTypes.GUILD_FORUM && 'available_tags' in params.data && (params.data as any).available_tags
+				? JSON.stringify((params.data as any).available_tags.map((tag: any) => ({
+					id: Date.now().toString(),
+					name: tag.name,
+					emoji_name: tag.emoji_name ?? null,
+				})))
+				: null,
 		});
 
 		await this.dispatchChannelCreate({guildId: params.guildId, channel, requestCache: params.requestCache});

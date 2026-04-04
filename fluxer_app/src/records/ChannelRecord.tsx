@@ -86,12 +86,22 @@ export class ChannelRecord {
 	readonly recipientIds: ReadonlyArray<string>;
 	readonly nsfw: boolean;
 	readonly rateLimitPerUser: number;
+	readonly messageRetentionSeconds: number;
 	readonly nicks: Readonly<Record<string, string>>;
 	readonly flags: number;
 	readonly memberCount?: number;
 	readonly messageCount?: number;
 	readonly totalMessageSent?: number;
 	readonly defaultReactionEmoji?: DefaultReactionEmoji | null;
+	readonly threadMetadata?: {
+		readonly archived: boolean;
+		readonly autoArchiveDuration: number;
+		readonly archiveTimestamp: Date | null;
+		readonly locked: boolean;
+		readonly invitable?: boolean;
+	};
+	readonly availableTags: ReadonlyArray<{readonly id: string; readonly name: string; readonly emoji_name: string | null}>;
+	readonly appliedTags: ReadonlyArray<string>;
 
 	constructor(channel: Channel, options?: ChannelRecordOptions) {
 		this.instanceId = options?.instanceId ?? RuntimeConfigStore.localInstanceDomain;
@@ -112,6 +122,7 @@ export class ChannelRecord {
 		this.lastPinTimestamp = channel.last_pin_timestamp ? new Date(channel.last_pin_timestamp) : null;
 		this.nsfw = channel.nsfw ?? false;
 		this.rateLimitPerUser = channel.rate_limit_per_user ?? 0;
+		this.messageRetentionSeconds = channel.message_retention_seconds ?? 0;
 		this.flags = channel.flags ?? 0;
 		this.nicks = channel.nicks ?? {};
 
@@ -120,6 +131,21 @@ export class ChannelRecord {
 		this.totalMessageSent = channel.total_message_sent;
 
 		this.defaultReactionEmoji = channel.default_reaction_emoji;
+
+		if (channel.thread_metadata) {
+			this.threadMetadata = {
+				archived: channel.thread_metadata.archived,
+				autoArchiveDuration: channel.thread_metadata.auto_archive_duration,
+				archiveTimestamp: channel.thread_metadata.archive_timestamp
+					? new Date(channel.thread_metadata.archive_timestamp)
+					: null,
+				locked: channel.thread_metadata.locked,
+				invitable: channel.thread_metadata.invitable,
+			};
+		}
+
+		this.availableTags = channel.available_tags ?? [];
+		this.appliedTags = channel.applied_tags ?? [];
 
 		if ((this.type === ChannelTypes.DM || this.type === ChannelTypes.GROUP_DM) && channel.recipients) {
 			UserStore.cacheUsers(Array.from(channel.recipients));
@@ -186,6 +212,22 @@ export class ChannelRecord {
 		return this.type === ChannelTypes.GUILD_CATEGORY;
 	}
 
+	isThread(): boolean {
+		return this.type === ChannelTypes.PUBLIC_THREAD || this.type === ChannelTypes.PRIVATE_THREAD;
+	}
+
+	isPublicThread(): boolean {
+		return this.type === ChannelTypes.PUBLIC_THREAD;
+	}
+
+	isPrivateThread(): boolean {
+		return this.type === ChannelTypes.PRIVATE_THREAD;
+	}
+
+	isGuildForum(): boolean {
+		return this.type === ChannelTypes.GUILD_FORUM;
+	}
+
 	isVoice(): boolean {
 		return this.type === ChannelTypes.GUILD_VOICE;
 	}
@@ -248,12 +290,24 @@ export class ChannelRecord {
 				recipients: newRecipients.length > 0 ? newRecipients : undefined,
 				nsfw: updates.nsfw ?? this.nsfw,
 				rate_limit_per_user: updates.rate_limit_per_user ?? this.rateLimitPerUser,
+				message_retention_seconds: updates.message_retention_seconds ?? this.messageRetentionSeconds,
 				nicks: updates.nicks ?? this.nicks,
 				flags: updates.flags ?? this.flags,
 				member_count: updates.member_count ?? this.memberCount,
 				message_count: updates.message_count ?? this.messageCount,
 				total_message_sent: updates.total_message_sent ?? this.totalMessageSent,
 				default_reaction_emoji: updates.default_reaction_emoji ?? this.defaultReactionEmoji,
+				thread_metadata: updates.thread_metadata ?? (this.threadMetadata
+					? {
+							archived: this.threadMetadata.archived,
+							auto_archive_duration: this.threadMetadata.autoArchiveDuration,
+							archive_timestamp: this.threadMetadata.archiveTimestamp?.toISOString() ?? null,
+							locked: this.threadMetadata.locked,
+							invitable: this.threadMetadata.invitable,
+						}
+					: undefined),
+				available_tags: updates.available_tags ?? (this.availableTags.length > 0 ? [...this.availableTags] : undefined),
+				applied_tags: updates.applied_tags ?? (this.appliedTags.length > 0 ? [...this.appliedTags] : undefined),
 			},
 			{instanceId: this.instanceId},
 		);
@@ -297,6 +351,7 @@ export class ChannelRecord {
 		if (this.lastPinTimestamp?.getTime() !== other.lastPinTimestamp?.getTime()) return false;
 		if (this.nsfw !== other.nsfw) return false;
 		if (this.rateLimitPerUser !== other.rateLimitPerUser) return false;
+		if (this.messageRetentionSeconds !== other.messageRetentionSeconds) return false;
 		if (this.flags !== other.flags) return false;
 
 		if (this.recipientIds.length !== other.recipientIds.length) return false;
@@ -340,12 +395,24 @@ export class ChannelRecord {
 					: undefined,
 			nsfw: this.nsfw,
 			rate_limit_per_user: this.rateLimitPerUser,
+			message_retention_seconds: this.messageRetentionSeconds,
 			nicks: this.nicks,
 			flags: this.flags,
 			member_count: this.memberCount,
 			message_count: this.messageCount,
 			total_message_sent: this.totalMessageSent,
 			default_reaction_emoji: this.defaultReactionEmoji,
+			thread_metadata: this.threadMetadata
+				? {
+						archived: this.threadMetadata.archived,
+						auto_archive_duration: this.threadMetadata.autoArchiveDuration,
+						archive_timestamp: this.threadMetadata.archiveTimestamp?.toISOString() ?? null,
+						locked: this.threadMetadata.locked,
+						invitable: this.threadMetadata.invitable,
+					}
+				: undefined,
+			available_tags: this.availableTags.length > 0 ? [...this.availableTags] : undefined,
+			applied_tags: this.appliedTags.length > 0 ? [...this.appliedTags] : undefined,
 		};
 	}
 }

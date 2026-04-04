@@ -22,12 +22,20 @@ import type {IGatewayService} from '@fluxer/api/src/infrastructure/IGatewayServi
 import {Logger} from '@fluxer/api/src/Logger';
 import type {ReadState} from '@fluxer/api/src/models/ReadState';
 import type {IReadStateRepository} from '@fluxer/api/src/read_state/IReadStateRepository';
+import type {IKVProvider} from '@fluxer/kv_client/src/IKVProvider';
+import {resetPushThrottle} from '@fluxer/api/src/worker/tasks/utils/PushNotificationUtils';
 
 export class ReadStateService {
+	private kvClient?: IKVProvider;
+
 	constructor(
 		private repository: IReadStateRepository,
 		private gatewayService: IGatewayService,
 	) {}
+
+	setKVClient(kvClient: IKVProvider): void {
+		this.kvClient = kvClient;
+	}
 
 	async getReadStates(userId: UserID): Promise<Array<ReadState>> {
 		return await this.repository.listReadStates(userId);
@@ -44,6 +52,11 @@ export class ReadStateService {
 		const {userId, channelId, messageId, mentionCount, manual, silent} = params;
 		await this.repository.upsertReadState(userId, channelId, messageId, mentionCount);
 		await this.gatewayService.invalidatePushBadgeCount({userId});
+
+		// Reset push notification throttle when user reads a channel
+		if (this.kvClient) {
+			resetPushThrottle(this.kvClient, userId.toString(), channelId.toString()).catch(() => {});
+		}
 
 		if (!silent) {
 			await this.dispatchMessageAck({

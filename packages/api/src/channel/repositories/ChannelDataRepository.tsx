@@ -33,7 +33,7 @@ import type {ChannelRow} from '@fluxer/api/src/database/types/ChannelTypes';
 import {CHANNEL_COLUMNS} from '@fluxer/api/src/database/types/ChannelTypes';
 import {Logger} from '@fluxer/api/src/Logger';
 import {Channel} from '@fluxer/api/src/models/Channel';
-import {Channels, ChannelsByGuild} from '@fluxer/api/src/Tables';
+import {ActiveThreadsByGuild, Channels, ChannelsByGuild} from '@fluxer/api/src/Tables';
 
 const FETCH_CHANNEL_BY_ID = Channels.select({
 	where: [Channels.where.eq('channel_id'), Channels.where.eq('soft_deleted')],
@@ -46,6 +46,10 @@ const FETCH_CHANNELS_BY_IDS = Channels.select({
 
 const FETCH_GUILD_CHANNELS_BY_GUILD_ID = ChannelsByGuild.select({
 	where: ChannelsByGuild.where.eq('guild_id'),
+});
+
+const FETCH_ACTIVE_THREADS_BY_GUILD_ID = ActiveThreadsByGuild.select({
+	where: ActiveThreadsByGuild.where.eq('guild_id'),
 });
 
 const DEFAULT_CAS_RETRIES = 8;
@@ -156,5 +160,35 @@ export class ChannelDataRepository extends IChannelDataRepository {
 			FETCH_GUILD_CHANNELS_BY_GUILD_ID.bind({guild_id: guildId}),
 		);
 		return guildChannels.length;
+	}
+
+	async listActiveThreads(guildId: GuildID): Promise<Array<Channel>> {
+		const activeThreads = await fetchMany<{thread_id: bigint}>(
+			FETCH_ACTIVE_THREADS_BY_GUILD_ID.bind({guild_id: guildId}),
+		);
+		if (activeThreads.length === 0) return [];
+
+		const threadIds = activeThreads.map((t) => t.thread_id);
+		const channels = await fetchManyInChunks<ChannelRow>(FETCH_CHANNELS_BY_IDS, threadIds, (chunk) => ({
+			channel_ids: chunk,
+			soft_deleted: false,
+		}));
+
+		return channels.map((channel) => new Channel(channel));
+	}
+
+	async listChannelThreads(parentChannelId: ChannelID, archived?: boolean): Promise<Array<Channel>> {
+		const parentChannel = await this.findUnique(parentChannelId);
+		if (!parentChannel || !parentChannel.guildId) return [];
+
+		const allThreads = await this.listGuildChannels(parentChannel.guildId);
+		return allThreads.filter((ch) => {
+			if (!ch.isThread()) return false;
+			if (ch.parentId !== parentChannelId) return false;
+			if (archived !== undefined) {
+				return ch.threadArchived === archived;
+			}
+			return true;
+		});
 	}
 }

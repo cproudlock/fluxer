@@ -21,6 +21,12 @@ import type {ChannelID, GuildID, MessageID, RoleID, UserID} from '@fluxer/api/sr
 import type {ChannelRow, PermissionOverwrite} from '@fluxer/api/src/database/types/ChannelTypes';
 import {ChannelPermissionOverwrite} from '@fluxer/api/src/models/ChannelPermissionOverwrite';
 
+export interface ForumTag {
+	id: string;
+	name: string;
+	emoji_name: string | null;
+}
+
 export class Channel {
 	readonly id: ChannelID;
 	readonly guildId: GuildID | null;
@@ -35,6 +41,7 @@ export class Channel {
 	readonly recipientIds: Set<UserID>;
 	readonly isNsfw: boolean;
 	readonly rateLimitPerUser: number;
+	readonly messageRetentionSeconds: number;
 	readonly bitrate: number | null;
 	readonly userLimit: number | null;
 	readonly rtcRegion: string | null;
@@ -45,6 +52,16 @@ export class Channel {
 	readonly isSoftDeleted: boolean;
 	readonly indexedAt: Date | null;
 	readonly version: number;
+	readonly threadArchived: boolean;
+	readonly threadAutoArchiveDuration: number;
+	readonly threadArchiveTimestamp: Date | null;
+	readonly threadLocked: boolean;
+	readonly threadInvitable: boolean;
+	readonly threadCreatorId: UserID | null;
+	readonly threadMessageCount: number;
+	readonly threadMemberCount: number;
+	readonly availableTags: Array<ForumTag>;
+	readonly appliedTags: Array<string>;
 
 	constructor(row: ChannelRow) {
 		this.id = row.channel_id;
@@ -60,6 +77,7 @@ export class Channel {
 		this.recipientIds = row.recipient_ids ?? new Set();
 		this.isNsfw = row.nsfw ?? false;
 		this.rateLimitPerUser = row.rate_limit_per_user ?? 0;
+		this.messageRetentionSeconds = row.message_retention_seconds ?? 0;
 		this.bitrate = row.bitrate ?? 0;
 		this.userLimit = row.user_limit ?? 0;
 		this.rtcRegion = row.rtc_region ?? null;
@@ -75,6 +93,28 @@ export class Channel {
 		this.isSoftDeleted = row.soft_deleted;
 		this.indexedAt = row.indexed_at ?? null;
 		this.version = row.version;
+		this.threadArchived = row.thread_archived ?? false;
+		this.threadAutoArchiveDuration = row.thread_auto_archive_duration ?? 1440;
+		this.threadArchiveTimestamp = row.thread_archive_timestamp ?? null;
+		this.threadLocked = row.thread_locked ?? false;
+		this.threadInvitable = row.thread_invitable ?? true;
+		this.threadCreatorId = row.thread_creator_id ?? null;
+		this.threadMessageCount = row.thread_message_count ?? 0;
+		this.threadMemberCount = row.thread_member_count ?? 0;
+		this.availableTags = row.available_tags ? JSON.parse(row.available_tags) : [];
+		this.appliedTags = row.applied_tags ? JSON.parse(row.applied_tags) : [];
+	}
+
+	isThread(): boolean {
+		return this.type === 11 || this.type === 12;
+	}
+
+	isPublicThread(): boolean {
+		return this.type === 11;
+	}
+
+	isPrivateThread(): boolean {
+		return this.type === 12;
 	}
 
 	toRow(): ChannelRow {
@@ -102,6 +142,7 @@ export class Channel {
 			recipient_ids: this.recipientIds.size > 0 ? this.recipientIds : null,
 			nsfw: this.isNsfw,
 			rate_limit_per_user: this.rateLimitPerUser,
+			message_retention_seconds: this.messageRetentionSeconds,
 			bitrate: this.bitrate,
 			user_limit: this.userLimit,
 			rtc_region: this.rtcRegion,
@@ -112,6 +153,16 @@ export class Channel {
 			soft_deleted: this.isSoftDeleted,
 			indexed_at: this.indexedAt,
 			version: this.version,
+			thread_archived: this.threadArchived,
+			thread_auto_archive_duration: this.threadAutoArchiveDuration,
+			thread_archive_timestamp: this.threadArchiveTimestamp,
+			thread_locked: this.threadLocked,
+			thread_invitable: this.threadInvitable,
+			thread_creator_id: this.threadCreatorId,
+			thread_message_count: this.threadMessageCount,
+			thread_member_count: this.threadMemberCount,
+			available_tags: this.availableTags.length > 0 ? JSON.stringify(this.availableTags) : null,
+			applied_tags: this.appliedTags.length > 0 ? JSON.stringify(this.appliedTags) : null,
 		};
 	}
 }

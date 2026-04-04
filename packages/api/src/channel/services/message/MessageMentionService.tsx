@@ -279,5 +279,25 @@ export class MessageMentionService {
 		if (hasMentions) {
 			await this.workerService.addJob('handleMentions', taskData);
 		}
+
+		if (!guildId) {
+			await this.workerService.addJob('handleDMNotification', {
+				channelId: message.channelId.toString(),
+				messageId: message.id.toString(),
+				authorId: authorId.toString(),
+			});
+		}
+
+		if (guildId) {
+			await this.workerService.addJob('handleGuildMessagePush', {
+				channelId: message.channelId.toString(),
+				messageId: message.id.toString(),
+				authorId: authorId.toString(),
+				guildId: guildId.toString(),
+				mentionedUserIds: hasMentions
+					? Array.from(message.mentionedUserIds ?? []).map((id) => id.toString())
+					: [],
+			});
+		}
 	}
 }

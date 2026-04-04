@@ -208,6 +208,10 @@ export class ChannelDataService {
 			channelUpdateData.rate_limit_per_user = guildChannelData.rate_limit_per_user ?? undefined;
 		}
 
+		if (guildChannelData.message_retention_seconds !== undefined) {
+			channelUpdateData.message_retention_seconds = guildChannelData.message_retention_seconds ?? undefined;
+		}
+
 		if (guildChannelData.permission_overwrites !== undefined) {
 			channelUpdateData.permission_overwrites = guildChannelData.permission_overwrites ?? null;
 		}
@@ -226,6 +230,10 @@ export class ChannelDataService {
 
 		if (guildChannelData.nicks !== undefined) {
 			channelUpdateData.nicks = guildChannelData.nicks ?? null;
+		}
+
+		if ('available_tags' in guildChannelData && (guildChannelData as any).available_tags !== undefined) {
+			channelUpdateData.available_tags = (guildChannelData as any).available_tags;
 		}
 
 		return this.channelOperationsService.editChannel({userId, channelId, data: channelUpdateData, requestCache});

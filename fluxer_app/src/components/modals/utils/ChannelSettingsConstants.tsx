@@ -20,14 +20,15 @@
 import ChannelInvitesTab from '@app/components/modals/channel_tabs/ChannelInvitesTab';
 import ChannelOverviewTab from '@app/components/modals/channel_tabs/ChannelOverviewTab';
 import ChannelPermissionsTab from '@app/components/modals/channel_tabs/ChannelPermissionsTab';
+import ChannelTagsTab from '@app/components/modals/channel_tabs/ChannelTagsTab';
 import ChannelWebhooksTab from '@app/components/modals/channel_tabs/ChannelWebhooksTab';
 import {Permissions} from '@fluxer/constants/src/ChannelConstants';
 import type {I18n, MessageDescriptor} from '@lingui/core';
 import {msg} from '@lingui/core/macro';
-import {GearIcon, type Icon, ShieldIcon, TicketIcon, WebhooksLogoIcon} from '@phosphor-icons/react';
+import {GearIcon, type Icon, ShieldIcon, TagIcon, TicketIcon, WebhooksLogoIcon} from '@phosphor-icons/react';
 import type React from 'react';
 
-export type ChannelSettingsTabType = 'overview' | 'permissions' | 'invites' | 'webhooks';
+export type ChannelSettingsTabType = 'overview' | 'permissions' | 'invites' | 'webhooks' | 'tags';
 
 type ChannelSettingsTabCategories = 'channel_settings';
 
@@ -72,6 +73,14 @@ const CHANNEL_SETTINGS_TABS_DESCRIPTORS: Array<ChannelSettingsTabDescriptor> = [
 		label: msg`Invite Links`,
 		icon: TicketIcon,
 		component: ChannelInvitesTab,
+		permission: Permissions.MANAGE_CHANNELS,
+	},
+	{
+		type: 'tags',
+		category: 'channel_settings',
+		label: msg`Tags`,
+		icon: TagIcon,
+		component: ChannelTagsTab,
 		permission: Permissions.MANAGE_CHANNELS,
 	},
 	{

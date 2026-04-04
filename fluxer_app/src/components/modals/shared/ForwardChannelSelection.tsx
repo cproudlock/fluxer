@@ -22,17 +22,13 @@ import ChannelStore from '@app/stores/ChannelStore';
 import GuildStore from '@app/stores/GuildStore';
 import SelectedChannelStore from '@app/stores/SelectedChannelStore';
 import * as ChannelUtils from '@app/utils/ChannelUtils';
-import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
+import {ChannelTypes, TEXT_BASED_CHANNEL_TYPES} from '@fluxer/constants/src/ChannelConstants';
 import {useLingui} from '@lingui/react/macro';
 import {useCallback, useMemo, useState} from 'react';
 
 type TFn = (literals: TemplateStringsArray, ...placeholders: Array<unknown>) => string;
 
-const FORWARDABLE_CHANNEL_TYPES = new Set<number>(
-	Object.values(ChannelTypes)
-		.filter((value) => typeof value === 'number' && value !== ChannelTypes.GUILD_CATEGORY)
-		.map((value) => Number(value)),
-);
+const FORWARDABLE_CHANNEL_TYPES = TEXT_BASED_CHANNEL_TYPES;
 
 export const getForwardChannelDisplayName = (channel: ChannelRecord, t?: TFn): string => {
 	if (

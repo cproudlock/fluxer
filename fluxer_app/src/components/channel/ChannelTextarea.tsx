@@ -716,6 +716,10 @@ const ChannelTextareaContent = observer(
 				return;
 			}
 			onSubmit();
+			// Re-focus textarea after sending to keep mobile keyboard open
+			requestAnimationFrame(() => {
+				textareaRef.current?.focus();
+			});
 		}, [isOverCharacterLimit, onSubmit, isEditingScheduledMessage]);
 
 		useTextareaDraftAndTyping({
@@ -1088,9 +1092,10 @@ export const ChannelTextarea = observer(({channel}: {channel: ChannelRecord}) =>
 	const forceNoSendMessages = DeveloperOptionsStore.forceNoSendMessages;
 	const forceNoAttachFiles = DeveloperOptionsStore.forceNoAttachFiles;
 
+	const sendPermission = channel.isThread() ? Permissions.SEND_MESSAGES_IN_THREADS : Permissions.SEND_MESSAGES;
 	const disabled = channel.isPrivate()
 		? forceNoSendMessages
-		: forceNoSendMessages || !PermissionStore.can(Permissions.SEND_MESSAGES, channel);
+		: forceNoSendMessages || !PermissionStore.can(sendPermission, channel);
 	const canAttachFiles = channel.isPrivate()
 		? !forceNoAttachFiles
 		: !forceNoAttachFiles && PermissionStore.can(Permissions.ATTACH_FILES, channel);

@@ -33,7 +33,9 @@ import {ChannelSearchResults} from '@app/components/channel/ChannelSearchResults
 import {ChannelTextarea} from '@app/components/channel/ChannelTextarea';
 import {ChannelViewScaffold} from '@app/components/channel/channel_view/ChannelViewScaffold';
 import {useChannelSearchState} from '@app/components/channel/channel_view/useChannelSearchState';
+import {ForumChannelView} from '@app/components/channel/forum/ForumChannelView';
 import {Messages} from '@app/components/channel/Messages';
+import {ThreadPanel} from '@app/components/channel/ThreadPanel';
 import {NSFWChannelGate} from '@app/components/channel/NSFWChannelGate';
 import {VerificationBarrier} from '@app/components/channel/VerificationBarrier';
 import {Button} from '@app/components/uikit/button/Button';
@@ -46,6 +48,7 @@ import ChannelStore from '@app/stores/ChannelStore';
 import DeveloperOptionsStore from '@app/stores/DeveloperOptionsStore';
 import GuildNSFWAgreeStore, {NSFWGateReason} from '@app/stores/GuildNSFWAgreeStore';
 import GuildStore from '@app/stores/GuildStore';
+import ThreadStore from '@app/stores/ThreadStore';
 import GuildVerificationStore from '@app/stores/GuildVerificationStore';
 import MobileLayoutStore from '@app/stores/MobileLayoutStore';
 import MediaEngineStore from '@app/stores/voice/MediaEngineFacade';
@@ -80,6 +83,10 @@ export const GuildChannelView = observer(({channelId, guildId}: GuildChannelView
 		activeSearchSegments,
 	} = searchState;
 	const [hasMessagesBottomBar, setHasMessagesBottomBar] = useState(false);
+
+	useEffect(() => {
+		ThreadStore.closeThreadPanel();
+	}, [channelId]);
 
 	useEffect(() => {
 		setHasMessagesBottomBar(false);
@@ -191,6 +198,18 @@ export const GuildChannelView = observer(({channelId, guildId}: GuildChannelView
 		);
 	}
 
+	if (channel.type === ChannelTypes.GUILD_FORUM) {
+		return (
+			<ChannelViewScaffold
+				header={
+					<ChannelHeader channel={channel} showMembersToggle={false} showPins={false} />
+				}
+				chatArea={<ForumChannelView channel={channel} />}
+				sidePanel={ThreadStore.isThreadPanelOpen ? <ThreadPanel /> : null}
+			/>
+		);
+	}
+
 	const shouldRenderMemberList = isMemberListVisible && !isMobileLayout && !isSearchActive;
 
 	return (
@@ -216,7 +235,9 @@ export const GuildChannelView = observer(({channelId, guildId}: GuildChannelView
 				/>
 			}
 			sidePanel={
-				isSearchActive ? (
+				ThreadStore.isThreadPanelOpen ? (
+					<ThreadPanel />
+				) : isSearchActive ? (
 					<div className={styles.searchPanel}>
 						<ChannelSearchResults
 							channel={channel}

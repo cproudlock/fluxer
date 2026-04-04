@@ -47,6 +47,10 @@ export function getAvailableTabs(i18n: I18n, channelId: string): Array<ChannelSe
 		filteredTabs = filteredTabs.filter((tab) => tab.type !== 'webhooks');
 	}
 
+	if (channel.type !== ChannelTypes.GUILD_FORUM) {
+		filteredTabs = filteredTabs.filter((tab) => tab.type !== 'tags');
+	}
+
 	return filteredTabs.filter((tab) => {
 		if (tab.permission && !PermissionStore.can(tab.permission, {guildId: channel.guildId})) {
 			return false;

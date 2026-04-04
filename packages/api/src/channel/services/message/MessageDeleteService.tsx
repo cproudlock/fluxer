@@ -114,7 +114,7 @@ export class MessageDeleteService {
 				});
 			}
 
-			if (channel.guildId) {
+			if (channel.guildId && message.authorId !== userId) {
 				await this.guildAuditLogService
 					.createBuilder(channel.guildId, userId)
 					.withAction(AuditLogActionType.MESSAGE_DELETE, message.id.toString())

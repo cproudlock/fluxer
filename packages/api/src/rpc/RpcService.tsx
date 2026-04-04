@@ -84,6 +84,7 @@ import {isUserAdult} from '@fluxer/api/src/utils/AgeUtils';
 import {deriveDominantAvatarColor} from '@fluxer/api/src/utils/AvatarColorUtils';
 import {calculateDistance, parseCoordinate} from '@fluxer/api/src/utils/GeoUtils';
 import {lookupGeoip} from '@fluxer/api/src/utils/IpUtils';
+import type {VoiceConnectionStore} from '@fluxer/api/src/infrastructure/VoiceConnectionStore';
 import type {VoiceAccessContext, VoiceAvailabilityService} from '@fluxer/api/src/voice/VoiceAvailabilityService';
 import type {VoiceService} from '@fluxer/api/src/voice/VoiceService';
 import type {IWebhookRepository} from '@fluxer/api/src/webhook/IWebhookRepository';
@@ -184,6 +185,7 @@ export class RpcService {
 		private readonly limitConfigService: LimitConfigService,
 		private voiceService?: VoiceService,
 		private voiceAvailabilityService?: VoiceAvailabilityService,
+		private voiceConnectionStore?: VoiceConnectionStore,
 	) {
 		this.customStatusValidator = new CustomStatusValidator(
 			this.userRepository,
@@ -320,6 +322,7 @@ export class RpcService {
 			recipient_ids: new Set(),
 			nsfw: false,
 			rate_limit_per_user: 0,
+			message_retention_seconds: null,
 			bitrate: null,
 			user_limit: null,
 			rtc_region: null,
@@ -497,6 +500,15 @@ export class RpcService {
 				if (!this.voiceService) {
 					throw new Error('Voice is not enabled on this server');
 				}
+				Logger.info(
+					{
+						guildId: request.guild_id?.toString(),
+						channelId: request.channel_id?.toString(),
+						userId: request.user_id?.toString(),
+						connectionId: request.connection_id,
+					},
+					'RPC voice_force_disconnect_participant received from gateway',
+				);
 				await this.voiceService.disconnectParticipant({
 					guildId: request.guild_id !== undefined ? createGuildID(request.guild_id) : undefined,
 					channelId: createChannelID(request.channel_id),
@@ -612,6 +624,39 @@ export class RpcService {
 				return {
 					type: 'get_dm_channel',
 					data: {channel},
+				};
+			}
+			case 'voice_get_active_states': {
+				if (!this.voiceConnectionStore) {
+					return {
+						type: 'voice_get_active_states',
+						data: {voice_states: []},
+					};
+				}
+				const voiceStates = await this.voiceConnectionStore.getActiveVoiceStatesForGuild(
+					request.guild_id.toString(),
+				);
+				return {
+					type: 'voice_get_active_states',
+					data: {voice_states: voiceStates},
+				};
+			}
+			case 'voice_delete_active_states': {
+				if (!this.voiceConnectionStore) {
+					return {
+						type: 'voice_delete_active_states',
+						data: {deleted: 0},
+					};
+				}
+				const guildId = request.guild_id.toString();
+				let deleted = 0;
+				for (const connId of request.connection_ids) {
+					await this.voiceConnectionStore.deleteActiveVoiceState({guildId, connectionId: connId});
+					deleted++;
+				}
+				return {
+					type: 'voice_delete_active_states',
+					data: {deleted},
 				};
 			}
 			default: {
@@ -1138,6 +1183,7 @@ export class RpcService {
 			id: region.id,
 			name: region.name,
 			emoji: region.emoji,
+			ping_endpoint: region.pingEndpoint,
 		}));
 		Logger.debug(
 			{

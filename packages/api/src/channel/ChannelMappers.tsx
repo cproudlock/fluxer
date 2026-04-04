@@ -84,6 +84,7 @@ function serializeGuildTextChannel(channel: Channel): ChannelResponse {
 		topic: channel.topic,
 		nsfw: channel.isNsfw,
 		rate_limit_per_user: channel.rateLimitPerUser,
+		message_retention_seconds: channel.messageRetentionSeconds ?? 0,
 	};
 }
 
@@ -146,6 +147,32 @@ function serializeDMPersonalNotesChannel(channel: Channel): ChannelResponse {
 	};
 }
 
+function serializeThreadMetadata(channel: Channel) {
+	return {
+		archived: channel.threadArchived,
+		auto_archive_duration: channel.threadAutoArchiveDuration,
+		archive_timestamp: channel.threadArchiveTimestamp ? channel.threadArchiveTimestamp.toISOString() : null,
+		locked: channel.threadLocked,
+		invitable: channel.threadInvitable,
+	};
+}
+
+function serializeThreadChannel(channel: Channel): ChannelResponse {
+	return {
+		...serializeBaseChannelFields(channel),
+		...serializeMessageableFields(channel),
+		guild_id: channel.guildId?.toString(),
+		name: channel.name ?? undefined,
+		parent_id: channel.parentId ? channel.parentId.toString() : null,
+		owner_id: channel.threadCreatorId ? channel.threadCreatorId.toString() : null,
+		message_count: channel.threadMessageCount,
+		member_count: channel.threadMemberCount,
+		rate_limit_per_user: channel.rateLimitPerUser,
+		thread_metadata: serializeThreadMetadata(channel),
+		applied_tags: channel.appliedTags.length > 0 ? channel.appliedTags : undefined,
+	};
+}
+
 async function addDMRecipients(
 	response: ChannelResponse,
 	channel: Channel,
@@ -203,6 +230,16 @@ export async function mapChannelToResponse({
 			break;
 		case ChannelTypes.DM_PERSONAL_NOTES:
 			response = serializeDMPersonalNotesChannel(channel);
+			break;
+		case ChannelTypes.GUILD_FORUM:
+			response = {
+				...serializeGuildTextChannel(channel),
+				available_tags: channel.availableTags.length > 0 ? channel.availableTags : undefined,
+			};
+			break;
+		case ChannelTypes.PUBLIC_THREAD:
+		case ChannelTypes.PRIVATE_THREAD:
+			response = serializeThreadChannel(channel);
 			break;
 		default:
 			response = {

@@ -33,6 +33,7 @@ import {CallButtons} from '@app/components/channel/channel_header_components/Cal
 import {ChannelHeaderIcon} from '@app/components/channel/channel_header_components/ChannelHeaderIcon';
 import {ChannelNotificationSettingsButton} from '@app/components/channel/channel_header_components/ChannelNotificationSettingsButton';
 import {ChannelPinsButton} from '@app/components/channel/channel_header_components/ChannelPinsButton';
+import {ChannelThreadsButton} from '@app/components/channel/channel_header_components/ChannelThreadsButton';
 import {UpdaterIcon} from '@app/components/channel/channel_header_components/UpdaterIcon';
 import {InboxButton} from '@app/components/channel/channel_header_components/UtilityButtons';
 import {useChannelSearchState} from '@app/components/channel/channel_view/useChannelSearchState';
@@ -692,6 +693,10 @@ export const ChannelHeader = observer(
 							)}
 
 							{showPins && channel && !isMobile && <ChannelPinsButton channel={channel} />}
+
+							{channel && isGuildChannel && !isMobile && !isVoiceChannel && !channel.isThread() && !channel.isGuildForum() && (
+								<ChannelThreadsButton channel={channel} />
+							)}
 
 							{(isDM || isGroupDM) && channel && !isMobile && !(isDM && isBotDMRecipient) && (
 								<>

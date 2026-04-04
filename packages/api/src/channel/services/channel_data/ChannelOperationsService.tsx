@@ -65,6 +65,7 @@ export interface ChannelUpdateData {
 	user_limit?: number | null;
 	nsfw?: boolean;
 	rate_limit_per_user?: number;
+	message_retention_seconds?: number;
 	permission_overwrites?: Array<{
 		id: bigint;
 		type: number;
@@ -75,6 +76,7 @@ export interface ChannelUpdateData {
 	icon?: string | null;
 	owner_id?: bigint | null;
 	nicks?: Record<string, string | null> | null;
+	available_tags?: Array<{id?: string; name: string; emoji_name?: string | null}> | null;
 }
 
 export class ChannelOperationsService {
@@ -225,6 +227,21 @@ export class ChannelOperationsService {
 			});
 		}
 
+		let availableTagsJson = channel.toRow().available_tags;
+		if (data.available_tags !== undefined && (channel.type === ChannelTypes.GUILD_FORUM)) {
+			if (data.available_tags && data.available_tags.length > 0) {
+				let counter = 0;
+				const tags = data.available_tags.map((tag) => ({
+					id: tag.id || `${Date.now()}${counter++}`,
+					name: tag.name,
+					emoji_name: tag.emoji_name ?? null,
+				}));
+				availableTagsJson = JSON.stringify(tags);
+			} else {
+				availableTagsJson = null;
+			}
+		}
+
 		const updatedChannelData = {
 			...channel.toRow(),
 			name: channelName,
@@ -240,11 +257,16 @@ export class ChannelOperationsService {
 				data.rate_limit_per_user !== undefined && channel.type === ChannelTypes.GUILD_TEXT
 					? data.rate_limit_per_user
 					: channel.rateLimitPerUser,
+			message_retention_seconds:
+				data.message_retention_seconds !== undefined && channel.type === ChannelTypes.GUILD_TEXT
+					? data.message_retention_seconds
+					: channel.messageRetentionSeconds,
 			nsfw: data.nsfw !== undefined && channel.type === ChannelTypes.GUILD_TEXT ? data.nsfw : channel.isNsfw,
 			rtc_region:
 				data.rtc_region !== undefined && channel.type === ChannelTypes.GUILD_VOICE
 					? data.rtc_region
 					: channel.rtcRegion,
+			available_tags: availableTagsJson,
 			permission_overwrites: new Map(
 				Array.from(permissionOverwrites.entries()).map(([targetId, overwrite]) => [
 					targetId,
