@@ -142,13 +142,23 @@ export const CaptchaMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const captchaType = ctx.req.header('x-captcha-type');
 	const token = ctx.req.header('x-captcha-token');
 
-	// Native app bypass via HMAC challenge-response
+	// Native app bypass via HMAC challenge-response (preferred)
 	if (captchaType === 'native-bypass') {
 		if (!token || !verifyNativeBypass(token)) {
 			throw new InvalidCaptchaError();
 		}
 		await next();
 		return;
+	}
+
+	// Legacy UA-based bypass: only active when native_bypass_secret is not configured.
+	// Remove this fallback once both native apps implement the HMAC bridge.
+	if (!Config.captcha.nativeBypassSecret) {
+		const userAgent = ctx.req.header('user-agent') ?? '';
+		if (userAgent.includes('EchowireApp') || userAgent.includes('EchowireTWA')) {
+			await next();
+			return;
+		}
 	}
 
 	initializeProviders();
