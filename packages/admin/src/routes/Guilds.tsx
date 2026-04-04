@@ -22,6 +22,8 @@
 
 import {triggerGuildArchive} from '@fluxer/admin/src/api/Archives';
 import {purgeAssets} from '@fluxer/admin/src/api/Assets';
+import {getErrorMessage} from '@fluxer/admin/src/api/Errors';
+import {deleteGuildSoundboardSound} from '@fluxer/admin/src/api/GuildAssets';
 import {
 	banGuildMember,
 	clearGuildFields,
@@ -471,6 +473,31 @@ export function createGuildsRoutes({config, assetVersion, requireAuth}: RouteFac
 				} else {
 					return redirectWithFlash(c, redirectUrl, {
 						message: 'Sticker deletion failed.',
+						type: 'error',
+					});
+				}
+			}
+
+			case 'delete_sound': {
+				const soundId = (getOptionalString(formData, 'sound_id') || '').trim();
+
+				if (soundId === '') {
+					return redirectWithFlash(c, redirectUrl, {
+						message: 'Sound ID is required.',
+						type: 'error',
+					});
+				}
+
+				const delResult = await deleteGuildSoundboardSound(config, session, guildId, soundId);
+
+				if (delResult.ok) {
+					return redirectWithFlash(c, redirectUrl, {
+						message: 'Sound deleted successfully.',
+						type: 'success',
+					});
+				} else {
+					return redirectWithFlash(c, redirectUrl, {
+						message: `Sound deletion failed: ${getErrorMessage(delResult.error)}`,
 						type: 'error',
 					});
 				}

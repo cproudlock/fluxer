@@ -1,0 +1,85 @@
+.panel {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 8px;
+	background: var(--background-floating);
+	border-radius: 8px;
+	box-shadow: var(--elevation-high);
+	padding: 12px;
+	width: 280px;
+	max-height: 300px;
+	overflow-y: auto;
+	z-index: 100;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--header-primary);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 6px;
+}
+
+.soundButton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--background-secondary);
+	border: none;
+	border-radius: 6px;
+	padding: 8px 4px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+	min-height: 56px;
+}
+
+.soundButton:hover {
+	background: var(--background-modifier-hover);
+}
+
+.soundButton:active {
+	background: var(--background-modifier-active);
+}
+
+.soundEmoji {
+	font-size: 20px;
+	line-height: 1;
+	margin-bottom: 2px;
+}
+
+.soundName {
+	font-size: 10px;
+	color: var(--text-normal);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+.empty {
+	color: var(--text-muted);
+	font-size: 13px;
+	text-align: center;
+	padding: 16px 0;
+}
+
+.loading {
+	color: var(--text-muted);
+	font-size: 13px;
+	text-align: center;
+	padding: 16px 0;
+}

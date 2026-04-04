@@ -37,6 +37,7 @@ import {MembersTab} from '@fluxer/admin/src/pages/guild_detail/tabs/MembersTab';
 import {ModerationTab} from '@fluxer/admin/src/pages/guild_detail/tabs/ModerationTab';
 import {OverviewTab} from '@fluxer/admin/src/pages/guild_detail/tabs/OverviewTab';
 import {SettingsTab} from '@fluxer/admin/src/pages/guild_detail/tabs/SettingsTab';
+import {SoundboardTab} from '@fluxer/admin/src/pages/guild_detail/tabs/SoundboardTab';
 import {StickersTab} from '@fluxer/admin/src/pages/guild_detail/tabs/StickersTab';
 import type {Session} from '@fluxer/admin/src/types/App';
 import type {AdminConfig as Config} from '@fluxer/admin/src/types/Config';
@@ -297,6 +298,8 @@ async function renderTabContent({
 			return await EmojisTab({config, session, guildId, adminAcls, csrfToken});
 		case 'stickers':
 			return await StickersTab({config, session, guildId, adminAcls, csrfToken});
+		case 'soundboard':
+			return await SoundboardTab({config, session, guildId, adminAcls, csrfToken});
 		default:
 			return <OverviewTab config={config} guild={guild} csrfToken={csrfToken} />;
 	}
@@ -357,6 +360,11 @@ const RenderGuildContent: FC<{
 			label: 'Stickers',
 			path: `/guilds/${guildId}?tab=stickers`,
 			active: activeTab === 'stickers',
+		});
+		tabList.push({
+			label: 'Soundboard',
+			path: `/guilds/${guildId}?tab=soundboard`,
+			active: activeTab === 'soundboard',
 		});
 	}
 
@@ -429,7 +437,7 @@ export async function GuildDetailPage({
 	const adminAcls = currentAdmin?.acls ?? [];
 
 	let activeTab = tab ?? 'overview';
-	const validTabs = ['overview', 'settings', 'features', 'moderation', 'members', 'archives', 'emojis', 'stickers'];
+	const validTabs = ['overview', 'settings', 'features', 'moderation', 'members', 'archives', 'emojis', 'stickers', 'soundboard'];
 	if (!validTabs.includes(activeTab)) {
 		activeTab = 'overview';
 	}
@@ -437,7 +445,7 @@ export async function GuildDetailPage({
 	if (activeTab === 'archives' && !canViewArchives(adminAcls)) {
 		activeTab = 'overview';
 	}
-	if ((activeTab === 'emojis' || activeTab === 'stickers') && !canManageAssets(adminAcls)) {
+	if ((activeTab === 'emojis' || activeTab === 'stickers' || activeTab === 'soundboard') && !canManageAssets(adminAcls)) {
 		activeTab = 'overview';
 	}
 

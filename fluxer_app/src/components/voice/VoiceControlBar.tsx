@@ -32,6 +32,7 @@ import {
 } from '@app/components/bottomsheets/VoiceSettingsBottomSheets';
 import {CameraPreviewModalInRoom} from '@app/components/modals/CameraPreviewModal';
 import {ScreenShareSettingsModal} from '@app/components/modals/ScreenShareSettingsModal';
+import {SoundboardContextMenu} from '@app/components/voice/SoundboardContextMenu';
 import {CheckboxItem} from '@app/components/uikit/context_menu/ContextMenu';
 import {MenuGroup} from '@app/components/uikit/context_menu/MenuGroup';
 import {MenuItem} from '@app/components/uikit/context_menu/MenuItem';
@@ -71,6 +72,7 @@ import {
 	EyeSlashIcon,
 	MicrophoneIcon,
 	MicrophoneSlashIcon,
+	WaveformIcon,
 	MonitorPlayIcon,
 	PhoneXIcon,
 	SpeakerHighIcon,
@@ -572,6 +574,20 @@ const VoiceControlBarInner = observer(function VoiceControlBarInner() {
 		[videoDevices, isMobile],
 	);
 
+	const handleSoundboardClick = useCallback(
+		(event: React.MouseEvent<HTMLButtonElement>) => {
+			const voiceState = MediaEngineStore.getCurrentUserVoiceState();
+			const guildId = voiceState?.guild_id;
+			const channelId = voiceState?.channel_id;
+			if (!guildId || !channelId) return;
+
+			ContextMenuActionCreators.openFromEvent(event, ({onClose}) => (
+				<SoundboardContextMenu guildId={guildId} channelId={channelId} onClose={onClose} />
+			));
+		},
+		[],
+	);
+
 	const handleMoreOptionsClick = useCallback(
 		(event: React.MouseEvent<HTMLButtonElement>) => {
 			if (isMobile) {
@@ -738,6 +754,28 @@ const VoiceControlBarInner = observer(function VoiceControlBarInner() {
 					</button>
 				</FocusRing>
 			</Tooltip>
+
+			<div className={styles.buttonContainer}>
+				<Tooltip text={t`Soundboard`}>
+					<FocusRing offset={-2}>
+						<button
+							type="button"
+							className={clsx(styles.button, styles.buttonMoreOptions)}
+							onClick={handleSoundboardClick}
+						>
+							<WaveformIcon weight="fill" className={styles.icon} />
+						</button>
+					</FocusRing>
+				</Tooltip>
+
+				<Tooltip text={t`Soundboard`}>
+					<FocusRing offset={-2}>
+						<button type="button" className={styles.settingsButton} onClick={handleSoundboardClick}>
+							<CaretDownIcon weight="bold" className={styles.iconSmall} />
+						</button>
+					</FocusRing>
+				</Tooltip>
+			</div>
 
 			<Tooltip text={t`More Options`}>
 				<FocusRing offset={-2}>

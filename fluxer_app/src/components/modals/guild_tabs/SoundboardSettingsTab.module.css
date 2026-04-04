@@ -1,0 +1,148 @@
+.container {
+	padding: 16px 0;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+
+.title {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--header-primary);
+}
+
+.uploadButton {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	background: var(--brand-experiment);
+	color: #fff;
+	transition: background-color 0.15s ease;
+}
+
+.uploadButton:hover {
+	background: var(--brand-experiment-560);
+}
+
+.uploadButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.soundList {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.soundItem {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 8px 12px;
+	border-radius: 4px;
+	background: var(--background-secondary);
+}
+
+.soundItem:hover {
+	background: var(--background-modifier-hover);
+}
+
+.soundEmoji {
+	font-size: 24px;
+	width: 32px;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+.soundInfo {
+	flex: 1;
+	min-width: 0;
+}
+
+.soundName {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-normal);
+}
+
+.soundNameInput {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-normal);
+	background: var(--background-tertiary);
+	border: 1px solid var(--background-modifier-accent);
+	border-radius: 3px;
+	padding: 2px 6px;
+	outline: none;
+	width: 100%;
+}
+
+.soundNameInput:focus {
+	border-color: var(--brand-experiment);
+}
+
+.soundMeta {
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.soundActions {
+	display: flex;
+	gap: 8px;
+	flex-shrink: 0;
+}
+
+.actionButton {
+	padding: 4px 8px;
+	border: none;
+	border-radius: 4px;
+	font-size: 12px;
+	cursor: pointer;
+	background: var(--background-tertiary);
+	color: var(--text-normal);
+	transition: background-color 0.15s ease;
+}
+
+.actionButton:hover {
+	background: var(--background-modifier-hover);
+}
+
+.deleteButton {
+	composes: actionButton;
+	color: var(--text-danger);
+}
+
+.deleteButton:hover {
+	background: var(--button-danger-background);
+	color: #fff;
+}
+
+.empty {
+	text-align: center;
+	padding: 32px 0;
+	color: var(--text-muted);
+	font-size: 14px;
+}
+
+.slotInfo {
+	font-size: 13px;
+	color: var(--text-muted);
+	margin-bottom: 12px;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	padding: 32px 0;
+}

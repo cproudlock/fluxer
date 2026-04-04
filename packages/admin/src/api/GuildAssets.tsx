@@ -24,6 +24,26 @@ import {ApiClient, type ApiResult} from '@fluxer/admin/src/api/Client';
 import type {Session} from '@fluxer/admin/src/types/App';
 import type {AdminConfig as Config} from '@fluxer/admin/src/types/Config';
 import type {ListGuildEmojisResponse, ListGuildStickersResponse} from '@fluxer/schema/src/domains/admin/AdminSchemas';
+import type {GuildSoundboardSoundListResponse} from '@fluxer/schema/src/domains/guild/GuildSoundboardSchemas';
+
+export async function listGuildSoundboardSounds(
+	config: Config,
+	session: Session,
+	guild_id: string,
+): Promise<ApiResult<GuildSoundboardSoundListResponse>> {
+	const client = new ApiClient(config, session);
+	return client.get<GuildSoundboardSoundListResponse>(`/admin/guilds/${guild_id}/soundboard`);
+}
+
+export async function deleteGuildSoundboardSound(
+	config: Config,
+	session: Session,
+	guild_id: string,
+	sound_id: string,
+): Promise<ApiResult<void>> {
+	const client = new ApiClient(config, session);
+	return client.delete<void>(`/admin/guilds/${guild_id}/soundboard/${sound_id}`);
+}
 
 export async function listGuildEmojis(
 	config: Config,
