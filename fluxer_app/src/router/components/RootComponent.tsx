@@ -354,8 +354,11 @@ export const RootComponent: React.FC<{children?: React.ReactNode}> = observer(({
 	// Show splash only on fresh login. For returning sessions (app switch, page reload),
 	// render the last UI immediately while the gateway reconnects in the background.
 	// This avoids the 8-10s splash on every Android app switch.
-	const hasSessionCache = isAuthenticated && LocationStore.getLastLocation() != null;
-	if (isAuthenticated && !canNavigateToProtectedRoutes && !shouldBypassGateway && !hasSessionCache) {
+	// Uses localStorage (synchronous) since IndexedDB hydration is async and not ready yet.
+	const hasReturningSession = isAuthenticated && (() => {
+		try { return localStorage.getItem('token') != null; } catch { return false; }
+	})();
+	if (isAuthenticated && !canNavigateToProtectedRoutes && !shouldBypassGateway && !hasReturningSession) {
 		return <SplashScreen />;
 	}
 
