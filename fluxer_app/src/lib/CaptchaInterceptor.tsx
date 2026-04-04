@@ -21,7 +21,7 @@ import * as ModalActionCreators from '@app/actions/ModalActionCreators';
 import {modal} from '@app/actions/ModalActionCreators';
 import {CaptchaModal, type CaptchaType} from '@app/components/modals/CaptchaModal';
 import HttpClient, {type HttpResponse} from '@app/lib/HttpClient';
-import {getResponseCode, getResponseMessage} from '@app/utils/ApiErrorUtils';
+import {getResponseCode} from '@app/utils/ApiErrorUtils';
 import type {I18n} from '@lingui/core';
 import {msg} from '@lingui/core/macro';
 import {action, makeObservable, observable} from 'mobx';
