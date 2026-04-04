@@ -28,7 +28,10 @@ import {ipBanCache} from '@fluxer/api/src/middleware/IpBanMiddleware';
 import {initializeServiceSingletons, shutdownReportService} from '@fluxer/api/src/middleware/ServiceMiddleware';
 import {
 	ensureVoiceResourcesInitialized,
+	getGatewayService,
 	getKVClient,
+	getLiveKitServiceInstance,
+	getVoiceKVClient,
 	setInjectedWorkerService,
 } from '@fluxer/api/src/middleware/ServiceRegistry';
 import {ReportRepository} from '@fluxer/api/src/report/ReportRepository';
@@ -38,6 +41,10 @@ import {warmupAdminSearchIndexes} from '@fluxer/api/src/search/SearchWarmup';
 import {VisionarySlotInitializer} from '@fluxer/api/src/stripe/VisionarySlotInitializer';
 import {UserRepository} from '@fluxer/api/src/user/repositories/UserRepository';
 import {VoiceDataInitializer} from '@fluxer/api/src/voice/VoiceDataInitializer';
+import {VoiceReconciliationWorker} from '@fluxer/api/src/voice/VoiceReconciliationWorker';
+import {VoiceConnectionStore} from '@fluxer/api/src/infrastructure/VoiceConnectionStore';
+import {VoiceRoomStore} from '@fluxer/api/src/infrastructure/VoiceRoomStore';
+import {getMetricsService} from '@fluxer/api/src/infrastructure/MetricsService';
 import {JetStreamWorkerQueue} from '@fluxer/api/src/worker/JetStreamWorkerQueue';
 import {WorkerService} from '@fluxer/api/src/worker/WorkerService';
 import {JetStreamConnectionManager} from '@fluxer/nats/src/JetStreamConnectionManager';
@@ -45,6 +52,7 @@ import {NatsConnectionManager} from '@fluxer/nats/src/NatsConnectionManager';
 
 let natsRpcListener: NatsApiRpcListener | null = null;
 let jsConnectionManager: JetStreamConnectionManager | null = null;
+let voiceReconciliationWorker: VoiceReconciliationWorker | null = null;
 
 export function createInitializer(config: APIConfig, logger: ILogger): () => Promise<void> {
 	return async (): Promise<void> => {
@@ -134,6 +142,31 @@ export function createInitializer(config: APIConfig, logger: ILogger): () => Pro
 			logger.info('Voice data initialized');
 		}
 
+		if (config.voice.enabled) {
+			await ensureVoiceResourcesInitialized();
+			const liveKitService = getLiveKitServiceInstance();
+			if (liveKitService) {
+				const kvClient = getKVClient();
+				const voiceKvClient = getVoiceKVClient();
+				const reconciliationEnabled = config.voice.reconciliation_enabled !== false;
+				if (reconciliationEnabled) {
+					voiceReconciliationWorker = new VoiceReconciliationWorker({
+						gatewayService: getGatewayService(),
+						liveKitService,
+						voiceRoomStore: new VoiceRoomStore(kvClient),
+						kvClient,
+						metricsService: getMetricsService(),
+						logger,
+						voiceConnectionStore: new VoiceConnectionStore(voiceKvClient),
+					});
+					voiceReconciliationWorker.start();
+					logger.info('Voice reconciliation worker started');
+				} else {
+					logger.info('Voice reconciliation worker disabled by config');
+				}
+			}
+		}
+
 		if (config.dev.testModeEnabled && config.stripe.enabled) {
 			const visionarySlotInitializer = new VisionarySlotInitializer();
 			await visionarySlotInitializer.initialize();
@@ -212,6 +245,11 @@ export function createShutdown(logger: ILogger): () => Promise<void> {
 			logger.info('Report service shut down');
 		} catch (error) {
 			logger.error({error}, 'Error shutting down report service');
+		}
+
+		if (voiceReconciliationWorker) {
+			voiceReconciliationWorker.stop();
+			logger.info('Voice reconciliation worker stopped');
 		}
 
 		logger.info('API service shutdown complete');

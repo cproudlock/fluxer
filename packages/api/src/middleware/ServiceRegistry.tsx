@@ -62,6 +62,23 @@ export function getKVClient(): IKVProvider {
 	return _kvClient;
 }
 
+let _voiceKvClient: IKVProvider | null = null;
+
+export function getVoiceKVClient(): IKVProvider {
+	if (Config.voiceKv) {
+		if (!_voiceKvClient) {
+			_voiceKvClient = new KVClient({
+				url: Config.voiceKv,
+				mode: 'standalone' as const,
+				clusterNodes: [],
+				clusterNatMap: {},
+			});
+		}
+		return _voiceKvClient;
+	}
+	return getKVClient();
+}
+
 let _injectedWorkerService: IWorkerService | undefined;
 
 export function setInjectedWorkerService(service: IWorkerService | undefined): void {

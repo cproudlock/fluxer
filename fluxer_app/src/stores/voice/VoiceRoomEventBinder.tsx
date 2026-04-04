@@ -72,6 +72,21 @@ export function bindRoomEvents(
 			callbacks.onDisconnected();
 			VoiceParticipantManager.clear();
 			VoiceConnectionManager.markDisconnected('error');
+
+			// Auto-reconnect after unexpected disconnect (e.g. server deploy).
+			// The handleConnectionOpen path may have already fired before the
+			// LiveKit disconnect event, so we schedule a fallback reconnect here.
+			const last = VoiceConnectionManager.lastConnectedChannel;
+			if (last) {
+				setTimeout(() => {
+					if (!VoiceConnectionManager.connected && !VoiceConnectionManager.connecting && VoiceConnectionManager.lastConnectedChannel) {
+						logger.info('Auto-reconnecting to voice after disconnect', last);
+						// Re-import lazily to avoid circular dependency
+						const MediaEngineStore = require('@app/stores/voice/MediaEngineFacade').default;
+						MediaEngineStore.connectToVoiceChannel(last.guildId, last.channelId);
+					}
+				}, 3000);
+			}
 		}),
 	);
 
