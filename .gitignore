@@ -29,6 +29,7 @@ devenv.local.nix
 **/.dev.vars
 **/.DS_Store
 **/.env
+**/.env.*
 **/.env.*.local
 **/.env.local
 **/.erlang.cookie
