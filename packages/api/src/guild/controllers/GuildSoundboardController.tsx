@@ -226,7 +226,8 @@ export function GuildSoundboardController(app: HonoApp) {
 			ctx.header('Content-Type', result.contentType ?? 'audio/mpeg');
 			ctx.header('Content-Length', String(result.contentLength));
 			ctx.header('Cache-Control', 'public, max-age=86400');
-			ctx.header('Access-Control-Allow-Origin', '*');
+			ctx.header('Content-Disposition', 'attachment');
+			ctx.header('X-Content-Type-Options', 'nosniff');
 
 			return ctx.body(result.body as unknown as ReadableStream);
 		},
