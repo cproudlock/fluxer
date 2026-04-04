@@ -109,7 +109,9 @@ do_call(GuildPid, Request, Timeout) ->
                 false -> {error, unknown, internal_error}
             end;
         {error, Category, ErrorAtom} when is_atom(Category), is_atom(ErrorAtom) ->
-            {error, Category, ErrorAtom}
+            {error, Category, ErrorAtom};
+        ok ->
+            {error, unknown, voice_server_unavailable}
     catch
         exit:{timeout, _} -> {error, timeout};
         exit:{noproc, _} -> {error, noproc};

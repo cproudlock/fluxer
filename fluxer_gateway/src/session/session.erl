@@ -416,7 +416,16 @@ handle_info(_Info, State) ->
     {noreply, State}.
 
 -spec terminate(term(), session_state()) -> ok.
-terminate(_Reason, _State) ->
+terminate(Reason, State) ->
+    UserId = maps:get(user_id, State, undefined),
+    SessionId = maps:get(session_id, State, undefined),
+    VoiceConnectionId = maps:get(voice_connection_id, State, undefined),
+    logger:info("session terminate: user=~p session=~p reason=~p voice_conn=~p",
+        [UserId, SessionId, Reason, VoiceConnectionId]),
+    %% Clean up voice state on session termination (e.g. ungraceful disconnect).
+    %% This ensures ghost voice members are removed from guilds when the
+    %% WebSocket drops without a clean disconnect (PC poweroff, network loss).
+    catch session_voice:handle_voice_disconnect(State),
     ok.
 
 -spec code_change(term(), session_state(), term()) -> {ok, session_state()}.

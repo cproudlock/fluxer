@@ -86,6 +86,8 @@ process_dispatch(Event, EventData, State) ->
 -spec filter_state_for_event(event(), guild_state(), guild_state()) -> guild_state().
 filter_state_for_event(channel_delete, PreviousState, _UpdatedState) ->
     PreviousState;
+filter_state_for_event(thread_delete, PreviousState, _UpdatedState) ->
+    PreviousState;
 filter_state_for_event(_Event, _PreviousState, UpdatedState) ->
     UpdatedState.
 
@@ -106,16 +108,23 @@ filter_sessions_for_event(Event, FinalData, SessionIdOpt, Sessions, UpdatedState
     case is_channel_scoped_event(Event) of
         true ->
             ChannelId = extract_channel_id(Event, FinalData),
-            case is_message_access_filtered_event(Event) of
-                true ->
-                    MessageId = extract_message_id(FinalData),
-                    guild_sessions:filter_sessions_for_message(
-                        Sessions, ChannelId, MessageId, SessionIdOpt, UpdatedState
-                    );
-                false ->
-                    guild_sessions:filter_sessions_for_channel(
-                        Sessions, ChannelId, SessionIdOpt, UpdatedState
-                    )
+            EffectiveChannelId = resolve_thread_parent(ChannelId, FinalData, UpdatedState),
+            case EffectiveChannelId of
+                unknown_channel ->
+                    %% Thread channel not found in guild data — broadcast to all sessions
+                    guild_sessions:filter_sessions_exclude_session(Sessions, SessionIdOpt);
+                _ ->
+                    case is_message_access_filtered_event(Event) of
+                        true ->
+                            MessageId = extract_message_id(FinalData),
+                            guild_sessions:filter_sessions_for_message(
+                                Sessions, EffectiveChannelId, MessageId, SessionIdOpt, UpdatedState
+                            );
+                        false ->
+                            guild_sessions:filter_sessions_for_channel(
+                                Sessions, EffectiveChannelId, SessionIdOpt, UpdatedState
+                            )
+                    end
             end;
         false ->
             case is_invite_event(Event) of
@@ -161,6 +170,12 @@ is_channel_scoped_event(message_reaction_remove_emoji) -> true;
 is_channel_scoped_event(typing_start) -> true;
 is_channel_scoped_event(channel_pins_update) -> true;
 is_channel_scoped_event(webhooks_update) -> true;
+is_channel_scoped_event(thread_create) -> true;
+is_channel_scoped_event(thread_update) -> true;
+is_channel_scoped_event(thread_delete) -> true;
+is_channel_scoped_event(thread_list_sync) -> true;
+is_channel_scoped_event(thread_member_update) -> true;
+is_channel_scoped_event(thread_members_update) -> true;
 is_channel_scoped_event(_) -> false.
 
 -spec is_invite_event(event()) -> boolean().
@@ -192,13 +207,46 @@ is_bulk_update_event(_) -> false.
 
 -spec extract_channel_id(event(), event_data()) -> channel_id().
 extract_channel_id(Event, FinalData) when
-    Event =:= channel_create; Event =:= channel_update; Event =:= channel_delete
+    Event =:= channel_create; Event =:= channel_update; Event =:= channel_delete;
+    Event =:= thread_create; Event =:= thread_update; Event =:= thread_delete
+->
+    ChannelIdBin = maps:get(<<"id">>, FinalData, undefined),
+    require_snowflake(<<"id">>, ChannelIdBin);
+extract_channel_id(Event, FinalData) when
+    Event =:= thread_list_sync; Event =:= thread_members_update
 ->
     ChannelIdBin = maps:get(<<"id">>, FinalData, undefined),
     require_snowflake(<<"id">>, ChannelIdBin);
 extract_channel_id(_, FinalData) ->
     ChannelIdBin = maps:get(<<"channel_id">>, FinalData, undefined),
     require_snowflake(<<"channel_id">>, ChannelIdBin).
+
+%% Resolve thread channel IDs to their parent channel for visibility checks.
+%% Thread channels don't exist in the gateway's channel list.
+%% If the channel is not found, return 'unknown_channel' to broadcast to all.
+-spec resolve_thread_parent(channel_id(), event_data(), guild_state()) -> channel_id() | unknown_channel.
+resolve_thread_parent(ChannelId, FinalData, State) ->
+    try
+        GuildData = maps:get(data, State, #{}),
+        Channels = maps:get(<<"channels">>, GuildData, []),
+        ChannelIdBin = integer_to_binary(ChannelId),
+        case lists:any(fun(Ch) -> maps:get(<<"id">>, Ch, <<>>) =:= ChannelIdBin end, Channels) of
+            true ->
+                ChannelId;
+            false ->
+                %% Channel not in guild data — likely a thread. Try parent_id.
+                case maps:get(<<"parent_id">>, FinalData, undefined) of
+                    PBin when is_binary(PBin), PBin =/= <<>> ->
+                        binary_to_integer(PBin);
+                    PInt when is_integer(PInt) ->
+                        PInt;
+                    _ ->
+                        unknown_channel
+                end
+        end
+    catch
+        _:_ -> unknown_channel
+    end.
 
 -spec dispatch_to_sessions([session_pair()], event(), event_data(), guild_state()) ->
     non_neg_integer().

@@ -61,6 +61,12 @@ update_data_for_event(channel_update_bulk, EventData, Data, _State) ->
     handle_channel_update_bulk(EventData, Data);
 update_data_for_event(channel_delete, EventData, Data, _State) ->
     handle_channel_delete(EventData, Data);
+update_data_for_event(thread_create, EventData, Data, _State) ->
+    handle_channel_create(EventData, Data);
+update_data_for_event(thread_update, EventData, Data, _State) ->
+    handle_channel_update(EventData, Data);
+update_data_for_event(thread_delete, EventData, Data, _State) ->
+    handle_channel_delete(EventData, Data);
 update_data_for_event(message_create, EventData, Data, _State) ->
     handle_message_create(EventData, Data);
 update_data_for_event(channel_pins_update, EventData, Data, _State) ->

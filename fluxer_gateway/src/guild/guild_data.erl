@@ -107,10 +107,18 @@ get_guild_state(UserId, State) ->
             undefined -> [];
             M -> [M]
         end,
-    VoiceStates = guild_voice:get_voice_states_list(State),
+    VoiceStates = case guild_voice_server:get_cached_voice_states_list(GuildId) of
+        [] ->
+            %% ETS cache empty — try live KeyDB fetch (failover scenario)
+            KeyDbStates = guild_voice_server:fetch_keydb_voice_states(GuildId),
+            maps:values(KeyDbStates);
+        Cached ->
+            Cached
+    end,
     VoiceMembers = voice_members_from_states(VoiceStates, AllMembers),
     Members = merge_members(OwnMemberList, VoiceMembers),
     MemberCount = maps:get(member_count, State, length(AllMembers)),
+    Presences = build_initial_presences(State),
     #{
         <<"id">> => integer_to_binary(GuildId),
         <<"properties">> => maps:get(<<"guild">>, Data, #{}),
@@ -121,10 +129,26 @@ get_guild_state(UserId, State) ->
         <<"members">> => Members,
         <<"member_count">> => MemberCount,
         <<"online_count">> => OnlineCount,
-        <<"presences">> => [],
+        <<"presences">> => Presences,
         <<"voice_states">> => VoiceStates,
         <<"joined_at">> => JoinedAt
     }.
+
+-spec build_initial_presences(guild_state()) -> [map()].
+build_initial_presences(State) ->
+    MemberPresence = maps:get(member_presence, State, #{}),
+    maps:fold(
+        fun(_UserId, Presence, Acc) ->
+            Status = maps:get(<<"status">>, Presence, <<"offline">>),
+            case Status of
+                <<"offline">> -> Acc;
+                <<"invisible">> -> Acc;
+                _ -> [Presence | Acc]
+            end
+        end,
+        [],
+        MemberPresence
+    ).
 
 -spec find_everyone_viewable_text_channel(channel_list(), guild_state()) -> integer() | null.
 find_everyone_viewable_text_channel(Channels, State) ->

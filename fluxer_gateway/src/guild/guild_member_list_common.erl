@@ -246,14 +246,23 @@ connected_session_user_ids(State) ->
 -spec partition_members_by_online([map()], guild_state()) -> {[map()], [map()]}.
 partition_members_by_online(Members, State) ->
     ConnectedUserIds = connected_session_user_ids(State),
+    MemberPresence = maps:get(member_presence, State, #{}),
     lists:partition(
         fun(Member) ->
             UserId = get_member_user_id(Member),
-            Presence = resolve_presence_for_user(State, UserId),
-            Status = maps:get(<<"status">>, Presence, <<"offline">>),
             IsConnected = sets:is_element(UserId, ConnectedUserIds),
-            IsOnlineStatus = Status =/= <<"offline">> andalso Status =/= <<"invisible">>,
-            IsConnected andalso IsOnlineStatus
+            HasPresence = maps:is_key(UserId, MemberPresence),
+            case {IsConnected, HasPresence} of
+                {true, false} ->
+                    %% Connected but presence not yet loaded — treat as online
+                    true;
+                {true, true} ->
+                    Presence = resolve_presence_for_user(State, UserId),
+                    Status = maps:get(<<"status">>, Presence, <<"offline">>),
+                    Status =/= <<"offline">> andalso Status =/= <<"invisible">>;
+                _ ->
+                    false
+            end
         end,
         Members
     ).
@@ -309,47 +318,52 @@ build_member_list_items(Groups, Members, State) ->
     {OnlineMembers, OfflineMembers} = partition_members_by_online(Members, State),
     lists:flatmap(
         fun(Group) ->
-            GroupId = maps:get(<<"id">>, Group),
-            GroupHeader = #{<<"group">> => Group},
-            case GroupId of
-                <<"online">> ->
-                    UngroupedOnline = lists:filter(
-                        fun(M) ->
-                            MemberRoles = map_utils:ensure_list(maps:get(<<"roles">>, M, [])),
-                            MemberRoleIds = [type_conv:to_integer(R) || R <- MemberRoles],
-                            find_top_hoisted_role(MemberRoleIds, HoistedRoleIds) =:= undefined
-                        end,
-                        OnlineMembers
-                    ),
-                    [
-                        GroupHeader
-                        | [
-                            #{<<"member">> => add_presence_to_member(M, State)}
-                         || M <- UngroupedOnline
-                        ]
-                    ];
-                <<"offline">> ->
-                    [
-                        GroupHeader
-                        | [
-                            #{<<"member">> => add_presence_to_member(M, State)}
-                         || M <- OfflineMembers
-                        ]
-                    ];
-                RoleIdBin ->
-                    RoleId = type_conv:to_integer(RoleIdBin),
-                    RoleMembers = lists:filter(
-                        fun(M) ->
-                            MemberRoles = map_utils:ensure_list(maps:get(<<"roles">>, M, [])),
-                            MemberRoleIds = [type_conv:to_integer(R) || R <- MemberRoles],
-                            find_top_hoisted_role(MemberRoleIds, HoistedRoleIds) =:= RoleId
-                        end,
-                        OnlineMembers
-                    ),
-                    [
-                        GroupHeader
-                        | [#{<<"member">> => add_presence_to_member(M, State)} || M <- RoleMembers]
-                    ]
+            GroupCount = maps:get(<<"count">>, Group, 0),
+            case GroupCount of
+                0 -> [];
+                _ ->
+                    GroupId = maps:get(<<"id">>, Group),
+                    GroupHeader = #{<<"group">> => Group},
+                    case GroupId of
+                        <<"online">> ->
+                            UngroupedOnline = lists:filter(
+                                fun(M) ->
+                                    MemberRoles = map_utils:ensure_list(maps:get(<<"roles">>, M, [])),
+                                    MemberRoleIds = [type_conv:to_integer(R) || R <- MemberRoles],
+                                    find_top_hoisted_role(MemberRoleIds, HoistedRoleIds) =:= undefined
+                                end,
+                                OnlineMembers
+                            ),
+                            [
+                                GroupHeader
+                                | [
+                                    #{<<"member">> => add_presence_to_member(M, State)}
+                                 || M <- UngroupedOnline
+                                ]
+                            ];
+                        <<"offline">> ->
+                            [
+                                GroupHeader
+                                | [
+                                    #{<<"member">> => add_presence_to_member(M, State)}
+                                 || M <- OfflineMembers
+                                ]
+                            ];
+                        RoleIdBin ->
+                            RoleId = type_conv:to_integer(RoleIdBin),
+                            RoleMembers = lists:filter(
+                                fun(M) ->
+                                    MemberRoles = map_utils:ensure_list(maps:get(<<"roles">>, M, [])),
+                                    MemberRoleIds = [type_conv:to_integer(R) || R <- MemberRoles],
+                                    find_top_hoisted_role(MemberRoleIds, HoistedRoleIds) =:= RoleId
+                                end,
+                                OnlineMembers
+                            ),
+                            [
+                                GroupHeader
+                                | [#{<<"member">> => add_presence_to_member(M, State)} || M <- RoleMembers]
+                            ]
+                    end
             end
         end,
         Groups
@@ -660,26 +674,13 @@ member_in_list(UserId, Members) ->
 
 -spec presence_move_ops(user_id(), guild_state(), guild_state(), [list_item()], [list_item()]) ->
     {boolean(), [map()]}.
-presence_move_ops(UserId, OldState, UpdatedState, OldItems, NewItems) ->
-    case presence_status_changed(UserId, OldState, UpdatedState) of
-        false ->
-            {false, []};
-        true ->
-            case {find_member_entry(UserId, OldItems), find_member_entry(UserId, NewItems)} of
-                {{ok, OldIdx, _}, {ok, NewIdx, NewItem}} ->
-                    case OldIdx =:= NewIdx of
-                        true ->
-                            {false, []};
-                        false ->
-                            DeleteOps = delete_ops(OldIdx, 1),
-                            InsertIdx = adjusted_insert_index(OldIdx, NewIdx),
-                            InsertOps = insert_ops(InsertIdx, [NewItem]),
-                            {true, DeleteOps ++ InsertOps}
-                    end;
-                _ ->
-                    {false, []}
-            end
-    end.
+presence_move_ops(_UserId, _OldState, _UpdatedState, _OldItems, _NewItems) ->
+    %% Disabled: this fast-path optimization generated DELETE+INSERT ops that
+    %% didn't account for group header changes when members moved between groups
+    %% (e.g., online→offline). Even with a length check, same-length item lists
+    %% can have different group structures. Always fall through to diff_items_to_ops
+    %% which correctly handles all structural changes.
+    {false, []}.
 
 -spec presence_status_changed(user_id(), guild_state(), guild_state()) -> boolean().
 presence_status_changed(UserId, OldState, UpdatedState) ->
@@ -1256,6 +1257,22 @@ presence_move_ops_same_index_test() ->
     NewState = #{member_presence => #{1 => #{<<"status">> => <<"dnd">>}}},
     Item = #{<<"member">> => #{<<"user">> => #{<<"id">> => <<"1">>}}},
     {Moved, Ops} = presence_move_ops(1, OldState, NewState, [Item], [Item]),
+    ?assertEqual(false, Moved),
+    ?assertEqual([], Ops).
+
+presence_move_ops_different_length_bails_out_test() ->
+    OldState = #{member_presence => #{1 => #{<<"status">> => <<"online">>}}},
+    NewState = #{member_presence => #{1 => #{<<"status">> => <<"offline">>}}},
+    OldItems = [
+        #{<<"group">> => #{<<"id">> => <<"online">>, <<"count">> => 1}},
+        #{<<"member">> => #{<<"user">> => #{<<"id">> => <<"1">>}}}
+    ],
+    NewItems = [
+        #{<<"group">> => #{<<"id">> => <<"offline">>, <<"count">> => 1}},
+        #{<<"member">> => #{<<"user">> => #{<<"id">> => <<"1">>}}},
+        #{<<"group">> => #{<<"id">> => <<"extra">>, <<"count">> => 0}}
+    ],
+    {Moved, Ops} = presence_move_ops(1, OldState, NewState, OldItems, NewItems),
     ?assertEqual(false, Moved),
     ?assertEqual([], Ops).
 

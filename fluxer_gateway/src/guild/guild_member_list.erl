@@ -114,7 +114,8 @@ get_member_groups(ListId, State) ->
         <<"id">> => <<"online">>, <<"count">> => guild_member_list_common:count_ungrouped_online(OnlineMembers, HoistedRoles)
     },
     OfflineGroup = #{<<"id">> => <<"offline">>, <<"count">> => length(OfflineMembers)},
-    RoleGroups ++ [OnlineGroup, OfflineGroup].
+    AllGroups = RoleGroups ++ [OnlineGroup, OfflineGroup],
+    [G || G <- AllGroups, maps:get(<<"count">>, G, 0) > 0].
 
 -spec subscribe_ranges(binary(), list_id(), [range()], guild_state()) ->
     {guild_state(), boolean(), [range()]}.
@@ -259,19 +260,18 @@ send_member_list_update_to_sessions(ListId, ListSubs, Sessions, Payload, State) 
 
 -spec member_list_delta(list_id(), guild_state(), guild_state(), user_id()) ->
     {non_neg_integer(), non_neg_integer(), [group_item()], [list_item()], boolean()}.
-member_list_delta(ListId, OldState, UpdatedState, UserId) ->
-    {OldCount, OldOnline, OldGroups, OldItems} = member_list_snapshot(ListId, OldState),
+member_list_delta(ListId, _OldState, UpdatedState, _UserId) ->
+    %% Always send a full SYNC instead of computing deltas.
+    %% The diff algorithm (mismatch_span) doesn't update group headers outside
+    %% the changed range, causing stale counts and misplaced members.
+    %% Full SYNC is correct and negligible overhead for small guilds.
+    {OldCount, OldOnline, OldGroups, _OldItems} = member_list_snapshot(ListId, _OldState),
     {MemberCount, OnlineCount, Groups, Items} = member_list_snapshot(ListId, UpdatedState),
-    case guild_member_list_common:presence_move_ops(UserId, OldState, UpdatedState, OldItems, Items) of
-        {true, Ops} ->
-            {MemberCount, OnlineCount, Groups, Ops, true};
-        {false, _} ->
-            Ops = guild_member_list_common:diff_items_to_ops(OldItems, Items),
-            Changed =
-                Ops =/= [] orelse OldCount =/= MemberCount orelse OldOnline =/= OnlineCount orelse
-                    OldGroups =/= Groups,
-            {MemberCount, OnlineCount, Groups, Ops, Changed}
-    end.
+    Ops = guild_member_list_common:full_sync_from_items(Items),
+    Changed =
+        Ops =/= [] orelse OldCount =/= MemberCount orelse OldOnline =/= OnlineCount orelse
+            OldGroups =/= Groups,
+    {MemberCount, OnlineCount, Groups, Ops, Changed}.
 
 -spec member_list_snapshot(list_id(), guild_state()) ->
     {non_neg_integer(), non_neg_integer(), [group_item()], [list_item()]}.
@@ -698,12 +698,7 @@ get_member_groups_empty_guild_test() ->
         member_presence => #{}
     },
     Groups = get_member_groups(<<"0">>, State),
-    OnlineGroups = [G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>],
-    OfflineGroups = [G || G <- Groups, maps:get(<<"id">>, G) =:= <<"offline">>],
-    ?assertEqual(1, length(OnlineGroups)),
-    ?assertEqual(1, length(OfflineGroups)),
-    ?assertEqual(0, maps:get(<<"count">>, hd(OnlineGroups))),
-    ?assertEqual(0, maps:get(<<"count">>, hd(OfflineGroups))).
+    ?assertEqual(0, length(Groups)).
 
 get_member_groups_only_offline_members_test() ->
     Members = [
@@ -720,9 +715,9 @@ get_member_groups_only_offline_members_test() ->
         member_presence => #{}
     },
     Groups = get_member_groups(<<"0">>, State),
-    OnlineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>]),
+    OnlineGroups = [G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>],
     OfflineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"offline">>]),
-    ?assertEqual(0, maps:get(<<"count">>, OnlineGroup)),
+    ?assertEqual(0, length(OnlineGroups)),
     ?assertEqual(2, maps:get(<<"count">>, OfflineGroup)).
 
 get_member_groups_zero_online_members_test() ->
@@ -743,8 +738,8 @@ get_member_groups_zero_online_members_test() ->
         }
     },
     Groups = get_member_groups(<<"0">>, State),
-    OnlineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>]),
-    ?assertEqual(0, maps:get(<<"count">>, OnlineGroup)).
+    OnlineGroups = [G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>],
+    ?assertEqual(0, length(OnlineGroups)).
 
 subscribe_ranges_filters_invalid_test() ->
     State = #{member_list_subscriptions => #{}},
@@ -869,8 +864,8 @@ member_list_snapshot_empty_test() ->
     {MemberCount, OnlineCount, Groups, Items} = member_list_snapshot(<<"0">>, State),
     ?assertEqual(0, MemberCount),
     ?assertEqual(0, OnlineCount),
-    ?assertEqual(2, length(Groups)),
-    ?assertEqual(2, length(Items)).
+    ?assertEqual(0, length(Groups)),
+    ?assertEqual(0, length(Items)).
 
 get_items_in_range_empty_guild_test() ->
     State = #{
@@ -880,7 +875,7 @@ get_items_in_range_empty_guild_test() ->
         member_presence => #{}
     },
     Items = get_items_in_range(<<"0">>, {0, 99}, State),
-    ?assertEqual(2, length(Items)).
+    ?assertEqual(0, length(Items)).
 
 get_items_in_range_with_members_test() ->
     Members = [
@@ -971,10 +966,7 @@ empty_guild_with_only_everyone_role_test() ->
         member_presence => #{}
     },
     Groups = get_member_groups(<<"0">>, State),
-    OnlineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>]),
-    OfflineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"offline">>]),
-    ?assertEqual(0, maps:get(<<"count">>, OnlineGroup)),
-    ?assertEqual(0, maps:get(<<"count">>, OfflineGroup)).
+    ?assertEqual(0, length(Groups)).
 
 presence_update_for_member_not_in_list_test() ->
     Members = [#{<<"user">> => #{<<"id">> => <<"1">>}, <<"roles">> => []}],
@@ -1034,7 +1026,7 @@ member_losing_hoisted_role_returns_to_online_test() ->
     ?assertEqual(true, Changed),
     OnlineGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"online">>]),
     ?assertEqual(1, maps:get(<<"count">>, OnlineGroup)),
-    VIPGroup = hd([G || G <- Groups, maps:get(<<"id">>, G) =:= <<"200">>]),
-    ?assertEqual(0, maps:get(<<"count">>, VIPGroup)).
+    VIPGroups = [G || G <- Groups, maps:get(<<"id">>, G) =:= <<"200">>],
+    ?assertEqual(0, length(VIPGroups)).
 
 -endif.

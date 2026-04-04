@@ -142,6 +142,8 @@ handle_call({get_push_base_state} = Msg, From, State) ->
     guild_query_handler:handle_call(Msg, From, State);
 handle_call({get_cluster_merge_state} = Msg, From, State) ->
     guild_query_handler:handle_call(Msg, From, State);
+handle_call({voice_state_update, _} = Msg, From, State) ->
+    guild_voice_handler:handle_call(Msg, From, State);
 handle_call({add_virtual_channel_access, _, _} = Msg, From, State) ->
     guild_voice_handler:handle_call(Msg, From, State);
 handle_call({dispatch, Request}, _From, State) ->
