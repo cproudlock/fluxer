@@ -42,6 +42,10 @@ const FETCH_EVENT_USER = GuildScheduledEventUsers.selectCql({
 	],
 });
 
+const COUNT_EVENTS_BY_GUILD_CQL = GuildScheduledEvents.selectCountCql({
+	where: GuildScheduledEvents.where.eq('guild_id'),
+});
+
 export class ScheduledEventRepository {
 	async listByGuild(guildId: GuildID): Promise<Array<GuildScheduledEventRow>> {
 		return fetchMany<GuildScheduledEventRow>(FETCH_EVENTS_BY_GUILD, {guild_id: guildId});
@@ -79,8 +83,8 @@ export class ScheduledEventRepository {
 	}
 
 	async countByGuild(guildId: GuildID): Promise<number> {
-		const rows = await this.listByGuild(guildId);
-		return rows.length;
+		const result = await fetchOne<{count: bigint}>(COUNT_EVENTS_BY_GUILD_CQL, {guild_id: guildId});
+		return result ? Number(result.count) : 0;
 	}
 
 	async listUsers(guildId: GuildID, eventId: ScheduledEventID): Promise<Array<GuildScheduledEventUserRow>> {

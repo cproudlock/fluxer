@@ -100,6 +100,7 @@ export class SoundboardService {
 		emoji?: string | null;
 		volume: number;
 		file: File;
+		duration_ms?: number;
 	}): Promise<GuildSoundboardSoundResponse> {
 		await requirePermission(this.gatewayService, {
 			guildId: params.guildId,
@@ -147,9 +148,12 @@ export class SoundboardService {
 			contentType: file.type,
 		});
 
-		// Estimate duration from file size as a rough heuristic
-		// For proper validation, the frontend should validate before upload
-		const estimatedDurationMs = Math.min(Math.round((file.size / 16000) * 1000), MAX_DURATION_MS);
+		// Duration is populated client-side via the Web Audio API. The server accepts
+		// an optional duration_ms from the client; if not provided, defaults to 0.
+		// Server-side estimation from file size is unreliable across codecs.
+		const durationMs = params.duration_ms != null && Number.isFinite(params.duration_ms)
+			? Math.min(Math.max(0, Math.round(params.duration_ms)), MAX_DURATION_MS)
+			: 0;
 
 		const row: GuildSoundboardSoundRow = {
 			guild_id: params.guildId,
@@ -157,7 +161,7 @@ export class SoundboardService {
 			name: params.name.trim(),
 			emoji: params.emoji ?? null,
 			volume: params.volume,
-			duration_ms: estimatedDurationMs,
+			duration_ms: durationMs,
 			uploaded_by: params.userId,
 			file_key: fileKey,
 			created_at: new Date(),

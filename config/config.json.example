@@ -109,12 +109,12 @@
       "secret_key": "your-secret-here",
       "webhook_secret": "your-secret-here",
       "prices": {
-        "monthly_usd": "price_1T2LiWI1V0HqFgbRnI8fbm85",
-        "yearly_usd": "price_1T2LiaI1V0HqFgbRsgfRQyQT",
-        "visionary_usd": "price_1T2LifI1V0HqFgbR27iMwvxr",
-        "gift_visionary_usd": "price_1T2LisI1V0HqFgbRe47z7QHF",
-        "gift_1_month_usd": "price_1T2LijI1V0HqFgbRE8uBFc54",
-        "gift_1_year_usd": "price_1T2LinI1V0HqFgbRlcAf1ilv"
+        "monthly_usd": "price_XXXXXXXXXXXXXXXXXX",
+        "yearly_usd": "price_XXXXXXXXXXXXXXXXXX",
+        "visionary_usd": "price_XXXXXXXXXXXXXXXXXX",
+        "gift_visionary_usd": "price_XXXXXXXXXXXXXXXXXX",
+        "gift_1_month_usd": "price_XXXXXXXXXXXXXXXXXX",
+        "gift_1_year_usd": "price_XXXXXXXXXXXXXXXXXX"
       }
     },
     "voice": {

@@ -457,6 +457,10 @@ export class ThreadService {
 		return {threads: responses, has_more: false};
 	}
 
+	// NOTE: This read-increment-write is not atomic and can lose increments under
+	// concurrent writes. This is acceptable because thread_message_count is display-only
+	// and does not need to be exact. If precision becomes important, derive the count
+	// from an actual message query or use a Cassandra counter column.
 	async incrementMessageCount(threadId: ChannelID) {
 		const {channelRepository} = this.deps;
 		const channel = await channelRepository.channelData.findUnique(threadId);

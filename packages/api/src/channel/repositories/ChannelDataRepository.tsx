@@ -181,6 +181,10 @@ export class ChannelDataRepository extends IChannelDataRepository {
 		const parentChannel = await this.findUnique(parentChannelId);
 		if (!parentChannel || !parentChannel.guildId) return [];
 
+		// Intentionally fetches all guild channels and filters in-app. Cassandra doesn't support
+		// filtering by parent_id without a secondary index, and the channels_by_guild table is
+		// partitioned by guild_id only. The number of channels per guild is small enough that
+		// this full-partition scan is acceptable.
 		const allThreads = await this.listGuildChannels(parentChannel.guildId);
 		return allThreads.filter((ch) => {
 			if (!ch.isThread()) return false;

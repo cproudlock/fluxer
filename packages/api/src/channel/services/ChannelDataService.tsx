@@ -232,8 +232,13 @@ export class ChannelDataService {
 			channelUpdateData.nicks = guildChannelData.nicks ?? null;
 		}
 
-		if ('available_tags' in guildChannelData && (guildChannelData as any).available_tags !== undefined) {
-			channelUpdateData.available_tags = (guildChannelData as any).available_tags;
+		// available_tags only exists on the Forum variant of the discriminated union.
+		// Use an 'in' guard to narrow, then assert the known shape from ChannelUpdateForumRequest.
+		if ('available_tags' in guildChannelData) {
+			const forumData = guildChannelData as {available_tags?: Array<{id?: string; name: string; emoji_name?: string | null}>};
+			if (forumData.available_tags !== undefined) {
+				channelUpdateData.available_tags = forumData.available_tags;
+			}
 		}
 
 		return this.channelOperationsService.editChannel({userId, channelId, data: channelUpdateData, requestCache});

@@ -30,6 +30,10 @@ const FETCH_SOUND_BY_ID_QUERY = GuildSoundboardSounds.selectCql({
 	where: [GuildSoundboardSounds.where.eq('guild_id'), GuildSoundboardSounds.where.eq('sound_id')],
 });
 
+const COUNT_SOUNDS_BY_GUILD_CQL = GuildSoundboardSounds.selectCountCql({
+	where: GuildSoundboardSounds.where.eq('guild_id'),
+});
+
 export class SoundboardRepository {
 	async listByGuild(guildId: GuildID): Promise<Array<GuildSoundboardSoundRow>> {
 		return fetchMany<GuildSoundboardSoundRow>(FETCH_SOUNDS_BY_GUILD_QUERY, {guild_id: guildId});
@@ -60,7 +64,7 @@ export class SoundboardRepository {
 	}
 
 	async countByGuild(guildId: GuildID): Promise<number> {
-		const rows = await this.listByGuild(guildId);
-		return rows.length;
+		const result = await fetchOne<{count: bigint}>(COUNT_SOUNDS_BY_GUILD_CQL, {guild_id: guildId});
+		return result ? Number(result.count) : 0;
 	}
 }

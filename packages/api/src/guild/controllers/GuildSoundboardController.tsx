@@ -77,6 +77,7 @@ export function GuildSoundboardController(app: HonoApp) {
 			const name = formData.get('name');
 			const emoji = formData.get('emoji');
 			const volumeStr = formData.get('volume');
+			const durationMsStr = formData.get('duration_ms');
 
 			if (!(file instanceof File)) {
 				return ctx.json({message: 'Audio file is required'}, 400);
@@ -86,6 +87,7 @@ export function GuildSoundboardController(app: HonoApp) {
 			}
 
 			const volume = volumeStr ? Number(volumeStr) : 0.8;
+			const durationMs = durationMsStr ? Number(durationMsStr) : undefined;
 
 			const sound = await ctx.get('soundboardService').createSound({
 				userId: user.id,
@@ -94,6 +96,7 @@ export function GuildSoundboardController(app: HonoApp) {
 				emoji: typeof emoji === 'string' ? emoji : null,
 				volume: Number.isFinite(volume) ? Math.min(1, Math.max(0, volume)) : 0.8,
 				file,
+				duration_ms: durationMs,
 			});
 			return ctx.json(sound);
 		},

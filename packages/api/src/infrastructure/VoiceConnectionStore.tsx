@@ -125,6 +125,9 @@ export class VoiceConnectionStore {
 		await this.kvClient.del(key);
 	}
 
+	// NOTE: This uses Redis SCAN with a pattern match, which is O(N) over the full keyspace.
+	// At current scale (small number of voice users per guild) this is fine. If voice user
+	// counts grow large, replace with a Redis Set per guild to track active connection keys.
 	async getActiveVoiceStatesForGuild(guildId: string): Promise<Array<ActiveVoiceState>> {
 		const pattern = `${ACTIVE_STATE_KEY_PREFIX}:${guildId}:*`;
 		const keys = await this.kvClient.scan(pattern, 100);

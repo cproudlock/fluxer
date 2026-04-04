@@ -29,6 +29,11 @@ const FETCH_THREAD_MEMBER = ThreadMembers.select({
 
 const FETCH_THREAD_MEMBERS = ThreadMembers.select({
 	where: ThreadMembers.where.eq('thread_id'),
+	limit: 1000,
+});
+
+const COUNT_THREAD_MEMBERS_CQL = ThreadMembers.selectCountCql({
+	where: ThreadMembers.where.eq('thread_id'),
 });
 
 const FETCH_USER_THREADS = ThreadMembersByUser.select({
@@ -109,7 +114,7 @@ export class ThreadMemberRepository {
 	}
 
 	async getMemberCount(threadId: ChannelID): Promise<number> {
-		const members = await this.listMembers(threadId);
-		return members.length;
+		const result = await fetchOne<{count: bigint}>(COUNT_THREAD_MEMBERS_CQL, {thread_id: threadId});
+		return result ? Number(result.count) : 0;
 	}
 }

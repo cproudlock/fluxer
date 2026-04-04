@@ -80,7 +80,7 @@ init(#{guild_id := GuildId, guild_pid := GuildPid}) ->
     ensure_registry(),
     %% Stop any stale voice_server for this guild to prevent duplicate processes
     ExistingEntry = ets:lookup(?REGISTRY_TABLE, GuildId),
-    logger:info(
+    logger:debug(
         "voice_server init: guild=~p self=~p guild_pid=~p existing_ets=~p",
         [GuildId, self(), GuildPid, ExistingEntry]
     ),
@@ -88,13 +88,13 @@ init(#{guild_id := GuildId, guild_pid := GuildPid}) ->
         [{_, OldPid}] when is_pid(OldPid), OldPid =/= self() ->
             case is_process_alive(OldPid) of
                 true ->
-                    logger:info(
+                    logger:debug(
                         "voice_server replacing stale process ~p for guild ~p (alive=true)",
                         [OldPid, GuildId]
                     ),
                     catch gen_server:stop(OldPid, replaced, 5000);
                 false ->
-                    logger:info(
+                    logger:debug(
                         "voice_server found dead process ~p for guild ~p, cleaning up",
                         [OldPid, GuildId]
                     )
@@ -129,7 +129,7 @@ handle_call({voice_state_update, Request}, _From, #{guild_id := GuildId} = State
             case NewKeys of
                 [] -> ok;
                 _ ->
-                    logger:info(
+                    logger:debug(
                         "voice_server created pending: guild=~p new_keys=~p total_pending=~p self=~p",
                         [GuildId, NewKeys, maps:size(NewPending), self()]
                     )
@@ -182,7 +182,7 @@ handle_call({confirm_voice_connection_from_livekit, Request}, _From, #{guild_id 
     ConnectionId = maps:get(connection_id, Request, undefined),
     PendingConns = maps:get(pending_voice_connections, State, #{}),
     VoiceStates = maps:get(voice_states, State, #{}),
-    logger:info(
+    logger:debug(
         "voice_server confirm: conn=~s pending=~p voice=~p keys=~p self=~p guild=~p",
         [ConnectionId, maps:size(PendingConns), maps:size(VoiceStates), maps:keys(PendingConns), self(), maps:get(guild_id, State, unknown)]
     ),
@@ -191,7 +191,7 @@ handle_call({confirm_voice_connection_from_livekit, Request}, _From, #{guild_id 
         {reply, #{success := true} = Reply, NewGuildState} ->
             FinalState = apply_guild_state(NewGuildState, State),
             FinalPending = maps:get(pending_voice_connections, FinalState, #{}),
-            logger:info(
+            logger:debug(
                 "voice_server confirm result: conn=~s reply=~p final_pending=~p final_pending_keys=~p",
                 [ConnectionId, Reply, maps:size(FinalPending), maps:keys(FinalPending)]
             ),
@@ -215,11 +215,9 @@ handle_call({switch_voice_region, Request}, _From, State) ->
     end;
 
 handle_call({store_pending_connection, ConnectionId, Metadata}, _From, #{guild_id := GuildId} = State) ->
-    {current_stacktrace, Stack} = process_info(self(), current_stacktrace),
-    ShortStack = lists:sublist(Stack, 5),
-    logger:info(
-        "store_pending_connection(call): conn=~s guild=~p existing_keys=~p stack=~p",
-        [ConnectionId, GuildId, maps:keys(maps:get(pending_voice_connections, State, #{})), ShortStack]
+    logger:debug(
+        "store_pending_connection(call): conn=~s guild=~p existing_keys=~p",
+        [ConnectionId, GuildId, maps:keys(maps:get(pending_voice_connections, State, #{}))]
     ),
     PendingConnections = maps:get(pending_voice_connections, State, #{}),
     NewPendingConnections = maps:put(ConnectionId, Metadata, PendingConnections),
@@ -286,7 +284,7 @@ handle_call(_, _From, State) ->
 -spec handle_cast(term(), server_state()) -> {noreply, server_state()}.
 
 handle_cast({store_pending_connection, ConnectionId, Metadata}, #{guild_id := GuildId} = State) ->
-    logger:info(
+    logger:debug(
         "store_pending_connection(cast): conn=~s guild=~p existing_keys=~p",
         [ConnectionId, GuildId, maps:keys(maps:get(pending_voice_connections, State, #{}))]
     ),
@@ -297,7 +295,7 @@ handle_cast({store_pending_connection, ConnectionId, Metadata}, #{guild_id := Gu
     {noreply, NewState};
 
 handle_cast({remote_pending_connection, ConnectionId, Metadata}, State) ->
-    logger:info(
+    logger:debug(
         "remote_pending_connection: conn=~s guild=~p existing_keys=~p",
         [ConnectionId, maps:get(guild_id, State, unknown), maps:keys(maps:get(pending_voice_connections, State, #{}))]
     ),
@@ -313,7 +311,7 @@ handle_cast({remote_pending_confirmed, ConnectionId}, State) ->
     PendingConnections = maps:get(pending_voice_connections, State, #{}),
     case maps:is_key(ConnectionId, PendingConnections) of
         true ->
-            logger:info(
+            logger:debug(
                 "remote_pending_confirmed: removing conn=~s guild=~p",
                 [ConnectionId, maps:get(guild_id, State, unknown)]
             ),
@@ -378,7 +376,7 @@ handle_info(sweep_pending_joins, State) ->
     ServerPending = maps:get(pending_voice_connections, State, #{}),
     case maps:size(ServerPending) > 0 of
         true ->
-            logger:info(
+            logger:debug(
                 "sweep_start: server_pending_keys=~p server_pending_count=~p guild=~p",
                 [maps:keys(ServerPending), maps:size(ServerPending), maps:get(guild_id, State, unknown)]
             );
@@ -388,7 +386,7 @@ handle_info(sweep_pending_joins, State) ->
     GuildPending = maps:get(pending_voice_connections, GuildState, #{}),
     case maps:size(GuildPending) =/= maps:size(ServerPending) of
         true ->
-            logger:info(
+            logger:debug(
                 "sweep: guild_state pending DIFFERS from server: guild_keys=~p server_keys=~p",
                 [maps:keys(GuildPending), maps:keys(ServerPending)]
             );
@@ -480,11 +478,9 @@ apply_guild_state(GuildState, State) ->
     case {AddedKeys, RemovedKeys} of
         {[], []} -> ok;
         _ ->
-            {current_stacktrace, Stack} = process_info(self(), current_stacktrace),
-            ShortStack = lists:sublist(Stack, 5),
-            logger:info(
-                "apply_guild_state PENDING CHANGE: old_keys=~p new_keys=~p added=~p removed=~p stack=~p",
-                [OldKeys, NewKeys, AddedKeys, RemovedKeys, ShortStack]
+            logger:debug(
+                "apply_guild_state PENDING CHANGE: old_keys=~p new_keys=~p added=~p removed=~p",
+                [OldKeys, NewKeys, AddedKeys, RemovedKeys]
             )
     end,
     NewVoiceStates = maps:get(voice_states, GuildState, maps:get(voice_states, State, #{})),
