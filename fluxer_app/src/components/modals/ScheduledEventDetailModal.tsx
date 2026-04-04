@@ -33,7 +33,7 @@ import UserStore from '@app/stores/UserStore';
 import MediaEngineStore from '@app/stores/voice/MediaEngineFacade';
 import {Permissions} from '@fluxer/constants/src/ChannelConstants';
 import {GuildScheduledEventEntityType, GuildScheduledEventStatus} from '@fluxer/constants/src/ScheduledEventConstants';
-import {CalendarIcon, MapPinIcon, MicrophoneIcon, PencilSimpleIcon, TrashIcon, UsersIcon} from '@phosphor-icons/react';
+import {CalendarIcon, DownloadSimpleIcon, MapPinIcon, MicrophoneIcon, PencilSimpleIcon, TrashIcon, UsersIcon} from '@phosphor-icons/react';
 import {useLingui} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
 import {useEffect, useState} from 'react';
@@ -63,6 +63,56 @@ function getStatusColor(status: number): string {
 		default:
 			return 'var(--brand-experiment)';
 	}
+}
+
+function formatIcsDate(date: Date): string {
+	return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+}
+
+function escapeIcsText(text: string): string {
+	return text.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+}
+
+function generateIcsFile(event: ScheduledEvent, channelName: string | null): void {
+	const start = new Date(event.scheduled_start_time);
+	const end = event.scheduled_end_time
+		? new Date(event.scheduled_end_time)
+		: new Date(start.getTime() + 3600000); // default 1 hour
+
+	const locationStr =
+		event.entity_type === GuildScheduledEventEntityType.EXTERNAL && event.location
+			? event.location
+			: channelName
+				? `Voice: ${channelName}`
+				: 'Online';
+
+	const lines = [
+		'BEGIN:VCALENDAR',
+		'VERSION:2.0',
+		'PRODID:-//Echowire//Scheduled Events//EN',
+		'CALSCALE:GREGORIAN',
+		'METHOD:PUBLISH',
+		'BEGIN:VEVENT',
+		`DTSTART:${formatIcsDate(start)}`,
+		`DTEND:${formatIcsDate(end)}`,
+		`SUMMARY:${escapeIcsText(event.name)}`,
+		`LOCATION:${escapeIcsText(locationStr)}`,
+		...(event.description ? [`DESCRIPTION:${escapeIcsText(event.description)}`] : []),
+		`UID:${event.id}@echowire.org`,
+		`DTSTAMP:${formatIcsDate(new Date())}`,
+		'END:VEVENT',
+		'END:VCALENDAR',
+	];
+
+	const blob = new Blob([lines.join('\r\n')], {type: 'text/calendar;charset=utf-8'});
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = `${event.name.replace(/[^a-zA-Z0-9 ]/g, '').trim().replace(/\s+/g, '-')}.ics`;
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+	URL.revokeObjectURL(url);
 }
 
 interface ScheduledEventDetailModalProps {
@@ -134,6 +184,10 @@ export const ScheduledEventDetailModal = observer(({event}: ScheduledEventDetail
 				/>
 			)),
 		);
+	};
+
+	const handleExportCalendar = () => {
+		generateIcsFile(liveEvent, voiceChannel?.name ?? null);
 	};
 
 	const handleJoinVoice = () => {
@@ -229,6 +283,14 @@ export const ScheduledEventDetailModal = observer(({event}: ScheduledEventDetail
 						</div>
 					</div>
 				)}
+
+				{liveEvent.status !== GuildScheduledEventStatus.COMPLETED &&
+					liveEvent.status !== GuildScheduledEventStatus.CANCELLED && (
+						<Button onClick={handleExportCalendar} variant="secondary" style={{width: '100%', marginBottom: '0.75rem'}}>
+							<DownloadSimpleIcon size={16} />
+							{t`Add to Calendar`}
+						</Button>
+					)}
 
 				{liveEvent.status === GuildScheduledEventStatus.ACTIVE &&
 					liveEvent.entity_type === GuildScheduledEventEntityType.VOICE &&
