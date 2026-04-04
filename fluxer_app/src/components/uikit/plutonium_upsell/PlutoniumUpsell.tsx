@@ -69,9 +69,9 @@ export const PlutoniumUpsell: React.FC<PlutoniumUpsellProps> = ({
 						superCompact={true}
 						fitContent={true}
 						onClick={onButtonClick ?? (() => PremiumModalActionCreators.open())}
-						aria-label={t`Get Plutonium`}
+						aria-label={t`Get Reverb`}
 					>
-						{buttonText ?? <Trans>Get Plutonium</Trans>}
+						{buttonText ?? <Trans>Get Reverb</Trans>}
 					</Button>
 					{dismissible && onDismiss && (
 						<button type="button" className={styles.dismissLink} onClick={onDismiss}>

@@ -51,7 +51,7 @@ export const PricingSection: React.FC<PricingSectionProps> = observer(
 		purchaseDisabledTooltip,
 	}) => {
 		const {t} = useLingui();
-		const tooltipText: React.ReactNode = purchaseDisabledTooltip ?? t`Claim your account to purchase Fluxer Plutonium.`;
+		const tooltipText: React.ReactNode = purchaseDisabledTooltip ?? t`Claim your account to purchase Echowire Reverb.`;
 
 		return (
 			<section className={styles.section}>
@@ -123,7 +123,7 @@ export const PricingSection: React.FC<PricingSectionProps> = observer(
 					<PurchaseDisclaimer />
 					<div className={styles.scrollPromptContainer}>
 						<p className={styles.scrollPromptText}>
-							<Trans>Scroll down to view all the sweet perks you get with Plutonium</Trans>
+							<Trans>Scroll down to view all the sweet perks you get with Reverb</Trans>
 						</p>
 						<ArrowDownIcon className={styles.scrollPromptIcon} weight="bold" />
 					</div>

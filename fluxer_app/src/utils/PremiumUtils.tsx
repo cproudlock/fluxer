@@ -19,6 +19,9 @@
 
 import RuntimeConfigStore from '@app/stores/RuntimeConfigStore';
 
+const isIOSNativeApp = typeof navigator !== 'undefined' && /EchowireApp/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
+
 export function shouldShowPremiumFeatures(): boolean {
-	return !RuntimeConfigStore.isSelfHosted();
+	if (isIOSNativeApp) return false;
+	return RuntimeConfigStore.features.stripe_enabled;
 }

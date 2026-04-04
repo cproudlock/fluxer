@@ -28,6 +28,6 @@ export const PlutoniumLink: React.FC = () => (
 		}}
 		className={styles.link}
 	>
-		Plutonium
+		Reverb
 	</button>
 );

@@ -20,14 +20,14 @@
 import * as ModalActionCreators from '@app/actions/ModalActionCreators';
 import {modal} from '@app/actions/ModalActionCreators';
 import {PremiumModal} from '@app/components/modals/PremiumModal';
-import RuntimeConfigStore from '@app/stores/RuntimeConfigStore';
+import {shouldShowPremiumFeatures} from '@app/utils/PremiumUtils';
 
 interface OpenOptions {
 	defaultGiftMode?: boolean;
 }
 
 export function open(optionsOrDefaultGiftMode: OpenOptions | boolean = {}): void {
-	if (RuntimeConfigStore.isSelfHosted()) {
+	if (!shouldShowPremiumFeatures()) {
 		return;
 	}
 

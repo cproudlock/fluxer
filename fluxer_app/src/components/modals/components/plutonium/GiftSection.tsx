@@ -49,15 +49,15 @@ export const GiftSection: React.FC<GiftSectionProps> = observer(
 		purchaseDisabledTooltip,
 	}) => {
 		const {t} = useLingui();
-		const tooltipText: React.ReactNode = purchaseDisabledTooltip ?? t`Claim your account to purchase Fluxer Plutonium.`;
+		const tooltipText: React.ReactNode = purchaseDisabledTooltip ?? t`Claim your account to purchase Echowire Reverb.`;
 
 		return (
 			<div ref={giftSectionRef}>
 				<section className={styles.section}>
 					<SectionHeader
-						title={<Trans>Gift Plutonium</Trans>}
+						title={<Trans>Gift Reverb</Trans>}
 						description={
-							<Trans>Share the Plutonium experience with your friends by purchasing a gift subscription.</Trans>
+							<Trans>Share the Reverb experience with your friends by purchasing a gift subscription.</Trans>
 						}
 					/>
 					<div className={gridStyles.gridWrapper}>
@@ -92,7 +92,7 @@ export const GiftSection: React.FC<GiftSectionProps> = observer(
 						<PurchaseDisclaimer />
 						<div className={styles.scrollPromptContainer}>
 							<p className={styles.scrollPromptText}>
-								<Trans>Scroll down to view all the sweet perks you get with Plutonium</Trans>
+								<Trans>Scroll down to view all the sweet perks you get with Reverb</Trans>
 							</p>
 							<ArrowDownIcon className={styles.scrollPromptIcon} weight="bold" />
 						</div>

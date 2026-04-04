@@ -49,7 +49,7 @@ export const PremiumOnboardingNagbar = observer(({isMobile}: {isMobile: boolean}
 				isMobile={isMobile}
 				onDismiss={handleDismiss}
 				message={
-					<Trans>Welcome to Fluxer Plutonium! Explore your premium features and manage your subscription.</Trans>
+					<Trans>Welcome to Echowire Reverb! Explore your premium features and manage your subscription.</Trans>
 				}
 				actions={
 					<NagbarButton isMobile={isMobile} onClick={handleOpenPremiumSettings}>

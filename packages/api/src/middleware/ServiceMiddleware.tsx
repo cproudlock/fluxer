@@ -58,6 +58,12 @@ import {FavoriteMemeService} from '@fluxer/api/src/favorite_meme/FavoriteMemeSer
 import {GatewayRequestService} from '@fluxer/api/src/gateway/GatewayRequestService';
 import {GuildAuditLogService} from '@fluxer/api/src/guild/GuildAuditLogService';
 import {GuildDiscoveryRepository} from '@fluxer/api/src/guild/repositories/GuildDiscoveryRepository';
+import {ThreadMemberRepository} from '@fluxer/api/src/channel/repositories/ThreadMemberRepository';
+import {ThreadService} from '@fluxer/api/src/channel/services/ThreadService';
+import {ScheduledEventRepository} from '@fluxer/api/src/guild/repositories/ScheduledEventRepository';
+import {ScheduledEventService} from '@fluxer/api/src/guild/services/ScheduledEventService';
+import {SoundboardRepository} from '@fluxer/api/src/guild/repositories/SoundboardRepository';
+import {SoundboardService} from '@fluxer/api/src/guild/services/SoundboardService';
 import {GuildRepository} from '@fluxer/api/src/guild/repositories/GuildRepository';
 import {ExpressionAssetPurger} from '@fluxer/api/src/guild/services/content/ExpressionAssetPurger';
 import {GuildDiscoveryService} from '@fluxer/api/src/guild/services/GuildDiscoveryService';
@@ -89,6 +95,7 @@ import {createStorageService} from '@fluxer/api/src/infrastructure/StorageServic
 import {UnfurlerService} from '@fluxer/api/src/infrastructure/UnfurlerService';
 import {UserCacheService} from '@fluxer/api/src/infrastructure/UserCacheService';
 import {VirusScanService} from '@fluxer/api/src/infrastructure/VirusScanService';
+import {VoiceConnectionStore} from '@fluxer/api/src/infrastructure/VoiceConnectionStore';
 import {VoiceRoomStore} from '@fluxer/api/src/infrastructure/VoiceRoomStore';
 import {InstanceConfigRepository} from '@fluxer/api/src/instance/InstanceConfigRepository';
 import {SnowflakeReservationRepository} from '@fluxer/api/src/instance/SnowflakeReservationRepository';
@@ -105,6 +112,7 @@ import {
 	getInjectedS3Service,
 	getKVClient,
 	getLiveKitServiceInstance,
+	getVoiceKVClient,
 	getMediaService,
 	getSnowflakeService,
 	getVoiceAvailabilityService,
@@ -331,6 +339,7 @@ function getLiveKitWebhookService(): LiveKitWebhookService | null {
 			voiceRoomStore instanceof VoiceRoomStore;
 
 		if (hasVoiceInfrastructure && voiceTopology) {
+			const voiceConnectionStore = new VoiceConnectionStore(getVoiceKVClient());
 			_liveKitWebhookService = new LiveKitWebhookService(
 				voiceRoomStore,
 				gatewayService,
@@ -338,6 +347,7 @@ function getLiveKitWebhookService(): LiveKitWebhookService | null {
 				liveKitService,
 				voiceTopology,
 				limitConfigService,
+				voiceConnectionStore,
 			);
 		}
 	}
@@ -379,7 +389,8 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const kvActivityTracker = new KVActivityTracker(kvClient);
 	const mediaService = getMediaService();
 	const storageService = createStorageService({s3Service: getInjectedS3Service()});
-	const downloadService = new DownloadService(storageService);
+	const downloadStorageService = createStorageService();
+	const downloadService = new DownloadService(downloadStorageService);
 	const themeService = new ThemeService(storageService);
 	const csamEvidenceRetentionService = new CsamEvidenceRetentionService(storageService);
 	const gatewayService = getGatewayService();
@@ -390,6 +401,7 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const unfurlerService = new UnfurlerService(cacheService, mediaService);
 	const embedService = new EmbedService(channelRepository, cacheService, unfurlerService, mediaService, workerService);
 	const readStateService = new ReadStateService(readStateRepository, gatewayService);
+	readStateService.setKVClient(kvClient);
 	const avatarService = new AvatarService(storageService, mediaService, limitConfigService);
 	const entityAssetService = new EntityAssetService(
 		storageService,
@@ -515,6 +527,31 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 		limitConfigService,
 	);
 
+	const soundboardRepository = new SoundboardRepository();
+	const soundboardService = new SoundboardService(
+		soundboardRepository,
+		storageService,
+		snowflakeService,
+		gatewayService,
+	);
+
+	const scheduledEventRepository = new ScheduledEventRepository();
+	const scheduledEventService = new ScheduledEventService(
+		scheduledEventRepository,
+		snowflakeService,
+		gatewayService,
+	);
+
+	const threadMemberRepository = new ThreadMemberRepository();
+	const threadService = new ThreadService({
+		channelRepository,
+		threadMemberRepository,
+		channelService,
+		gatewayService,
+		snowflakeService,
+		userCacheService,
+	});
+
 	const discoveryRepository = new GuildDiscoveryRepository();
 	const discoveryService = new GuildDiscoveryService(
 		discoveryRepository,
@@ -574,6 +611,8 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 
 	const liveKitWebhookService = hasVoiceInfrastructure ? getLiveKitWebhookService() : undefined;
 
+	const voiceConnectionStore = hasVoiceInfrastructure ? new VoiceConnectionStore(getVoiceKVClient()) : undefined;
+
 	const voiceService =
 		hasVoiceInfrastructure && voiceAvailabilityService
 			? new VoiceService(
@@ -583,6 +622,7 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 					channelRepository,
 					voiceRoomStore,
 					voiceAvailabilityService,
+					voiceConnectionStore,
 				)
 			: undefined;
 
@@ -707,6 +747,7 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 		limitConfigService,
 		voiceService,
 		voiceAvailabilityService ?? undefined,
+		voiceConnectionStore,
 	);
 
 	const webhookService = new WebhookService(
@@ -791,7 +832,7 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	const donationRepository = new DonationRepository();
 	let stripeService: StripeService | null = null;
 	let donationService: DonationService | null = null;
-	if (!Config.instance.selfHosted) {
+	if (Config.stripe.enabled) {
 		stripeService = new StripeService(
 			userRepository,
 			userCacheService,
@@ -912,6 +953,9 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 	ctx.set('gatewayRequestService', gatewayRequestService);
 	ctx.set('alertService', alertService);
 	ctx.set('guildService', guildService);
+	ctx.set('soundboardService', soundboardService);
+	ctx.set('scheduledEventService', scheduledEventService);
+	ctx.set('threadService', threadService);
 	ctx.set('discoveryService', discoveryService);
 	ctx.set('emailChangeService', emailChangeService);
 	ctx.set('passwordChangeService', passwordChangeService);
