@@ -22,6 +22,7 @@ import {modal} from '@app/actions/ModalActionCreators';
 import * as ScheduledEventActionCreators from '@app/actions/ScheduledEventActionCreators';
 import * as ToastActionCreators from '@app/actions/ToastActionCreators';
 import {ConfirmModal} from '@app/components/modals/ConfirmModal';
+import {EditScheduledEventModal} from '@app/components/modals/EditScheduledEventModal';
 import * as Modal from '@app/components/modals/Modal';
 import {Button} from '@app/components/uikit/button/Button';
 import ChannelStore from '@app/stores/ChannelStore';
@@ -32,7 +33,7 @@ import UserStore from '@app/stores/UserStore';
 import MediaEngineStore from '@app/stores/voice/MediaEngineFacade';
 import {Permissions} from '@fluxer/constants/src/ChannelConstants';
 import {GuildScheduledEventEntityType, GuildScheduledEventStatus} from '@fluxer/constants/src/ScheduledEventConstants';
-import {CalendarIcon, MapPinIcon, MicrophoneIcon, TrashIcon, UsersIcon} from '@phosphor-icons/react';
+import {CalendarIcon, MapPinIcon, MicrophoneIcon, PencilSimpleIcon, TrashIcon, UsersIcon} from '@phosphor-icons/react';
 import {useLingui} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
 import {useEffect, useState} from 'react';
@@ -105,6 +106,12 @@ export const ScheduledEventDetailModal = observer(({event}: ScheduledEventDetail
 		} finally {
 			setRsvpLoading(false);
 		}
+	};
+
+	const handleEdit = () => {
+		ModalActionCreators.push(
+			modal(() => <EditScheduledEventModal event={liveEvent} />),
+		);
 	};
 
 	const handleDelete = () => {
@@ -234,10 +241,16 @@ export const ScheduledEventDetailModal = observer(({event}: ScheduledEventDetail
 			</Modal.Content>
 			<Modal.Footer>
 				{canManageEvents && (
-					<Button onClick={handleDelete} variant="danger-primary" style={{marginRight: 'auto'}}>
-						<TrashIcon size={16} />
-						{t`Delete`}
-					</Button>
+					<div style={{display: 'flex', gap: 8, marginRight: 'auto'}}>
+						<Button onClick={handleEdit} variant="secondary">
+							<PencilSimpleIcon size={16} />
+							{t`Edit`}
+						</Button>
+						<Button onClick={handleDelete} variant="danger-primary">
+							<TrashIcon size={16} />
+							{t`Delete`}
+						</Button>
+					</div>
 				)}
 				<Button onClick={ModalActionCreators.pop} variant="secondary">
 					{t`Close`}
