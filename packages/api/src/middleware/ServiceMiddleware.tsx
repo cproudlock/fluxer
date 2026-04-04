@@ -540,6 +540,7 @@ export const ServiceMiddleware = createMiddleware<HonoEnv>(async (ctx, next) => 
 		scheduledEventRepository,
 		snowflakeService,
 		gatewayService,
+		avatarService,
 	);
 
 	const threadMemberRepository = new ThreadMemberRepository();

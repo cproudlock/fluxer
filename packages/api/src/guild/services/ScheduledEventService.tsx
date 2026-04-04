@@ -21,6 +21,7 @@ import type {ChannelID, GuildID, ScheduledEventID, UserID} from '@fluxer/api/src
 import {createScheduledEventID} from '@fluxer/api/src/BrandedTypes';
 import type {GuildScheduledEventRow} from '@fluxer/api/src/database/types/ScheduledEventTypes';
 import type {ScheduledEventRepository} from '@fluxer/api/src/guild/repositories/ScheduledEventRepository';
+import type {AvatarService} from '@fluxer/api/src/infrastructure/AvatarService';
 import type {IGatewayService} from '@fluxer/api/src/infrastructure/IGatewayService';
 import type {SnowflakeService} from '@fluxer/api/src/infrastructure/SnowflakeService';
 import {requirePermission} from '@fluxer/api/src/utils/PermissionUtils';
@@ -68,6 +69,7 @@ export class ScheduledEventService {
 		private readonly repository: ScheduledEventRepository,
 		private readonly snowflakeService: SnowflakeService,
 		private readonly gatewayService: IGatewayService,
+		private readonly avatarService: AvatarService,
 	) {}
 
 	async listEvents(params: {userId: UserID; guildId: GuildID}): Promise<Array<GuildScheduledEventResponse>> {
@@ -99,6 +101,7 @@ export class ScheduledEventService {
 		entityType: number;
 		channelId?: ChannelID | null;
 		location?: string | null;
+		coverImage?: string | null;
 	}): Promise<GuildScheduledEventResponse> {
 		await requirePermission(this.gatewayService, {
 			guildId: params.guildId,
@@ -122,6 +125,16 @@ export class ScheduledEventService {
 		const eventId = createScheduledEventID(await this.snowflakeService.generate());
 		const now = new Date();
 
+		let coverImageHash: string | null = null;
+		if (params.coverImage) {
+			coverImageHash = await this.avatarService.uploadAvatar({
+				prefix: 'banners',
+				entityId: eventId,
+				errorPath: 'cover_image',
+				base64Image: params.coverImage,
+			});
+		}
+
 		const row: GuildScheduledEventRow = {
 			guild_id: params.guildId,
 			event_id: eventId,
@@ -133,7 +146,7 @@ export class ScheduledEventService {
 			status: GuildScheduledEventStatus.SCHEDULED,
 			channel_id: params.channelId ?? null,
 			location: params.location ?? null,
-			cover_image: null,
+			cover_image: coverImageHash,
 			creator_id: params.userId,
 			user_count: 0,
 			created_at: now,
@@ -163,6 +176,7 @@ export class ScheduledEventService {
 		channelId?: ChannelID | null;
 		location?: string | null;
 		status?: number;
+		coverImage?: string | null;
 	}): Promise<GuildScheduledEventResponse> {
 		await requirePermission(this.gatewayService, {
 			guildId: params.guildId,
@@ -184,6 +198,17 @@ export class ScheduledEventService {
 		if (params.channelId !== undefined) patch.channel_id = params.channelId;
 		if (params.location !== undefined) patch.location = params.location;
 		if (params.status !== undefined) patch.status = params.status;
+
+		if (params.coverImage !== undefined) {
+			const coverImageHash = await this.avatarService.uploadAvatar({
+				prefix: 'banners',
+				entityId: params.eventId,
+				errorPath: 'cover_image',
+				previousKey: existing.cover_image,
+				base64Image: params.coverImage,
+			});
+			patch.cover_image = coverImageHash;
+		}
 
 		await this.repository.update(params.guildId, params.eventId, patch);
 

@@ -141,7 +141,7 @@ export class LiveKitWebhookService {
 					error_type: error instanceof Error ? error.name : 'Unknown',
 				},
 			});
-			Logger.debug({error}, 'Error processing LiveKit webhook');
+			Logger.info({error: error instanceof Error ? error.message : String(error), receiverCount: this.receivers.size}, 'LiveKit webhook verification failed');
 			return {status: 400, body: 'Invalid webhook'};
 		}
 	}

@@ -30,6 +30,7 @@ import PermissionStore from '@app/stores/PermissionStore';
 import ScheduledEventStore from '@app/stores/ScheduledEventStore';
 import type {ScheduledEvent} from '@app/stores/ScheduledEventStore';
 import UserStore from '@app/stores/UserStore';
+import * as AvatarUtils from '@app/utils/AvatarUtils';
 import MediaEngineStore from '@app/stores/voice/MediaEngineFacade';
 import {Permissions} from '@fluxer/constants/src/ChannelConstants';
 import {GuildScheduledEventEntityType, GuildScheduledEventStatus} from '@fluxer/constants/src/ScheduledEventConstants';
@@ -201,6 +202,15 @@ export const ScheduledEventDetailModal = observer(({event}: ScheduledEventDetail
 		<Modal.Root size="small" centered>
 			<Modal.Header title={liveEvent.name} />
 			<Modal.Content>
+				{liveEvent.cover_image && (
+					<div style={{marginBottom: '1rem', borderRadius: 8, overflow: 'hidden'}}>
+						<img
+							src={AvatarUtils.getGuildBannerURL({id: liveEvent.id, banner: liveEvent.cover_image})}
+							alt={liveEvent.name}
+							style={{width: '100%', maxHeight: 200, objectFit: 'cover', display: 'block'}}
+						/>
+					</div>
+				)}
 				<div style={{display: 'flex', alignItems: 'center', gap: 8, marginBottom: '1rem'}}>
 					<span style={{
 						padding: '2px 8px',

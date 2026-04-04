@@ -29,10 +29,10 @@ import {Button} from '@app/components/uikit/button/Button';
 import ChannelStore from '@app/stores/ChannelStore';
 import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
 import {GuildScheduledEventEntityType} from '@fluxer/constants/src/ScheduledEventConstants';
-import {CalendarIcon, MapPinIcon, SpeakerHighIcon, UsersIcon} from '@phosphor-icons/react';
+import {CalendarIcon, ImageIcon, MapPinIcon, SpeakerHighIcon, UsersIcon, XCircleIcon} from '@phosphor-icons/react';
 import {useLingui} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 
 type Step = 'location' | 'info' | 'review';
 
@@ -106,6 +106,9 @@ export const CreateScheduledEventModal = observer(({guildId}: {guildId: string})
 	const [startTime, setStartTime] = useState(defaults.time);
 	const [endDate, setEndDate] = useState('');
 	const [endTime, setEndTime] = useState('');
+	const [coverImage, setCoverImage] = useState<string | null>(null);
+	const [coverPreview, setCoverPreview] = useState<string | null>(null);
+	const coverInputRef = useRef<HTMLInputElement>(null);
 
 	const voiceChannels = ChannelStore.getGuildChannels(guildId).filter(
 		(ch) => ch.type === ChannelTypes.GUILD_VOICE,
@@ -116,6 +119,24 @@ export const CreateScheduledEventModal = observer(({guildId}: {guildId: string})
 	}
 
 	const selectedChannel = voiceChannels.find((ch) => ch.id === channelId);
+
+	const handleCoverImagePick = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const file = e.target.files?.[0];
+		if (!file) return;
+		const reader = new FileReader();
+		reader.onload = () => {
+			const dataUrl = reader.result as string;
+			setCoverImage(dataUrl);
+			setCoverPreview(dataUrl);
+		};
+		reader.readAsDataURL(file);
+		e.target.value = '';
+	};
+
+	const handleCoverImageRemove = () => {
+		setCoverImage(null);
+		setCoverPreview(null);
+	};
 
 	const canProceedFromLocation =
 		entityType === GuildScheduledEventEntityType.VOICE
@@ -138,6 +159,7 @@ export const CreateScheduledEventModal = observer(({guildId}: {guildId: string})
 				entity_type: entityType,
 				channel_id: entityType === GuildScheduledEventEntityType.VOICE ? channelId : null,
 				location: entityType === GuildScheduledEventEntityType.EXTERNAL ? location : null,
+				cover_image: coverImage,
 			}) as {id?: string} | undefined;
 			ModalActionCreators.pop();
 			if (result?.id) {
@@ -332,6 +354,69 @@ export const CreateScheduledEventModal = observer(({guildId}: {guildId: string})
 								maxLength={1000}
 								rows={3}
 							/>
+						</div>
+
+						<div style={{marginTop: '1rem'}}>
+							<label style={{display: 'block', marginBottom: '0.5rem', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--header-secondary)'}}>
+								{t`Cover Image`}
+							</label>
+							<input
+								ref={coverInputRef}
+								type="file"
+								accept="image/jpeg,image/png,image/webp"
+								onChange={handleCoverImagePick}
+								style={{display: 'none'}}
+							/>
+							{coverPreview ? (
+								<div style={{position: 'relative', borderRadius: 8, overflow: 'hidden'}}>
+									<img
+										src={coverPreview}
+										alt={t`Cover preview`}
+										style={{width: '100%', maxHeight: 160, objectFit: 'cover', display: 'block', borderRadius: 8}}
+									/>
+									<button
+										type="button"
+										onClick={handleCoverImageRemove}
+										style={{
+											position: 'absolute',
+											top: 8,
+											right: 8,
+											background: 'rgba(0,0,0,0.6)',
+											border: 'none',
+											borderRadius: '50%',
+											padding: 4,
+											cursor: 'pointer',
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+											color: 'white',
+										}}
+									>
+										<XCircleIcon size={20} />
+									</button>
+								</div>
+							) : (
+								<button
+									type="button"
+									onClick={() => coverInputRef.current?.click()}
+									style={{
+										display: 'flex',
+										alignItems: 'center',
+										gap: 8,
+										padding: '12px 16px',
+										borderRadius: 8,
+										border: '2px dashed var(--background-modifier-accent)',
+										background: 'transparent',
+										color: 'var(--text-muted)',
+										cursor: 'pointer',
+										width: '100%',
+										fontSize: '0.875rem',
+									}}
+								>
+									<ImageIcon size={20} />
+									{t`Upload Cover Image`}
+								</button>
+							)}
 						</div>
 					</div>
 				)}

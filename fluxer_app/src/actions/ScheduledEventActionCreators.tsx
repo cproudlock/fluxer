@@ -40,6 +40,7 @@ export async function createEvent(
 		entity_type: number;
 		channel_id?: string | null;
 		location?: string | null;
+		cover_image?: string | null;
 	},
 ) {
 	const response = await http.post<ScheduledEvent>({url: Endpoints.GUILD_SCHEDULED_EVENTS(guildId), body: data});
@@ -58,6 +59,7 @@ export async function updateEvent(
 		channel_id?: string | null;
 		location?: string | null;
 		status?: number;
+		cover_image?: string | null;
 	},
 ) {
 	const response = await http.patch<ScheduledEvent>({url: Endpoints.GUILD_SCHEDULED_EVENT(guildId, eventId), body: data});

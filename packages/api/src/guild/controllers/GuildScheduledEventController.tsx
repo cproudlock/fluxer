@@ -87,6 +87,7 @@ export function GuildScheduledEventController(app: HonoApp) {
 				entityType: body.entity_type,
 				channelId: body.channel_id ? createChannelID(body.channel_id) : null,
 				location: body.location,
+				coverImage: body.cover_image,
 			});
 			return ctx.json(event, 201);
 		},
@@ -152,6 +153,7 @@ export function GuildScheduledEventController(app: HonoApp) {
 				channelId: body.channel_id ? createChannelID(body.channel_id) : body.channel_id === null ? null : undefined,
 				location: body.location,
 				status: body.status,
+				coverImage: body.cover_image,
 			});
 			return ctx.json(event);
 		},

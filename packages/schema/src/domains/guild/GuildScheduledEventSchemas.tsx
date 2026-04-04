@@ -55,6 +55,7 @@ export const GuildScheduledEventCreateRequest = z.object({
 	entity_type: z.union([z.literal(1), z.literal(2)]).describe('The type of event (1 = voice, 2 = external)'),
 	channel_id: SnowflakeType.nullish().describe('The voice channel ID (required for voice events)'),
 	location: createStringType(1, MAX_EVENT_LOCATION_LENGTH).nullish().describe('The location (required for external events)'),
+	cover_image: z.string().nullish().describe('Base64-encoded cover image data URI, or null to remove'),
 });
 
 export type GuildScheduledEventCreateRequest = z.infer<typeof GuildScheduledEventCreateRequest>;
@@ -68,6 +69,7 @@ export const GuildScheduledEventUpdateRequest = z.object({
 	channel_id: SnowflakeType.nullish().describe('The voice channel ID'),
 	location: createStringType(1, MAX_EVENT_LOCATION_LENGTH).nullish().describe('The location'),
 	status: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]).optional().describe('The status of the event'),
+	cover_image: z.string().nullish().describe('Base64-encoded cover image data URI, or null to remove'),
 });
 
 export type GuildScheduledEventUpdateRequest = z.infer<typeof GuildScheduledEventUpdateRequest>;
