@@ -18,7 +18,9 @@
  */
 
 import {createChannelID, createGuildID, createMessageID, createUserID, type UserID} from '@fluxer/api/src/BrandedTypes';
+import {Config} from '@fluxer/api/src/Config';
 import {Logger} from '@fluxer/api/src/Logger';
+import {sanitizeMentionContent, sendPlatformAwarePush} from '@fluxer/api/src/worker/tasks/utils/PushNotificationUtils';
 import {getWorkerDependencies} from '@fluxer/api/src/worker/WorkerContext';
 import type {WorkerTaskHandler} from '@fluxer/worker/src/contracts/WorkerTask';
 import {z} from 'zod';
@@ -142,6 +144,44 @@ const handleMentions: WorkerTaskHandler = async (payload, helpers) => {
 				is_role: message.mentionedRoleIds.size > 0,
 			})),
 		);
+	}
+
+	if (Config.fcm.enabled) {
+		try {
+			const {fcmService, pushDeviceRepository} = getWorkerDependencies();
+			if (fcmService && pushDeviceRepository) {
+				const deviceMap = await pushDeviceRepository.getBulkPushDevices(Array.from(uniqueUserIds));
+				const allDevices: Array<import('@fluxer/api/src/models/PushDevice').PushDevice> = [];
+				for (const devices of deviceMap.values()) {
+					for (const device of devices) {
+						allDevices.push(device);
+					}
+				}
+
+				if (allDevices.length > 0) {
+					const sanitizedContent = message.content
+						? await sanitizeMentionContent(message.content, message.mentionedUserIds, userRepository)
+						: null;
+					const contentPreview = sanitizedContent
+						? sanitizedContent.substring(0, 200)
+						: 'Sent a message';
+
+					const mentionTitle = guildId ? 'New Mention' : 'New Message';
+					await sendPlatformAwarePush(fcmService, allDevices, {
+						title: mentionTitle,
+						body: contentPreview,
+						data: {
+							type: 'mention',
+							channel_id: channelId.toString(),
+							message_id: messageId.toString(),
+							...(guildId ? {guild_id: guildId.toString()} : {}),
+						},
+					}, pushDeviceRepository);
+				}
+			}
+		} catch (error) {
+			Logger.error({error, channelId, guildId}, 'handleMentions: FCM push failed (non-fatal)');
+		}
 	}
 
 	Logger.debug(

@@ -18,6 +18,7 @@
  */
 
 import type {UserData} from '@app/lib/AccountStorage';
+import http from '@app/lib/HttpClient';
 import SessionManager, {type Account, SessionExpiredError} from '@app/lib/SessionManager';
 import {Routes} from '@app/Routes';
 import * as PushSubscriptionService from '@app/services/push/PushSubscriptionService';
@@ -151,6 +152,20 @@ class AccountManager {
 	}
 
 	async logout(): Promise<void> {
+		// Unregister push subscriptions and FCM tokens before logging out
+		try {
+			if (this.shouldManagePushSubscriptions()) {
+				await PushSubscriptionService.unregisterAllPushSubscriptions();
+			}
+			// Delete FCM token for native mobile apps (iOS/Android)
+			const fcmToken = localStorage.getItem('echowire_fcm_token');
+			if (fcmToken) {
+				await http.delete({url: '/users/@me/fcm/tokens', body: {fcm_token: fcmToken}});
+				localStorage.removeItem('echowire_fcm_token');
+			}
+		} catch {
+			// Best-effort — don't block logout if this fails
+		}
 		await SessionManager.logout();
 		RouterUtils.replaceWith('/login');
 	}
