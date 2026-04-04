@@ -169,6 +169,18 @@ export const PackIdStickerIdParam = z.object({
 });
 export type PackIdStickerIdParam = z.infer<typeof PackIdStickerIdParam>;
 
+export const GuildIdSoundIdParam = z.object({
+	guild_id: SnowflakeType.describe('The ID of the guild'),
+	sound_id: SnowflakeType.describe('The ID of the soundboard sound'),
+});
+export type GuildIdSoundIdParam = z.infer<typeof GuildIdSoundIdParam>;
+
+export const GuildIdEventIdParam = z.object({
+	guild_id: SnowflakeType.describe('The ID of the guild'),
+	event_id: SnowflakeType.describe('The ID of the scheduled event'),
+});
+export type GuildIdEventIdParam = z.infer<typeof GuildIdEventIdParam>;
+
 export const GiftCodeParam = z.object({
 	code: createStringType(1, 32).describe('The gift code'),
 });

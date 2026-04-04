@@ -195,4 +195,54 @@ export const GuildRateLimitConfigs = {
 		bucket: 'guild:sticker:delete::guild_id',
 		config: {limit: 20, windowMs: ms('10 seconds')},
 	} as RouteRateLimitConfig,
+
+	GUILD_SOUNDBOARD_LIST: {
+		bucket: 'guild:soundboard:list::guild_id',
+		config: {limit: 60, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SOUNDBOARD_CREATE: {
+		bucket: 'guild:soundboard:create::guild_id',
+		config: {limit: 10, windowMs: ms('1 minute')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SOUNDBOARD_UPDATE: {
+		bucket: 'guild:soundboard:update::guild_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SOUNDBOARD_DELETE: {
+		bucket: 'guild:soundboard:delete::guild_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SOUNDBOARD_PLAY: {
+		bucket: 'guild:soundboard:play::user_id',
+		config: {limit: 5, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SCHEDULED_EVENT_LIST: {
+		bucket: 'guild:event:list::guild_id',
+		config: {limit: 60, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SCHEDULED_EVENT_CREATE: {
+		bucket: 'guild:event:create::guild_id',
+		config: {limit: 10, windowMs: ms('1 minute')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SCHEDULED_EVENT_UPDATE: {
+		bucket: 'guild:event:update::guild_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SCHEDULED_EVENT_DELETE: {
+		bucket: 'guild:event:delete::guild_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+
+	GUILD_SCHEDULED_EVENT_RSVP: {
+		bucket: 'guild:event:rsvp::user_id',
+		config: {limit: 10, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
 } as const;
