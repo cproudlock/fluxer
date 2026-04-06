@@ -187,15 +187,20 @@ export function computePermissions(
 export function isRoleHigher(guild: Guild, userId: string, a: Role | null, b: Role | null): boolean {
 	if (guild.owner_id === userId) return true;
 	if (a == null) return false;
+	if (b == null) return true;
 
-	const guildRecord = GuildStore.getGuild(guild.id);
-	if (!guildRecord) return false;
-
-	const rolesList = Object.values(guildRecord.roles)
-		.sort((r1, r2) => r1.position - r2.position)
-		.map((role) => role.id);
-
-	return rolesList.indexOf(a.id) > (b != null ? rolesList.indexOf(b.id) : -1);
+	// Compare positions directly. If positions differ, higher position wins.
+	// If positions are equal, the role with the lower (older) ID wins as a stable tiebreaker.
+	// This matches the backend gateway logic in check_can_manage_roles after the equal-position fix.
+	if (a.position !== b.position) {
+		return a.position > b.position;
+	}
+	// Equal positions: compare role IDs as a tiebreaker (lower ID = older = higher precedence)
+	try {
+		return BigInt(a.id) < BigInt(b.id);
+	} catch {
+		return a.id < b.id;
+	}
 }
 
 export function getHighestRole(guild: Guild, userId: string): Role | null {
