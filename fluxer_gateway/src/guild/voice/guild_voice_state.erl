@@ -105,7 +105,7 @@ update_voice_state_data(
                 <<"version">> => OldVersion + 1
             },
             NewVoiceStates = maps:put(ConnectionId, UpdatedVoiceState, VoiceStates),
-            NewState = voice_state_utils:set_voice_states(NewVoiceStates, State),
+            NewState = maps:put(voice_states, NewVoiceStates, State),
             case IsChannelChange of
                 true ->
                     DisconnectState = ExistingVoiceState#{

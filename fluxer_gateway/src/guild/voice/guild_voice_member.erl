@@ -56,7 +56,7 @@ update_member_voice(Request, State) ->
                     ),
                     {NewVoiceStates, UpdatedStates} =
                         update_voice_states(UserVoiceStates, VoiceStates, Mute, Deaf),
-                    FinalState = voice_state_utils:set_voice_states(NewVoiceStates, StateWithUpdatedMember),
+                    FinalState = maps:put(voice_states, NewVoiceStates, StateWithUpdatedMember),
                     broadcast_voice_state_updates(UpdatedStates, FinalState),
                     {reply, #{success => true}, FinalState}
             end

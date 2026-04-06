@@ -87,7 +87,7 @@ handle_voice_disconnect(ConnectionId, _SessionId, UserId, VoiceStates0, State) -
                         {GuildId, ChannelId} ->
                             maybe_force_disconnect(GuildId, ChannelId, UserId, ConnectionId, State),
                             NewVoiceStates = maps:remove(ConnectionId, VoiceStates),
-                            NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State),
+                            NewState0 = maps:put(voice_states, NewVoiceStates, State),
                             NewState = clear_recently_disconnected(ConnectionId, NewState0),
                             voice_state_utils:broadcast_disconnects(
                                 #{ConnectionId => OldVoiceState}, NewState
@@ -142,7 +142,7 @@ disconnect_voice_user(#{user_id := UserId} = Request, State) ->
                     NewVoiceStates = voice_state_utils:drop_voice_states(
                         UserVoiceStates, VoiceStates
                     ),
-                    NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State),
+                    NewState0 = maps:put(voice_states, NewVoiceStates, State),
                     NewState = maps:fold(
                         fun(ConnId, _, AccState) ->
                             clear_recently_disconnected(ConnId, AccState)
@@ -166,7 +166,7 @@ disconnect_voice_user(#{user_id := UserId} = Request, State) ->
                         VoiceStateUserId when VoiceStateUserId =:= UserId ->
                             maybe_force_disconnect_voice_state(SpecificConnection, VoiceState, State),
                             NewVoiceStates = maps:remove(SpecificConnection, VoiceStates),
-                            NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State),
+                            NewState0 = maps:put(voice_states, NewVoiceStates, State),
                             NewState = clear_recently_disconnected(SpecificConnection, NewState0),
                             voice_state_utils:broadcast_disconnects(
                                 #{SpecificConnection => VoiceState}, NewState
@@ -220,7 +220,7 @@ disconnect_voice_user_if_in_channel(
                     NewVoiceStates = voice_state_utils:drop_voice_states(
                         UserVoiceStates, VoiceStates
                     ),
-                    NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State),
+                    NewState0 = maps:put(voice_states, NewVoiceStates, State),
                     NewState = cache_recently_disconnected(UserVoiceStates, NewState0),
                     voice_state_utils:broadcast_disconnects(UserVoiceStates, NewState),
                     {reply, #{success => true}, NewState}
@@ -241,7 +241,7 @@ disconnect_voice_user_if_in_channel(
                     of
                         {UserId, ExpectedChannelId} ->
                             NewVoiceStates = maps:remove(ConnId, VoiceStates),
-                            NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State),
+                            NewState0 = maps:put(voice_states, NewVoiceStates, State),
                             NewState = cache_recently_disconnected(
                                 #{ConnId => VoiceState}, NewState0
                             ),
@@ -300,7 +300,7 @@ disconnect_all_voice_users_in_channel(#{channel_id := ChannelId}, State) ->
         Count ->
             maybe_force_disconnect_voice_states(ChannelVoiceStates, State1),
             NewVoiceStates = voice_state_utils:drop_voice_states(ChannelVoiceStates, VoiceStates),
-            NewState0 = voice_state_utils:set_voice_states(NewVoiceStates, State1),
+            NewState0 = maps:put(voice_states, NewVoiceStates, State1),
             NewState = clear_recently_disconnected_for_channel(ChannelId, NewState0),
             voice_state_utils:broadcast_disconnects(ChannelVoiceStates, NewState),
             {reply, #{success => true, disconnected_count => Count}, NewState}

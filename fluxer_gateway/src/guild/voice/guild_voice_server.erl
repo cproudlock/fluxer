@@ -23,7 +23,6 @@
     stop/1,
     lookup/1,
     get_cached_voice_states_list/1,
-    cache_voice_states/2,
     fetch_keydb_voice_states/1
 ]).
 

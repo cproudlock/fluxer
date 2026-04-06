@@ -149,7 +149,7 @@ handle_disconnect_move(ConnectionsToMove, UserId, VoiceStates, State) ->
         VoiceStates,
         ConnectionsToMove
     ),
-    NewState = voice_state_utils:set_voice_states(NewVoiceStates, State),
+    NewState = maps:put(voice_states, NewVoiceStates, State),
     spawn(fun() ->
         maps:foreach(
             fun(_ConnId, VoiceState) ->
@@ -236,7 +236,7 @@ execute_move(ConnectionsToMove, ChannelIdValue, UserId, VoiceStates, State) ->
         VoiceStates,
         ConnectionsToMove
     ),
-    StateAfterDisconnect = voice_state_utils:set_voice_states(NewVoiceStates, StatePending3),
+    StateAfterDisconnect = maps:put(voice_states, NewVoiceStates, StatePending3),
     StateWithVirtualAccess = maybe_add_virtual_access(UserId, ChannelIdValue, StateAfterDisconnect),
     spawn(fun() ->
         maps:foreach(

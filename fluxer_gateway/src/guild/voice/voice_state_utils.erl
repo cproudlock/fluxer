@@ -21,7 +21,6 @@
 
 -export([
     voice_states/1,
-    set_voice_states/2,
     ensure_voice_states/1,
     voice_state_user_id/1,
     voice_state_channel_id/1,
@@ -54,18 +53,6 @@ voice_states(State) when is_map(State) ->
         Map when is_map(Map) -> Map;
         _ -> #{}
     end.
-
-%% Updates voice_states in the guild state AND the ETS cache used for new
-%% GUILD_CREATE payloads. Always use this instead of maps:put(voice_states, ...)
-%% to keep the ETS cache in sync. Without this, users joining a guild after
-%% someone is already in voice won't see them in the channel.
--spec set_voice_states(voice_state_map(), guild_state()) -> guild_state().
-set_voice_states(VoiceStates, State) when is_map(State) ->
-    case maps:get(guild_id, State, undefined) of
-        undefined -> ok;
-        GuildId -> guild_voice_server:cache_voice_states(GuildId, VoiceStates)
-    end,
-    maps:put(voice_states, VoiceStates, State).
 
 -spec ensure_voice_states(term()) -> voice_state_map().
 ensure_voice_states(Map) when is_map(Map) ->
