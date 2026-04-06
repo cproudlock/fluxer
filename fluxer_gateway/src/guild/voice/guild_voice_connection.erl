@@ -273,7 +273,7 @@ restore_pending_connection(ConnectionId, PendingConnections, PendingData, VoiceS
             NewPendingConnections = maps:remove(ConnectionId, PendingConnections),
             StateWithoutPending = maps:put(pending_voice_connections, NewPendingConnections, State),
             UpdatedVoiceStates = maps:put(ConnectionId, VoiceState, VoiceStates),
-            StateWithVoiceStates = maps:put(voice_states, UpdatedVoiceStates, StateWithoutPending),
+            StateWithVoiceStates = voice_state_utils:set_voice_states(UpdatedVoiceStates, StateWithoutPending),
             StateCleared = clear_virtual_access_flags_from_voice_state(
                 VoiceState, StateWithVoiceStates
             ),
@@ -363,7 +363,7 @@ handle_client_channel_move(
     State1 = guild_virtual_channel_access:mark_preserve(UserId, ChannelIdValue, State0),
     State2 = guild_virtual_channel_access:mark_move_pending(UserId, ChannelIdValue, State1),
     NewVoiceStates = maps:remove(ConnectionId, VoiceStates),
-    State3 = maps:put(voice_states, NewVoiceStates, State2),
+    State3 = voice_state_utils:set_voice_states(NewVoiceStates, State2),
     DisconnectVoiceState = maps:put(<<"channel_id">>, null, ExistingVoiceState),
     guild_voice_broadcast:broadcast_voice_state_update(
         DisconnectVoiceState, State3, OldChannelIdBin
@@ -981,8 +981,8 @@ confirm_voice_connection_from_livekit(Request, State) ->
                                     {reply, #{success => true}, StateWithoutPending};
                                 _ ->
                                     UpdatedVoiceStates = maps:put(ConnectionId, VoiceState, VoiceStates),
-                                    StateWithVoiceStates = maps:put(
-                                        voice_states, UpdatedVoiceStates, StateWithoutPending
+                                    StateWithVoiceStates = voice_state_utils:set_voice_states(
+                                        UpdatedVoiceStates, StateWithoutPending
                                     ),
                                     StateCleared = clear_virtual_access_flags_from_voice_state(
                                         VoiceState, StateWithVoiceStates
@@ -1036,7 +1036,7 @@ restore_recently_disconnected(ConnectionId, VoiceState, Cache, State) ->
     VoiceStates = voice_state_utils:voice_states(State),
     UpdatedVoiceStates = maps:put(ConnectionId, VoiceState, VoiceStates),
     NewCache = maps:remove(ConnectionId, Cache),
-    State0 = maps:put(voice_states, UpdatedVoiceStates, State),
+    State0 = voice_state_utils:set_voice_states(UpdatedVoiceStates, State),
     State1 = maps:put(recently_disconnected_voice_states, NewCache, State0),
     ChannelIdBin = maps:get(<<"channel_id">>, VoiceState, null),
     guild_voice_broadcast:broadcast_voice_state_update(VoiceState, State1, ChannelIdBin),
