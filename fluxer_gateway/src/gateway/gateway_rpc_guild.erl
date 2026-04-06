@@ -676,21 +676,27 @@ with_guild(GuildId, Fun, NotFoundError) ->
 with_voice_server(GuildId, Fun) ->
     case get_guild_pid(GuildId) of
         {ok, GuildPid} ->
-            VoicePid = resolve_voice_pid(GuildId, GuildPid),
-            Fun(VoicePid, GuildPid);
+            case resolve_voice_pid(GuildId, GuildPid) of
+                undefined ->
+                    throw({error, <<"voice_server_not_found">>});
+                VoicePid ->
+                    Fun(VoicePid, GuildPid)
+            end;
         _ ->
             throw({error, <<"guild_not_found">>})
     end.
 
--spec resolve_voice_pid(integer(), pid()) -> pid().
-resolve_voice_pid(GuildId, FallbackGuildPid) ->
+-spec resolve_voice_pid(integer(), pid()) -> pid() | undefined.
+resolve_voice_pid(GuildId, _FallbackGuildPid) ->
     case guild_voice_server:lookup(GuildId) of
         {ok, VoicePid} ->
-            logger:info("resolve_voice_pid: guild=~p ets=~p guild_pid=~p", [GuildId, VoicePid, FallbackGuildPid]),
             VoicePid;
         {error, not_found} ->
-            logger:info("resolve_voice_pid: guild=~p NOT FOUND, falling back to guild_pid=~p", [GuildId, FallbackGuildPid]),
-            FallbackGuildPid
+            %% Don't fall back to guild_pid - the guild process doesn't handle
+            %% voice messages and its catch-all returns 'ok' which causes
+            %% case_clause crashes in callers expecting voice reply tuples.
+            logger:warning("resolve_voice_pid: voice_server not found for guild=~p", [GuildId]),
+            undefined
     end.
 
 -spec get_guild_pid(integer()) -> {ok, pid()} | error.

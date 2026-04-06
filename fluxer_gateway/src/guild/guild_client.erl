@@ -70,23 +70,27 @@ voice_state_update(GuildPid, Request, Timeout) ->
 -spec voice_state_update(pid(), integer(), map(), timeout()) -> voice_state_update_result().
 voice_state_update(GuildPid, GuildId, Request, Timeout) ->
     ensure_table(),
-    TargetPid = resolve_voice_pid(GuildId, GuildPid),
-    case acquire_slot(TargetPid) of
-        ok ->
-            try
-                execute_with_circuit_breaker(TargetPid, Request, Timeout)
-            after
-                release_slot(TargetPid)
-            end;
-        {error, Reason} ->
-            {error, Reason}
+    case resolve_voice_pid(GuildId, GuildPid) of
+        undefined ->
+            {error, voice_server_not_found};
+        TargetPid ->
+            case acquire_slot(TargetPid) of
+                ok ->
+                    try
+                        execute_with_circuit_breaker(TargetPid, Request, Timeout)
+                    after
+                        release_slot(TargetPid)
+                    end;
+                {error, Reason} ->
+                    {error, Reason}
+            end
     end.
 
--spec resolve_voice_pid(integer(), pid()) -> pid().
-resolve_voice_pid(GuildId, FallbackGuildPid) ->
+-spec resolve_voice_pid(integer(), pid()) -> pid() | undefined.
+resolve_voice_pid(GuildId, _FallbackGuildPid) ->
     case guild_voice_server:lookup(GuildId) of
         {ok, VoicePid} -> VoicePid;
-        {error, not_found} -> FallbackGuildPid
+        {error, not_found} -> undefined
     end.
 
 -spec execute_with_circuit_breaker(pid(), map(), timeout()) -> voice_state_update_result().
