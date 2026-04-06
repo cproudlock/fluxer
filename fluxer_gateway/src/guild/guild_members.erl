@@ -402,7 +402,15 @@ check_can_manage_roles(UserId, RoleId, _OwnerId, Data, State) ->
                     false;
                 Role ->
                     UserMax = guild_permissions:get_max_role_position(UserId, State),
-                    UserMax > role_position(Role)
+                    RolePos = role_position(Role),
+                    %% Allow if user's max role is strictly higher, OR if positions are equal
+                    %% and the user has a role at that position with a lower ID (tiebreaker).
+                    %% This matches the can_manage_role (singular) logic and fixes the upstream
+                    %% bug where admins with roles at the same position as a target role couldn't
+                    %% assign it.
+                    UserMax > RolePos orelse
+                        (UserMax =:= RolePos andalso
+                            compare_role_ids_for_equal_position(UserId, RoleId, State))
             end
     end.
 
