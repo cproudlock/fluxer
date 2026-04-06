@@ -197,15 +197,7 @@ handle_call({confirm_voice_connection_from_livekit, Request}, _From, #{guild_id 
             ),
             %% Broadcast confirmation to other gateways so they clear their pending
             publish_pending_confirmed(GuildId, ConnectionId),
-            {reply, Reply, FinalState};
-        {reply, ErrorReply, NewGuildState} ->
-            %% Error response - still apply state changes (e.g. cleared pending) and reply
-            logger:debug(
-                "voice_server confirm error: conn=~s reply=~p",
-                [ConnectionId, ErrorReply]
-            ),
-            FinalState = apply_guild_state(NewGuildState, State),
-            {reply, ErrorReply, FinalState}
+            {reply, Reply, FinalState}
     end;
 
 handle_call({move_member, Request}, _From, State) ->
