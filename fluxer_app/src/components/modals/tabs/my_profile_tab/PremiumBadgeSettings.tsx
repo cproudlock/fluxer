@@ -59,17 +59,17 @@ export const PremiumBadgeSettings = observer(
 			<div>
 				<div className={styles.header}>
 					<h2 className={styles.title}>
-						<Trans>Plutonium Badge Privacy</Trans>
+						<Trans>Reverb Badge Privacy</Trans>
 					</h2>
 					<p className={styles.description}>
-						<Trans>Control how your Plutonium badge is displayed to others</Trans>
+						<Trans>Control how your Reverb badge is displayed to others</Trans>
 					</p>
 				</div>
 
 				<div className={styles.switches}>
 					<Switch
-						label={t(i18n)`Hide Plutonium badge entirely`}
-						description={t(i18n)`Completely hide your Plutonium badge from other users`}
+						label={t(i18n)`Hide Reverb badge entirely`}
+						description={t(i18n)`Completely hide your Reverb badge from other users`}
 						value={premiumBadgeHidden}
 						onChange={(value) => onToggle('premium_badge_hidden', value)}
 					/>
@@ -77,10 +77,10 @@ export const PremiumBadgeSettings = observer(
 					<Switch
 						label={
 							premiumSince
-								? t(i18n)`Hide Plutonium purchase date (${DateUtils.getFormattedShortDate(premiumSince)})`
-								: t(i18n)`Hide Plutonium purchase date`
+								? t(i18n)`Hide Reverb purchase date (${DateUtils.getFormattedShortDate(premiumSince)})`
+								: t(i18n)`Hide Reverb purchase date`
 						}
-						description={t(i18n)`Remove when you first bought Plutonium from your badge`}
+						description={t(i18n)`Remove when you first bought Reverb from your badge`}
 						value={premiumBadgeTimestampHidden}
 						onChange={(value) => onToggle('premium_badge_timestamp_hidden', value)}
 						disabled={premiumBadgeHidden}

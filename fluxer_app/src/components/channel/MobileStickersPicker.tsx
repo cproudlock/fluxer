@@ -142,7 +142,7 @@ export const MobileStickersPicker = observer(
 			stickerCommunityCount === 1 ? t`${stickerCommunityCount} community` : t`${stickerCommunityCount} communities`;
 		const stickerUpsellMessage = (
 			<Trans>
-				Unlock {stickerLabel} from {communityLabel} with Plutonium.
+				Unlock {stickerLabel} from {communityLabel} with Reverb.
 			</Trans>
 		);
 		const isSearching = searchTerm.trim().length > 0;

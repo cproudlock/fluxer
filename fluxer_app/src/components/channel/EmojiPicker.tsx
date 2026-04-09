@@ -174,7 +174,7 @@ export const EmojiPicker = observer(
 		const communityLabel = communityCount === 1 ? t`${communityCount} community` : t`${communityCount} communities`;
 		const emojiUpsellMessage = (
 			<Trans>
-				Unlock {emojiLabel} from {communityLabel} with Plutonium.
+				Unlock {emojiLabel} from {communityLabel} with Reverb.
 			</Trans>
 		);
 

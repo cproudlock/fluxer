@@ -118,24 +118,24 @@ export const AvatarUploader = observer(
 						ModalActionCreators.push(
 							modal(() => (
 								<ConfirmModal
-									title={t`Animated avatars require Plutonium`}
+									title={t`Animated avatars require Reverb`}
 									description={
 										<>
 											<p>
 												<Trans>
 													Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available
-													to Plutonium subscribers.
+													to Reverb subscribers.
 												</Trans>
 											</p>
 											<p className={styles.spacedParagraph}>
 												<Trans>
-													With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or
+													With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or
 													AVIF), customize your 4-digit tag, and unlock many other premium features.
 												</Trans>
 											</p>
 										</>
 									}
-									primaryText={t`Get Plutonium`}
+									primaryText={t`Get Reverb`}
 									primaryVariant="primary"
 									secondaryText={t`Cancel`}
 									onPrimary={() => {

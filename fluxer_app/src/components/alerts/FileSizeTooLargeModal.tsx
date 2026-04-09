@@ -76,12 +76,12 @@ export const FileSizeTooLargeModal = observer(({oversizedFileCount}: FileSizeToo
 			title={t`File size limit exceeded`}
 			description={
 				<Trans>
-					{baseDescription} With Plutonium, your per-file upload limit increases to{' '}
+					{baseDescription} With Reverb, your per-file upload limit increases to{' '}
 					{formatFileSize(premiumMaxAttachmentFileSize)}, plus animated avatars, longer messages, and many other premium
 					features.
 				</Trans>
 			}
-			primaryText={t`Get Plutonium`}
+			primaryText={t`Get Reverb`}
 			primaryVariant="primary"
 			onPrimary={handleGetPlutoniumClick}
 			secondaryText={t`Cancel`}

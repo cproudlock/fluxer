@@ -68,8 +68,8 @@ export const MaxBookmarksModal = observer(({user}: MaxBookmarksModalProps) => {
 	return (
 		<ConfirmModal
 			title={t`Bookmark Limit Reached`}
-			description={t`You've reached the maximum number of bookmarks for free users (${bookmarksText}). Upgrade to Plutonium to increase your limit to ${premiumBookmarksText}, or remove some bookmarks to add new ones.`}
-			primaryText={t`Upgrade to Plutonium`}
+			description={t`You've reached the maximum number of bookmarks for free users (${bookmarksText}). Upgrade to Reverb to increase your limit to ${premiumBookmarksText}, or remove some bookmarks to add new ones.`}
+			primaryText={t`Upgrade to Reverb`}
 			primaryVariant="primary"
 			onPrimary={() => {
 				window.setTimeout(() => {

@@ -88,7 +88,7 @@ const GiftCard: React.FC<GiftCardProps> = observer(({gift, isExpanded, onToggle,
 			await GiftActionCreators.redeem(i18n, gift.code);
 			ToastActionCreators.createToast({
 				type: 'success',
-				children: <Trans>Gift redeemed successfully! Enjoy your Plutonium!</Trans>,
+				children: <Trans>Gift redeemed successfully! Enjoy your Reverb!</Trans>,
 			});
 			onRedeemSuccess();
 		} catch (error) {
@@ -237,7 +237,7 @@ const GiftInventoryTab: React.FC = observer(() => {
 			<StatusSlate
 				Icon={WarningCircleIcon}
 				title={<Trans>Claim your account</Trans>}
-				description={<Trans>Claim your account to redeem or manage Plutonium gift codes.</Trans>}
+				description={<Trans>Claim your account to redeem or manage Reverb gift codes.</Trans>}
 				actions={[
 					{
 						text: <Trans>Claim Account</Trans>,
@@ -256,7 +256,7 @@ const GiftInventoryTab: React.FC = observer(() => {
 					<Trans>Redeem a Gift</Trans>
 				</h2>
 				<p className={styles.sectionDescription}>
-					<Trans>Enter a gift code to redeem Plutonium for your account.</Trans>
+					<Trans>Enter a gift code to redeem Reverb for your account.</Trans>
 				</p>
 
 				<Form form={giftCodeForm} onSubmit={handleGiftCodeSubmitForm} aria-label={t`Redeem gift code form`}>
@@ -302,7 +302,7 @@ const GiftInventoryTab: React.FC = observer(() => {
 				</h2>
 				<p className={styles.sectionDescriptionNoMargin}>
 					<Trans>
-						Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for
+						Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for
 						yourself!
 					</Trans>
 				</p>
@@ -333,10 +333,10 @@ const GiftInventoryTab: React.FC = observer(() => {
 				<StatusSlate
 					Icon={GiftIcon}
 					title={<Trans>No gifts yet</Trans>}
-					description={<Trans>Purchase a Plutonium gift from the Plutonium tab to share with friends!</Trans>}
+					description={<Trans>Purchase a Reverb gift from the Reverb tab to share with friends!</Trans>}
 					actions={[
 						{
-							text: <Trans>Go to Plutonium</Trans>,
+							text: <Trans>Go to Reverb</Trans>,
 							onClick: () => ComponentDispatch.dispatch('USER_SETTINGS_TAB_SELECT', {tab: 'plutonium'}),
 							variant: 'primary',
 							fitContent: true,

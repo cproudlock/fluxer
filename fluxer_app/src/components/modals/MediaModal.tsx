@@ -44,7 +44,13 @@ import {
 import {clsx} from 'clsx';
 import {AnimatePresence, motion} from 'framer-motion';
 import {observer} from 'mobx-react-lite';
-import type {CSSProperties, FC, KeyboardEvent as ReactKeyboardEvent, MouseEvent as ReactMouseEvent} from 'react';
+import type {
+	CSSProperties,
+	FC,
+	KeyboardEvent as ReactKeyboardEvent,
+	MouseEvent as ReactMouseEvent,
+	PointerEvent as ReactPointerEvent,
+} from 'react';
 import {
 	createElement,
 	forwardRef,
@@ -99,6 +105,7 @@ interface ControlButtonProps {
 	icon: ReactNode;
 	label: string;
 	onClick: () => void;
+	onPointerUp?: (event: ReactPointerEvent<HTMLButtonElement>) => void;
 	variant?: 'default' | 'primary' | 'danger';
 	active?: boolean;
 	disabled?: boolean;
@@ -106,7 +113,7 @@ interface ControlButtonProps {
 
 const ControlButton = observer(
 	forwardRef<HTMLButtonElement, ControlButtonProps>(
-		({icon, label, onClick, variant = 'default', active = false, disabled = false}, ref) => {
+		({icon, label, onClick, onPointerUp, variant = 'default', active = false, disabled = false}, ref) => {
 			const getVariantClass = () => {
 				if (active) {
 					if (variant === 'primary') return styles.controlButtonPrimaryActive;
@@ -124,6 +131,7 @@ const ControlButton = observer(
 						ref={ref}
 						type="button"
 						onClick={disabled ? undefined : onClick}
+						onPointerUp={disabled ? undefined : onPointerUp}
 						className={clsx(styles.controlButton, getVariantClass(), disabled && styles.controlButtonDisabled)}
 						aria-label={label}
 						aria-pressed={active}
@@ -344,14 +352,60 @@ const CompactMobileControls: FC<CompactMobileControlsProps> = observer(
 	({onClose, onMenuOpen}: CompactMobileControlsProps) => {
 		const {t} = useLingui();
 
+		// iOS WebKit sometimes drops the synthesized `click` event on overlay
+		// buttons after a multi-touch gesture (pinch/pan) inside the underlying
+		// react-zoom-pan-pinch viewer. The X button then appears unresponsive
+		// until the app is force-closed. Falling back to `pointerup` for touch
+		// input ensures the close action always fires. The ref guard prevents
+		// double-firing if the synthetic click does eventually arrive.
+		const closeFiredRef = useRef(false);
+		const menuFiredRef = useRef(false);
+
+		const handleClose = useCallback(() => {
+			if (closeFiredRef.current) return;
+			closeFiredRef.current = true;
+			onClose();
+		}, [onClose]);
+
+		const handleMenu = useCallback(() => {
+			if (!onMenuOpen) return;
+			if (menuFiredRef.current) return;
+			menuFiredRef.current = true;
+			onMenuOpen();
+		}, [onMenuOpen]);
+
+		const handleClosePointerUp = useCallback(
+			(event: ReactPointerEvent<HTMLButtonElement>) => {
+				if (event.pointerType === 'mouse') return;
+				event.preventDefault();
+				handleClose();
+			},
+			[handleClose],
+		);
+
+		const handleMenuPointerUp = useCallback(
+			(event: ReactPointerEvent<HTMLButtonElement>) => {
+				if (event.pointerType === 'mouse') return;
+				event.preventDefault();
+				handleMenu();
+			},
+			[handleMenu],
+		);
+
 		return (
 			<div className={styles.mobileTopBarControls} role="toolbar" aria-label={t`Media controls`}>
-				<ControlButton icon={<XIcon size={20} weight="bold" />} label={t`Close`} onClick={onClose} />
+				<ControlButton
+					icon={<XIcon size={20} weight="bold" />}
+					label={t`Close`}
+					onClick={handleClose}
+					onPointerUp={handleClosePointerUp}
+				/>
 				{onMenuOpen && (
 					<ControlButton
 						icon={<DotsThreeIcon size={20} weight="bold" />}
 						label={t`More options`}
-						onClick={onMenuOpen}
+						onClick={handleMenu}
+						onPointerUp={handleMenuPointerUp}
 					/>
 				)}
 			</div>

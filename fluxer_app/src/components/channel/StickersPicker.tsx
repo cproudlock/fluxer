@@ -141,7 +141,7 @@ export const StickersPicker = observer(
 			stickerCommunityCount === 1 ? t`${stickerCommunityCount} community` : t`${stickerCommunityCount} communities`;
 		const stickerUpsellMessage = (
 			<Trans>
-				Unlock {stickerLabel} from {communityLabel} with Plutonium.
+				Unlock {stickerLabel} from {communityLabel} with Reverb.
 			</Trans>
 		);
 		const showPremiumUpsell =

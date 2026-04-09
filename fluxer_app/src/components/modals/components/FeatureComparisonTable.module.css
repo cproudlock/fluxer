@@ -78,7 +78,7 @@
 	}
 }
 
-.headerPlutonium {
+.headerReverb {
 	width: 4.5rem;
 	text-align: center;
 	font-weight: 600;
@@ -88,7 +88,7 @@
 }
 
 @media (min-width: 768px) {
-	.headerPlutonium {
+	.headerReverb {
 		width: 5.5rem;
 		font-size: 1rem;
 		line-height: 1.5rem;

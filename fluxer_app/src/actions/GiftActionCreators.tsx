@@ -107,7 +107,7 @@ export async function redeem(i18n: I18n, code: string): Promise<void> {
 						modal(() => (
 							<GenericErrorModal
 								title={i18n._(msg`Cannot Redeem Gift`)}
-								message={i18n._(msg`You cannot redeem Plutonium gift codes while you have Visionary premium.`)}
+								message={i18n._(msg`You cannot redeem Reverb gift codes while you have Visionary premium.`)}
 							/>
 						)),
 					);

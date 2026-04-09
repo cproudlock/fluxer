@@ -43,30 +43,30 @@ export function formatGiftDurationText(durationMonths: number, config: GiftDurat
 	return config.plural(durationMonths);
 }
 
-export function getPlutoniumDurationConfig(i18n: I18n): GiftDurationTextConfig {
+export function getReverbDurationConfig(i18n: I18n): GiftDurationTextConfig {
 	return {
-		lifetime: i18n._(msg`Visionary (Lifetime Plutonium)`),
-		oneYear: i18n._(msg`1 Year of Plutonium`),
+		lifetime: i18n._(msg`Visionary (Lifetime Reverb)`),
+		oneYear: i18n._(msg`1 Year of Reverb`),
 		plural: (durationMonths: number) =>
 			i18n._(
-				durationMonths === 1 ? msg`${durationMonths} Month of Plutonium` : msg`${durationMonths} Months of Plutonium`,
+				durationMonths === 1 ? msg`${durationMonths} Month of Reverb` : msg`${durationMonths} Months of Reverb`,
 			),
 	};
 }
 
 export function getPremiumDurationConfig(i18n: I18n): GiftDurationTextConfig {
 	return {
-		lifetime: i18n._(msg`Lifetime Plutonium`),
-		oneYear: i18n._(msg`1 Year of Plutonium`),
+		lifetime: i18n._(msg`Lifetime Reverb`),
+		oneYear: i18n._(msg`1 Year of Reverb`),
 		plural: (durationMonths: number) =>
 			i18n._(
-				durationMonths === 1 ? msg`${durationMonths} Month of Plutonium` : msg`${durationMonths} Months of Plutonium`,
+				durationMonths === 1 ? msg`${durationMonths} Month of Reverb` : msg`${durationMonths} Months of Reverb`,
 			),
 	};
 }
 
 export function getGiftDurationText(i18n: I18n, gift: Gift | GiftDurationPayload): string {
-	return formatGiftDurationText(gift.duration_months, getPlutoniumDurationConfig(i18n));
+	return formatGiftDurationText(gift.duration_months, getReverbDurationConfig(i18n));
 }
 
 export function getPremiumGiftDurationText(i18n: I18n, gift: Gift | GiftDurationPayload): string {

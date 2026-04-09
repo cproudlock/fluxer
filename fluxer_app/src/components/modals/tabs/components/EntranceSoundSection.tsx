@@ -54,7 +54,7 @@ export const EntranceSoundSection: React.FC = observer(() => {
 						<div className={styles.premiumCardHeader}>
 							<CrownIcon weight="fill" size={18} className={styles.premiumCardIcon} />
 							<span className={styles.premiumCardTitle}>
-								<Trans>Custom Entrance Sounds with Plutonium</Trans>
+								<Trans>Custom Entrance Sounds with Reverb</Trans>
 							</span>
 						</div>
 						<p className={styles.premiumCardDescription}>
@@ -64,7 +64,7 @@ export const EntranceSoundSection: React.FC = observer(() => {
 							</Trans>
 						</p>
 						<Button variant="secondary" small={true} onClick={() => PremiumModalActionCreators.open()}>
-							<Trans>Get Plutonium</Trans>
+							<Trans>Get Reverb</Trans>
 						</Button>
 					</div>
 				) : (

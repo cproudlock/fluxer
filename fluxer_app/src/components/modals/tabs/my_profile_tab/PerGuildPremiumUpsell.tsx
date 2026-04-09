@@ -28,7 +28,7 @@ export const PerGuildPremiumUpsell = observer(() => {
 		<PlutoniumUpsell>
 			{showPremium ? (
 				<Trans>
-					Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium.
+					Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb.
 					Community nickname and pronouns are free for everyone.
 				</Trans>
 			) : (

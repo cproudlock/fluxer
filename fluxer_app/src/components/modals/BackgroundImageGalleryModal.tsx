@@ -665,7 +665,7 @@ const BackgroundImageGalleryModal: React.FC = observer(() => {
 							<div className={styles.premiumHeader}>
 								<CrownIcon weight="fill" size={18} className={styles.premiumIcon} />
 								<span className={styles.premiumTitle}>
-									<Trans>Unlock More Backgrounds with Plutonium</Trans>
+									<Trans>Unlock More Backgrounds with Reverb</Trans>
 								</span>
 							</div>
 							<p className={styles.premiumDesc}>
@@ -675,7 +675,7 @@ const BackgroundImageGalleryModal: React.FC = observer(() => {
 								</Trans>
 							</p>
 							<Button variant="secondary" small={true} onClick={() => PremiumModalActionCreators.open()}>
-								<Trans>Get Plutonium</Trans>
+								<Trans>Get Reverb</Trans>
 							</Button>
 						</div>
 					)}

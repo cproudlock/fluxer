@@ -66,7 +66,7 @@ export const PremiumExpiredNagbar = observer(({isMobile}: {isMobile: boolean}) =
 				onDismiss={handleDismiss}
 				message={
 					<Trans>
-						Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to
+						Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to
 						regain access.
 					</Trans>
 				}

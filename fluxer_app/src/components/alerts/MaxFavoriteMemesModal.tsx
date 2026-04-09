@@ -61,13 +61,13 @@ export const MaxFavoriteMemesModal = observer(() => {
 	const premiumItemsText =
 		premiumLimit === 1 ? t`${premiumLimit} saved media item` : t`${premiumLimit} saved media items`;
 
-	const freeDescription = t`You've reached the maximum limit of ${freeItemsText} for free users. Upgrade to Plutonium to increase your limit to ${premiumItemsText}!`;
+	const freeDescription = t`You've reached the maximum limit of ${freeItemsText} for free users. Upgrade to Reverb to increase your limit to ${premiumItemsText}!`;
 
 	return (
 		<ConfirmModal
 			title={t`Saved media limit reached`}
 			description={freeDescription}
-			primaryText={t`Upgrade to Plutonium`}
+			primaryText={t`Upgrade to Reverb`}
 			primaryVariant="primary"
 			onPrimary={() => {
 				window.setTimeout(() => {

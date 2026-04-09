@@ -210,7 +210,7 @@ export const FluxerTagChangeModal = observer(({user}: FluxerTagChangeModalProps)
 								<div className={styles.discriminatorInput}>
 									{!hasCustomDiscriminator ? (
 										showPremium ? (
-											<Tooltip text={t`Get Plutonium to customize your tag or keep it when changing your username`}>
+											<Tooltip text={t`Get Reverb to customize your tag or keep it when changing your username`}>
 												<div className={styles.discriminatorInputDisabled}>
 													<Input
 														{...form.register('discriminator')}
@@ -232,7 +232,7 @@ export const FluxerTagChangeModal = observer(({user}: FluxerTagChangeModalProps)
 																PremiumModalActionCreators.open();
 															}}
 															className={styles.discriminatorOverlay}
-															aria-label={t`Get Plutonium`}
+															aria-label={t`Get Reverb`}
 														/>
 													</FocusRing>
 												</div>

@@ -70,7 +70,7 @@ export const PremiumGracePeriodNagbar = observer(({isMobile}: {isMobile: boolean
 				onDismiss={handleDismiss}
 				message={
 					<Trans>
-						Your subscription failed to renew, but you still have access to Plutonium perks until{' '}
+						Your subscription failed to renew, but you still have access to Reverb perks until{' '}
 						<strong>{formattedGraceDate}</strong>. Take action now or you'll lose all perks.
 					</Trans>
 				}

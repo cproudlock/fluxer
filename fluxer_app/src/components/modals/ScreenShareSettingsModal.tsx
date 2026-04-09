@@ -149,7 +149,7 @@ export const ScreenShareSettingsModal = observer(({onStartShare}: ScreenShareSet
 							<div className={styles.premiumBannerHeader}>
 								<CrownIcon weight="fill" size={16} className={styles.premiumBannerIcon} />
 								<span className={styles.premiumBannerTitle}>
-									<Trans>Unlock HD Video with Plutonium</Trans>
+									<Trans>Unlock HD Video with Reverb</Trans>
 								</span>
 							</div>
 							<p className={styles.premiumBannerDescription}>

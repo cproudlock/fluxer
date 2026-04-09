@@ -33,7 +33,7 @@ export const PlutoniumUpsellBanner = observer(() => {
 				ModalActionCreators.push(modal(() => <UserSettingsModal initialTab="plutonium" />));
 			}}
 		>
-			<Trans>Get Plutonium for yourself and unlock higher limits and exclusive features.</Trans>
+			<Trans>Get Reverb for yourself and unlock higher limits and exclusive features.</Trans>
 		</PlutoniumUpsell>
 	);
 });

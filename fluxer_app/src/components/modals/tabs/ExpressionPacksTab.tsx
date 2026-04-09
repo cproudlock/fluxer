@@ -143,11 +143,11 @@ const ExpressionPacksTab: React.FC = observer(() => {
 			<div className={styles.emptyState}>
 				<StatusSlate
 					Icon={StickerIcon}
-					title={<Trans>Expression Packs are a Plutonium feature</Trans>}
-					description={<Trans>Create and share custom emoji and sticker packs with Fluxer Plutonium.</Trans>}
+					title={<Trans>Expression Packs are a Reverb feature</Trans>}
+					description={<Trans>Create and share custom emoji and sticker packs with Echowire Reverb.</Trans>}
 					actions={[
 						{
-							text: <Trans>Learn about Plutonium</Trans>,
+							text: <Trans>Learn about Reverb</Trans>,
 							onClick: () => ComponentDispatch.dispatch('USER_SETTINGS_TAB_SELECT', {tab: 'plutonium'}),
 							variant: 'primary',
 							fitContent: true,

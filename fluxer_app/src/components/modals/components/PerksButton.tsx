@@ -27,6 +27,6 @@ export const PerksButton: React.FC<{
 	onKeyDown: (event: React.KeyboardEvent<HTMLSpanElement>) => void;
 }> = observer(({onClick, onKeyDown}) => (
 	<span role="link" tabIndex={0} onClick={onClick} onKeyDown={onKeyDown} className={styles.link}>
-		<Trans>Plutonium perks</Trans>
+		<Trans>Reverb perks</Trans>
 	</span>
 ));

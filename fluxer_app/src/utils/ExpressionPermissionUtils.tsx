@@ -72,7 +72,7 @@ export function checkEmojiAvailabilityWithGuildFallback(
 					canUse: false,
 					isLockedByPremium: true,
 					isLockedByPermission: false,
-					lockReason: i18n._(msg`Unlock custom emojis in DMs with Plutonium`),
+					lockReason: i18n._(msg`Unlock custom emojis in DMs with Reverb`),
 				};
 			}
 			return {
@@ -118,7 +118,7 @@ export function checkEmojiAvailabilityWithGuildFallback(
 				canUse: false,
 				isLockedByPremium: true,
 				isLockedByPermission: false,
-				lockReason: i18n._(msg`Unlock external custom emojis with Plutonium`),
+				lockReason: i18n._(msg`Unlock external custom emojis with Reverb`),
 			};
 		}
 
@@ -163,7 +163,7 @@ export function checkStickerAvailability(
 					canUse: false,
 					isLockedByPremium: true,
 					isLockedByPermission: false,
-					lockReason: i18n._(msg`Unlock stickers in DMs with Plutonium`),
+					lockReason: i18n._(msg`Unlock stickers in DMs with Reverb`),
 				};
 			}
 			return {
@@ -217,7 +217,7 @@ export function checkStickerAvailability(
 				canUse: false,
 				isLockedByPremium: true,
 				isLockedByPermission: false,
-				lockReason: i18n._(msg`Unlock external stickers with Plutonium`),
+				lockReason: i18n._(msg`Unlock external stickers with Reverb`),
 			};
 		}
 		return {

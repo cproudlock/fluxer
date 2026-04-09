@@ -72,14 +72,14 @@ export const UsernameSection = observer(({isClaimed, user}: UsernameSectionProps
 				)}
 
 				{!hasCustomDiscriminator && shouldShowPremiumFeatures() && (
-					<Tooltip text={t(msg`Customize your 4-digit tag (#${user.discriminator}) to your liking with Plutonium`)}>
+					<Tooltip text={t(msg`Customize your 4-digit tag (#${user.discriminator}) to your liking with Reverb`)}>
 						<button
 							type="button"
 							onClick={() => {
 								PremiumModalActionCreators.open();
 							}}
 							className={styles.premiumButton}
-							aria-label={t(msg`Get Plutonium to customize your tag`)}
+							aria-label={t(msg`Get Reverb to customize your tag`)}
 						>
 							<CrownIcon weight="fill" size={18} />
 						</button>

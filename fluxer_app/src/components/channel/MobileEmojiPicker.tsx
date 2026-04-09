@@ -176,7 +176,7 @@ export const MobileEmojiPicker = observer(
 		const emojiLabel =
 			lockedEmojiCount === 1 ? t`${lockedEmojiCount} custom emoji` : t`${lockedEmojiCount} custom emojis`;
 		const communityLabel = communityCount === 1 ? t`${communityCount} community` : t`${communityCount} communities`;
-		const emojiUpsellMessage = t`Unlock ${emojiLabel} from ${communityLabel} with Plutonium.`;
+		const emojiUpsellMessage = t`Unlock ${emojiLabel} from ${communityLabel} with Reverb.`;
 		const showPremiumUpsell =
 			shouldShowPremiumFeatures() &&
 			shouldShowEmojiPremiumUpsell(channel) &&

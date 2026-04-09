@@ -308,7 +308,7 @@ export const MockingTabContent: React.FC = observer(() => {
 						<Select<string>
 							label={t`Gift Duration`}
 							value={DeveloperOptionsStore.mockGiftDurationMonths?.toString() ?? '12'}
-							description={t`How many months of Plutonium the mock gift provides`}
+							description={t`How many months of Reverb the mock gift provides`}
 							options={[
 								{value: '1', label: t`1 Month`},
 								{value: '3', label: t`3 Months`},

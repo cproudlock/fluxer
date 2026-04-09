@@ -142,7 +142,7 @@ export const FeatureComparisonTable = observer(() => {
 					<div className={styles.headerFree}>
 						<Trans>Free</Trans>
 					</div>
-					<div className={styles.headerPlutonium}>
+					<div className={styles.headerReverb}>
 						<Trans>Reverb</Trans>
 					</div>
 					<div className={styles.headerVisionary}>

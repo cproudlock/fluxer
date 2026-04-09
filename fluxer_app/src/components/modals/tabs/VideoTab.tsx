@@ -117,7 +117,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 				desc: hasHigherQuality
 					? t`Best quality for most users`
 					: !RuntimeConfigStore.isSelfHosted()
-						? t`Requires Plutonium`
+						? t`Requires Reverb`
 						: t`Not available`,
 				disabled: !hasHigherQuality && !RuntimeConfigStore.isSelfHosted(),
 			},
@@ -127,7 +127,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 				desc: hasHigherQuality
 					? t`High quality, requires fast connection`
 					: !RuntimeConfigStore.isSelfHosted()
-						? t`Requires Plutonium`
+						? t`Requires Reverb`
 						: t`Not available`,
 				disabled: !hasHigherQuality && !RuntimeConfigStore.isSelfHosted(),
 			},
@@ -137,7 +137,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 				desc: hasHigherQuality
 					? t`Maximum quality, requires very fast connection`
 					: !RuntimeConfigStore.isSelfHosted()
-						? t`Requires Plutonium`
+						? t`Requires Reverb`
 						: t`Not available`,
 				disabled: !hasHigherQuality && !RuntimeConfigStore.isSelfHosted(),
 			},
@@ -268,7 +268,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 						<div className={styles.premiumHeader}>
 							<CrownIcon weight="fill" size={18} className={styles.premiumIcon} />
 							<span className={styles.premiumTitle}>
-								<Trans>Unlock HD Screen Sharing with Plutonium</Trans>
+								<Trans>Unlock HD Screen Sharing with Reverb</Trans>
 							</span>
 						</div>
 						<p className={styles.premiumDescription}>
@@ -278,7 +278,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 							</Trans>
 						</p>
 						<Button variant="secondary" small={true} onClick={() => PremiumModalActionCreators.open()}>
-							<Trans>Get Plutonium</Trans>
+							<Trans>Get Reverb</Trans>
 						</Button>
 					</div>
 				)}
@@ -303,7 +303,7 @@ export const VideoTab: React.FC<VideoTabProps> = observer(
 					{!hasHigherQuality && !RuntimeConfigStore.isSelfHosted() && (
 						<div className={styles.frameRateNote}>
 							<CrownIcon weight="fill" size={14} className={styles.frameRateIcon} />
-							<Trans>Frame rates above 30 FPS require Plutonium</Trans>
+							<Trans>Frame rates above 30 FPS require Reverb</Trans>
 						</div>
 					)}
 				</div>

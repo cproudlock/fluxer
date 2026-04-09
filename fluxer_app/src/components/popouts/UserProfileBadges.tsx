@@ -104,7 +104,7 @@ export const UserProfileBadges: React.FC<UserProfileBadgesProps> = observer(
 			}
 
 			if (!selfHosted && profile?.premiumType && profile.premiumType !== UserPremiumTypes.NONE) {
-				let tooltipText = t`Fluxer Plutonium`;
+				let tooltipText = t`Echowire Reverb`;
 				let badgeUrl = Routes.plutonium();
 
 				if (profile.premiumType === UserPremiumTypes.LIFETIME) {
@@ -117,7 +117,7 @@ export const UserProfileBadges: React.FC<UserProfileBadgesProps> = observer(
 					badgeUrl = Routes.helpArticle('visionary');
 				} else if (profile.premiumSince) {
 					const premiumSinceFormatted = DateUtils.getFormattedShortDate(profile.premiumSince);
-					tooltipText = `Fluxer Plutonium subscriber since ${premiumSinceFormatted}`;
+					tooltipText = `Echowire Reverb subscriber since ${premiumSinceFormatted}`;
 				}
 
 				result.push({

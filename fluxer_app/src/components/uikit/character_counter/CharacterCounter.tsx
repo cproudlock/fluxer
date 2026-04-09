@@ -47,7 +47,7 @@ export const CharacterCounter = observer(
 		const needsPremium = canUpgrade && showPremiumFeatures && (isNearingLimit || isOverLimit);
 
 		const tooltipText = needsPremium
-			? t(i18n)`${remaining} characters left. Get Plutonium to write up to ${premiumMaxLength} characters.`
+			? t(i18n)`${remaining} characters left. Get Reverb to write up to ${premiumMaxLength} characters.`
 			: isOverLimit
 				? t(i18n)`Message is too long`
 				: t(i18n)`${remaining} characters left`;

@@ -79,7 +79,7 @@ export const PremiumUpsellBanner = observer(
 				<div className={styles.content}>
 					<p className={styles.text}>
 						{message ?? children ?? (
-							<Trans>Unlock all custom emojis and stickers across all communities with Plutonium</Trans>
+							<Trans>Unlock all custom emojis and stickers across all communities with Reverb</Trans>
 						)}
 					</p>
 					{renderedCommunityIds.length > 0 && (

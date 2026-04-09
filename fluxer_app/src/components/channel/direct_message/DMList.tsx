@@ -1323,7 +1323,7 @@ export const DMList = observer(() => {
 										</div>
 										<div className={styles.mobileSpecialButtonText}>
 											<span className={styles.mobileSpecialButtonLabel}>
-												<Trans>Plutonium</Trans>
+												<Trans>Reverb</Trans>
 											</span>
 										</div>
 									</div>
@@ -1402,7 +1402,7 @@ export const DMList = observer(() => {
 									<CrownIcon weight="fill" className={styles.iconSize5} />
 								</div>
 								<span className={styles.clickableItemText}>
-									<Trans>Plutonium</Trans>
+									<Trans>Reverb</Trans>
 								</span>
 							</div>
 						</ClickableItem>
