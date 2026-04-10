@@ -74,7 +74,7 @@ const handleGuildMessagePush: WorkerTaskHandler = async (payload, _helpers) => {
 	for (const userId of usersWithDevices) {
 		const settings = await userRepository.findGuildSettings(userId, guildId);
 
-		const mobilePush = settings?.mobilePush ?? false;
+		const mobilePush = settings?.mobilePush ?? true;
 		if (!mobilePush) continue;
 
 		if (settings?.muted) continue;
