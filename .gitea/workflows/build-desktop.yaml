@@ -46,7 +46,7 @@ jobs:
       - name: Checkout
         run: |
           rm -rf $GITHUB_WORKSPACE/* $GITHUB_WORKSPACE/.* 2>/dev/null || true
-          git clone --depth=1 -b ${{ github.ref_name }} http://cproudlock:${{ secrets.GITEA_TOKEN }}@10.9.50.236:3000/${{ github.repository }}.git $GITHUB_WORKSPACE
+          git clone --depth=1 -b ${{ github.ref_name }} http://cproudlock:${{ secrets.GITEATOKEN }}@10.9.50.236:3000/${{ github.repository }}.git $GITHUB_WORKSPACE
 
       - name: Determine version
         id: version
@@ -138,7 +138,7 @@ jobs:
       - name: Checkout
         run: |
           rm -rf $GITHUB_WORKSPACE/* $GITHUB_WORKSPACE/.* 2>/dev/null || true
-          git clone --depth=1 -b ${{ github.ref_name }} http://cproudlock:${{ secrets.GITEA_TOKEN }}@10.9.50.236:3000/${{ github.repository }}.git $GITHUB_WORKSPACE
+          git clone --depth=1 -b ${{ github.ref_name }} http://cproudlock:${{ secrets.GITEATOKEN }}@10.9.50.236:3000/${{ github.repository }}.git $GITHUB_WORKSPACE
 
       - name: Determine version
         run: |
