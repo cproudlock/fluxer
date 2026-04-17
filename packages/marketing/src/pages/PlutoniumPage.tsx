@@ -25,7 +25,7 @@ import {
 	isNumericPerk,
 	isTextPerk,
 	PLUTONIUM_PERKS,
-	type ReverbPerk,
+	type PlutoniumPerk,
 } from '@fluxer/constants/src/PlutoniumPerks';
 import {FinalCtaSection} from '@fluxer/marketing/src/components/FinalCtaSection';
 import {defaultHeroPadding, HeroBase} from '@fluxer/marketing/src/components/HeroBase';
@@ -86,7 +86,7 @@ function renderHeroSection(ctx: MarketingContext): JSX.Element {
 	);
 }
 
-function getPerkLabel(ctx: MarketingContext, perk: ReverbPerk): string {
+function getPerkLabel(ctx: MarketingContext, perk: PlutoniumPerk): string {
 	const labelMap: Record<string, string> = {
 		custom_4_digit_username_tag: ctx.i18n.getMessage(
 			'pricing_and_tiers.plutonium.features.custom_4_digit_username_tag',
@@ -128,7 +128,7 @@ function getPerkLabel(ctx: MarketingContext, perk: ReverbPerk): string {
 	return labelMap[perk.i18nKey] || perk.i18nKey;
 }
 
-function getStatusBadge(ctx: MarketingContext, perk: ReverbPerk): string | null {
+function getStatusBadge(ctx: MarketingContext, perk: PlutoniumPerk): string | null {
 	if (perk.status === 'beta') {
 		return ctx.i18n.getMessage('beta_and_access.beta_label', ctx.locale);
 	}
@@ -156,7 +156,7 @@ function renderComparisonSection(ctx: MarketingContext): JSX.Element {
 	const monthlyPrice = getFormattedPrice(PricingTier.Monthly, ctx.countryCode);
 	const yearlyPrice = getFormattedPrice(PricingTier.Yearly, ctx.countryCode);
 
-	const renderPerkRow = (perk: ReverbPerk): JSX.Element | null => {
+	const renderPerkRow = (perk: PlutoniumPerk): JSX.Element | null => {
 		const label = getPerkLabel(ctx, perk);
 		const badge = getStatusBadge(ctx, perk);
 

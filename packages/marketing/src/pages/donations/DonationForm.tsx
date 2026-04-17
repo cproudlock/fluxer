@@ -315,6 +315,3 @@ async function submitDonation(type) {
 		/>
 	);
 }
-
-const DONATE_BTN_SECONDARY =
-	'flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#1E293B] bg-[#101931] px-6 font-semibold text-white transition-colors hover:bg-[#1A2440]';
