@@ -41,23 +41,23 @@ function renderSuccessContent(ctx: MarketingContext): JSX.Element {
 	return (
 		<section class="mx-auto max-w-2xl text-center">
 			<div class="mb-8">
-				<div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+				<div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/10">
 					<svg class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 					</svg>
 				</div>
-				<h1 class="mb-4 font-bold text-4xl text-foreground">
+				<h1 class="mb-4 font-bold text-4xl text-white">
 					{ctx.i18n.getMessage('donations.success.title', ctx.locale)}
 				</h1>
-				<p class="text-lg text-muted-foreground">{ctx.i18n.getMessage('donations.success.message', ctx.locale)}</p>
+				<p class="text-lg text-[#94A3B8]">{ctx.i18n.getMessage('donations.success.message', ctx.locale)}</p>
 			</div>
 
 			<div class="space-y-4">
-				<p class="text-muted-foreground">{ctx.i18n.getMessage('donations.success.email_notice', ctx.locale)}</p>
+				<p class="text-[#94A3B8]">{ctx.i18n.getMessage('donations.success.email_notice', ctx.locale)}</p>
 
 				<a
 					href={href(ctx, '/donate')}
-					class="inline-block rounded-xl bg-[#4641D9] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#3d38c7]"
+					class="inline-block rounded-xl bg-[#3B82F6] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#2563EB]"
 				>
 					{ctx.i18n.getMessage('donations.success.back_to_donate', ctx.locale)}
 				</a>

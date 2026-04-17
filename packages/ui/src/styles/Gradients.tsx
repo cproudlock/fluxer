@@ -22,6 +22,6 @@
 
 export const GRADIENTS = {
 	purple: 'gradient-purple',
-	light: 'bg-gradient-to-b from-white to-gray-50',
+	light: 'bg-gradient-to-b from-[#0A1428] to-[#101931]',
 	cta: 'gradient-cta',
 } as const;

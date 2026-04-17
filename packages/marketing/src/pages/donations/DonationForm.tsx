@@ -20,7 +20,6 @@
 /** @jsxRuntime automatic */
 /** @jsxImportSource hono/jsx */
 
-import {SwishIcon} from '@fluxer/marketing/src/components/icons/SwishIcon';
 import type {MarketingContext} from '@fluxer/marketing/src/MarketingContext';
 import {escapeInlineScriptValue} from '@fluxer/marketing/src/pages/InlineScriptEscaping';
 
@@ -77,19 +76,19 @@ export function renderDonationForm(
 		<div id={`donate-content-${type}`} class={isHidden ? 'donate-content hidden w-full' : 'donate-content w-full'}>
 			<div class="mx-auto max-w-lg space-y-6">
 				<div>
-					<label for={`donation-email-${type}`} class="mb-2 block font-medium text-foreground text-sm">
+					<label for={`donation-email-${type}`} class="mb-2 block font-medium text-white text-sm">
 						{i18n.email}
 					</label>
 					<input
 						type="email"
 						id={`donation-email-${type}`}
 						placeholder={i18n.emailPlaceholder}
-						class="w-full rounded-lg border border-gray-200 px-4 py-3 text-foreground focus:border-[#4641D9] focus:outline-none"
+						class="w-full rounded-lg border border-[#1E293B] px-4 py-3 text-white focus:border-[#3B82F6] focus:outline-none"
 					/>
 				</div>
 
 				<div>
-					<span class="mb-2 block font-medium text-foreground text-sm">{i18n.amount}</span>
+					<span class="mb-2 block font-medium text-white text-sm">{i18n.amount}</span>
 					<div class="grid grid-cols-3 gap-2 sm:grid-cols-6">
 						{[5, 25, 50, 100, 500].map((amount) => (
 							<button
@@ -98,8 +97,8 @@ export function renderDonationForm(
 								onclick={`selectDonationAmount('${type}', ${amount})`}
 								class={
 									amount === 25
-										? 'donation-amount-btn rounded-lg border border-[#4641D9] px-4 py-2 font-medium text-[#4641D9] transition hover:border-[#4641D9] hover:text-[#4641D9]'
-										: 'donation-amount-btn rounded-lg border border-gray-200 px-4 py-2 font-medium text-gray-700 transition hover:border-[#4641D9] hover:text-[#4641D9]'
+										? 'donation-amount-btn rounded-lg border border-[#3B82F6] px-4 py-2 font-medium text-[#3B82F6] transition hover:border-[#3B82F6] hover:text-[#3B82F6]'
+										: 'donation-amount-btn rounded-lg border border-[#1E293B] px-4 py-2 font-medium text-[#E2E8F0] transition hover:border-[#3B82F6] hover:text-[#3B82F6]'
 								}
 							>
 								${amount}
@@ -109,7 +108,7 @@ export function renderDonationForm(
 							type="button"
 							id={`amount-btn-${type}-custom`}
 							onclick={`showCustomDonationAmount('${type}')`}
-							class="donation-amount-btn rounded-lg border border-gray-200 px-4 py-2 font-medium text-gray-700 transition hover:border-[#4641D9] hover:text-[#4641D9]"
+							class="donation-amount-btn rounded-lg border border-[#1E293B] px-4 py-2 font-medium text-[#E2E8F0] transition hover:border-[#3B82F6] hover:text-[#3B82F6]"
 						>
 							{i18n.amountOther}
 						</button>
@@ -120,18 +119,18 @@ export function renderDonationForm(
 						min="5"
 						max="1000"
 						placeholder={i18n.amountPlaceholder}
-						class="mt-2 hidden w-full rounded-lg border border-gray-200 px-4 py-3"
+						class="mt-2 hidden w-full rounded-lg border border-[#1E293B] px-4 py-3"
 					/>
 				</div>
 
 				<div>
-					<span class="mb-2 block font-medium text-foreground text-sm">{i18n.donationType}</span>
+					<span class="mb-2 block font-medium text-white text-sm">{i18n.donationType}</span>
 					<div class="flex gap-2">
 						<button
 							type="button"
 							id={`donation-type-${type}-once`}
 							onclick={`selectDonationType('${type}', 'once')`}
-							class="donation-type-btn flex-1 rounded-lg border-2 border-[#4641D9] bg-[#4641D9] px-4 py-2 font-medium text-white"
+							class="donation-type-btn flex-1 rounded-lg border-2 border-[#3B82F6] bg-[#3B82F6] px-4 py-2 font-medium text-white"
 						>
 							{i18n.oneTime}
 						</button>
@@ -139,7 +138,7 @@ export function renderDonationForm(
 							type="button"
 							id={`donation-type-${type}-month`}
 							onclick={`selectDonationType('${type}', 'month')`}
-							class="donation-type-btn flex-1 rounded-lg border-2 border-gray-200 px-4 py-2 font-medium text-gray-700"
+							class="donation-type-btn flex-1 rounded-lg border-2 border-[#1E293B] px-4 py-2 font-medium text-[#E2E8F0]"
 						>
 							{i18n.monthly}
 						</button>
@@ -147,7 +146,7 @@ export function renderDonationForm(
 							type="button"
 							id={`donation-type-${type}-year`}
 							onclick={`selectDonationType('${type}', 'year')`}
-							class="donation-type-btn flex-1 rounded-lg border-2 border-gray-200 px-4 py-2 font-medium text-gray-700"
+							class="donation-type-btn flex-1 rounded-lg border-2 border-[#1E293B] px-4 py-2 font-medium text-[#E2E8F0]"
 						>
 							{i18n.yearly}
 						</button>
@@ -155,13 +154,13 @@ export function renderDonationForm(
 				</div>
 
 				<div>
-					<span class="mb-2 block font-medium text-foreground text-sm">{i18n.currency}</span>
+					<span class="mb-2 block font-medium text-white text-sm">{i18n.currency}</span>
 					<div class="flex gap-2">
 						<button
 							type="button"
 							id={`currency-${type}-usd`}
 							onclick={`selectDonationCurrency('${type}', 'usd')`}
-							class="donation-currency-btn flex-1 rounded-lg border-2 border-[#4641D9] bg-[#4641D9] px-4 py-2 font-medium text-white"
+							class="donation-currency-btn flex-1 rounded-lg border-2 border-[#3B82F6] bg-[#3B82F6] px-4 py-2 font-medium text-white"
 						>
 							$ USD
 						</button>
@@ -169,7 +168,7 @@ export function renderDonationForm(
 							type="button"
 							id={`currency-${type}-eur`}
 							onclick={`selectDonationCurrency('${type}', 'eur')`}
-							class="donation-currency-btn flex-1 rounded-lg border-2 border-gray-200 px-4 py-2 font-medium text-gray-700"
+							class="donation-currency-btn flex-1 rounded-lg border-2 border-[#1E293B] px-4 py-2 font-medium text-[#E2E8F0]"
 						>
 							€ EUR
 						</button>
@@ -180,27 +179,12 @@ export function renderDonationForm(
 					type="button"
 					id={`donate-btn-${type}`}
 					onclick={`submitDonation('${type}')`}
-					class="w-full rounded-xl bg-[#4641D9] py-3 font-semibold text-white transition-colors hover:bg-[#3d38c7]"
+					class="w-full rounded-xl bg-[#3B82F6] py-3 font-semibold text-white transition-colors hover:bg-[#2563EB]"
 				>
 					{i18n.donate}
 				</button>
 
-				{type === 'individual' ? (
-					<div class="flex items-center gap-3 py-1 text-gray-500 text-xs uppercase">
-						<span class="h-px flex-1 bg-gray-200" />
-						<span class="font-semibold">{i18n.orLabel}</span>
-						<span class="h-px flex-1 bg-gray-200" />
-					</div>
-				) : null}
-
-				{type === 'individual' ? (
-					<a href={SWISH_URL} class={DONATE_BTN_SECONDARY}>
-						<SwishIcon size={36} />
-						Swish
-					</a>
-				) : null}
-
-				<p id={`donation-error-${type}`} class="hidden text-center text-red-500 text-sm" />
+				<p id={`donation-error-${type}`} class="hidden text-center text-[#F43F5E] text-sm" />
 			</div>
 		</div>
 	);
@@ -225,13 +209,13 @@ function selectDonationAmount(type, amount) {
   customInput.classList.add('hidden');
   var buttons = document.querySelectorAll('[id^="amount-btn-' + type + '-"]');
   buttons.forEach(function(btn) {
-    btn.classList.remove('border-[#4641D9]', 'text-[#4641D9]');
-    btn.classList.add('border-gray-200', 'text-gray-700');
+    btn.classList.remove('border-[#3B82F6]', 'text-[#3B82F6]');
+    btn.classList.add('border-[#1E293B]', 'text-[#E2E8F0]');
   });
   var selected = document.getElementById('amount-btn-' + type + '-' + amount);
   if (selected) {
-    selected.classList.add('border-[#4641D9]', 'text-[#4641D9]');
-    selected.classList.remove('border-gray-200', 'text-gray-700');
+    selected.classList.add('border-[#3B82F6]', 'text-[#3B82F6]');
+    selected.classList.remove('border-[#1E293B]', 'text-[#E2E8F0]');
   }
 }
 
@@ -241,36 +225,36 @@ function showCustomDonationAmount(type) {
   customInput.classList.remove('hidden');
   var buttons = document.querySelectorAll('[id^="amount-btn-' + type + '-"]');
   buttons.forEach(function(btn) {
-    btn.classList.remove('border-[#4641D9]', 'text-[#4641D9]');
-    btn.classList.add('border-gray-200', 'text-gray-700');
+    btn.classList.remove('border-[#3B82F6]', 'text-[#3B82F6]');
+    btn.classList.add('border-[#1E293B]', 'text-[#E2E8F0]');
   });
   var customBtn = document.getElementById('amount-btn-' + type + '-custom');
-  customBtn.classList.add('border-[#4641D9]', 'text-[#4641D9]');
-  customBtn.classList.remove('border-gray-200', 'text-gray-700');
+  customBtn.classList.add('border-[#3B82F6]', 'text-[#3B82F6]');
+  customBtn.classList.remove('border-[#1E293B]', 'text-[#E2E8F0]');
 }
 
 function selectDonationType(type, donationType) {
   donationState[type].donationType = donationType;
   var buttons = document.querySelectorAll('[id^="donation-type-' + type + '-"]');
   buttons.forEach(function(btn) {
-    btn.classList.remove('border-[#4641D9]', 'bg-[#4641D9]', 'text-white');
-    btn.classList.add('border-gray-200', 'text-gray-700');
+    btn.classList.remove('border-[#3B82F6]', 'bg-[#3B82F6]', 'text-white');
+    btn.classList.add('border-[#1E293B]', 'text-[#E2E8F0]');
   });
   var selected = document.getElementById('donation-type-' + type + '-' + donationType);
-  selected.classList.add('border-[#4641D9]', 'bg-[#4641D9]', 'text-white');
-  selected.classList.remove('border-gray-200', 'text-gray-700');
+  selected.classList.add('border-[#3B82F6]', 'bg-[#3B82F6]', 'text-white');
+  selected.classList.remove('border-[#1E293B]', 'text-[#E2E8F0]');
 }
 
 function selectDonationCurrency(type, currency) {
   donationState[type].currency = currency;
   var buttons = document.querySelectorAll('[id^="currency-' + type + '-"]');
   buttons.forEach(function(btn) {
-    btn.classList.remove('border-[#4641D9]', 'bg-[#4641D9]', 'text-white');
-    btn.classList.add('border-gray-200', 'text-gray-700');
+    btn.classList.remove('border-[#3B82F6]', 'bg-[#3B82F6]', 'text-white');
+    btn.classList.add('border-[#1E293B]', 'text-[#E2E8F0]');
   });
   var selected = document.getElementById('currency-' + type + '-' + currency);
-  selected.classList.add('border-[#4641D9]', 'bg-[#4641D9]', 'text-white');
-  selected.classList.remove('border-gray-200', 'text-gray-700');
+  selected.classList.add('border-[#3B82F6]', 'bg-[#3B82F6]', 'text-white');
+  selected.classList.remove('border-[#1E293B]', 'text-[#E2E8F0]');
 }
 
 async function submitDonation(type) {
@@ -332,8 +316,5 @@ async function submitDonation(type) {
 	);
 }
 
-const SWISH_URL =
-	'swish://payment?data=%7B%22version%22%3A1%2C%22payee%22%3A%7B%22value%22%3A%221232376820%22%2C%22editable%22%3Afalse%7D%2C%22amount%22%3A%7B%22value%22%3A50%2C%22editable%22%3Atrue%7D%2C%22message%22%3A%7B%22value%22%3A%22Fluxer%20Donation%22%2C%22editable%22%3Afalse%7D%7D';
-
 const DONATE_BTN_SECONDARY =
-	'flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-6 font-semibold text-gray-900 transition-colors hover:bg-gray-50';
+	'flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#1E293B] bg-[#101931] px-6 font-semibold text-white transition-colors hover:bg-[#1A2440]';

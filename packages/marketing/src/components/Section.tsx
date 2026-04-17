@@ -26,7 +26,7 @@ const GRADIENT_MAP = {
 	cta: GRADIENTS.cta,
 	dark: GRADIENTS.purple,
 	light: GRADIENTS.light,
-	white: 'bg-white',
+	white: 'bg-[#101931]',
 } as const;
 
 export type SectionVariant = keyof typeof GRADIENT_MAP;
@@ -45,8 +45,8 @@ export function Section(props: SectionProps): JSX.Element {
 
 	const gradientClass = GRADIENT_MAP[variant];
 	const isDark = variant === 'dark' || variant === 'cta';
-	const textColorClass = isDark ? 'text-white' : 'text-black';
-	const descriptionColorClass = isDark ? 'text-white/90' : 'text-gray-700';
+	const textColorClass = isDark ? 'text-white' : 'text-white';
+	const descriptionColorClass = isDark ? 'text-white/90' : 'text-[#E2E8F0]';
 
 	return (
 		<section id={id} class={`${gradientClass} px-6 py-16 sm:px-8 md:px-12 md:py-24 lg:px-16 xl:px-20 ${className}`}>

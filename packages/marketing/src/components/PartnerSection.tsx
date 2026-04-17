@@ -35,8 +35,8 @@ export function PartnerSection(props: PartnerSectionProps): JSX.Element {
 	const {ctx} = props;
 
 	return (
-		<section class="bg-gradient-to-b from-gray-50 to-white px-6 pb-24 sm:px-8 md:px-12 md:pb-40 lg:px-16 xl:px-20">
-			<div class="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-black to-gray-900 p-10 text-white shadow-xl md:p-16 lg:p-20">
+		<section class="bg-gradient-to-b from-[#101931] to-[#0A1428] px-6 pb-24 sm:px-8 md:px-12 md:pb-40 lg:px-16 xl:px-20">
+			<div class="mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-[#0A1428] to-[#101931] p-10 text-white shadow-xl md:p-16 lg:p-20">
 				<div class="mb-10 text-center md:mb-12">
 					<div class="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm md:mb-8 md:h-24 md:w-24">
 						<FluxerPartnerIcon class="h-10 w-10 md:h-12 md:w-12" />
@@ -77,7 +77,7 @@ export function PartnerSection(props: PartnerSectionProps): JSX.Element {
 				<div class="text-center">
 					<a
 						href={href(ctx, '/partners')}
-						class="label inline-block rounded-lg bg-white px-8 py-4 text-black transition-colors hover:bg-opacity-90"
+						class="label inline-block rounded-lg bg-white px-8 py-4 text-[#0A1428] transition-colors hover:bg-opacity-90"
 					>
 						{ctx.i18n.getMessage('partner_program.become_partner.call_to_action', ctx.locale)}
 					</a>

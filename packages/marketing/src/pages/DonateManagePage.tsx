@@ -51,13 +51,13 @@ function renderManageContent(ctx: MarketingContext, emailParam: string, alertPar
 	return (
 		<section class="mx-auto max-w-2xl">
 			<header class="mb-10 text-center">
-				<h1 class="mb-4 font-bold text-4xl text-foreground">{i18n.title}</h1>
-				<p class="text-lg text-muted-foreground">{i18n.description}</p>
+				<h1 class="mb-4 font-bold text-4xl text-white">{i18n.title}</h1>
+				<p class="text-lg text-[#94A3B8]">{i18n.description}</p>
 			</header>
 
 			{showActiveSubscriptionAlert ? (
-				<div class="mb-6 rounded-lg border border-orange-200 bg-orange-50 p-4 text-center">
-					<p class="font-medium text-orange-900">{activeSubscriptionMessage}</p>
+				<div class="mb-6 rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
+					<p class="font-medium text-orange-300">{activeSubscriptionMessage}</p>
 				</div>
 			) : null}
 

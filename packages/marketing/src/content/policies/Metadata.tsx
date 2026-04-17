@@ -32,7 +32,7 @@ export const POLICY_METADATA: ReadonlyArray<PolicyMetadata> = [
 	{
 		slug: 'terms',
 		title: 'Terms of Service',
-		description: 'The legal agreement between you and Fluxer that governs your use of our platform and services.',
+		description: 'The legal agreement between you and Echowire that governs your use of our platform and services.',
 		category: 'Legal',
 		lastUpdated: '2026-02-13',
 	},
@@ -40,7 +40,7 @@ export const POLICY_METADATA: ReadonlyArray<PolicyMetadata> = [
 		slug: 'privacy',
 		title: 'Privacy Policy',
 		description:
-			'How we collect, use, and protect your personal information when you use Fluxer. Your privacy matters to us.',
+			'How we collect, use, and protect your personal information when you use Echowire. Your privacy matters to us.',
 		category: 'Legal',
 		lastUpdated: '2026-02-18',
 	},
@@ -48,7 +48,7 @@ export const POLICY_METADATA: ReadonlyArray<PolicyMetadata> = [
 		slug: 'guidelines',
 		title: 'Community Guidelines',
 		description:
-			'The rules and expectations for participating in the Fluxer community. Help us keep Fluxer safe and welcoming.',
+			'The rules and expectations for participating in the Echowire community. Help us keep Echowire safe and welcoming.',
 		category: 'Community',
 		lastUpdated: '2026-02-21',
 	},
@@ -56,14 +56,14 @@ export const POLICY_METADATA: ReadonlyArray<PolicyMetadata> = [
 		slug: 'security',
 		title: 'Security Bug Bounty',
 		description:
-			'Information about responsible disclosure and our security bug bounty program. Help us keep Fluxer secure.',
+			'Information about responsible disclosure and our security bug bounty program. Help us keep Echowire secure.',
 		category: 'Security',
 		lastUpdated: '2026-02-13',
 	},
 	{
 		slug: 'company-information',
 		title: 'Company Information',
-		description: 'Legal information about Fluxer Platform AB, including our registered address and contact details.',
+		description: 'Legal information about Proudlock Technology LLC, including our registered address and contact details.',
 		category: 'Legal',
 		lastUpdated: '2026-02-13',
 	},

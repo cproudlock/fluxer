@@ -1,8 +1,8 @@
-## Welcome to Fluxer
+## Welcome to Echowire
 
-These terms of service ("Terms") constitute a legally binding contract between you and Fluxer Platform AB (Swedish organization number: 559537-3993). We are based in Stockholm County, Sweden, and we operate the Fluxer chat platform and related services. Throughout these Terms, references to "Fluxer", "we", "us" or "our" refer to Fluxer Platform AB and our Services.
+These terms of service ("Terms") constitute a legally binding contract between you and Proudlock Technology LLC (a North Carolina limited liability company). We are based in West Jefferson, North Carolina, and we operate the Echowire chat platform and related services. Throughout these Terms, references to "Echowire", "we", "us" or "our" refer to Proudlock Technology LLC and our Services.
 
-By creating an account or using Fluxer in any way, you agree to be bound by these Terms, our [Privacy Policy](/privacy), and our [Community Guidelines](/guidelines). If you do not agree to these Terms, you must not use Fluxer.
+By creating an account or using Echowire in any way, you agree to be bound by these Terms, our [Privacy Policy](/privacy), and our [Community Guidelines](/guidelines). If you do not agree to these Terms, you must not use Echowire.
 
 If there is any conflict between these Terms and any applicable local mandatory law, the mandatory law will prevail.
 
@@ -10,20 +10,20 @@ If there is any conflict between these Terms and any applicable local mandatory 
 
 For the purposes of these Terms:
 
-- **"Services"** means the Fluxer applications (web, mobile, desktop), HTTP and WebSocket APIs, related websites and domains, and any other products, software, features, or services provided by Fluxer.
+- **"Services"** means the Echowire applications (web, mobile, desktop), HTTP and WebSocket APIs, related websites and domains, and any other products, software, features, or services provided by Echowire.
 - **"User Content"** means any data, text, messages, media, files, communities, reactions, or metadata you or other users submit, upload, transmit, store, or display on or through the Services.
-- **"Plutonium"** means Fluxer's optional paid subscription offering that provides enhanced features and benefits.
-- **"Community"** means a server, space, or similar environment created or administered on Fluxer where users can communicate or share content.
+- **"Reverb"** means Echowire's optional paid subscription offering that provides enhanced features and benefits.
+- **"Community"** means a server, space, or similar environment created or administered on Echowire where users can communicate or share content.
 - **"Community Owners"** means users who create, own, or administer Communities and who are responsible for setting rules (subject to these Terms and our Community Guidelines) and moderating those Communities.
-- **"Account"** means a user account registered with Fluxer that is associated with a unique identifier and, typically, an email address.
+- **"Account"** means a user account registered with Echowire that is associated with a unique identifier and, typically, an email address.
 - **"Privacy Policy"** means our [Privacy Policy](/privacy), which explains how we collect, use, and protect personal data.
-- **"Community Guidelines"** means our [Community Guidelines](/guidelines), which govern acceptable behavior and content on Fluxer.
+- **"Community Guidelines"** means our [Community Guidelines](/guidelines), which govern acceptable behavior and content on Echowire.
 
 Capitalized terms that are not defined in this section have the meaning given to them elsewhere in these Terms.
 
 ## 1. Eligibility and Accounts
 
-### 1.1 Eligibility to Use Fluxer
+### 1.1 Eligibility to Use Echowire
 
 You may use the Services only if:
 
@@ -48,14 +48,14 @@ You must not use the Services if:
 
 ### 1.2 Your Account and Security
 
-To use most features of Fluxer, you must create an Account. You are solely responsible for:
+To use most features of Echowire, you must create an Account. You are solely responsible for:
 
 - maintaining the confidentiality and security of your login credentials;
 - all activities that occur under your Account, whether or not authorized by you, **except where applicable law provides that you are not responsible (for example, where activity results from a security incident for which we are responsible);**
 - providing accurate, current, and complete information during registration; and
 - keeping your Account information up to date when it changes.
 
-You must promptly notify us at support@fluxer.app if you become aware of any unauthorized access to or use of your Account.
+You must promptly notify us at support@echowire.org if you become aware of any unauthorized access to or use of your Account.
 
 We strongly recommend that you:
 
@@ -68,21 +68,21 @@ Nothing in this Section 1.2 affects any non-waivable rights you may have under a
 
 ### 1.3 Consumer Use and Custom Contracts
 
-These Terms govern your use of Fluxer as a consumer and for general personal or community use.
+These Terms govern your use of Echowire as a consumer and for general personal or community use.
 
 If you or your organization negotiate and sign a separate written enterprise, business, or custom agreement with us that expressly supersedes these Terms, that agreement will govern to the extent it conflicts with these Terms. In all other respects, these Terms will continue to apply.
 
-## 2. Using Fluxer
+## 2. Using Echowire
 
 ### 2.1 Permitted Uses
 
-Fluxer is a communication and community platform where you can:
+Echowire is a communication and community platform where you can:
 
 - send and receive messages, files, and media;
 - create, manage, and participate in Communities;
 - engage in voice and video communications with other users;
 - build and moderate Communities around shared interests, subject to these Terms and our [Community Guidelines](/guidelines); and
-- subscribe to Plutonium for access to premium features and benefits.
+- subscribe to Reverb for access to premium features and benefits.
 
 Your use of the Services must always comply with these Terms, our [Community Guidelines](/guidelines), and applicable laws and regulations.
 
@@ -100,7 +100,13 @@ You must not use the Services to:
 - circumvent, disable, or interfere with security-related features or access controls; or
 - engage in any activity that is otherwise prohibited by these Terms or our [Community Guidelines](/guidelines).
 
-### 2.3 Service Changes and Availability
+### 2.3 Zero Tolerance for Objectionable Content and Abusive Users
+
+Echowire has a **zero-tolerance policy** for objectionable content and abusive behavior. This includes, without limitation, hate speech, harassment, threats, sexual content involving minors, graphic violence, doxxing, and any content or behavior intended to demean, intimidate, or harm other users.
+
+We review user reports of objectionable content and act on them within 24 hours. Violations of this policy result in the immediate removal of the offending content and the suspension or termination of the responsible Account, without prior warning. Users may report objectionable content or block abusive users at any time using the in-app reporting and blocking tools.
+
+### 2.4 Service Changes and Availability
 
 - The Services are provided without any service-level agreement (SLA). Outages, interruptions, and performance issues may occur.
 - We may add, modify, or remove features, or discontinue parts of the Services at any time. When we make significant changes, we will provide notice where reasonably practicable (for example, via email, in-app notifications, or update notes).
@@ -116,11 +122,11 @@ You retain full ownership of all User Content you create and share on or through
 
 You are responsible for ensuring that you have all necessary rights, licenses, and permissions to submit, upload, or share User Content on the Services and to grant the rights described in these Terms.
 
-### 3.2 License to Fluxer
+### 3.2 License to Echowire
 
-To operate, secure, and improve the Services, you grant Fluxer a limited license to your User Content.
+To operate, secure, and improve the Services, you grant Echowire a limited license to your User Content.
 
-Specifically, by submitting, uploading, or otherwise making User Content available on or through the Services, you grant Fluxer a worldwide, non-exclusive, royalty-free, transferable, and sublicensable license to:
+Specifically, by submitting, uploading, or otherwise making User Content available on or through the Services, you grant Echowire a worldwide, non-exclusive, royalty-free, transferable, and sublicensable license to:
 
 - host, cache, store, reproduce, and display your User Content;
 - use your User Content to operate, maintain, secure, and provide the Services;
@@ -164,7 +170,7 @@ Our safety and moderation systems are designed to protect both users and the int
 
 ### 3.5 Copyright and Intellectual Property
 
-If you believe that content on Fluxer infringes your copyrights, please notify us at dmca@fluxer.app with the following information:
+If you believe that content on Echowire infringes your copyrights, please notify us at dmca@echowire.org with the following information:
 
 - your full name and contact details;
 - a description of the copyrighted work you claim has been infringed;
@@ -200,13 +206,13 @@ We offer a generous free tier, but we expect you to use it reasonably and for it
 
 We may take enforcement action if you:
 
-- use Fluxer primarily as unlimited cloud storage rather than for communication or community activities;
+- use Echowire primarily as unlimited cloud storage rather than for communication or community activities;
 - accumulate excessive amounts of data or create unusual loads that negatively impact service quality or availability for other users;
 - distribute malware or illegal content, or use the Services for malicious, fraudulent, or abusive purposes;
-- use Fluxer infrastructure for command-and-control of malware, botnets, or other harmful systems; or
+- use Echowire infrastructure for command-and-control of malware, botnets, or other harmful systems; or
 - deliberately attempt to stress test, overload, or degrade our infrastructure without our prior written permission.
 
-We will not target normal users who are using Fluxer in good faith for its intended purposes. This policy exists to prevent abuse that harms the platform and other users.
+We will not target normal users who are using Echowire in good faith for its intended purposes. This policy exists to prevent abuse that harms the platform and other users.
 
 ### 5.2 Platform Integrity Protection
 
@@ -225,7 +231,7 @@ Violations of platform integrity may result in immediate content removal, featur
 
 ### 6.1 Payment Authorization
 
-By providing a payment method to Fluxer, you:
+By providing a payment method to Echowire, you:
 
 - authorize us to charge your payment method for any Services you purchase, including recurring subscription fees where applicable;
 - confirm that you have the legal right and authority to use that payment method;
@@ -235,13 +241,13 @@ By providing a payment method to Fluxer, you:
 
 You are responsible for all applicable taxes, fees, and charges related to your purchases, except where we are required by law to collect and remit them.
 
-### 6.2 Fluxer Plutonium Subscription
+### 6.2 Echowire Reverb Subscription
 
-We offer an optional premium subscription service called **Fluxer Plutonium** that provides enhanced features and benefits.
+We offer an optional premium subscription service called **Echowire Reverb** that provides enhanced features and benefits.
 
 #### 6.2.1 Automatic Renewal
 
-By subscribing to Plutonium, you agree to recurring automatic payments. Unless you cancel, your subscription will automatically renew at the end of each billing period (for example, monthly or annually), and we will automatically charge your payment method at each renewal date for the applicable subscription fee and any applicable taxes.
+By subscribing to Reverb, you agree to recurring automatic payments. Unless you cancel, your subscription will automatically renew at the end of each billing period (for example, monthly or annually), and we will automatically charge your payment method at each renewal date for the applicable subscription fee and any applicable taxes.
 
 You may cancel your subscription at any time through your Account settings. Cancellation takes effect at the end of your current billing period, and you will retain access to premium features until that time. You will not receive a refund or credit for any partial billing period unless required by law or as otherwise described in these Terms.
 
@@ -249,12 +255,12 @@ You may cancel your subscription at any time through your Account settings. Canc
 
 We may change subscription prices from time to time, including introducing different prices for new subscriptions, regions, or promotional offers.
 
-If you already have an active, continuously renewing Plutonium subscription:
+If you already have an active, continuously renewing Reverb subscription:
 
 - price increases will **not** apply to your existing subscription while it remains active and in good standing; you will continue to be charged the price that applied when you started or last changed that subscription (excluding any temporary discounts that have expired); and
 - we may, at our discretion, reduce your subscription price or apply discounts, and we will clearly indicate when such changes occur.
 
-If your subscription is canceled, expires, or lapses (for example, due to non-payment) and you later start a new Plutonium subscription, the then-current price for new subscriptions will apply and will be shown to you before you confirm the new subscription.
+If your subscription is canceled, expires, or lapses (for example, due to non-payment) and you later start a new Reverb subscription, the then-current price for new subscriptions will apply and will be shown to you before you confirm the new subscription.
 
 We may provide advance notice of price changes, especially where they are significant, but changes to prices for new subscriptions do not affect the price of your existing active subscription.
 
@@ -262,22 +268,22 @@ Nothing in this section limits any mandatory rights you may have under applicabl
 
 ### 6.3 Refunds and Restrictions
 
-#### 6.3.1 Plutonium Subscription Refunds
+#### 6.3.1 Reverb Subscription Refunds
 
-You may request a refund within 14 days of purchasing a Plutonium subscription by emailing support@fluxer.app from your registered Account email address, unless applicable law grants you a longer or different cooling-off period.
+You may request a refund within 14 days of purchasing a Reverb subscription by emailing support@echowire.org from your registered Account email address, unless applicable law grants you a longer or different cooling-off period.
 
 After receiving a refund:
 
-- your Plutonium subscription will be canceled, and access to premium features will end when the refund is processed; and
-- we may temporarily restrict your ability to purchase a new Plutonium subscription for a period of up to 30 days to reduce the risk of payment abuse.
+- your Reverb subscription will be canceled, and access to premium features will end when the refund is processed; and
+- we may temporarily restrict your ability to purchase a new Reverb subscription for a period of up to 30 days to reduce the risk of payment abuse.
 
-If you request refunds for Plutonium subscriptions multiple times, we may restrict or block your ability to purchase Plutonium again if we reasonably believe your refund requests are abusive or present an unacceptable risk of payment abuse. In exceptional cases, we may restore purchasing access at our discretion, taking into account your account history and the circumstances of the refunds.
+If you request refunds for Reverb subscriptions multiple times, we may restrict or block your ability to purchase Reverb again if we reasonably believe your refund requests are abusive or present an unacceptable risk of payment abuse. In exceptional cases, we may restore purchasing access at our discretion, taking into account your account history and the circumstances of the refunds.
 
 Nothing in this section limits any mandatory refund, withdrawal, or cancellation rights that you may have under applicable consumer laws.
 
 #### 6.3.2 Gift Code Refunds
 
-If you purchase a Plutonium gift code and subsequently request a refund or initiate a chargeback for that purchase:
+If you purchase a Reverb gift code and subsequently request a refund or initiate a chargeback for that purchase:
 
 - the user who redeemed the gift code will lose access to their premium benefits, typically from the time we process the refund or receive notice of the chargeback; and
 - we may notify the affected user via email or in-app notification explaining that their premium access was revoked due to a refund or chargeback related to the underlying purchase.
@@ -289,20 +295,20 @@ If a payment fails to process:
 - we will automatically attempt to retry charging your payment method a reasonable number of times;
 - we may charge any backup payment methods you have added to your Account;
 - we may suspend or downgrade your access to premium features until payment is successfully processed; and
-- you remain responsible for any unpaid amounts owed to Fluxer.
+- you remain responsible for any unpaid amounts owed to Echowire.
 
 We are not responsible for any fees, charges, penalties, or interest imposed by your bank, payment provider, or financial institution in connection with failed payments or chargebacks.
 
 ### 6.5 Chargebacks and Payment Disputes
 
-If you believe there is an error or unauthorized charge on your Account, we encourage you to contact us first at support@fluxer.app so we can investigate and attempt to resolve the issue quickly.
+If you believe there is an error or unauthorized charge on your Account, we encourage you to contact us first at support@echowire.org so we can investigate and attempt to resolve the issue quickly.
 
-If you initiate a chargeback or payment dispute with your bank or payment provider for a payment made to Fluxer, we may:
+If you initiate a chargeback or payment dispute with your bank or payment provider for a payment made to Echowire, we may:
 
 - temporarily suspend or restrict your access to paid features while the dispute is investigated; and
 - limit your ability to make future purchases if we reasonably believe the dispute is unfounded or forms part of a pattern of abusive behavior.
 
-If a chargeback is resolved against us and we have a reasonable basis to believe it was made in bad faith or as part of a pattern of abuse or fraud, we may close your Account or permanently restrict your ability to purchase Plutonium or other paid Services. We will consider any information you provide when deciding these measures.
+If a chargeback is resolved against us and we have a reasonable basis to believe it was made in bad faith or as part of a pattern of abuse or fraud, we may close your Account or permanently restrict your ability to purchase Reverb or other paid Services. We will consider any information you provide when deciding these measures.
 
 Chargebacks can cause significant costs and processing burdens, including penalty fees and increased fraud scrutiny from payment providers. Please contact us before initiating a chargeback whenever possible so we can try to resolve the issue.
 
@@ -310,11 +316,11 @@ Stripe or your payment provider may also contact you directly with receipts, ale
 
 ## 7. Third-Party Services
 
-Fluxer integrates with and relies upon various third-party services to provide the Services, including hosting and infrastructure providers, payment processors, content delivery networks, security services, and communication platforms.
+Echowire integrates with and relies upon various third-party services to provide the Services, including hosting and infrastructure providers, payment processors, content delivery networks, security services, and communication platforms.
 
 For a description of the categories of third-party services we use and how they handle data, please see our [Privacy Policy](/privacy).
 
-These third-party services have their own independent terms of service and privacy policies. Your use of such services may be subject to those additional terms. Fluxer is not responsible for the content, availability, policies, or practices of third-party services.
+These third-party services have their own independent terms of service and privacy policies. Your use of such services may be subject to those additional terms. Echowire is not responsible for the content, availability, policies, or practices of third-party services.
 
 Some integrations involve you interacting directly with third-party content (for example, playing an embedded YouTube video). In those cases, the third party may receive information directly from your device and process it as an independent controller under its own terms and privacy policy.
 
@@ -324,9 +330,9 @@ Where required by law or by the terms of our agreements with providers that proc
 
 ### 8.1 Voluntary Account Deletion
 
-You may delete your Fluxer Account at any time through your Account settings. While we will be sorry to see you go, we respect your choice and will process your deletion request in accordance with our data retention practices and applicable law. For details about the deletion process, including any grace period during which you can cancel deletion, see [the guide to deleting or disabling an account](/help/delete-account).
+You may delete your Echowire Account at any time through your Account settings. While we will be sorry to see you go, we respect your choice and will process your deletion request in accordance with our data retention practices and applicable law. For details about the deletion process, including any grace period during which you can cancel deletion, see [the guide to deleting or disabling an account](/help/delete-account).
 
-### 8.2 Suspension and Termination by Fluxer
+### 8.2 Suspension and Termination by Echowire
 
 We may suspend or permanently terminate Accounts, or restrict access to the Services, if we reasonably believe that:
 
@@ -340,7 +346,7 @@ We will typically provide advance warning before suspending or terminating an Ac
 
 If we terminate your Account for cause, you may lose access to your User Content and any associated data, subject to applicable law and our data retention practices.
 
-If you believe we have made a mistake in suspending or terminating your Account, you may appeal in accordance with our [Community Guidelines](/guidelines), for example by emailing appeals@fluxer.app from the email address associated with your Account.
+If you believe we have made a mistake in suspending or terminating your Account, you may appeal in accordance with our [Community Guidelines](/guidelines), for example by emailing appeals@echowire.org from the email address associated with your Account.
 
 ### 8.3 Account Inactivity and Deletion
 
@@ -355,15 +361,15 @@ When an Account is deleted:
 - messages and content you posted in Communities or direct messages may remain visible to other users, unless you delete them first (for example, via your Privacy Dashboard or other tools we provide); and
 - you may no longer be able to access your User Content, unless you exported or downloaded it beforehand.
 
-You can remove messages and other content through your Privacy Dashboard or by contacting privacy@fluxer.app before deletion, subject to technical and legal limitations.
+You can remove messages and other content through your Privacy Dashboard or by contacting privacy@echowire.org before deletion, subject to technical and legal limitations.
 
 ## 9. Disclaimers, Limitation of Liability, and Indemnification
 
 ### 9.1 No Warranties
 
-We work diligently to maintain Fluxer as a reliable and stable platform, but the Services are provided on an "as is" and "as available" basis.
+We work diligently to maintain Echowire as a reliable and stable platform, but the Services are provided on an "as is" and "as available" basis.
 
-To the fullest extent permitted by law, Fluxer and its affiliates make no express or implied warranties or representations about the Services, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, or that the Services will be uninterrupted, secure, or error-free.
+To the fullest extent permitted by law, Echowire and its affiliates make no express or implied warranties or representations about the Services, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, or that the Services will be uninterrupted, secure, or error-free.
 
 We cannot guarantee:
 
@@ -373,7 +379,7 @@ We cannot guarantee:
 
 ### 9.2 Limitation of Liability
 
-To the maximum extent permitted by applicable law, Fluxer and its affiliates will not be liable for:
+To the maximum extent permitted by applicable law, Echowire and its affiliates will not be liable for:
 
 - any indirect, incidental, consequential, special, or punitive damages; or
 - any loss of profits, revenues, data, goodwill, or other intangible losses;
@@ -383,7 +389,7 @@ arising out of or in connection with your use of, or inability to use, the Servi
 To the extent we are liable under applicable law, our total aggregate liability for all claims arising out of or relating to the Services or these Terms will be limited to the greater of:
 
 - EUR 100; or
-- the total amount you have paid to Fluxer for the Services during the twelve (12) months immediately preceding the event giving rise to the claim.
+- the total amount you have paid to Echowire for the Services during the twelve (12) months immediately preceding the event giving rise to the claim.
 
 Nothing in these Terms limits or excludes:
 
@@ -394,7 +400,7 @@ If you are a consumer residing in the EU/EEA, the United Kingdom, or another jur
 
 ### 9.3 Indemnification
 
-To the extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Fluxer, its officers, directors, employees, and agents from and against any claims, demands, actions, damages, losses, and expenses (including reasonable legal fees) arising out of or related to:
+To the extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Echowire, its officers, directors, employees, and agents from and against any claims, demands, actions, damages, losses, and expenses (including reasonable legal fees) arising out of or related to:
 
 - your violation of these Terms or our [Community Guidelines](/guidelines);
 - your violation of any applicable law or regulation; or
@@ -406,9 +412,9 @@ This indemnity obligation does not apply to the extent that a claim arises due t
 
 We want to resolve disputes fairly and efficiently.
 
-- **Informal resolution first:** If you have a concern or dispute with us, please contact support@fluxer.app first. We will try to work with you in good faith to resolve the issue informally.
-- **Governing law and courts:** Unless otherwise required by mandatory local law, these Terms and any disputes arising out of or relating to them or the Services are governed by Swedish law, without regard to its conflict-of-law rules. Any dispute, controversy, or claim arising out of or in connection with these Terms or the Services will be submitted to the courts of Stockholm, Sweden, which will have exclusive jurisdiction, subject to the small-claims provision below.
-- **Small claims:** Either party may bring an individual claim in a competent small-claims court in a jurisdiction where venue is proper, instead of in the courts of Stockholm, Sweden.
+- **Informal resolution first:** If you have a concern or dispute with us, please contact support@echowire.org first. We will try to work with you in good faith to resolve the issue informally.
+- **Governing law and courts:** Unless otherwise required by mandatory local law, these Terms and any disputes arising out of or relating to them or the Services are governed by the laws of the State of North Carolina, without regard to its conflict-of-law rules. Any dispute, controversy, or claim arising out of or in connection with these Terms or the Services will be submitted to the state and federal courts located in North Carolina, which will have exclusive jurisdiction, subject to the small-claims provision below.
+- **Small claims:** Either party may bring an individual claim in a competent small-claims court in a jurisdiction where venue is proper, instead of in the state and federal courts located in North Carolina.
 - **Consumers in the EU/EEA and other regions:** If you are a consumer residing in the EU, EEA, or another jurisdiction that grants you mandatory rights to bring claims in the courts of your country of residence, nothing in these Terms limits those rights.
 - **Class and representative actions:** To the maximum extent permitted by applicable law, any claims must be brought on an individual basis, and not as a plaintiff or class member in any class, collective, or representative action. If a waiver of class or representative actions is not enforceable for a particular claim, that claim may proceed as required by law in a court with proper jurisdiction, and the class or representative aspects of that claim will be handled as that court determines.
 
@@ -429,29 +435,28 @@ Your continued use of the Services after the updated Terms take effect constitut
 
 ## 12. Account Communications and Verification
 
-All account-related communications with Fluxer should be sent from the email address associated with your Account. We use this as our primary method of verifying your identity and ensuring we are communicating with the actual Account holder.
+All account-related communications with Echowire should be sent from the email address associated with your Account. We use this as our primary method of verifying your identity and ensuring we are communicating with the actual Account holder.
 
 For security reasons, we normally only provide account support, share sensitive information, or make changes to your Account when you contact us from that email address. If you lose access to your registered email address, we may need additional information to verify your identity and might not always be able to recover or modify your Account.
 
-Fluxer will never ask you to provide your password, full payment card number, or other highly sensitive security information via email. All official Fluxer emails and communications originate from email addresses ending in `@fluxer.app` or `@m.fluxer.app`. Be cautious of phishing attempts using similar-looking domain names or requesting sensitive information.
+Echowire will never ask you to provide your password, full payment card number, or other highly sensitive security information via email. All official Echowire emails and communications originate from email addresses ending in `@echowire.org` or `@m.echowire.org`. Be cautious of phishing attempts using similar-looking domain names or requesting sensitive information.
 
-If you receive a suspicious message claiming to be from Fluxer, please do not click any links or provide any information. Instead, contact us directly at support@fluxer.app.
+If you receive a suspicious message claiming to be from Echowire, please do not click any links or provide any information. Instead, contact us directly at support@echowire.org.
 
 ## 13. Contact Information
 
 If you have questions, concerns, or need assistance with the Services or these Terms, you can contact us at:
 
-- **Support email:** support@fluxer.app (for account-related matters, please contact us from the email address associated with your Account where possible)
-- **Privacy email:** privacy@fluxer.app (for privacy and data protection requests)
-- **Website:** [https://fluxer.app](https://fluxer.app)
+- **Support email:** support@echowire.org (for account-related matters, please contact us from the email address associated with your Account where possible)
+- **Privacy email:** privacy@echowire.org (for privacy and data protection requests)
+- **Website:** [https://echowire.org](https://echowire.org)
 
 ### Postal Address
 
-Fluxer Platform AB
-Norra Kronans Gata 430
-136 76 Brandbergen
-Stockholm County, Sweden
-Organization number: 559537-3993
+Proudlock Technology LLC
+502 Buck Mountain Circle
+West Jefferson, NC 28694
+USA
 
 For additional contact details (including press, security, and legal requests), see our company information page or the [Privacy Policy](/privacy).
 

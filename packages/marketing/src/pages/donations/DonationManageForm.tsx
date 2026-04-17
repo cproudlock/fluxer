@@ -61,13 +61,13 @@ export function renderDonationManageForm(ctx: MarketingContext, emailParam: stri
 					id="manage-email"
 					placeholder={i18n.emailPlaceholder}
 					value={emailParam}
-					class="flex-1 rounded-lg border border-gray-200 px-4 py-2"
+					class="flex-1 rounded-lg border border-[#1E293B] px-4 py-2"
 				/>
 				<button
 					type="button"
 					id="send-link-btn"
 					onclick="requestManageLink()"
-					class="rounded-lg bg-gray-800 px-6 py-2 font-medium text-white transition hover:bg-gray-700"
+					class="rounded-lg bg-[#3B82F6] px-6 py-2 font-medium text-white transition hover:bg-[#2563EB]"
 				>
 					{i18n.sendLink}
 				</button>
@@ -92,7 +92,7 @@ async function requestManageLink() {
 
   if (!email || !email.includes('@')) {
     msgEl.textContent = manageI18n.errorInvalidEmail;
-    msgEl.className = 'mt-2 text-center text-sm text-red-500';
+    msgEl.className = 'mt-2 text-center text-sm text-[#F43F5E]';
     msgEl.classList.remove('hidden');
     return;
   }
@@ -113,11 +113,11 @@ async function requestManageLink() {
     } else {
       var error = await response.json().catch(function() { return {}; });
       msgEl.textContent = error.message || manageI18n.errorGeneric;
-      msgEl.className = 'mt-2 text-center text-sm text-red-500';
+      msgEl.className = 'mt-2 text-center text-sm text-[#F43F5E]';
     }
   } catch (err) {
     msgEl.textContent = manageI18n.errorNetwork;
-    msgEl.className = 'mt-2 text-center text-sm text-red-500';
+    msgEl.className = 'mt-2 text-center text-sm text-[#F43F5E]';
   }
 
   msgEl.classList.remove('hidden');

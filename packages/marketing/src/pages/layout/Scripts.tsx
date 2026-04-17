@@ -106,7 +106,7 @@ export function mainPageScript(): JSX.Element {
 const DOWNLOAD_SCRIPT = `
 (function() {
   const DEBUG = true;
-  const log = (...args) => DEBUG && console.log('[Fluxer DL]', ...args);
+  const log = (...args) => DEBUG && console.log('[Echowire DL]', ...args);
 
   async function detectArch() {
     log('Detecting architecture...');
@@ -299,12 +299,12 @@ const DOWNLOAD_SCRIPT = `
         if (!targetId) return;
 
         tabs.forEach((t) => {
-          t.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
-          t.classList.add('text-gray-600');
+          t.classList.remove('bg-[#1A2440]', 'text-white', 'shadow-sm');
+          t.classList.add('text-[#94A3B8]');
         });
 
-        tab.classList.remove('text-gray-600');
-        tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+        tab.classList.remove('text-[#94A3B8]');
+        tab.classList.add('bg-[#1A2440]', 'text-white', 'shadow-sm');
 
         document.querySelectorAll('.pwa-panel').forEach((p) => p.classList.add('hidden'));
         const targetPanel = document.getElementById('pwa-panel-' + targetId);
@@ -395,13 +395,13 @@ ${LOCALE_SELECTOR_SCRIPT}
 
       links.forEach((link) => {
         link.style.color = '';
-        link.classList.add('text-muted-foreground');
+        link.classList.add('text-[#94A3B8]');
       });
 
       const active = linkById.get(id);
       if (active) {
-        active.style.color = '#4641D9';
-        active.classList.remove('text-muted-foreground');
+        active.style.color = '#3B82F6';
+        active.classList.remove('text-[#94A3B8]');
       }
     };
 

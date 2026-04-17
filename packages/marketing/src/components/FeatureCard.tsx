@@ -48,8 +48,8 @@ interface FeatureCardProps {
 }
 
 export function FeatureCard(props: FeatureCardProps): JSX.Element {
-	const textColor = 'text-gray-900';
-	const descriptionColor = 'text-gray-600';
+	const textColor = 'text-white';
+	const descriptionColor = 'text-[#94A3B8]';
 
 	return (
 		<MarketingCard theme="light" padding="md" class="relative rounded-2xl">
@@ -66,8 +66,8 @@ export function FeatureCard(props: FeatureCardProps): JSX.Element {
 				</MarketingButton>
 			)}
 			<div class="mb-6">
-				<div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#4641D9]/10 to-[#4641D9]/5 md:h-16 md:w-16">
-					<Icon name={props.icon} class="h-7 w-7 text-[#4641D9] md:h-8 md:w-8" />
+				<div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3B82F6]/10 to-[#3B82F6]/5 md:h-16 md:w-16">
+					<Icon name={props.icon} class="h-7 w-7 text-[#3B82F6] md:h-8 md:w-8" />
 				</div>
 				<h3 class={`title ${textColor} mb-3`}>{props.title}</h3>
 				<p class={`body-lg ${descriptionColor}`}>{props.description}</p>
@@ -76,7 +76,7 @@ export function FeatureCard(props: FeatureCardProps): JSX.Element {
 				<ul class="space-y-3">
 					{props.features.map((feature, index) => (
 						<li key={`${index}-${feature}`} class="flex items-start gap-3">
-							<span class="mt-[.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4641D9]" />
+							<span class="mt-[.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#3B82F6]" />
 							<span class={`body-lg ${textColor}`}>{feature}</span>
 						</li>
 					))}

@@ -51,13 +51,13 @@ interface LocaleSelectorTriggerProps {
 export function LocaleSelectorTrigger(props: LocaleSelectorTriggerProps): JSX.Element {
 	const {ctx, className, text} = props;
 	const label = ctx.i18n.getMessage('languages.change_language', ctx.locale);
-	const baseClass = 'locale-toggle flex items-center justify-center rounded-lg p-2 transition-colors hover:bg-gray-100';
+	const baseClass = 'locale-toggle flex items-center justify-center rounded-lg p-2 transition-colors hover:bg-[#1A2440]';
 	const classes = [baseClass, className].filter(Boolean).join(' ');
 
 	return (
 		<a class={classes} aria-label={label} id="locale-button" href={href(ctx, '#locale-modal-backdrop')}>
 			<TranslateIcon class="h-5 w-5" />
-			{text ? <span class="ml-2 font-semibold text-base text-gray-900">{text}</span> : null}
+			{text ? <span class="ml-2 font-semibold text-base text-white">{text}</span> : null}
 		</a>
 	);
 }
@@ -76,9 +76,9 @@ export function LocaleSelectorModal(props: LocaleSelectorProps): JSX.Element {
 			<div class="locale-modal">
 				<div class="flex h-full flex-col">
 					<div class="flex items-center justify-between p-6 pb-0">
-						<h2 class="font-bold text-gray-900 text-xl">{title}</h2>
+						<h2 class="font-bold text-white text-xl">{title}</h2>
 						<a
-							class="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+							class="rounded-lg p-2 text-[#94A3B8] hover:bg-[#1A2440] hover:text-white"
 							id="locale-close"
 							aria-label={ctx.i18n.getMessage('navigation.close', ctx.locale)}
 							href={href(ctx, '#')}
@@ -88,7 +88,7 @@ export function LocaleSelectorModal(props: LocaleSelectorProps): JSX.Element {
 							</svg>
 						</a>
 					</div>
-					<p class="px-6 pb-2 text-gray-500 text-xs leading-relaxed">{notice}</p>
+					<p class="px-6 pb-2 text-[#94A3B8] text-xs leading-relaxed">{notice}</p>
 					<div class="flex-1 overflow-y-auto p-6 pt-4">
 						<div class="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
 							{AllLocales.map((locale) => {
@@ -104,8 +104,8 @@ export function LocaleSelectorModal(props: LocaleSelectorProps): JSX.Element {
 										<input type="hidden" name="redirect" value={currentPath} />
 										<button
 											type="submit"
-											class={`relative flex min-h-[120px] flex-col items-center justify-center gap-3 rounded-xl border-2 p-4 text-center transition-colors hover:bg-gray-50 ${
-												isCurrent ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
+											class={`relative flex min-h-[120px] flex-col items-center justify-center gap-3 rounded-xl border-2 p-4 text-center transition-colors hover:bg-[#1A2440] ${
+												isCurrent ? 'border-[#3B82F6] bg-[#3B82F6]/10' : 'border-[#1E293B]'
 											}`}
 										>
 											{isCurrent ? (
@@ -122,8 +122,8 @@ export function LocaleSelectorModal(props: LocaleSelectorProps): JSX.Element {
 												</div>
 											) : null}
 											<FlagSvg locale={locale} ctx={ctx} class="h-8 w-8 rounded" />
-											<div class="font-semibold text-gray-900 text-sm">{nativeName}</div>
-											<div class="text-gray-500 text-xs">{localizedName}</div>
+											<div class="font-semibold text-white text-sm">{nativeName}</div>
+											<div class="text-[#94A3B8] text-xs">{localizedName}</div>
 										</button>
 									</form>
 								);

@@ -82,4 +82,4 @@ USER nobody
 
 EXPOSE 8080
 
-CMD ["pnpm", "start"]
+CMD ["npx", "tsx", "src/index.tsx"]

@@ -58,7 +58,7 @@ export function SupportCard(props: SupportCardProps): JSX.Element {
 			<div class="mb-8 text-center">
 				<div
 					class={`mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl md:h-24 md:w-24 ${
-						theme === 'dark' ? 'bg-white/20' : 'bg-[#4641D9]'
+						theme === 'dark' ? 'bg-white/20' : 'bg-[#3B82F6]'
 					}`}
 				>
 					<Icon
@@ -66,10 +66,10 @@ export function SupportCard(props: SupportCardProps): JSX.Element {
 						class={`md:h-12 md:w-12 ${theme === 'dark' ? 'h-10 w-10 text-white' : 'h-10 w-10 text-white'}`}
 					/>
 				</div>
-				<h3 class={`title mb-4 text-xl md:text-2xl ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+				<h3 class={`title mb-4 text-xl md:text-2xl ${theme === 'dark' ? 'text-white' : 'text-white'}`}>
 					{props.title}
 				</h3>
-				<p class={`body-lg leading-relaxed ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>
+				<p class={`body-lg leading-relaxed ${theme === 'dark' ? 'text-white/80' : 'text-[#E2E8F0]'}`}>
 					{props.description}
 				</p>
 			</div>
@@ -80,7 +80,7 @@ export function SupportCard(props: SupportCardProps): JSX.Element {
 					target={linkProps.target}
 					rel={linkProps.rel}
 					class={`label w-full text-center shadow-md md:text-lg ${
-						theme === 'dark' ? 'bg-white text-[#4641D9] hover:bg-gray-100' : ''
+						theme === 'dark' ? 'bg-white text-[#3B82F6] hover:bg-gray-100' : ''
 					}`}
 				>
 					{props.buttonText}

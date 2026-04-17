@@ -20,175 +20,167 @@
 /** @jsxRuntime automatic */
 /** @jsxImportSource hono/jsx */
 
-import {defaultHeroPadding} from '@fluxer/marketing/src/components/HeroBase';
-import {CoinsIcon} from '@fluxer/marketing/src/components/icons/CoinsIcon';
-import {DownloadIcon} from '@fluxer/marketing/src/components/icons/DownloadIcon';
-import {GithubIcon} from '@fluxer/marketing/src/components/icons/GithubIcon';
-import {HeartIcon} from '@fluxer/marketing/src/components/icons/HeartIcon';
-import {getSystemRequirements, renderDesktopButton} from '@fluxer/marketing/src/components/PlatformDownloadButton';
-import {renderPwaInstallModal, renderPwaInstallTrigger} from '@fluxer/marketing/src/components/PwaInstallDialog';
-import {Section} from '@fluxer/marketing/src/components/Section';
 import type {MarketingContext} from '@fluxer/marketing/src/MarketingContext';
-import {renderLayout} from '@fluxer/marketing/src/pages/Layout';
+import {renderContentLayout} from '@fluxer/marketing/src/pages/Layout';
 import {pageMeta} from '@fluxer/marketing/src/pages/layout/Meta';
-import {href} from '@fluxer/marketing/src/UrlUtils';
-import {GRADIENTS} from '@fluxer/ui/src/styles/Gradients';
 import type {Context} from 'hono';
 
 export async function renderDownloadPage(c: Context, ctx: MarketingContext): Promise<Response> {
-	const content: ReadonlyArray<JSX.Element> = [
-		renderHeroSection(ctx),
-		renderMobileSection(ctx),
-		renderSupportSection(ctx),
-	];
-	const meta = pageMeta(
-		ctx.i18n.getMessage('download.download_fluxer', ctx.locale),
-		ctx.i18n.getMessage('platform_support.desktop.download_desktop_intro', ctx.locale),
-		'website',
-	);
-	const html = renderLayout(c, ctx, meta, content);
+	const meta = pageMeta('Download Echowire', 'Get the Echowire app for desktop, mobile, or the web.', 'website');
+	const content: ReadonlyArray<JSX.Element> = [renderDownloadContent()];
+	const html = renderContentLayout(c, ctx, meta, content);
 	return c.html(html);
 }
 
-function renderHeroSection(ctx: MarketingContext): JSX.Element {
-	const windowsRequirements = getSystemRequirements(ctx, 'windows');
-	const macosRequirements = getSystemRequirements(ctx, 'macos');
-	const linuxRequirements = getSystemRequirements(ctx, 'linux');
-
+function renderDownloadContent(): JSX.Element {
 	return (
-		<section class={`flex flex-col items-center justify-center ${defaultHeroPadding()}`}>
-			<div class="max-w-4xl space-y-8 text-center">
-				<div class="flex justify-center">
-					<div class="inline-flex h-28 w-28 items-center justify-center rounded-3xl bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
-						<DownloadIcon class="h-14 w-14 text-white md:h-18 md:w-18" />
-					</div>
-				</div>
-				<h1 class="hero">{ctx.i18n.getMessage('download.download_fluxer', ctx.locale)}</h1>
-				<p class="lead mx-auto max-w-2xl text-white/90">
-					{ctx.i18n.getMessage('platform_support.desktop.available_on_desktop_and_web', ctx.locale)}
+		<section class="mx-auto max-w-3xl">
+			<header class="mb-10 text-center">
+				<h1 class="mb-4 font-bold text-4xl text-white">Download Echowire</h1>
+				<p class="text-lg text-[#94A3B8]">
+					Get the app for system-wide push-to-talk, notifications, and more.
 				</p>
+			</header>
+
+			<h2 class="mb-4 font-semibold text-xs text-[#94A3B8] uppercase tracking-widest">Desktop</h2>
+			<div class="mb-10 grid gap-4 md:grid-cols-2">
+				{renderCard(
+					'Windows',
+					'Windows 10 or later, 64-bit',
+					WINDOWS_ICON,
+					<div class="dropdown relative" id="windows-dropdown">
+						<button
+							class="inline-flex items-center gap-2 rounded-lg bg-[#3B82F6] px-5 py-2.5 font-semibold text-sm text-white transition hover:bg-[#2563EB]"
+							onclick="document.getElementById('windows-dropdown').classList.toggle('open')"
+						>
+							Download
+							<svg viewBox="0 0 10 6" class="h-2.5 w-2.5 fill-none stroke-current stroke-[1.5]">
+								<path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+						<div class="dropdown-menu absolute right-0 top-full z-10 mt-1.5 hidden min-w-[220px] rounded-lg border border-[#1E293B] bg-[#101931] py-1 shadow-xl">
+							<a
+								href="#"
+								onclick="navigator.clipboard.writeText('winget install Echowire.Echowire');this.querySelector('.dd-desc').textContent='Copied to clipboard';return false;"
+								class="block px-4 py-2.5 transition hover:bg-[#1A2440]"
+							>
+								<div class="font-semibold text-sm text-white">winget (recommended)</div>
+								<div class="dd-desc text-xs text-[#94A3B8]">winget install Echowire.Echowire</div>
+							</a>
+							<a href="/api/dl/desktop/stable/win32/x64/latest/setup" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">Installer (.exe)</div>
+								<div class="text-xs text-[#94A3B8]">Standard setup, runs on Windows 10+</div>
+							</a>
+						</div>
+					</div>,
+				)}
+				{renderCard(
+					'Linux',
+					'64-bit, multiple formats available',
+					LINUX_ICON,
+					<div class="dropdown relative" id="linux-dropdown">
+						<button
+							class="inline-flex items-center gap-2 rounded-lg bg-[#3B82F6] px-5 py-2.5 font-semibold text-sm text-white transition hover:bg-[#2563EB]"
+							onclick="document.getElementById('linux-dropdown').classList.toggle('open')"
+						>
+							Download
+							<svg viewBox="0 0 10 6" class="h-2.5 w-2.5 fill-none stroke-current stroke-[1.5]">
+								<path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+						<div class="dropdown-menu absolute right-0 top-full z-10 mt-1.5 hidden min-w-[220px] rounded-lg border border-[#1E293B] bg-[#101931] py-1 shadow-xl">
+							<a href="/api/dl/desktop/stable/linux/x64/latest/deb" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.deb</div>
+								<div class="text-xs text-[#94A3B8]">Ubuntu, Debian, and derivatives</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/x64/latest/appimage" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.AppImage</div>
+								<div class="text-xs text-[#94A3B8]">Portable, runs on most distros</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/x64/latest/rpm" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.rpm</div>
+								<div class="text-xs text-[#94A3B8]">Fedora, RHEL, openSUSE</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/x64/latest/tar_gz" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.tar.gz</div>
+								<div class="text-xs text-[#94A3B8]">Generic Linux archive</div>
+							</a>
+						</div>
+					</div>,
+				)}
 			</div>
 
-			<div class="mt-12 w-full max-w-3xl md:mt-16">
-				<div class="flex flex-col flex-wrap items-stretch justify-center gap-6 sm:flex-row sm:items-start">
-					<div class="flex w-full flex-col items-stretch sm:w-auto sm:items-start">
-						{renderDesktopButton(ctx, 'windows', 'light', 'dl', true, true)}
-						<p class="mt-2 w-full text-center text-white/50 text-xs">{windowsRequirements}</p>
-					</div>
-					<div class="flex w-full flex-col items-stretch sm:w-auto sm:items-start">
-						{renderDesktopButton(ctx, 'macos', 'light', 'dl', true, true)}
-						<p class="mt-2 w-full text-center text-white/50 text-xs">{macosRequirements}</p>
-					</div>
-					<div class="flex w-full flex-col items-stretch sm:w-auto sm:items-start">
-						{renderDesktopButton(ctx, 'linux', 'light', 'dl', true, true)}
-						<p class="invisible mt-2 w-full text-center text-white/50 text-xs">{linuxRequirements || '—'}</p>
-					</div>
-				</div>
+			<h2 class="mb-4 font-semibold text-xs text-[#94A3B8] uppercase tracking-widest">Mobile</h2>
+			<div class="mb-10 grid gap-4 md:grid-cols-2">
+				{renderCard(
+					'Android',
+					'Android 7.0 or later',
+					ANDROID_ICON,
+					<a
+						href="https://play.google.com/apps/testing/org.echowire.twa"
+						class="inline-flex rounded-lg bg-[#3B82F6] px-5 py-2.5 font-semibold text-sm text-white transition hover:bg-[#2563EB]"
+					>
+						Google Play Beta
+					</a>,
+				)}
+				{renderCard(
+					'iOS',
+					'iPhone and iPad, iOS 15 or later',
+					IOS_ICON,
+					<a
+						href="https://testflight.apple.com/join/uBgF2xtT"
+						class="inline-flex rounded-lg bg-[#3B82F6] px-5 py-2.5 font-semibold text-sm text-white transition hover:bg-[#2563EB]"
+					>
+						TestFlight Beta
+					</a>,
+				)}
 			</div>
+
+			{renderDropdownScript()}
 		</section>
 	);
 }
 
-function renderMobileSection(ctx: MarketingContext): JSX.Element {
+function renderCard(title: string, desc: string, icon: string, action: JSX.Element): JSX.Element {
 	return (
-		<Section
-			variant="light"
-			title={ctx.i18n.getMessage('platform_support.mobile.mobile_apps_underway', ctx.locale)}
-			description={ctx.i18n.getMessage('platform_support.mobile.mobile_browser_explainer', ctx.locale)}
-		>
-			<div class="mx-auto max-w-3xl">
-				<div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-md md:p-10">
-					<ul class="space-y-4">
-						<li class="flex items-start gap-3">
-							<span class="mt-[.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4641D9]" />
-							<span class="body-lg text-gray-900">
-								{ctx.i18n.getMessage('platform_support.mobile.install_as_app.add_to_home', ctx.locale)}
-							</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<span class="mt-[.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4641D9]" />
-							<span class="body-lg text-gray-900">
-								{ctx.i18n.getMessage('app.customization.app_icon_badges', ctx.locale)}
-							</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<span class="mt-[.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4641D9]" />
-							<span class="body-lg text-gray-900">
-								{ctx.i18n.getMessage('platform_support.mobile.push_notifications', ctx.locale)}
-							</span>
-						</li>
-					</ul>
-
-					<div class="mt-8 flex justify-center">{renderPwaInstallTrigger(ctx)}</div>
-					{renderPwaInstallModal(ctx)}
-
-					<p class="mt-6 text-center text-gray-600 text-sm leading-relaxed">
-						{ctx.i18n.getMessage('platform_support.mobile.not_full_replacement_yet', ctx.locale)}
-					</p>
+		<div class="flex flex-col items-start gap-4 rounded-xl border border-[#1E293B] bg-[#101931] p-6">
+			<div class="flex items-center gap-3">
+				<svg class="h-8 w-8 fill-[#94A3B8]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d={icon} />
+				</svg>
+				<div>
+					<div class="font-semibold text-white">{title}</div>
+					<div class="text-xs text-[#94A3B8]">{desc}</div>
 				</div>
 			</div>
-		</Section>
+			{action}
+		</div>
 	);
 }
 
-function renderSupportSection(ctx: MarketingContext): JSX.Element {
+function renderDropdownScript(): JSX.Element {
 	return (
-		<section class={GRADIENTS.light}>
-			<Section
-				variant="cta"
-				title={ctx.i18n.getMessage('donations.mobile_roadmap_sponsorship', ctx.locale)}
-				description={ctx.i18n.getMessage('donations.why_support', ctx.locale)}
-			>
-				<div class="flex flex-col gap-6 sm:flex-row sm:justify-center">
-					{renderSupportCard(
-						href(ctx, '/plutonium'),
-						<CoinsIcon class="h-8 w-8 text-white" />,
-						ctx.i18n.getMessage('pricing_and_tiers.plutonium.tier_name', ctx.locale),
-						ctx.i18n.getMessage('donations.support_future_development', ctx.locale),
-						false,
-					)}
-					{renderSupportCard(
-						href(ctx, '/donate'),
-						<HeartIcon class="h-8 w-8 text-white" />,
-						ctx.i18n.getMessage('donations.donate.label', ctx.locale),
-						ctx.i18n.getMessage('donations.send_one_time_gift', ctx.locale),
-						false,
-					)}
-					{renderSupportCard(
-						'https://github.com/fluxerapp/fluxer',
-						<GithubIcon class="h-8 w-8 text-white" />,
-						ctx.i18n.getMessage('company_and_resources.source_and_contribution.contribute_on_github', ctx.locale),
-						ctx.i18n.getMessage('company_and_resources.source_and_contribution.code_issues_docs_reviews', ctx.locale),
-						true,
-					)}
-				</div>
-			</Section>
-		</section>
+		<script
+			dangerouslySetInnerHTML={{
+				__html: `document.addEventListener('click',function(e){
+['windows-dropdown','linux-dropdown'].forEach(function(id){
+var dd=document.getElementById(id);
+if(dd&&!dd.contains(e.target))dd.classList.remove('open');
+});
+});`,
+			}}
+		/>
 	);
 }
 
-function renderSupportCard(
-	link: string,
-	icon: JSX.Element,
-	title: string,
-	description: string,
-	newTab: boolean,
-): JSX.Element {
-	const target = newTab ? '_blank' : undefined;
-	const rel = newTab ? 'noopener noreferrer' : undefined;
+const WINDOWS_ICON =
+	'M0,0H11.377V11.372H0ZM12.623,0H24V11.372H12.623ZM0,12.623H11.377V24H0Zm12.623,0H24V24H12.623';
 
-	return (
-		<a
-			href={link}
-			class="flex items-center gap-4 rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition hover:bg-white/20 md:p-8"
-			target={target}
-			rel={rel}
-		>
-			<div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/20">{icon}</div>
-			<div class="flex-1">
-				<h3 class="title mb-1 text-white text-xl md:text-2xl">{title}</h3>
-				<p class="text-sm text-white/80 md:text-base">{description}</p>
-			</div>
-		</a>
-	);
-}
+const LINUX_ICON =
+	'M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139z';
+
+const ANDROID_ICON =
+	'M18.4395 5.5586c-.675 1.1664-1.352 2.3318-2.0274 3.498-.0366-.0155-.0742-.0286-.1113-.043-1.8249-.6957-3.484-.8-4.42-.787-1.8551.0185-3.3544.4643-4.2597.8203-.084-.1494-1.7526-3.021-2.0215-3.4864a1.1451 1.1451 0 00-.1406-.1914c-.3312-.364-.9054-.4859-1.379-.203-.475.282-.7136.9361-.3886 1.5019 1.9466 3.3696-.0966-.2158 1.9473 3.3593.0172.031-.4946.2642-1.3926 1.0177C2.8987 12.176.452 14.772 0 18.9902h24c-.119-1.1108-.3686-2.099-.7461-3.0683-.7438-1.9118-1.8435-3.2928-2.7402-4.1836a12.1048 12.1048 0 00-2.1309-1.6875c.6594-1.122 1.312-2.2559 1.9649-3.3848.2077-.3615.1886-.7956-.0079-1.1191a1.1001 1.1001 0 00-.8515-.5332c-.5225-.0536-.9392.3128-1.0488.5449zm-.0391 8.461c.3944.5926.324 1.3306-.1563 1.6503-.4799.3197-1.188.0985-1.582-.4941-.3944-.5927-.324-1.3307.1563-1.6504.4727-.315 1.1812-.1086 1.582.4941zM7.207 13.5273c.4803.3197.5506 1.0577.1563 1.6504-.394.5926-1.1038.8138-1.584.4941-.48-.3197-.5503-1.0577-.1563-1.6504.4008-.6021 1.1087-.8106 1.584-.4941z';
+
+const IOS_ICON =
+	'M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z';

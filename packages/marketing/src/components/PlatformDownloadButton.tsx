@@ -32,11 +32,11 @@ import {apiUrl, href, isCanary} from '@fluxer/marketing/src/UrlUtils';
 export type ButtonStyle = 'light' | 'dark';
 
 const lightBg = 'bg-white';
-const lightText = 'text-[#4641D9]';
-const lightHover = 'hover:bg-gray-50';
-const darkBg = 'bg-[#4641D9]';
+const lightText = 'text-[#3B82F6]';
+const lightHover = 'hover:bg-gray-100';
+const darkBg = 'bg-[#3B82F6]';
 const darkText = 'text-white';
-const darkHover = 'hover:bg-[#3a36b0]';
+const darkHover = 'hover:bg-[#2563EB]';
 const btnSizing = 'px-5 py-3 md:px-6 md:py-3.5';
 const btnBase = `download-link flex items-center justify-center rounded-l-2xl ${btnSizing} transition-colors shadow-lg`;
 const chevronBase = 'overlay-toggle flex items-center self-stretch rounded-r-2xl px-3 transition-colors shadow-lg';
@@ -264,12 +264,12 @@ export function renderDesktopButton(
 				<CaretDownIcon class="h-4 w-4" />
 			</button>
 			<div
-				class="download-overlay absolute top-full left-0 z-50 mt-1 hidden w-full min-w-48 rounded-xl border border-gray-200 bg-white shadow-xl"
+				class="download-overlay absolute top-full left-0 z-50 mt-1 hidden w-full min-w-48 rounded-xl border border-[#1E293B] bg-[#101931] shadow-xl"
 				id={`${finalId}-download-overlay`}
 			>
 				{options.map((opt) => (
 					<a
-						class="download-overlay-link block px-4 py-3 text-gray-900 text-sm transition-colors first:rounded-t-xl last:rounded-b-xl hover:bg-gray-100"
+						class="download-overlay-link block px-4 py-3 text-white text-sm transition-colors first:rounded-t-xl last:rounded-b-xl hover:bg-[#1A2440]"
 						href={opt.url}
 						data-arch={opt.arch}
 						data-format={opt.format}
@@ -347,7 +347,7 @@ function getDesktopButtonClasses(style: ButtonStyle): [string, string] {
 	if (style === 'light') {
 		return [
 			`${btnBase} gap-2 ${lightBg} ${lightText} ${lightHover}`,
-			`${chevronBase} ${lightBg} border-l border-gray-200 ${lightText} ${lightHover}`,
+			`${chevronBase} ${lightBg} border-l border-[#1E293B] ${lightText} ${lightHover}`,
 		];
 	}
 	return [

@@ -222,17 +222,17 @@ function renderHelpArticleBody(
 	return (
 		<section class="mx-auto max-w-5xl">
 			<div class="mb-6">
-				<a href={href(ctx, '/help')} class="text-muted-foreground text-sm transition-colors hover:text-foreground">
+				<a href={href(ctx, '/help')} class="text-[#94A3B8] text-sm transition-colors hover:text-white">
 					&larr; {ctx.i18n.getMessage('company_and_resources.help.help_center', ctx.locale)}
 				</a>
 			</div>
 			<header class="mb-10 space-y-3">
 				<div class="flex items-center gap-2">
-					<span class="rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-600 text-xs">{article.category}</span>
+					<span class="rounded-full bg-[#1A2440] px-3 py-1 font-medium text-[#94A3B8] text-xs">{article.category}</span>
 				</div>
-				<h1 class="font-bold text-4xl text-foreground">{article.title}</h1>
-				{article.description ? <p class="text-lg text-muted-foreground">{article.description}</p> : null}
-				<p class="text-muted-foreground text-sm">
+				<h1 class="font-bold text-4xl text-white">{article.title}</h1>
+				{article.description ? <p class="text-lg text-[#94A3B8]">{article.description}</p> : null}
+				<p class="text-[#94A3B8] text-sm">
 					{ctx.i18n.getMessage('general.last_updated', ctx.locale)} {formatDate(article.lastUpdated, ctx.locale)}
 				</p>
 			</header>
@@ -257,11 +257,11 @@ function renderToc(title: string, headings: ReadonlyArray<HeadingEntry>): JSX.El
 
 	return (
 		<nav class="space-y-2">
-			<h2 class="font-semibold text-foreground text-sm">{title}</h2>
-			<ul class="space-y-1 text-muted-foreground text-sm">
+			<h2 class="font-semibold text-white text-sm">{title}</h2>
+			<ul class="space-y-1 text-[#94A3B8] text-sm">
 				{filtered.map((heading) => (
 					<li style={`margin-left: ${(heading.level - minLevel) * 12}px`}>
-						<a href={`#${heading.id}`} data-toc-link={heading.id} class="block py-1 hover:text-foreground">
+						<a href={`#${heading.id}`} data-toc-link={heading.id} class="block py-1 hover:text-white">
 							{heading.title}
 						</a>
 					</li>

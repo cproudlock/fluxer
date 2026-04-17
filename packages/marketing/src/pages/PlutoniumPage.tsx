@@ -25,7 +25,7 @@ import {
 	isNumericPerk,
 	isTextPerk,
 	PLUTONIUM_PERKS,
-	type PlutoniumPerk,
+	type ReverbPerk,
 } from '@fluxer/constants/src/PlutoniumPerks';
 import {FinalCtaSection} from '@fluxer/marketing/src/components/FinalCtaSection';
 import {defaultHeroPadding, HeroBase} from '@fluxer/marketing/src/components/HeroBase';
@@ -63,7 +63,7 @@ function renderHeroSection(ctx: MarketingContext): JSX.Element {
 
 	return (
 		<HeroBase
-			icon={<FluxerPremiumIcon class="h-14 w-14 text-white md:h-18 md:w-18" fillColor="#4641D9" />}
+			icon={<FluxerPremiumIcon class="h-14 w-14 text-white md:h-18 md:w-18" fillColor="#3B82F6" />}
 			title={ctx.i18n.getMessage('pricing_and_tiers.plutonium.tier_name', ctx.locale)}
 			description={ctx.i18n.getMessage('pricing_and_tiers.plutonium.higher_limits_and_early_access', ctx.locale)}
 			extraContent={
@@ -86,7 +86,7 @@ function renderHeroSection(ctx: MarketingContext): JSX.Element {
 	);
 }
 
-function getPerkLabel(ctx: MarketingContext, perk: PlutoniumPerk): string {
+function getPerkLabel(ctx: MarketingContext, perk: ReverbPerk): string {
 	const labelMap: Record<string, string> = {
 		custom_4_digit_username_tag: ctx.i18n.getMessage(
 			'pricing_and_tiers.plutonium.features.custom_4_digit_username_tag',
@@ -128,7 +128,7 @@ function getPerkLabel(ctx: MarketingContext, perk: PlutoniumPerk): string {
 	return labelMap[perk.i18nKey] || perk.i18nKey;
 }
 
-function getStatusBadge(ctx: MarketingContext, perk: PlutoniumPerk): string | null {
+function getStatusBadge(ctx: MarketingContext, perk: ReverbPerk): string | null {
 	if (perk.status === 'beta') {
 		return ctx.i18n.getMessage('beta_and_access.beta_label', ctx.locale);
 	}
@@ -156,7 +156,7 @@ function renderComparisonSection(ctx: MarketingContext): JSX.Element {
 	const monthlyPrice = getFormattedPrice(PricingTier.Monthly, ctx.countryCode);
 	const yearlyPrice = getFormattedPrice(PricingTier.Yearly, ctx.countryCode);
 
-	const renderPerkRow = (perk: PlutoniumPerk): JSX.Element | null => {
+	const renderPerkRow = (perk: ReverbPerk): JSX.Element | null => {
 		const label = getPerkLabel(ctx, perk);
 		const badge = getStatusBadge(ctx, perk);
 
@@ -199,44 +199,44 @@ function renderComparisonSection(ctx: MarketingContext): JSX.Element {
 	};
 
 	return (
-		<section class="bg-gradient-to-b from-white to-gray-50 px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20">
+		<section class="bg-gradient-to-b from-[#0A1428] to-[#101931] px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20">
 			<div class="mx-auto max-w-5xl">
-				<h2 class="display mb-16 text-center text-4xl text-black md:mb-20 md:text-5xl lg:text-6xl">
+				<h2 class="display mb-16 text-center text-4xl text-white md:mb-20 md:text-5xl lg:text-6xl">
 					{ctx.i18n.getMessage('pricing_and_tiers.free.comparison_label', ctx.locale)}
 				</h2>
 				<div class="mx-auto mb-16 grid max-w-4xl grid-cols-1 gap-8 md:mb-20 md:grid-cols-2 md:gap-10">
-					<div class="rounded-3xl border-2 border-gray-200 bg-white p-10 text-center shadow-lg md:p-12">
-						<h3 class="title mb-4 text-2xl text-black md:text-3xl">
+					<div class="rounded-3xl border-2 border-[#1E293B] bg-[#101931] p-10 text-center shadow-lg md:p-12">
+						<h3 class="title mb-4 text-2xl text-white md:text-3xl">
 							{ctx.i18n.getMessage('pricing_and_tiers.free.label', ctx.locale)}
 						</h3>
-						<p class="mb-3 font-bold text-4xl text-gray-900 md:text-5xl">{freePrice}</p>
-						<p class="body-lg text-gray-600">{ctx.i18n.getMessage('pricing_and_tiers.billing.forever', ctx.locale)}</p>
+						<p class="mb-3 font-bold text-4xl text-white md:text-5xl">{freePrice}</p>
+						<p class="body-lg text-[#94A3B8]">{ctx.i18n.getMessage('pricing_and_tiers.billing.forever', ctx.locale)}</p>
 					</div>
-					<div class="relative rounded-3xl border-2 border-[#4641D9] bg-gradient-to-br from-[#4641D9]/5 to-[#6b5ce7]/5 p-10 text-center shadow-xl md:p-12">
-						<div class="label absolute -top-4 left-1/2 -translate-x-1/2 rounded-xl bg-[#4641D9] px-4 py-2 text-white shadow-md">
+					<div class="relative rounded-3xl border-2 border-[#3B82F6] bg-gradient-to-br from-[#3B82F6]/5 to-[#3B82F6]/5 p-10 text-center shadow-xl md:p-12">
+						<div class="label absolute -top-4 left-1/2 -translate-x-1/2 rounded-xl bg-[#3B82F6] px-4 py-2 text-white shadow-md">
 							{ctx.i18n.getMessage('pricing_and_tiers.billing.most_popular', ctx.locale)}
 						</div>
-						<h3 class="title mb-4 text-2xl text-black md:text-3xl">
+						<h3 class="title mb-4 text-2xl text-white md:text-3xl">
 							{ctx.i18n.getMessage('pricing_and_tiers.plutonium.tier_name', ctx.locale)}
 						</h3>
-						<p class="mb-3 font-bold text-4xl text-[#4641D9] md:text-5xl">{`${monthlyPrice}${ctx.i18n.getMessage('pricing_and_tiers.billing.per_month', ctx.locale)}`}</p>
-						<p class="body-lg text-gray-700">
+						<p class="mb-3 font-bold text-4xl text-[#3B82F6] md:text-5xl">{`${monthlyPrice}${ctx.i18n.getMessage('pricing_and_tiers.billing.per_month', ctx.locale)}`}</p>
+						<p class="body-lg text-[#E2E8F0]">
 							{ctx.i18n.getMessage('general.or', ctx.locale)} {yearlyPrice}
 							{ctx.i18n.getMessage('pricing_and_tiers.billing.per_year_full', ctx.locale)}
 						</p>
 					</div>
 				</div>
 				<div class="overflow-x-auto">
-					<table class="w-full border-collapse rounded-lg border border-gray-200" style="table-layout: fixed">
-						<thead class="bg-gray-50">
+					<table class="w-full border-collapse rounded-lg border border-[#1E293B]" style="table-layout: fixed">
+						<thead class="bg-[#101931]">
 							<tr>
-								<th class="label w-1/2 border-gray-200 border-b px-4 py-3 text-left text-black">
+								<th class="label w-1/2 border-[#1E293B] border-b px-4 py-3 text-left text-white">
 									{ctx.i18n.getMessage('misc_labels.feature', ctx.locale)}
 								</th>
-								<th class="label w-1/4 border-gray-200 border-b px-2 py-3 text-center text-black text-xs sm:px-3 sm:text-sm">
+								<th class="label w-1/4 border-[#1E293B] border-b px-2 py-3 text-center text-white text-xs sm:px-3 sm:text-sm">
 									{ctx.i18n.getMessage('pricing_and_tiers.free.label', ctx.locale)}
 								</th>
-								<th class="label w-1/4 border-gray-200 border-b px-2 py-3 text-center text-[#4641D9] text-xs sm:px-3 sm:text-sm">
+								<th class="label w-1/4 border-[#1E293B] border-b px-2 py-3 text-center text-[#3B82F6] text-xs sm:px-3 sm:text-sm">
 									{ctx.i18n.getMessage('pricing_and_tiers.plutonium.tier_name', ctx.locale)}
 								</th>
 							</tr>
@@ -247,7 +247,7 @@ function renderComparisonSection(ctx: MarketingContext): JSX.Element {
 				<div class="mt-12 text-center md:mt-16">
 					<a
 						href={`${ctx.appEndpoint}/channels/@me`}
-						class="label inline-block rounded-xl bg-[#4641D9] px-10 py-5 text-lg text-white shadow-lg transition hover:bg-[#3d38c7] md:px-12 md:py-6 md:text-xl"
+						class="label inline-block rounded-xl bg-[#3B82F6] px-10 py-5 text-lg text-white shadow-lg transition hover:bg-[#2563EB] md:px-12 md:py-6 md:text-xl"
 					>
 						{ctx.i18n.getMessage('pricing_and_tiers.plutonium.get_plutonium', ctx.locale)}
 					</a>
@@ -265,21 +265,21 @@ function comparisonRow(
 	badge: string | null,
 ): JSX.Element {
 	const badgeNode = badge ? (
-		<span class="caption inline-flex items-center rounded-full border border-[#4641D9] px-3 py-1 font-semibold text-[#4641D9] text-xs uppercase tracking-wider">
+		<span class="caption inline-flex items-center rounded-full border border-[#3B82F6] px-3 py-1 font-semibold text-[#3B82F6] text-xs uppercase tracking-wider">
 			{badge}
 		</span>
 	) : null;
 
 	return (
-		<tr class="border-gray-100 border-b">
-			<td class="body px-4 py-3 text-gray-900">
+		<tr class="border-[#1E293B] border-b">
+			<td class="body px-4 py-3 text-white">
 				<div class="flex flex-wrap items-center gap-2">
 					<span>{feature}</span>
 					{badgeNode}
 				</div>
 			</td>
-			<td class="body px-2 py-3 text-center text-gray-600 text-xs sm:px-3 sm:text-sm">{freeValue}</td>
-			<td class="label px-2 py-3 text-center text-[#4641D9] text-xs sm:px-3 sm:text-sm">{plutoniumValue}</td>
+			<td class="body px-2 py-3 text-center text-[#94A3B8] text-xs sm:px-3 sm:text-sm">{freeValue}</td>
+			<td class="label px-2 py-3 text-center text-[#3B82F6] text-xs sm:px-3 sm:text-sm">{plutoniumValue}</td>
 		</tr>
 	);
 }
@@ -292,14 +292,14 @@ function comparisonCheckRow(
 	badge: string | null,
 ): JSX.Element {
 	const badgeNode = badge ? (
-		<span class="caption inline-flex items-center rounded-full border border-[#4641D9] px-3 py-1 font-semibold text-[#4641D9] text-xs uppercase tracking-wider">
+		<span class="caption inline-flex items-center rounded-full border border-[#3B82F6] px-3 py-1 font-semibold text-[#3B82F6] text-xs uppercase tracking-wider">
 			{badge}
 		</span>
 	) : null;
 
 	return (
-		<tr class="border-gray-100 border-b">
-			<td class="body px-4 py-3 text-gray-900">
+		<tr class="border-[#1E293B] border-b">
+			<td class="body px-4 py-3 text-white">
 				<div class="flex flex-wrap items-center gap-2">
 					<span>{feature}</span>
 					{badgeNode}
@@ -309,14 +309,14 @@ function comparisonCheckRow(
 				{freeHas ? (
 					<CheckIcon class="mx-auto h-5 w-5 text-green-600" />
 				) : (
-					<CrossIcon class="mx-auto h-5 w-5 text-gray-400" />
+					<CrossIcon class="mx-auto h-5 w-5 text-[#64748B]" />
 				)}
 			</td>
 			<td class="px-3 py-3 text-center">
 				{plutoniumHas ? (
-					<CheckIcon class="mx-auto h-5 w-5 text-[#4641D9]" />
+					<CheckIcon class="mx-auto h-5 w-5 text-[#3B82F6]" />
 				) : (
-					<CrossIcon class="mx-auto h-5 w-5 text-gray-400" />
+					<CrossIcon class="mx-auto h-5 w-5 text-[#64748B]" />
 				)}
 			</td>
 		</tr>
@@ -325,9 +325,9 @@ function comparisonCheckRow(
 
 function renderFeaturesSection(ctx: MarketingContext): JSX.Element {
 	return (
-		<section class="bg-white px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20">
+		<section class="bg-[#101931] px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20">
 			<div class="mx-auto max-w-7xl">
-				<h2 class="display mb-16 text-center text-4xl text-black md:mb-20 md:text-5xl lg:text-6xl">
+				<h2 class="display mb-16 text-center text-4xl text-white md:mb-20 md:text-5xl lg:text-6xl">
 					{ctx.i18n.getMessage('pricing_and_tiers.plutonium.get_more_with_plutonium', ctx.locale)}
 				</h2>
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
@@ -437,25 +437,25 @@ function renderFeatureCard(
 ): JSX.Element {
 	const icon = getFeatureIcon(iconName);
 	const badgeNode = badge ? (
-		<div class="caption absolute top-4 right-4 rounded-full bg-[#4641D9] px-3 py-1 font-semibold text-white text-xs uppercase tracking-wide shadow-lg">
+		<div class="caption absolute top-4 right-4 rounded-full bg-[#3B82F6] px-3 py-1 font-semibold text-white text-xs uppercase tracking-wide shadow-lg">
 			{badge}
 		</div>
 	) : null;
 
 	return (
-		<div class="relative rounded-3xl border border-gray-100 bg-gray-50 p-8 shadow-md md:p-10">
+		<div class="relative rounded-3xl border border-[#1E293B] bg-[#101931] p-8 shadow-md md:p-10">
 			{badgeNode}
-			<div class="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#4641D9]/10 to-[#4641D9]/5 md:h-20 md:w-20">
+			<div class="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3B82F6]/10 to-[#3B82F6]/5 md:h-20 md:w-20">
 				{icon}
 			</div>
-			<h3 class="title mb-3 text-black text-xl md:text-2xl">{title}</h3>
-			<p class="body-lg text-gray-700 leading-relaxed">{description}</p>
+			<h3 class="title mb-3 text-white text-xl md:text-2xl">{title}</h3>
+			<p class="body-lg text-[#E2E8F0] leading-relaxed">{description}</p>
 		</div>
 	);
 }
 
 function getFeatureIcon(iconName: FeatureIconName): JSX.Element {
-	return <Icon name={iconName} class="h-8 w-8 text-[#4641D9] md:h-10 md:w-10" />;
+	return <Icon name={iconName} class="h-8 w-8 text-[#3B82F6] md:h-10 md:w-10" />;
 }
 
 function renderSelfHostingSection(ctx: MarketingContext): JSX.Element {
@@ -466,32 +466,32 @@ function renderSelfHostingSection(ctx: MarketingContext): JSX.Element {
 	return (
 		<section
 			id="self-hosting"
-			class="bg-gradient-to-b from-gray-50 to-white px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20"
+			class="bg-gradient-to-b from-[#101931] to-[#0A1428] px-6 py-24 sm:px-8 md:px-12 md:py-40 lg:px-16 xl:px-20"
 			style="scroll-margin-top: 8rem"
 		>
 			<div class="mx-auto max-w-7xl">
 				<div class="mb-16 text-center md:mb-20">
-					<h2 class="display mb-6 text-4xl text-black md:mb-8 md:text-5xl lg:text-6xl">
+					<h2 class="display mb-6 text-4xl text-white md:mb-8 md:text-5xl lg:text-6xl">
 						{ctx.i18n.getMessage('product_positioning.self_hosting.label', ctx.locale)}
 					</h2>
-					<p class="lead mx-auto mb-3 max-w-3xl text-gray-700 text-xl md:text-2xl">
+					<p class="lead mx-auto mb-3 max-w-3xl text-[#E2E8F0] text-xl md:text-2xl">
 						{ctx.i18n.getMessage('product_positioning.free_and_open_source', ctx.locale)}
 					</p>
-					<p class="body-lg mx-auto max-w-3xl text-gray-600">
+					<p class="body-lg mx-auto max-w-3xl text-[#94A3B8]">
 						{ctx.i18n.getMessage('product_positioning.self_hosting.operator_pass.note_optional', ctx.locale)}
 					</p>
 				</div>
 				<div class="mx-auto mb-16 grid max-w-5xl grid-cols-1 gap-10 md:mb-20 md:grid-cols-2 md:gap-12">
-					<div class="rounded-3xl border-2 border-gray-200 bg-white p-10 shadow-lg md:p-12">
+					<div class="rounded-3xl border-2 border-[#1E293B] bg-[#101931] p-10 shadow-lg md:p-12">
 						<div class="mb-4 flex justify-center">
-							<Icon name="globe" class="h-16 w-16 text-gray-400" />
+							<Icon name="globe" class="h-16 w-16 text-[#64748B]" />
 						</div>
-						<h3 class="title mb-2 text-center text-black text-xl md:text-2xl">
+						<h3 class="title mb-2 text-center text-white text-xl md:text-2xl">
 							{ctx.i18n.getMessage('product_positioning.self_hosting.free_self_hosting', ctx.locale)}{' '}
 						</h3>
 						<div class="mb-6 text-center">
-							<span class="display text-4xl text-black md:text-5xl">{freePrice}</span>
-							<span class="body-lg text-gray-600">
+							<span class="display text-4xl text-white md:text-5xl">{freePrice}</span>
+							<span class="body-lg text-[#94A3B8]">
 								{ctx.i18n.getMessage('pricing_and_tiers.billing.per_forever', ctx.locale)}
 							</span>
 						</div>
@@ -509,19 +509,19 @@ function renderSelfHostingSection(ctx: MarketingContext): JSX.Element {
 							{renderBenefitItem(ctx, ctx.i18n.getMessage('app.communities.community_support', ctx.locale))}
 						</div>
 					</div>
-					<div class="relative rounded-3xl border-2 border-[#4641D9] bg-white p-10 shadow-xl md:p-12">
-						<div class="label absolute -top-4 left-1/2 -translate-x-1/2 rounded-xl bg-[#4641D9] px-4 py-2 text-white shadow-md">
+					<div class="relative rounded-3xl border-2 border-[#3B82F6] bg-[#101931] p-10 shadow-xl md:p-12">
+						<div class="label absolute -top-4 left-1/2 -translate-x-1/2 rounded-xl bg-[#3B82F6] px-4 py-2 text-white shadow-md">
 							{ctx.i18n.getMessage('general.coming_soon.label', ctx.locale)}
 						</div>
 						<div class="mb-4 flex justify-center">
-							<Icon name="globe" class="h-16 w-16 text-[#4641D9]" />
+							<Icon name="globe" class="h-16 w-16 text-[#3B82F6]" />
 						</div>
-						<h3 class="title mb-2 text-center text-black text-xl md:text-2xl">
+						<h3 class="title mb-2 text-center text-white text-xl md:text-2xl">
 							{ctx.i18n.getMessage('product_positioning.self_hosting.operator_pass.label', ctx.locale)}{' '}
 						</h3>
 						<div class="mb-6 text-center">
-							<span class="display text-4xl text-black md:text-5xl">{operatorPrice}</span>
-							<span class="body-lg block text-gray-600">
+							<span class="display text-4xl text-white md:text-5xl">{operatorPrice}</span>
+							<span class="body-lg block text-[#94A3B8]">
 								{ctx.i18n.getMessage('pricing_and_tiers.visionary.one_time_purchase.label', ctx.locale)}
 							</span>
 						</div>
@@ -550,8 +550,8 @@ function renderSelfHostingSection(ctx: MarketingContext): JSX.Element {
 function renderBenefitItem(_ctx: MarketingContext, text: string): JSX.Element {
 	return (
 		<div class="flex items-start gap-3">
-			<CheckIcon class="mt-0.5 h-5 w-5 shrink-0 text-[#4641D9]" />
-			<span class="body text-gray-700">{text}</span>
+			<CheckIcon class="mt-0.5 h-5 w-5 shrink-0 text-[#3B82F6]" />
+			<span class="body text-[#E2E8F0]">{text}</span>
 		</div>
 	);
 }

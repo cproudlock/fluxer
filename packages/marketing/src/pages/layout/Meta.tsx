@@ -33,9 +33,9 @@ export interface PageMeta {
 
 export function defaultPageMeta(): PageMeta {
 	return {
-		title: 'Fluxer: A chat app that puts you first',
+		title: 'Echowire: A chat app that puts you first',
 		description:
-			'Fluxer is a free and open source instant messaging and VoIP platform built for friends, groups, and communities.',
+			'Echowire is a free and open source instant messaging and VoIP platform built for friends, groups, and communities.',
 		ogType: 'website',
 		ogImageUrl: null,
 		publishedTime: null,
@@ -56,7 +56,7 @@ export function pageMeta(title: string, description: string, ogType: string): Pa
 
 export function articlePageMeta(title: string, description: string): PageMeta {
 	return {
-		title: `Fluxer | ${title}`,
+		title: `Echowire | ${title}`,
 		description,
 		ogType: 'article',
 		ogImageUrl: null,
@@ -78,8 +78,8 @@ export function withModifiedTime(meta: PageMeta, isoDatetime: string): PageMeta 
 }
 
 export function formatPageTitle(baseTitle: string): string {
-	if (baseTitle === 'Fluxer') return 'Fluxer';
-	return `Fluxer | ${baseTitle}`;
+	if (baseTitle === 'Echowire') return 'Echowire';
+	return `Echowire | ${baseTitle}`;
 }
 
 export function buildMetaTags(ctx: MarketingContext, meta: PageMeta, pageUrl: string): ReadonlyArray<JSX.Element> {
@@ -89,7 +89,7 @@ export function buildMetaTags(ctx: MarketingContext, meta: PageMeta, pageUrl: st
 
 	return [
 		<meta name="description" content={meta.description} />,
-		<meta property="og:site_name" content="Fluxer" />,
+		<meta property="og:site_name" content="Echowire" />,
 		<meta property="og:locale" content={ogLocale} />,
 		<meta property="og:title" content={meta.title} />,
 		<meta property="og:description" content={meta.description} />,
@@ -101,15 +101,9 @@ export function buildMetaTags(ctx: MarketingContext, meta: PageMeta, pageUrl: st
 		<meta name="twitter:description" content={meta.description} />,
 		<meta name="twitter:image" content={ogImageUrl} />,
 		<meta name="robots" content="index,follow" />,
-		<meta name="theme-color" content="#4641D9" />,
-		<meta name="author" content="Fluxer Team" />,
+		<meta name="theme-color" content="#0A1428" />,
+		<meta name="author" content="Echowire Team" />,
 		<link rel="canonical" href={pageUrl} />,
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title={ctx.i18n.getMessage('social_and_feeds.rss.fluxer_blog_rss', ctx.locale)}
-			href="https://blog.fluxer.app/rss/"
-		/>,
 		...articleTimeMeta(meta),
 	];
 }

@@ -28,7 +28,7 @@ export function renderPwaInstallTrigger(ctx: MarketingContext): JSX.Element {
 		<button
 			type="button"
 			id="pwa-install-button"
-			class="inline-flex items-center gap-2 rounded-xl bg-[#4641D9] px-5 py-3 font-medium text-sm text-white shadow-md transition-colors hover:bg-[#3832B8]"
+			class="inline-flex items-center gap-2 rounded-xl bg-[#3B82F6] px-5 py-3 font-medium text-sm text-white shadow-md transition-colors hover:bg-[#2563EB]"
 		>
 			<DevicesIcon class="h-5 w-5" />
 			{ctx.i18n.getMessage('platform_support.mobile.install_as_app.title', ctx.locale)}
@@ -42,12 +42,12 @@ export function renderPwaInstallModal(ctx: MarketingContext): JSX.Element {
 			<div class="pwa-modal">
 				<div class="flex h-full flex-col">
 					<div class="flex items-center justify-between p-6 pb-4">
-						<h2 class="font-bold text-gray-900 text-xl">
+						<h2 class="font-bold text-white text-xl">
 							{ctx.i18n.getMessage('platform_support.mobile.install_as_app.install_fluxer_as_app', ctx.locale)}
 						</h2>
 						<button
 							type="button"
-							class="rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+							class="rounded-lg p-2 text-[#94A3B8] hover:bg-[#1A2440] hover:text-white"
 							id="pwa-close"
 							aria-label={ctx.i18n.getMessage('navigation.close', ctx.locale)}
 						>
@@ -57,7 +57,7 @@ export function renderPwaInstallModal(ctx: MarketingContext): JSX.Element {
 						</button>
 					</div>
 					<div class="px-6">
-						<div class="flex gap-1 rounded-xl bg-gray-100 p-1" id="pwa-tabs">
+						<div class="flex gap-1 rounded-xl bg-[#1A2440] p-1" id="pwa-tabs">
 							{renderTabButton(
 								'android',
 								ctx.i18n.getMessage('platform_support.platforms.android.name', ctx.locale),
@@ -82,8 +82,8 @@ export function renderPwaInstallModal(ctx: MarketingContext): JSX.Element {
 							{renderDesktopSteps(ctx)}
 						</div>
 					</div>
-					<div class="border-gray-100 border-t px-6 py-4 text-center">
-						<p class="text-gray-400 text-xs">
+					<div class="border-[#1E293B] border-t px-6 py-4 text-center">
+						<p class="text-[#64748B] text-xs">
 							{ctx.i18n.getMessage('download.screenshots_courtesy_of', ctx.locale)}
 							<a
 								href="https://installpwa.com/"
@@ -103,8 +103,8 @@ export function renderPwaInstallModal(ctx: MarketingContext): JSX.Element {
 
 function renderTabButton(id: string, label: string, active: boolean): JSX.Element {
 	const className = active
-		? 'pwa-tab flex-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors bg-white text-gray-900 shadow-sm'
-		: 'pwa-tab flex-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-gray-600 hover:text-gray-900';
+		? 'pwa-tab flex-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors bg-[#1A2440] text-white shadow-sm'
+		: 'pwa-tab flex-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors text-[#94A3B8] hover:text-white';
 
 	return (
 		<button type="button" data-tab={id} class={className}>
@@ -123,10 +123,10 @@ function renderAndroidSteps(ctx: MarketingContext): JSX.Element {
 						'1',
 						<span>
 							<a
-								href="https://web.fluxer.app"
+								href="https://web.echowire.org"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-gray-900 underline hover:text-gray-700"
+								class="text-white underline hover:text-[#E2E8F0]"
 							>
 								{ctx.i18n.getMessage('app.open.open_web_app', ctx.locale)}
 							</a>
@@ -158,10 +158,10 @@ function renderIosSteps(ctx: MarketingContext): JSX.Element {
 						'1',
 						<span>
 							<a
-								href="https://web.fluxer.app"
+								href="https://web.echowire.org"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-gray-900 underline hover:text-gray-700"
+								class="text-white underline hover:text-[#E2E8F0]"
 							>
 								{ctx.i18n.getMessage('app.open.open_web_app', ctx.locale)}
 							</a>
@@ -203,10 +203,10 @@ function renderDesktopSteps(ctx: MarketingContext): JSX.Element {
 						'1',
 						<span>
 							<a
-								href="https://web.fluxer.app"
+								href="https://web.echowire.org"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-gray-900 underline hover:text-gray-700"
+								class="text-white underline hover:text-[#E2E8F0]"
 							>
 								{ctx.i18n.getMessage('app.open.open_web_app', ctx.locale)}
 							</a>
@@ -240,10 +240,10 @@ function renderDesktopSteps(ctx: MarketingContext): JSX.Element {
 function renderStep(number: string, content: JSX.Element | string): JSX.Element {
 	return (
 		<li class="flex items-start gap-4">
-			<div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 font-semibold text-gray-600 text-sm">
+			<div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1A2440] font-semibold text-[#94A3B8] text-sm">
 				{number}
 			</div>
-			<div class="pt-1.5 text-left text-gray-700">{content}</div>
+			<div class="pt-1.5 text-left text-[#E2E8F0]">{content}</div>
 		</li>
 	);
 }
@@ -264,7 +264,7 @@ function renderImage(ctx: MarketingContext, name: string, small: string, medium:
 				alt={ctx.i18n.getMessage('platform_support.mobile.install_as_app.guides.pwa_installation_guide', ctx.locale, {
 					name,
 				})}
-				class="h-auto max-w-full rounded-lg border border-gray-200 shadow-lg"
+				class="h-auto max-w-full rounded-lg border border-[#1E293B] shadow-lg"
 			/>
 		</picture>
 	);

@@ -106,6 +106,9 @@ module.exports = {
 
 	win: {
 		icon: `build_resources/${iconDir}/icon.ico`,
+		signtoolOptions: process.env.AZURE_SIGNING_ENDPOINT
+			? {sign: './scripts/sign-with-azure.mjs'}
+			: undefined,
 		target: [
 			{
 				target: 'nsis',

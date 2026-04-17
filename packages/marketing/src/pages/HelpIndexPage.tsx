@@ -54,7 +54,7 @@ export async function renderHelpIndexPage(c: Context, ctx: MarketingContext): Pr
 	const content: ReadonlyArray<JSX.Element> = [renderHelpIndexBody(ctx, articles)];
 
 	const meta = pageMeta(
-		`Fluxer | ${ctx.i18n.getMessage('company_and_resources.help.help_center', ctx.locale)}`,
+		`Echowire | ${ctx.i18n.getMessage('company_and_resources.help.help_center', ctx.locale)}`,
 		ctx.i18n.getMessage('company_and_resources.help.help_center_description', ctx.locale),
 		'website',
 	);
@@ -66,10 +66,10 @@ function renderHelpIndexBody(ctx: MarketingContext, articles: ReadonlyArray<Help
 	return (
 		<section class="mx-auto max-w-5xl">
 			<header class="mb-10 space-y-3">
-				<h1 class="font-bold text-4xl text-foreground">
+				<h1 class="font-bold text-4xl text-white">
 					{ctx.i18n.getMessage('company_and_resources.help.help_center', ctx.locale)}
 				</h1>
-				<p class="text-lg text-muted-foreground">
+				<p class="text-lg text-[#94A3B8]">
 					{ctx.i18n.getMessage('company_and_resources.help.help_center_description', ctx.locale)}
 				</p>
 			</header>
@@ -98,10 +98,10 @@ function renderHelpCard(ctx: MarketingContext, article: HelpArticleMetadata): JS
 			data-help-category={article.category}
 		>
 			<div class="mb-2">
-				<span class="rounded-full bg-gray-100 px-2.5 py-0.5 font-medium text-gray-600 text-xs">{article.category}</span>
+				<span class="rounded-full bg-[#1A2440] px-2.5 py-0.5 font-medium text-[#94A3B8] text-xs">{article.category}</span>
 			</div>
-			<h2 class="mb-1 font-semibold text-foreground">{article.title}</h2>
-			<p class="text-muted-foreground text-sm">{article.description}</p>
+			<h2 class="mb-1 font-semibold text-white">{article.title}</h2>
+			<p class="text-[#94A3B8] text-sm">{article.description}</p>
 		</a>
 	);
 }

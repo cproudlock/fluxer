@@ -45,44 +45,44 @@ export function PlutoniumSection(props: PlutoniumSectionProps): JSX.Element {
 			className="md:py-28"
 		>
 			<div class="mb-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-				<span class="font-bold text-3xl text-black md:text-4xl">
+				<span class="font-bold text-3xl text-white md:text-4xl">
 					{`${monthlyPrice}${ctx.i18n.getMessage('pricing_and_tiers.billing.per_month', ctx.locale)} ${ctx.i18n.getMessage('general.or', ctx.locale)} ${yearlyPrice}${ctx.i18n.getMessage('pricing_and_tiers.billing.per_year_full', ctx.locale)}`}
 				</span>
-				<span class="inline-flex items-center rounded-xl bg-[#4641D9] px-4 py-2 font-semibold text-sm text-white md:text-base">
+				<span class="inline-flex items-center rounded-xl bg-[#3B82F6] px-4 py-2 font-semibold text-sm text-white md:text-base">
 					{ctx.i18n.getMessage('pricing_and_tiers.billing.save_percent', ctx.locale)}
 				</span>
 			</div>
-			<p class="lead mx-auto max-w-2xl text-gray-700">
+			<p class="lead mx-auto max-w-2xl text-[#E2E8F0]">
 				{ctx.i18n.getMessage('pricing_and_tiers.plutonium.higher_limits_and_early_access', ctx.locale)}
 			</p>
 			<div class="mx-auto mb-12 grid max-w-4xl grid-cols-1 gap-8 md:mb-16 md:grid-cols-3 md:gap-12">
 				<div class="flex flex-col items-center text-center">
-					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#4641D9]/10 to-[#4641D9]/5 md:h-20 md:w-20">
-						<HashIcon class="h-8 w-8 text-[#4641D9] md:h-10 md:w-10" />
+					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#3B82F6]/10 to-[#3B82F6]/5 md:h-20 md:w-20">
+						<HashIcon class="h-8 w-8 text-[#3B82F6] md:h-10 md:w-10" />
 					</div>
-					<h3 class="title whitespace-nowrap text-black text-lg md:text-xl">
+					<h3 class="title whitespace-nowrap text-white text-lg md:text-xl">
 						{ctx.i18n.getMessage('app.profiles_identity.custom_identity', ctx.locale)}
 					</h3>
 				</div>
 				<div class="flex flex-col items-center text-center">
-					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#4641D9]/10 to-[#4641D9]/5 md:h-20 md:w-20">
-						<VideoCameraIcon class="h-8 w-8 text-[#4641D9] md:h-10 md:w-10" />
+					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#3B82F6]/10 to-[#3B82F6]/5 md:h-20 md:w-20">
+						<VideoCameraIcon class="h-8 w-8 text-[#3B82F6] md:h-10 md:w-10" />
 					</div>
-					<h3 class="title whitespace-nowrap text-black text-lg md:text-xl">
+					<h3 class="title whitespace-nowrap text-white text-lg md:text-xl">
 						{ctx.i18n.getMessage('press_branding.assets.premium_quality', ctx.locale)}
 					</h3>
 				</div>
 				<div class="flex flex-col items-center text-center">
-					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#4641D9]/10 to-[#4641D9]/5 md:h-20 md:w-20">
-						<SparkleIcon class="h-8 w-8 text-[#4641D9] md:h-10 md:w-10" />
+					<div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#3B82F6]/10 to-[#3B82F6]/5 md:h-20 md:w-20">
+						<SparkleIcon class="h-8 w-8 text-[#3B82F6] md:h-10 md:w-10" />
 					</div>
-					<h3 class="title whitespace-nowrap text-black text-lg md:text-xl">
+					<h3 class="title whitespace-nowrap text-white text-lg md:text-xl">
 						{ctx.i18n.getMessage('misc_labels.exclusive_features', ctx.locale)}
 					</h3>
 				</div>
 			</div>
 			<div class="text-center">
-				<MarketingButton href={href(ctx, '/plutonium')} size="large" class="label md:text-xl">
+				<MarketingButton href={href(ctx, '/reverb')} size="large" class="label md:text-xl">
 					{ctx.i18n.getMessage('partner_program.become_partner.learn_more', ctx.locale)}
 				</MarketingButton>
 			</div>

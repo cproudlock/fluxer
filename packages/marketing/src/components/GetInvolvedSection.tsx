@@ -61,7 +61,7 @@ export function GetInvolvedSection(props: GetInvolvedSectionProps): JSX.Element 
 					title={ctx.i18n.getMessage('misc_labels.join_fluxer_hq', ctx.locale)}
 					description={ctx.i18n.getMessage('misc_labels.get_updates', ctx.locale)}
 					buttonText={ctx.i18n.getMessage('misc_labels.join_fluxer_hq', ctx.locale)}
-					buttonHref="https://fluxer.gg/fluxer-hq"
+					buttonHref="https://echowire.org"
 					theme="light"
 				/>
 				<MarketingCard
@@ -70,37 +70,28 @@ export function GetInvolvedSection(props: GetInvolvedSectionProps): JSX.Element 
 					style="box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);"
 				>
 					<div class="mb-8 text-center">
-						<div class="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-[#4641D9] md:h-24 md:w-24">
+						<div class="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-[#3B82F6] md:h-24 md:w-24">
 							<BlueskyIcon class="h-10 w-10 text-white md:h-12 md:w-12" />
 						</div>
-						<h3 class="title mb-4 text-black text-xl md:text-2xl">
+						<h3 class="title mb-4 text-white text-xl md:text-2xl">
 							{ctx.i18n.getMessage('social_and_feeds.bluesky.follow_us', ctx.locale)}
 						</h3>
-						<p class="body-lg text-gray-700 leading-relaxed">
+						<p class="body-lg text-[#E2E8F0] leading-relaxed">
 							{ctx.i18n.getMessage('social_and_feeds.stay_updated_cta', ctx.locale)}{' '}
 							<a
-								href="https://bsky.app/profile/fluxer.app/rss"
-								class="underline hover:text-[#4641D9]"
+								href="https://bsky.app/profile/echowire.bsky.social/rss"
+								class="underline hover:text-[#3B82F6]"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								{ctx.i18n.getMessage('social_and_feeds.bluesky.rss_feed', ctx.locale)}
-							</a>{' '}
-							{ctx.i18n.getMessage('general.or', ctx.locale)}{' '}
-							<a
-								href="https://blog.fluxer.app/rss/"
-								class="underline hover:text-[#4641D9]"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								{ctx.i18n.getMessage('social_and_feeds.rss.blog_rss_feed', ctx.locale)}
 							</a>
 							.
 						</p>
 					</div>
 					<div class="mt-auto flex flex-col items-center">
 						<MarketingButton
-							href="https://bsky.app/profile/fluxer.app"
+							href="https://bsky.app/profile/echowire.bsky.social"
 							size="medium"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -125,7 +116,7 @@ export function GetInvolvedSection(props: GetInvolvedSectionProps): JSX.Element 
 					title={ctx.i18n.getMessage('company_and_resources.source_and_contribution.contribute_code', ctx.locale)}
 					description={ctx.i18n.getMessage('product_positioning.open_source.fully_open_source_agplv3', ctx.locale)}
 					buttonText={ctx.i18n.getMessage('company_and_resources.source_and_contribution.view_repository', ctx.locale)}
-					buttonHref="https://github.com/fluxerapp/fluxer"
+					buttonHref="https://github.com/cproudlock/fluxer"
 					theme="light"
 				/>
 				<SupportCard

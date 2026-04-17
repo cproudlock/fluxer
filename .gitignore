@@ -96,3 +96,4 @@ geoip_data
 next-env.d.ts
 .github/agents
 .github/prompts
+.signing-secrets

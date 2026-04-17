@@ -56,7 +56,7 @@ export function renderLayout(
 				{mainPageScript()}
 				{downloadScript()}
 			</head>
-			<body class="flex min-h-screen flex-col bg-[#4641D9] font-sans text-white">
+			<body class="flex min-h-screen flex-col bg-[#0A1428] font-sans text-white">
 				<Navigation ctx={ctx} request={req} />
 				<div class="flex grow flex-col">{content}</div>
 				<Footer ctx={ctx} />
@@ -90,10 +90,10 @@ export function renderDocsLayout(
 				{buildIconLinks(ctx.staticCdnEndpoint)}
 				{docsPageScript()}
 			</head>
-			<body class="bg-white">
+			<body class="bg-[#0A1428] text-white">
 				<Navigation ctx={ctx} request={req} />
-				<main class="min-h-screen bg-white px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
-					<article class="prose prose-lg prose-gray mx-auto max-w-4xl">
+				<main class="min-h-screen bg-[#0A1428] px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
+					<article class="prose prose-lg prose-invert mx-auto max-w-4xl">
 						<h1 class="mb-2 font-bold text-4xl">{pageTitle}</h1>
 						{content}
 					</article>
@@ -129,11 +129,11 @@ export function renderBlogLayout(
 				{buildIconLinks(ctx.staticCdnEndpoint)}
 				{docsPageScript()}
 			</head>
-			<body class="bg-white">
+			<body class="bg-[#0A1428] text-white">
 				<Navigation ctx={ctx} request={req} />
-				<main class="min-h-screen bg-white px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
+				<main class="min-h-screen bg-[#0A1428] px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
 					<div class="mx-auto max-w-6xl">
-						<h1 class="mb-8 font-bold text-4xl text-foreground">{pageTitle}</h1>
+						<h1 class="mb-8 font-bold text-4xl text-white">{pageTitle}</h1>
 						{content}
 					</div>
 				</main>
@@ -167,9 +167,9 @@ export function renderBlogPostLayout(
 				{buildIconLinks(ctx.staticCdnEndpoint)}
 				{docsPageScript()}
 			</head>
-			<body class="bg-white">
+			<body class="bg-[#0A1428] text-white">
 				<Navigation ctx={ctx} request={req} />
-				<main class="min-h-screen bg-white px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
+				<main class="min-h-screen bg-[#0A1428] px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
 					<div class="mx-auto max-w-6xl">{content}</div>
 				</main>
 				<Footer ctx={ctx} />
@@ -208,9 +208,9 @@ export function renderContentLayout(
 				{buildIconLinks(ctx.staticCdnEndpoint)}
 				{docsPageScript()}
 			</head>
-			<body class="bg-white">
+			<body class="bg-[#0A1428] text-white">
 				<Navigation ctx={ctx} request={req} />
-				<main class="min-h-screen bg-white px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
+				<main class="min-h-screen bg-[#0A1428] px-6 pt-48 pb-16 sm:px-8 md:px-12 md:pt-60 lg:px-16 xl:px-20">
 					{content}
 				</main>
 				<Footer ctx={ctx} className={footerClassName} />

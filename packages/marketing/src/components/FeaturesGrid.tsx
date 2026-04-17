@@ -62,7 +62,7 @@ export function FeaturesGrid(props: FeaturesGridProps): JSX.Element {
 
 function getThemeClasses(theme: FeatureTheme): {bgClass: string; textClass: string; descClass: string} {
 	if (theme === 'dark') {
-		return {bgClass: 'bg-[#4641D9]', textClass: 'text-white', descClass: 'text-white/80'};
+		return {bgClass: 'bg-[#3B82F6]', textClass: 'text-white', descClass: 'text-white/80'};
 	}
-	return {bgClass: 'bg-white', textClass: 'text-black', descClass: 'text-gray-600'};
+	return {bgClass: 'bg-[#101931]', textClass: 'text-white', descClass: 'text-[#94A3B8]'};
 }

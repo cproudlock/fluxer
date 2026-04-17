@@ -306,16 +306,16 @@ function renderLinkNode(node: LinkNode): string {
 	const escapedUrl = escapeHtml(node.url);
 	if (node.text) {
 		const textContent = renderInlineNode(node.text);
-		return `<a class="text-[#4641D9] hover:underline" href="${escapedUrl}">${textContent}</a>`;
+		return `<a class="text-[#3B82F6] hover:underline" href="${escapedUrl}">${textContent}</a>`;
 	}
-	return `<a class="text-[#4641D9] hover:underline" href="${escapedUrl}">${escapedUrl}</a>`;
+	return `<a class="text-[#3B82F6] hover:underline" href="${escapedUrl}">${escapedUrl}</a>`;
 }
 
 function renderTableNode(node: TableNode): string {
 	const headerHtml = renderTableRowNode(node.header, true, node.alignments);
 	const bodyRows = node.rows.map((row) => renderTableRowNode(row, false, node.alignments)).join('\n');
 	const bodyHtml = node.rows.length > 0 ? `<tbody>\n${bodyRows}\n</tbody>` : '';
-	return `<table class="border-collapse border border-gray-300 w-full my-4">\n<thead>\n${headerHtml}\n</thead>\n${bodyHtml}\n</table>`;
+	return `<table class="border-collapse border border-[#1E293B] w-full my-4">\n<thead>\n${headerHtml}\n</thead>\n${bodyHtml}\n</table>`;
 }
 
 function renderTableRowNode(
@@ -335,8 +335,8 @@ function renderTableCellNode(
 	const content = node.children.map((child) => renderInlineNode(child)).join('');
 	const tag = isHeader ? 'th' : 'td';
 	const baseClass = isHeader
-		? 'border border-gray-300 px-4 py-2 bg-gray-50 font-semibold'
-		: 'border border-gray-300 px-4 py-2';
+		? 'border border-[#1E293B] px-4 py-2 bg-[#101931] font-semibold'
+		: 'border border-[#1E293B] px-4 py-2';
 
 	let alignStyle = '';
 	if (alignment) {
@@ -445,7 +445,7 @@ function autoLinkEmails(html: string): string {
 				return part.content;
 			}
 			return part.content.replace(emailRegex, (email) => {
-				return `<a class="text-[#4641D9] hover:underline" href="mailto:${email}">${email}</a>`;
+				return `<a class="text-[#3B82F6] hover:underline" href="mailto:${email}">${email}</a>`;
 			});
 		})
 		.join('');

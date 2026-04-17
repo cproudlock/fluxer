@@ -233,9 +233,9 @@ function renderPolicyBody(
 	return (
 		<section class="mx-auto max-w-5xl">
 			<header class="mb-10 space-y-3">
-				<h1 class="font-bold text-4xl text-foreground">{policy.title}</h1>
-				{policy.description ? <p class="text-lg text-muted-foreground">{policy.description}</p> : null}
-				<p class="text-muted-foreground text-sm">
+				<h1 class="font-bold text-4xl text-white">{policy.title}</h1>
+				{policy.description ? <p class="text-lg text-[#94A3B8]">{policy.description}</p> : null}
+				<p class="text-[#94A3B8] text-sm">
 					{ctx.i18n.getMessage('general.last_updated', ctx.locale)} {formatDate(policy.lastUpdated, ctx.locale)}
 				</p>
 			</header>
@@ -247,8 +247,8 @@ function renderPolicyBody(
 			</div>
 			<script dangerouslySetInnerHTML={{__html: POLICY_TOC_SCRIPT}} />
 			{related.length > 0 ? (
-				<div class="mt-12 border-gray-200/60 border-t pt-8">
-					<h2 class="mb-4 font-semibold text-foreground text-lg">
+				<div class="mt-12 border-[#1E293B]/60 border-t pt-8">
+					<h2 class="mb-4 font-semibold text-white text-lg">
 						{ctx.i18n.getMessage('misc_labels.related_policies', ctx.locale)}
 					</h2>
 					<div class="grid gap-3 md:grid-cols-2">{related.map((entry) => renderRelatedPolicy(ctx, entry))}</div>
@@ -268,11 +268,11 @@ function renderToc(title: string, headings: ReadonlyArray<HeadingEntry>): JSX.El
 
 	return (
 		<nav class="space-y-2">
-			<h2 class="font-semibold text-foreground text-sm">{title}</h2>
-			<ul class="space-y-1 text-muted-foreground text-sm">
+			<h2 class="font-semibold text-white text-sm">{title}</h2>
+			<ul class="space-y-1 text-[#94A3B8] text-sm">
 				{filtered.map((heading) => (
 					<li style={`margin-left: ${(heading.level - minLevel) * 12}px`}>
-						<a href={`#${heading.id}`} data-toc-link={heading.id} class="block py-1 hover:text-foreground">
+						<a href={`#${heading.id}`} data-toc-link={heading.id} class="block py-1 hover:text-white">
 							{heading.title}
 						</a>
 					</li>
@@ -285,9 +285,9 @@ function renderToc(title: string, headings: ReadonlyArray<HeadingEntry>): JSX.El
 function renderRelatedPolicy(ctx: MarketingContext, policy: Policy): JSX.Element {
 	const url = href(ctx, `/${policy.slug}`);
 	return (
-		<a href={url} class="group block py-2 text-muted-foreground text-sm hover:text-foreground">
-			<div class="font-medium text-foreground group-hover:text-primary">{policy.title}</div>
-			{policy.description ? <div class="mt-0.5 text-muted-foreground text-sm">{policy.description}</div> : null}
+		<a href={url} class="group block py-2 text-[#94A3B8] text-sm hover:text-white">
+			<div class="font-medium text-white group-hover:text-primary">{policy.title}</div>
+			{policy.description ? <div class="mt-0.5 text-[#94A3B8] text-sm">{policy.description}</div> : null}
 		</a>
 	);
 }

@@ -29,11 +29,11 @@
 
 @layer utilities {
   .gradient-purple {
-    @apply bg-gradient-to-b from-[#4641D9] to-[#3832B8];
+    @apply bg-gradient-to-b from-[#06B6D4] to-[#3B82F6];
   }
 
   .gradient-cta {
-    @apply rounded-t-3xl bg-gradient-to-b from-[#4641D9] to-[#3832B8] text-white;
+    @apply rounded-t-3xl bg-gradient-to-b from-[#06B6D4] to-[#3B82F6] text-white;
   }
 }
 
@@ -105,6 +105,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
 
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle svg {
+  transition: transform 0.15s;
+}
+
+.dropdown.open .dropdown-toggle svg {
+  transform: rotate(180deg);
+}
+
 .locale-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -126,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .locale-modal {
-  background-color: white;
+  background-color: #101931;
   border-radius: 1rem;
   max-width: 90vw;
   max-height: 85vh;
@@ -169,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pwa-modal {
-  background-color: white;
+  background-color: #101931;
   border-radius: 1rem;
   max-width: 90vw;
   max-height: 85vh;
@@ -203,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .policy-prose {
   line-height: 1.7;
-  color: var(--color-gray-700);
+  color: #E2E8F0;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -237,7 +249,7 @@ html:lang(uk) .marketing-nav-rss {
   line-height: 1.25;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: var(--color-gray-900);
+  color: #FFFFFF;
   scroll-margin-top: 6rem;
 }
 
@@ -249,7 +261,7 @@ html:lang(uk) .marketing-nav-rss {
 .policy-prose h2 {
   font-size: 1.5rem;
   letter-spacing: -0.015em;
-  border-bottom: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid #1E293B;
   padding-bottom: 0;
 }
 
@@ -303,32 +315,32 @@ html:lang(uk) .marketing-nav-rss {
 }
 
 .policy-prose a {
-  color: var(--color-primary);
+  color: #3B82F6;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .policy-prose a:hover {
-  color: var(--color-primary-600);
+  color: #2563EB;
 }
 
 .policy-prose strong {
   font-weight: 600;
-  color: var(--color-gray-900);
+  color: #FFFFFF;
 }
 
 .policy-prose blockquote {
-  border-left: 4px solid var(--color-gray-300);
+  border-left: 4px solid #1E293B;
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: var(--color-gray-600);
+  color: #94A3B8;
   font-style: italic;
 }
 
 .policy-prose code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background: var(--color-gray-100);
+  background: #1A2440;
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
 }
@@ -373,7 +385,7 @@ html:lang(uk) .marketing-nav-rss {
 
 .policy-prose th,
 .policy-prose td {
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid #1E293B;
   padding: 0.75rem 1rem;
   text-align: left;
   word-wrap: break-word;
@@ -389,7 +401,7 @@ html:lang(uk) .marketing-nav-rss {
 }
 
 .policy-prose th {
-  background: var(--color-gray-50);
+  background: #1A2440;
   font-weight: 600;
 }
 
@@ -414,7 +426,7 @@ html:lang(uk) .marketing-nav-rss {
   height: 1.5rem;
   border-radius: 0.25rem;
   padding: 0;
-  color: var(--color-gray-400);
+  color: #64748B;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -428,12 +440,12 @@ html:lang(uk) .marketing-nav-rss {
 }
 
 .policy-prose .heading-anchor-link:hover {
-  color: var(--color-gray-600);
-  background-color: var(--color-gray-100);
+  color: #94A3B8;
+  background-color: #1A2440;
 }
 
 .policy-prose .heading-anchor-link:focus {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid #3B82F6;
   outline-offset: 2px;
 }
 
@@ -483,22 +495,22 @@ html:lang(uk) .marketing-nav-rss {
 .help-search-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid #1E293B;
   border-radius: 0.75rem;
   font-size: 0.9375rem;
-  color: var(--color-gray-900);
-  background-color: white;
+  color: #FFFFFF;
+  background-color: #101931;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .help-search-input:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(70, 65, 217, 0.1);
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .help-search-input::placeholder {
-  color: var(--color-gray-400);
+  color: #64748B;
 }
 
 .help-grid {
@@ -522,15 +534,15 @@ html:lang(uk) .marketing-nav-rss {
 .help-card {
   display: block;
   padding: 1.25rem;
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid #1E293B;
   border-radius: 0.75rem;
-  background-color: white;
+  background-color: #101931;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .help-card:hover {
-  border-color: var(--color-gray-300);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: #3B82F6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
 }
 
 footer {

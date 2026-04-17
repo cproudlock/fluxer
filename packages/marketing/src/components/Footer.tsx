@@ -23,7 +23,6 @@
 import {ArrowRightIcon} from '@fluxer/marketing/src/components/icons/ArrowRightIcon';
 import {FluxerLogoWordmarkIcon} from '@fluxer/marketing/src/components/icons/FluxerLogoWordmarkIcon';
 import {HeartIcon} from '@fluxer/marketing/src/components/icons/HeartIcon';
-import {RssIcon} from '@fluxer/marketing/src/components/icons/RssIcon';
 import {MarketingButtonInverted} from '@fluxer/marketing/src/components/MarketingButton';
 import type {MarketingContext} from '@fluxer/marketing/src/MarketingContext';
 import {href} from '@fluxer/marketing/src/UrlUtils';
@@ -102,45 +101,22 @@ export function Footer(props: FooterProps): JSX.Element {
 
 				<div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10 md:gap-x-12 md:gap-y-10 min-[480px]:grid-cols-2 min-[480px]:gap-x-6 min-[480px]:gap-y-8">
 					<FooterSection title={ctx.i18n.getMessage('footer.fluxer', ctx.locale)}>
-						<FooterLink href={link('/plutonium')}>
+						<FooterLink href={link('/reverb')}>
 							{ctx.i18n.getMessage('footer.plutonium_tier', ctx.locale)}
 						</FooterLink>
 						<FooterLink href={link('/partners')}>{ctx.i18n.getMessage('footer.partners', ctx.locale)}</FooterLink>
 						<FooterLink href={link('/download')}>{ctx.i18n.getMessage('footer.download', ctx.locale)}</FooterLink>
-						<FooterLink href="https://github.com/fluxerapp/fluxer">
+						<FooterLink href="https://github.com/cproudlock/fluxer">
 							{ctx.i18n.getMessage('footer.source_code', ctx.locale)}
 						</FooterLink>
-						<FooterLink href="https://bsky.app/profile/fluxer.app">
+						<FooterLink href="https://bsky.app/profile/echowire.bsky.social">
 							{ctx.i18n.getMessage('footer.bluesky_social_media', ctx.locale)}
-						</FooterLink>
-						<li>
-							<div class="flex items-center gap-2">
-								<a href="https://blog.fluxer.app" class={linkClass}>
-									{ctx.i18n.getMessage('company_and_resources.blog', ctx.locale)}
-								</a>
-								<a
-									href="https://blog.fluxer.app/rss/"
-									title={ctx.i18n.getMessage('footer.rss_feed', ctx.locale)}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="text-white/90 transition-colors hover:text-white"
-								>
-									<RssIcon class="h-[1em] w-[1em]" />
-								</a>
-							</div>
-						</li>
-						<FooterLink href="https://blog.fluxer.app/roadmap-2026">
-							{ctx.i18n.getMessage('footer.roadmap', ctx.locale)}
 						</FooterLink>
 						<FooterLink href={link('/help')}>
 							{ctx.i18n.getMessage('company_and_resources.help.help_center', ctx.locale)}
 						</FooterLink>
-						<FooterLink href={link('/press')}>{ctx.i18n.getMessage('footer.press', ctx.locale)}</FooterLink>
-						<FooterLink href="https://docs.fluxer.app">
+						<FooterLink href="https://docs.echowire.org">
 							{ctx.i18n.getMessage('company_and_resources.docs', ctx.locale)}
-						</FooterLink>
-						<FooterLink href={link('/careers')}>
-							{ctx.i18n.getMessage('company_and_resources.careers.label', ctx.locale)}
 						</FooterLink>
 					</FooterSection>
 
@@ -162,8 +138,8 @@ export function Footer(props: FooterProps): JSX.Element {
 						title={ctx.i18n.getMessage('footer.connect', ctx.locale)}
 						class="sm:col-span-1 min-[480px]:col-span-2"
 					>
-						<FooterLink href="mailto:press@fluxer.app">press@fluxer.app</FooterLink>
-						<FooterLink href="mailto:support@fluxer.app">support@fluxer.app</FooterLink>
+						<FooterLink href="mailto:press@echowire.org">press@echowire.org</FooterLink>
+						<FooterLink href="mailto:support@echowire.org">support@echowire.org</FooterLink>
 						<FooterLink href={link('/help/report-bug')}>
 							{ctx.i18n.getMessage('footer.report_a_bug', ctx.locale)}
 						</FooterLink>

@@ -20,11 +20,9 @@
 /** @jsxRuntime automatic */
 /** @jsxImportSource hono/jsx */
 
-export function buildIconLinks(staticCdnEndpoint: string): ReadonlyArray<JSX.Element> {
+export function buildIconLinks(_staticCdnEndpoint: string): ReadonlyArray<JSX.Element> {
 	return [
-		<link rel="icon" type="image/x-icon" href={`${staticCdnEndpoint}/web/favicon.ico`} />,
-		<link rel="apple-touch-icon" href={`${staticCdnEndpoint}/web/apple-touch-icon.png`} />,
-		<link rel="icon" type="image/png" sizes="32x32" href={`${staticCdnEndpoint}/web/favicon-32x32.png`} />,
-		<link rel="icon" type="image/png" sizes="16x16" href={`${staticCdnEndpoint}/web/favicon-16x16.png`} />,
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />,
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />,
 	];
 }

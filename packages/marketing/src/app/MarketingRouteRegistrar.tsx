@@ -28,7 +28,6 @@ import {createSession} from '@fluxer/hono/src/Session';
 import {getLocaleFromCode} from '@fluxer/locale/src/LocaleService';
 import type {MarketingConfig} from '@fluxer/marketing/src/MarketingConfig';
 import {sendMarketingRequest} from '@fluxer/marketing/src/MarketingHttpClient';
-import {renderCareersPage} from '@fluxer/marketing/src/pages/CareersPage';
 import {renderDonateManagePage} from '@fluxer/marketing/src/pages/DonateManagePage';
 import {renderDonatePage} from '@fluxer/marketing/src/pages/DonatePage';
 import {renderDonateSuccessPage} from '@fluxer/marketing/src/pages/DonateSuccessPage';
@@ -40,7 +39,6 @@ import {renderNotFoundPage} from '@fluxer/marketing/src/pages/NotFoundPage';
 import {renderPartnersPage} from '@fluxer/marketing/src/pages/PartnersPage';
 import {renderPlutoniumPage} from '@fluxer/marketing/src/pages/PlutoniumPage';
 import {renderPolicyPage} from '@fluxer/marketing/src/pages/PolicyPage';
-import {renderPressPage} from '@fluxer/marketing/src/pages/PressPage';
 import {sanitizeInternalRedirectPath} from '@fluxer/marketing/src/RedirectPathUtils';
 import type {MarketingRouteHandler} from '@fluxer/marketing/src/routes/RouteTypes';
 import {generateSitemap} from '@fluxer/marketing/src/Sitemap';
@@ -74,14 +72,12 @@ const PAGE_ROUTE_DEFINITIONS: ReadonlyArray<{
 	handler: MarketingRouteHandler;
 }> = [
 	{path: '/', handler: renderHomePage},
-	{path: '/careers', handler: renderCareersPage},
 	{path: '/download', handler: renderDownloadPage},
 	{path: '/donate', handler: renderDonatePage},
 	{path: '/donate/manage', handler: renderDonateManagePage},
 	{path: '/donate/success', handler: renderDonateSuccessPage},
-	{path: '/plutonium', handler: renderPlutoniumPage},
+	{path: '/reverb', handler: renderPlutoniumPage},
 	{path: '/partners', handler: renderPartnersPage},
-	{path: '/press', handler: renderPressPage},
 ];
 
 export function registerMarketingRoutes(options: RegisterMarketingRoutesOptions): void {
@@ -112,14 +108,12 @@ function registerLocaleRoute(app: Hono, config: MarketingConfig): void {
 function registerExternalRedirects(app: Hono): void {
 	app.get('/get/livekitctl', (c) => {
 		return c.redirect(
-			'https://raw.githubusercontent.com/fluxerapp/fluxer/main/fluxer_devops/livekitctl/scripts/install.sh',
+			'https://raw.githubusercontent.com/cproudlock/fluxer/main/fluxer_devops/livekitctl/scripts/install.sh',
 			HttpStatus.FOUND,
 		);
 	});
 
 	app.get('/regional-restrictions', (c) => c.redirect('/help/regional-restrictions', HttpStatus.MOVED_PERMANENTLY));
-	app.get('/blog', (c) => c.redirect('https://blog.fluxer.app', HttpStatus.FOUND));
-	app.get('/blog/*', (c) => c.redirect('https://blog.fluxer.app', HttpStatus.FOUND));
 }
 
 function registerSystemContentRoutes(app: Hono, contextFactory: MarketingContextFactory): void {
@@ -134,7 +128,7 @@ function registerSystemContentRoutes(app: Hono, contextFactory: MarketingContext
 		const expires = `${new Date().getUTCFullYear() + 1}-01-05T13:37:00.000Z`;
 		const body = [
 			`Contact: ${securityUrl}`,
-			'Contact: mailto:security@fluxer.app',
+			'Contact: mailto:security@echowire.org',
 			`Expires: ${expires}`,
 			'Preferred-Languages: en',
 			`Policy: ${securityUrl}`,

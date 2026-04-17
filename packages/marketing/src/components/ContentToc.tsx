@@ -36,7 +36,7 @@ export function ContentToc(props: ContentTocProps): JSX.Element | null {
 
 	return (
 		<nav class="space-y-3 text-sm">
-			<p class="font-semibold text-foreground">{props.title}</p>
+			<p class="font-semibold text-white">{props.title}</p>
 			<ul class="space-y-2 border-border border-l pl-4">
 				{props.headings.map((heading) => (
 					<li>
@@ -52,10 +52,10 @@ export function ContentToc(props: ContentTocProps): JSX.Element | null {
 
 function tocClassName(level: number): string {
 	if (level <= 2) {
-		return 'block text-muted-foreground hover:text-foreground transition';
+		return 'block text-[#94A3B8] hover:text-white transition';
 	}
 	if (level === 3) {
-		return 'block text-muted-foreground hover:text-foreground transition ml-3';
+		return 'block text-[#94A3B8] hover:text-white transition ml-3';
 	}
-	return 'block text-muted-foreground hover:text-foreground transition ml-5';
+	return 'block text-[#94A3B8] hover:text-white transition ml-5';
 }

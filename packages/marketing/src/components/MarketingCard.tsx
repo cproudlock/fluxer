@@ -48,7 +48,7 @@ export function MarketingCard({
 }: PropsWithChildren<MarketingCardProps>): JSX.Element {
 	const paddingClass = marketingCardPaddingClasses[padding];
 	const themeClasses =
-		theme === 'dark' ? 'border-white/20 bg-white/10 shadow-lg backdrop-blur-sm' : 'border-gray-200 bg-white shadow-md';
+		theme === 'dark' ? 'border-white/20 bg-white/10 shadow-lg backdrop-blur-sm' : 'border-[#1E293B] bg-[#101931] shadow-md';
 	const baseClasses = 'flex h-full flex-col rounded-3xl border';
 
 	const combinedClasses = `${baseClasses} ${themeClasses} ${paddingClass} ${className}`.trim();

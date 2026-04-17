@@ -59,13 +59,13 @@ function renderHeroSection(ctx: MarketingContext): JSX.Element {
 
 function renderPerksSection(ctx: MarketingContext): JSX.Element {
 	return (
-		<section class={`bg-white ${SPACING.large}`}>
+		<section class={`bg-[#101931] ${SPACING.large}`}>
 			<div class="mx-auto max-w-6xl">
 				<div class="mb-12 text-center md:mb-16">
-					<h2 class="display mb-6 text-4xl text-black md:mb-8 md:text-5xl lg:text-6xl">
+					<h2 class="display mb-6 text-4xl text-white md:mb-8 md:text-5xl lg:text-6xl">
 						{ctx.i18n.getMessage('partner_program.perks.heading', ctx.locale)}
 					</h2>
-					<p class="lead mx-auto max-w-3xl text-gray-700">
+					<p class="lead mx-auto max-w-3xl text-[#E2E8F0]">
 						{ctx.i18n.getMessage('partner_program.who_its_for', ctx.locale)}
 					</p>
 				</div>
@@ -76,7 +76,7 @@ function renderPerksSection(ctx: MarketingContext): JSX.Element {
 						ctx.i18n.getMessage('partner_program.perks.free_plutonium.label', ctx.locale),
 						ctx.i18n.getMessage('partner_program.perks.free_plutonium.description', ctx.locale),
 						false,
-						'/plutonium',
+						'/reverb',
 					)}
 					{renderPerkCard(
 						ctx,
@@ -198,26 +198,26 @@ function renderPerkCard(
 	const hasLink = link.length > 0;
 
 	return (
-		<div class="relative flex h-full flex-col rounded-2xl border border-gray-200/80 bg-white p-6 shadow-lg md:p-7">
+		<div class="relative flex h-full flex-col rounded-2xl border border-[#1E293B]/80 bg-[#101931] p-6 shadow-lg md:p-7">
 			{comingSoon ? (
-				<div class="caption absolute -top-2 -right-2 rounded-full bg-[#4641D9] px-3 py-1 text-white">
+				<div class="caption absolute -top-2 -right-2 rounded-full bg-[#3B82F6] px-3 py-1 text-white">
 					{ctx.i18n.getMessage('general.coming_soon.label', ctx.locale)}
 				</div>
 			) : null}
 			{hasLink ? (
 				<a
 					href={href(ctx, link)}
-					class="caption absolute top-2 right-2 flex items-center gap-1 rounded-full bg-[#4641D9] px-3 py-1 text-white transition hover:bg-[#3d38c7]"
+					class="caption absolute top-2 right-2 flex items-center gap-1 rounded-full bg-[#3B82F6] px-3 py-1 text-white transition hover:bg-[#2563EB]"
 				>
 					{ctx.i18n.getMessage('partner_program.perks.see_perks', ctx.locale)}
 					<ArrowRightIcon class="h-3 w-3" />
 				</a>
 			) : null}
-			<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#4641D9]/10">
-				<Icon name={iconName} class="h-8 w-8 text-[#4641D9]" />
+			<div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#3B82F6]/10">
+				<Icon name={iconName} class="h-8 w-8 text-[#3B82F6]" />
 			</div>
-			<h3 class="title-sm mb-2 text-black">{title}</h3>
-			<p class="body text-gray-600">{description}</p>
+			<h3 class="title-sm mb-2 text-white">{title}</h3>
+			<p class="body text-[#94A3B8]">{description}</p>
 		</div>
 	);
 }
@@ -254,8 +254,8 @@ function renderCtaSection(ctx: MarketingContext): JSX.Element {
 						</ul>
 					</div>
 					<a
-						href="mailto:partners@fluxer.app"
-						class="label inline-block rounded-xl bg-white px-8 py-4 text-[#4641D9] shadow-lg transition hover:bg-gray-100"
+						href="mailto:partners@echowire.org"
+						class="label inline-block rounded-xl bg-white px-8 py-4 text-[#3B82F6] shadow-lg transition hover:bg-gray-100"
 					>
 						{ctx.i18n.getMessage('partner_program.become_partner.apply_email', ctx.locale)}
 					</a>
