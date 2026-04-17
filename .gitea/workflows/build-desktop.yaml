@@ -43,7 +43,10 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        run: |
+          rm -rf $GITHUB_WORKSPACE/* $GITHUB_WORKSPACE/.* 2>/dev/null || true
+          git clone --depth=1 -b ${{ github.ref_name }} ${{ github.server_url }}/${{ github.repository }}.git $GITHUB_WORKSPACE
 
       - name: Determine version
         id: version
@@ -132,7 +135,10 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        run: |
+          rm -rf $GITHUB_WORKSPACE/* $GITHUB_WORKSPACE/.* 2>/dev/null || true
+          git clone --depth=1 -b ${{ github.ref_name }} ${{ github.server_url }}/${{ github.repository }}.git $GITHUB_WORKSPACE
 
       - name: Determine version
         run: |
