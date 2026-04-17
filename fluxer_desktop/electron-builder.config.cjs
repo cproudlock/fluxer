@@ -106,8 +106,13 @@ module.exports = {
 
 	win: {
 		icon: `build_resources/${iconDir}/icon.ico`,
-		signtoolOptions: process.env.AZURE_SIGNING_ENDPOINT
-			? {sign: './scripts/sign-with-azure.mjs'}
+		azureSignOptions: process.env.AZURE_SIGNING_ENDPOINT
+			? {
+					endpoint: process.env.AZURE_SIGNING_ENDPOINT,
+					codeSigningAccountName: process.env.AZURE_SIGNING_ACCOUNT,
+					certificateProfileName: process.env.AZURE_CERTIFICATE_PROFILE,
+					publisherName: 'CN=Proudlock Technology LLC, O=Proudlock Technology LLC, L=West Jefferson, S=North Carolina, C=US',
+				}
 			: undefined,
 		target: [
 			{
