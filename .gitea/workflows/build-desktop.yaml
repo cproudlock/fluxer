@@ -159,16 +159,6 @@ jobs:
         working-directory: fluxer_desktop
         run: pnpm build
 
-      - name: Install PowerShell + TrustedSigning module
-        run: |
-          if ! command -v pwsh &>/dev/null; then
-            wget -q https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O /tmp/ms.deb
-            sudo dpkg -i /tmp/ms.deb
-            sudo apt-get update -qq
-            sudo apt-get install -y -qq powershell
-          fi
-          pwsh -NoProfile -NonInteractive -Command "Install-Module -Name TrustedSigning -Force -Scope CurrentUser"
-
       - name: Build Windows installer (via Wine)
         working-directory: fluxer_desktop
         env:
