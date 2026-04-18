@@ -161,6 +161,9 @@ jobs:
 
       - name: Build Windows installer (via Wine)
         working-directory: fluxer_desktop
+        run: pnpm exec electron-builder --config electron-builder.config.cjs --win nsis --x64 --config.npmRebuild=false
+
+      - name: Sign Windows executable
         env:
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -168,7 +171,11 @@ jobs:
           AZURE_SIGNING_ENDPOINT: https://eus.codesigning.azure.net/
           AZURE_SIGNING_ACCOUNT: proudlock-signing
           AZURE_CERTIFICATE_PROFILE: echowire-public
-        run: pnpm exec electron-builder --config electron-builder.config.cjs --win nsis --x64 --config.npmRebuild=false
+        run: |
+          for exe in fluxer_desktop/dist-electron/*.exe; do
+            [ -f "$exe" ] || continue
+            bash fluxer_desktop/scripts/sign-with-jsign.sh "$exe"
+          done
 
       - name: Prepare artifacts
         run: |
