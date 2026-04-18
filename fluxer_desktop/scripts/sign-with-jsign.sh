@@ -39,6 +39,7 @@ java -jar "$JSIGN_JAR" \
   --storepass "$TOKEN" \
   --alias "$ACCOUNT/$PROFILE" \
   --tsaurl http://timestamp.acs.microsoft.com \
+  --tsmode RFC3161 \
   "$FILE"
 
 echo "[sign] Successfully signed $FILE"
