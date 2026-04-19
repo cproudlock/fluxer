@@ -198,7 +198,7 @@ handle_call({confirm_voice_connection_from_livekit, Request}, _From, #{guild_id 
             %% Broadcast confirmation to other gateways so they clear their pending
             publish_pending_confirmed(GuildId, ConnectionId),
             {reply, Reply, FinalState};
-        {reply, ErrorReply, NewGuildState} ->
+        {reply, {error, _Category, _Reason} = ErrorReply, NewGuildState} ->
             %% Error response - still apply state changes (e.g. cleared pending) and reply.
             %% Without this clause the voice_server gen_server crashes with case_clause,
             %% taking voice state with it. After crash, voice_server lookups fail and
