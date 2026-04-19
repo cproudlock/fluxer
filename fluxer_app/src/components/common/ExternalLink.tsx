@@ -19,7 +19,7 @@
 
 import styles from '@app/components/common/ExternalLink.module.css';
 import FocusRing from '@app/components/uikit/focus_ring/FocusRing';
-import {openExternalUrl} from '@app/utils/NativeUtils';
+import {isElectron, openExternalUrl} from '@app/utils/NativeUtils';
 import {clsx} from 'clsx';
 import {observer} from 'mobx-react-lite';
 import type {AnchorHTMLAttributes, FC, MouseEventHandler} from 'react';
@@ -33,10 +33,12 @@ type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 export const ExternalLink: FC<ExternalLinkProps> = observer(({href, children, className, ...props}) => {
 	const linkRef = useRef<HTMLAnchorElement>(null);
 
-	const handleClick: MouseEventHandler<HTMLAnchorElement> = async (event) => {
-		event.preventDefault();
+	const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
 		event.stopPropagation();
-		await openExternalUrl(href);
+		if (isElectron()) {
+			event.preventDefault();
+			void openExternalUrl(href);
+		}
 	};
 
 	return (

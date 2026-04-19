@@ -42,12 +42,12 @@ export const ExternalLinkWarningModal = observer(({url}: {url: string}) => {
 		}
 	}, [url]);
 
-	const handleContinue = useCallback(async () => {
-		if (trustDomain) {
-			await TrustedDomainActionCreators.addTrustedDomain(hostname);
-		}
+	const handleContinue = useCallback(() => {
 		void openExternalUrl(url);
 		ModalActionCreators.pop();
+		if (trustDomain) {
+			void TrustedDomainActionCreators.addTrustedDomain(hostname);
+		}
 	}, [url, hostname, trustDomain]);
 
 	const handleCancel = useCallback(() => {

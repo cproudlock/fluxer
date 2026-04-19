@@ -47,7 +47,7 @@ import {
 } from '@app/utils/DeepLinkUtils';
 import * as InviteUtils from '@app/utils/InviteUtils';
 import {goToMessage} from '@app/utils/MessageNavigator';
-import {openExternalUrl} from '@app/utils/NativeUtils';
+import {isElectron, openExternalUrl} from '@app/utils/NativeUtils';
 import * as ThemeUtils from '@app/utils/ThemeUtils';
 import {ME} from '@fluxer/constants/src/AppConstants';
 import type {LinkNode} from '@fluxer/markdown_parser/src/types/Nodes';
@@ -306,7 +306,7 @@ export const LinkRenderer = observer(function LinkRenderer({
 						handleClick(e);
 						return;
 					}
-					if (!isInternal) {
+					if (!isInternal && isElectron()) {
 						e.preventDefault();
 						void openExternalUrl(url);
 					}
