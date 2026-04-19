@@ -71,5 +71,4 @@ jobs:
         run: python3 scripts/ci/workflows/ci.py --step install_dependencies
 
       - name: Run knip
-        continue-on-error: true
         run: python3 scripts/ci/workflows/ci.py --step knip

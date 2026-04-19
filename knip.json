@@ -57,23 +57,51 @@
 			}
 		},
 		"fluxer_api": {
-			"entry": ["scripts/*.{ts,tsx}"],
+			"entry": ["src/**/*.{ts,tsx}", "scripts/*.{ts,tsx}"],
 			"ignore": ["src/errors/*.ts", "src/models/PrivateChannel.ts", "src/infrastructure/IAssetDeletionQueue.ts"],
-			"project": ["src/**/*.{ts,tsx}", "scripts/*.{ts,tsx}"]
+			"project": ["src/**/*.{ts,tsx}", "scripts/*.{ts,tsx}"],
+			"paths": {
+				"@app/*": ["src/*"]
+			}
 		},
 		"fluxer_admin": {
 			"entry": ["src/**/*.tsx"],
 			"ignoreDependencies": ["tailwindcss"]
 		},
+		"fluxer_media_proxy": {
+			"entry": ["src/**/*.tsx"],
+			"project": ["src/**/*.{ts,tsx}"],
+			"paths": {
+				"@app/*": ["src/*"]
+			}
+		},
+		"fluxer_server": {
+			"entry": ["src/**/*.tsx"],
+			"project": ["src/**/*.{ts,tsx}"]
+		},
+		"fluxer_relay_directory": {
+			"entry": ["src/**/*.tsx", "scripts/*.tsx"]
+		},
+		"fluxer_app_proxy": {
+			"entry": ["src/**/*.tsx"],
+			"ignoreDependencies": ["@fluxer/cache", "@fluxer/kv_client", "@fluxer/rate_limit"]
+		},
 		"packages/app": {
 			"entry": ["src/**/*.tsx"],
 			"ignoreDependencies": ["@hono/node-server", "@fluxer/app_proxy", "@fluxer/hono", "@fluxer/logger", "hono"]
+		},
+		"packages/app_proxy": {
+			"entry": ["src/**/*.tsx"],
+			"ignoreDependencies": ["@fluxer/ip_utils", "@fluxer/rate_limit"]
 		},
 		"packages/cache": {
 			"entry": ["src/**/*.tsx"]
 		},
 		"packages/cassandra": {
 			"entry": ["src/**/*.tsx"]
+		},
+		"packages/config": {
+			"entry": ["src/**/*.tsx", "src/**/*.ts"]
 		},
 		"packages/csp": {
 			"entry": ["src/**/*.tsx"]
@@ -98,9 +126,6 @@
 			"ignoreDependencies": ["tailwindcss"]
 		},
 		"packages/s3": {
-			"entry": ["src/**/*.tsx"]
-		},
-		"packages/app_proxy": {
 			"entry": ["src/**/*.tsx"]
 		},
 		"packages/marketing": {
@@ -152,13 +177,19 @@
 		"packages/captcha": {
 			"entry": ["src/**/*.tsx"]
 		},
-		"packages/config": {
+		"packages/limits": {
 			"entry": ["src/**/*.tsx"]
+		},
+		"packages/i18n": {
+			"entry": ["src/**/*.tsx", "scripts/*.ts"]
 		},
 		"packages/search_client": {
 			"entry": ["src/**/*.tsx"]
 		},
 		"packages/media_proxy_utils": {
+			"entry": ["src/**/*.tsx"]
+		},
+		"packages/worker": {
 			"entry": ["src/**/*.tsx"]
 		}
 	}
