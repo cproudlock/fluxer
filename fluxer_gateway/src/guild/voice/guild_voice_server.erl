@@ -17,6 +17,11 @@
 
 -module(guild_voice_server).
 -behaviour(gen_server).
+%% Suppress dialyzer warning for the defensive error clause in
+%% confirm_voice_connection_from_livekit handling. Dialyzer's success
+%% typing considers the error path unreachable, but we keep it to
+%% prevent gen_server crashes if the upstream function changes.
+-dialyzer({no_match, handle_call/3}).
 
 -export([
     start_link/2,
