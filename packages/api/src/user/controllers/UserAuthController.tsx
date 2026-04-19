@@ -351,7 +351,9 @@ export function UserAuthController(app: HonoApp) {
 		async (ctx) => {
 			const user = ctx.get('user');
 			const body = ctx.req.valid('json');
-			await requireSudoMode(ctx, user, body, ctx.get('authService'), ctx.get('authMfaService'));
+			await requireSudoMode(ctx, user, body, ctx.get('authService'), ctx.get('authMfaService'), {
+				issueSudoToken: false,
+			});
 			return ctx.json(await ctx.get('userAuthRequestService').generateWebAuthnRegistrationOptions(user));
 		},
 	);
