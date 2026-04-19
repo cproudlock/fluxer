@@ -19,6 +19,7 @@
 
 import {clearSqliteStore} from '@fluxer/api/src/database/SqliteKV';
 import {Logger} from '@fluxer/api/src/Logger';
+import {ipBanCache} from '@fluxer/api/src/middleware/IpBanMiddleware';
 import {resetSearchServices} from '@fluxer/api/src/SearchFactory';
 import type {IKVProvider} from '@fluxer/kv_client/src/IKVProvider';
 import type {S3Service} from '@fluxer/s3/src/s3/S3Service';
@@ -48,6 +49,7 @@ export function createTestHarnessResetHandler(options: CreateTestHarnessResetOpt
 		Logger.info('Resetting test harness state');
 
 		clearSqliteStore();
+		ipBanCache.resetCaches();
 
 		if (options.kvProvider) {
 			Logger.info('Clearing KV storage');
