@@ -303,7 +303,7 @@ All secrets are stored in `secrets.env` (gitignored, never committed). See that 
 - `pnpm exec rspack build` not `npx rspack` (pnpm compatibility)
 - ScyllaDB requires CPU with PCLMUL support — use `host` CPU type in Proxmox
 - ScyllaDB `nodetool` needs `fs.aio-max-nr = 1048576` in sysctl.conf
-- LFS budget exceeded — badge SVGs must be downloaded from fluxerstatic.com CDN manually
+- `fluxer_static` submodule is forked to `cproudlock/static` — upstream force-pushed the original pinned commit away. Submodule URL is pinned to our fork so clones are stable regardless of upstream rewrites
 - Reusing same version number with different sha512 causes auto-updater to reject the update
 - R2 auto-updater files must exist at BOTH `desktop/stable/` (for updater) AND `desktop/stable/{platform}/x64/` (for download page)
 - MI voice reconciliation MUST be disabled — it sees NC's LiveKit participants as orphaned and kicks them
