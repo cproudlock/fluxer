@@ -1234,6 +1234,9 @@ importers:
       '@fluxer/date_utils':
         specifier: workspace:*
         version: link:../date_utils
+      '@fluxer/elasticsearch_search':
+        specifier: workspace:*
+        version: link:../elasticsearch_search
       '@fluxer/email':
         specifier: workspace:*
         version: link:../email

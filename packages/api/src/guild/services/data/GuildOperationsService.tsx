@@ -337,6 +337,16 @@ export class GuildOperationsService {
 						soft_deleted: false,
 						indexed_at: null,
 						version: 1,
+						thread_archived: null,
+						thread_auto_archive_duration: null,
+						thread_archive_timestamp: null,
+						thread_locked: null,
+						thread_invitable: null,
+						thread_creator_id: null,
+						thread_message_count: null,
+						thread_member_count: null,
+						available_tags: null,
+						applied_tags: null,
 					}),
 				);
 				batch.addPrepared(
