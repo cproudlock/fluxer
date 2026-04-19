@@ -8,7 +8,7 @@
 
 set -eu
 
-TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+TIMESTAMP=$(date -u +%Y%m%d-%H%M%S)  # UTC to match verify script's parser
 BACKUP_NAME="cassandra-backup-${TIMESTAMP}"
 SNAPSHOT_TAG="backup-${TIMESTAMP}"
 DATA_DIR="/var/lib/scylla/data"
