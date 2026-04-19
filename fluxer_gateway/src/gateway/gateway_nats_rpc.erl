@@ -33,7 +33,12 @@ start_link() ->
 
 -spec get_connection() -> {ok, nats:conn() | undefined} | {error, term()}.
 get_connection() ->
-    gen_server:call(?MODULE, get_connection).
+    try
+        gen_server:call(?MODULE, get_connection)
+    catch
+        exit:{noproc, _} ->
+            {error, not_connected}
+    end.
 
 -spec init([]) -> {ok, map()}.
 init([]) ->

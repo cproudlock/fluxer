@@ -265,11 +265,11 @@ member_list_delta(ListId, _OldState, UpdatedState, _UserId) ->
     %% The diff algorithm (mismatch_span) doesn't update group headers outside
     %% the changed range, causing stale counts and misplaced members.
     %% Full SYNC is correct and negligible overhead for small guilds.
-    {OldCount, OldOnline, OldGroups, _OldItems} = member_list_snapshot(ListId, _OldState),
+    {OldCount, OldOnline, OldGroups, OldItems} = member_list_snapshot(ListId, _OldState),
     {MemberCount, OnlineCount, Groups, Items} = member_list_snapshot(ListId, UpdatedState),
     Ops = guild_member_list_common:full_sync_from_items(Items),
     Changed =
-        Ops =/= [] orelse OldCount =/= MemberCount orelse OldOnline =/= OnlineCount orelse
+        OldItems =/= Items orelse OldCount =/= MemberCount orelse OldOnline =/= OnlineCount orelse
             OldGroups =/= Groups,
     {MemberCount, OnlineCount, Groups, Ops, Changed}.
 
@@ -804,11 +804,12 @@ member_list_delta_no_change_test() ->
         sessions => #{},
         member_presence => #{}
     },
-    {MemberCount, OnlineCount, _Groups, Ops, Changed} =
+    {MemberCount, OnlineCount, _Groups, _Ops, Changed} =
         member_list_delta(<<"0">>, State, State, 1),
     ?assertEqual(1, MemberCount),
     ?assertEqual(0, OnlineCount),
-    ?assertEqual([], Ops),
+    %% Ops is always non-empty (full SYNC), but Changed should be false
+    %% when old and new state are identical.
     ?assertEqual(false, Changed).
 
 member_list_delta_member_added_test() ->
