@@ -30,7 +30,6 @@ jobs:
         run: python3 scripts/ci/workflows/ci.py --step install_dependencies
 
       - name: Run tests
-        continue-on-error: true
         run: python3 scripts/ci/workflows/ci.py --step test
         env:
           FLUXER_CONFIG: config/config.test.json
@@ -54,7 +53,6 @@ jobs:
           sleep 2
 
       - name: Run eunit tests
-        continue-on-error: true
         run: python3 scripts/ci/workflows/ci.py --step gateway_eunit
         env:
           FLUXER_CONFIG: ../config/config.test.json
@@ -73,5 +71,4 @@ jobs:
         run: python3 scripts/ci/workflows/ci.py --step install_dependencies
 
       - name: Run knip
-        continue-on-error: true
         run: python3 scripts/ci/workflows/ci.py --step knip
