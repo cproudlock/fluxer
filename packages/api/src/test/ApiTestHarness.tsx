@@ -20,6 +20,7 @@
 import {createAPIApp} from '@fluxer/api/src/App';
 import {Config} from '@fluxer/api/src/Config';
 import {clearSqliteStore} from '@fluxer/api/src/database/SqliteKV';
+import {ipBanCache} from '@fluxer/api/src/middleware/IpBanMiddleware';
 import {MeilisearchSearchProvider} from '@fluxer/api/src/infrastructure/MeilisearchSearchProvider';
 import {NullSearchProvider} from '@fluxer/api/src/infrastructure/NullSearchProvider';
 import {
@@ -121,6 +122,7 @@ export async function createApiTestHarness(options: CreateApiTestHarnessOptions 
 
 	async function reset(): Promise<void> {
 		clearSqliteStore();
+		ipBanCache.resetCaches();
 		kvProvider.reset();
 		mockBlueskyOAuthService.reset();
 	}
