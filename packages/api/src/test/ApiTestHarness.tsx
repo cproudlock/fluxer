@@ -65,6 +65,9 @@ export interface CreateApiTestHarnessOptions {
 }
 
 export async function createApiTestHarness(options: CreateApiTestHarnessOptions = {}): Promise<ApiTestHarness> {
+	clearSqliteStore();
+	ipBanCache.resetCaches();
+
 	const kvProvider = new MockKVProvider();
 	setInjectedKVProvider(kvProvider);
 	setInjectedGatewayService(new NoopGatewayService());
