@@ -300,7 +300,7 @@ function createAppServerInitializer(context: ServiceInitializationContext): Serv
 		},
 		cspDirectives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: ["'self'", "'unsafe-inline'", 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
+			scriptSrc: ["'self'", 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
 			styleSrc,
 			imgSrc,
 			connectSrc: [...connectSrc, 'https://challenges.cloudflare.com', 'https://hcaptcha.com', 'https://*.hcaptcha.com'],
