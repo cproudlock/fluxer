@@ -24,6 +24,7 @@ import styles from '@app/components/pages/VerifyEmailPage.module.css';
 import {Spinner} from '@app/components/uikit/Spinner';
 import {useFluxerDocumentTitle} from '@app/hooks/useFluxerDocumentTitle';
 import {useHashParam} from '@app/hooks/useHashParam';
+import {tryRedirectEmailTokenIntoApp} from '@app/lib/AndroidAppIntent';
 import {createVerificationError, type VerificationError, VerificationErrorType} from '@app/types/VerificationError';
 import {Trans, useLingui} from '@lingui/react/macro';
 import {CheckIcon, XIcon} from '@phosphor-icons/react';
@@ -61,6 +62,10 @@ const VerifyPage = observer(function VerifyPage() {
 			if (!token) {
 				setError(createVerificationError(VerificationErrorType.INVALID_TOKEN));
 				setIsLoading(false);
+				return;
+			}
+
+			if (tryRedirectEmailTokenIntoApp('/verify', token)) {
 				return;
 			}
 
