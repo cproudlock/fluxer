@@ -74,12 +74,6 @@ class AudioProcessorImpl implements TrackProcessor<Track.Kind.Audio> {
 		logger.info('Destroyed');
 	}
 
-	async rebuild(): Promise<void> {
-		if (!this.rawTrack) return;
-		this.teardownGraph();
-		await this.buildGraph();
-	}
-
 	private async buildGraph(): Promise<void> {
 		if (!this.rawTrack) return;
 
@@ -227,12 +221,6 @@ export function createAudioProcessor(): TrackProcessor<Track.Kind.Audio> {
 	}
 	activeProcessor = new AudioProcessorImpl();
 	return activeProcessor;
-}
-
-export async function rebuildActiveProcessor(): Promise<void> {
-	if (activeProcessor) {
-		await activeProcessor.rebuild();
-	}
 }
 
 export function getActiveProcessor(): TrackProcessor<Track.Kind.Audio> | null {

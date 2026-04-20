@@ -49,7 +49,7 @@ import type {VoiceState} from '@app/types/gateway/GatewayVoiceTypes';
 import {ensureNativePermission} from '@app/utils/NativePermissions';
 import {isDesktop} from '@app/utils/NativeUtils';
 import {SoundType} from '@app/utils/SoundUtils';
-import {createAudioProcessor, getActiveProcessor, isAudioProcessingEnabled, rebuildActiveProcessor} from '@app/utils/AudioProcessor';
+import {createAudioProcessor, getActiveProcessor, isAudioProcessingEnabled} from '@app/utils/AudioProcessor';
 import {applyBackgroundProcessor} from '@app/utils/VideoBackgroundProcessor';
 import {voiceVolumePercentToTrackVolume} from '@app/utils/VoiceVolumeUtils';
 import type {
@@ -394,22 +394,21 @@ class VoiceMediaManager {
 		if (!track) return;
 
 		try {
+			// Rebuilding the processor graph in place produces a new MediaStreamTrack
+			// from a new destination node, but LiveKit's RTCRtpSender stays bound to
+			// the original processedTrack — the user ends up publishing silence until
+			// they rejoin the room. Always go through stopProcessor → setProcessor
+			// with a fresh processor instance so LiveKit re-binds the sender.
+			if (getActiveProcessor()) {
+				await track.stopProcessor();
+			}
+
 			if (isAudioProcessingEnabled()) {
-				const existing = getActiveProcessor();
-				if (existing) {
-					await rebuildActiveProcessor();
-					logger.info('Rebuilt audio processing chain');
-				} else {
-					const processor = createAudioProcessor();
-					await track.setProcessor(processor);
-					logger.info('Applied audio processor');
-				}
+				const processor = createAudioProcessor();
+				await track.setProcessor(processor);
+				logger.info('Applied audio processor');
 			} else {
-				const existing = getActiveProcessor();
-				if (existing) {
-					await track.stopProcessor();
-					logger.info('Removed audio processor');
-				}
+				logger.info('Removed audio processor');
 			}
 		} catch (error) {
 			logger.error('Failed to apply audio processor', error);
