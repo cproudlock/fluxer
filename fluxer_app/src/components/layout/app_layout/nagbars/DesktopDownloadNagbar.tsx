@@ -47,7 +47,7 @@ export const DesktopDownloadNagbar = observer(({isMobile}: {isMobile: boolean}) 
 			<NagbarContent
 				isMobile={isMobile}
 				onDismiss={handleDismiss}
-				message={<Trans>Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies.</Trans>}
+				message={<Trans>Get the Echowire desktop app for system-wide push-to-talk and a few other goodies.</Trans>}
 				actions={
 					<>
 						<span className={styles.platformIcons}>
