@@ -256,6 +256,12 @@ ip_authorization:
 
     Wenn du das warst, bestätige diese IP-Adresse bitte über den Link unten:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Wenn du nicht versucht hast, dich anzumelden, ändere bitte sofort dein Passwort.

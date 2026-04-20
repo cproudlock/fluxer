@@ -256,6 +256,12 @@ ip_authorization:
 
     Hvis det var deg, kan du godkjenne denne IP-adressen ved å klikke på lenken nedenfor:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Hvis du ikke forsøkte å logge inn, bør du endre passordet ditt med en gang.

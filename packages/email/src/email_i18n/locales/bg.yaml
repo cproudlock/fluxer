@@ -256,6 +256,12 @@ ip_authorization:
 
     Ако това си бил(а) ти, потвърди този IP адрес чрез връзката по-долу:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Ако не си опитвал(а) да влезеш, смени паролата си незабавно.

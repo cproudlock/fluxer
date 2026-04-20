@@ -45,6 +45,7 @@ export const Endpoints = {
 	AUTH_VERIFY_EMAIL: '/auth/verify',
 	AUTH_RESEND_VERIFICATION: '/auth/verify/resend',
 	AUTH_AUTHORIZE_IP: '/auth/authorize-ip',
+	AUTH_AUTHORIZE_IP_CODE: '/auth/authorize-ip/code',
 	AUTH_IP_AUTHORIZATION_RESEND: '/auth/ip-authorization/resend',
 	AUTH_IP_AUTHORIZATION_POLL: (ticket: string) => {
 		const params = new URLSearchParams({ticket});

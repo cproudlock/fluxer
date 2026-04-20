@@ -256,6 +256,12 @@ ip_authorization:
 
     Nếu là bạn, vui lòng xác nhận cho phép địa chỉ IP này qua liên kết dưới đây:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Nếu không phải bạn thử đăng nhập, vui lòng đổi mật khẩu ngay lập tức.

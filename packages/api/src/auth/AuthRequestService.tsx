@@ -29,6 +29,8 @@ import {ValidationErrorCodes} from '@fluxer/constants/src/ValidationErrorCodes';
 import {InputValidationError} from '@fluxer/errors/src/domains/core/InputValidationError';
 import type {
 	AuthLoginResponse,
+	AuthorizeIpCodeRequest,
+	AuthorizeIpCodeResponse,
 	AuthorizeIpRequest,
 	AuthRegisterResponse,
 	AuthSessionsResponse,
@@ -97,6 +99,11 @@ interface AuthHandoffCompleteRequest {
 
 interface AuthAuthorizeIpRequest {
 	data: AuthorizeIpRequest;
+}
+
+interface AuthAuthorizeIpCodeRequest {
+	data: AuthorizeIpCodeRequest;
+	request: Request;
 }
 
 interface AuthUsernameSuggestionsRequest {
@@ -218,6 +225,14 @@ export class AuthRequestService {
 		const result = await this.authService.completeIpAuthorization(data.token);
 		const payload = JSON.stringify({token: result.token, user_id: result.user_id});
 		await this.cacheService.set(`ip-auth-result:${result.ticket}`, payload, 60);
+	}
+
+	async completeIpAuthorizationByCode({data, request}: AuthAuthorizeIpCodeRequest): Promise<AuthorizeIpCodeResponse> {
+		return await this.authService.completeIpAuthorizationByCode({
+			ticket: data.ticket,
+			code: data.code,
+			request,
+		});
 	}
 
 	async resendIpAuthorization({ticket}: MfaTicketRequest): Promise<void> {

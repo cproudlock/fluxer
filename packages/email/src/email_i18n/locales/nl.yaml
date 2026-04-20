@@ -256,6 +256,12 @@ ip_authorization:
 
     Was jij dit? Bevestig dit IP-adres dan via de link hieronder:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Was jij dit niet? Wijzig dan meteen je wachtwoord.

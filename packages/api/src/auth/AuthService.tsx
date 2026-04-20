@@ -561,6 +561,14 @@ export class AuthService implements IAuthService {
 		return this.loginService.completeIpAuthorization(token);
 	}
 
+	async completeIpAuthorizationByCode(params: {
+		ticket: string;
+		code: string;
+		request: Request;
+	}): Promise<{token: string; user_id: string}> {
+		return this.loginService.completeIpAuthorizationByCode(params);
+	}
+
 	async createAuthSessionForUser(user: User, request: Request): Promise<{token: string; user_id: string}> {
 		const [token] = await this.sessionService.createAuthSession({user, request});
 		return {token, user_id: user.id.toString()};

@@ -47,3 +47,29 @@ export function randomString(length: number) {
 
 	return result;
 }
+
+export function randomNumericCode(length: number) {
+	const rangeSize = 256 - (256 % 10);
+	const randomBytes = new Uint8Array(length * 2);
+	crypto.getRandomValues(randomBytes);
+
+	let result = '';
+	let byteIndex = 0;
+
+	while (result.length < length) {
+		if (byteIndex >= randomBytes.length) {
+			crypto.getRandomValues(randomBytes);
+			byteIndex = 0;
+		}
+
+		const randomByte = randomBytes[byteIndex++];
+
+		if (randomByte >= rangeSize) {
+			continue;
+		}
+
+		result += (randomByte % 10).toString();
+	}
+
+	return result;
+}

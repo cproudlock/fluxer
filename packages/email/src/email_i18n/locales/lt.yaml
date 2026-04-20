@@ -256,6 +256,12 @@ ip_authorization:
 
     Jei tai buvai tu, patvirtink šį IP adresą paspaudęs žemiau esančią nuorodą:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Jei tai buvai ne tu, nedelsdamas pasikeisk slaptažodį.

@@ -256,6 +256,12 @@ ip_authorization:
 
     Ha te voltál, az alábbi linken jóváhagyhatod ezt az IP-címet:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Ha nem te próbáltál meg bejelentkezni, azonnal változtasd meg a jelszavad.

@@ -73,12 +73,14 @@ export class EmailService implements IEmailService {
 		email: string,
 		username: string,
 		authorizationToken: string,
+		authorizationCode: string,
 		ipAddress: string,
 		location: string,
 		locale: string | null = null,
 	): Promise<boolean> {
 		return this.sendTemplatedEmail(email, 'ip_authorization', locale, {
 			username,
+			code: authorizationCode,
 			authUrl: `${this.config.appBaseUrl}/authorize-ip#token=${authorizationToken}`,
 			ipAddress,
 			location,

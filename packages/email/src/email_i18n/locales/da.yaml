@@ -256,6 +256,12 @@ ip_authorization:
 
     Hvis det var dig, så bekræft denne IP-adresse via linket nedenfor:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Hvis du ikke forsøgte at logge ind, så skift din adgangskode med det samme.

@@ -256,6 +256,12 @@ ip_authorization:
 
     Jos tämä olit sinä, hyväksy tämä IP-osoite klikkaamalla alla olevaa linkkiä:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Jos et yrittänyt kirjautua, vaihda salasanasi heti.

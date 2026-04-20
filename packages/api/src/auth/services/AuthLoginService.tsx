@@ -92,9 +92,11 @@ export interface IpAuthorizationTicketCache {
 	userAgent: string;
 	platform: string | null;
 	authToken: string;
+	authCode: string;
 	clientLocation: string;
 	inviteCode?: string | null;
 	resendUsed?: boolean;
+	codeAttempts?: number;
 	createdAt: number;
 }
 
@@ -157,6 +159,7 @@ export class AuthLoginService {
 			payload.email,
 			payload.username,
 			payload.authToken,
+			payload.authCode,
 			payload.clientIp,
 			payload.clientLocation,
 			null,
@@ -228,6 +231,74 @@ export class AuthLoginService {
 		});
 
 		return {token: sessionToken, user_id: user.id.toString(), ticket: tokenMapping.ticket};
+	}
+
+	async completeIpAuthorizationByCode({
+		ticket,
+		code,
+		request,
+	}: {
+		ticket: string;
+		code: string;
+		request: Request;
+	}): Promise<{token: string; user_id: string}> {
+		const cacheKey = this.getTicketCacheKey(ticket);
+		const payload = await this.cacheService.get<IpAuthorizationTicketCache>(cacheKey);
+		if (!payload) {
+			throw InputValidationError.create('ticket', 'Invalid or expired authorization ticket');
+		}
+
+		const attempts = (payload.codeAttempts ?? 0) + 1;
+		const MAX_ATTEMPTS = 5;
+
+		if (code !== payload.authCode) {
+			if (attempts >= MAX_ATTEMPTS) {
+				await this.cacheService.delete(cacheKey);
+				await this.cacheService.delete(this.getTokenCacheKey(payload.authToken));
+				getMetricsService().counter({
+					name: 'auth.login.failure',
+					dimensions: {reason: 'ip_authorization_code_attempts_exceeded'},
+				});
+				throw InputValidationError.create('code', 'Too many incorrect attempts. Please log in again.');
+			}
+
+			const ttl = await this.cacheService.ttl(cacheKey);
+			await this.cacheService.set(cacheKey, {...payload, codeAttempts: attempts}, ttl > 0 ? ttl : undefined);
+			getMetricsService().counter({
+				name: 'auth.login.failure',
+				dimensions: {reason: 'ip_authorization_code_invalid'},
+			});
+			throw InputValidationError.create('code', 'Invalid code');
+		}
+
+		const repoResult = await this.repository.authorizeIpByToken(payload.authToken);
+		if (!repoResult || repoResult.userId.toString() !== payload.userId) {
+			throw InputValidationError.create('code', 'Invalid or expired authorization ticket');
+		}
+
+		const user = await this.repository.findUnique(createUserID(BigInt(payload.userId)));
+		if (!user) {
+			throw new UnknownUserError();
+		}
+
+		this.assertNonBotUser(user);
+
+		await this.repository.createAuthorizedIp(user.id, payload.clientIp);
+
+		const [sessionToken] = await this.createAuthSession({user, request});
+
+		await this.cacheService.delete(cacheKey);
+		await this.cacheService.delete(this.getTokenCacheKey(payload.authToken));
+
+		getMetricsService().counter({
+			name: 'user.login',
+			dimensions: {mfa_type: 'ip_authorization_code'},
+		});
+		getMetricsService().counter({
+			name: 'auth.login.success',
+		});
+
+		return {token: sessionToken, user_id: user.id.toString()};
 	}
 
 	async login({
@@ -345,6 +416,7 @@ export class AuthLoginService {
 			if (!isIpAuthorized) {
 				const ticket = createIpAuthorizationTicket(await this.generateSecureToken());
 				const authToken = createIpAuthorizationToken(await this.generateSecureToken());
+				const authCode = RandomUtils.randomNumericCode(6);
 				const geoipResult = await lookupGeoip(clientIp);
 				const clientLocation = formatGeoipLocation(geoipResult) ?? UNKNOWN_LOCATION;
 				const userAgent = request.headers.get('user-agent') || '';
@@ -358,9 +430,11 @@ export class AuthLoginService {
 					userAgent,
 					platform: platform ?? null,
 					authToken,
+					authCode,
 					clientLocation,
 					inviteCode: data.invite_code ?? null,
 					resendUsed: false,
+					codeAttempts: 0,
 					createdAt: Date.now(),
 				};
 
@@ -374,6 +448,7 @@ export class AuthLoginService {
 					currentUser.email!,
 					currentUser.username,
 					authToken,
+					authCode,
 					clientIp,
 					clientLocation,
 					currentUser.locale,

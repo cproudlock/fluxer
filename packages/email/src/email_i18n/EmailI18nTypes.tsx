@@ -91,6 +91,7 @@ export interface EmailTemplateVariables {
 	};
 	ip_authorization: {
 		username: string;
+		code: string;
 		authUrl: string;
 		ipAddress: string;
 		location: string;

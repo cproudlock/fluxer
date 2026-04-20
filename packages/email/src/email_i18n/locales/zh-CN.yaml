@@ -256,6 +256,12 @@ ip_authorization:
 
     如果这是你本人操作，请点击下面的链接授权该 IP 地址:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     如果你没有尝试登录，请立即修改密码。

@@ -256,6 +256,12 @@ ip_authorization:
 
     अगर यह आप ही थे, तो नीचे दिए गए लिंक से इस लॉगिन की पुष्टि करें:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     अगर आपने लॉग इन करने की कोशिश नहीं की थी, तो तुरंत अपना पासवर्ड बदलें।

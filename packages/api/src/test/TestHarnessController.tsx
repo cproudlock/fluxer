@@ -573,6 +573,7 @@ export function TestHarnessController(app: HonoApp) {
 		const {
 			ticket,
 			token,
+			code,
 			user_id: userId,
 			email,
 			username,
@@ -608,6 +609,7 @@ export function TestHarnessController(app: HonoApp) {
 			userAgent: String(userAgent),
 			platform: platform ? String(platform) : null,
 			authToken: String(token),
+			authCode: code ? String(code) : '000000',
 			clientLocation: String(clientLocation),
 			inviteCode: inviteCode ? String(inviteCode) : null,
 			resendUsed: Boolean(resendUsed),

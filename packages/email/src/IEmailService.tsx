@@ -31,6 +31,7 @@ export interface IEmailService {
 		email: string,
 		username: string,
 		authorizationToken: string,
+		authorizationCode: string,
 		ipAddress: string,
 		location: string,
 		locale?: string | null,

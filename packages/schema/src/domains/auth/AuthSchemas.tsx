@@ -236,6 +236,18 @@ export const AuthorizeIpRequest = z.object({
 });
 export type AuthorizeIpRequest = z.infer<typeof AuthorizeIpRequest>;
 
+export const AuthorizeIpCodeRequest = z.object({
+	ticket: createStringType().describe('The IP authorization ticket from the login response'),
+	code: createStringType().describe('The 6-digit IP authorization code from email'),
+});
+export type AuthorizeIpCodeRequest = z.infer<typeof AuthorizeIpCodeRequest>;
+
+export const AuthorizeIpCodeResponse = z.object({
+	token: z.string().describe('Session token to use for authenticated API calls'),
+	user_id: z.string().describe('The authenticated user ID'),
+});
+export type AuthorizeIpCodeResponse = z.infer<typeof AuthorizeIpCodeResponse>;
+
 export const IpAuthorizationPollQuery = z.object({
 	ticket: createStringType().describe('The IP authorization ticket'),
 });

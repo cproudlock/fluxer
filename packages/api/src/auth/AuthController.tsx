@@ -29,6 +29,8 @@ import type {HonoApp} from '@fluxer/api/src/types/HonoEnv';
 import {Validator} from '@fluxer/api/src/Validator';
 import {
 	AuthLoginResponse,
+	AuthorizeIpCodeRequest,
+	AuthorizeIpCodeResponse,
 	AuthorizeIpRequest,
 	AuthRegisterResponse,
 	AuthSessionsResponse,
@@ -434,11 +436,35 @@ export function AuthController(app: HonoApp) {
 			security: [],
 			tags: ['Auth'],
 			description:
-				'Verify and authorize a new IP address using the confirmation code sent via email. Completes IP authorization flow.',
+				'Verify and authorize a new IP address using the confirmation token from the email link. Completes IP authorization flow.',
 		}),
 		async (ctx) => {
 			await ctx.get('authRequestService').completeIpAuthorization({data: ctx.req.valid('json')});
 			return ctx.body(null, 204);
+		},
+	);
+
+	app.post(
+		'/auth/authorize-ip/code',
+		RateLimitMiddleware(RateLimitConfigs.AUTH_AUTHORIZE_IP),
+		Validator('json', AuthorizeIpCodeRequest),
+		OpenAPI({
+			operationId: 'authorize_ip_by_code',
+			summary: 'Authorize IP address with code',
+			responseSchema: AuthorizeIpCodeResponse,
+			statusCode: 200,
+			security: [],
+			tags: ['Auth'],
+			description:
+				'Verify and authorize a new IP address using the 6-digit code from email. Returns a session token directly.',
+		}),
+		async (ctx) => {
+			return ctx.json(
+				await ctx.get('authRequestService').completeIpAuthorizationByCode({
+					data: ctx.req.valid('json'),
+					request: ctx.req.raw,
+				}),
+			);
 		},
 	);
 

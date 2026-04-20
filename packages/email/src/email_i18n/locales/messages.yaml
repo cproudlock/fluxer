@@ -254,13 +254,17 @@ ip_authorization:
     IP address: {ipAddress}
     Location: {location}
 
-    If this was you, please authorize this IP address by clicking the link below:
+    If this was you, enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
 
     {authUrl}
 
     If you didn't attempt to log in, please change your password right away.
 
-    This link is valid for 30 minutes.
+    This code and link are valid for 15 minutes.
 
     – Fluxer Team
 password_change_verification:

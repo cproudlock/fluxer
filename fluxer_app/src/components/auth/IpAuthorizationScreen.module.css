@@ -64,3 +64,43 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+.codeForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	width: 100%;
+	max-width: 280px;
+}
+
+.codeInput {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 0.5em;
+	text-align: center;
+	font-family: var(--font-display, monospace);
+	color: var(--text-primary);
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-accent);
+	border-radius: 8px;
+	outline: none;
+	transition: border-color 120ms ease;
+}
+
+.codeInput:focus {
+	border-color: var(--brand-500, var(--text-link, #5865f2));
+}
+
+.codeInput:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.codeError {
+	margin: 0;
+	font-size: 0.8125rem;
+	color: var(--status-danger, #ed4245);
+}

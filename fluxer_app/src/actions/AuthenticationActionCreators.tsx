@@ -484,6 +484,23 @@ export async function resendIpAuthorization(ticket: string): Promise<void> {
 	});
 }
 
+export interface IpAuthorizationCodeResult {
+	token: string;
+	user_id: string;
+}
+
+export async function submitIpAuthorizationCode(
+	ticket: string,
+	code: string,
+): Promise<IpAuthorizationCodeResult> {
+	const response = await http.post<IpAuthorizationCodeResult>({
+		url: Endpoints.AUTH_AUTHORIZE_IP_CODE,
+		body: {ticket, code},
+		headers: withPlatformHeader(),
+	});
+	return response.body;
+}
+
 export interface IpAuthorizationPollResult {
 	completed: boolean;
 	token?: string;

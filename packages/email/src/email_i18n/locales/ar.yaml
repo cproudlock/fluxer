@@ -256,6 +256,12 @@ ip_authorization:
 
     إذا كنت أنت من حاول تسجيل الدخول، فيرجى تصريح هذا العنوان عبر الضغط على الرابط أدناه:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     إذا لم تحاول تسجيل الدخول، فيرجى تغيير كلمة المرور فورا.

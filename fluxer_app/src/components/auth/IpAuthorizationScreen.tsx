@@ -36,6 +36,7 @@ interface IpAuthorizationScreenProps {
 
 const POLL_INTERVAL_MS = 2000;
 const MAX_POLL_ERRORS = 3;
+const CODE_LENGTH = 6;
 
 const logger = new Logger('IpAuthorizationScreen');
 
@@ -43,6 +44,9 @@ const IpAuthorizationScreen = ({challenge, onAuthorized, onBack}: IpAuthorizatio
 	const [resendUsed, setResendUsed] = useState(false);
 	const [resendIn, setResendIn] = useState(challenge.resendAvailableIn);
 	const [pollingState, setPollingState] = useState<PollingState>('polling');
+	const [code, setCode] = useState('');
+	const [codeSubmitting, setCodeSubmitting] = useState(false);
+	const [codeError, setCodeError] = useState<string | null>(null);
 	const onAuthorizedRef = useRef(onAuthorized);
 	onAuthorizedRef.current = onAuthorized;
 
@@ -50,6 +54,8 @@ const IpAuthorizationScreen = ({challenge, onAuthorized, onBack}: IpAuthorizatio
 		setResendUsed(false);
 		setResendIn(challenge.resendAvailableIn);
 		setPollingState('polling');
+		setCode('');
+		setCodeError(null);
 	}, [challenge]);
 
 	useEffect(() => {
@@ -119,6 +125,31 @@ const IpAuthorizationScreen = ({challenge, onAuthorized, onBack}: IpAuthorizatio
 		setPollingState('polling');
 	}, []);
 
+	const handleCodeChange = useCallback((value: string) => {
+		const digits = value.replace(/\D/g, '').slice(0, CODE_LENGTH);
+		setCode(digits);
+		setCodeError(null);
+	}, []);
+
+	const handleSubmitCode = useCallback(async () => {
+		if (code.length !== CODE_LENGTH || codeSubmitting) return;
+		setCodeSubmitting(true);
+		setCodeError(null);
+		try {
+			const result = await AuthenticationActionCreators.submitIpAuthorizationCode(challenge.ticket, code);
+			await onAuthorizedRef.current({token: result.token, userId: result.user_id});
+		} catch (error) {
+			const httpError = error as {status?: number; body?: {message?: string}};
+			if (httpError.status === 400) {
+				setCodeError(httpError.body?.message ?? 'Invalid or expired code');
+			} else {
+				setCodeError('Something went wrong. Please try again.');
+				logger.error('Failed to submit IP authorization code', error);
+			}
+			setCodeSubmitting(false);
+		}
+	}, [challenge.ticket, code, codeSubmitting]);
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.icon}>
@@ -135,9 +166,42 @@ const IpAuthorizationScreen = ({challenge, onAuthorized, onBack}: IpAuthorizatio
 				{pollingState === 'error' ? (
 					<Trans>We lost the connection while waiting for authorization. Please try again.</Trans>
 				) : (
-					<Trans>We emailed a link to authorize this login. Please open your inbox for {challenge.email}.</Trans>
+					<Trans>
+						We emailed a code and a link to authorize this login. Please open your inbox for {challenge.email}.
+					</Trans>
 				)}
 			</p>
+			{pollingState !== 'error' ? (
+				<form
+					className={styles.codeForm}
+					onSubmit={(e) => {
+						e.preventDefault();
+						void handleSubmitCode();
+					}}
+				>
+					<input
+						className={styles.codeInput}
+						type="text"
+						inputMode="numeric"
+						autoComplete="one-time-code"
+						pattern="[0-9]*"
+						maxLength={CODE_LENGTH}
+						placeholder="000000"
+						value={code}
+						onChange={(e) => handleCodeChange(e.target.value)}
+						aria-label="Authorization code"
+						disabled={codeSubmitting}
+					/>
+					{codeError ? <p className={styles.codeError}>{codeError}</p> : null}
+					<Button
+						type="submit"
+						variant="primary"
+						disabled={code.length !== CODE_LENGTH || codeSubmitting}
+					>
+						{codeSubmitting ? <Trans>Verifying…</Trans> : <Trans>Enter code</Trans>}
+					</Button>
+				</form>
+			) : null}
 			<div className={styles.actions}>
 				{pollingState === 'error' ? (
 					<Button variant="primary" onClick={handleRetry}>

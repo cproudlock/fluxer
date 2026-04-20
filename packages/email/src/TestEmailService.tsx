@@ -70,6 +70,7 @@ export class TestEmailService implements ITestEmailService {
 		email: string,
 		username: string,
 		authorizationToken: string,
+		authorizationCode: string,
 		ipAddress: string,
 		location: string,
 		_locale?: string | null,
@@ -77,7 +78,12 @@ export class TestEmailService implements ITestEmailService {
 		this.logger.info(
 			`IP authorization email sent to ${email} for user ${username}, IP: ${ipAddress}, location: ${location}`,
 		);
-		return this.record(email, 'ip_authorization', {token: authorizationToken, ip: ipAddress, location});
+		return this.record(email, 'ip_authorization', {
+			token: authorizationToken,
+			code: authorizationCode,
+			ip: ipAddress,
+			location,
+		});
 	}
 
 	async sendAccountDisabledForSuspiciousActivityEmail(

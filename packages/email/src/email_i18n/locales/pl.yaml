@@ -258,6 +258,12 @@ ip_authorization:
 
     Jeśli to Ty, potwierdź ten adres IP, klikając poniższy link:
 
+    Enter this code in the app to authorize the login:
+
+    {code}
+
+    Or open this link in the device where you are logging in:
+
     {authUrl}
 
     Jeśli to nie Ty próbowałeś/próbowałaś się zalogować, zmień hasło od razu.
