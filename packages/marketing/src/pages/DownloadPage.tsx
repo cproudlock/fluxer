@@ -136,8 +136,61 @@ function renderDownloadContent(): JSX.Element {
 				)}
 			</div>
 
+			{renderVerifySection()}
+
 			{renderDropdownScript()}
 		</section>
+	);
+}
+
+function renderVerifySection(): JSX.Element {
+	return (
+		<details class="mt-10 rounded-xl border border-[#1E293B] bg-[#101931] p-6">
+			<summary class="cursor-pointer select-none font-semibold text-white">
+				Verify your download
+			</summary>
+			<div class="mt-4 space-y-4 text-sm text-[#94A3B8]">
+				<p>
+					Every build is cryptographically signed. Windows and macOS are verified automatically by the OS.
+					On Linux you can check the signature yourself to be sure nothing was tampered with.
+				</p>
+				<div>
+					<div class="font-semibold text-white">Windows</div>
+					<p>
+						The installer is signed via Azure Trusted Signing (Authenticode). SmartScreen refuses to run
+						tampered builds. No user action required.
+					</p>
+				</div>
+				<div>
+					<div class="font-semibold text-white">macOS</div>
+					<p>
+						Signed with our Apple Developer ID and notarized by Apple. Gatekeeper rejects tampered builds
+						on first launch. No user action required.
+					</p>
+				</div>
+				<div>
+					<div class="font-semibold text-white">Linux</div>
+					<p>
+						Every <code class="text-white">.AppImage</code>, <code class="text-white">.deb</code>,{' '}
+						<code class="text-white">.rpm</code>, and <code class="text-white">.tar.gz</code> ships with a
+						detached GPG signature (<code class="text-white">.asc</code>) next to the download, plus a
+						signed <code class="text-white">SHA256SUMS.txt</code>. Verify with:
+					</p>
+					<pre class="mt-3 overflow-x-auto rounded-lg bg-[#0A1428] p-4 text-xs text-[#CBD5E1]">
+						{`curl -O https://echowire.org/.well-known/echowire-signing-key.asc
+gpg --import echowire-signing-key.asc
+# Expected fingerprint:
+#   CFE4 1D9A 40A9 7F70 1334  1135 2025 06F9 D549 F87E
+
+gpg --verify Echowire-1.6.1.AppImage.asc Echowire-1.6.1.AppImage`}
+					</pre>
+					<p class="mt-3">
+						Look for <code class="text-white">Good signature from "Echowire Releases"</code>. The printed
+						fingerprint must match the one above exactly.
+					</p>
+				</div>
+			</div>
+		</details>
 	);
 }
 

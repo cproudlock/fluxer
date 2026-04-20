@@ -178,6 +178,43 @@
         }
         .footer a { color: #5865f2; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
+        .verify-block {
+            margin-top: 2.5rem;
+            padding: 1rem 1.5rem;
+            background: #101931;
+            border: 1px solid #1E293B;
+            border-radius: 0.75rem;
+            text-align: left;
+        }
+        .verify-block summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #fff;
+            user-select: none;
+        }
+        .verify-content { margin-top: 1rem; color: #94A3B8; font-size: 0.875rem; }
+        .verify-content p { margin: 0.75rem 0; }
+        .verify-content strong { color: #fff; }
+        .verify-content code {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+            padding: 0 0.25rem;
+            border-radius: 3px;
+            font-size: 0.8125rem;
+        }
+        .verify-content pre {
+            background: #0A1428;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 0.75rem 0;
+        }
+        .verify-content pre code {
+            color: #CBD5E1;
+            background: transparent;
+            padding: 0;
+            font-size: 0.75rem;
+        }
     </style>
 </head>
 <body>
@@ -280,6 +317,23 @@
                 <a href="https://testflight.apple.com/join/uBgF2xtT" class="btn" id="ios-btn">TestFlight Beta</a>
             </div>
         </div>
+
+        <details class="verify-block">
+            <summary>Verify your download</summary>
+            <div class="verify-content">
+                <p>Every build is cryptographically signed. Windows and macOS are verified automatically by the OS. On Linux you can check the signature yourself.</p>
+                <p><strong>Windows:</strong> Azure Trusted Signing (Authenticode). SmartScreen rejects tampered builds automatically.</p>
+                <p><strong>macOS:</strong> Signed with our Apple Developer ID and notarized by Apple. Gatekeeper rejects tampered builds on first launch.</p>
+                <p><strong>Linux:</strong> Every <code>.AppImage</code>, <code>.deb</code>, <code>.rpm</code>, and <code>.tar.gz</code> ships with a detached GPG signature (<code>.asc</code>) alongside it, plus a signed <code>SHA256SUMS.txt</code>.</p>
+                <pre><code>curl -O https://echowire.org/.well-known/echowire-signing-key.asc
+gpg --import echowire-signing-key.asc
+# Expected fingerprint:
+#   CFE4 1D9A 40A9 7F70 1334  1135 2025 06F9 D549 F87E
+
+gpg --verify Echowire-1.6.1.AppImage.asc Echowire-1.6.1.AppImage</code></pre>
+                <p>Look for <code>Good signature from "Echowire Releases"</code>. The printed fingerprint must match the one above exactly.</p>
+            </div>
+        </details>
 
         <p class="footer">
             <a href="/">&larr; Back to Echowire</a>
