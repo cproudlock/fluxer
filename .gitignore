@@ -97,3 +97,6 @@ next-env.d.ts
 .github/agents
 .github/prompts
 .signing-secrets
+
+# Public signing key is intentionally tracked (global gitignore ignores *.asc)
+!config/static/.well-known/*.asc
