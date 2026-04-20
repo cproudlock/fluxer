@@ -122,16 +122,21 @@ export function buildSentryReportURI(config: SentryCSPConfig): string {
 }
 
 export function buildCSP(nonce: string, options?: CSPOptions): string {
-	const defaultSrc = ["'self'", ...(options?.defaultSrc ?? [])];
-	const scriptSrc = ["'self'", `'nonce-${nonce}'`, "'wasm-unsafe-eval'", ...(options?.scriptSrc ?? [])];
-	const styleSrc = ["'self'", "'unsafe-inline'", ...(options?.styleSrc ?? [])];
-	const imgSrc = ["'self'", 'blob:', 'data:', ...(options?.imgSrc ?? [])];
-	const mediaSrc = ["'self'", 'blob:', ...(options?.mediaSrc ?? [])];
-	const fontSrc = ["'self'", 'data:', ...(options?.fontSrc ?? [])];
-	const connectSrc = ["'self'", 'data:', ...(options?.connectSrc ?? [])];
-	const frameSrc = ["'self'", ...(options?.frameSrc ?? [])];
-	const workerSrc = ["'self'", 'blob:', ...(options?.workerSrc ?? [])];
-	const manifestSrc = ["'self'", ...(options?.manifestSrc ?? [])];
+	// Callers often prepend 'self' and other defaults in their own option arrays
+	// while this function also prepends baseline values. Dedupe via Set so the
+	// emitted header doesn't contain duplicate sources (which Firefox logs as
+	// "Ignoring duplicate source …" warnings and can mis-parse as hosts).
+	const dedupe = (sources: Array<string>) => Array.from(new Set(sources));
+	const defaultSrc = dedupe(["'self'", ...(options?.defaultSrc ?? [])]);
+	const scriptSrc = dedupe(["'self'", `'nonce-${nonce}'`, "'wasm-unsafe-eval'", ...(options?.scriptSrc ?? [])]);
+	const styleSrc = dedupe(["'self'", "'unsafe-inline'", ...(options?.styleSrc ?? [])]);
+	const imgSrc = dedupe(["'self'", 'blob:', 'data:', ...(options?.imgSrc ?? [])]);
+	const mediaSrc = dedupe(["'self'", 'blob:', ...(options?.mediaSrc ?? [])]);
+	const fontSrc = dedupe(["'self'", 'data:', ...(options?.fontSrc ?? [])]);
+	const connectSrc = dedupe(["'self'", 'data:', ...(options?.connectSrc ?? [])]);
+	const frameSrc = dedupe(["'self'", ...(options?.frameSrc ?? [])]);
+	const workerSrc = dedupe(["'self'", 'blob:', ...(options?.workerSrc ?? [])]);
+	const manifestSrc = dedupe(["'self'", ...(options?.manifestSrc ?? [])]);
 
 	const directives = [
 		`default-src ${defaultSrc.join(' ')}`,
