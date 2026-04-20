@@ -43,7 +43,10 @@ export class VoiceStateGatewayHandler {
 		const connectionId = voiceState.connection_id;
 
 		if (!connectionId) {
-			logger.warn('Voice state missing connection_id:', voiceState);
+			// Gateway emits voice-state updates with null connection_id whenever a
+			// user is not in a voice channel (e.g. initial sync on reconnect across
+			// every guild the user is in). Nothing to do — log at debug only.
+			logger.debug('Voice state has no connection_id (user not in voice):', voiceState);
 			return;
 		}
 
@@ -141,7 +144,7 @@ export class VoiceStateGatewayHandler {
 
 		const connectionId = voiceState.connection_id;
 		if (!connectionId) {
-			logger.warn('Voice state missing connection_id in delete:', voiceState);
+			logger.debug('Voice state delete with no connection_id:', voiceState);
 			return;
 		}
 
