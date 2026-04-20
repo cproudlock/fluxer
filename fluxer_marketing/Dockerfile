@@ -36,7 +36,10 @@ COPY patches/ ./patches/
 COPY packages/ ./packages/
 COPY fluxer_marketing/package.json ./fluxer_marketing/
 
-RUN pnpm install --frozen-lockfile --prod
+# Filter the install to just fluxer_marketing's dependency graph so we don't
+# pull in unrelated packages' devDeps (e.g. packages/api's testcontainers
+# transitively requires ssh2/cpu-features which need gcc/python to build).
+RUN pnpm install --frozen-lockfile --prod --filter "fluxer_marketing..."
 
 COPY --from=build /usr/src/app/packages/marketing/public /usr/src/app/packages/marketing/public
 
