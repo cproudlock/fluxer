@@ -7,6 +7,7 @@ on:
       - canary
     paths:
       - fluxer_marketing/**
+      - packages/marketing/**
       - .github/workflows/deploy-marketing.yaml
   workflow_dispatch:
     inputs:

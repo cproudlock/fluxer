@@ -203,13 +203,13 @@
                         Download <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="#" onclick="navigator.clipboard.writeText('winget install Echowire.Echowire');this.querySelector('.dm-desc').textContent='Copied to clipboard';return false;">
-                            <div class="dm-label">winget (recommended)</div>
-                            <div class="dm-desc">winget install Echowire.Echowire</div>
-                        </a>
                         <a href="/api/dl/desktop/stable/win32/x64/latest/setup">
                             <div class="dm-label">Installer (.exe)</div>
                             <div class="dm-desc">Standard setup, runs on Windows 10+</div>
+                        </a>
+                        <a href="#" onclick="navigator.clipboard.writeText('winget install Echowire.Echowire');this.querySelector('.dm-desc').textContent='Copied to clipboard';return false;">
+                            <div class="dm-label">winget</div>
+                            <div class="dm-desc">winget install Echowire.Echowire</div>
                         </a>
                     </div>
                 </div>

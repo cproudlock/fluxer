@@ -59,17 +59,17 @@ function renderDownloadContent(): JSX.Element {
 							</svg>
 						</button>
 						<div class="dropdown-menu absolute right-0 top-full z-10 mt-1.5 hidden min-w-[220px] rounded-lg border border-[#1E293B] bg-[#101931] py-1 shadow-xl">
+							<a href="/api/dl/desktop/stable/win32/x64/latest/setup" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">Installer (.exe)</div>
+								<div class="text-xs text-[#94A3B8]">Standard setup, runs on Windows 10+</div>
+							</a>
 							<a
 								href="#"
 								onclick="navigator.clipboard.writeText('winget install Echowire.Echowire');this.querySelector('.dd-desc').textContent='Copied to clipboard';return false;"
 								class="block px-4 py-2.5 transition hover:bg-[#1A2440]"
 							>
-								<div class="font-semibold text-sm text-white">winget (recommended)</div>
+								<div class="font-semibold text-sm text-white">winget</div>
 								<div class="dd-desc text-xs text-[#94A3B8]">winget install Echowire.Echowire</div>
-							</a>
-							<a href="/api/dl/desktop/stable/win32/x64/latest/setup" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
-								<div class="font-semibold text-sm text-white">Installer (.exe)</div>
-								<div class="text-xs text-[#94A3B8]">Standard setup, runs on Windows 10+</div>
 							</a>
 						</div>
 					</div>,
