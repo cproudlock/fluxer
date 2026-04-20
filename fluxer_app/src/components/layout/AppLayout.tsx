@@ -23,6 +23,7 @@ import {modal} from '@app/actions/ModalActionCreators';
 import styles from '@app/components/layout/AppLayout.module.css';
 import {useAppLayoutState} from '@app/components/layout/app_layout/AppLayoutHooks';
 import {SplashScreen} from '@app/components/layout/SplashScreen';
+import {UpdateBanner} from '@app/components/layout/UpdateBanner';
 import RequiredActionModal from '@app/components/modals/RequiredActionModal';
 import {NewDeviceMonitoringManager} from '@app/components/voice/NewDeviceMonitoringManager';
 import {VoiceReconnectionManager} from '@app/components/voice/VoiceReconnectionManager';
@@ -77,6 +78,7 @@ export const AppLayout = observer(({children}: {children: React.ReactNode}) => {
 			{isAuthenticated && <SplashScreen />}
 			{isAuthenticated && socket && <VoiceReconnectionManager />}
 			{isAuthenticated && <NewDeviceMonitoringManager />}
+			<UpdateBanner />
 			<div className={clsx(styles.appLayout, appState.isStandalone && styles.appLayoutStandalone)}>{children}</div>
 		</>
 	);
