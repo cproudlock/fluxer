@@ -76,7 +76,7 @@ function renderDownloadContent(): JSX.Element {
 				)}
 				{renderCard(
 					'Linux',
-					'64-bit, multiple formats available',
+					'x86_64 and ARM64, multiple formats',
 					LINUX_ICON,
 					<div class="dropdown relative" id="linux-dropdown">
 						<button
@@ -88,7 +88,8 @@ function renderDownloadContent(): JSX.Element {
 								<path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 						</button>
-						<div class="dropdown-menu absolute right-0 top-full z-10 mt-1.5 hidden min-w-[220px] rounded-lg border border-[#1E293B] bg-[#101931] py-1 shadow-xl">
+						<div class="dropdown-menu absolute right-0 top-full z-10 mt-1.5 hidden min-w-[260px] rounded-lg border border-[#1E293B] bg-[#101931] py-1 shadow-xl">
+							<div class="px-4 py-1.5 font-semibold text-[10px] text-[#64748B] uppercase tracking-widest">x86_64</div>
 							<a href="/api/dl/desktop/stable/linux/x64/latest/deb" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
 								<div class="font-semibold text-sm text-white">.deb</div>
 								<div class="text-xs text-[#94A3B8]">Ubuntu, Debian, and derivatives</div>
@@ -104,6 +105,23 @@ function renderDownloadContent(): JSX.Element {
 							<a href="/api/dl/desktop/stable/linux/x64/latest/tar_gz" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
 								<div class="font-semibold text-sm text-white">.tar.gz</div>
 								<div class="text-xs text-[#94A3B8]">Generic Linux archive</div>
+							</a>
+							<div class="mt-1 border-t border-[#1E293B] px-4 pt-2 pb-1.5 font-semibold text-[10px] text-[#64748B] uppercase tracking-widest">ARM64</div>
+							<a href="/api/dl/desktop/stable/linux/arm64/latest/deb" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.deb (arm64)</div>
+								<div class="text-xs text-[#94A3B8]">Raspberry Pi OS, Ubuntu ARM</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/arm64/latest/appimage" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.AppImage (arm64)</div>
+								<div class="text-xs text-[#94A3B8]">Portable ARM64 build</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/arm64/latest/rpm" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.rpm (arm64)</div>
+								<div class="text-xs text-[#94A3B8]">Fedora ARM, openSUSE ARM</div>
+							</a>
+							<a href="/api/dl/desktop/stable/linux/arm64/latest/tar_gz" class="block px-4 py-2.5 transition hover:bg-[#1A2440]">
+								<div class="font-semibold text-sm text-white">.tar.gz (arm64)</div>
+								<div class="text-xs text-[#94A3B8]">Generic ARM64 archive</div>
 							</a>
 						</div>
 					</div>,

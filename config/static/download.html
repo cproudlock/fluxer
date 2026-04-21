@@ -143,6 +143,19 @@
             color: #888;
             margin-top: 1px;
         }
+        .dropdown-menu .dm-group {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.85rem;
+        }
+        .dropdown-menu .dm-group-sep {
+            border-top: 1px solid #1E293B;
+            margin-top: 0.25rem;
+            padding-top: 0.5rem;
+        }
         .section-label {
             font-size: 0.75rem;
             font-weight: 600;
@@ -267,6 +280,7 @@
                         Download <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
                     </button>
                     <div class="dropdown-menu">
+                        <div class="dm-group">x86_64</div>
                         <a href="/api/dl/desktop/stable/linux/x64/latest/deb">
                             <div class="dm-label">.deb</div>
                             <div class="dm-desc">Ubuntu, Debian, and derivatives</div>
@@ -282,6 +296,23 @@
                         <a href="/api/dl/desktop/stable/linux/x64/latest/tar_gz">
                             <div class="dm-label">.tar.gz</div>
                             <div class="dm-desc">Generic Linux archive</div>
+                        </a>
+                        <div class="dm-group dm-group-sep">ARM64</div>
+                        <a href="/api/dl/desktop/stable/linux/arm64/latest/deb">
+                            <div class="dm-label">.deb (arm64)</div>
+                            <div class="dm-desc">Raspberry Pi OS, Ubuntu ARM</div>
+                        </a>
+                        <a href="/api/dl/desktop/stable/linux/arm64/latest/appimage">
+                            <div class="dm-label">.AppImage (arm64)</div>
+                            <div class="dm-desc">Portable ARM64 build</div>
+                        </a>
+                        <a href="/api/dl/desktop/stable/linux/arm64/latest/rpm">
+                            <div class="dm-label">.rpm (arm64)</div>
+                            <div class="dm-desc">Fedora ARM, openSUSE ARM</div>
+                        </a>
+                        <a href="/api/dl/desktop/stable/linux/arm64/latest/tar_gz">
+                            <div class="dm-label">.tar.gz (arm64)</div>
+                            <div class="dm-desc">Generic ARM64 archive</div>
                         </a>
                     </div>
                 </div>
