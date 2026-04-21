@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} חברים"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} מתוך {totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} צופים"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} הגבול הזה מוגדר על ידי מנהל המ
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} עם פלוטוניום, גבול ההעלאה שלך לקובץ עולה ל-{0}, בנוסף לאווטרים מונפשים, הודעות ארוכות יותר, והרבה תכונות פרימיום נוספות."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (נבחר)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} חודש של פלוטוניום"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} חודשים של פלוטוניום"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "{remaining} תווים נותרו"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "{remaining} תווים נותרו. השג Plutonium כדי לכתוב עד {premiumMaxLength} תווים."
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "מתנת שנה אחת"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "שנת פלוטוניום אחת"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "הוסף חברים לקבוצה"
 msgid "Add Item"
 msgstr "הוסף פריט"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "הוסף תגובות חדשות להודעות."
 
@@ -1971,8 +1971,8 @@ msgstr "טופס הוספת מספר טלפון"
 msgid "Add Reaction"
 msgstr "הוסף תגובה"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "הוסף תגובות"
 
@@ -2015,8 +2015,8 @@ msgstr "הוסף למילון"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "הוסף למועדפים"
 
@@ -2129,7 +2129,7 @@ msgstr "כוונן את רווית הצבע של כל צבעי ערכת הנוש
 msgid "Adjust the spacing between groups of messages."
 msgstr "כוונן את המרווח בין קבוצות ההודעות."
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "מנהל"
 
@@ -2543,11 +2543,11 @@ msgstr "סופק מצב שגוי. ניתן לסגור כעת את הכרטיסי
 msgid "An unexpected error occurred. Please try again."
 msgstr "אירעה שגיאה בלתי צפויה. נסה שוב."
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "אירעה שגיאת שרת בלתי צפויה. נסה לטעון מחדש את הדף או להתחבר שוב."
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "אירעה שגיאת שרת בלתי צפויה. נסה לטעון מחדש את הדף או לבקש אימייל אימות חדש."
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "אנימציה באינטראקציה"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "אבטרים מונפשים (GIF, APNG, WebP מונפש, AVIF) הם תכונה פרימיום הזמינה באופן בלעדי למנויי פלוטוניום."
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "אווטרים מונפשים אינם זמינים"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "אווטרים מונפשים דורשים פלוטוניום"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "ארכיון"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "מתנה"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "לפחות ערוץ אחד חייב להיות עם הרשאת \"צפייה בערוץ\" מופעלת ל-@everyone כדי שכתובת ה-vanity תעבוד. כרגע אין ערוצים שניתנים לצפייה ל-@everyone."
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "צרף קבצים"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "קובץ מצורף {0}"
@@ -3136,7 +3136,7 @@ msgstr "הודעה עם קובץ מצורף בלבד"
 msgid "Attachment preview"
 msgstr "תצוגת קובץ מצורף"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "תמונות ממוזערות של קובץ מצורף"
 
@@ -3160,7 +3160,7 @@ msgstr "אודיו"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "אודיו"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "אודיו ווידאו"
 
@@ -3261,7 +3261,7 @@ msgstr "וריאציות מחברים"
 msgid "author-type:"
 msgstr "סוג מחבר:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "ההרשאה נכשלה"
 
@@ -3287,7 +3287,7 @@ msgstr "אשר"
 msgid "Authorize Application"
 msgstr "אשר אפליקציה"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "אשר כתובת IP"
 
@@ -3446,7 +3446,7 @@ msgstr "אווטארים"
 msgid "Average ping:"
 msgstr "פינג ממוצע:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "החסימה מסתיימת ב-{0}."
 msgid "Ban Member"
 msgstr "חסום חבר"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "חסום חברים"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "עקוף מצב איטי"
 
@@ -4461,11 +4461,11 @@ msgstr "שנה כינוי"
 msgid "Change nickname form"
 msgstr "טופס שינוי כינוי"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "שנה כינויים של חברים אחרים."
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "שנה כינוי אישי"
 
@@ -4556,8 +4556,8 @@ msgstr "ערוץ"
 msgid "Channel"
 msgstr "ערוץ"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "גישה לערוץ"
 
@@ -4635,7 +4635,7 @@ msgstr "מצב מדדי ההקלדה ברשימת הערוצים"
 msgid "Channel list typing indicators"
 msgstr "אינדיקטורים להקלדה ברשימת ערוצים"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "ניהול ערוץ"
 
@@ -4776,7 +4776,7 @@ msgstr "תראה את ערכת הנושא המותאמת שלי!"
 msgid "Check your connection and try again."
 msgstr "בדוק את החיבור ונסה שוב."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "בדוק את האימייל שלך"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "דרוש חשבון שלך כדי להחיל או לנהל קודי מתנה של פלוטוניום."
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "סוד הלקוח נוצר מחדש. עדכן כל קוד שמשתמש �
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "סגור חשבון"
 msgid "Close DM"
 msgstr "סגור הודעה פרטית"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "סגור חלון"
 
@@ -5646,7 +5646,7 @@ msgstr "הקהילה עודכנה"
 msgid "Community Updated"
 msgstr "הקהילה עודכנה"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "בכל הקהילה"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "סיים קודם את בקשת מפתח האבטחה."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "הסתר לחלוטין את תג Plutonium שלך ממשתמשים אחרים"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "אשר סיסמה"
 msgid "Connect"
 msgstr "חבר"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "התחבר (הצטרף לשיחה קולית)"
 
@@ -5855,7 +5855,7 @@ msgstr "מזהה חיבור"
 msgid "Connection Issue"
 msgstr "תקלה בחיבור"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "החיבור אבד"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "שלוט איך אתה מצטרף לערוצי קול בקהילות."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "שלוט איך תג Plutonium שלך מוצג לאחרים"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "צור ונהל אפליקציות ובוטים עבור החשבון שלך."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "צור ושתף חבילות אימוג'י ומדבקות מותאמות אישית עם Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "טופס יצירת קהילה"
 msgid "Create DM"
 msgstr "צור הודעה פרטית"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "צור אמוג'י ודבקויות"
 
@@ -6529,12 +6529,12 @@ msgstr "צור צ'אט קבוצתי פרטי"
 msgid "Create Invite"
 msgstr "צור הזמנה"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "צור קישורי הזמנה"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "צור חשבון חדש"
 
@@ -6554,11 +6554,11 @@ msgstr "צור או הצטרף לקהילה"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "צור חבילת מדבקות"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "צור Webhook"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "צור את האפליקציה הראשונה שלך כדי להתחיל עם Fluxer API."
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "צור, ערוך או מחק ערוצים וקטגוריות."
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "צור, ערוך או מחק תפקידים מתחת לתפקיד הגבוה ביותר שלך. מאפשר גם עריכת חריגות הרשאות ערוצים."
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "צור, ערוך או מחק Webhook-ים עבור ערוץ זה."
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "צור, ערוך או מחק Webhook-ים."
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "צלילי כניסה מותאמים אישית אינם מופעלים במופע הזה."
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "צלילי כניסה מותאמים אישית עם Plutonium"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "התאם אילו כפתורים נראים באזור הקלט של ה�
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "התאם את התג שלך בן 4 הספרות (#{0}) לפי רצונך עם פלוטוניום"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "התאמה אישית של האוואטר, הבאנר, צבע ההדגשה והביוגרפיה עבור קהילות ספציפיות לא מופעלת במופע הזה. כינוי קהילה והכינוי זמינים לכולם."
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "התאמה אישית של סמל, באנר, צבע דגש וביוגרפיה לקהילות בודדות דורשת Plutonium. כינוי קהילה וכינויי גוף זמינים בחינם לכולם."
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "השתק מכשיר"
 msgid "Deafen Keybind"
 msgstr "קיצור מקלדת להשתקת קול"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "השתק חברים"
 
@@ -7428,8 +7428,8 @@ msgstr "מחק הודעות מהיום האחרון"
 msgid "Delete messages from the last week"
 msgstr "מחק הודעות מהשבוע האחרון"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "מחק הודעות של אחרים. (עיגון מטופל בנפרד למטה.)"
 
@@ -8275,8 +8275,8 @@ msgstr "אזור גרירה ושחרור להעלאת קבצים"
 msgid "Drag and drop emoji files here"
 msgstr "גרור ושחרר קבצי אימוג'י כאן"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "גרור חברים בין ערוצים שהם יכולים לגשת אליהם."
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "ערוך חבילת אימוג'י"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "ערוך הגדרות כלליות כגון שם, תיאור ואייקון."
 
@@ -8526,11 +8527,11 @@ msgstr "ערוך הודעה"
 msgid "Edit Note"
 msgstr "ערוך הערה"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "ערוך או מחק אמוג'י ודבקויות שנוצרו על ידי חברים אחרים."
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "ערוך הרשאות נפרדות לתפקידים וחברים בערוץ הזה."
 
@@ -8664,7 +8665,7 @@ msgstr "נדרשת אימות דוא\"ל"
 msgid "Email Verified Override"
 msgstr "עקיפת אימות אימייל"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "האימייל אומת בהצלחה"
 
@@ -8677,8 +8678,8 @@ msgstr "הטמעה"
 msgid "Embed"
 msgstr "הטמע"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "הטמע קישורים"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "הכנס קוד בפורמט ABCD-1234."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "הכנס קוד מתנה כדי לפדות פלוטוניום עבור חשבונך."
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "הכנס סיסמה מאובטחת"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "חבילות הבעה"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "חבילות הבעה הן תכונה של Plutonium"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer צריך הרשאה לניטור קלט מהמקלדת והעכב
 msgid "Fluxer Partner"
 msgstr "שותף Fluxer"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "Fluxer משתמש בהודעות דחיפה כשמותקן כ-PWA נייד. הרישום מבטיח שהשער יוכל להגיע למכשיר גם כשהדפדפן ברקע."
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "קצב פריימים"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "קצב פריימים מעל 30 FPS דורש פלוטוניום"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "קבל רזולוציות גבוהות (1080p), אולטרה (1440p) ו-
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "קבל התראה כשאתה מקבל הודעות. ייתכן שתצטרך לאפשר התראות בהגדרות הדפדפן. לשליטה עבור כל ערוץ/קהילה, לחץ קליק ימני על סמל הקהילה ופתח את הגדרות ההתראות."
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "תתבקש כשהתקנים קוליים חדשים מתחברים"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "קבל Plutonium"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "קבל Plutonium בשבילך ופתח מגבלות גבוהות יותר ותכונות בלעדיות."
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "קבל Plutonium כדי להתאים אישית את התג שלך"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "קבל Plutonium כדי להתאים אישית את התג שלך או לשמור עליו כשאתה משנה שם משתמש"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "תתבקש כשהתקנים קוליים חדשים מתחברים"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "קבל את אפליקציית הדסקטופ של Fluxer כדי להשתמש בפוש-טו-טוק בכל המערכת ועוד כמה תכונות נחמדות."
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "המתנה נפדתה בהצלחה!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "המתנה נפדתה בהצלחה! תהנה מ-Plutonium שלך!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "עבור לשיחה הנוכחית"
 msgid "Go to Home"
 msgstr "עבור לדף הבית"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "עבור להתחברות"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "עבור לדף {page}"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "עבור ל-Plutonium"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "העניק {0} וביטל {1}."
 msgid "Granted {0}."
 msgstr "העניק {0}."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "נותן את כל ההרשאות ועוקף מגבלות ערוץ. רגיש מאוד."
 
@@ -11566,22 +11564,22 @@ msgstr "הסתר סיסמה"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "להסתיר את חלון התמונה בתוך התמונה?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "הסתר לחלוטין את תג Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "הסתר תאריך רכישת Plutonium"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "הסתר תאריך רכישת Plutonium ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "הסתר פופ-אוט (בקש לזכור)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "כמה זמן יש להשבית את המשתמש הזה."
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "כמה חודשים של Plutonium מספקת המתנה המדומה"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "התעלם"
 msgid "Ignore Friend Request"
 msgstr "התעלם מבקשת חברות"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "התעלם ממגבלות קצב הודעות לכל ערוץ."
 
@@ -12569,7 +12567,7 @@ msgstr "ההזמנות מושהות"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "ההזמנות ל-<0>{0}</0> מנוטרלות כעת"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "כתובת IP מאושרת"
 
@@ -12957,7 +12955,7 @@ msgstr "הסר חבר מהקהילה הזו."
 msgid "Kick Member"
 msgstr "הסר חבר"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "הסר חברים"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "פריסות עבור 1-10 קבצי תמונה באמצעות נכסי CDN."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "למד על Plutonium"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "ללא הגבלת זמן"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Plutonium לכל החיים"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "הקישור הועתק ללוח"
 msgid "Link copied!"
 msgstr "הקישור הועתק!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "הקישור פג תוקף. סביר שהאימייל שלך כבר אושר."
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "הקישור פג תוקף. סביר שכתובת ה-IP שלך כבר אושרה."
 
@@ -13592,17 +13590,17 @@ msgstr "ניהול יישומים מורשים"
 msgid "Manage blocked users"
 msgstr "ניהול משתמשים חסומים"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "ניהול ערוץ"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "ניהול ערוצים"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "ניהול קהילה"
 
@@ -13614,7 +13612,7 @@ msgstr "נהל תכונות קהילה"
 msgid "Manage developer applications"
 msgstr "ניהול יישומי מפתחים"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "ניהול אימוג'ים וסטיקרים"
 
@@ -13622,7 +13620,7 @@ msgstr "ניהול אימוג'ים וסטיקרים"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "ניהול חבילות אימוג'ים וסטיקרים שיצרת או התקנת."
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "ניהול הווב־הוקים הנכנסים שיכולים לפרסם
 msgid "Manage invites for this channel."
 msgstr "ניהול הזמנות לערוץ זה."
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "ניהול הודעות"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "ניהול כינויים"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "ניהול הרשאות"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "ניהול תפקידים"
 
@@ -13666,12 +13664,12 @@ msgstr "ניהול מנוי"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "ניהול כתובת הדוא\"ל שבה אתה משתמש להתחברות ל-Fluxer"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "ניהול ווב־הוקים"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "ניהול מספר הטלפון שלך לאימות דו־שלבי ב-SMS"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "ניהול קודי המתנה של Plutonium שרכשת. שתף את כתובת המתנה עם מישהו מיוחד או פדה אותה לעצמך!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "מדיה"
 msgid "Media Buttons"
 msgstr "כפתורי מדיה"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "בקרות מדיה"
 
@@ -14114,8 +14112,8 @@ msgstr "להזכיר את @here?"
 msgid "Mention Badges"
 msgstr "תגי הזכרות"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "הזכר את כולם או כל תפקיד (גם אם התפקיד לא מוגדר להזכרות)."
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "הודעות"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "הודעות ומדיה"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "מצב C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "פיקוח"
 
@@ -14559,7 +14557,7 @@ msgstr "עוד מקומות לאמוטיקונים"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "אפשרויות נוספות"
@@ -14613,8 +14611,8 @@ msgstr "הזז את המוקד בין כפתורים, שדות וטקסטים מ
 msgid "Move focus to the message composer"
 msgstr "העבר את המוקד לרכב ההודעה"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "העבר חברים"
 
@@ -14781,8 +14779,8 @@ msgstr "השתק מועדפים"
 msgid "Mute Keybind"
 msgstr "צירוף מקשים להשתקה"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "השתק חברים"
 
@@ -15126,11 +15124,11 @@ msgstr "החדש ביותר ראשון"
 msgid "Next"
 msgstr "הבא"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "הצרופה הבאה"
 
@@ -16112,8 +16110,8 @@ msgstr "פתח את Fluxer"
 msgid "Open image in full view"
 msgstr "פתח את התמונה בתצוגה מלאה"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "פתח בדפדפן"
 
@@ -16331,8 +16329,8 @@ msgstr "אחר"
 msgid "Other Devices"
 msgstr "מכשירים אחרים"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "אחרת נדרש לחיצה לדבר."
 
@@ -16810,8 +16808,8 @@ msgstr "הצמד. הצמד כמו שצריך."
 msgid "Pin Message"
 msgstr "הצמד הודעה"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "הצמד הודעות"
 
@@ -17013,19 +17011,6 @@ msgstr "אנא המתן בזמן שאנו מסיימים את ההתחברות �
 msgid "plutonium"
 msgstr "פלוטוניום"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "פרטיות סמל Plutonium"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "הטבות Plutonium"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "פולין"
@@ -17159,7 +17144,7 @@ msgstr "מנע מ־<0>{0}</0> לשלוח הודעות, להגיב ולחבר ל�
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "מנע מ־<0>{0}</0> לשלוח הודעות, להגיב ולהצטרף לערוצי קול במשך הזמן שצוין."
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "מנע מחברים לשלוח הודעות, להגיב ולהצטרף לקול למשך זמן מוגדר."
 
@@ -17219,11 +17204,11 @@ msgstr "24 השעות הקודמות"
 msgid "Previous 7 Days"
 msgstr "7 הימים הקודמים"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "קובץ מצורף קודם"
 
@@ -17263,8 +17248,8 @@ msgstr "פעולה ראשית"
 msgid "Primary button clicked!"
 msgstr "לחצת על הכפתור הראשי!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "דובר עדיפות"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "בוט ציבורי"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "רכוש מתנת Plutonium מתוך לשונית Plutonium כדי לשתף עם חברים!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "הפעל מחדש"
 msgid "read aloud"
 msgstr "קרא בקול"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "קרא היסטוריית הודעות"
 
@@ -17621,7 +17606,7 @@ msgstr "קרא היסטוריית הודעות"
 msgid "read messages"
 msgstr "קרא הודעות"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "קרא את יומן הביקורת של הקהילה על שינויים ופעולות ניהול."
 
@@ -17865,6 +17850,10 @@ msgstr "רלוונטי"
 msgid "Reload app"
 msgstr "טען מחדש את האפליקציה"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "שמור על שקט אלא אם מישהו מפעיל את /tts ידנית."
@@ -18022,8 +18011,8 @@ msgstr "הסר חבר"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "הסר מהמועדפים"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "הסר השהייה"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "הסר מאז שקנית פלטוניום בפעם הראשונה מהתג שלך"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "שנה שם"
 msgid "Rename :{0}:"
 msgstr "שנה שם :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "שנה שם וערוך את הגדרות הערוץ הזה."
 
@@ -18474,8 +18463,8 @@ msgstr "דורש את כל הדרישות ברמת Medium, בנוסף להיות
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "דורש Plutonium"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "שלח מחדש את הקוד"
 msgid "Resend Code"
 msgstr "שלח קוד מחדש"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "שלח מחדש אימייל"
 
@@ -18536,7 +18525,7 @@ msgstr "תוצאת שליחה מחדש"
 msgid "Resend Verification Email"
 msgstr "שלח מחדש אימייל אימות"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "נשלח מחדש"
 
@@ -18628,6 +18617,10 @@ msgstr "שנה גודל תמונה בתוך תמונה"
 msgid "Resolution"
 msgstr "רזולוציה"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "שחזר חשבון"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "הירשם מחדש"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "הראה"
 msgid "Reveal spoiler"
 msgstr "הראה ספוילר"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "שמור סמל"
 msgid "Save Image"
 msgstr "שמור תמונה"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "שמור מדיה"
 
@@ -19688,16 +19691,16 @@ msgstr "שליחת הודעה מושבתת"
 msgid "Send messages"
 msgstr "שלח הודעות"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "שלח הודעות"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "שלח קוד SMS"
 msgid "Send SMS Code"
 msgstr "שלח קוד SMS"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "שלח הודעות טקסט לדיבור."
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "שלח הודעות TTS"
 
@@ -19971,8 +19974,8 @@ msgstr "הגדר את רמת האימות ל-<0>בינונית</0>."
 msgid "Set verification level to <0>None</0>."
 msgstr "הגדר את רמת האימות ל-<0>ללא</0>."
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "הגדר אזור קול"
 
@@ -20260,8 +20263,8 @@ msgstr "הצג מקסימום 5 (+5 תג)"
 msgid "Show Media Button"
 msgstr "הצג כפתור מדיה"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "הצג מידע על המדיה"
 
@@ -20880,8 +20883,8 @@ msgstr "ספרדית (אמריקה הלטינית)"
 msgid "Spanish (Spain)"
 msgstr "ספרדית (ספרד)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "דבר"
 
@@ -21331,8 +21334,8 @@ msgstr "תצוגה מקדימה של סטרימינג"
 msgid "Stream Quality"
 msgstr "איכות הזרמה"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "שדר וידאו"
 
@@ -22598,7 +22601,7 @@ msgstr "משך ההשעיה"
 msgid "Timeout ends {0} ({1})"
 msgstr "ההשעיה מסתיימת ב-{0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "חברים מושעים"
 
@@ -23508,49 +23511,49 @@ msgstr "מדבקות ללא הגבלה"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "שחרר {emojiLabel} מ-{communityLabel} עם פלוטוניום."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "שחרר {stickerLabel} מ-{communityLabel} עם פלוטוניום."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "פתח את כל האימוג'ים והמדבקות המותאמים בכל הקהילות עם Plutonium"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "פתח אימוג'ים מותאמים בהודעות פרטיות עם Plutonium"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "פתח אימוג'ים מותאמים חיצוניים עם Plutonium"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "פתח מדבקות חיצוניות עם Plutonium"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "פתח שיתוף מסך ב-HD עם Plutonium"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "פתח וידאו ב-HD עם Plutonium"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "פתח רקעים נוספים עם Plutonium"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "פתח מדבקות בהודעות פרטיות עם Plutonium"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "עדכן את הזמן החסר"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "עדכן את הסמל, השם, הבאנר ורקע ההזמנה שלך"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "עדכן את הכינוי שלך."
 
@@ -23879,8 +23882,8 @@ msgstr "שדרוג כעת"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "שדרוג ל־Plutonium"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "העלה סמל"
 msgid "Upload Image"
 msgstr "העלה תמונה"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "העלה אמוג'י ודבקויות חדשים, ונהל את היצירות שלך."
 
@@ -24037,8 +24040,8 @@ msgstr "כתובות URL להורדת כל הקבצים המצורפים מהו�
 msgid "US East"
 msgstr "מזרח ארה\"ב"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "השתמש ב־@everyone/@here וב־@roles"
 
@@ -24100,17 +24103,17 @@ msgstr "השתמש בערכת נושא כהה בכל האפליקציה"
 msgid "Use Different Email"
 msgstr "השתמש באימייל שונה"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "השתמש באימוג'ים מקהילות אחרות."
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "השתמש באימוג'י חיצוני"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "השתמש במדבקות חיצוניות"
 
@@ -24163,8 +24166,8 @@ msgstr "השתמש בכפתור הזה כדי לנקות במהירות את כ�
 msgid "Use this shortcut system-wide"
 msgstr "השתמש בקיצור דרך זה בכל המערכת"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "השתמש בגילוי קול"
 
@@ -24471,7 +24474,7 @@ msgstr "קוד האימות נשלח. בדוק את תיבת הדואר הנכנ
 msgid "Verification email sent! Please check your inbox."
 msgstr "מייל אימות נשלח! בדוק את תיבת הדואר שלך."
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "האימות נכשל"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "אמת טופס חיבור"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "אמת אימייל"
 
@@ -24548,6 +24551,10 @@ msgstr "אמת את זהותך"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "מאמת..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "אפשרויות וידאו"
 msgid "video preview"
 msgstr "תצוגת וידאו"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "תצוגה מקדימה של וידאו"
@@ -24644,7 +24651,7 @@ msgstr "צפה בפרופיל של {0}"
 msgid "View active sessions"
 msgstr "צפה בהפעלות פעילות"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "הצג יומן פעילויות"
 
@@ -24692,8 +24699,8 @@ msgstr "הצג שיחה"
 msgid "View call controls"
 msgstr "הצג פקדי שיחה"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "הצג ערוץ"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (לנצח #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (Plutonium לנצח)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "לא הצלחנו לעבור לחשבון אחר. נסה שוב."
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "שלחנו קישור בדוא\"ל כדי לאשר את ההתחברות הזו. פתח את תיבת הדואר של {0}."
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "נתקלנו בתקלה. נסה לערוך את ההודעה שוב."
 msgid "We hit a snag. Try sending your message again."
 msgstr "נתקלנו בתקלה. נסה לשלוח את ההודעה שוב."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "איבדנו את החיבור בזמן שהמתנו לאישור. נסה שוב."
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "עם שגיאה"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "עם פלוטוניום, אתה יכול להשתמש באוואטרים ובאנרים מונפשים (ב-GIF, APNG, WebP מונפש או AVIF), להתאים אישית את התג בן 4 הספרות שלך, ולפתוח הרבה תכונות פרימיום נוספות."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "אתה לא יכול ליצור אינטראקציה עם המשתמש הזה כרגע."
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "אין באפשרותך לממש קודי מתנה של Plutonium כל עוד יש לך פרימיום Visionary."
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "הגעת לסוף"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "הגעת למגבלה המקסימלית של {freeItemsText} עבור משתמשים חינמיים. שדרג לפלוטוניום כדי להגדיל את המגבלה שלך ל-{premiumItemsText}!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "הגעת למספר המקסימלי של סימניות ({bookmarksText}). מגבלה זו מוגדרת על ידי מנהל המערכת שלך. אנא הסר כמה סימניות לפני הוספת חדשות."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "הגעת למספר המקסימלי של סימניות עבור משתמשים חינמיים ({bookmarksText}). שדרג לפלוטוניום כדי להגדיל את המגבלה שלך ל-{premiumBookmarksText}, או הסר כמה סימניות כדי להוסיף חדשות."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "בקשת המחיקה שלך תעבור תור ותעובד ברקע"
 msgid "Your email address has been updated."
 msgstr "כתובת האימייל שלך עודכנה."
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "הדוא\"ל שלך אומת. כעת תוכל להיכנס לחשבונך."
 
@@ -26355,7 +26362,7 @@ msgstr "ההזמנה שלך תפוג בעוד 24 שעות"
 msgid "Your invite link expires in {0}."
 msgstr "קישור ההזמנה שלך יפוג בעוד {0}."
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "כתובת ה-IP שלך אושרה בהצלחה."
 
@@ -26399,10 +26406,6 @@ msgstr "התשלום שלך בוטל. אתה יכול עכשיו לסגור את
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "המרחב האישי שלך לגישה מהירה לערוצים, הודעות פרטיות וקבוצות שאתה אוהב. לחץ על כוכב בכל ערוץ כדי להוסיף אותו לכאן."
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "המנוי שלך ל-Plutonium פג. איבדת את כל ההטבות. הפעל את המנוי מחדש כדי לקבל גישה."
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "המרחב הפרטי שלך"
@@ -26423,6 +26426,10 @@ msgstr "המתנות שרכשת"
 msgid "your region"
 msgstr "האזור שלך"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "המנוי שלך פג ב-<0>{expiredDate}</0>. איבדת את כל <1/>. תוכל להפעיל מחדש בכל עת."
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "המנוי שלך נכשל בחידוש, אך עדיין יש לך גישה להטבות Plutonium עד <0>{formattedGraceDate}</0>. פעל עכשיו או תאבד את כל ההטבות."
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "זום"
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "התקרב"
 
@@ -26491,8 +26498,8 @@ msgstr "התקרב"
 msgid "Zoom In"
 msgstr "התקרב"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "הקטן תצוגה"
 

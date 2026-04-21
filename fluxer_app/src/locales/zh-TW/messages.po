@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} 位成員"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} / {totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} 正在觀看"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} 此限制由您的實例管理員配置。"
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} 使用 Plutonium，您的每個檔案上傳限制提高至 {0}，還有動畫頭像、更長的消息以及許多其他高級功能。"
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (已選擇)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} 個月的鈈"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} 個月的鈈"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "剩餘 {remaining} 字元"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "剩餘 {remaining} 字元。如使用 Plutonium 可輸入至多 {premiumMaxLength} 字元。"
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "1 年禮物"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "1 年 Plutonium"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "將朋友加入群組"
 msgid "Add Item"
 msgstr "新增項目"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "為訊息新增表情反應。"
 
@@ -1971,8 +1971,8 @@ msgstr "新增電話號碼表單"
 msgid "Add Reaction"
 msgstr "新增反應"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "新增反應"
 
@@ -2015,8 +2015,8 @@ msgstr "加入詞庫"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "加入最愛"
 
@@ -2129,7 +2129,7 @@ msgstr "調整所有主題色彩的飽和度。"
 msgid "Adjust the spacing between groups of messages."
 msgstr "調整訊息群組之間的間距。"
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "管理員"
 
@@ -2543,11 +2543,11 @@ msgstr "提供了無效的狀態。你現在可以關閉此分頁並回到應用
 msgid "An unexpected error occurred. Please try again."
 msgstr "發生了意外錯誤，請再試一次。"
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "發生了意外的伺服器錯誤。請嘗試重新載入頁面或重新登入。"
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "發生了意外的伺服器錯誤。請嘗試重新載入頁面或申請新的驗證郵件。"
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "互動時動畫"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "動態頭像（GIF、APNG、動態WebP、AVIF）是僅限於Plutonium訂閱者的高級功能。"
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "動畫頭像不可用"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "動畫頭像需要鉑金"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "封存"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "作為禮物"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "至少要有一個頻道為 @everyone 開啟「查看頻道」權限，專屬網址才能運作。目前沒有頻道對 @everyone 可見。"
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "附加檔案"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "附件 {0}"
@@ -3136,7 +3136,7 @@ msgstr "僅有附件的訊息"
 msgid "Attachment preview"
 msgstr "附件預覽"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "附件縮圖"
 
@@ -3160,7 +3160,7 @@ msgstr "音訊"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "音訊"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "音訊與影片"
 
@@ -3261,7 +3261,7 @@ msgstr "作者變體"
 msgid "author-type:"
 msgstr "作者類型："
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "授權失敗"
 
@@ -3287,7 +3287,7 @@ msgstr "授權"
 msgid "Authorize Application"
 msgstr "授權應用程式"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "授權 IP"
 
@@ -3446,7 +3446,7 @@ msgstr "頭像們"
 msgid "Average ping:"
 msgstr "平均延遲："
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "封鎖將於 {0} 屆滿。"
 msgid "Ban Member"
 msgstr "封鎖成員"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "封鎖成員"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "繞過慢速模式"
 
@@ -4461,11 +4461,11 @@ msgstr "更改暱稱"
 msgid "Change nickname form"
 msgstr "更改暱稱表單"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "變更其他成員的暱稱。"
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "更改自己的暱稱"
 
@@ -4556,8 +4556,8 @@ msgstr "頻道"
 msgid "Channel"
 msgstr "頻道"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "頻道存取"
 
@@ -4635,7 +4635,7 @@ msgstr "頻道清單打字指示器模式"
 msgid "Channel list typing indicators"
 msgstr "頻道列表輸入指示"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "頻道管理"
 
@@ -4776,7 +4776,7 @@ msgstr "快看看我的自訂主題！"
 msgid "Check your connection and try again."
 msgstr "請檢查連線並重試。"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "查看你的電子郵件"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "認領你的帳戶以兌換或管理 Plutonium 禮品代碼。"
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "用戶端密鑰已重新產生。請更新所有使用舊密鑰的程式
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "關閉帳戶"
 msgid "Close DM"
 msgstr "關閉私訊"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "關閉視窗"
 
@@ -5646,7 +5646,7 @@ msgstr "社群已更新"
 msgid "Community Updated"
 msgstr "社群已更新"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "全社群"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "請先完成安全金鑰提示。"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "完全對其他使用者隱藏您的 Plutonium 徽章"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "確認密碼"
 msgid "Connect"
 msgstr "連接"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "連線（加入語音）"
 
@@ -5855,7 +5855,7 @@ msgstr "連線 ID"
 msgid "Connection Issue"
 msgstr "連線問題"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "連線已中斷"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "控制您如何加入社群語音頻道。"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "控制其他人看到您的 Plutonium 徽章方式"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "為你的帳號建立與管理應用程式和機器人。"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "透過 Fluxer Plutonium 建立與分享自訂表情符號與貼圖包。"
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "建立社群表單"
 msgid "Create DM"
 msgstr "建立私訊"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "創建表情符號和貼紙"
 
@@ -6529,12 +6529,12 @@ msgstr "建立群組私訊"
 msgid "Create Invite"
 msgstr "建立邀請"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "建立邀請連結"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "建立新帳號"
 
@@ -6554,11 +6554,11 @@ msgstr "建立或加入社群"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "建立貼圖包"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "建立 Webhook"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "建立你的第一個應用程式以開始使用 Fluxer API。"
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "建立、編輯或刪除頻道與分類。"
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "建立、編輯或刪除低於你最高身分組的身分組。也能編輯頻道權限覆寫。"
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "為此頻道建立、編輯或刪除 Webhook。"
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "建立、編輯或刪除 Webhook。"
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "此實例未啟用自訂進入聲音。"
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "透過 Plutonium 自訂進場音效"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "自定義在消息輸入區域中可見的按鈕。即使按鈕被隱藏
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "使用鉑金自訂您的 4 位數標籤 (#{0})，讓它符合您的喜好"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "在此實例中，無法自定義您的頭像、橫幅、重點顏色和個人簡介以適應個別社群。社群暱稱和代名詞對所有人可用。"
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "為各個社群自訂頭像、橫幅、強調色與自我介紹需要 Plutonium；社群暱稱與代稱對所有人免費。"
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "靜音裝置"
 msgid "Deafen Keybind"
 msgstr "靜音鍵盤快捷鍵"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "靜音成員"
 
@@ -7428,8 +7428,8 @@ msgstr "刪除過去一天的訊息"
 msgid "Delete messages from the last week"
 msgstr "刪除過去一週的訊息"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "刪除其他人的訊息。（置頂功能在下方另外處理。）"
 
@@ -8275,8 +8275,8 @@ msgstr "拖放檔案上傳區"
 msgid "Drag and drop emoji files here"
 msgstr "請在此拖放表情符號檔案"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "將成員拖移至他們可進入的頻道。"
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "編輯表情符號包"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "編輯像名稱、描述與圖示等全域設定。"
 
@@ -8526,11 +8527,11 @@ msgstr "編輯訊息"
 msgid "Edit Note"
 msgstr "編輯筆記"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "編輯或刪除其他成員創建的表情符號和貼紙。"
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "編輯此頻道中角色與成員的覆寫權限。"
 
@@ -8664,7 +8665,7 @@ msgstr "需要驗證電子郵件"
 msgid "Email Verified Override"
 msgstr "電子郵件驗證覆寫"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "電子郵件驗證成功"
 
@@ -8677,8 +8678,8 @@ msgstr "內嵌"
 msgid "Embed"
 msgstr "內嵌"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "內嵌連結"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "請輸入格式為 ABCD-1234 的代碼."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "輸入禮物代碼以兌換帳戶的 Plutonium。"
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "輸入安全密碼"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "表情符號包"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "表情符號包為 Plutonium 功能"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer 需要監控鍵盤與滑鼠輸入的權限，才能讓 <0>按下�
 msgid "Fluxer Partner"
 msgstr "Fluxer 合作夥伴"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "Fluxer 以行動 PWA 安裝時會使用推播通知。註冊可確保即使瀏覽器在背景執行，推播閘道也能連絡你的裝置。"
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "畫面更新率"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "超過 30 幀數的幀率需要 Plutonium"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "獲得高畫質 (1080p)、超高畫質 (1440p) 和 4K (2160p) 解析度�
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "收到訊息時會通知你。可能需要在瀏覽器設定中允許通知。要針對特定頻道/社群調整，請右鍵點選社群圖示並開啟通知設定。"
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "連接新音訊裝置時提示你"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "取得 Plutonium"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "為自己取得 Plutonium，解鎖更高限制和專屬功能。"
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "取得 Plutonium 以自訂你的標籤"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "取得 Plutonium 以自訂標籤或在更改使用者名稱時保留它"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "連接新音訊裝置時提示你"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "下載 Fluxer 桌面應用程式以使用系統範圍的按鍵通話與其他功能。"
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "禮物兌換成功！"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "禮物兌換成功！祝您玩得開心的 Plutonium！"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "前往目前通話"
 msgid "Go to Home"
 msgstr "前往首頁"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "前往登入"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "前往第 {page} 頁"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "前往 Plutonium"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "已授予 {0} 並撤銷 {1}。"
 msgid "Granted {0}."
 msgstr "已授予 {0}。"
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "授予所有權限並繞過頻道限制，風險極高。"
 
@@ -11566,22 +11564,22 @@ msgstr "隱藏密碼"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "隱藏畫中畫彈出窗口？"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "完全隱藏 Plutonium 徽章"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "隱藏 Plutonium 購買日期"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "隱藏 Plutonium 購買日期（{0}）"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "隱藏彈出視窗（請求記住）"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "此使用者應暫停多久。"
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "此模擬禮物提供幾個月的 Plutonium"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "忽略"
 msgid "Ignore Friend Request"
 msgstr "忽略好友邀請"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "忽略每個頻道的訊息速率限制。"
 
@@ -12569,7 +12567,7 @@ msgstr "邀請已暫停"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "目前已停用對 <0>{0}</0> 的邀請"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "IP 位址已授權"
 
@@ -12957,7 +12955,7 @@ msgstr "將成員移出此社群。"
 msgid "Kick Member"
 msgstr "踢出成員"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "踢出多位成員"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "使用 CDN 資源的 1-10 張圖片附件佈局。"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "了解 Plutonium"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "終身方案"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "終身 Plutonium"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "連結已複製到剪貼簿"
 msgid "Link copied!"
 msgstr "連結已複製！"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "連結已過期。您的電子郵件可能已驗證完成。"
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "連結已過期。您的 IP 位址可能已授權。"
 
@@ -13592,17 +13590,17 @@ msgstr "管理授權應用程式"
 msgid "Manage blocked users"
 msgstr "管理封鎖的使用者"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "管理頻道"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "管理頻道"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "管理社群"
 
@@ -13614,7 +13612,7 @@ msgstr "管理社群功能"
 msgid "Manage developer applications"
 msgstr "管理開發者應用程式"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "管理表情符號與貼圖"
 
@@ -13622,7 +13620,7 @@ msgstr "管理表情符號與貼圖"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "管理您建立或安裝的表情符號與貼圖包。"
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "管理可發布訊息到此頻道的輸入 Webhook。"
 msgid "Manage invites for this channel."
 msgstr "管理此頻道的邀請。"
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "管理訊息"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "管理暱稱"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "管理權限"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "管理角色"
 
@@ -13666,12 +13664,12 @@ msgstr "管理訂閱"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "管理您用於登入 Fluxer 的電子郵件地址"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "管理 Webhook"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "管理用於 SMS 雙重驗證的電話號碼"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "管理您購買的 Plutonium 禮物代碼。將禮物網址分享給特別的人或自行兌換！"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "媒體"
 msgid "Media Buttons"
 msgstr "媒體按鈕"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "媒體控制"
 
@@ -14114,8 +14112,8 @@ msgstr "提及 @here？"
 msgid "Mention Badges"
 msgstr "提及徽章"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "提及所有人或任一角色（即使該角色未設為可提及）。"
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "訊息"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "訊息與媒體"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "模式 C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "管理"
 
@@ -14559,7 +14557,7 @@ msgstr "更多表情符號格"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "更多選項"
@@ -14613,8 +14611,8 @@ msgstr "在按鈕、輸入與連結間移動焦點。"
 msgid "Move focus to the message composer"
 msgstr "將焦點移至訊息輸入區"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "移動成員"
 
@@ -14781,8 +14779,8 @@ msgstr "靜音最愛"
 msgid "Mute Keybind"
 msgstr "靜音快捷鍵"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "靜音成員"
 
@@ -15126,11 +15124,11 @@ msgstr "由新到舊"
 msgid "Next"
 msgstr "下一步"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "下一個附件"
 
@@ -16112,8 +16110,8 @@ msgstr "開啟 Fluxer"
 msgid "Open image in full view"
 msgstr "以完整檢視開啟圖片"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "在瀏覽器中開啟"
 
@@ -16331,8 +16329,8 @@ msgstr "其他"
 msgid "Other Devices"
 msgstr "其他裝置"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "否則需使用按鍵發話。"
 
@@ -16810,8 +16808,8 @@ msgstr "釘上去。釘得很棒。"
 msgid "Pin Message"
 msgstr "釘選訊息"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "釘選訊息"
 
@@ -17013,19 +17011,6 @@ msgstr "請稍候，正在完成您的登入。"
 msgid "plutonium"
 msgstr "鈽"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "Plutonium 徽章隱私"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "Plutonium 特權"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "波蘭"
@@ -17159,7 +17144,7 @@ msgstr "在指定期間內阻止 <0>{0}</0> 發送訊息、使用反應與連線
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "在指定期間內阻止 <0>{0}</0> 發送訊息、使用反應與加入語音頻道。"
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "在一段時間內阻止成員發送訊息、使用反應與加入語音頻道。"
 
@@ -17219,11 +17204,11 @@ msgstr "過去 24 小時"
 msgid "Previous 7 Days"
 msgstr "過去 7 天"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "上一個附件"
 
@@ -17263,8 +17248,8 @@ msgstr "主要操作"
 msgid "Primary button clicked!"
 msgstr "主要按鈕已點擊！"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "優先發言者"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "公共機器人"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "從 Plutonium 分頁購買 Plutonium 禮物與朋友分享！"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "重新啟用"
 msgid "read aloud"
 msgstr "朗讀"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "閱讀訊息歷史"
 
@@ -17621,7 +17606,7 @@ msgstr "閱讀訊息歷史"
 msgid "read messages"
 msgstr "閱讀消息"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "查看社群的變更與管理措施稽核記錄。"
 
@@ -17865,6 +17850,10 @@ msgstr "相關"
 msgid "Reload app"
 msgstr "重新載入應用程式"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "保持靜音，除非有人手動運行/tts。"
@@ -18022,8 +18011,8 @@ msgstr "移除好友"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "從收藏移除"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "移除限制"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "從徽章中移除您初次購買 Plutonium 的紀錄"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "重新命名"
 msgid "Rename :{0}:"
 msgstr "重新命名 :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "重新命名並編輯此頻道的設定。"
 
@@ -18474,8 +18463,8 @@ msgstr "需要包含中等級別所有項目，另加在此伺服器成員身份
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "需要 Plutonium"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "重新發送代碼"
 msgid "Resend Code"
 msgstr "重新發送代碼"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "重新傳送電子郵件"
 
@@ -18536,7 +18525,7 @@ msgstr "重新傳送結果"
 msgid "Resend Verification Email"
 msgstr "重新傳送驗證郵件"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "已重新傳送"
 
@@ -18628,6 +18617,10 @@ msgstr "調整畫中畫"
 msgid "Resolution"
 msgstr "解析度"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "還原帳戶"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "重新訂閱"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "顯示"
 msgid "Reveal spoiler"
 msgstr "顯示劇透"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "儲存圖示"
 msgid "Save Image"
 msgstr "儲存圖片"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "儲存媒體"
 
@@ -19688,16 +19691,16 @@ msgstr "無法傳送訊息"
 msgid "Send messages"
 msgstr "傳送訊息"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "傳送訊息"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "傳送 SMS 驗證碼"
 msgid "Send SMS Code"
 msgstr "傳送 SMS 驗證碼"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "傳送文字轉語音訊息。"
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "傳送 TTS 訊息"
 
@@ -19971,8 +19974,8 @@ msgstr "將驗證等級設為 <0>中</0>。"
 msgid "Set verification level to <0>None</0>."
 msgstr "將驗證等級設為 <0>無</0>。"
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "設定語音區域"
 
@@ -20260,8 +20263,8 @@ msgstr "最多顯示 5 (+5 徽章)"
 msgid "Show Media Button"
 msgstr "顯示媒體按鈕"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "顯示媒體資訊"
 
@@ -20880,8 +20883,8 @@ msgstr "西班牙語（拉丁美洲）"
 msgid "Spanish (Spain)"
 msgstr "西班牙語（西班牙）"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "開始說話"
 
@@ -21331,8 +21334,8 @@ msgstr "串流預覽"
 msgid "Stream Quality"
 msgstr "串流品質"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "串流影片"
 
@@ -22598,7 +22601,7 @@ msgstr "超時時長"
 msgid "Timeout ends {0} ({1})"
 msgstr "超時將於 {0} 結束（{1}）"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "超時成員"
 
@@ -23508,49 +23511,49 @@ msgstr "無限貼圖"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "使用鉑金解鎖 {emojiLabel} 來自 {communityLabel}。"
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "使用鉑金解鎖 {stickerLabel} 來自 {communityLabel}。"
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "使用 Plutonium 解鎖所有社群的自訂表情符號與貼圖"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "使用 Plutonium 在私訊中解鎖自訂表情符號"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "使用 Plutonium 解鎖外部自訂表情符號"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "使用 Plutonium 解鎖外部貼圖"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "使用 Plutonium 解鎖 HD 螢幕分享"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "使用 Plutonium 解鎖 HD 影片"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "使用 Plutonium 解鎖更多背景"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "使用 Plutonium 在私訊中解鎖貼圖"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "更新逾時"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "更新你的圖示、名稱、橫幅與邀請背景"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "更新你的暱稱。"
 
@@ -23879,8 +23882,8 @@ msgstr "立即升級"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "升級為 Plutonium"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "上傳圖示"
 msgid "Upload Image"
 msgstr "上傳圖片"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "上傳新的表情符號和貼紙，並管理您自己的創作。"
 
@@ -24037,8 +24040,8 @@ msgstr "下載您訊息中附件的網址"
 msgid "US East"
 msgstr "美國東部"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "使用 @everyone/@here 與 @roles"
 
@@ -24100,17 +24103,17 @@ msgstr "在整個應用程式中使用深色主題"
 msgid "Use Different Email"
 msgstr "使用不同的電子郵件"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "使用其他社群的表情符號。"
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "使用外部表情符號"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "使用外部貼圖"
 
@@ -24163,8 +24166,8 @@ msgstr "使用此按鈕可快速清除所有權限。"
 msgid "Use this shortcut system-wide"
 msgstr "在整個系統中使用此捷徑"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "使用語音啟動"
 
@@ -24471,7 +24474,7 @@ msgstr "驗證碼已發送。請檢查您的新電子郵件收件箱。"
 msgid "Verification email sent! Please check your inbox."
 msgstr "驗證電子郵件已寄出！請檢查收件匣。"
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "驗證失敗"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "驗證連接表單"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "驗證電子郵件"
 
@@ -24548,6 +24551,10 @@ msgstr "驗證您的身份"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "驗證中…"
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "影片選項"
 msgid "video preview"
 msgstr "視頻預覽"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "影片預覽"
@@ -24644,7 +24651,7 @@ msgstr "查看 {0} 的個人檔案"
 msgid "View active sessions"
 msgstr "檢視使用中工作階段"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "檢視活動記錄"
 
@@ -24692,8 +24699,8 @@ msgstr "檢視通話"
 msgid "View call controls"
 msgstr "檢視通話控制"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "檢視頻道"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary（終身 #42）"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary（終身 Plutonium）"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "我們無法切換帳戶，請再試一次。"
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "我們已寄送授權此登入的連結，請檢查 {0} 的收件匣。"
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "我們遇到阻礙了，請再試著編輯您的訊息。"
 msgid "We hit a snag. Try sending your message again."
 msgstr "我們遇到阻礙了，請再試著傳送您的訊息。"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "等待授權時連線中斷，請再試一次。"
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "發生錯誤時"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "使用 Plutonium，您可以使用動畫頭像和橫幅（格式為 GIF、APNG、動畫 WebP 或 AVIF），自訂您的 4 位數標籤，並解鎖許多其他高級功能。"
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "您目前無法與此使用者互動。"
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "擁有 Visionary 高級方案期間無法兌換 Plutonium 禮物代碼。"
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "您已達到底部"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "你已達到免費用戶的 {freeItemsText} 最大限制。升級到 Plutonium 可以將你的限制提高到 {premiumItemsText}！"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "你已達到最大書籤數量 ({bookmarksText})。此限制由你的實例管理員配置。請在添加新書籤之前刪除一些書籤。"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "你已達到免費用戶的最大書籤數量 ({bookmarksText})。升級到 Plutonium 可以將你的限制提高到 {premiumBookmarksText}，或刪除一些書籤以添加新書籤。"
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "您的刪除請求將排入佇列並在背景處理"
 msgid "Your email address has been updated."
 msgstr "您的電子郵件地址已更新。"
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "您的電子郵件已驗證。您現在可以登入帳號。"
 
@@ -26355,7 +26362,7 @@ msgstr "您的邀請將在24小時後失效"
 msgid "Your invite link expires in {0}."
 msgstr "您的邀請連結將在 {0} 後到期。"
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "您的 IP 位址已成功授權。"
 
@@ -26399,10 +26406,6 @@ msgstr "你的付款已被取消。你現在可以關閉這個標籤並返回應
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "您的個人空間，可快速存取喜愛的頻道、私訊與群組。按下任何頻道的星號即可加入此處。"
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "您的 Plutonium 訂閱已到期，所有 Plutonium 特權已失效。重新啟動訂閱即可恢復存取。"
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "您的私人空間"
@@ -26423,6 +26426,10 @@ msgstr "您購買的禮物"
 msgid "your region"
 msgstr "您的地區"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "您的訂閱已於 <0>{expiredDate}</0> 到期。您已失去所有 <1/>。您可以隨時重新啟動。"
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "您的訂閱未成功續訂，但您仍可在 <0>{formattedGraceDate}</0> 前存取 Plutonium 特權。請立即處理，否則將失去所有特權。"
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "Zoom"
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "放大"
 
@@ -26491,8 +26498,8 @@ msgstr "放大"
 msgid "Zoom In"
 msgstr "放大"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "縮小"
 

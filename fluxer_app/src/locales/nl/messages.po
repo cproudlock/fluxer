@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} Leden"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} van {totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} aan het kijken"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} Deze limiet is ingesteld door de beheerder van jouw in
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} Met Plutonium verhoogt je uploadlimiet per bestand naar {0}, plus geanimeerde avatars, langere berichten en veel andere premium functies."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (geselecteerd)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} maand van Plutonium"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} maanden van Plutonium"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "{remaining} tekens over"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "{remaining} tekens over. Koop Plutonium om tot {premiumMaxLength} tekens te schrijven."
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "Cadeau voor 1 jaar"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "1 jaar Plutonium"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "Vrienden toevoegen aan groep"
 msgid "Add Item"
 msgstr "Item toevoegen"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "Voeg nieuwe reacties toe aan berichten."
 
@@ -1971,8 +1971,8 @@ msgstr "Telefoonnummerformulier toevoegen"
 msgid "Add Reaction"
 msgstr "Reactie toevoegen"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "Reacties toevoegen"
 
@@ -2015,8 +2015,8 @@ msgstr "Toevoegen aan woordenboek"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "Toevoegen aan favorieten"
 
@@ -2129,7 +2129,7 @@ msgstr "Pas de verzadiging van alle themakleuren aan."
 msgid "Adjust the spacing between groups of messages."
 msgstr "Pas de afstand tussen groepen berichten aan."
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "Beheerder"
 
@@ -2543,11 +2543,11 @@ msgstr "Er is een ongeldige status verstrekt. Je kunt dit tabblad nu sluiten en 
 msgid "An unexpected error occurred. Please try again."
 msgstr "Er is een onverwachte fout opgetreden. Probeer het opnieuw."
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "Er is een onverwachte serverfout opgetreden. Probeer de pagina te herladen of opnieuw in te loggen."
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "Er is een onverwachte serverfout opgetreden. Probeer de pagina te herladen of een nieuwe verificatie-e-mail aan te vragen."
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "Animeren bij Interactie"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "Geanimeerde avatars (GIF, APNG, geanimeerde WebP, AVIF) zijn een premium functie die uitsluitend beschikbaar is voor Plutonium-abonnees."
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "Geanimeerde avatars niet beschikbaar"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "Geanimeerde avatars vereisen Plutonium"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "Archief"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "Als cadeau"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "Minstens één kanaal moet de machtiging \"Kanaal bekijken\" voor @everyone hebben ingeschakeld om de vanity-URL te laten werken. Momenteel zijn er geen kanalen zichtbaar voor @everyone."
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "Bestanden bijvoegen"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "Bijlage {0}"
@@ -3136,7 +3136,7 @@ msgstr "Alleen bijlagebericht"
 msgid "Attachment preview"
 msgstr "Bijlagevoorbeeld"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "Bijlage-miniaturen"
 
@@ -3160,7 +3160,7 @@ msgstr "audio"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "Audio & Video"
 
@@ -3261,7 +3261,7 @@ msgstr "Auteurvariaties"
 msgid "author-type:"
 msgstr "auteurtype:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "Autorisatie mislukt"
 
@@ -3287,7 +3287,7 @@ msgstr "Autoriseer"
 msgid "Authorize Application"
 msgstr "Applicatie autoriseren"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "IP autoriseren"
 
@@ -3446,7 +3446,7 @@ msgstr "avatars"
 msgid "Average ping:"
 msgstr "Gemiddelde ping:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "Verbanning verloopt op {0}."
 msgid "Ban Member"
 msgstr "Lid Verbannen"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "Leden Verbannen"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "Slowmode omzeilen"
 
@@ -4461,11 +4461,11 @@ msgstr "Bijnaam wijzigen"
 msgid "Change nickname form"
 msgstr "Bijnaam wijzigen"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "Bijnamen van andere leden wijzigen."
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "Eigen bijnaam wijzigen"
 
@@ -4556,8 +4556,8 @@ msgstr "kanaal"
 msgid "Channel"
 msgstr "Kanaal"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "Kanaaltoegang"
 
@@ -4635,7 +4635,7 @@ msgstr "Typindicatiemodus kanaallijst"
 msgid "Channel list typing indicators"
 msgstr "Typindicatoren voor kanalenlijst"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "Kanaalbeheer"
 
@@ -4776,7 +4776,7 @@ msgstr "Bekijk mijn aangepaste thema!"
 msgid "Check your connection and try again."
 msgstr "Controleer je verbinding en probeer het opnieuw."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "Controleer je e-mail"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "Claim je account om Plutonium cadeaucodes in te wisselen of te beheren."
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "Clientgeheim opnieuw gegenereerd. Werk alle code bij die het oude geheim
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "rekening sluiten"
 msgid "Close DM"
 msgstr "DM sluiten"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "Modal sluiten"
 
@@ -5646,7 +5646,7 @@ msgstr "Community bijgewerkt"
 msgid "Community Updated"
 msgstr "Community bijgewerkt"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "Communitybreed"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "Voltooi eerst de beveiligingssleutelprompt."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "Verberg je Plutoniumbadge volledig voor andere gebruikers"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "Bevestig wachtwoord"
 msgid "Connect"
 msgstr "Verbinden"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "Verbinden (Voice deelnemen)"
 
@@ -5855,7 +5855,7 @@ msgstr "Verbindings-ID"
 msgid "Connection Issue"
 msgstr "Verbindingsprobleem"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "Verbinding verbroken"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "Beheer hoe je voicekanalen in communities betreedt."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "Beheer hoe je Plutonium-badge aan anderen wordt getoond"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Maak en beheer applicaties en bots voor je account."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Maak en deel aangepaste emoji- en stickerpakketten met Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "Communityformulier aanmaken"
 msgid "Create DM"
 msgstr "DM aanmaken"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "Maak Emoji's & Stickers"
 
@@ -6529,12 +6529,12 @@ msgstr "Groeps-DM aanmaken"
 msgid "Create Invite"
 msgstr "Uitnodiging aanmaken"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "Uitnodigingslinks aanmaken"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "Nieuw account aanmaken"
 
@@ -6554,11 +6554,11 @@ msgstr "Een community aanmaken of deelnemen"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "Stickerpakket aanmaken"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "Webhook aanmaken"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "Maak je eerste applicatie om te beginnen met de Fluxer API."
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "Kanelen en categorieën aanmaken, bewerken of verwijderen."
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "Rollen onder je hoogste rol aanmaken, bewerken of verwijderen. Ook mogelijkheid om kanaalmachtigingsoverschrijvingen te bewerken."
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "Webhooks voor dit kanaal aanmaken, bewerken of verwijderen."
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "Webhooks aanmaken, bewerken of verwijderen."
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "Aangepaste ingangsgeluiden zijn niet ingeschakeld op deze instantie."
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "Aangepaste binnenkomstgeluiden met Plutonium"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "Pas aan welke knoppen zichtbaar zijn in het berichtinvoerveld. Sneltoets
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "Pas je 4-cijferige tag (#{0}) aan naar wens met Plutonium"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "Het aanpassen van je avatar, banner, accentkleur en bio voor individuele gemeenschappen is niet ingeschakeld op deze instantie. Gemeenschapsnaam en voornaamwoorden zijn beschikbaar voor iedereen."
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "Het aanpassen van je avatar, banner, accentkleur en bio voor individuele communities vereist Plutonium. Community-bijnaam en voornaamwoorden zijn gratis voor iedereen."
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "Apparaat dempen"
 msgid "Deafen Keybind"
 msgstr "Dempsnelkoppeling"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "Leden dempen"
 
@@ -7428,8 +7428,8 @@ msgstr "Berichten van de laatste dag verwijderen"
 msgid "Delete messages from the last week"
 msgstr "Berichten van de laatste week verwijderen"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "Berichten van anderen verwijderen. (Vastzetten staat hieronder apart.)"
 
@@ -8275,8 +8275,8 @@ msgstr "Sleep-en-zet-gebied voor bestandsupload"
 msgid "Drag and drop emoji files here"
 msgstr "Sleep en zet emoji-bestanden hier neer"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "Sleep leden tussen kanalen die ze kunnen openen."
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "Emoji-pack bewerken"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "Globale instellingen zoals naam, beschrijving en pictogram bewerken."
 
@@ -8526,11 +8527,11 @@ msgstr "Bericht bewerken"
 msgid "Edit Note"
 msgstr "Notitie bewerken"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "Bewerk of verwijder emoji's en stickers die door andere leden zijn gemaakt."
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "Overschrijvingen voor rollen en leden in dit kanaal bewerken."
 
@@ -8664,7 +8665,7 @@ msgstr "E-mail verificatie vereist"
 msgid "Email Verified Override"
 msgstr "E-mail geverifieerd overschrijven"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "E-mail succesvol geverifieerd"
 
@@ -8677,8 +8678,8 @@ msgstr "embed"
 msgid "Embed"
 msgstr "Insluiten"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "Links insluiten"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "Voer een code in het formaat ABCD-1234 in."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "Voer een cadeaucode in om Plutonium voor je account in te wisselen."
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "Voer een veilig wachtwoord in"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "Expressiepakketten"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "Expressiepakketten zijn een Plutonium-functie"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer heeft toestemming nodig om toetsenbord- en muisinvoer te monitore
 msgid "Fluxer Partner"
 msgstr "Fluxer Partner"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "Fluxer gebruikt pushmeldingen wanneer het als mobiele PWA is geïnstalleerd. Registreren zorgt ervoor dat de gateway je apparaat kan bereiken, zelfs als de browser op de achtergrond staat."
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "Framesnelheid"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "Frame rates boven de 30 FPS vereisen Plutonium"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "Krijg hoge (1080p), ultra (1440p) en 4K (2160p) resoluties, plus 60 FPS 
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "Word op de hoogte gesteld wanneer je berichten ontvangt. Mogelijk moet je meldingen toestaan in je browserinstellingen. Voor per-kanaal/per-community instellingen, klik met rechts op een community-icoon en open Meldingsinstellingen."
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "Word gevraagd wanneer nieuwe audioapparaten zijn aangesloten"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "Plutonium krijgen"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "Krijg Plutonium voor jezelf en ontgrendel hogere limieten en exclusieve functies."
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "Krijg Plutonium om je tag aan te passen"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "Krijg Plutonium om je tag aan te passen of te behouden bij het wijzigen van je gebruikersnaam"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "Word gevraagd wanneer nieuwe audioapparaten zijn aangesloten"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Download de Fluxer desktop-app voor systeembrede push-to-talk en enkele andere extra's."
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "Cadeau succesvol ingewisseld!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "Cadeau succesvol ingewisseld! Geniet van je Plutonium!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "Ga naar huidige oproep"
 msgid "Go to Home"
 msgstr "Ga naar Home"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "Ga naar inloggen"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "Ga naar pagina {page}"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "Ga naar Plutonium"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "Toegekend {0} en ingetrokken {1}."
 msgid "Granted {0}."
 msgstr "Toegekend {0}."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "Verleent alle rechten en omzeilt kanaalbeperkingen. Zeer gevoelig."
 
@@ -11566,22 +11564,22 @@ msgstr "Wachtwoord verbergen"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "Verberg Picture-in-Picture Popout?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "Plutonium-badge volledig verbergen"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "Plutonium-aankoopdatum verbergen"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "Plutonium-aankoopdatum verbergen ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "Verberg pop-out (vraag om te onthouden)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "Hoe lang deze gebruiker een time-out moet krijgen."
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "Hoeveel maanden Plutonium het nepgeschenk biedt"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "Negeren"
 msgid "Ignore Friend Request"
 msgstr "Vriendschapsverzoek negeren"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "Berichtfrequentielimieten per kanaal negeren."
 
@@ -12569,7 +12567,7 @@ msgstr "Uitnodigingen gepauzeerd"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "Uitnodigingen voor <0>{0}</0> zijn momenteel uitgeschakeld"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "IP-adres geautoriseerd"
 
@@ -12957,7 +12955,7 @@ msgstr "Kick een lid uit deze community."
 msgid "Kick Member"
 msgstr "Lid kicken"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "Leden kicken"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "Indelingen voor 1-10 afbeeldingsbijlagen met behulp van CDN-assets."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "Leer over Plutonium"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "Levenslang"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Levenslang Plutonium"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "Link naar klembord gekopieerd"
 msgid "Link copied!"
 msgstr "Link gekopieerd!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "Link verlopen. Je e-mail is waarschijnlijk al geverifieerd."
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "Link verlopen. Je IP-adres is waarschijnlijk al geautoriseerd."
 
@@ -13592,17 +13590,17 @@ msgstr "Geautoriseerde apps beheren"
 msgid "Manage blocked users"
 msgstr "Geblokkeerde gebruikers beheren"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "Kanaal beheren"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "Kanalen beheren"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "Community beheren"
 
@@ -13614,7 +13612,7 @@ msgstr "Beheer Gemeenschapsfuncties"
 msgid "Manage developer applications"
 msgstr "Ontwikkelaarstoepassingen beheren"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "Emoji & stickers beheren"
 
@@ -13622,7 +13620,7 @@ msgstr "Emoji & stickers beheren"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "Beheer emoji- en stickerpakketten die je hebt gemaakt of geïnstalleerd."
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "Beheer inkomende webhooks die berichten in dit kanaal kunnen plaatsen."
 msgid "Manage invites for this channel."
 msgstr "Beheer uitnodigingen voor dit kanaal."
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "Berichten beheren"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "Bijnamen beheren"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "Permissies beheren"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "Rollen beheren"
 
@@ -13666,12 +13664,12 @@ msgstr "Abonnement beheren"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "Beheer het e-mailadres dat je gebruikt om in te loggen bij Fluxer"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "Webhooks beheren"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "Beheer je telefoonnummer voor SMS-twee-factor-authenticatie"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "Beheer je gekochte Plutonium-cadeaucodes. Deel de cadeau-URL met iemand speciaals of verzilver hem voor jezelf!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "Media"
 msgid "Media Buttons"
 msgstr "Media-knoppen"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "Mediabediening"
 
@@ -14114,8 +14112,8 @@ msgstr "@hier vermelden?"
 msgid "Mention Badges"
 msgstr "Vermeldingsbadges"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "Vermeld iedereen of een willekeurige rol (zelfs als de rol niet instelbaar is om te vermelden)."
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "Berichten"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "Berichten & Media"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "Modus C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "Moderatie"
 
@@ -14559,7 +14557,7 @@ msgstr "Meer emoji-sleuven"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "Meer opties"
@@ -14613,8 +14611,8 @@ msgstr "Verplaats focus over knoppen, invoervelden en links."
 msgid "Move focus to the message composer"
 msgstr "Verplaats focus naar de berichtensamensteller"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "Verplaats leden"
 
@@ -14781,8 +14779,8 @@ msgstr "Favorieten dempen"
 msgid "Mute Keybind"
 msgstr "Dempen-sneltoets"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "Leden dempen"
 
@@ -15126,11 +15124,11 @@ msgstr "Nieuwste eerst"
 msgid "Next"
 msgstr "Volgende"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "Volgende bijlage"
 
@@ -16112,8 +16110,8 @@ msgstr "Open Fluxer"
 msgid "Open image in full view"
 msgstr "Open afbeelding in volledig scherm"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "Open in browser"
 
@@ -16331,8 +16329,8 @@ msgstr "Anders"
 msgid "Other Devices"
 msgstr "Andere apparaten"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "Anders is Push-to-talk vereist."
 
@@ -16810,8 +16808,8 @@ msgstr "Zet het vast. Zet het goed vast."
 msgid "Pin Message"
 msgstr "Bericht vastzetten"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "Berichten vastzetten"
 
@@ -17013,19 +17011,6 @@ msgstr "Even geduld terwijl we uw aanmelding voltooien."
 msgid "plutonium"
 msgstr "plutonium"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "Plutonium Badge Privacy"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "Plutonium voordelen"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "Polen"
@@ -17159,7 +17144,7 @@ msgstr "Voorkom dat <0>{0}</0> berichten stuurt, reageert en verbinding maakt me
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "Voorkom dat <0>{0}</0> berichten stuurt, reageert en deelneemt aan spraakkanalen voor de opgegeven duur."
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "Voorkom dat leden berichten sturen, reageren en deelnemen aan spraak voor een bepaalde duur."
 
@@ -17219,11 +17204,11 @@ msgstr "Vorige 24 uur"
 msgid "Previous 7 Days"
 msgstr "Vorige 7 dagen"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "Vorige bijlage"
 
@@ -17263,8 +17248,8 @@ msgstr "Primaire actie"
 msgid "Primary button clicked!"
 msgstr "Primaire knop geklikt!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "Prioriteitsspreker"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "Openbare bot"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "Koop een Plutonium-cadeau in het Plutonium-tabblad om met vrienden te delen!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "Heractiveren"
 msgid "read aloud"
 msgstr "hardop voorlezen"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "Berichtgeschiedenis lezen"
 
@@ -17621,7 +17606,7 @@ msgstr "Berichtgeschiedenis lezen"
 msgid "read messages"
 msgstr "berichten voorlezen"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "Lees het auditlogboek van de community voor wijzigingen en moderatieacties."
 
@@ -17865,6 +17850,10 @@ msgstr "Relevant"
 msgid "Reload app"
 msgstr "App herladen"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "Blijf stil tenzij iemand /tts handmatig uitvoert."
@@ -18022,8 +18011,8 @@ msgstr "Vriend verwijderen"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "Uit favorieten verwijderen"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "Time-out verwijderen"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "Verwijder wanneer je voor het eerst Plutonium van je badge hebt gekocht"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "Hernoemen"
 msgid "Rename :{0}:"
 msgstr "Hernoem :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "Hernoem en bewerk de instellingen van dit kanaal."
 
@@ -18474,8 +18463,8 @@ msgstr "Vereist alles in Gemiddeld, plus lid zijn van de server voor minstens 10
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "Vereist Plutonium"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "Code opnieuw verzenden"
 msgid "Resend Code"
 msgstr "Code opnieuw verzenden"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "E-mail opnieuw verzenden"
 
@@ -18536,7 +18525,7 @@ msgstr "Resultaat opnieuw verzenden"
 msgid "Resend Verification Email"
 msgstr "Verificatie-e-mail opnieuw verzenden"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "Opnieuw verzonden"
 
@@ -18628,6 +18617,10 @@ msgstr "Afbeelding-in-afbeelding vergroten"
 msgid "Resolution"
 msgstr "Resolutie"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "Account herstellen"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "Opnieuw abonneren"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "Onthullen"
 msgid "Reveal spoiler"
 msgstr "Spoiler onthullen"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "Pictogram opslaan"
 msgid "Save Image"
 msgstr "Afbeelding opslaan"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "Media opslaan"
 
@@ -19688,16 +19691,16 @@ msgstr "Bericht verzenden uitgeschakeld"
 msgid "Send messages"
 msgstr "Berichten verzenden"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "Berichten verzenden"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "SMS-code verzenden"
 msgid "Send SMS Code"
 msgstr "SMS-code verzenden"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "Tekst-naar-spraakberichten verzenden."
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "TTS-berichten verzenden"
 
@@ -19971,8 +19974,8 @@ msgstr "Stel het verificatieniveau in op <0>Gemiddeld</0>."
 msgid "Set verification level to <0>None</0>."
 msgstr "Stel het verificatieniveau in op <0>Geen</0>."
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "Spraakregio instellen"
 
@@ -20260,8 +20263,8 @@ msgstr "Maximaal 5 tonen (+5 badge)"
 msgid "Show Media Button"
 msgstr "Mediabutton tonen"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "Mediainformatie tonen"
 
@@ -20880,8 +20883,8 @@ msgstr "Spaans (Latijns-Amerika)"
 msgid "Spanish (Spain)"
 msgstr "Spaans (Spanje)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "Spreek"
 
@@ -21331,8 +21334,8 @@ msgstr "Streamvoorbeeld"
 msgid "Stream Quality"
 msgstr "Streamkwaliteit"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "Video streamen"
 
@@ -22598,7 +22601,7 @@ msgstr "Time-out duur"
 msgid "Timeout ends {0} ({1})"
 msgstr "Time-out eindigt {0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "Leden time-outen"
 
@@ -23508,49 +23511,49 @@ msgstr "Onbeperkte stickers"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "Ontgrendel {emojiLabel} van {communityLabel} met Plutonium."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "Ontgrendel {stickerLabel} van {communityLabel} met Plutonium."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "Ontgrendel alle aangepaste emoji's en stickers in alle communities met Plutonium"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "Ontgrendel aangepaste emoji's in privéberichten met Plutonium"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "Ontgrendel externe aangepaste emoji's met Plutonium"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "Ontgrendel externe stickers met Plutonium"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "Ontgrendel HD-schermdelen met Plutonium"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "Ontgrendel HD-video met Plutonium"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "Ontgrendel meer achtergronden met Plutonium"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "Ontgrendel stickers in privéberichten met Plutonium"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "Time-out bijwerken"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "Werk je pictogram, naam, banner en uitnodigingsachtergrond bij"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "Werk je eigen bijnaam bij."
 
@@ -23879,8 +23882,8 @@ msgstr "Nu upgraden"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "Upgraden naar Plutonium"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "Pictogram uploaden"
 msgid "Upload Image"
 msgstr "Afbeelding uploaden"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "Upload nieuwe emoji's en stickers, en beheer je eigen creaties."
 
@@ -24037,8 +24040,8 @@ msgstr "URL's om bijlagen van je berichten te downloaden"
 msgid "US East"
 msgstr "VS Oost"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "@iedereen/@hier en @rollen gebruiken"
 
@@ -24100,17 +24103,17 @@ msgstr "Gebruik donker thema in de hele applicatie"
 msgid "Use Different Email"
 msgstr "Gebruik een andere e-mail"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "Gebruik emoji's van andere gemeenschappen."
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "Gebruik Externe Emoji"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "Gebruik Externe Stickers"
 
@@ -24163,8 +24166,8 @@ msgstr "Gebruik deze knop om snel alle rechten te wissen."
 msgid "Use this shortcut system-wide"
 msgstr "Gebruik deze snelkoppeling systeembrede"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "Gebruik spraakactiviteit"
 
@@ -24471,7 +24474,7 @@ msgstr "Verificatiecode verzonden. Controleer je nieuwe e-mailinbox."
 msgid "Verification email sent! Please check your inbox."
 msgstr "Verificatie-e-mail verzonden! Controleer je inbox."
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "Verificatie mislukt"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "Verbindingsformulier verifiëren"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "E-mail verifiëren"
 
@@ -24548,6 +24551,10 @@ msgstr "Verifieer Je Identiteit"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "Verifiëren..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "Video-opties"
 msgid "video preview"
 msgstr "video-voorbeeld"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "Videovoorbeeld"
@@ -24644,7 +24651,7 @@ msgstr "Bekijk het profiel van {0}"
 msgid "View active sessions"
 msgstr "Actieve sessies bekijken"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "Activiteitenlogboek bekijken"
 
@@ -24692,8 +24699,8 @@ msgstr "Gesprek bekijken"
 msgid "View call controls"
 msgstr "Gesprekbediening bekijken"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "Kanaal bekijken"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (Lifetime #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (Lifetime Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "We konden niet van account wisselen. Probeer het opnieuw."
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "We hebben een link gemaild om deze login te autoriseren. Open je inbox voor {0}."
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "Er ging iets mis. Probeer je bericht opnieuw te bewerken."
 msgid "We hit a snag. Try sending your message again."
 msgstr "Er ging iets mis. Probeer je bericht opnieuw te verzenden."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "De verbinding is verloren tijdens het wachten op autorisatie. Probeer het opnieuw."
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "Met fout"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "Met Plutonium kun je geanimeerde avatars en banners gebruiken (in GIF, APNG, geanimeerde WebP of AVIF), je 4-cijferige tag aanpassen en veel andere premium functies ontgrendelen."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "Je kunt op dit moment niet met deze gebruiker interacteren."
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "Je kunt Plutonium-cadeaucodes niet inwisselen terwijl je Visionary premium hebt."
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "Je bent aan het einde gekomen"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "Je hebt de maximale limiet van {freeItemsText} voor gratis gebruikers bereikt. Upgrade naar Plutonium om je limiet te verhogen naar {premiumItemsText}!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "Je hebt het maximale aantal bladwijzers bereikt ({bookmarksText}). Deze limiet is ingesteld door je instantiebeheerder. Verwijder enkele bladwijzers voordat je nieuwe toevoegt."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "Je hebt het maximale aantal bladwijzers voor gratis gebruikers bereikt ({bookmarksText}). Upgrade naar Plutonium om je limiet te verhogen naar {premiumBookmarksText}, of verwijder enkele bladwijzers om nieuwe toe te voegen."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "Je verwijderingsverzoek wordt in de wachtrij geplaatst en op de achtergr
 msgid "Your email address has been updated."
 msgstr "Je e-mailadres is bijgewerkt."
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "Je e-mail is geverifieerd. Je kunt nu inloggen op je account."
 
@@ -26355,7 +26362,7 @@ msgstr "Je uitnodiging verloopt over 24 uur"
 msgid "Your invite link expires in {0}."
 msgstr "Je uitnodigingslink verloopt over {0}."
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "Je IP-adres is succesvol geautoriseerd."
 
@@ -26399,10 +26406,6 @@ msgstr "Je betaling is geannuleerd. Je kunt nu dit tabblad sluiten en terugkeren
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "Je persoonlijke ruimte voor snelle toegang tot kanalen, DM's en groepen waar je van houdt. Druk op de ster bij elk kanaal om het hier toe te voegen."
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "Je Plutonium-abonnement is verlopen. Je hebt alle Plutonium-voordelen verloren. Heractiveer je abonnement om weer toegang te krijgen."
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "Je privéruimte"
@@ -26423,6 +26426,10 @@ msgstr "Je gekochte cadeaus"
 msgid "your region"
 msgstr "jouw regio"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "Je abonnement is verlopen op <0>{expiredDate}</0>. Je hebt alle <1/> verloren. Je kunt het op elk moment opnieuw activeren."
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "Je abonnement kon niet worden verlengd, maar je hebt nog toegang tot Plutonium-voordelen tot <0>{formattedGraceDate}</0>. Onderneem nu actie of je verliest alle voordelen."
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "zoom"
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "Inzoomen"
 
@@ -26491,8 +26498,8 @@ msgstr "Inzoomen"
 msgid "Zoom In"
 msgstr "Inzoomen"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "Uitzoomen"
 

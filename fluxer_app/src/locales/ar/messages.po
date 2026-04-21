@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} أعضاء"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} من {totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} يشاهد"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} تم تكوين هذا الحد بواسطة مسؤو�
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} مع البلوتونيوم، يزيد حد تحميل الملفات لكل ملف إلى {0}، بالإضافة إلى الصور الرمزية المتحركة، والرسائل الأطول، والعديد من الميزات المميزة الأخرى."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (محدد)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} شهر من البلوتونيوم"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} أشهر من البلوتونيوم"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "بقي {remaining} حرف"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "بقي {remaining} حرف. احصل على Plutonium للكتابة حتى {premiumMaxLength} حرف."
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "هدية لمدة سنة"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "سنة واحدة من Plutonium"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "إضافة أصدقاء إلى المجموعة"
 msgid "Add Item"
 msgstr "إضافة عنصر"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "إضافة تفاعلات جديدة للرسائل."
 
@@ -1971,8 +1971,8 @@ msgstr "نموذج إضافة رقم هاتف"
 msgid "Add Reaction"
 msgstr "إضافة تفاعل"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "إضافة تفاعلات"
 
@@ -2015,8 +2015,8 @@ msgstr "إضافة إلى القاموس"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "إضافة إلى المفضلة"
 
@@ -2129,7 +2129,7 @@ msgstr "ضبط تشبع جميع ألوان السمة."
 msgid "Adjust the spacing between groups of messages."
 msgstr "اضبط المسافة بين مجموعات الرسائل."
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "مدير"
 
@@ -2543,11 +2543,11 @@ msgstr "تم تقديم حالة غير صالحة. يمكنك الآن إغلا
 msgid "An unexpected error occurred. Please try again."
 msgstr "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى."
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "حدث خطأ غير متوقع في الخادم. يرجى محاولة إعادة تحميل الصفحة أو تسجيل الدخول مرة أخرى."
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "حدث خطأ غير متوقع في الخادم. يرجى محاولة إعادة تحميل الصفحة أو طلب بريد إلكتروني جديد للتحقق."
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "التحريك عند التفاعل"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "الصور الرمزية المتحركة (GIF، APNG، WebP المتحركة، AVIF) هي ميزة مميزة متاحة حصريًا لمشتركي بلوتونيوم."
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "الصور الرمزية المتحركة غير متاحة"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "الصور الرمزية المتحركة تتطلب بلوتونيوم"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "أرشفة"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "كهدية"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "يجب أن يكون لدى قناة واحدة على الأقل إذن \"عرض القناة\" ممكّنًا لـ @everyone لكي يعمل رابط التخصيص. حاليًا، لا توجد قنوات مرئية لـ @everyone."
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "إرفاق ملفات"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "مرفق {0}"
@@ -3136,7 +3136,7 @@ msgstr "رسالة تحتوي على مرفق فقط"
 msgid "Attachment preview"
 msgstr "معاينة المرفق"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "صور مصغرة للمرفقات"
 
@@ -3160,7 +3160,7 @@ msgstr "الصوت"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "صوت"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "الصوت والفيديو"
 
@@ -3261,7 +3261,7 @@ msgstr "تvariations المؤلف"
 msgid "author-type:"
 msgstr "نوع المؤلف:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "فشل التفويض"
 
@@ -3287,7 +3287,7 @@ msgstr "فَوِّض"
 msgid "Authorize Application"
 msgstr "تفويض التطبيق"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "تفويض عنوان IP"
 
@@ -3446,7 +3446,7 @@ msgstr "الصور الرمزية"
 msgid "Average ping:"
 msgstr "متوسط البينغ:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "ينتهي الحظر في {0}."
 msgid "Ban Member"
 msgstr "حظر العضو"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "حظر الأعضاء"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "تجاوز الوضع البطيء"
 
@@ -4461,11 +4461,11 @@ msgstr "تغيير اللقب"
 msgid "Change nickname form"
 msgstr "نموذج تغيير اللقب"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "تغيير ألقاب الأعضاء الآخرين."
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "تغيير اللقب الخاص"
 
@@ -4556,8 +4556,8 @@ msgstr "قناة"
 msgid "Channel"
 msgstr "القناة"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "وصول القناة"
 
@@ -4635,7 +4635,7 @@ msgstr "وضع مؤشر الكتابة في قائمة القنوات"
 msgid "Channel list typing indicators"
 msgstr "مؤشرات الكتابة في قائمة القنوات"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "إدارة القناة"
 
@@ -4776,7 +4776,7 @@ msgstr "تحقق من سمة المخصصة الخاصة بي!"
 msgid "Check your connection and try again."
 msgstr "تحقق من اتصالك وحاول مرة أخرى."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "تحقق من بريدك الإلكتروني"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "قم باسترداد حسابك لاسترداد أو إدارة رموز هدايا البلوتونيوم."
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "تم إعادة توليد سر العميل. قم بتحديث أي ك�
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "إغلاق الحساب"
 msgid "Close DM"
 msgstr "إغلاق الرسائل المباشرة"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "إغلاق النافذة المنبثقة"
 
@@ -5646,7 +5646,7 @@ msgstr "تم تحديث المجتمع"
 msgid "Community Updated"
 msgstr "تم تحديث المجتمع"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "على مستوى المجتمع"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "أكمل مطالبة مفتاح الأمان أولاً."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "إخفاء شارة Plutonium الخاصة بك تمامًا من المستخدمين الآخرين"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "تأكيد كلمة المرور"
 msgid "Connect"
 msgstr "اتصل"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "اتصال (انضم إلى الصوت)"
 
@@ -5855,7 +5855,7 @@ msgstr "معرّف الاتصال"
 msgid "Connection Issue"
 msgstr "مشكلة في الاتصال"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "فُقد الاتصال"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "تحكم في كيفية انضمامك إلى قنوات الصوت في المجتمعات."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "تحكم في كيفية عرض شارة البلوتونيوم الخاصة بك للآخرين"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "أنشئ وادير التطبيقات والروبوتات لحسابك."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "أنشئ وشارك حزم الإيموجي والملصقات المخصصة مع Fluxer Plutonium."
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "نموذج إنشاء المجتمع"
 msgid "Create DM"
 msgstr "إنشاء رسالة خاصة"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "إنشاء رموز تعبيرية وملصقات"
 
@@ -6529,12 +6529,12 @@ msgstr "إنشاء محادثة جماعية"
 msgid "Create Invite"
 msgstr "إنشاء دعوة"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "إنشاء روابط دعوة"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "إنشاء حساب جديد"
 
@@ -6554,11 +6554,11 @@ msgstr "إنشاء مجتمع أو الانضمام إليه"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "إنشاء حزمة ملصقات"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "إنشاء Webhook"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "أنشئ تطبيقك الأول للبدء باستخدام واجهة برمجة تطبيقات Fluxer."
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "إنشاء أو تعديل أو حذف القنوات والفئات."
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "إنشاء أو تعديل أو حذف الأدوار الأقل من أعلى دور لك. كما يسمح بتعديل تجاوزات أذونات القناة."
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "إنشاء أو تعديل أو حذف Webhooks لهذه القناة."
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "إنشاء أو تعديل أو حذف Webhooks."
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "أصوات الدخول المخصصة غير مفعلة في هذه النسخة."
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "أصوات دخول مخصصة مع Plutonium"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "قم بتخصيص الأزرار التي تظهر في منطقة إد�
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "خصص علامتك المكونة من 4 أرقام (#{0}) حسب رغبتك باستخدام Plutonium"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "تخصيص الصورة الرمزية، والشعار، ولون التمييز، والسيرة الذاتية للمجتمعات الفردية غير مفعل في هذه النسخة. اسم المجتمع والضمائر متاحة للجميع."
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "يتطلب تخصيص الصورة الرمزية والبانر ولون التمييز والسيرة الذاتية للمجتمعات الفردية Plutonium. اسم المستخدم المجتمعي والضمائر مجانًا للجميع."
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "إسكات الجهاز"
 msgid "Deafen Keybind"
 msgstr "مفتاح إسكات الصوت"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "كتم صوت الأعضاء"
 
@@ -7428,8 +7428,8 @@ msgstr "حذف الرسائل من آخر يوم"
 msgid "Delete messages from the last week"
 msgstr "حذف الرسائل من آخر أسبوع"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "حذف رسائل الآخرين. (التثبيت منفصل أدناه.)"
 
@@ -8275,8 +8275,8 @@ msgstr "منطقة السحب والإفلات لتحميل الملفات"
 msgid "Drag and drop emoji files here"
 msgstr "اسحب وأفلت ملفات الإيموجي هنا"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "اسحب الأعضاء بين القنوات التي يمكنهم الوصول إليها."
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "تعديل حزمة الرموز التعبيرية"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "تعديل الإعدادات العامة مثل الاسم والوصف والرمز."
 
@@ -8526,11 +8527,11 @@ msgstr "تعديل الرسالة"
 msgid "Edit Note"
 msgstr "تعديل الملاحظة"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "تحرير أو حذف الرموز التعبيرية والملصقات التي أنشأها أعضاء آخرون."
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "تعديل التجاوزات للأدوار والأعضاء في هذه القناة."
 
@@ -8664,7 +8665,7 @@ msgstr "التحقق من البريد الإلكتروني مطلوب"
 msgid "Email Verified Override"
 msgstr "تجاوز التحقق من البريد الإلكتروني"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "تم التحقق من البريد الإلكتروني بنجاح"
 
@@ -8677,8 +8678,8 @@ msgstr "تضمين"
 msgid "Embed"
 msgstr "تضمين"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "تضمين الروابط"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "أدخل رمزًا بالصيغة ABCD-1234."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "أدخل رمز الهدية لاستبدال بلوتونيوم لحسابك."
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "أدخل كلمة مرور آمنة"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "حزم التعبيرات"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "حزم التعبيرات هي ميزة Plutonium"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "يحتاج Fluxer إلى إذن لمراقبة إدخال لوحة ال�
 msgid "Fluxer Partner"
 msgstr "شريك Fluxer"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "يستخدم Fluxer إشعارات الدفع عند تثبيته كتطبيق ويب تقدمي للجوال. يضمن التسجيل قدرة البوابة على الوصول إلى جهازك حتى عندما يكون المتصفح في الخلفية."
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "معدل الإطارات"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "معدلات الإطارات التي تزيد عن 30 إطار في الثانية تتطلب Plutonium"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "احصل على دقة عالية (1080p) و Ultra (1440p) و 4K (2160p)
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "احصل على إشعار عند استلام الرسائل. قد تحتاج إلى السماح بالإشعارات في إعدادات متصفحك. للتحكم لكل قناة/مجتمع، انقر بزر الماوس الأيمن على أيقونة المجتمع وافتح إعدادات الإشعارات."
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "احصل على مطالبة عند توصيل أجهزة صوتية جديدة"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "احصل على Plutonium"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "احصل على Plutonium لنفسك وافتح حدودًا أعلى وميزات حصرية."
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "احصل على Plutonium لتخصيص علامتك"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "احصل على Plutonium لتخصيص علامتك أو الاحتفاظ بها عند تغيير اسم المستخدم الخاص بك"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "احصل على مطالبة عند توصيل أجهزة صوتية جديدة"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "احصل على تطبيق Fluxer لسطح المكتب لاستخدام push-to-talk على مستوى النظام وبعض الميزات الأخرى."
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "تم استبدال الهدية بنجاح!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "تم استبدال الهدية بنجاح! استمتع بـ Plutonium الخاص بك!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "انتقل إلى المكالمة الحالية"
 msgid "Go to Home"
 msgstr "انتقل إلى الصفحة الرئيسية"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "انتقل إلى تسجيل الدخول"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "انتقل إلى الصفحة {page}"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "انتقل إلى Plutonium"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "تم منح {0} وسحب {1}."
 msgid "Granted {0}."
 msgstr "تم منح {0}."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "يمنح جميع الصلاحيات ويتجاوز قيود القنوات. حساس للغاية."
 
@@ -11566,22 +11564,22 @@ msgstr "إخفاء كلمة المرور"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "إخفاء نافذة الصورة في الصورة؟"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "إخفاء شارة البلوتونيوم بالكامل"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "إخفاء تاريخ شراء البلوتونيوم"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "إخفاء تاريخ شراء البلوتونيوم ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "إخفاء النافذة المنبثقة (اطلب تذكرها)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "المدة التي يجب تعليق هذا المستخدم خلالها."
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "عدد أشهر بلوتونيوم التي يوفرها الهدية التجريبية"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "تجاهل"
 msgid "Ignore Friend Request"
 msgstr "تجاهل طلب الصداقة"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "تجاهل حدود معدل الرسائل لكل قناة."
 
@@ -12569,7 +12567,7 @@ msgstr "الدعوات موقفة مؤقتاً"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "الدعوات إلى <0>{0}</0> معطلة حالياً"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "عنوان IP مصرح به"
 
@@ -12957,7 +12955,7 @@ msgstr "طرد عضو من هذه المجتمع."
 msgid "Kick Member"
 msgstr "طرد عضو"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "طرد أعضاء"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "تخطيطات لملحقات الصور من 1-10 باستخدام أصول CDN."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "تعرف على Plutonium"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "مدى الحياة"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Plutonium مدى الحياة"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "تم نسخ الرابط إلى الحافظة"
 msgid "Link copied!"
 msgstr "تم نسخ الرابط!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "انتهت صلاحية الرابط. من المحتمل أن بريدك الإلكتروني قد تم التحقق منه بالفعل."
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "انتهت صلاحية الرابط. من المحتمل أن عنوان IP الخاص بك قد تم تفويضه بالفعل."
 
@@ -13592,17 +13590,17 @@ msgstr "إدارة التطبيقات المصرح بها"
 msgid "Manage blocked users"
 msgstr "إدارة المستخدمين المحظورين"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "إدارة القناة"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "إدارة القنوات"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "إدارة المجتمع"
 
@@ -13614,7 +13612,7 @@ msgstr "إدارة ميزات المجتمع"
 msgid "Manage developer applications"
 msgstr "إدارة تطبيقات المطورين"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "إدارة الإيموجي والملصقات"
 
@@ -13622,7 +13620,7 @@ msgstr "إدارة الإيموجي والملصقات"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "إدارة حزم الإيموجي والملصقات التي قمت بإنشائها أو تثبيتها."
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "إدارة webhooks الواردة التي يمكنها نشر رسائ
 msgid "Manage invites for this channel."
 msgstr "إدارة الدعوات لهذه القناة."
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "إدارة الرسائل"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "إدارة الألقاب"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "إدارة الأذونات"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "إدارة الأدوار"
 
@@ -13666,12 +13664,12 @@ msgstr "إدارة الاشتراك"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "إدارة عنوان البريد الإلكتروني الذي تستخدمه لتسجيل الدخول إلى Fluxer"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "إدارة Webhooks"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "إدارة رقم هاتفك للمصادقة الثنائية عبر الرسائل القصيرة"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "إدارة رموز الهدايا Plutonium التي اشتريتها. شارك رابط الهدية مع شخص مميز أو استبدلها لنفسك!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "وسائط"
 msgid "Media Buttons"
 msgstr "أزرار الوسائط"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "عناصر تحكم الوسائط"
 
@@ -14114,8 +14112,8 @@ msgstr "ذكر @here؟"
 msgid "Mention Badges"
 msgstr "شارات الذكر"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "ذكر الجميع أو أي دور (حتى لو لم يتم تعيين الدور ليكون قابلًا للذكر)."
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "الرسائل"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "الرسائل والوسائط"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "الوضع ج"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "الإشراف"
 
@@ -14559,7 +14557,7 @@ msgstr "فتحات إيموجي إضافية"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "خيارات إضافية"
@@ -14613,8 +14611,8 @@ msgstr "تحريك التركيز عبر الأزرار وحقول الإدخا�
 msgid "Move focus to the message composer"
 msgstr "تحريك التركيز إلى محرر الرسائل"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "نقل الأعضاء"
 
@@ -14781,8 +14779,8 @@ msgstr "كتم المفضلات"
 msgid "Mute Keybind"
 msgstr "مفتاح كتم الصوت"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "كتم الأعضاء"
 
@@ -15126,11 +15124,11 @@ msgstr "الأحدث أولاً"
 msgid "Next"
 msgstr "التالي"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "المرفق التالي"
 
@@ -16112,8 +16110,8 @@ msgstr "فتح Fluxer"
 msgid "Open image in full view"
 msgstr "فتح الصورة في عرض كامل"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "فتح في المتصفح"
 
@@ -16331,8 +16329,8 @@ msgstr "آخر"
 msgid "Other Devices"
 msgstr "أجهزة أخرى"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "وإلا فإن الضغط للتحدث مطلوب."
 
@@ -16810,8 +16808,8 @@ msgstr "ثبته. ثبته جيدًا."
 msgid "Pin Message"
 msgstr "تثبيت الرسالة"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "تثبيت الرسائل"
 
@@ -17013,19 +17011,6 @@ msgstr "يرجى الانتظار بينما نكمل تسجيل دخولك."
 msgid "plutonium"
 msgstr "بلوتونيوم"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "خصوصية شارة Plutonium"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "مزايا Plutonium"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "بولندا"
@@ -17159,7 +17144,7 @@ msgstr "منع <0>{0}</0> من إرسال الرسائل والتفاعل وال
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "منع <0>{0}</0> من إرسال الرسائل والتفاعل والانضمام إلى قنوات الصوت للمدة المحددة."
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "منع الأعضاء من إرسال الرسائل والتفاعل والانضمام إلى الصوت لمدة محددة."
 
@@ -17219,11 +17204,11 @@ msgstr "الساعات 24 السابقة"
 msgid "Previous 7 Days"
 msgstr "الأيام 7 السابقة"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "المرفق السابق"
 
@@ -17263,8 +17248,8 @@ msgstr "الإجراء الأساسي"
 msgid "Primary button clicked!"
 msgstr "تم النقر على الزر الأساسي!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "المتكلم ذو الأولوية"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "بوت عام"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "اشترِ هدية Plutonium من علامة تبويب Plutonium لتشاركها مع الأصدقاء!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "إعادة التنشيط"
 msgid "read aloud"
 msgstr "اقرأ بصوت عالٍ"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "قراءة سجل الرسائل"
 
@@ -17621,7 +17606,7 @@ msgstr "قراءة سجل الرسائل"
 msgid "read messages"
 msgstr "اقرأ الرسائل"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "اقرأ سجل التدقيق للمجتمع للتغييرات وإجراءات الإشراف."
 
@@ -17865,6 +17850,10 @@ msgstr "ذو صلة"
 msgid "Reload app"
 msgstr "إعادة تحميل التطبيق"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "ابق صامتًا ما لم يقم أحد بتشغيل /tts يدويًا."
@@ -18022,8 +18011,8 @@ msgstr "إزالة صديق"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "إزالة من المفضلة"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "إزالة المهلة"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "إزالة عندما اشتريت Plutonium لأول مرة من شارتك"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "إعادة تسمية"
 msgid "Rename :{0}:"
 msgstr "إعادة تسمية :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "إعادة تسمية وتعديل إعدادات هذه القناة."
 
@@ -18474,8 +18463,8 @@ msgstr "يتطلب كل شيء في المستوى المتوسط، بالإضا
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "يتطلب Plutonium"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "إعادة إرسال الرمز"
 msgid "Resend Code"
 msgstr "إعادة إرسال الرمز"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "إعادة إرسال البريد الإلكتروني"
 
@@ -18536,7 +18525,7 @@ msgstr "نتيجة إعادة الإرسال"
 msgid "Resend Verification Email"
 msgstr "إعادة إرسال بريد التحقق"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "أُعيد إرساله"
 
@@ -18628,6 +18617,10 @@ msgstr "تغيير حجم الصورة في الصورة"
 msgid "Resolution"
 msgstr "الدقة"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "استعادة الحساب"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "إعادة الاشتراك"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "كشف"
 msgid "Reveal spoiler"
 msgstr "كشف المحتوى المخفي"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "حفظ الأيقونة"
 msgid "Save Image"
 msgstr "حفظ الصورة"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "حفظ الوسائط"
 
@@ -19688,16 +19691,16 @@ msgstr "إرسال الرسالة معطل"
 msgid "Send messages"
 msgstr "إرسال الرسائل"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "إرسال الرسائل"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "إرسال رمز الرسالة القصيرة"
 msgid "Send SMS Code"
 msgstr "إرسال رمز الرسالة القصيرة"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "إرسال رسائل النص إلى كلام."
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "إرسال رسائل النص إلى كلام"
 
@@ -19971,8 +19974,8 @@ msgstr "تعيين مستوى التحقق إلى <0>متوسط</0>."
 msgid "Set verification level to <0>None</0>."
 msgstr "تعيين مستوى التحقق إلى <0>لا شيء</0>."
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "تعيين منطقة الصوت"
 
@@ -20260,8 +20263,8 @@ msgstr "إظهار بحد أقصى 5 (+5 شارة)"
 msgid "Show Media Button"
 msgstr "إظهار زر الوسائط"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "إظهار معلومات الوسائط"
 
@@ -20880,8 +20883,8 @@ msgstr "الإسبانية (أمريكا اللاتينية)"
 msgid "Spanish (Spain)"
 msgstr "الإسبانية (إسبانيا)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "تحدث"
 
@@ -21331,8 +21334,8 @@ msgstr "معاينة البث"
 msgid "Stream Quality"
 msgstr "جودة البث"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "بث الفيديو"
 
@@ -22598,7 +22601,7 @@ msgstr "مدة المهلة"
 msgid "Timeout ends {0} ({1})"
 msgstr "تنتهي المهلة {0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "أعضاء المهلة"
 
@@ -23508,49 +23511,49 @@ msgstr "ملصقات غير محدودة"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "افتح {emojiLabel} من {communityLabel} باستخدام البلوتونيوم."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "افتح {stickerLabel} من {communityLabel} باستخدام البلوتونيوم."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "فتح جميع الإيموجيات والملصقات المخصصة عبر جميع المجتمعات مع Plutonium"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "فتح الإيموجيات المخصصة في الرسائل المباشرة مع Plutonium"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "فتح الإيموجيات المخصصة الخارجية مع Plutonium"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "فتح الملصقات الخارجية مع Plutonium"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "فتح مشاركة الشاشة بدقة عالية مع Plutonium"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "فتح الفيديو بدقة عالية مع Plutonium"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "فتح خلفيات أكثر مع Plutonium"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "فتح الملصقات في الرسائل المباشرة مع Plutonium"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "مهلة التحديث"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "تحديث أيقونتك واسمك ولافتتك وخلفية الدعوة"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "تحديث لقبك الخاص."
 
@@ -23879,8 +23882,8 @@ msgstr "قم بالترقية الآن"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "الترقية إلى Plutonium"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "رفع أيقونة"
 msgid "Upload Image"
 msgstr "رفع صورة"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "رفع رموز تعبيرية وملصقات جديدة، وإدارة إبداعاتك الخاصة."
 
@@ -24037,8 +24040,8 @@ msgstr "روابط لتحميل أي مرفقات من رسائلك"
 msgid "US East"
 msgstr "الولايات المتحدة الشرقية"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "استخدم @everyone/@here و @roles"
 
@@ -24100,17 +24103,17 @@ msgstr "استخدم السمة الداكنة عبر التطبيق"
 msgid "Use Different Email"
 msgstr "استخدام بريد إلكتروني مختلف"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "استخدم الرموز التعبيرية من المجتمعات الأخرى."
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "استخدم الرموز التعبيرية الخارجية"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "استخدم الملصقات الخارجية"
 
@@ -24163,8 +24166,8 @@ msgstr "استخدم هذا الزر لمسح جميع الأذونات بسرع
 msgid "Use this shortcut system-wide"
 msgstr "استخدم هذا الاختصار عبر النظام"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "استخدم نشاط الصوت"
 
@@ -24471,7 +24474,7 @@ msgstr "تم إرسال رمز التحقق. تحقق من صندوق البري
 msgid "Verification email sent! Please check your inbox."
 msgstr "تم إرسال بريد التحقق! يرجى التحقق من صندوق الوارد الخاص بك."
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "فشل التحقق"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "نموذج تحقق الاتصال"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "تحقق من البريد الإلكتروني"
 
@@ -24548,6 +24551,10 @@ msgstr "تحقق من هويتك"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "جاري التحقق..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "خيارات الفيديو"
 msgid "video preview"
 msgstr "معاينة الفيديو"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "معاينة الفيديو"
@@ -24644,7 +24651,7 @@ msgstr "عرض ملف {0}"
 msgid "View active sessions"
 msgstr "عرض الجلسات النشطة"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "عرض سجل النشاط"
 
@@ -24692,8 +24699,8 @@ msgstr "عرض المكالمة"
 msgid "View call controls"
 msgstr "عرض عناصر تحكم المكالمة"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "عرض القناة"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (مدى الحياة #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (مدى الحياة Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "لم نتمكن من تبديل الحسابات. يرجى المحاولة مرة أخرى."
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "أرسلنا رابطًا عبر البريد الإلكتروني لتفويض هذا تسجيل الدخول. يرجى فتح صندوق الوارد الخاص بك لـ {0}."
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "واجهنا عقبة. حاول تعديل رسالتك مرة أخرى.
 msgid "We hit a snag. Try sending your message again."
 msgstr "واجهنا عقبة. حاول إرسال رسالتك مرة أخرى."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "فقدنا الاتصال أثناء انتظار التخويل. يُرجى المحاولة مرة أخرى."
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "مع خطأ"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "مع بلوتونيوم، يمكنك استخدام الصور الرمزية المتحركة واللافتات (بصيغة GIF، APNG، WebP المتحركة، أو AVIF)، تخصيص علامة الـ 4 أرقام الخاصة بك، وفتح العديد من الميزات المميزة الأخرى."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "لا يمكنك التفاعل مع هذا المستخدم الآن."
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "لا يمكنك استبدال رموز الهدايا Plutonium بينما لديك اشتراك Visionary."
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "لقد وصلت إلى النهاية"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "لقد وصلت إلى الحد الأقصى من {freeItemsText} للمستخدمين المجانيين. قم بالترقية إلى Plutonium لزيادة حدك إلى {premiumItemsText}!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "لقد وصلت إلى الحد الأقصى من عدد الإشارات المرجعية ({bookmarksText}). تم تكوين هذا الحد بواسطة مسؤول الحالة الخاص بك. يرجى إزالة بعض الإشارات المرجعية قبل إضافة جديدة."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "لقد وصلت إلى الحد الأقصى من عدد الإشارات المرجعية للمستخدمين المجانيين ({bookmarksText}). قم بالترقية إلى Plutonium لزيادة حدك إلى {premiumBookmarksText}، أو قم بإزالة بعض الإشارات المرجعية لإضافة جديدة."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "سيتم قائمة طلب الحذف ومعالجته في الخلفي
 msgid "Your email address has been updated."
 msgstr "تم تحديث عنوان بريدك الإلكتروني."
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "تم التحقق من بريدك الإلكتروني. يمكنك الآن تسجيل الدخول إلى حسابك."
 
@@ -26355,7 +26362,7 @@ msgstr "دعوتك تنتهي خلال 24 ساعة"
 msgid "Your invite link expires in {0}."
 msgstr "رابط دعوتك ينتهي في {0}."
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "تمت تفويض عنوان IP الخاص بك بنجاح."
 
@@ -26399,10 +26406,6 @@ msgstr "تم إلغاء دفعتك. يمكنك الآن إغلاق هذه الن
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "مساحتك الشخصية للوصول السريع إلى القنوات والرسائل المباشرة والمجموعات التي تحبها. اضغط على النجم على أي قناة لإضافتها هنا."
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "انتهت صلاحية اشتراكك في Plutonium. لقد فقدت جميع مزايا Plutonium. أعد تفعيل اشتراكك لاستعادة الوصول."
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "مساحتك الخاصة"
@@ -26423,6 +26426,10 @@ msgstr "هداياك المشتراة"
 msgid "your region"
 msgstr "منطقتك"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "انتهت صلاحية اشتراكك في <0>{expiredDate}</0>. فقدت كل <1/>. يمكنك إعادة التفعيل في أي وقت."
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "فشل تجديد اشتراكك، لكن لا يزال لديك حق الوصول إلى مزايا Plutonium حتى <0>{formattedGraceDate}</0>. اتخذ إجراء الآن وإلا ستفقد كل المزايا."
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "زووم"
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "تكبير"
 
@@ -26491,8 +26498,8 @@ msgstr "تكبير"
 msgid "Zoom In"
 msgstr "تكبير"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "تصغير"
 

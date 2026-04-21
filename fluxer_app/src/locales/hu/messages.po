@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} tag"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} a(z) {totalAttachments} közül"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} nézi"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} Ezt a korlátot az ön példányának adminisztrátora
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} A Plutóniummal a fájlonkénti feltöltési korlátod {0}-ra nő, emellett animált avatárok, hosszabb üzenetek és sok más prémium funkció is elérhető."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (kiválasztva)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} hónap a Plutóniumból"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} hónap a Plutóniumból"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "maradt {remaining} karakter"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "maradt {remaining} karakter. Szerezd meg a Plutoniumot, hogy akár {premiumMaxLength} karaktert írhass."
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "1 év ajándék"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "1 év Plutonium"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "Barátok hozzáadása a csoporthoz"
 msgid "Add Item"
 msgstr "Elem hozzáadása"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "Új reakciók hozzáadása az üzenetekhez."
 
@@ -1971,8 +1971,8 @@ msgstr "Telefonszám hozzáadása űrlap"
 msgid "Add Reaction"
 msgstr "Reakció hozzáadása"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "Reakciók hozzáadása"
 
@@ -2015,8 +2015,8 @@ msgstr "Hozzáadás a szótárhoz"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "Hozzáadás a kedvencekhez"
 
@@ -2129,7 +2129,7 @@ msgstr "Állítsd be az összes témaszín telítettségét."
 msgid "Adjust the spacing between groups of messages."
 msgstr "Állítsd be az üzenetcsoportok közötti távolságot."
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "Rendszergazda"
 
@@ -2543,11 +2543,11 @@ msgstr "Érvénytelen állapot lett megadva. Most bezárhatod ezt a lapot, és v
 msgid "An unexpected error occurred. Please try again."
 msgstr "Váratlan hiba történt. Kérjük, próbáld újra."
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "Váratlan szerver hiba történt. Kérjük, próbáld újratölteni az oldalt vagy újra bejelentkezni."
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "Váratlan szerver hiba történt. Kérjük, próbáld újratölteni az oldalt vagy új ellenőrző e-mailt kérni."
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "Animálás interakciókor"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "Az animált avatárok (GIF, APNG, animált WebP, AVIF) prémium funkció, amely kizárólag a Plutonium előfizetők számára elérhető."
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "Animált avatárok nem elérhetők"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "Animált avatárokhoz Plutonium szükséges"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "Archívum"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "Ajándékként"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "Legalább egy csatornának engedélyezve kell lennie a \"Csatorna megtekintése\" jogosultságnak @everyone számára ahhoz, hogy a vanity URL működjön. Jelenleg egyetlen csatorna sem látható @everyone számára."
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "Fájlok csatolása"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "Csatolmány {0}"
@@ -3136,7 +3136,7 @@ msgstr "Csak csatolmányt tartalmazó üzenet"
 msgid "Attachment preview"
 msgstr "Melléklet előnézete"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "Csatolmány bélyegképek"
 
@@ -3160,7 +3160,7 @@ msgstr "hang"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "Hang"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "Hang és videó"
 
@@ -3261,7 +3261,7 @@ msgstr "Szerzői változatok"
 msgid "author-type:"
 msgstr "szerzőtípus:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "Hitelesítés sikertelen"
 
@@ -3287,7 +3287,7 @@ msgstr "Engedélyezés"
 msgid "Authorize Application"
 msgstr "Alkalmazás engedélyezése"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "IP-cím engedélyezése"
 
@@ -3446,7 +3446,7 @@ msgstr "avatarok"
 msgid "Average ping:"
 msgstr "Átlag ping:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "A kitiltás ekkor jár le: {0}."
 msgid "Ban Member"
 msgstr "Tag kitiltása"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "Tagok kitiltása"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "Lassított mód kihagyása"
 
@@ -4461,11 +4461,11 @@ msgstr "Becenév módosítása"
 msgid "Change nickname form"
 msgstr "Becenév módosítása"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "Más tagok becenevének módosítása."
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "Saját becenév módosítása"
 
@@ -4556,8 +4556,8 @@ msgstr "csatorna"
 msgid "Channel"
 msgstr "Csatorna"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "Csatorna-hozzáférés"
 
@@ -4635,7 +4635,7 @@ msgstr "Csatornalista gépelésjelző módja"
 msgid "Channel list typing indicators"
 msgstr "Csatornalista írási jelzők"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "Csatornakezelés"
 
@@ -4776,7 +4776,7 @@ msgstr "Nézd meg az egyéni témámat!"
 msgid "Check your connection and try again."
 msgstr "Ellenőrizd a kapcsolatodat, és próbáld újra."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "Ellenőrizd az e-mailjeidet"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "Igényeld a fiókodat Plutonium ajándék kódok beváltásához vagy kezeléséhez."
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "Kliens titok újragenerálva. Frissítsd minden kódot, amely a régi ti
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "fiók bezárása"
 msgid "Close DM"
 msgstr "DM bezárása"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "Modális ablak bezárása"
 
@@ -5646,7 +5646,7 @@ msgstr "Közösség frissítve"
 msgid "Community Updated"
 msgstr "Közösség frissítve"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "Teljes közösségre vonatkozó"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "Először fejezd be a biztonsági kulcs kérést."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "Rejtsd el teljesen a Plutonium jelvényed a többi felhasználó elől"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "Jelszó megerősítése"
 msgid "Connect"
 msgstr "Csatlakozás"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "Csatlakozás (Hangcsatorna csatlakozás)"
 
@@ -5855,7 +5855,7 @@ msgstr "Kapcsolati azonosító"
 msgid "Connection Issue"
 msgstr "Kapcsolati probléma"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "Kapcsolat megszakadt"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "Szabályozd, hogyan csatlakozol hangcsatornákhoz közösségekben."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "Szabályozd, hogyan jelenik meg a Plutonium jelvényed másoknak"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Alkalmazások és botok létrehozása és kezelése a fiókodhoz."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Egyedi emoji- és matrica csomagok létrehozása és megosztása a Fluxer Plutoniummal."
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "Közösség létrehozása űrlap"
 msgid "Create DM"
 msgstr "Privát üzenet létrehozása"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "Emoji és matricák létrehozása"
 
@@ -6529,12 +6529,12 @@ msgstr "Csoportos DM létrehozása"
 msgid "Create Invite"
 msgstr "Meghívó létrehozása"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "Meghívó linkek létrehozása"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "Új fiók létrehozása"
 
@@ -6554,11 +6554,11 @@ msgstr "Közösség létrehozása vagy csatlakozás"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "Matricacsomag létrehozása"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "Webhook létrehozása"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "Hozd létre az első alkalmazásod a Fluxer API használatának elkezdéséhez."
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "Csatornák és kategóriák létrehozása, szerkesztése vagy törlése."
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "Szerepkörök létrehozása, szerkesztése vagy törlése a legmagasabb szerepköröd alatt. Lehetővé teszi a csatorna engedélyfelülírások szerkesztését is."
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "Webhookok létrehozása, szerkesztése vagy törlése ehhez a csatornához."
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "Webhookok létrehozása, szerkesztése vagy törlése."
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "Egyéni belépési hangok nincsenek engedélyezve ezen az instancián."
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "Egyéni belépési hangok Plutoniummal"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "Testreszabhatod, hogy mely gombok láthatók az üzenetbeviteli terület
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "Személyre szabhatod a 4 számjegyű címkédet (#{0}) a Plutónium segítségével"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "Az avatarod, bannered, hangsúlyos szín és bio testreszabása egyedi közösségekhez nem engedélyezett ezen az példányon. A közösségi becenév és a névmások mindenki számára elérhetők."
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "Az avatárod, banner, hangsúlyos szín és bio egyedi közösségekhez történő testreszabásához Plutonium szükséges. A közösségi becenév és névmások mindenki számára ingyenesek."
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "Némítsd el az eszközt"
 msgid "Deafen Keybind"
 msgstr "Siketítés billentyűkombinációja"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "Tagok siketítése"
 
@@ -7428,8 +7428,8 @@ msgstr "Az elmúlt nap üzeneteinek törlése"
 msgid "Delete messages from the last week"
 msgstr "Az elmúlt hét üzeneteinek törlése"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "Mások üzeneteinek törlése. (A rögzítés külön van alább.)"
 
@@ -8275,8 +8275,8 @@ msgstr "Húzd és ejtsd terület fájlfeltöltéshez"
 msgid "Drag and drop emoji files here"
 msgstr "Húzd és ejtsd ide az emoji fájlokat"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "Húzd a tagokat az elérhető csatornák között."
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "Emoji csomag szerkesztése"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "Globális beállítások szerkesztése, mint a név, leírás és ikon."
 
@@ -8526,11 +8527,11 @@ msgstr "Üzenet szerkesztése"
 msgid "Edit Note"
 msgstr "Jegyzet szerkesztése"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "Szerkeszd vagy töröld a más tagok által létrehozott emoji-kat és matricákat."
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "Szerepek és tagok felülírásainak szerkesztése ezen a csatornán."
 
@@ -8664,7 +8665,7 @@ msgstr "Email ellenőrzése szükséges"
 msgid "Email Verified Override"
 msgstr "E-mail ellenőrzés felülbírálása"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "E-mail sikeresen ellenőrizve"
 
@@ -8677,8 +8678,8 @@ msgstr "beágyazás"
 msgid "Embed"
 msgstr "Beágyazás"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "Linkek beágyazása"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "Írj be egy kódot a következő formátumban: ABCD-1234."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "Írd be az ajándékkódot, hogy beváltasd a Plutoniumot a fiókodba."
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "Írj be egy biztonságos jelszót"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "Kifejezés csomagok"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "A Kifejezés csomagok egy Plutonium funkció"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "A Fluxernek engedélyre van szüksége a billentyűzet és egér bevitel
 msgid "Fluxer Partner"
 msgstr "Fluxer Partner"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "A Fluxer push-értesítéseket használ, ha mobil PWA-ként van telepítve. A regisztráció biztosítja, hogy az átjáró elérje az eszközöd, még ha a böngésző háttérben is van."
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "Képkockasebesség"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "A 30 FPS-nél magasabb képkockasebességhez Plutonium szükséges"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "Szerezd meg a Magas (1080p), Ultra (1440p) és 4K (2160p) felbontásokat
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "Kapj értesítést, amikor üzenetet kapsz. Lehet, hogy engedélyezned kell az értesítéseket a böngésző beállításaiban. Csatornánként/közösségenkénti vezérléshez kattints jobb gombbal egy közösség ikonjára, és nyisd meg az Értesítési beállításokat."
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "Kapj felkérést, amikor új hangeszközök csatlakoznak"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "Plutonium beszerzése"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "Szerezd meg magadnak a Plutoniumot, és nyisd fel a magasabb korlátokat és exkluzív funkciókat."
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "Szerezd meg a Plutoniumot, hogy személyre szabhassad a címkédet"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "Szerezd meg a Plutoniumot, hogy személyre szabhassad a címkédet, vagy megtartsd, amikor megváltoztatod a felhasználóneved"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "Kapj felkérést, amikor új hangeszközök csatlakoznak"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Szerezd meg a Fluxer asztali alkalmazást rendszerszintű push-to-talk-hoz és néhány egyéb extra funkcióhoz."
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "Ajándék sikeresen beváltva!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "Ajándék sikeresen beváltva! Élvezd a Plutoniumodat!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "Ugrás az aktuális hívásra"
 msgid "Go to Home"
 msgstr "Ugrás a Kezdőlapra"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "Ugrás a bejelentkezéshez"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "Ugrás a(z) {page} oldalra"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "Ugrás a Plutoniumra"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "{0} engedélyezve és {1} visszavonva."
 msgid "Granted {0}."
 msgstr "{0} engedélyezve."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "Minden jogosultságot ad és megkerüli a csatornakorlátozásokat. Nagyon érzékeny."
 
@@ -11566,22 +11564,22 @@ msgstr "Jelszó elrejtése"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "Elrejted a Kép a Képben Popout-ot?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "Plutonium jelvény teljes elrejtése"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "Plutonium vásárlás dátumának elrejtése"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "Plutonium vásárlás dátumának elrejtése ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "Pop-out elrejtése (kérjük, hogy emlékezzen rá)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "Meddig legyen időtúllépésben ez a felhasználó."
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "Hány hónap Plutoniumot nyújt a próbaajándék"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "Mellőzés"
 msgid "Ignore Friend Request"
 msgstr "Barátkérelem mellőzése"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "Csatornánkénti üzenetküldési korlátok mellőzése."
 
@@ -12569,7 +12567,7 @@ msgstr "Meghívók szüneteltetve"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "A <0>{0}</0> közösség meghívói jelenleg letiltva vannak"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "IP-cím engedélyezve"
 
@@ -12957,7 +12955,7 @@ msgstr "Tag kirúgása ebből a közösségből."
 msgid "Kick Member"
 msgstr "Tag kirúgása"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "Tagok kirúgása"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "Elrendezések 1-10 kép csatolmányhoz CDN eszközökkel."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "Tudj meg többet a Plutoniumról"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "Élethosszig"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Élethosszig Plutonium"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "Hivatkozás a vágólapra másolva"
 msgid "Link copied!"
 msgstr "Hivatkozás másolva!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "A hivatkozás lejárt. Az e-mail címed valószínűleg már ellenőrizve lett."
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "A hivatkozás lejárt. Az IP-címed valószínűleg már engedélyezve lett."
 
@@ -13592,17 +13590,17 @@ msgstr "Engedélyezett alkalmazások kezelése"
 msgid "Manage blocked users"
 msgstr "Letiltott felhasználók kezelése"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "Csatorna kezelése"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "Csatornák kezelése"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "Közösség kezelése"
 
@@ -13614,7 +13612,7 @@ msgstr "Közösségi Funkciók Kezelése"
 msgid "Manage developer applications"
 msgstr "Fejlesztői alkalmazások kezelése"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "Emojik és matricák kezelése"
 
@@ -13622,7 +13620,7 @@ msgstr "Emojik és matricák kezelése"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "Az általad létrehozott vagy telepített emoji- és matricacsomagok kezelése."
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "A bejövő webhookok kezelése, amelyek üzeneteket küldhetnek ebbe a c
 msgid "Manage invites for this channel."
 msgstr "A csatorna meghívóinak kezelése."
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "Üzenetek kezelése"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "Becenevek kezelése"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "Engedélyek kezelése"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "Szerepek kezelése"
 
@@ -13666,12 +13664,12 @@ msgstr "Előfizetés kezelése"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "A Fluxerbe való bejelentkezéshez használt e-mail cím kezelése"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "Webhookok kezelése"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "Telefonszámod kezelése SMS-es kétlépcsős hitelesítéshez"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "A megvásárolt Plutonium ajándékkódjaid kezelése. Oszd meg az ajándék URL-jét valaki különlegessel, vagy váltsd be magadnak!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "Média"
 msgid "Media Buttons"
 msgstr "Média Gombok"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "Médiavezérlők"
 
@@ -14114,8 +14112,8 @@ msgstr "Megemlítsem @here?"
 msgid "Mention Badges"
 msgstr "Megemlítési jelvények"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "Mindenkit vagy bármely szerepet megemlíthetsz (még akkor is, ha a szerep nincs beállítva megemlíthetőnek)."
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "Üzenetek"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "Üzenetek és média"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "C mód"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "Moderálás"
 
@@ -14559,7 +14557,7 @@ msgstr "Több emoji hely"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "További lehetőségek"
@@ -14613,8 +14611,8 @@ msgstr "Fókusz mozgatása a gombok, beviteli mezők és hivatkozások között.
 msgid "Move focus to the message composer"
 msgstr "Fókusz mozgatása az üzenetszerkesztőbe"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "Tagok áthelyezése"
 
@@ -14781,8 +14779,8 @@ msgstr "Kedvencek némítása"
 msgid "Mute Keybind"
 msgstr "Némítás billentyűkombinációval"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "Tagok némítása"
 
@@ -15126,11 +15124,11 @@ msgstr "Legújabb először"
 msgid "Next"
 msgstr "Következő"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "Következő melléklet"
 
@@ -16112,8 +16110,8 @@ msgstr "Fluxer megnyitása"
 msgid "Open image in full view"
 msgstr "Kép megnyitása teljes nézetben"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "Megnyitás böngészőben"
 
@@ -16331,8 +16329,8 @@ msgstr "Egyéb"
 msgid "Other Devices"
 msgstr "Más eszközök"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "Egyébként a nyomd-tart-és-beszélj szükséges."
 
@@ -16810,8 +16808,8 @@ msgstr "Rögzítsd. Jól rögzítsd."
 msgid "Pin Message"
 msgstr "Üzenet rögzítése"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "Üzenetek rögzítése"
 
@@ -17013,19 +17011,6 @@ msgstr "Kérjük, várjon, amíg befejezzük a bejelentkezést."
 msgid "plutonium"
 msgstr "plutónium"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "Plutonium jelvény adatvédelem"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "Plutonium előnyök"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "Lengyelország"
@@ -17159,7 +17144,7 @@ msgstr "Akadályozd meg, hogy <0>{0}</0> üzeneteket küldjön, reagáljon és h
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "Akadályozd meg, hogy <0>{0}</0> üzeneteket küldjön, reagáljon és hangcsatornákhoz csatlakozzon a megadott időtartam alatt."
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "Akadályozd meg, hogy a tagok üzeneteket küldjenek, reagáljanak és hanghoz csatlakozzanak egy ideig."
 
@@ -17219,11 +17204,11 @@ msgstr "Előző 24 óra"
 msgid "Previous 7 Days"
 msgstr "Előző 7 nap"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "Előző melléklet"
 
@@ -17263,8 +17248,8 @@ msgstr "Elsődleges művelet"
 msgid "Primary button clicked!"
 msgstr "Elsődleges gomb megnyomva!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "Prioritásos beszélő"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "Nyilvános bot"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "Vásárolj egy Plutonium ajándékot a Plutonium lapon, hogy megoszthasd barátaiddal!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "Újra aktiválás"
 msgid "read aloud"
 msgstr "felolvasás"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "Üzenet előzmények olvasása"
 
@@ -17621,7 +17606,7 @@ msgstr "Üzenet előzmények olvasása"
 msgid "read messages"
 msgstr "üzenetek felolvasása"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "Olvasd el a közösség változásainak és moderációs műveleteinek audit naplóját."
 
@@ -17865,6 +17850,10 @@ msgstr "Releváns"
 msgid "Reload app"
 msgstr "Alkalmazás újratöltése"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "Maradj csendben, hacsak valaki nem futtatja a /tts-t manuálisan."
@@ -18022,8 +18011,8 @@ msgstr "Barát eltávolítása"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "Eltávolítás a kedvencekből"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "Időtúllépés eltávolítása"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "Eltávolítása, amikor először vásárolt Plutoniumot a jelvényéről"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "Átnevezés"
 msgid "Rename :{0}:"
 msgstr "Átnevezés :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "Átnevezés és a csatorna beállításainak szerkesztése."
 
@@ -18474,8 +18463,8 @@ msgstr "A Közepes szint minden feltétele, plusz legalább 10 perces tagság a 
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "Plutonium szükséges"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "Kód újraküldése"
 msgid "Resend Code"
 msgstr "Kód újraküldése"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "E-mail újraküldése"
 
@@ -18536,7 +18525,7 @@ msgstr "Újraküldés eredménye"
 msgid "Resend Verification Email"
 msgstr "Megerősítő e-mail újraküldése"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "Újraküldve"
 
@@ -18628,6 +18617,10 @@ msgstr "Kép a képben átméretezése"
 msgid "Resolution"
 msgstr "Felbontás"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "Fiók visszaállítása"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "Újra feliratkozás"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "Felfedés"
 msgid "Reveal spoiler"
 msgstr "Spoiler felfedése"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "Ikon mentése"
 msgid "Save Image"
 msgstr "Kép mentése"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "Média mentése"
 
@@ -19688,16 +19691,16 @@ msgstr "Üzenetküldés letiltva"
 msgid "Send messages"
 msgstr "Üzenetek küldése"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "Üzenetek küldése"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "SMS-kód küldése"
 msgid "Send SMS Code"
 msgstr "SMS-kód küldése"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "Szövegfelolvasásos üzenetek küldése."
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "TTS üzenetek küldése"
 
@@ -19971,8 +19974,8 @@ msgstr "Állítsd a hitelesítési szintet <0>Közepesre</0>."
 msgid "Set verification level to <0>None</0>."
 msgstr "Állítsd a hitelesítési szintet <0>Nincsre</0>."
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "Hangrégió beállítása"
 
@@ -20260,8 +20263,8 @@ msgstr "Legfeljebb 5 megjelenítése (+5 jelvény)"
 msgid "Show Media Button"
 msgstr "Média gomb megjelenítése"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "Média információk megjelenítése"
 
@@ -20880,8 +20883,8 @@ msgstr "Spanyol (Latin-Amerika)"
 msgid "Spanish (Spain)"
 msgstr "Spanyol (Spanyolország)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "Beszélj"
 
@@ -21331,8 +21334,8 @@ msgstr "Stream előnézet"
 msgid "Stream Quality"
 msgstr "Stream minőség"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "Videó streamelése"
 
@@ -22598,7 +22601,7 @@ msgstr "Kitiltás időtartama"
 msgid "Timeout ends {0} ({1})"
 msgstr "Kitiltás vége: {0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "Tagok kitiltása"
 
@@ -23508,49 +23511,49 @@ msgstr "Korlátlan matrica"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "Oldd fel a {emojiLabel} a {communityLabel} közösségből Plutónium segítségével."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "Oldd fel a {stickerLabel} a {communityLabel} közösségből Plutónium segítségével."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "Nyiss ki minden egyedi emojit és matricát minden közösségben Plutoniummal"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "Nyiss ki egyedi emojikat privát üzenetekben Plutoniummal"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "Nyiss ki külső egyedi emojikat Plutoniummal"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "Nyiss ki külső matricákat Plutoniummal"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "Nyiss ki HD képernyőmegosztást Plutoniummal"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "Nyiss ki HD videót Plutoniummal"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "Nyiss ki több hátteret Plutoniummal"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "Nyiss ki matricákat privát üzenetekben Plutoniummal"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "Időtúllépés frissítése"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "Frissítsd az ikonod, neved, bannered és meghívó háttered"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "Frissítsd a saját beceneved."
 
@@ -23879,8 +23882,8 @@ msgstr "Frissíts most"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "Frissíts Plutoniumra"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "Ikon feltöltése"
 msgid "Upload Image"
 msgstr "Kép feltöltése"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "Tölts fel új emoji-kat és matricákat, és kezeld a saját alkotásaidat."
 
@@ -24037,8 +24040,8 @@ msgstr "URL-ek az üzeneteid mellékleteinek letöltéséhez"
 msgid "US East"
 msgstr "USA kelet"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "Használd a @everyone/@here és @roles címkéket"
 
@@ -24100,17 +24103,17 @@ msgstr "Sötét téma használata az egész alkalmazásban"
 msgid "Use Different Email"
 msgstr "Másik email használata"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "Emoji használata más közösségekből."
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "Külső emoji használata"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "Külső matricák használata"
 
@@ -24163,8 +24166,8 @@ msgstr "Használd ezt a gombot az összes jogosultság gyors törléséhez."
 msgid "Use this shortcut system-wide"
 msgstr "Használd ezt a gyorsbillentyűt rendszerszinten"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "Hangaktivitás használata"
 
@@ -24471,7 +24474,7 @@ msgstr "Ellenőrző kódot küldtünk. Ellenőrizd az új email fiókodat."
 msgid "Verification email sent! Please check your inbox."
 msgstr "Ellenőrző e-mail elküldve! Kérjük, ellenőrizd a bejövő leveleidet."
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "Ellenőrzés sikertelen"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "Kapcsolat ellenőrző űrlap"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "E-mail ellenőrzése"
 
@@ -24548,6 +24551,10 @@ msgstr "Igazolja a személyazonosságát"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "Ellenőrzés..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "Videóbeállítások"
 msgid "video preview"
 msgstr "videó előnézet"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "Videó előnézet"
@@ -24644,7 +24651,7 @@ msgstr "{0} profiljának megtekintése"
 msgid "View active sessions"
 msgstr "Aktív munkamenetek megtekintése"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "Tevékenységnapló megtekintése"
 
@@ -24692,8 +24699,8 @@ msgstr "Hívás megtekintése"
 msgid "View call controls"
 msgstr "Hívásvezérlők megtekintése"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "Csatorna megtekintése"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (Lifetime #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (Lifetime Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "Nem tudtunk fiókot váltani. Kérjük, próbáld újra."
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "Egy linket küldtünk e-mailben a bejelentkezés engedélyezéséhez. Kérjük, nyisd meg a postaládádat a(z) {0} címre."
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "Akadályba ütköztünk. Próbáld újra szerkeszteni az üzeneted."
 msgid "We hit a snag. Try sending your message again."
 msgstr "Akadályba ütköztünk. Próbáld újra elküldeni az üzeneted."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "Megszakadt a kapcsolat az engedélyezés várakozása közben. Kérjük, próbáld újra."
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "Hibával"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "A Plutónium segítségével animált avatárokat és bannereket használhatsz (GIF, APNG, animált WebP vagy AVIF formátumban), testre szabhatod a 4 számjegyű azonosítódat, és sok más prémium funkciót is felfedezhetsz."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "Jelenleg nem léphetsz kapcsolatba ezzel a felhasználóval."
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "Nem váltasz be Plutonium ajándékkódokat, amíg Visionary prémiumod van."
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "Elérted a végét"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "Elérted a maximális {freeItemsText} korlátot ingyenes felhasználók számára. Frissíts Plutoniumra, hogy a korlátodat {premiumItemsText} értékre növelhesd!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "Elérted a maximális könyvjelzők számát ({bookmarksText}). Ezt a korlátot az instance adminisztrátorod állította be. Kérlek, távolíts el néhány könyvjelzőt, mielőtt újakat adnál hozzá."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "Elérted a maximális könyvjelzők számát ingyenes felhasználók számára ({bookmarksText}). Frissíts Plutoniumra, hogy a korlátodat {premiumBookmarksText} értékre növelhesd, vagy távolíts el néhány könyvjelzőt, hogy újakat adhass hozzá."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "A törlési kérelmed sorba kerül és a háttérben lesz feldolgozva"
 msgid "Your email address has been updated."
 msgstr "Az email címed frissítve lett."
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "Az email címedet ellenőriztük. Most már bejelentkezhetsz a fiókodba."
 
@@ -26355,7 +26362,7 @@ msgstr "A meghívód 24 óra múlva lejár"
 msgid "Your invite link expires in {0}."
 msgstr "A meghívó linked {0} múlva lejár."
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "Az IP-címedet sikeresen engedélyeztük."
 
@@ -26399,10 +26406,6 @@ msgstr "A fizetésed törölve lett. Most bezárhatod ezt a lapot, és visszaté
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "A személyes tered a kedvenc csatornáid, DM-jeid és csoportjaid gyors eléréséhez. Nyomd meg a csillagot bármely csatornán, hogy hozzáadd ide."
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "A Plutonium előfizetésed lejárt. Elvesztetted az összes Plutonium előnyt. Aktiváld újra az előfizetésed, hogy visszanyerd a hozzáférést."
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "A privát tered"
@@ -26423,6 +26426,10 @@ msgstr "A megvásárolt ajándékaid"
 msgid "your region"
 msgstr "a régiód"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "Az előfizetésed <0>{expiredDate}</0>-én lejárt. Az összes <1/> elveszett. Bármikor újra aktiválhatod."
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "Az előfizetésed nem újult meg, de még mindig hozzáférsz a Plutonium előnyeihez <0>{formattedGraceDate}</0>-ig. Tegyél lépéseket most, vagy elveszíted az összes előnyt."
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "zoom"
 msgid "Zoom"
 msgstr "Zoom"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "Nagyítás"
 
@@ -26491,8 +26498,8 @@ msgstr "Nagyítás"
 msgid "Zoom In"
 msgstr "Nagyítás"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "Kicsinyítés"
 

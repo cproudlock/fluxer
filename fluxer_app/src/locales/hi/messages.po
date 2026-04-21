@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} सदस्य"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{totalAttachments} में से {0}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} देख रहे हैं"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} यह सीमा आपके इंस्टें
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} प्लूटोनियम के साथ, आपके प्रति फ़ाइल अपलोड सीमा {0} तक बढ़ जाती है, साथ ही एनिमेटेड अवतार, लंबे संदेश, और कई अन्य प्रीमियम सुविधाएँ।"
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (चुना हुआ)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} प्लूटोनियम का महीना"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} प्लूटोनियम के महीने"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "{remaining} अक्षर बचे हैं"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "{remaining} अक्षर बचे हैं। {premiumMaxLength} अक्षर तक लिखने के लिए प्लूटोनियम पाएं।"
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "1 वर्ष का उपहार"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "1 वर्ष का प्लूटोनियम"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "ग्रुप में दोस्त जोड़ें"
 msgid "Add Item"
 msgstr "आइटम जोड़ें"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "संदेशों में नई प्रतिक्रियाएँ जोड़ें।"
 
@@ -1971,8 +1971,8 @@ msgstr "फ़ोन नंबर फ़ॉर्म जोड़ें"
 msgid "Add Reaction"
 msgstr "प्रतिक्रिया जोड़ें"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "प्रतिक्रियाएँ जोड़ें"
 
@@ -2015,8 +2015,8 @@ msgstr "शब्दकोश में जोड़ें"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "पसंदीदा में जोड़ें"
 
@@ -2129,7 +2129,7 @@ msgstr "सभी थीम रंगों की संतृप्ति स�
 msgid "Adjust the spacing between groups of messages."
 msgstr "संदेश समूहों के बीच दूरी समायोजित करें।"
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "प्रशासक"
 
@@ -2543,11 +2543,11 @@ msgstr "गलत स्थिति दी गई थी। अब आप इ�
 msgid "An unexpected error occurred. Please try again."
 msgstr "एक अप्रत्याशित त्रुटि हुई। कृपया फिर से प्रयास करें।"
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "एक अप्रत्याशित सर्वर त्रुटि हुई। कृपया पेज रीलोड करें या फिर से लॉग इन करें।"
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "एक अप्रत्याशित सर्वर त्रुटि हुई। कृपया पेज रीलोड करें या नया वेरीफिकेशन ईमेल मांगें।"
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "इंटरैक्शन पर एनिमेट करें"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "एनिमेटेड अवतार (GIF, APNG, एनिमेटेड WebP, AVIF) एक प्रीमियम फीचर है जो केवल प्लूटोनियम सब्सक्राइबर्स के लिए उपलब्ध है।"
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "एनिमेटेड अवतार उपलब्ध नहीं हैं"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "एनिमेटेड अवतार के लिए प्लूटोनियम की आवश्यकता है"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "आर्काइव"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "एक उपहार के रूप में"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "वैनेटी URL के काम करने के लिए कम से कम एक चैनल में @everyone के लिए \"चैनल देखें\" अनुमति सक्षम होनी चाहिए। वर्तमान में किसी भी चैनल को @everyone देख नहीं सकता।"
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "फ़ाइलें संलग्न करें"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "अटैचमेंट {0}"
@@ -3136,7 +3136,7 @@ msgstr "केवल अटैचमेंट वाला संदेश"
 msgid "Attachment preview"
 msgstr "अटैचमेंट पूर्वावलोकन"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "अटैचमेंट थंबनेल"
 
@@ -3160,7 +3160,7 @@ msgstr "ऑडियो"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "ऑडियो"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "ऑडियो और वीडियो"
 
@@ -3261,7 +3261,7 @@ msgstr "लेखक विविधताएँ"
 msgid "author-type:"
 msgstr "लेखक-प्रकार:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "प्राधिकरण विफल"
 
@@ -3287,7 +3287,7 @@ msgstr "अधिकृत करें"
 msgid "Authorize Application"
 msgstr "एप्लिकेशन को अधिकृत करें"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "IP को अधिकृत करें"
 
@@ -3446,7 +3446,7 @@ msgstr "अवतार"
 msgid "Average ping:"
 msgstr "औसत पिंग:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "प्रतिबंध {0} पर समाप्त हो जाए�
 msgid "Ban Member"
 msgstr "सदस्य को प्रतिबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "सदस्यों को प्रतिबंधित करें"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "स्लोमोड बाईपास करें"
 
@@ -4461,11 +4461,11 @@ msgstr "उपनाम बदलें"
 msgid "Change nickname form"
 msgstr "उपनाम फ़ॉर्म बदलें"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "अन्य सदस्यों के उपनाम बदलें।"
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "अपना उपनाम बदलें"
 
@@ -4556,8 +4556,8 @@ msgstr "चैनल"
 msgid "Channel"
 msgstr "चैनल"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "चैनल पहुंच"
 
@@ -4635,7 +4635,7 @@ msgstr "चैनल सूची टाइपिंग संकेतक म�
 msgid "Channel list typing indicators"
 msgstr "चैनल सूची टाइपिंग संकेतक"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "चैनल प्रबंधन"
 
@@ -4776,7 +4776,7 @@ msgstr "मेरे कस्टम थीम को देखें!"
 msgid "Check your connection and try again."
 msgstr "अपने कनेक्शन की जाँच करें और फिर से प्रयास करें।"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "अपने ईमेल की जाँच करें"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "Plutonium उपहार कोड भुनाने या प्रबंधित करने के लिए अपना खाता दाव करें।"
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "क्लाइंट सीक्रेट फिर से बना�
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "खाता बंद करें"
 msgid "Close DM"
 msgstr "डीएम बंद करें"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "मोडल बंद करें"
 
@@ -5646,7 +5646,7 @@ msgstr "समुदाय अपडेट किया गया"
 msgid "Community Updated"
 msgstr "समुदाय अपडेट किया गया"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "समुदाय भर में"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "पहले सुरक्षा कुंजी प्रॉम्प्ट पूरा करें।"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "अपने प्लूटोनियम बैज को अन्य उपयोगकर्ताओं से पूरी तरह छिपाएँ"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "पासवर्ड की पुष्टि करें"
 msgid "Connect"
 msgstr "जोड़ें"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "कनेक्ट करें (वॉइस में शामिल हों)"
 
@@ -5855,7 +5855,7 @@ msgstr "कनेक्शन आईडी"
 msgid "Connection Issue"
 msgstr "कनेक्शन समस्या"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "कनेक्शन खो गया"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "समुदायों में वॉइस चैनल कैसे जॉइन करें, यह नियंत्रित करें।"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "दूसरों को आपका प्लूटोनियम बैज कैसे दिखाई दे, यह नियंत्रित करें"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "अपने खाते के लिए एप्लिकेशन और बॉट बनाओ और प्रबंधित करो।"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Fluxer Plutonium के साथ कस्टम इमोजी और स्टिकर पैक बनाओ और साझा करो।"
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "समुदाय फ़ॉर्म बनाओ"
 msgid "Create DM"
 msgstr "डीएम बनाओ"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "इमोजी और स्टिकर्स बनाएं"
 
@@ -6529,12 +6529,12 @@ msgstr "ग्रुप डीएम बनाएँ"
 msgid "Create Invite"
 msgstr "आमंत्रण बनाएँ"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "आमंत्रण लिंक बनाएँ"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "नया खाता बनाएँ"
 
@@ -6554,11 +6554,11 @@ msgstr "समुदाय बनाएँ या जुड़ें"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "स्टिकर पैक बनाएँ"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "वेबहुक बनाएँ"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "Fluxer API के साथ शुरू करने के लिए अपना पहला एप्लिकेशन बनाएँ।"
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "चैनल और श्रेणियाँ बनाएँ, संपादित करें या हटाएँ।"
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "अपनी सबसे ऊँची भूमिका से नीचे की भूमिकाएँ बनाएँ, संपादित करें या हटाएँ। चैनल अनुमति ओवरराइड्स संपादित करने की भी अनुमति देता है।"
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "इस चैनल के लिए वेबहुक बनाएँ, संपादित करें या हटाएँ।"
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "वेबहुक बनाएँ, संपादित करें या हटाएँ।"
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "कस्टम प्रवेश ध्वनियाँ इस उदाहरण पर सक्षम नहीं हैं।"
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "Plutonium के साथ कस्टम प्रवेश ध्वनियाँ"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "संदेश इनपुट क्षेत्र में कौ�
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "प्लूटोनियम के साथ अपने 4-अंकीय टैग (#{0}) को अपनी पसंद के अनुसार अनुकूलित करें"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "आपके अवतार, बैनर, एक्सेंट रंग, और व्यक्तिगत समुदायों के लिए बायो को कस्टमाइज़ करना इस इंस्टेंस पर सक्षम नहीं है। समुदाय उपनाम और सर्वनाम सभी के लिए उपलब्ध हैं।"
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "व्यक्तिगत समुदायों के लिए अपना अवतार, बैनर, एक्सेंट कलर और बायो कस्टमाइज़ करने के लिए Plutonium चाहिए। समुदाय उपनाम और सर्वनाम सभी के लिए मुफ्त हैं।"
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "डिवाइस को म्यूट करें"
 msgid "Deafen Keybind"
 msgstr "डैफ़न कीबाइंड"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "सदस्यों को डैफ़न करें"
 
@@ -7428,8 +7428,8 @@ msgstr "पिछले दिन के संदेश हटाएँ"
 msgid "Delete messages from the last week"
 msgstr "पिछले सप्ताह के संदेश हटाएँ"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "दूसरों के संदेश हटाएँ। (पिनिंग नीचे अलग है।)"
 
@@ -8275,8 +8275,8 @@ msgstr "फ़ाइल अपलोड के लिए ड्रैग एं�
 msgid "Drag and drop emoji files here"
 msgstr "यहाँ इमोजी फ़ाइलें ड्रैग और ड्रॉप करें"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "सदस्यों को उन चैनलों के बीच ड्रैग करें जिन तक उनकी पहुँच है।"
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "इमोजी पैक संपादित करें"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "नाम, वर्णन और आइकन जैसे वैश्विक सेटिंग्स संपादित करें।"
 
@@ -8526,11 +8527,11 @@ msgstr "संदेश संपादित करें"
 msgid "Edit Note"
 msgstr "नोट संपादित करें"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "अन्य सदस्यों द्वारा बनाए गए इमोजी और स्टिकर्स को संपादित या हटाएं।"
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "इस चैनल में भूमिकाओं और सदस्यों के लिए ओवरराइट संपादित करें।"
 
@@ -8664,7 +8665,7 @@ msgstr "ईमेल सत्यापन आवश्यक है"
 msgid "Email Verified Override"
 msgstr "ईमेल सत्यापित ओवरराइड"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "ईमेल सफलतापूर्वक सत्यापित हुआ"
 
@@ -8677,8 +8678,8 @@ msgstr "एम्बेड"
 msgid "Embed"
 msgstr "एम्बेड"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "लिंक एम्बेड करें"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "ABCडी-1234 के प्रारूप में कोड दर्ज करें।"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "अपने खाते के लिए प्लूटोनियम भुनाने हेतु गिफ्ट कोड दर्ज करें।"
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "एक सुरक्षित पासवर्ड दर्ज क�
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "एक्सप्रेशन पैक"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "एक्सप्रेशन पैक प्लूटोनियम फीचर हैं"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer को कीबोर्ड और माउस इनपुट 
 msgid "Fluxer Partner"
 msgstr "Fluxer पार्टनर"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "जब Fluxer को मोबाइल PWA के रूप में इंस्टॉल किया जाता है तो यह पुश नोटिफिकेशन का उपयोग करता है। पंजीकरण करने से गेटवे आपके डिवाइस तक पहुँच सकेगा, भले ही ब्राउज़र बैकग्राउंड में हो।"
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "फ्रेम रेट"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "30 एफपीएस से ऊपर के फ्रेम दरों के लिए प्लूटोनियम की आवश्यकता होती है"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "उच्च (1080p), अल्ट्रा (1440p), और 4K (2160p) �
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "जब आपको संदेश मिलें तो सूचना पाएं। आपको अपने ब्राउज़र सेटिंग्स में नोटिफिकेशन की अनुमति देनी पड़ सकती है। चैनल/समुदाय स्तर पर नियंत्रण के लिए, किसी समुदाय आइकन पर राइट-क्लिक करें और Notification Settings खोलें।"
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "जब नए ऑडियो डिवाइस जुड़ें तो पूछताछ पाएं"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "प्लूटोनियम प्राप्त करें"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "अपने लिए प्लूटोनियम पाएं और उच्च सीमाएं व विशेष सुविधाएँ अनलॉक करें।"
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "टैग कस्टमाइज़ करने के लिए प्लूटोनियम पाएं"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "टैग कस्टमाइज़ करने या यूज़रनेम बदलते समय उसे बनाए रखने के लिए प्लूटोनियम पाएं"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "जब नए ऑडियो डिवाइस जुड़ें तो पूछताछ पाएं"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "सिस्टम-व्यापी पुश-टू-टॉक और कुछ अन्य फायदे हेतु Fluxer डेस्कटॉप ऐप पाएं।"
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "उपहार सफलतापूर्वक रिडीम हुआ!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "उपहार सफलतापूर्वक रिडीम हुआ! अपना प्लूटोनियम आनंद लें!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "वर्तमान कॉल पर जाएँ"
 msgid "Go to Home"
 msgstr "होम पर जाएँ"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "लॉगिन पर जाएँ"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "पेज {page} पर जाएँ"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "प्लूटोनियम पर जाएँ"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "{0} दी गई और {1} रद्द किया गया।"
 msgid "Granted {0}."
 msgstr "{0} दी गई।"
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "सभी अनुमतियाँ देता है और चैनल प्रतिबंधों को बायपास करता है। बेहद संवेदनशील।"
 
@@ -11566,22 +11564,22 @@ msgstr "पासवर्ड छिपाएँ"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "चित्र-में-चित्र पॉपआउट छुपाएँ?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "पूरा प्लूटोनियम बैज छिपाएँ"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "प्लूटोनियम खरीद की तारीख छिपाएँ"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "प्लूटोनियम खरीद की तारीख ({0}) छिपाएँ"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "पॉपआउट छिपाएं (याद रखने के लिए पूछें)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "इस उपयोगकर्ता को कितने समय के लिए टाइमआउट किया जाना चाहिए।"
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "नकली उपहार कितने महीनों का प्लूटोनियम देता है"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "अवहेलना करें"
 msgid "Ignore Friend Request"
 msgstr "दोस्त अनुरोध को नज़रअंदाज़ करें"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "प्रति-चैनल संदेश दर सीमाओं को अनदेखा करें।"
 
@@ -12569,7 +12567,7 @@ msgstr "निमंत्रण रोके गए हैं"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "<0>{0}</0> के लिए निमंत्रण फिलहाल अक्षम हैं"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "IP पता अधिकृत किया गया"
 
@@ -12957,7 +12955,7 @@ msgstr "इस कम्युनिटी से एक सदस्य को 
 msgid "Kick Member"
 msgstr "सदस्य निकालें"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "सदस्य निकालें"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "CDN संसाधनों का उपयोग करते हुए 1-10 छवि अटैचमेंट के लिए लेआउट।"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "Plutonium के बारे में जानें"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "सदाबी"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "सदाबी प्लूटोनियम"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "लिंक क्लिपबोर्ड में कॉपी ह�
 msgid "Link copied!"
 msgstr "लिंक कॉपी हो गया!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "लिंक समाप्त हो गया। आपका ईमेल पहले ही सत्यापित हो चुका है।"
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "लिंक समाप्त हो गया। आपका IP पता पहले ही अधिकृत किया जा चुका है।"
 
@@ -13592,17 +13590,17 @@ msgstr "अधिकृत एप्लिकेशन प्रबंधित 
 msgid "Manage blocked users"
 msgstr "ब्लॉक किए गए उपयोगकर्ता प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "चैनल प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "चैनल प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "समुदाय प्रबंधित करें"
 
@@ -13614,7 +13612,7 @@ msgstr "समुदाय सुविधाएँ प्रबंधित क
 msgid "Manage developer applications"
 msgstr "डेवलपर एप्लिकेशन प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "इमोजी और स्टिकर प्रबंधित करें"
 
@@ -13622,7 +13620,7 @@ msgstr "इमोजी और स्टिकर प्रबंधित क�
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "आपके द्वारा बनाए या इंस्टॉल किए गए इमोजी और स्टिकर पैक प्रबंधित करें।"
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "आने वाले वेबहुक्स प्रबंधित
 msgid "Manage invites for this channel."
 msgstr "इस चैनल के लिए निमंत्रण प्रबंधित करें।"
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "संदेश प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "निकनेम प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "अनुमतियाँ प्रबंधित करें"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "भूमिकाएँ प्रबंधित करें"
 
@@ -13666,12 +13664,12 @@ msgstr "सदस्यता प्रबंधित करें"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "Fluxer में साइन इन करने के लिए उपयोग किए गए ईमेल पते को प्रबंधित करें"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "वेबहुक्स प्रबंधित करें"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "SMS टू-फैक्टर ऑथेंटिकेशन के लिए अपना फोन नंबर प्रबंधित करें"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "अपने खरीदे गए प्लूटोनियम गिफ्ट कोड प्रबंधित करें। गिफ्ट URL किसी खास के साथ साझा करें या खुद रिडीम करें!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "मीडिया"
 msgid "Media Buttons"
 msgstr "मीडिया बटन"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "मीडिया नियंत्रण"
 
@@ -14114,8 +14112,8 @@ msgstr "@here का उल्लेख करें?"
 msgid "Mention Badges"
 msgstr "उल्लेख बैज"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "सभी या किसी भी भूमिका का उल्लेख करें (भले ही भूमिका उल्लेख योग्य न हो)।"
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "संदेश"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "संदेश और मीडिया"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "मोड C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "मॉडरेशन"
 
@@ -14559,7 +14557,7 @@ msgstr "अधिक इमोजी स्लॉट"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "अधिक विकल्प"
@@ -14613,8 +14611,8 @@ msgstr "बटनों, इनपुट और लिंक के बीच �
 msgid "Move focus to the message composer"
 msgstr "फोकस संदेश रचना पर ले जाएँ"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "सदस्यों को स्थानांतरित करें"
 
@@ -14781,8 +14779,8 @@ msgstr "पसंदीदा म्यूट करें"
 msgid "Mute Keybind"
 msgstr "म्यूट कीबाइंड"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "सदस्यों को म्यूट करें"
 
@@ -15126,11 +15124,11 @@ msgstr "नवीनतम पहले"
 msgid "Next"
 msgstr "अगला"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "अगला अटैचमेंट"
 
@@ -16112,8 +16110,8 @@ msgstr "Fluxer खोलें"
 msgid "Open image in full view"
 msgstr "छवि को पूर्ण दृश्य में खोलें"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "ब्राउज़र में खोलें"
 
@@ -16331,8 +16329,8 @@ msgstr "अन्य"
 msgid "Other Devices"
 msgstr "अन्य उपकरण"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "अन्यथा पुश-टू-टॉक आवश्यक है।"
 
@@ -16810,8 +16808,8 @@ msgstr "इसे पिन करो। इसे अच्छे से पि
 msgid "Pin Message"
 msgstr "संदेश पिन करें"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "संदेश पिन करें"
 
@@ -17013,19 +17011,6 @@ msgstr "कृपया प्रतीक्षा करें जबकि �
 msgid "plutonium"
 msgstr "प्लूटोनियम"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "प्लूटोनियम"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "प्लूटोनियम बैज गोपनीयता"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "प्लूटोनियम विशेषताएँ"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "पोलैंड"
@@ -17159,7 +17144,7 @@ msgstr "निर्दिष्ट अवधि के लिए <0>{0}</0> क
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "निर्दिष्ट अवधि के लिए <0>{0}</0> को संदेश भेजने, प्रतिक्रिया देने और वॉइस चैनल से जुड़ने से रोकें।"
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "सदस्यों को एक अवधि के लिए संदेश भेजने, प्रतिक्रिया देने और वॉइस में शामिल होने से रोकें।"
 
@@ -17219,11 +17204,11 @@ msgstr "पिछले 24 घंटे"
 msgid "Previous 7 Days"
 msgstr "पिछले 7 दिन"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "पिछला अटैचमेंट"
 
@@ -17263,8 +17248,8 @@ msgstr "प्राथमिक क्रिया"
 msgid "Primary button clicked!"
 msgstr "प्राथमिक बटन क्लिक किया गया!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "प्राथमिकता स्पीकर"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "सार्वजनिक बॉट"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "दोस्तों के साथ साझा करने के लिए प्लूटोनियम टैब से प्लूटोनियम उपहार खरीदें!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "पुनः सक्रिय करें"
 msgid "read aloud"
 msgstr "जोर से पढ़ें"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "संदेश इतिहास पढ़ें"
 
@@ -17621,7 +17606,7 @@ msgstr "संदेश इतिहास पढ़ें"
 msgid "read messages"
 msgstr "संदेश पढ़ें"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "परिवर्तनों और मॉडरेशन कार्यों के समुदाय के ऑडिट लॉग को पढ़ें।"
 
@@ -17865,6 +17850,10 @@ msgstr "प्रासंगिक"
 msgid "Reload app"
 msgstr "ऐप फिर से लोड करें"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "चुप रहें जब तक कि कोई व्यक्ति मैन्युअल रूप से /tts न चलाए।"
@@ -18022,8 +18011,8 @@ msgstr "मित्र हटाएँ"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "पसंदीदा से हटाएँ"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "टाइमआउट हटाएँ"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "जब आपने पहली बार अपने बैज से प्लूटोनियम खरीदा था, तब हटाएँ"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "नाम बदलें"
 msgid "Rename :{0}:"
 msgstr ":{0}: का नाम बदलें"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "इस चैनल का नाम बदलें और सेटिंग्स संपादित करें।"
 
@@ -18474,8 +18463,8 @@ msgstr "माध्यम में जो कुछ भी है उसके
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "प्लूटोनियम आवश्यक है"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "कोड फिर से भेजें"
 msgid "Resend Code"
 msgstr "कोड फिर से भेजें"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "ईमेल फिर से भेजें"
 
@@ -18536,7 +18525,7 @@ msgstr "पुनः भेजने का परिणाम"
 msgid "Resend Verification Email"
 msgstr "सत्यापन ईमेल फिर से भेजें"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "फिर से भेजा गया"
 
@@ -18628,6 +18617,10 @@ msgstr "पिक्चर-इन-पिक्चर का आकार बद�
 msgid "Resolution"
 msgstr "रिज़ॉल्यूशन"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "खाता पुनर्स्थापित करें"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "फिर से सदस्यता लें"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "प्रकट करें"
 msgid "Reveal spoiler"
 msgstr "स्पॉइलर दिखाएं"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "आइकन सहेजें"
 msgid "Save Image"
 msgstr "छवि सहेजें"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "मीडिया सहेजें"
 
@@ -19688,16 +19691,16 @@ msgstr "संदेश भेजना निष्क्रिय"
 msgid "Send messages"
 msgstr "संदेश भेजें"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "संदेश भेजें"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "SMS कोड भेजें"
 msgid "Send SMS Code"
 msgstr "SMS कोड भेजें"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "टेक्स्ट-टू-स्पीच संदेश भेजें।"
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "TTS संदेश भेजें"
 
@@ -19971,8 +19974,8 @@ msgstr "सत्यापन स्तर को <0>मध्यम</0> पर 
 msgid "Set verification level to <0>None</0>."
 msgstr "सत्यापन स्तर को <0>कोई नहीं</0> पर सेट करें।"
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "वॉइस क्षेत्र सेट करें"
 
@@ -20260,8 +20263,8 @@ msgstr "अधिकतम 5 दिखाएँ (+5 बैज)"
 msgid "Show Media Button"
 msgstr "मीडिया बटन दिखाएँ"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "मीडिया जानकारी दिखाएँ"
 
@@ -20880,8 +20883,8 @@ msgstr "स्पेनिश (लैटिन अमेरिका)"
 msgid "Spanish (Spain)"
 msgstr "स्पेनिश (स्पेन)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "बोलें"
 
@@ -21331,8 +21334,8 @@ msgstr "स्ट्रीम पूर्वावलोकन"
 msgid "Stream Quality"
 msgstr "स्ट्रीम गुणवत्ता"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "वीडियो स्ट्रीम करें"
 
@@ -22598,7 +22601,7 @@ msgstr "टाइमआउट अवधि"
 msgid "Timeout ends {0} ({1})"
 msgstr "टाइमआउट {0} ({1}) पर समाप्त होता है"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "सदस्यों को टाइमआउट करें"
 
@@ -23508,49 +23511,49 @@ msgstr "असीमित स्टीकर्स"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "{communityLabel} से {emojiLabel} को प्लूटोनियम के साथ अनलॉक करें।"
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "{communityLabel} से {stickerLabel} को प्लूटोनियम के साथ अनलॉक करें।"
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "Plutonium के साथ सभी कम्युनिटीज़ में सभी कस्टम इमोजी और स्टीकर्स अनलॉक करें"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "Plutonium के साथ DMs में कस्टम इमोजी अनलॉक करें"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "Plutonium के साथ बाहरी कस्टम इमोजी अनलॉक करें"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "Plutonium के साथ बाहरी स्टीकर्स अनलॉक करें"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "Plutonium के साथ HD स्क्रीन शेयरिंग अनलॉक करें"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "Plutonium के साथ HD वीडियो अनलॉक करें"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "Plutonium के साथ और पृष्ठभूमियाँ अनलॉक करें"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "Plutonium के साथ DMs में स्टीकर्स अनलॉक करें"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "टाइमआउट अपडेट करें"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "अपना आइकन, नाम, बैनर और इनवाइट पृष्ठभूमि अपडेट करें"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "अपना खुद का उपनाम अपडेट करें।"
 
@@ -23879,8 +23882,8 @@ msgstr "अब अपग्रेड करें"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "Plutonium में अपग्रेड करें"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "आइकन अपलोड करें"
 msgid "Upload Image"
 msgstr "इमेज अपलोड करें"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "नए इमोजी और स्टिकर्स अपलोड करें, और अपनी खुद की रचनाओं का प्रबंधन करें।"
 
@@ -24037,8 +24040,8 @@ msgstr "आपके मैसेज से किसी भी अटैचम�
 msgid "US East"
 msgstr "यूएस ईस्ट"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "@everyone/@here और @roles का उपयोग करें"
 
@@ -24100,17 +24103,17 @@ msgstr "पूरे ऐप में डार्क थीम का उपय
 msgid "Use Different Email"
 msgstr "विभिन्न ईमेल का उपयोग करें"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "दूसरे समुदायों से इमोजी का उपयोग करें।"
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "बाहरी इमोजी का उपयोग करें"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "बाहरी स्टिकर का उपयोग करें"
 
@@ -24163,8 +24166,8 @@ msgstr "सभी अनुमतियाँ जल्दी साफ़ क�
 msgid "Use this shortcut system-wide"
 msgstr "इस शॉर्टकट का सिस्टम-व्यापी उपयोग करें"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "वॉइस एक्टिविटी का उपयोग करें"
 
@@ -24471,7 +24474,7 @@ msgstr "सत्यापन कोड भेजा गया। अपने �
 msgid "Verification email sent! Please check your inbox."
 msgstr "सत्यापन ईमेल भेजा गया! कृपया अपना इनबॉक्स जांचें।"
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "सत्यापन विफल"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "कनेक्शन सत्यापन फॉर्म"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "ईमेल सत्यापित करें"
 
@@ -24548,6 +24551,10 @@ msgstr "अपनी पहचान सत्यापित करें"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "सत्यापित किया जा रहा है..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "वीडियो विकल्प"
 msgid "video preview"
 msgstr "वीडियो पूर्वावलोकन"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "वीडियो पूर्वावलोकन"
@@ -24644,7 +24651,7 @@ msgstr "{0} की प्रोफ़ाइल देखें"
 msgid "View active sessions"
 msgstr "सक्रिय सत्र देखें"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "गतिविधि लॉग देखें"
 
@@ -24692,8 +24699,8 @@ msgstr "कॉल देखें"
 msgid "View call controls"
 msgstr "कॉल नियंत्रण देखें"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "चैनल देखें"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (लाइफटाइम #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (लाइफटाइम Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "हम खाते बदल नहीं पाए। कृपया फिर से प्रयास करें।"
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "हमने इस लॉगिन को अधिकृत करने के लिए लिंक ईमेल किया है। कृपया {0} के इनबॉक्स को खोलें।"
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "हमें रुकावट मिली। अपना संद�
 msgid "We hit a snag. Try sending your message again."
 msgstr "हमें रुकावट मिली। अपना संदेश फिर से भेजने की कोशिश करें।"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "अनुमोदन की प्रतीक्षा में कनेक्शन खो गया। कृपया फिर से प्रयास करें।"
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "त्रुटि के साथ"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "प्लूटोनियम के साथ, आप एनिमेटेड अवतार और बैनर (GIF, APNG, एनिमेटेड WebP, या AVIF में) का उपयोग कर सकते हैं, अपने 4-अंकीय टैग को कस्टमाइज़ कर सकते हैं, और कई अन्य प्रीमियम सुविधाएँ अनलॉक कर सकते हैं।"
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "आप अभी इस यूज़र के साथ इंटरैक्ट नहीं कर सकते।"
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "जब आपके पास Visionary प्रीमियम है, तब आप Plutonium गिफ्ट कोड रिडीम नहीं कर सकते।"
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "तुम अंत तक पहुंच गए हो"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "आपने मुफ्त उपयोगकर्ताओं के लिए {freeItemsText} की अधिकतम सीमा तक पहुँच चुके हैं। अपनी सीमा को {premiumItemsText} तक बढ़ाने के लिए प्लूटोनियम में अपग्रेड करें!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "आपने बुकमार्क्स की अधिकतम संख्या ({bookmarksText}) तक पहुँच चुके हैं। यह सीमा आपके इंस्टेंस प्रशासक द्वारा कॉन्फ़िगर की गई है। कृपया नए जोड़ने से पहले कुछ बुकमार्क्स हटाएँ।"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "आपने मुफ्त उपयोगकर्ताओं के लिए बुकमार्क्स की अधिकतम संख्या ({bookmarksText}) तक पहुँच चुके हैं। अपनी सीमा को {premiumBookmarksText} तक बढ़ाने के लिए प्लूटोनियम में अपग्रेड करें, या नए जोड़ने के लिए कुछ बुकमार्क्स हटाएँ।"
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "तुम्हारा हटाने का अनुरोध क�
 msgid "Your email address has been updated."
 msgstr "आपका ईमेल पता अपडेट कर दिया गया है।"
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "तुम्हारा ईमेल सत्यापित हो चुका है। अब तुम अपने खाते में लॉग इन कर सकते हो।"
 
@@ -26355,7 +26362,7 @@ msgstr "तुम्हारा आमंत्रण 24 घंटों मे
 msgid "Your invite link expires in {0}."
 msgstr "तुम्हारा इनवाइट लिंक {0} में समाप्त हो जाएगा।"
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "तुम्हारा IP पता सफलतापूर्वक अधिकृत किया गया है।"
 
@@ -26399,10 +26406,6 @@ msgstr "आपका भुगतान रद्द कर दिया गय�
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "चैनल, DM और समूहों तक तेज़ पहुँच के लिए तुम्हारी निजी जगह। किसी भी चैनल पर स्टार दबाओ ताकि वह यहां जुड़ जाए।"
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "तुम्हारी Plutonium सब्सक्रिप्शन की अवधि समाप्त हो चुकी है। तुमने सभी Plutonium सुविधाएँ खो दी हैं। एक्सेस वापस पाने के लिए अपनी सब्सक्रिप्शन को पुनः सक्रिय करो।"
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "तुम्हारी निजी जगह"
@@ -26423,6 +26426,10 @@ msgstr "तुम्हारे खरीदे गए उपहार"
 msgid "your region"
 msgstr "तुम्हारा क्षेत्र"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "तुम्हारी सब्सक्रिप्शन <0>{expiredDate}</0> को समाप्त हो गई। तुमने सभी <1/> खो दिए। जब चाहो फिर से सक्रिय कर सकते हो।"
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "तुम्हारी सब्सक्रिप्शन नवीनीकृत नहीं हो पाई, लेकिन <0>{formattedGraceDate}</0> तक तुम्हें Plutonium सुविधाओं तक पहुंच है। अब कार्रवाई करो नहीं तो सारी सुविधाएँ खो दोगे।"
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "ज़ूम"
 msgid "Zoom"
 msgstr "जूम"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "ज़ूम इन"
 
@@ -26491,8 +26498,8 @@ msgstr "ज़ूम इन"
 msgid "Zoom In"
 msgstr "ज़ूम इन"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "ज़ूम आउट"
 

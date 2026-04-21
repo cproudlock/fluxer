@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} สมาชิก"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0} จาก {totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} กำลังดู"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} ขีดจำกัดนี้ถูกกำหน
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} ด้วย Plutonium ขีดจำกัดการอัปโหลดต่อไฟล์ของคุณเพิ่มขึ้นเป็น {0} พร้อมกับอวาตาร์เคลื่อนไหว ข้อความที่ยาวขึ้น และฟีเจอร์พรีเมียมอื่นๆ อีกมากมาย."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (เลือกแล้ว)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} เดือนของพลูโตเนียม"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} เดือนของพลูโตเนียม"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "เหลืออีก {remaining} อักขระ"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "เหลืออีก {remaining} อักขระ รับ Plutonium เพื่อเขียนได้ถึง {premiumMaxLength} อักขระ"
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "ของขวัญ 1 ปี"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "Plutonium 1 ปี"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "เพิ่มเพื่อนเข้ากลุ่ม"
 msgid "Add Item"
 msgstr "เพิ่มรายการ"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "เพิ่มรีแอคชั่นใหม่ให้กับข้อความ"
 
@@ -1971,8 +1971,8 @@ msgstr "แบบฟอร์มเพิ่มหมายเลขโทรศ
 msgid "Add Reaction"
 msgstr "เพิ่มรีแอคชั่น"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "เพิ่มรีแอคชั่น"
 
@@ -2015,8 +2015,8 @@ msgstr "เพิ่มในพจนานุกรม"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "เพิ่มในรายการโปรด"
 
@@ -2129,7 +2129,7 @@ msgstr "ปรับความอิ่มตัวของสีธีมท
 msgid "Adjust the spacing between groups of messages."
 msgstr "ปรับระยะห่างระหว่างกลุ่มข้อความ"
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "ผู้ดูแลระบบ"
 
@@ -2543,11 +2543,11 @@ msgstr "มีการส่งสถานะไม่ถูกต้อง �
 msgid "An unexpected error occurred. Please try again."
 msgstr "เกิดข้อผิดพลาดโดยไม่คาดคิด โปรดลองอีกครั้ง"
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "เกิดข้อผิดพลาดของเซิร์ฟเวอร์โดยไม่คาดคิด โปรดลองรีโหลดหน้าใหม่หรือลงชื่อเข้าใช้ใหม่"
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "เกิดข้อผิดพลาดของเซิร์ฟเวอร์โดยไม่คาดคิด โปรดลองรีโหลดหน้าใหม่หรือขออีเมลยืนยันใหม่"
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "เคลื่อนไหวเมื่อมีการโต้ตอบ"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "อวาตาร์อนิเมต (GIF, APNG, animated WebP, AVIF) เป็นฟีเจอร์พรีเมียมที่มีเฉพาะสมาชิก Plutonium เท่านั้น。"
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "อวตารเคลื่อนไหวไม่สามารถใช้งานได้"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "อวตารเคลื่อนไหวต้องการ Plutonium"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "เก็บถาวร"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "ในฐานะของขวัญ"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "ต้องมีอย่างน้อยหนึ่งแชนแนลที่เปิดสิทธิ์ \"ดูแชนแนล\" ให้ @everyone เพื่อให้ URL สวยงามทำงานได้ ขณะนี้ไม่มีแชนแนลใดที่ @everyone สามารถดูได้"
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "แนบไฟล์"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "ไฟล์แนบ {0}"
@@ -3136,7 +3136,7 @@ msgstr "ข้อความที่มีเพียงไฟล์แนบ
 msgid "Attachment preview"
 msgstr "ตัวอย่างแนบ"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "ภาพย่อไฟล์แนบ"
 
@@ -3160,7 +3160,7 @@ msgstr "เสียง"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "เสียง"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "เสียงและวิดีโอ"
 
@@ -3261,7 +3261,7 @@ msgstr "ความหลากหลายของผู้เขียน"
 msgid "author-type:"
 msgstr "ประเภทผู้แต่ง:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "การอนุญาตล้มเหลว"
 
@@ -3287,7 +3287,7 @@ msgstr "อนุญาต"
 msgid "Authorize Application"
 msgstr "อนุญาตแอปพลิเคชัน"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "อนุญาตที่อยู่ IP"
 
@@ -3446,7 +3446,7 @@ msgstr "อวตาร์"
 msgid "Average ping:"
 msgstr "ค่าเฉลี่ยพิงค์:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "การแบนจะหมดอายุที่ {0}"
 msgid "Ban Member"
 msgstr "แบนสมาชิก"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "แบนสมาชิก"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "ข้ามโหมดช้า"
 
@@ -4461,11 +4461,11 @@ msgstr "เปลี่ยนนามแฝง"
 msgid "Change nickname form"
 msgstr "แบบฟอร์มเปลี่ยนนามแฝง"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "เปลี่ยนนามแฝงของสมาชิกคนอื่น"
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "เปลี่ยนนามแฝงของตัวเอง"
 
@@ -4556,8 +4556,8 @@ msgstr "แชนแนล"
 msgid "Channel"
 msgstr "แชนแนล"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "การเข้าถึงแชนแนล"
 
@@ -4635,7 +4635,7 @@ msgstr "โหมดแสดงสถานะพิมพ์ในรายก
 msgid "Channel list typing indicators"
 msgstr "ตัวชี้บ่งชี้การพิมพ์ในรายการช่อง"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "การจัดการแชนแนล"
 
@@ -4776,7 +4776,7 @@ msgstr "ดูธีมที่ฉันออกแบบเองสิ!"
 msgid "Check your connection and try again."
 msgstr "ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "ตรวจสอบอีเมลของคุณ"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "ยืนยันบัญชีของคุณเพื่อแลกหรือจัดการรหัสของขวัญ Plutonium"
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "รหัสลับไคลเอนต์ได้รับการ
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "ปิดบัญชี"
 msgid "Close DM"
 msgstr "ปิดข้อความส่วนตัว"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "ปิดหน้าต่างป๊อปอัป"
 
@@ -5646,7 +5646,7 @@ msgstr "อัปเดตชุมชนแล้ว"
 msgid "Community Updated"
 msgstr "อัปเดตชุมชนแล้ว"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "ทั้งชุมชน"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "ทำตามคำแนะนำกุญแจความปลอดภัยให้เสร็จก่อน"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "ซ่อนตรา Plutonium ของคุณจากผู้ใช้อื่นอย่างสมบูรณ์"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "ยืนยันรหัสผ่าน"
 msgid "Connect"
 msgstr "เชื่อมต่อ"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "เชื่อมต่อ (เข้าร่วมเสียง)"
 
@@ -5855,7 +5855,7 @@ msgstr "รหัสการเชื่อมต่อ"
 msgid "Connection Issue"
 msgstr "ปัญหาการเชื่อมต่อ"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "การเชื่อมต่อขาด"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "ควบคุมวิธีที่คุณเข้าร่วมแชนแนลเสียงในชุมชน"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "ควบคุมการแสดงตรา Plutonium ของคุณให้ผู้อื่นเห็น"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "สร้างและจัดการแอปและบอทสำหรับบัญชีของคุณ"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "สร้างและแบ่งปันชุดอิโมจิและสติ๊กเกอร์แบบกำหนดเองกับ Fluxer Plutonium"
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "ฟอร์มสร้างชุมชน"
 msgid "Create DM"
 msgstr "สร้างข้อความส่วนตัว"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "สร้างอีโมจิและสติกเกอร์"
 
@@ -6529,12 +6529,12 @@ msgstr "สร้างกลุ่มข้อความส่วนตัว
 msgid "Create Invite"
 msgstr "สร้างคำเชิญ"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "สร้างลิงก์เชิญ"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "สร้างบัญชีใหม่"
 
@@ -6554,11 +6554,11 @@ msgstr "สร้างหรือเข้าร่วมชุมชน"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "สร้างชุดสติ๊กเกอร์"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "สร้างเว็บฮุก"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "สร้างแอปแรกของคุณเพื่อเริ่มต้นกับ Fluxer API"
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "สร้าง แก้ไข หรือลบแชนแนลและหมวดหมู่"
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "สร้าง แก้ไข หรือลบบทบาทที่ต่ำกว่าบทบาทสูงสุดของคุณ รวมถึงแก้ไขการเขียนทับสิทธิ์แชนแนล"
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "สร้าง แก้ไข หรือลบเว็บฮุกสำหรับแชนแนลนี้"
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "สร้าง แก้ไข หรือลบเว็บฮุก"
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "เสียงเข้าที่กำหนดเองไม่ได้เปิดใช้งานในกรณีนี้"
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "เสียงเข้าแบบกำหนดเองกับ Plutonium"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "ปรับแต่งปุ่มที่มองเห็นได
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "ปรับแต่งแท็ก 4 หลักของคุณ (#{0}) ให้ตรงตามที่คุณต้องการด้วย Plutonium"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "การปรับแต่งอวาตาร์ แบนเนอร์ สีเน้น และข้อมูลส่วนตัวสำหรับชุมชนแต่ละแห่งไม่ได้เปิดใช้งานในอินสแตนซ์นี้ ชื่อเล่นของชุมชนและสรรพนามมีให้สำหรับทุกคน"
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "การปรับอวาตาร์ แบนเนอร์ สีเน้น และประวัติสำหรับชุมชนแต่ละแห่งต้องใช้ Plutonium ชื่อเล่นและสรรพนามในชุมชนฟรีสำหรับทุกคน"
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "ปิดเสียงอุปกรณ์"
 msgid "Deafen Keybind"
 msgstr "ปุ่มลัดปิดเสียง"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "ปิดเสียงสมาชิก"
 
@@ -7428,8 +7428,8 @@ msgstr "ลบข้อความจาก 24 ชั่วโมงที่�
 msgid "Delete messages from the last week"
 msgstr "ลบข้อความจากสัปดาห์ที่ผ่านมา"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "ลบข้อความของคนอื่น (การปักหมุดแยกไว้ด้านล่าง)"
 
@@ -8275,8 +8275,8 @@ msgstr "พื้นที่ลากวางเพื่ออัปโหล
 msgid "Drag and drop emoji files here"
 msgstr "ลากและวางไฟล์อิโมจิที่นี่"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "ลากสมาชิกระหว่างแชนแนลที่พวกเขาเข้าถึงได้"
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "แก้ไขแพ็กอิโมจิ"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "แก้ไขการตั้งค่าทั่วไป เช่น ชื่อ คำอธิบาย และไอคอน"
 
@@ -8526,11 +8527,11 @@ msgstr "แก้ไขข้อความ"
 msgid "Edit Note"
 msgstr "แก้ไขโน้ต"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "แก้ไขหรือลบอีโมจิและสติกเกอร์ที่สร้างโดยสมาชิกคนอื่น"
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "แก้ไขการเขียนทับสำหรับบทบาทและสมาชิกในแชนแนลนี้"
 
@@ -8664,7 +8665,7 @@ msgstr "ต้องยืนยันอีเมล"
 msgid "Email Verified Override"
 msgstr "แทนที่การยืนยันอีเมล"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "ยืนยันอีเมลเรียบร้อย"
 
@@ -8677,8 +8678,8 @@ msgstr "ฝัง"
 msgid "Embed"
 msgstr "ฝัง"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "ฝังลิงก์"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "ป้อนรหัสในรูปแบบ ABCD-1234."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "ใส่รหัสของขวัญเพื่อแลก Plutonium ในบัญชีของคุณ"
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "ใส่รหัสผ่านที่ปลอดภัย"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "แพ็กแสดงอารมณ์"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "แพ็กแสดงอารมณ์เป็นฟีเจอร์ของ Plutonium"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer ต้องการสิทธิ์ติดตามอิ�
 msgid "Fluxer Partner"
 msgstr "พาร์ทเนอร์ Fluxer"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "Fluxer ใช้การแจ้งเตือนแบบพุชเมื่อติดตั้งในรูปแบบ PWA บนมือถือ การลงทะเบียนจะทำให้เกตเวย์ส่งข้อความถึงอุปกรณ์ได้แม้เบราว์เซอร์จะอยู่เบื้องหลัง"
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "อัตราเฟรม"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "อัตราเฟรมที่สูงกว่า 30 FPS ต้องการ Plutonium"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "รับความละเอียดสูง (1080p), อัล�
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "รับการแจ้งเตือนเมื่อได้รับข้อความ อาจต้องอนุญาตการแจ้งเตือนในการตั้งค่าเบราว์เซอร์ สำหรับการควบคุมตามแชนแนล/ชุมชน ให้คลิกขวาที่ไอคอนชุมชนแล้วเปิดการตั้งค่าการแจ้งเตือน"
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "แสดงแจ้งเตือนเมื่อเชื่อมต่ออุปกรณ์เสียงใหม่"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "รับ Plutonium"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "รับ Plutonium สำหรับตัวคุณเองเพื่อปลดล็อกขีดจำกัดที่สูงขึ้นและฟีเจอร์พิเศษ"
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "รับ Plutonium เพื่อปรับแต่งแท็กของคุณ"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "รับ Plutonium เพื่อปรับแต่งแท็กหรือรักษาไว้เมื่อเปลี่ยนชื่อผู้ใช้"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "แสดงแจ้งเตือนเมื่อเชื่อมต่ออุปกรณ์เสียงใหม่"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "ติดตั้งแอป Fluxer บนเดสก์ท็อปเพื่อใช้งาน push-to-talk ทั่วระบบและคุณสมบัติพิเศษอื่นๆ"
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "แลกของขวัญสำเร็จแล้ว!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "แลกของขวัญสำเร็จแล้ว! ขอให้สนุกกับ Plutonium!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "ไปยังการโทรปัจจุบัน"
 msgid "Go to Home"
 msgstr "ไปยังหน้าหลัก"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "ไปยังหน้าลงชื่อเข้าใช้"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "ไปยังหน้า {page}"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "เข้าสู่ Plutonium"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "อนุญาต {0} และเพิกถอน {1}."
 msgid "Granted {0}."
 msgstr "อนุญาต {0}."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "ให้สิทธิ์ทั้งหมดและเลี่ยงข้อจำกัดของแชนแนล มีความอ่อนไหวสูง"
 
@@ -11566,22 +11564,22 @@ msgstr "ซ่อนรหัสผ่าน"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "ซ่อนป๊อปอัพภาพในภาพ?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "ซ่อนตรา Plutonium ทั้งหมด"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "ซ่อนวันที่ซื้อ Plutonium"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "ซ่อนวันที่ซื้อ Plutonium ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "ซ่อนป๊อปเอาต์ (ขอให้จดจำ)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "ระยะเวลาที่ควรจัดการ timeout ให้ผู้ใช้นี้"
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "ของขวัญจำลองให้ Plutonium กี่เดือน"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "เพิกเฉย"
 msgid "Ignore Friend Request"
 msgstr "เพิกเฉยคำขอเป็นเพื่อน"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "ไม่สนใจข้อจำกัดอัตราข้อความต่อแชนแนล"
 
@@ -12569,7 +12567,7 @@ msgstr "คำเชิญถูกระงับ"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "คำเชิญไปที่ <0>{0}</0> ถูกปิดใช้งานอยู่ในขณะนี้"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "ที่อยู่ IP ได้รับอนุญาตแล้ว"
 
@@ -12957,7 +12955,7 @@ msgstr "เตะสมาชิกออกจากชุมชนนี้"
 msgid "Kick Member"
 msgstr "เตะสมาชิก"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "เตะสมาชิกหลายคน"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "เลย์เอาต์สำหรับการแนบภาพ 1-10 โดยใช้ทรัพยากร CDN."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "เรียนรู้เกี่ยวกับ Plutonium"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "ตลอดชีพ"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Plutonium ตลอดชีพ"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "คัดลอกลิงก์ไปยังคลิปบอร์
 msgid "Link copied!"
 msgstr "คัดลอกลิงก์แล้ว!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "ลิงก์หมดอายุแล้ว อีเมลของคุณน่าจะได้รับการยืนยันแล้ว"
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "ลิงก์หมดอายุแล้ว ที่อยู่ IP ของคุณน่าจะได้รับอนุญาตแล้ว"
 
@@ -13592,17 +13590,17 @@ msgstr "จัดการแอปพลิเคชันที่ได้ร
 msgid "Manage blocked users"
 msgstr "จัดการผู้ใช้ที่ถูกบล็อก"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "จัดการแชนแนล"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "จัดการแชนแนล"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "จัดการชุมชน"
 
@@ -13614,7 +13612,7 @@ msgstr "จัดการฟีเจอร์ของชุมชน"
 msgid "Manage developer applications"
 msgstr "จัดการแอปพลิเคชันนักพัฒนา"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "จัดการอีโมจิและสติกเกอร์"
 
@@ -13622,7 +13620,7 @@ msgstr "จัดการอีโมจิและสติกเกอร์
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "จัดการชุดอีโมจิและสติกเกอร์ที่คุณสร้างหรือติดตั้ง"
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "จัดการเว็บฮุคที่สามารถส่
 msgid "Manage invites for this channel."
 msgstr "จัดการคำเชิญสำหรับแชนแนลนี้"
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "จัดการข้อความ"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "จัดการชื่อเล่น"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "จัดการสิทธิ์"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "จัดการบทบาท"
 
@@ -13666,12 +13664,12 @@ msgstr "จัดการการสมัครสมาชิก"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "จัดการที่อยู่อีเมลที่คุณใช้เข้าสู่ Fluxer"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "จัดการเว็บฮุค"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "จัดการหมายเลขโทรศัพท์สำหรับการยืนยันตัวตนสองขั้นตอนทาง SMS"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "จัดการโค้ดของขวัญ Plutonium ที่คุณซื้อ แบ่งปัน URL ของขวัญให้คนพิเศษหรือแลกใช้เอง!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "สื่อ"
 msgid "Media Buttons"
 msgstr "ปุ่มสื่อ"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "ควบคุมสื่อ"
 
@@ -14114,8 +14112,8 @@ msgstr "กล่าวถึง @here?"
 msgid "Mention Badges"
 msgstr "ตรากล่าวถึง"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "กล่าวถึงทุกคนหรือบทบาทใดก็ได้ (แม้บทบาทจะไม่ถูกตั้งให้กล่าวถึงได้)"
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "ข้อความ"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "ข้อความและสื่อ"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "โหมด C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "การควบคุม"
 
@@ -14559,7 +14557,7 @@ msgstr "ช่องว่างอีโมจิเพิ่ม"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "ตัวเลือกเพิ่มเติม"
@@ -14613,8 +14611,8 @@ msgstr "ย้ายโฟกัสผ่านปุ่ม ช่องกร�
 msgid "Move focus to the message composer"
 msgstr "ย้ายโฟกัสไปที่ช่องเขียนข้อความ"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "ย้ายสมาชิก"
 
@@ -14781,8 +14779,8 @@ msgstr "ปิดเสียงรายการโปรด"
 msgid "Mute Keybind"
 msgstr "ปุ่มลัดปิดเสียง"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "ปิดเสียงสมาชิก"
 
@@ -15126,11 +15124,11 @@ msgstr "ใหม่สุดก่อน"
 msgid "Next"
 msgstr "ถัดไป"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "ไฟล์แนบถัดไป"
 
@@ -16112,8 +16110,8 @@ msgstr "เปิด Fluxer"
 msgid "Open image in full view"
 msgstr "เปิดภาพแบบเต็มจอ"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "เปิดในเบราว์เซอร์"
 
@@ -16331,8 +16329,8 @@ msgstr "อื่นๆ"
 msgid "Other Devices"
 msgstr "อุปกรณ์อื่น"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "หากไม่เช่นนั้นต้องใช้ Push-to-talk"
 
@@ -16810,8 +16808,8 @@ msgstr "ปักหมุดเลย ปักให้แน่น"
 msgid "Pin Message"
 msgstr "ปักหมุดข้อความ"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "ปักหมุดข้อความทั้งหมด"
 
@@ -17013,19 +17011,6 @@ msgstr "กรุณารอสักครู่ในขณะที่เร
 msgid "plutonium"
 msgstr "พลูโตเนียม"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "ความเป็นส่วนตัวของตรา Plutonium"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "สิทธิประโยชน์ Plutonium"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "โปแลนด์"
@@ -17159,7 +17144,7 @@ msgstr "ป้องกัน <0>{0}</0> ไม่ให้ส่งข้อค
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "ป้องกัน <0>{0}</0> ไม่ให้ส่งข้อความ ตอบสนอง หรือเข้าร่วมแชนแนลเสียงในระยะเวลาที่กำหนด"
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "ป้องกันสมาชิกไม่ให้ส่งข้อความ ตอบสนอง หรือเข้าร่วมเสียงในช่วงเวลาหนึ่ง"
 
@@ -17219,11 +17204,11 @@ msgstr "24 ชั่วโมงก่อนหน้า"
 msgid "Previous 7 Days"
 msgstr "7 วันที่ผ่านมา"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "ไฟล์แนบก่อนหน้า"
 
@@ -17263,8 +17248,8 @@ msgstr "การดำเนินการหลัก"
 msgid "Primary button clicked!"
 msgstr "ปุ่มหลักถูกคลิก!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "ผู้พูดสำคัญ"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "บอทสาธารณะ"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "ซื้อของขวัญ Plutonium จากแท็บ Plutonium เพื่อแชร์กับเพื่อนๆ!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "เปิดใช้งานอีกครั้ง"
 msgid "read aloud"
 msgstr "อ่านออกเสียง"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "อ่านข้อความย้อนหลัง"
 
@@ -17621,7 +17606,7 @@ msgstr "อ่านข้อความย้อนหลัง"
 msgid "read messages"
 msgstr "อ่านข้อความ"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "อ่านบันทึกตรวจสอบของชุมชนเกี่ยวกับการเปลี่ยนแปลงและการจัดการ"
 
@@ -17865,6 +17850,10 @@ msgstr "เกี่ยวข้อง"
 msgid "Reload app"
 msgstr "โหลดแอปใหม่"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "รักษาความเงียบจนกว่าจะมีคนเรียกใช้งาน /tts ด้วยตนเอง。"
@@ -18022,8 +18011,8 @@ msgstr "ลบเพื่อน"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "เอาออกจากรายการโปรด"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "ลบการจำกัดเวลา"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "ลบเมื่อคุณซื้อ Plutonium ครั้งแรกจากป้ายของคุณ"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "เปลี่ยนชื่อ"
 msgid "Rename :{0}:"
 msgstr "เปลี่ยนชื่อ :{0}:"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "เปลี่ยนชื่อและแก้ไขการตั้งค่าแชนแนลนี้"
 
@@ -18474,8 +18463,8 @@ msgstr "ต้องมีทุกอย่างในระดับกลา
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "ต้องมี Plutonium"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "ส่งรหัสใหม่อีกครั้ง"
 msgid "Resend Code"
 msgstr "ส่งรหัสอีกครั้ง"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "ส่งอีเมลใหม่"
 
@@ -18536,7 +18525,7 @@ msgstr "ผลการส่งซ้ำ"
 msgid "Resend Verification Email"
 msgstr "ส่งอีเมลยืนยันใหม่"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "ส่งแล้ว"
 
@@ -18628,6 +18617,10 @@ msgstr "ปรับขนาดภาพในภาพ"
 msgid "Resolution"
 msgstr "ความละเอียด"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "กู้คืนบัญชี"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "สมัครรับใหม่"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "เปิดเผย"
 msgid "Reveal spoiler"
 msgstr "เปิดเผยสปอยเลอร์"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "บันทึกไอคอน"
 msgid "Save Image"
 msgstr "บันทึกรูปภาพ"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "บันทึกสื่อ"
 
@@ -19688,16 +19691,16 @@ msgstr "ปิดการส่งข้อความ"
 msgid "Send messages"
 msgstr "ส่งข้อความ"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "ส่งข้อความ"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "ส่งรหัส SMS"
 msgid "Send SMS Code"
 msgstr "ส่งรหัส SMS"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "ส่งข้อความแปลงเป็นเสียง"
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "ส่งข้อความ TTS"
 
@@ -19971,8 +19974,8 @@ msgstr "ตั้งค่าระดับการตรวจสอบเป
 msgid "Set verification level to <0>None</0>."
 msgstr "ตั้งค่าระดับการตรวจสอบเป็น <0>ไม่มี</0>"
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "ตั้งค่าภูมิภาคเสียง"
 
@@ -20260,8 +20263,8 @@ msgstr "แสดงสูงสุด 5 (+5 ป้าย)"
 msgid "Show Media Button"
 msgstr "แสดงปุ่มมีเดีย"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "แสดงข้อมูลมีเดีย"
 
@@ -20880,8 +20883,8 @@ msgstr "สเปน (ละตินอเมริกา)"
 msgid "Spanish (Spain)"
 msgstr "สเปน (สเปน)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "พูด"
 
@@ -21331,8 +21334,8 @@ msgstr "ดูตัวอย่างสตรีม"
 msgid "Stream Quality"
 msgstr "คุณภาพสตรีม"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "สตรีมวิดีโอ"
 
@@ -22598,7 +22601,7 @@ msgstr "ระยะเวลา timeout"
 msgid "Timeout ends {0} ({1})"
 msgstr "หมดเวลา {0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "สมาชิกที่ถูกปิดการใช้งาน"
 
@@ -23508,49 +23511,49 @@ msgstr "สติกเกอร์ไม่จำกัด"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "ปลดล็อก {emojiLabel} จาก {communityLabel} ด้วย Plutonium."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "ปลดล็อก {stickerLabel} จาก {communityLabel} ด้วย Plutonium."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "ปลดล็อกอิโมจิและสติกเกอร์กำหนดเองทั้งหมดในทุกชุมชนด้วย Plutonium"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "ปลดล็อกอิโมจิกำหนดเองใน DM ด้วย Plutonium"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "ปลดล็อกอิโมจิกำหนดเองภายนอกด้วย Plutonium"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "ปลดล็อกสติกเกอร์ภายนอกด้วย Plutonium"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "ปลดล็อกแชร์หน้าจอ HD ด้วย Plutonium"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "ปลดล็อกวิดีโอ HD ด้วย Plutonium"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "ปลดล็อกพื้นหลังเพิ่มเติมด้วย Plutonium"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "ปลดล็อกสติกเกอร์ใน DM ด้วย Plutonium"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "เวลาหมดอัปเดต"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "อัปเดตไอคอน ชื่อ แบนเนอร์ และพื้นหลังคำเชิญของคุณ"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "อัปเดตชื่อเล่นของคุณเอง"
 
@@ -23879,8 +23882,8 @@ msgstr "อัปเกรดตอนนี้"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "อัปเกรดเป็น Plutonium"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "อัปโหลดไอคอน"
 msgid "Upload Image"
 msgstr "อัปโหลดรูปภาพ"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "อัปโหลดอีโมจิและสติกเกอร์ใหม่ และจัดการการสร้างของคุณเอง"
 
@@ -24037,8 +24040,8 @@ msgstr "URL สำหรับดาวน์โหลดไฟล์แนบ�
 msgid "US East"
 msgstr "อเมริกาตะวันออก"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "ใช้ @everyone/@here และ @roles"
 
@@ -24100,17 +24103,17 @@ msgstr "ใช้ธีมมืดทั้งแอป"
 msgid "Use Different Email"
 msgstr "ใช้ที่อยู่อีเมลอื่น"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "ใช้อีโมจิจากคอมมูนิตี้อื่น"
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "ใช้อีโมจิภายนอก"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "ใช้สติกเกอร์ภายนอก"
 
@@ -24163,8 +24166,8 @@ msgstr "ใช้ปุ่มนี้เพื่อล้างสิทธิ
 msgid "Use this shortcut system-wide"
 msgstr "ใช้ทางลัดนี้ทั่วทั้งระบบ"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "ใช้การตรวจจับเสียง"
 
@@ -24471,7 +24474,7 @@ msgstr "รหัสยืนยันถูกส่งแล้ว ตรว�
 msgid "Verification email sent! Please check your inbox."
 msgstr "ส่งอีเมลยืนยันแล้ว! กรุณาตรวจสอบกล่องเข้า"
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "การยืนยันล้มเหลว"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "แบบฟอร์มตรวจสอบการเชื่อมต่อ"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "ยืนยันอีเมล"
 
@@ -24548,6 +24551,10 @@ msgstr "ตรวจสอบตัวตนของคุณ"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "กำลังยืนยัน..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "ตัวเลือกวิดีโอ"
 msgid "video preview"
 msgstr "ตัวอย่างวิดีโอ"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "ตัวอย่างวิดีโอ"
@@ -24644,7 +24651,7 @@ msgstr "ดูโปรไฟล์ของ {0}"
 msgid "View active sessions"
 msgstr "ดูเซสชันที่ใช้งานอยู่"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "ดูบันทึกกิจกรรม"
 
@@ -24692,8 +24699,8 @@ msgstr "ดูการโทร"
 msgid "View call controls"
 msgstr "ดูการควบคุมการโทร"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "ดูช่อง"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (Lifetime #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (Lifetime Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "เราไม่สามารถเปลี่ยนบัญชีได้ กรุณาลองอีกครั้ง"
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "เราได้ส่งลิงก์เพื่ออนุญาตการเข้าสู่ระบบนี้ กรุณาเปิดกล่องจดหมายของ {0}"
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "เกิดปัญหาเล็กน้อย ลองแก้�
 msgid "We hit a snag. Try sending your message again."
 msgstr "เกิดปัญหาเล็กน้อย ลองส่งข้อความของคุณอีกครั้ง"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "การเชื่อมต่อล้มเหลวระหว่างรอการอนุญาต กรุณาลองใหม่อีกครั้ง"
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "พร้อมข้อผิดพลาด"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "ด้วย Plutonium คุณสามารถใช้ภาพอวตารและแบนเนอร์แบบเคลื่อนไหว (ในรูปแบบ GIF, APNG, WebP แบบเคลื่อนไหว หรือ AVIF) ปรับแต่งแท็ก 4 หลักของคุณ และปลดล็อกฟีเจอร์พรีเมียมอื่นๆ อีกมากมาย."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "คุณไม่สามารถโต้ตอบกับผู้ใช้นี้ได้ในตอนนี้"
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "คุณไม่สามารถใช้โค้ดของขวัญ Plutonium ได้ในขณะที่คุณมี Visionary แบบพรีเมียม"
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "คุณถึงจุดสิ้นสุดแล้ว"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "คุณถึงขีดจำกัดสูงสุดของ {freeItemsText} สำหรับผู้ใช้ฟรีแล้ว อัปเกรดเป็น Plutonium เพื่อเพิ่มขีดจำกัดของคุณเป็น {premiumItemsText}!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "คุณถึงจำนวนบุ๊กมาร์กสูงสุด ({bookmarksText}) แล้ว ขีดจำกัดนี้ถูกกำหนดโดยผู้ดูแลระบบของคุณ กรุณาลบบุ๊กมาร์กบางรายการก่อนที่จะเพิ่มรายการใหม่."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "คุณถึงจำนวนบุ๊กมาร์กสูงสุดสำหรับผู้ใช้ฟรี ({bookmarksText}) แล้ว อัปเกรดเป็น Plutonium เพื่อเพิ่มขีดจำกัดของคุณเป็น {premiumBookmarksText} หรือ ลบบุ๊กมาร์กบางรายการเพื่อเพิ่มรายการใหม่."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "คำขอลบของคุณจะถูกจัดคิวแ
 msgid "Your email address has been updated."
 msgstr "ที่อยู่อีเมลของคุณได้รับการอัปเดตแล้ว"
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "อีเมลของคุณได้รับการยืนยันแล้ว ตอนนี้คุณสามารถเข้าสู่บัญชีได้"
 
@@ -26355,7 +26362,7 @@ msgstr "คำเชิญของคุณหมดอายุใน 24 ช�
 msgid "Your invite link expires in {0}."
 msgstr "ลิงก์เชิญของคุณจะหมดอายุใน {0}"
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "ที่อยู่ IP ของคุณได้รับอนุญาตเรียบร้อยแล้ว"
 
@@ -26399,10 +26406,6 @@ msgstr "การชำระเงินของคุณถูกยกเล
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "พื้นที่ส่วนตัวของคุณสำหรับเข้าถึงแชนแนล DM และกลุ่มที่คุณชื่นชอบอย่างรวดเร็ว กดดาวที่แชนแนลใดก็ได้เพื่อเพิ่มที่นี่"
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "การสมัคร Plutonium ของคุณหมดอายุแล้ว คุณสูญเสียสิทธิประโยชน์ทั้งหมดของ Plutonium การเปิดใช้งานใหม่จะทำให้เข้าถึงได้อีกครั้ง"
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "พื้นที่ส่วนตัวของคุณ"
@@ -26423,6 +26426,10 @@ msgstr "ของขวัญที่คุณซื้อแล้ว"
 msgid "your region"
 msgstr "ภูมิภาคของคุณ"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "การสมัครของคุณหมดอายุเมื่อ <0>{expiredDate}</0> คุณเสียทุกอย่าง <1/> แล้ว คุณสามารถเปิดใช้งานใหม่ได้ทุกเมื่อ"
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "การสมัครของคุณต่ออายุไม่สำเร็จ แต่คุณยังเข้าถึงสิทธิประโยชน์ Plutonium ได้จนถึง <0>{formattedGraceDate}</0> ดำเนินการตอนนี้ก่อนที่คุณจะเสียสิทธิ์ทั้งหมด"
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "ซูม"
 msgid "Zoom"
 msgstr "ขยาย"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "ขยายเข้า"
 
@@ -26491,8 +26498,8 @@ msgstr "ขยายเข้า"
 msgid "Zoom In"
 msgstr "ขยายเข้า"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "ย่อออก"
 

@@ -134,7 +134,7 @@ msgid "{0} Members"
 msgstr "{0} Jäsentä"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:1117
+#: src/components/modals/MediaModal.tsx:1171
 msgid "{0} of {totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -217,7 +217,7 @@ msgid "{0} watching"
 msgstr "{0} katsoo"
 
 #. placeholder {0}: currentIndex + 1
-#: src/components/modals/MediaModal.tsx:190
+#: src/components/modals/MediaModal.tsx:198
 msgid "{0}/{totalAttachments}"
 msgstr "{0}/{totalAttachments}"
 
@@ -451,8 +451,8 @@ msgstr "{baseDescription} Tämä raja on määritetty instanssisi ylläpitäjän
 
 #. placeholder {0}: formatFileSize(premiumMaxAttachmentFileSize)
 #: src/components/alerts/FileSizeTooLargeModal.tsx:78
-msgid "{baseDescription} With Plutonium, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
-msgstr "{baseDescription} Plutoniumin kanssa tiedostokohtainen latausraja nousee {0}, lisäksi saat animaatioavatarit, pidemmät viestit ja monia muita premium-ominaisuuksia."
+msgid "{baseDescription} With Reverb, your per-file upload limit increases to {0}, plus animated avatars, longer messages, and many other premium features."
+msgstr ""
 
 #: src/components/pages/OAuthAuthorizePage.tsx:712
 msgid "{clientLabel} wants to connect"
@@ -503,13 +503,13 @@ msgstr "{displayName} (valittu)"
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Month of Plutonium"
-msgstr "{durationMonths} kuukautta Plutoniumia"
+msgid "{durationMonths} Month of Reverb"
+msgstr ""
 
 #: src/utils/GiftUtils.tsx:52
 #: src/utils/GiftUtils.tsx:63
-msgid "{durationMonths} Months of Plutonium"
-msgstr "{durationMonths} kuukautta Plutoniumia"
+msgid "{durationMonths} Months of Reverb"
+msgstr ""
 
 #: src/components/uikit/BaseAvatar.tsx:255
 msgid "{effectiveStatusLabel} status"
@@ -748,8 +748,8 @@ msgid "{remaining} characters left"
 msgstr "{remaining} merkkiä jäljellä"
 
 #: src/components/uikit/character_counter/CharacterCounter.tsx:50
-msgid "{remaining} characters left. Get Plutonium to write up to {premiumMaxLength} characters."
-msgstr "{remaining} merkkiä jäljellä. Hanki Plutoniumia kirjoittaaksesi jopa {premiumMaxLength} merkkiä."
+msgid "{remaining} characters left. Get Reverb to write up to {premiumMaxLength} characters."
+msgstr ""
 
 #: src/components/channel/InviteEmbed.tsx:207
 #: src/components/channel/InviteEmbed.tsx:322
@@ -1211,8 +1211,8 @@ msgstr "1 vuoden lahja"
 
 #: src/utils/GiftUtils.tsx:49
 #: src/utils/GiftUtils.tsx:60
-msgid "1 Year of Plutonium"
-msgstr "1 vuosi Plutoniumia"
+msgid "1 Year of Reverb"
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelOverviewTab.tsx:182
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:77
@@ -1921,8 +1921,8 @@ msgstr "Lisää ystäviä ryhmään"
 msgid "Add Item"
 msgstr "Lisää kohde"
 
-#: src/utils/PermissionUtils.tsx:352
-#: src/utils/PermissionUtils.tsx:512
+#: src/utils/PermissionUtils.tsx:357
+#: src/utils/PermissionUtils.tsx:517
 msgid "Add new reactions to messages."
 msgstr "Lisää viesteihin uusia reaktioita."
 
@@ -1971,8 +1971,8 @@ msgstr "Lisää puhelinnumerolomake"
 msgid "Add Reaction"
 msgstr "Lisää reaktio"
 
-#: src/utils/PermissionUtils.tsx:351
-#: src/utils/PermissionUtils.tsx:511
+#: src/utils/PermissionUtils.tsx:356
+#: src/utils/PermissionUtils.tsx:516
 msgid "Add Reactions"
 msgstr "Lisää reaktioita"
 
@@ -2015,8 +2015,8 @@ msgstr "Lisää sanakirjaan"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Add to favorites"
 msgstr "Lisää suosikkeihin"
 
@@ -2129,7 +2129,7 @@ msgstr "Säädä teemavärien kylläisyyttä."
 msgid "Adjust the spacing between groups of messages."
 msgstr "Säädä viestiryhmien välistä etäisyyttä."
 
-#: src/utils/PermissionUtils.tsx:235
+#: src/utils/PermissionUtils.tsx:240
 msgid "Administrator"
 msgstr "Ylläpitäjä"
 
@@ -2543,11 +2543,11 @@ msgstr "Virheellinen tila saatu. Voit sulkea tämän välilehden ja palata sovel
 msgid "An unexpected error occurred. Please try again."
 msgstr "Tapahtui odottamaton virhe. Yritä uudelleen."
 
-#: src/components/pages/AuthorizeIPPage.tsx:41
+#: src/components/pages/AuthorizeIPPage.tsx:42
 msgid "An unexpected server error occurred. Please try reloading the page or logging in again."
 msgstr "Palvelimella tapahtui odottamaton virhe. Lataa sivu uudelleen tai kirjaudu sisään uudelleen."
 
-#: src/components/pages/VerifyEmailPage.tsx:42
+#: src/components/pages/VerifyEmailPage.tsx:43
 msgid "An unexpected server error occurred. Please try reloading the page or requesting a new verification email."
 msgstr "Palvelimella tapahtui odottamaton virhe. Lataa sivu uudelleen tai pyydä uusi vahvistussähköposti."
 
@@ -2574,8 +2574,8 @@ msgid "Animate on Interaction"
 msgstr "Animaatio vuorovaikutuksessa"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:125
-msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Plutonium subscribers."
-msgstr "Animoidut avatarit (GIF, APNG, animoitu WebP, AVIF) ovat premium-ominaisuus, joka on saatavilla vain Plutonium-tilaajille."
+msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are a premium feature exclusively available to Reverb subscribers."
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:155
 msgid "Animated avatars (GIF, APNG, animated WebP, AVIF) are not available on this instance. Please upload a static image instead."
@@ -2590,8 +2590,8 @@ msgid "Animated avatars not available"
 msgstr "Animoituja avatareja ei ole saatavilla"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:121
-msgid "Animated avatars require Plutonium"
-msgstr "Animoidut avatarit vaativat Plutoniumia"
+msgid "Animated avatars require Reverb"
+msgstr ""
 
 #: src/utils/modals/AnimatedAvifModalUtils.tsx:36
 msgid "Animated AVIF Not Supported"
@@ -2818,7 +2818,7 @@ msgstr "Arkistoi"
 msgid "Archive Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:377
+#: src/utils/PermissionUtils.tsx:382
 msgid "Archive, delete, and edit threads."
 msgstr ""
 
@@ -3081,13 +3081,13 @@ msgstr "Lahjaksi"
 msgid "At least one channel must have \"View Channel\" permission enabled for @everyone in order for the vanity URL to work. Currently, no channels are viewable to @everyone."
 msgstr "Vähintään yhden kanavan on oltava nähtävissä @everyoneille, jotta arvokas URL toimisi. Tällä hetkellä yksikään kanava ei ole @everyonen nähtävissä."
 
-#: src/utils/PermissionUtils.tsx:329
-#: src/utils/PermissionUtils.tsx:501
+#: src/utils/PermissionUtils.tsx:334
+#: src/utils/PermissionUtils.tsx:506
 msgid "Attach Files"
 msgstr "Liitä tiedostoja"
 
 #. placeholder {0}: index + 1
-#: src/components/modals/MediaModal.tsx:1059
+#: src/components/modals/MediaModal.tsx:1113
 #: src/components/modals/MediaViewerModal.tsx:388
 msgid "Attachment {0}"
 msgstr "Liite {0}"
@@ -3136,7 +3136,7 @@ msgstr "Pelkkä liiteviesti"
 msgid "Attachment preview"
 msgstr "Liitteen esikatselu"
 
-#: src/components/modals/MediaModal.tsx:1040
+#: src/components/modals/MediaModal.tsx:1094
 msgid "Attachment thumbnails"
 msgstr "Liitteen pikkukuvat"
 
@@ -3160,7 +3160,7 @@ msgstr "ääni"
 
 #: src/components/channel/MobileMemesPicker.tsx:104
 #: src/components/channel/pickers/memes/MemesPickerHeader.tsx:56
-#: src/components/modals/MediaModal.tsx:1082
+#: src/components/modals/MediaModal.tsx:1136
 #: src/components/modals/tabs/voice_video_tab/Inline.tsx:39
 #: src/components/modals/tabs/VoiceVideoTab.tsx:41
 #: src/components/modals/utils/SettingsConstants.tsx:292
@@ -3172,8 +3172,8 @@ msgid "Audio"
 msgstr "Ääni"
 
 #: src/components/modals/utils/SettingsConstants.tsx:190
-#: src/utils/PermissionUtils.tsx:411
-#: src/utils/PermissionUtils.tsx:526
+#: src/utils/PermissionUtils.tsx:416
+#: src/utils/PermissionUtils.tsx:531
 msgid "Audio & Video"
 msgstr "Ääni ja video"
 
@@ -3261,7 +3261,7 @@ msgstr "Kirjoittaja Vaihtoehdot"
 msgid "author-type:"
 msgstr "tekijätyyppi:"
 
-#: src/components/pages/AuthorizeIPPage.tsx:123
+#: src/components/pages/AuthorizeIPPage.tsx:128
 msgid "Authorization failed"
 msgstr "Valtuutus epäonnistui"
 
@@ -3287,7 +3287,7 @@ msgstr "Valtuuta"
 msgid "Authorize Application"
 msgstr "Valtuuta sovellus"
 
-#: src/components/pages/AuthorizeIPPage.tsx:51
+#: src/components/pages/AuthorizeIPPage.tsx:52
 msgid "Authorize IP"
 msgstr "Valtuuta IP"
 
@@ -3446,7 +3446,7 @@ msgstr "avatarit"
 msgid "Average ping:"
 msgstr "Keskimääräinen ping:"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:154
+#: src/components/auth/IpAuthorizationScreen.tsx:218
 #: src/components/modals/AddConnectionModal.tsx:312
 #: src/components/modals/CreateScheduledEventModal.tsx:476
 #: src/components/modals/PhoneAddModal.tsx:237
@@ -3599,7 +3599,7 @@ msgstr "Eston voimassaoloaika päättyy {0}."
 msgid "Ban Member"
 msgstr "Estä jäsen"
 
-#: src/utils/PermissionUtils.tsx:266
+#: src/utils/PermissionUtils.tsx:271
 msgid "Ban Members"
 msgstr "Estä jäsenet"
 
@@ -4040,8 +4040,8 @@ msgstr "By purchasing, you agree to our <0>Terms of Service</0> and <1>Privacy P
 msgid "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 msgstr "By purchasing, you agreed to our <0>Terms of Service</0> and <1>Privacy Policy</1>. All purchases are refundable within 14 days by emailing <2>support@echowire.org</2>. Chargebacks result in permanent account bans — if you want a refund, we're more than happy to give you one if you contact us first! Payment information is securely handled by Stripe — we never have access to your full card number."
 
-#: src/utils/PermissionUtils.tsx:356
-#: src/utils/PermissionUtils.tsx:516
+#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:521
 msgid "Bypass Slowmode"
 msgstr "Ohita hidas tila"
 
@@ -4461,11 +4461,11 @@ msgstr "Vaihda lempinimi"
 msgid "Change nickname form"
 msgstr "Lempinimen vaihtolomake"
 
-#: src/utils/PermissionUtils.tsx:280
+#: src/utils/PermissionUtils.tsx:285
 msgid "Change other members' nicknames."
 msgstr "Muuta muiden jäsenten lempinimiä."
 
-#: src/utils/PermissionUtils.tsx:274
+#: src/utils/PermissionUtils.tsx:279
 msgid "Change Own Nickname"
 msgstr "Vaihda oma lempinimi"
 
@@ -4556,8 +4556,8 @@ msgstr "kanava"
 msgid "Channel"
 msgstr "Kanava"
 
-#: src/utils/PermissionUtils.tsx:404
-#: src/utils/PermissionUtils.tsx:484
+#: src/utils/PermissionUtils.tsx:409
+#: src/utils/PermissionUtils.tsx:489
 msgid "Channel Access"
 msgstr "Kanavan käyttö"
 
@@ -4635,7 +4635,7 @@ msgstr "Kanavalistan kirjoitusilmaisimen tila"
 msgid "Channel list typing indicators"
 msgstr "Kanavalistan kirjoitusindikaattorit"
 
-#: src/utils/PermissionUtils.tsx:457
+#: src/utils/PermissionUtils.tsx:462
 msgid "Channel Management"
 msgstr "Kanavanhallinta"
 
@@ -4776,7 +4776,7 @@ msgstr "Kurkista omaan teemaasi!"
 msgid "Check your connection and try again."
 msgstr "Tarkista yhteys ja yritä uudelleen."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 #: src/components/pages/ForgotPasswordPage.tsx:61
 msgid "Check your email"
 msgstr "Tarkista sähköpostisi"
@@ -4995,8 +4995,8 @@ msgid "Claim your account to purchase or redeem Echowire Reverb."
 msgstr ""
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:240
-msgid "Claim your account to redeem or manage Plutonium gift codes."
-msgstr "Vahvista tili lunastaaksesi tai hallitaksesi Plutonium-lahjakoodit."
+msgid "Claim your account to redeem or manage Reverb gift codes."
+msgstr ""
 
 #: src/components/channel/GiftEmbed.tsx:102
 #: src/components/modals/GiftAcceptModal.tsx:159
@@ -5264,7 +5264,7 @@ msgstr "Asiakassalaisuus on luotu uudelleen. Päivitä kaikki koodit, jotka käy
 #: src/components/modals/CreateScheduledEventModal.tsx:553
 #: src/components/modals/EditThreadTagsModal.tsx:81
 #: src/components/modals/InviteModal.tsx:135
-#: src/components/modals/MediaModal.tsx:349
+#: src/components/modals/MediaModal.tsx:399
 #: src/components/modals/MobileVideoViewer.tsx:260
 #: src/components/modals/Modal.tsx:385
 #: src/components/modals/Modal.tsx:463
@@ -5299,8 +5299,8 @@ msgstr "sulje tili"
 msgid "Close DM"
 msgstr "Sulje yksityisviesti"
 
-#: src/components/modals/MediaModal.tsx:327
-#: src/components/modals/MediaModal.tsx:329
+#: src/components/modals/MediaModal.tsx:335
+#: src/components/modals/MediaModal.tsx:337
 msgid "Close modal"
 msgstr "Sulje modaali"
 
@@ -5646,7 +5646,7 @@ msgstr "Yhteisö päivitetty"
 msgid "Community Updated"
 msgstr "Yhteisö päivitetty"
 
-#: src/utils/PermissionUtils.tsx:232
+#: src/utils/PermissionUtils.tsx:237
 msgid "Community-wide"
 msgstr "Koko yhteisö"
 
@@ -5689,8 +5689,8 @@ msgid "Complete the security key prompt first."
 msgstr "Täytä ensin turva-avaimen kehotus."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:72
-msgid "Completely hide your Plutonium badge from other users"
-msgstr "Piilota Plutonium-merkki kokonaan muilta käyttäjiltä"
+msgid "Completely hide your Reverb badge from other users"
+msgstr ""
 
 #: src/components/pages/SsoCallbackPage.tsx:129
 msgid "Completing sign-in…"
@@ -5809,8 +5809,8 @@ msgstr "Vahvista salasana"
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: src/utils/PermissionUtils.tsx:414
-#: src/utils/PermissionUtils.tsx:528
+#: src/utils/PermissionUtils.tsx:419
+#: src/utils/PermissionUtils.tsx:533
 msgid "Connect (Join Voice)"
 msgstr "Yhdistä (liity puheeseen)"
 
@@ -5855,7 +5855,7 @@ msgstr "Yhteyden tunnus"
 msgid "Connection Issue"
 msgstr "Yhteysongelma"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:132
+#: src/components/auth/IpAuthorizationScreen.tsx:163
 msgid "Connection lost"
 msgstr "Yhteys katkennut"
 
@@ -6029,8 +6029,8 @@ msgid "Control how you join voice channels in communities."
 msgstr "Hallitse, miten liityt äänikanaviin yhteisöissä."
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:65
-msgid "Control how your Plutonium badge is displayed to others"
-msgstr "Hallitse, miten Plutonium-merkki näkyy muille"
+msgid "Control how your Reverb badge is displayed to others"
+msgstr ""
 
 #: src/components/modals/tabs/notifications_tab/Inline.tsx:85
 #: src/components/modals/tabs/NotificationsTab.tsx:88
@@ -6447,8 +6447,8 @@ msgid "Create and manage applications and bots for your account."
 msgstr "Luo ja hallinnoi sovelluksia ja botteja tilillesi."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:147
-msgid "Create and share custom emoji and sticker packs with Fluxer Plutonium."
-msgstr "Luo ja jaa omia emojipaketteja ja tarroja Fluxer Plutoniumin avulla."
+msgid "Create and share custom emoji and sticker packs with Echowire Reverb."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:293
 msgid "create app"
@@ -6499,7 +6499,7 @@ msgstr "Yhteisön perustamislomake"
 msgid "Create DM"
 msgstr "Luo yksityisviesti"
 
-#: src/utils/PermissionUtils.tsx:284
+#: src/utils/PermissionUtils.tsx:289
 msgid "Create Emoji & Stickers"
 msgstr "Luo emojeita ja tarroja"
 
@@ -6529,12 +6529,12 @@ msgstr "Luo ryhmä-DM"
 msgid "Create Invite"
 msgstr "Luo kutsu"
 
-#: src/utils/PermissionUtils.tsx:270
-#: src/utils/PermissionUtils.tsx:460
+#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:465
 msgid "Create Invite Links"
 msgstr "Luo kutsulinkkejä"
 
-#: src/components/pages/VerifyEmailPage.tsx:141
+#: src/components/pages/VerifyEmailPage.tsx:146
 msgid "Create new account"
 msgstr "Luo uusi tili"
 
@@ -6554,11 +6554,11 @@ msgstr "Luo tai liity yhteisöön"
 msgid "Create Post"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:366
+#: src/utils/PermissionUtils.tsx:371
 msgid "Create Private Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:361
+#: src/utils/PermissionUtils.tsx:366
 msgid "Create Public Threads"
 msgstr ""
 
@@ -6578,11 +6578,11 @@ msgstr "Luo tarrapaketti"
 msgid "Create Thread"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:367
 msgid "Create threads that anyone with access to the channel can view."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:367
+#: src/utils/PermissionUtils.tsx:372
 msgid "Create threads that are only visible to invited members."
 msgstr ""
 
@@ -6595,23 +6595,23 @@ msgstr "Luo webhook"
 msgid "Create your first application to get started with the Fluxer API."
 msgstr "Luo ensimmäinen sovelluksesi päästäksesi alkuun Fluxer API:n kanssa."
 
-#: src/utils/PermissionUtils.tsx:382
+#: src/utils/PermissionUtils.tsx:387
 msgid "Create, edit, and delete scheduled events."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:258
+#: src/utils/PermissionUtils.tsx:263
 msgid "Create, edit, or delete channels and categories."
 msgstr "Luo, muokkaa tai poista kanavia ja kategorioita."
 
-#: src/utils/PermissionUtils.tsx:252
+#: src/utils/PermissionUtils.tsx:257
 msgid "Create, edit, or delete roles below your highest role. Also allows editing channel permission overwrites."
 msgstr "Luo, muokkaa tai poista rooleja, jotka ovat sinun korkeimman roolisi alapuolella. Voit myös muokata kanavan oikeuksien ylikirjoituksia."
 
-#: src/utils/PermissionUtils.tsx:475
+#: src/utils/PermissionUtils.tsx:480
 msgid "Create, edit, or delete webhooks for this channel."
 msgstr "Luo, muokkaa tai poista webhookeja tältä kanavalta."
 
-#: src/utils/PermissionUtils.tsx:295
+#: src/utils/PermissionUtils.tsx:300
 msgid "Create, edit, or delete webhooks."
 msgstr "Luo, muokkaa tai poista webhookeja."
 
@@ -6828,8 +6828,8 @@ msgid "Custom entrance sounds are not enabled on this instance."
 msgstr "Mukautettuja sisäänkäyntiääniä ei ole käytössä tässä instanssissa."
 
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:57
-msgid "Custom Entrance Sounds with Plutonium"
-msgstr "Mukautetut sisääntuloäänet Plutoniumin avulla"
+msgid "Custom Entrance Sounds with Reverb"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildRolesTab.tsx:831
 msgid "Custom Hoist Order"
@@ -6935,8 +6935,8 @@ msgstr "Mukauta, mitkä painikkeet ovat näkyvissä viestin syöttöalueella. N�
 
 #. placeholder {0}: user.discriminator
 #: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:75
-msgid "Customize your 4-digit tag (#{0}) to your liking with Plutonium"
-msgstr "Mukauta 4-numeroinen tunnuksesi (#{0}) mieleiseksesi Plutoniumilla"
+msgid "Customize your 4-digit tag (#{0}) to your liking with Reverb"
+msgstr ""
 
 #: src/components/modals/FluxerTagChangeModal.tsx:286
 msgid "Customize your 4-digit tag or keep it when changing your username"
@@ -6959,8 +6959,8 @@ msgid "Customizing your avatar, banner, accent color, and bio for individual com
 msgstr "Oman avatarin, bannerin, korostusvärin ja esittelyn mukauttaminen yksittäisille yhteisöille ei ole käytössä tässä instanssissa. Yhteisön lempinimi ja pronominit ovat kaikkien saatavilla."
 
 #: src/components/modals/tabs/my_profile_tab/PerGuildPremiumUpsell.tsx:30
-msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Plutonium. Community nickname and pronouns are free for everyone."
-msgstr "Avatarin, bannerin, tehostevärin ja esittelyn muokkaaminen yksittäisille yhteisöille vaatii Plutoniumin. Yhteisön lempinimi ja pronominit ovat kaikille ilmaisia."
+msgid "Customizing your avatar, banner, accent color, and bio for individual communities requires Reverb. Community nickname and pronouns are free for everyone."
+msgstr ""
 
 #: src/components/channel/textarea/TextareaContextMenu.tsx:121
 msgid "Cut"
@@ -7132,8 +7132,8 @@ msgstr "Vaimenta laite"
 msgid "Deafen Keybind"
 msgstr "Mykistysnäppäinyhdistelmä"
 
-#: src/utils/PermissionUtils.tsx:439
-#: src/utils/PermissionUtils.tsx:538
+#: src/utils/PermissionUtils.tsx:444
+#: src/utils/PermissionUtils.tsx:543
 msgid "Deafen Members"
 msgstr "Mykistä jäsenet"
 
@@ -7428,8 +7428,8 @@ msgstr "Poista viimeisen vuorokauden viestit"
 msgid "Delete messages from the last week"
 msgstr "Poista viimeisen viikon viestit"
 
-#: src/utils/PermissionUtils.tsx:317
-#: src/utils/PermissionUtils.tsx:496
+#: src/utils/PermissionUtils.tsx:322
+#: src/utils/PermissionUtils.tsx:501
 msgid "Delete others' messages. (Pinning is separate below.)"
 msgstr "Poista muiden viestit. (Kiinnitys löytyy erikseen alempaa.)"
 
@@ -8275,8 +8275,8 @@ msgstr "Tiedoston lähetyksen vedä ja pudota -alue"
 msgid "Drag and drop emoji files here"
 msgstr "Vedä ja pudota emoji-tiedostot tähän"
 
-#: src/utils/PermissionUtils.tsx:444
-#: src/utils/PermissionUtils.tsx:541
+#: src/utils/PermissionUtils.tsx:449
+#: src/utils/PermissionUtils.tsx:546
 msgid "Drag members between channels they can access."
 msgstr "Vedä jäseniä niiden kanavien välillä, joihin heillä on pääsy."
 
@@ -8414,6 +8414,7 @@ msgstr "Echowire failed to start properly. This could be due to corrupted data o
 #: src/components/modals/components/PlutoniumContent.tsx:146
 #: src/components/modals/PremiumModal.tsx:34
 #: src/components/modals/utils/SettingsConstants.tsx:124
+#: src/components/popouts/UserProfileBadges.tsx:107
 msgid "Echowire Reverb"
 msgstr ""
 
@@ -8483,7 +8484,7 @@ msgstr "Muokkaa emojipakettia"
 msgid "Edit Event"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:246
+#: src/utils/PermissionUtils.tsx:251
 msgid "Edit global settings like name, description, and icon."
 msgstr "Muokkaa yleisiä asetuksia kuten nimeä, kuvausta ja kuvaketta."
 
@@ -8526,11 +8527,11 @@ msgstr "Muokkaa viestiä"
 msgid "Edit Note"
 msgstr "Muokkaa muistiota"
 
-#: src/utils/PermissionUtils.tsx:290
+#: src/utils/PermissionUtils.tsx:295
 msgid "Edit or delete emoji and stickers created by other members."
 msgstr "Muokkaa tai poista muiden jäsenten luomia emojeita ja tarroja."
 
-#: src/utils/PermissionUtils.tsx:470
+#: src/utils/PermissionUtils.tsx:475
 msgid "Edit overwrites for roles and members in this channel."
 msgstr "Muokkaa tämän kanavan rooli- ja jäsenylikirjoituksia."
 
@@ -8664,7 +8665,7 @@ msgstr "Sähköpostin tarkistus vaaditaan"
 msgid "Email Verified Override"
 msgstr "Sähköpostin vahvistus ohitettu"
 
-#: src/components/pages/VerifyEmailPage.tsx:116
+#: src/components/pages/VerifyEmailPage.tsx:121
 msgid "Email verified successfully"
 msgstr "Sähköposti vahvistettu onnistuneesti"
 
@@ -8677,8 +8678,8 @@ msgstr "upota"
 msgid "Embed"
 msgstr "Upota"
 
-#: src/utils/PermissionUtils.tsx:325
-#: src/utils/PermissionUtils.tsx:500
+#: src/utils/PermissionUtils.tsx:330
+#: src/utils/PermissionUtils.tsx:505
 msgid "Embed Links"
 msgstr "Upota linkkejä"
 
@@ -9011,8 +9012,8 @@ msgid "Enter a code in the format ABCD-1234."
 msgstr "Syötä koodi muodossa ABCD-1234."
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:259
-msgid "Enter a gift code to redeem Plutonium for your account."
-msgstr "Syötä lahjakoodi lunastaaksesi Plutoniumia tilillesi."
+msgid "Enter a gift code to redeem Reverb for your account."
+msgstr ""
 
 #: src/components/modals/CreateScheduledEventModal.tsx:274
 #: src/components/modals/EditScheduledEventModal.tsx:231
@@ -9037,6 +9038,10 @@ msgstr "Syötä turvallinen salasana"
 
 #: src/components/modals/CreateThreadModal.tsx:73
 msgid "Enter a thread name"
+msgstr ""
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Enter code"
 msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:208
@@ -9432,8 +9437,8 @@ msgid "Expression Packs"
 msgstr "Ilmaisupaketit"
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:146
-msgid "Expression Packs are a Plutonium feature"
-msgstr "Ilmaisupaketit ovat Plutonium-ominaisuus"
+msgid "Expression Packs are a Reverb feature"
+msgstr ""
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:131
 msgid "Expression packs are not enabled on this instance. Contact your instance administrator for more information."
@@ -10326,10 +10331,6 @@ msgstr "Fluxer tarvitsee luvan seurata näppäimistön ja hiiren syötettä, jot
 msgid "Fluxer Partner"
 msgstr "Fluxer-kumppani"
 
-#: src/components/popouts/UserProfileBadges.tsx:107
-msgid "Fluxer Plutonium"
-msgstr "Fluxer Plutonium"
-
 #: src/components/modals/tabs/notifications_tab/Notifications.tsx:113
 msgid "Fluxer uses push notifications when installed as a mobile PWA. Registering ensures the gateway can reach your device even when the browser is backgrounded."
 msgstr "Fluxer käyttää push-ilmoituksia, kun se on asennettu mobiili-PWA:na. Rekisteröinti varmistaa, että käyttöportti tavoittaa laitteesi, vaikka selain olisi taustalla."
@@ -10633,8 +10634,8 @@ msgid "Frame Rate"
 msgstr "Kuvataajuus"
 
 #: src/components/modals/tabs/VideoTab.tsx:306
-msgid "Frame rates above 30 FPS require Plutonium"
-msgstr "Yli 30 FPS:n kuvataajuudet vaativat Plutoniumin"
+msgid "Frame rates above 30 FPS require Reverb"
+msgstr ""
 
 #: src/components/pages/report/OptionDescriptors.tsx:92
 msgid "France"
@@ -10880,39 +10881,36 @@ msgstr "Saat korkeita (1080p), ultra (1440p) ja 4K (2160p) resoluutioita, sekä 
 msgid "Get notified when you receive messages. You may need to allow notifications in your browser settings. For per-channel/per-community controls, right-click a community icon and open Notification Settings."
 msgstr "Saat ilmoituksen, kun saat viestejä. Saatat joutua sallimaan ilmoitukset selaimen asetuksissa. Kanava-/yhteisökohtaisiin asetuksiin napsauta yhteisön kuvaketta hiiren oikealla ja avaa Ilmoitusasetukset."
 
+#: src/components/modals/tabs/VoiceTab.tsx:360
+msgid "Get prompted when new audio devices are connected"
+msgstr "Saat kehotuksen, kun uusi äänilaite kytketään"
+
 #: src/components/alerts/FileSizeTooLargeModal.tsx:84
 #: src/components/modals/BackgroundImageGalleryModal.tsx:678
 #: src/components/modals/FluxerTagChangeModal.tsx:235
 #: src/components/modals/tabs/components/EntranceSoundSection.tsx:67
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:138
 #: src/components/modals/tabs/VideoTab.tsx:281
-msgid "Get Plutonium"
-msgstr "Hanki Plutonium"
-
-#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
-msgid "Get Plutonium for yourself and unlock higher limits and exclusive features."
-msgstr "Hanki Plutonium itsellesi ja avaa suuremmat rajat sekä eksklusiiviset ominaisuudet."
-
-#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
-msgid "Get Plutonium to customize your tag"
-msgstr "Hanki Plutonium muokataksesi tunnustasi"
-
-#: src/components/modals/FluxerTagChangeModal.tsx:213
-msgid "Get Plutonium to customize your tag or keep it when changing your username"
-msgstr "Hanki Plutonium muokataksesi tunnustasi tai säilyttääksesi sen käyttäjänimeä vaihtaessasi"
-
-#: src/components/modals/tabs/VoiceTab.tsx:360
-msgid "Get prompted when new audio devices are connected"
-msgstr "Saat kehotuksen, kun uusi äänilaite kytketään"
-
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:72
 #: src/components/uikit/plutonium_upsell/PlutoniumUpsell.tsx:74
 msgid "Get Reverb"
 msgstr ""
 
+#: src/components/modals/components/plutonium/PlutoniumUpsellBanner.tsx:36
+msgid "Get Reverb for yourself and unlock higher limits and exclusive features."
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/UsernameSection.tsx:82
+msgid "Get Reverb to customize your tag"
+msgstr ""
+
+#: src/components/modals/FluxerTagChangeModal.tsx:213
+msgid "Get Reverb to customize your tag or keep it when changing your username"
+msgstr ""
+
 #: src/components/layout/app_layout/nagbars/DesktopDownloadNagbar.tsx:50
-msgid "Get the Fluxer desktop app for system-wide push-to-talk and a few other goodies."
-msgstr "Hanki Fluxerin työpöytäohjelma järjestelmätason paina-puhu ja muut edut varten."
+msgid "Get the Echowire desktop app for system-wide push-to-talk and a few other goodies."
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:280
 msgid "gif"
@@ -11029,8 +11027,8 @@ msgid "Gift redeemed successfully!"
 msgstr "Lahja lunastettu onnistuneesti!"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:91
-msgid "Gift redeemed successfully! Enjoy your Plutonium!"
-msgstr "Lahja lunastettu onnistuneesti! Nauti Plutoniumistasi!"
+msgid "Gift redeemed successfully! Enjoy your Reverb!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/GiftSection.tsx:58
 msgid "Gift Reverb"
@@ -11114,9 +11112,9 @@ msgstr "Siirry nykyiseen puheluun"
 msgid "Go to Home"
 msgstr "Siirry kotiin"
 
-#: src/components/pages/AuthorizeIPPage.tsx:129
-#: src/components/pages/VerifyEmailPage.tsx:123
-#: src/components/pages/VerifyEmailPage.tsx:136
+#: src/components/pages/AuthorizeIPPage.tsx:134
+#: src/components/pages/VerifyEmailPage.tsx:128
+#: src/components/pages/VerifyEmailPage.tsx:141
 msgid "Go to login"
 msgstr "Siirry kirjautumiseen"
 
@@ -11133,8 +11131,8 @@ msgid "Go to page {page}"
 msgstr "Siirry sivulle {page}"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:339
-msgid "Go to Plutonium"
-msgstr "Siirry Plutoniumiin"
+msgid "Go to Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/components/MicTestSection.tsx:78
 msgid "Good"
@@ -11180,7 +11178,7 @@ msgstr "Myönnetty {0} ja peruutettu {1}."
 msgid "Granted {0}."
 msgstr "Myönnetty {0}."
 
-#: src/utils/PermissionUtils.tsx:236
+#: src/utils/PermissionUtils.tsx:241
 msgid "Grants all permissions and bypasses channel restrictions. Highly sensitive."
 msgstr "Myöntää kaikki oikeudet ja ohittaa kanavarajoitukset. Erittäin herkkä."
 
@@ -11566,22 +11564,22 @@ msgstr "Piilota salasana"
 msgid "Hide Picture-in-Picture Popout?"
 msgstr "Piilota kuva kuvassa -ponnahdusikkuna?"
 
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
-msgid "Hide Plutonium badge entirely"
-msgstr "Piilota Plutonium-merkki kokonaan"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
-msgid "Hide Plutonium purchase date"
-msgstr "Piilota Plutoniumin ostopäivä"
-
-#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
-msgid "Hide Plutonium purchase date ({0})"
-msgstr "Piilota Plutoniumin ostopäivä ({0})"
-
 #: src/components/voice/PiPOverlay.tsx:804
 msgid "Hide popout (ask to remember)"
 msgstr "Piilota pop-out (pyydä muistamaan)"
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:71
+msgid "Hide Reverb badge entirely"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:81
+msgid "Hide Reverb purchase date"
+msgstr ""
+
+#. placeholder {0}: DateUtils.getFormattedShortDate(premiumSince)
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:80
+msgid "Hide Reverb purchase date ({0})"
+msgstr ""
 
 #: src/components/modals/tabs/appearance_tab/MessagesTab.tsx:180
 msgid "Hide User Avatars"
@@ -11746,8 +11744,8 @@ msgid "How long this user should be timed out for."
 msgstr "Kuinka pitkäksi aikaa tämä käyttäjä pitäisi ajastaa pois."
 
 #: src/components/modals/tabs/developer_options_tab/MockingTab.tsx:311
-msgid "How many months of Plutonium the mock gift provides"
-msgstr "Kuinka monta kuukautta Plutoniumia mallilahja tarjoaa"
+msgid "How many months of Reverb the mock gift provides"
+msgstr ""
 
 #: src/components/modals/guild_tabs/guild_overview_tab/sections/MessageHistoryThresholdContent.tsx:81
 msgid "How this works"
@@ -11873,8 +11871,8 @@ msgstr "Ohita"
 msgid "Ignore Friend Request"
 msgstr "Ohita ystäväpyyntö"
 
-#: src/utils/PermissionUtils.tsx:357
-#: src/utils/PermissionUtils.tsx:517
+#: src/utils/PermissionUtils.tsx:362
+#: src/utils/PermissionUtils.tsx:522
 msgid "Ignore per-channel message rate limits."
 msgstr "Ohita kanavakohtaiset viestirajat."
 
@@ -12569,7 +12567,7 @@ msgstr "Kutsut tauolla"
 msgid "Invites to <0>{0}</0> are currently disabled"
 msgstr "Kutsut kohteeseen <0>{0}</0> ovat tällä hetkellä poissa käytöstä"
 
-#: src/components/pages/AuthorizeIPPage.tsx:114
+#: src/components/pages/AuthorizeIPPage.tsx:119
 msgid "IP address authorized"
 msgstr "IP-osoite valtuutettu"
 
@@ -12957,7 +12955,7 @@ msgstr "Poista jäsen tästä yhteisöstä."
 msgid "Kick Member"
 msgstr "Poista jäsen"
 
-#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:267
 msgid "Kick Members"
 msgstr "Poista jäseniä"
 
@@ -13053,8 +13051,8 @@ msgid "Layouts for 1-10 image attachments using CDN assets."
 msgstr "Asettelu 1-10 kuvan liitteille käyttäen CDN-resursseja."
 
 #: src/components/modals/tabs/ExpressionPacksTab.tsx:150
-msgid "Learn about Plutonium"
-msgstr "Lisätietoja Plutoniumista"
+msgid "Learn about Reverb"
+msgstr ""
 
 #: src/components/auth/AuthRegisterFormCore.tsx:269
 msgid "Leave blank for a random username"
@@ -13161,8 +13159,8 @@ msgid "Lifetime"
 msgstr "Elinikäinen"
 
 #: src/utils/GiftUtils.tsx:59
-msgid "Lifetime Plutonium"
-msgstr "Elinikäinen Plutonium"
+msgid "Lifetime Reverb"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSectionRegistry.tsx:85
 msgid "light"
@@ -13231,11 +13229,11 @@ msgstr "Linkki kopioitu leikepöydälle"
 msgid "Link copied!"
 msgstr "Linkki kopioitu!"
 
-#: src/components/pages/VerifyEmailPage.tsx:39
+#: src/components/pages/VerifyEmailPage.tsx:40
 msgid "Link expired. Your email was likely already verified."
 msgstr "Linkki vanhentunut. Sähköpostisi on todennäköisesti jo vahvistettu."
 
-#: src/components/pages/AuthorizeIPPage.tsx:39
+#: src/components/pages/AuthorizeIPPage.tsx:40
 msgid "Link expired. Your IP address was likely already authorized."
 msgstr "Linkki vanhentunut. IP-osoitteesi on todennäköisesti jo valtuutettu."
 
@@ -13592,17 +13590,17 @@ msgstr "Hallitse valtuutettuja sovelluksia"
 msgid "Manage blocked users"
 msgstr "Hallitse estettyjä käyttäjiä"
 
-#: src/utils/PermissionUtils.tsx:464
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channel"
 msgstr "Hallitse kanavaa"
 
-#: src/utils/PermissionUtils.tsx:257
-#: src/utils/PermissionUtils.tsx:593
+#: src/utils/PermissionUtils.tsx:262
+#: src/utils/PermissionUtils.tsx:598
 msgid "Manage Channels"
 msgstr "Hallitse kanavia"
 
-#: src/utils/PermissionUtils.tsx:245
+#: src/utils/PermissionUtils.tsx:250
 msgid "Manage Community"
 msgstr "Hallitse yhteisöä"
 
@@ -13614,7 +13612,7 @@ msgstr "Hallitse yhteisön ominaisuuksia"
 msgid "Manage developer applications"
 msgstr "Hallitse kehittäjäsovelluksia"
 
-#: src/utils/PermissionUtils.tsx:289
+#: src/utils/PermissionUtils.tsx:294
 msgid "Manage Emoji & Stickers"
 msgstr "Hallitse emojeja ja tarroja"
 
@@ -13622,7 +13620,7 @@ msgstr "Hallitse emojeja ja tarroja"
 msgid "Manage emoji and sticker packs that you've created or installed."
 msgstr "Hallitse luomiasi tai asentamiasi emoji- ja tarrapaketteja."
 
-#: src/utils/PermissionUtils.tsx:381
+#: src/utils/PermissionUtils.tsx:386
 msgid "Manage Events"
 msgstr ""
 
@@ -13638,22 +13636,22 @@ msgstr "Hallitse saapuvia webhookeja, jotka voivat lähettää viestejä tähän
 msgid "Manage invites for this channel."
 msgstr "Hallitse tämän kanavan kutsuja."
 
-#: src/utils/PermissionUtils.tsx:316
-#: src/utils/PermissionUtils.tsx:495
+#: src/utils/PermissionUtils.tsx:321
+#: src/utils/PermissionUtils.tsx:500
 msgid "Manage Messages"
 msgstr "Hallitse viestejä"
 
-#: src/utils/PermissionUtils.tsx:279
+#: src/utils/PermissionUtils.tsx:284
 msgid "Manage Nicknames"
 msgstr "Hallitse lempinimiä"
 
-#: src/utils/PermissionUtils.tsx:469
+#: src/utils/PermissionUtils.tsx:474
 msgid "Manage Permissions"
 msgstr "Hallitse oikeuksia"
 
 #: src/components/guild/RoleManagement.tsx:276
 #: src/components/modals/guild_tabs/GuildMemberActionsSheet.tsx:335
-#: src/utils/PermissionUtils.tsx:250
+#: src/utils/PermissionUtils.tsx:255
 msgid "Manage Roles"
 msgstr "Hallitse rooleja"
 
@@ -13666,12 +13664,12 @@ msgstr "Hallitse tilausta"
 msgid "Manage the email address you use to sign in to Fluxer"
 msgstr "Hallitse sähköpostiosoitetta, jolla kirjaudut Fluxeriin"
 
-#: src/utils/PermissionUtils.tsx:376
+#: src/utils/PermissionUtils.tsx:381
 msgid "Manage Threads"
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:294
-#: src/utils/PermissionUtils.tsx:474
+#: src/utils/PermissionUtils.tsx:299
+#: src/utils/PermissionUtils.tsx:479
 msgid "Manage Webhooks"
 msgstr "Hallitse webhookeja"
 
@@ -13692,8 +13690,8 @@ msgid "Manage your phone number for SMS two-factor authentication"
 msgstr "Hallitse puhelinnumeroasi SMS-kaksivaiheista tunnistautumista varten"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:304
-msgid "Manage your purchased Plutonium gift codes. Share the gift URL with someone special or redeem it for yourself!"
-msgstr "Hallitse ostamiasi Plutonium-lahjakoodeja. Jaa lahja-URL erityisen kanssa tai lunasta se itse!"
+msgid "Manage your purchased Reverb gift codes. Share the gift URL with someone special or redeem it for yourself!"
+msgstr ""
 
 #: src/components/modals/utils/SettingsSearchIndex.tsx:263
 msgid "Manage your subscription"
@@ -13918,8 +13916,8 @@ msgstr "Media"
 msgid "Media Buttons"
 msgstr "Mediapainikkeet"
 
-#: src/components/modals/MediaModal.tsx:248
-#: src/components/modals/MediaModal.tsx:348
+#: src/components/modals/MediaModal.tsx:256
+#: src/components/modals/MediaModal.tsx:396
 msgid "Media controls"
 msgstr "Medianhallinta"
 
@@ -14114,8 +14112,8 @@ msgstr "Mainitaanko @here?"
 msgid "Mention Badges"
 msgstr "Mainintamerkit"
 
-#: src/utils/PermissionUtils.tsx:338
-#: src/utils/PermissionUtils.tsx:505
+#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:510
 msgid "Mention everyone or any role (even if the role isn't set to be mentionable)."
 msgstr "Mainitse kaikki tai mikä tahansa rooli (vaikka rooli ei olisi mainittavissa)."
 
@@ -14328,8 +14326,8 @@ msgid "Messages"
 msgstr "Viestit"
 
 #: src/components/modals/utils/SettingsConstants.tsx:184
-#: src/utils/PermissionUtils.tsx:304
-#: src/utils/PermissionUtils.tsx:491
+#: src/utils/PermissionUtils.tsx:309
+#: src/utils/PermissionUtils.tsx:496
 msgid "Messages & Media"
 msgstr "Viestit ja media"
 
@@ -14516,7 +14514,7 @@ msgid "Mode C"
 msgstr "Tila C"
 
 #: src/components/uikit/context_menu/items/ModerationSubmenu.tsx:152
-#: src/utils/PermissionUtils.tsx:391
+#: src/utils/PermissionUtils.tsx:396
 msgid "Moderation"
 msgstr "Valvonta"
 
@@ -14559,7 +14557,7 @@ msgstr "Lisää emoji-paikkoja"
 #: src/components/channel/embeds/attachments/TextualAttachmentPreviewFooter.tsx:66
 #: src/components/channel/ThreadPanel.tsx:91
 #: src/components/modals/guild_tabs/UserListItem.tsx:113
-#: src/components/modals/MediaModal.tsx:353
+#: src/components/modals/MediaModal.tsx:406
 #: src/components/modals/MobileVideoViewer.tsx:268
 msgid "More options"
 msgstr "Lisävaihtoehtoja"
@@ -14613,8 +14611,8 @@ msgstr "Siirrä fokusta painikkeisiin, kenttiin ja linkkeihin."
 msgid "Move focus to the message composer"
 msgstr "Siirrä fokus viestin kirjoituskenttään"
 
-#: src/utils/PermissionUtils.tsx:443
-#: src/utils/PermissionUtils.tsx:540
+#: src/utils/PermissionUtils.tsx:448
+#: src/utils/PermissionUtils.tsx:545
 msgid "Move Members"
 msgstr "Siirrä jäseniä"
 
@@ -14781,8 +14779,8 @@ msgstr "Mykistä suosikit"
 msgid "Mute Keybind"
 msgstr "Mykistävä näppäinyhdistelmä"
 
-#: src/utils/PermissionUtils.tsx:435
-#: src/utils/PermissionUtils.tsx:537
+#: src/utils/PermissionUtils.tsx:440
+#: src/utils/PermissionUtils.tsx:542
 msgid "Mute Members"
 msgstr "Mykistä jäsenet"
 
@@ -15126,11 +15124,11 @@ msgstr "Uusimmat ensin"
 msgid "Next"
 msgstr "Seuraava"
 
-#: src/components/modals/MediaModal.tsx:193
-#: src/components/modals/MediaModal.tsx:1013
-#: src/components/modals/MediaModal.tsx:1020
-#: src/components/modals/MediaModal.tsx:1119
-#: src/components/modals/MediaModal.tsx:1123
+#: src/components/modals/MediaModal.tsx:201
+#: src/components/modals/MediaModal.tsx:1067
+#: src/components/modals/MediaModal.tsx:1074
+#: src/components/modals/MediaModal.tsx:1173
+#: src/components/modals/MediaModal.tsx:1177
 msgid "Next attachment"
 msgstr "Seuraava liite"
 
@@ -16112,8 +16110,8 @@ msgstr "Avaa Fluxer"
 msgid "Open image in full view"
 msgstr "Avaa kuva koko näkymässä"
 
-#: src/components/modals/MediaModal.tsx:299
-#: src/components/modals/MediaModal.tsx:303
+#: src/components/modals/MediaModal.tsx:307
+#: src/components/modals/MediaModal.tsx:311
 msgid "Open in browser"
 msgstr "Avaa selaimessa"
 
@@ -16331,8 +16329,8 @@ msgstr "Muu"
 msgid "Other Devices"
 msgstr "Muut laitteet"
 
-#: src/utils/PermissionUtils.tsx:427
-#: src/utils/PermissionUtils.tsx:533
+#: src/utils/PermissionUtils.tsx:432
+#: src/utils/PermissionUtils.tsx:538
 msgid "Otherwise Push-to-talk is required."
 msgstr "Muuten Push-to-talk vaaditaan."
 
@@ -16810,8 +16808,8 @@ msgstr "Kiinnitä se. Kiinnitä se hyvin."
 msgid "Pin Message"
 msgstr "Kiinnitä viesti"
 
-#: src/utils/PermissionUtils.tsx:321
-#: src/utils/PermissionUtils.tsx:499
+#: src/utils/PermissionUtils.tsx:326
+#: src/utils/PermissionUtils.tsx:504
 msgid "Pin Messages"
 msgstr "Kiinnitä viestit"
 
@@ -17013,19 +17011,6 @@ msgstr "Ole hyvä ja odota, kunnes kirjautumisesi on valmis."
 msgid "plutonium"
 msgstr "plutonium"
 
-#: src/components/channel/direct_message/DMList.tsx:1326
-#: src/components/channel/direct_message/DMList.tsx:1405
-msgid "Plutonium"
-msgstr "Plutonium"
-
-#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
-msgid "Plutonium Badge Privacy"
-msgstr "Plutonium-merkin tietosuoja"
-
-#: src/components/modals/components/PerksButton.tsx:30
-msgid "Plutonium perks"
-msgstr "Plutonium-edut"
-
 #: src/components/pages/report/OptionDescriptors.tsx:103
 msgid "Poland"
 msgstr "Puola"
@@ -17159,7 +17144,7 @@ msgstr "Estä <0>{0}</0> lähettämästä viestejä, reagoimasta ja liittymäst�
 msgid "Prevent <0>{0}</0> from sending messages, reacting, and joining voice channels for the specified duration."
 msgstr "Estä <0>{0}</0> lähettämästä viestejä, reagoimasta ja liittymästä äänikanaville määritetyksi ajaksi."
 
-#: src/utils/PermissionUtils.tsx:395
+#: src/utils/PermissionUtils.tsx:400
 msgid "Prevent members from sending messages, reacting, and joining voice for a duration."
 msgstr "Estä jäseniä lähettämästä viestejä, reagoimasta ja liittymästä ääneen määräajaksi."
 
@@ -17219,11 +17204,11 @@ msgstr "Edellinen 24 tuntia"
 msgid "Previous 7 Days"
 msgstr "Edelliset 7 päivää"
 
-#: src/components/modals/MediaModal.tsx:186
-#: src/components/modals/MediaModal.tsx:997
-#: src/components/modals/MediaModal.tsx:1004
-#: src/components/modals/MediaModal.tsx:1106
-#: src/components/modals/MediaModal.tsx:1110
+#: src/components/modals/MediaModal.tsx:194
+#: src/components/modals/MediaModal.tsx:1051
+#: src/components/modals/MediaModal.tsx:1058
+#: src/components/modals/MediaModal.tsx:1160
+#: src/components/modals/MediaModal.tsx:1164
 msgid "Previous attachment"
 msgstr "Edellinen liite"
 
@@ -17263,8 +17248,8 @@ msgstr "Ensisijainen toiminto"
 msgid "Primary button clicked!"
 msgstr "Ensisijainen painike painettu!"
 
-#: src/utils/PermissionUtils.tsx:431
-#: src/utils/PermissionUtils.tsx:536
+#: src/utils/PermissionUtils.tsx:436
+#: src/utils/PermissionUtils.tsx:541
 msgid "Priority Speaker"
 msgstr "Prioriteettipuhuja"
 
@@ -17420,8 +17405,8 @@ msgid "Public Bot"
 msgstr "Julkinen botti"
 
 #: src/components/modals/tabs/GiftInventoryTab.tsx:336
-msgid "Purchase a Plutonium gift from the Plutonium tab to share with friends!"
-msgstr "Osta Plutonium-lahja Plutonium-välilehdeltä ja jaa ystäviesi kanssa!"
+msgid "Purchase a Reverb gift from the Reverb tab to share with friends!"
+msgstr ""
 
 #: src/components/modals/components/plutonium/PurchaseHistorySection.tsx:39
 msgid "Purchase History"
@@ -17612,8 +17597,8 @@ msgstr "Aktivoi uudelleen"
 msgid "read aloud"
 msgstr "lue ääneen"
 
-#: src/utils/PermissionUtils.tsx:333
-#: src/utils/PermissionUtils.tsx:502
+#: src/utils/PermissionUtils.tsx:338
+#: src/utils/PermissionUtils.tsx:507
 msgid "Read Message History"
 msgstr "Lue viestihistoria"
 
@@ -17621,7 +17606,7 @@ msgstr "Lue viestihistoria"
 msgid "read messages"
 msgstr "lue viestit"
 
-#: src/utils/PermissionUtils.tsx:241
+#: src/utils/PermissionUtils.tsx:246
 msgid "Read the community's audit log of changes and moderation actions."
 msgstr "Tutustu yhteisön muutosten ja moderoinnin lokiin."
 
@@ -17865,6 +17850,10 @@ msgstr "Olennainen"
 msgid "Reload app"
 msgstr "Lataa sovellus uudelleen"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Reload to update"
+msgstr ""
+
 #: src/components/modals/tabs/notifications_tab/TextToSpeech.tsx:59
 msgid "Remain silent unless someone runs /tts manually."
 msgstr "Pysy hiljaa, ellei joku käytä /tts:ää manuaalisesti."
@@ -18022,8 +18011,8 @@ msgstr "Poista ystävä"
 #: src/components/channel/pickers/gif/GifPickerGridItem.tsx:333
 #: src/components/media_player/components/InlineAudioPlayer.tsx:354
 #: src/components/media_player/components/InlineAudioPlayer.tsx:360
-#: src/components/modals/MediaModal.tsx:273
-#: src/components/modals/MediaModal.tsx:277
+#: src/components/modals/MediaModal.tsx:281
+#: src/components/modals/MediaModal.tsx:285
 msgid "Remove from favorites"
 msgstr "Poista suosikeista"
 
@@ -18121,8 +18110,8 @@ msgid "Remove Timeout"
 msgstr "Poista aikakatkaisu"
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:83
-msgid "Remove when you first bought Plutonium from your badge"
-msgstr "Poista, kun ostit Plutoniumin ensimmäisen kerran merkistäsi"
+msgid "Remove when you first bought Reverb from your badge"
+msgstr ""
 
 #: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:106
 msgid "Remove your Visionary ID badge"
@@ -18243,7 +18232,7 @@ msgstr "Nimeä uudelleen"
 msgid "Rename :{0}:"
 msgstr "Nimeä :{0}: uudelleen"
 
-#: src/utils/PermissionUtils.tsx:465
+#: src/utils/PermissionUtils.tsx:470
 msgid "Rename and edit this channel's settings."
 msgstr "Nimeä ja muokkaa tämän kanavan asetuksia."
 
@@ -18474,8 +18463,8 @@ msgstr "Vaatii kaikki keskitason vaatimukset ja vähintään 10 minuutin jäseny
 #: src/components/modals/tabs/VideoTab.tsx:120
 #: src/components/modals/tabs/VideoTab.tsx:130
 #: src/components/modals/tabs/VideoTab.tsx:140
-msgid "Requires Plutonium"
-msgstr "Vaatii Plutoniumin"
+msgid "Requires Reverb"
+msgstr ""
 
 #: src/components/channel/ChannelTextarea.tsx:1034
 msgid "Reschedule Message"
@@ -18520,7 +18509,7 @@ msgstr "Lähetä koodi uudelleen"
 msgid "Resend Code"
 msgstr "Lähetä koodi uudelleen"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resend email"
 msgstr "Lähetä sähköposti uudelleen"
 
@@ -18536,7 +18525,7 @@ msgstr "Uudelleenlähetyksen tila"
 msgid "Resend Verification Email"
 msgstr "Lähetä vahvistussähköposti uudelleen"
 
-#: src/components/auth/IpAuthorizationScreen.tsx:148
+#: src/components/auth/IpAuthorizationScreen.tsx:212
 msgid "Resent"
 msgstr "Lähetetty uudelleen"
 
@@ -18628,6 +18617,10 @@ msgstr "Muuta kuva kuvassa -näkymän kokoa"
 msgid "Resolution"
 msgstr "Resoluutio"
 
+#: src/components/layout/UpdateBanner.tsx:96
+msgid "Restart to update"
+msgstr ""
+
 #: src/components/pages/EmailRevertPage.tsx:112
 msgid "Restore account"
 msgstr "Palauta tili"
@@ -18650,7 +18643,7 @@ msgid "Resubscribe"
 msgstr "Tilaa uudelleen"
 
 #: src/components/alerts/RateLimitedConfirmModal.tsx:73
-#: src/components/auth/IpAuthorizationScreen.tsx:144
+#: src/components/auth/IpAuthorizationScreen.tsx:208
 #: src/components/channel/MessageActionBar.tsx:818
 #: src/components/channel/MessageActionMenu.tsx:348
 #: src/components/modals/BackgroundImageGalleryModal.tsx:210
@@ -18691,8 +18684,18 @@ msgstr "Paljasta"
 msgid "Reveal spoiler"
 msgstr "Paljasta spoileri"
 
+#: src/components/channel/direct_message/DMList.tsx:1326
+#: src/components/channel/direct_message/DMList.tsx:1405
 #: src/components/modals/components/FeatureComparisonTable.tsx:146
 msgid "Reverb"
+msgstr ""
+
+#: src/components/modals/tabs/my_profile_tab/PremiumBadgeSettings.tsx:62
+msgid "Reverb Badge Privacy"
+msgstr ""
+
+#: src/components/modals/components/PerksButton.tsx:30
+msgid "Reverb perks"
 msgstr ""
 
 #: src/components/modals/components/plutonium/SubscriptionCard.tsx:110
@@ -19002,8 +19005,8 @@ msgstr "Tallenna kuvake"
 msgid "Save Image"
 msgstr "Tallenna kuva"
 
-#: src/components/modals/MediaModal.tsx:287
-#: src/components/modals/MediaModal.tsx:291
+#: src/components/modals/MediaModal.tsx:295
+#: src/components/modals/MediaModal.tsx:299
 msgid "Save media"
 msgstr "Tallenna media"
 
@@ -19688,16 +19691,16 @@ msgstr "Viestin lähetys pois päältä"
 msgid "Send messages"
 msgstr "Lähetä viestejä"
 
-#: src/utils/PermissionUtils.tsx:307
-#: src/utils/PermissionUtils.tsx:493
+#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:498
 msgid "Send Messages"
 msgstr "Lähetä viestejä"
 
-#: src/utils/PermissionUtils.tsx:372
+#: src/utils/PermissionUtils.tsx:377
 msgid "Send messages in thread conversations."
 msgstr ""
 
-#: src/utils/PermissionUtils.tsx:371
+#: src/utils/PermissionUtils.tsx:376
 msgid "Send Messages in Threads"
 msgstr ""
 
@@ -19717,11 +19720,11 @@ msgstr "Lähetä tekstiviestikoodi"
 msgid "Send SMS Code"
 msgstr "Lähetä tekstiviestikoodi"
 
-#: src/utils/PermissionUtils.tsx:312
+#: src/utils/PermissionUtils.tsx:317
 msgid "Send text-to-speech messages."
 msgstr "Lähetä puheviestejä."
 
-#: src/utils/PermissionUtils.tsx:311
+#: src/utils/PermissionUtils.tsx:316
 msgid "Send TTS Messages"
 msgstr "Lähetä puheviestejä"
 
@@ -19971,8 +19974,8 @@ msgstr "Aseta vahvistustaso <0>Keskitaso</0>."
 msgid "Set verification level to <0>None</0>."
 msgstr "Aseta vahvistustaso <0>Ei</0>."
 
-#: src/utils/PermissionUtils.tsx:448
-#: src/utils/PermissionUtils.tsx:544
+#: src/utils/PermissionUtils.tsx:453
+#: src/utils/PermissionUtils.tsx:549
 msgid "Set Voice Region"
 msgstr "Aseta äänialue"
 
@@ -20260,8 +20263,8 @@ msgstr "Näytä enintään 5 (+5 merkki)"
 msgid "Show Media Button"
 msgstr "Näytä medianappi"
 
-#: src/components/modals/MediaModal.tsx:311
-#: src/components/modals/MediaModal.tsx:315
+#: src/components/modals/MediaModal.tsx:319
+#: src/components/modals/MediaModal.tsx:323
 msgid "Show media information"
 msgstr "Näytä median tiedot"
 
@@ -20880,8 +20883,8 @@ msgstr "Espanja (Latinalainen Amerikka)"
 msgid "Spanish (Spain)"
 msgstr "Espanja (Espanja)"
 
-#: src/utils/PermissionUtils.tsx:418
-#: src/utils/PermissionUtils.tsx:529
+#: src/utils/PermissionUtils.tsx:423
+#: src/utils/PermissionUtils.tsx:534
 msgid "Speak"
 msgstr "Puhu"
 
@@ -21331,8 +21334,8 @@ msgstr "Suoratoiston esikatselu"
 msgid "Stream Quality"
 msgstr "Suoratoiston laatu"
 
-#: src/utils/PermissionUtils.tsx:422
-#: src/utils/PermissionUtils.tsx:530
+#: src/utils/PermissionUtils.tsx:427
+#: src/utils/PermissionUtils.tsx:535
 msgid "Stream Video"
 msgstr "Suoratoisto video"
 
@@ -22598,7 +22601,7 @@ msgstr "Aikakatkaisun kesto"
 msgid "Timeout ends {0} ({1})"
 msgstr "Aikakatkaisu päättyy {0} ({1})"
 
-#: src/utils/PermissionUtils.tsx:394
+#: src/utils/PermissionUtils.tsx:399
 msgid "Timeout Members"
 msgstr "Aikakatkaise jäsenet"
 
@@ -23508,49 +23511,49 @@ msgstr "Rajoittamattomat tarrat"
 
 #: src/components/channel/EmojiPicker.tsx:176
 #: src/components/channel/MobileEmojiPicker.tsx:179
-msgid "Unlock {emojiLabel} from {communityLabel} with Plutonium."
-msgstr "Avaa {emojiLabel} {communityLabel} -yhteisöstä Plutoniumilla."
+msgid "Unlock {emojiLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/MobileStickersPicker.tsx:144
 #: src/components/channel/StickersPicker.tsx:143
-msgid "Unlock {stickerLabel} from {communityLabel} with Plutonium."
-msgstr "Avaa {stickerLabel} {communityLabel} -yhteisöstä Plutoniumilla."
+msgid "Unlock {stickerLabel} from {communityLabel} with Reverb."
+msgstr ""
 
 #: src/components/channel/PremiumUpsellBanner.tsx:82
-msgid "Unlock all custom emojis and stickers across all communities with Plutonium"
-msgstr "Avaa kaikki mukautetut emojit ja tarrat kaikissa yhteisöissä Plutoniumin avulla"
+msgid "Unlock all custom emojis and stickers across all communities with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:75
-msgid "Unlock custom emojis in DMs with Plutonium"
-msgstr "Avaa mukautetut emojit DM:ssä Plutoniumin avulla"
+msgid "Unlock custom emojis in DMs with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:121
-msgid "Unlock external custom emojis with Plutonium"
-msgstr "Avaa ulkoiset mukautetut emojit Plutoniumin avulla"
+msgid "Unlock external custom emojis with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:220
-msgid "Unlock external stickers with Plutonium"
-msgstr "Avaa ulkoiset tarrat Plutoniumin avulla"
+msgid "Unlock external stickers with Reverb"
+msgstr ""
 
 #: src/components/modals/tabs/VideoTab.tsx:271
-msgid "Unlock HD Screen Sharing with Plutonium"
-msgstr "Avaa HD-ruudunjakaminen Plutoniumin avulla"
+msgid "Unlock HD Screen Sharing with Reverb"
+msgstr ""
 
 #: src/components/modals/ScreenShareSettingsModal.tsx:152
-msgid "Unlock HD Video with Plutonium"
-msgstr "Avaa HD-video Plutoniumin avulla"
+msgid "Unlock HD Video with Reverb"
+msgstr ""
 
 #: src/components/modals/components/PlutoniumContent.tsx:149
 msgid "Unlock higher limits and exclusive features. Your subscription directly supports the development and infrastructure of Echowire."
 msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:668
-msgid "Unlock More Backgrounds with Plutonium"
-msgstr "Avaa lisää taustoja Plutoniumin avulla"
+msgid "Unlock More Backgrounds with Reverb"
+msgstr ""
 
 #: src/utils/ExpressionPermissionUtils.tsx:166
-msgid "Unlock stickers in DMs with Plutonium"
-msgstr "Avaa tarroja DM:ssä Plutoniumin avulla"
+msgid "Unlock stickers in DMs with Reverb"
+msgstr ""
 
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:1015
 #: src/components/bottomsheets/DirectCallLobbyBottomSheet.tsx:270
@@ -23778,7 +23781,7 @@ msgstr "Päivityksen aikakatkaisu"
 msgid "Update your icon, name, banner, and invite background"
 msgstr "Päivitä kuvakkeesi, nimesi, bannerisi ja kutsun tausta"
 
-#: src/utils/PermissionUtils.tsx:275
+#: src/utils/PermissionUtils.tsx:280
 msgid "Update your own nickname."
 msgstr "Päivitä oma lempinimesi."
 
@@ -23879,8 +23882,8 @@ msgstr "Päivitä nyt"
 
 #: src/components/alerts/MaxBookmarksModal.tsx:72
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:70
-msgid "Upgrade to Plutonium"
-msgstr "Päivitä Plutoniumiin"
+msgid "Upgrade to Reverb"
+msgstr ""
 
 #: src/components/modals/BackgroundImageGalleryModal.tsx:672
 msgid "Upgrade to store up to 15 custom backgrounds and unlock HD video quality, higher frame rates, and more."
@@ -23968,7 +23971,7 @@ msgstr "Lataa kuvake"
 msgid "Upload Image"
 msgstr "Lataa kuva"
 
-#: src/utils/PermissionUtils.tsx:285
+#: src/utils/PermissionUtils.tsx:290
 msgid "Upload new emoji and stickers, and manage your own creations."
 msgstr "Lataa uusia emojeita ja tarroja sekä hallinnoi omia luomuksiasi."
 
@@ -24037,8 +24040,8 @@ msgstr "URL-osoitteet viestiesi liitteiden lataamiseen"
 msgid "US East"
 msgstr "US East"
 
-#: src/utils/PermissionUtils.tsx:337
-#: src/utils/PermissionUtils.tsx:504
+#: src/utils/PermissionUtils.tsx:342
+#: src/utils/PermissionUtils.tsx:509
 msgid "Use @everyone/@here and @roles"
 msgstr "Käytä @everyone/@here ja @roles"
 
@@ -24100,17 +24103,17 @@ msgstr "Käytä tummaa teemaa koko sovelluksessa"
 msgid "Use Different Email"
 msgstr "Käytä eri sähköpostia"
 
-#: src/utils/PermissionUtils.tsx:343
+#: src/utils/PermissionUtils.tsx:348
 msgid "Use emoji from other communities."
 msgstr "Käytä emojeja muista yhteisöistä."
 
-#: src/utils/PermissionUtils.tsx:342
-#: src/utils/PermissionUtils.tsx:508
+#: src/utils/PermissionUtils.tsx:347
+#: src/utils/PermissionUtils.tsx:513
 msgid "Use External Emoji"
 msgstr "Käytä ulkoisia emojeja"
 
-#: src/utils/PermissionUtils.tsx:347
-#: src/utils/PermissionUtils.tsx:509
+#: src/utils/PermissionUtils.tsx:352
+#: src/utils/PermissionUtils.tsx:514
 msgid "Use External Stickers"
 msgstr "Käytä ulkoisia tarroja"
 
@@ -24163,8 +24166,8 @@ msgstr "Käytä tätä painiketta poistaaksesi kaikki oikeudet nopeasti."
 msgid "Use this shortcut system-wide"
 msgstr "Käytä tätä pikanäppäintä koko järjestelmässä"
 
-#: src/utils/PermissionUtils.tsx:426
-#: src/utils/PermissionUtils.tsx:532
+#: src/utils/PermissionUtils.tsx:431
+#: src/utils/PermissionUtils.tsx:537
 msgid "Use Voice Activity"
 msgstr "Käytä puheentunnistusta"
 
@@ -24471,7 +24474,7 @@ msgstr "Vahvistuskoodi on lähetetty. Tarkista uusi sähköpostisi."
 msgid "Verification email sent! Please check your inbox."
 msgstr "Varmennussähköposti lähetetty! Tarkista sähköpostisi."
 
-#: src/components/pages/VerifyEmailPage.tsx:130
+#: src/components/pages/VerifyEmailPage.tsx:135
 msgid "Verification failed"
 msgstr "Varmistus epäonnistui"
 
@@ -24517,7 +24520,7 @@ msgid "Verify connection form"
 msgstr "Vahvista yhteyden lomake"
 
 #: src/components/channel/barriers/BarrierComponents.tsx:158
-#: src/components/pages/VerifyEmailPage.tsx:55
+#: src/components/pages/VerifyEmailPage.tsx:56
 msgid "Verify Email"
 msgstr "Varmista sähköposti"
 
@@ -24548,6 +24551,10 @@ msgstr "Vahvista henkilöllisyytesi"
 #: src/components/modals/SudoVerificationModal.tsx:286
 msgid "Verifying..."
 msgstr "Varmistetaan..."
+
+#: src/components/auth/IpAuthorizationScreen.tsx:201
+msgid "Verifying…"
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildModerationTab.tsx:177
 msgid "Very high"
@@ -24593,7 +24600,7 @@ msgstr "Videovaihtoehdot"
 msgid "video preview"
 msgstr "videokeskustelu"
 
-#: src/components/modals/MediaModal.tsx:1079
+#: src/components/modals/MediaModal.tsx:1133
 #: src/components/modals/MediaViewerModal.tsx:438
 msgid "Video preview"
 msgstr "Esikatseluvideo"
@@ -24644,7 +24651,7 @@ msgstr "Näytä {0}:n profiili"
 msgid "View active sessions"
 msgstr "Näytä aktiiviset istunnot"
 
-#: src/utils/PermissionUtils.tsx:240
+#: src/utils/PermissionUtils.tsx:245
 msgid "View Activity Log"
 msgstr "Näytä toimintaloki"
 
@@ -24692,8 +24699,8 @@ msgstr "Näytä puhelu"
 msgid "View call controls"
 msgstr "Näytä puhelun hallinta"
 
-#: src/utils/PermissionUtils.tsx:405
-#: src/utils/PermissionUtils.tsx:485
+#: src/utils/PermissionUtils.tsx:410
+#: src/utils/PermissionUtils.tsx:490
 msgid "View Channel"
 msgstr "Näytä kanava"
 
@@ -24827,8 +24834,8 @@ msgid "Visionary (Lifetime #42)"
 msgstr "Visionary (Elinikäinen #42)"
 
 #: src/utils/GiftUtils.tsx:48
-msgid "Visionary (Lifetime Plutonium)"
-msgstr "Visionary (Elinikäinen Plutonium)"
+msgid "Visionary (Lifetime Reverb)"
+msgstr ""
 
 #: src/components/modals/tabs/developer_options_tab/NagbarControls.tsx:172
 msgid "Visionary 2FA Nagbar"
@@ -25151,9 +25158,9 @@ msgid "We couldn't switch accounts. Please try again."
 msgstr "Emme voineet vaihtaa tiliä. Yritä uudelleen."
 
 #. placeholder {0}: challenge.email
-#: src/components/auth/IpAuthorizationScreen.tsx:138
-msgid "We emailed a link to authorize this login. Please open your inbox for {0}."
-msgstr "Lähetimme sähköpostin, jossa on linkki tämän kirjautumisen vahvistamiseen. Tarkista {0} postilaatikko."
+#: src/components/auth/IpAuthorizationScreen.tsx:169
+msgid "We emailed a code and a link to authorize this login. Please open your inbox for {0}."
+msgstr ""
 
 #: src/components/layout/GuildLayout.tsx:290
 #: src/components/layout/GuildLayout.tsx:331
@@ -25172,7 +25179,7 @@ msgstr "Tulimme ongelmaan. Yritä muokata viesti uudelleen."
 msgid "We hit a snag. Try sending your message again."
 msgstr "Tulimme mutkaan. Yritä lähettää viesti uudelleen."
 
-#: src/components/auth/IpAuthorizationScreen.tsx:136
+#: src/components/auth/IpAuthorizationScreen.tsx:167
 msgid "We lost the connection while waiting for authorization. Please try again."
 msgstr "Yhteys katkesi odottaessamme valtuutusta. Yritä uudelleen."
 
@@ -25540,8 +25547,8 @@ msgid "With Error"
 msgstr "Virhe"
 
 #: src/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:131
-msgid "With Plutonium, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
-msgstr "Plutoniumin avulla voit käyttää animoituja avatar- ja bannerikuvia (GIF, APNG, animoitu WebP tai AVIF), mukauttaa 4-numeroinen tunnuksesi ja avata monia muita premium-ominaisuuksia."
+msgid "With Reverb, you can use animated avatars and banners (in GIF, APNG, animated WebP, or AVIF), customize your 4-digit tag, and unlock many other premium features."
+msgstr ""
 
 #: src/components/modals/guild_tabs/GuildDiscoveryTab.tsx:353
 msgid "Withdraw"
@@ -25801,8 +25808,8 @@ msgid "You cannot interact with this user right now."
 msgstr "Et voi olla vuorovaikutuksessa tämän käyttäjän kanssa tällä hetkellä."
 
 #: src/actions/GiftActionCreators.tsx:110
-msgid "You cannot redeem Plutonium gift codes while you have Visionary premium."
-msgstr "Et voi lunastaa Plutonium-lahjakoodeja, kun sinulla on Visionary-premium."
+msgid "You cannot redeem Reverb gift codes while you have Visionary premium."
+msgstr ""
 
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:320
 #: src/components/modals/channel_tabs/ChannelPermissionsTab.tsx:341
@@ -26209,8 +26216,8 @@ msgid "You've reached the end"
 msgstr "Olet saavuttanut loppupisteen"
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:64
-msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Plutonium to increase your limit to {premiumItemsText}!"
-msgstr "Olet saavuttanut maksimi rajan {freeItemsText} ilmaisille käyttäjille. Päivitä Plutoniumiin kasvattaaksesi rajasi {premiumItemsText}!"
+msgid "You've reached the maximum limit of {freeItemsText} for free users. Upgrade to Reverb to increase your limit to {premiumItemsText}!"
+msgstr ""
 
 #: src/components/alerts/MaxFavoriteMemesModal.tsx:45
 msgid "You've reached the maximum limit of {freeItemsText}. This limit is configured by your instance administrator."
@@ -26233,8 +26240,8 @@ msgid "You've reached the maximum number of bookmarks ({bookmarksText}). This li
 msgstr "Olet saavuttanut maksimi määrän kirjanmerkkejä ({bookmarksText}). Tämä raja on määritetty instanssisi ylläpitäjän toimesta. Poista joitakin kirjanmerkkejä ennen uusien lisäämistä."
 
 #: src/components/alerts/MaxBookmarksModal.tsx:71
-msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Plutonium to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
-msgstr "Olet saavuttanut maksimi määrän kirjanmerkkejä ilmaisille käyttäjille ({bookmarksText}). Päivitä Plutoniumiin kasvattaaksesi rajasi {premiumBookmarksText}, tai poista joitakin kirjanmerkkejä lisätäksesi uusia."
+msgid "You've reached the maximum number of bookmarks for free users ({bookmarksText}). Upgrade to Reverb to increase your limit to {premiumBookmarksText}, or remove some bookmarks to add new ones."
+msgstr ""
 
 #: src/components/alerts/MaxGuildsModal.tsx:39
 msgid "You've reached the maximum number of communities you can join ({maxGuilds} communities). Please leave a community before joining another one."
@@ -26326,7 +26333,7 @@ msgstr "Poistopyyntösi laitetaan jonoon ja käsitellään taustalla"
 msgid "Your email address has been updated."
 msgstr "Sähköpostiosoitteesi on päivitetty."
 
-#: src/components/pages/VerifyEmailPage.tsx:119
+#: src/components/pages/VerifyEmailPage.tsx:124
 msgid "Your email has been verified. You can now log in to your account."
 msgstr "Sähköpostisi on vahvistettu. Voit nyt kirjautua tilillesi."
 
@@ -26355,7 +26362,7 @@ msgstr "Kutsusi vanhenee 24 tunnissa"
 msgid "Your invite link expires in {0}."
 msgstr "Kutsulinkkisi vanhenee {0}."
 
-#: src/components/pages/AuthorizeIPPage.tsx:117
+#: src/components/pages/AuthorizeIPPage.tsx:122
 msgid "Your IP address has been successfully authorized."
 msgstr "IP-osoitteesi on onnistuneesti valtuutettu."
 
@@ -26399,10 +26406,6 @@ msgstr "Maksusi peruttiin. Voit nyt sulkea tämän välilehden ja palata sovellu
 msgid "Your personal space for quick access to channels, DMs, and groups you love. Press the star on any channel to add it here."
 msgstr "Henkilökohtainen tilasi nopeaan pääsyyn kanaviin, DM:iin ja ryhmiin, joita rakastat. Paina tähteä kanavan kohdalla lisätäksesi sen tänne."
 
-#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
-msgid "Your Plutonium subscription has expired. You've lost all Plutonium perks. Reactivate your subscription to regain access."
-msgstr "Plutonium-tilauksesi on vanhentunut. Olet menettänyt kaikki Plutonium-edut. Aktivoi tilauksesi uudelleen saadaksesi pääsyn takaisin."
-
 #: src/components/bottomsheets/ChannelDetailsBottomSheet.tsx:946
 msgid "Your private space"
 msgstr "Yksityinen tilasi"
@@ -26423,6 +26426,10 @@ msgstr "Ostamasi lahjat"
 msgid "your region"
 msgstr "alueesi"
 
+#: src/components/layout/app_layout/nagbars/PremiumExpiredNagbar.tsx:68
+msgid "Your Reverb subscription has expired. You've lost all Reverb perks. Reactivate your subscription to regain access."
+msgstr ""
+
 #: src/components/voice/PiPOverlay.tsx:782
 #: src/components/voice/VoiceParticipantTile.tsx:1405
 msgid "Your stream is still being broadcast"
@@ -26437,8 +26444,8 @@ msgid "Your subscription expired on <0>{expiredDate}</0>. You lost all <1/>. You
 msgstr "Tilauksesi vanhentui <0>{expiredDate}</0>. Menetit kaikki <1/>. Voit aktivoida sen uudelleen milloin tahansa."
 
 #: src/components/layout/app_layout/nagbars/PremiumGracePeriodNagbar.tsx:72
-msgid "Your subscription failed to renew, but you still have access to Plutonium perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
-msgstr "Tilauksesi ei uusinut, mutta sinulla on silti pääsy Plutonium-etuihin asti <0>{formattedGraceDate}</0>. Toimi nyt tai menetät kaikki edut."
+msgid "Your subscription failed to renew, but you still have access to Reverb perks until <0>{formattedGraceDate}</0>. Take action now or you'll lose all perks."
+msgstr ""
 
 #: src/components/modals/components/plutonium/hooks/useSubscriptionActions.tsx:65
 msgid "Your subscription has been reactivated!"
@@ -26482,8 +26489,8 @@ msgstr "zoom"
 msgid "Zoom"
 msgstr "Zoomaa"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom in"
 msgstr "Lähennä"
 
@@ -26491,8 +26498,8 @@ msgstr "Lähennä"
 msgid "Zoom In"
 msgstr "Lähennä"
 
-#: src/components/modals/MediaModal.tsx:255
-#: src/components/modals/MediaModal.tsx:265
+#: src/components/modals/MediaModal.tsx:263
+#: src/components/modals/MediaModal.tsx:273
 msgid "Zoom out"
 msgstr "Loitonna"
 
