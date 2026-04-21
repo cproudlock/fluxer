@@ -195,12 +195,18 @@ function renderVerifySection(): JSX.Element {
 						signed <code class="text-white">SHA256SUMS.txt</code>. Verify with:
 					</p>
 					<pre class="mt-3 overflow-x-auto rounded-lg bg-[#0A1428] p-4 text-xs text-[#CBD5E1]">
-						{`curl -O https://echowire.org/.well-known/echowire-signing-key.asc
+						{`# 1. Import our public key (one time)
+curl -O https://echowire.org/.well-known/echowire-signing-key.asc
 gpg --import echowire-signing-key.asc
 # Expected fingerprint:
 #   CFE4 1D9A 40A9 7F70 1334  1135 2025 06F9 D549 F87E
 
-gpg --verify Echowire-1.6.1.AppImage.asc Echowire-1.6.1.AppImage`}
+# 2. Download the signature for whichever artifact you grabbed
+#    (use -L so curl follows the redirect to R2)
+curl -LO https://echowire.org/dl/desktop/stable/linux/x64/Echowire-1.20.0-amd64.deb.asc
+
+# 3. Verify
+gpg --verify Echowire-1.20.0-amd64.deb.asc Echowire-1.20.0-amd64.deb`}
 					</pre>
 					<p class="mt-3">
 						Look for <code class="text-white">Good signature from "Echowire Releases"</code>. The printed

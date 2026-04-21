@@ -356,12 +356,18 @@
                 <p><strong>Windows:</strong> Azure Trusted Signing (Authenticode). SmartScreen rejects tampered builds automatically.</p>
                 <p><strong>macOS:</strong> Signed with our Apple Developer ID and notarized by Apple. Gatekeeper rejects tampered builds on first launch.</p>
                 <p><strong>Linux:</strong> Every <code>.AppImage</code>, <code>.deb</code>, <code>.rpm</code>, and <code>.tar.gz</code> ships with a detached GPG signature (<code>.asc</code>) alongside it, plus a signed <code>SHA256SUMS.txt</code>.</p>
-                <pre><code>curl -O https://echowire.org/.well-known/echowire-signing-key.asc
+                <pre><code># 1. Import our public key (one time)
+curl -O https://echowire.org/.well-known/echowire-signing-key.asc
 gpg --import echowire-signing-key.asc
 # Expected fingerprint:
 #   CFE4 1D9A 40A9 7F70 1334  1135 2025 06F9 D549 F87E
 
-gpg --verify Echowire-1.6.1.AppImage.asc Echowire-1.6.1.AppImage</code></pre>
+# 2. Download the signature for whichever artifact you grabbed
+#    (use -L so curl follows the redirect to R2)
+curl -LO https://echowire.org/dl/desktop/stable/linux/x64/Echowire-1.20.0-amd64.deb.asc
+
+# 3. Verify
+gpg --verify Echowire-1.20.0-amd64.deb.asc Echowire-1.20.0-amd64.deb</code></pre>
                 <p>Look for <code>Good signature from "Echowire Releases"</code>. The printed fingerprint must match the one above exactly.</p>
             </div>
         </details>
