@@ -8248,8 +8248,8 @@ msgstr "Masaüstü Uygulamasını İndir"
 
 #: src/components/layout/guild_list/DownloadButton.tsx:47
 #: src/components/layout/guild_list/DownloadButton.tsx:51
-msgid "Download Fluxer"
-msgstr "Fluxer'ı İndir"
+msgid "Download Echowire"
+msgstr ""
 
 #: src/components/modals/AddConnectionModal.tsx:297
 msgid "Download fluxer-verification"

@@ -8248,8 +8248,8 @@ msgstr "Pobierz aplikację na komputer"
 
 #: src/components/layout/guild_list/DownloadButton.tsx:47
 #: src/components/layout/guild_list/DownloadButton.tsx:51
-msgid "Download Fluxer"
-msgstr "Pobierz Fluxer"
+msgid "Download Echowire"
+msgstr ""
 
 #: src/components/modals/AddConnectionModal.tsx:297
 msgid "Download fluxer-verification"

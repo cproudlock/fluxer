@@ -8248,8 +8248,8 @@ msgstr "데스크톱 앱 다운로드"
 
 #: src/components/layout/guild_list/DownloadButton.tsx:47
 #: src/components/layout/guild_list/DownloadButton.tsx:51
-msgid "Download Fluxer"
-msgstr "Fluxer 다운로드"
+msgid "Download Echowire"
+msgstr ""
 
 #: src/components/modals/AddConnectionModal.tsx:297
 msgid "Download fluxer-verification"

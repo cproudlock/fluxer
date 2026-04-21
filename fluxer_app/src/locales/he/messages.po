@@ -8248,8 +8248,8 @@ msgstr "הורד את אפליקציית שולחן העבודה"
 
 #: src/components/layout/guild_list/DownloadButton.tsx:47
 #: src/components/layout/guild_list/DownloadButton.tsx:51
-msgid "Download Fluxer"
-msgstr "הורד את Fluxer"
+msgid "Download Echowire"
+msgstr ""
 
 #: src/components/modals/AddConnectionModal.tsx:297
 msgid "Download fluxer-verification"

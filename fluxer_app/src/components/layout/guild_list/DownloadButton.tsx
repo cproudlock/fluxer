@@ -44,11 +44,11 @@ export const DownloadButton = observer(() => {
 
 	return (
 		<div className={guildStyles.addGuildButton}>
-			<Tooltip position="right" size="large" text={() => t`Download Fluxer`}>
+			<Tooltip position="right" size="large" text={() => t`Download Echowire`}>
 				<FocusRing offset={-2} focusTarget={buttonRef} ringTarget={iconRef}>
 					<button
 						type="button"
-						aria-label={t`Download Fluxer`}
+						aria-label={t`Download Echowire`}
 						data-guild-list-focus-item="true"
 						onClick={handleDownload}
 						className={styles.button}
