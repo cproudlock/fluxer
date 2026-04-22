@@ -83,7 +83,10 @@ export function formatPageTitle(baseTitle: string): string {
 }
 
 export function buildMetaTags(ctx: MarketingContext, meta: PageMeta, pageUrl: string): ReadonlyArray<JSX.Element> {
-	const defaultOgImageUrl = `${ctx.staticCdnEndpoint}/web/og-image-default.png`;
+	// Served by Caddy on the edge directly from /opt/fluxer/fluxer_app/dist/web/
+	// rather than pulling from the upstream fluxer static CDN (which defaults to
+	// fluxerstatic.com and still carries Fluxer branding).
+	const defaultOgImageUrl = `${ctx.appEndpoint.replace(/\/$/, '')}/og-image-default.png`;
 	const ogImageUrl = meta.ogImageUrl ?? defaultOgImageUrl;
 	const ogLocale = getOgLocale(ctx);
 
